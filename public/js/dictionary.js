@@ -1,25 +1,56 @@
 "use strict";
 // import fetch from "node-fetch";
-// Función para cargar el diccionario desde un archivo JSON
-const cargarDiccionario = (url) => {
-    return fetch(url)
-        .then((response) => response.json())
-        .catch((error) => {
-        console.error("Error al cargar el archivo JSON", error);
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+const chargeDictionary = (language) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        // let languageCode = language;
+        const response = yield fetch(`./dictionary/${language}/${language}.json`);
+        if (!response.ok) {
+            throw new Error(`Error loading the language ${language}.`);
+        }
+        return yield response.json();
+    }
+    catch (error) {
+        console.error("Error loading json", error);
         throw error;
-    });
-};
-// Función principal asincrónica
-const cargarTexto = () => {
-    cargarDiccionario("./dictionary/es/es.json")
-        .then((diccionario) => {
-        document.getElementById("title").textContent = diccionario.title;
+    }
+});
+// const abailableLanguages = ["en", "es"];
+const loadAbailablesLanguages = () => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const response = yield fetch(`./dictionary/listLanguages.json`);
+        if (!response.ok) {
+            throw new Error("Error loading white language list");
+        }
+        return yield response.json();
+    }
+    catch (error) {
+        console.error("Error loading white language list", error);
+        throw error;
+    }
+});
+const chargeText = () => __awaiter(void 0, void 0, void 0, function* () {
+    const abailableLanguages = yield loadAbailablesLanguages();
+    const navigatorLanguage = navigator.language.slice(0, 2);
+    const selectedLanguage = abailableLanguages.includes(navigatorLanguage)
+        ? navigatorLanguage
+        : "en";
+    try {
+        const dictionary = yield chargeDictionary(selectedLanguage);
+        document.getElementById("title").textContent = dictionary.title;
         document.getElementById("description").textContent =
-            diccionario.description;
-    })
-        .catch((error) => {
-        console.error("Error al cargar el texto", error);
-    });
-};
-// Llamar a la función principal para cargar el texto
-cargarTexto();
+            dictionary.description;
+    }
+    catch (error) {
+        console.error("Error loading the text", error);
+    }
+});
+chargeText();
