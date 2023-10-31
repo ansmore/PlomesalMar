@@ -13,11 +13,12 @@
 
 </head>
 
-<body class="antialiased">
-    <h1>Welcome</h1>
-    <p>This is the welcome page, Welcomed!!</p>
+<body>
+    <h1 id="title"></h1>
+    <p id="description"></p>
 
-    <button id="buttonHello">Say hello </button>
+    <button id="buttonHello"></button>
+    <script type="module" src="{{ asset('js/dictionary.js') }}"></script>
     <script type="module" src="{{ asset('js/app.js') }}"></script>
 </body>
 
