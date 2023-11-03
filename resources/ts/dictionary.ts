@@ -1,5 +1,3 @@
-// import fetch from "node-fetch";
-
 type Dictionary = {
   [clave: string]: string;
 };
@@ -31,6 +29,7 @@ const loadAbailablesLanguages = async (): Promise<string[]> => {
     throw error;
   }
 };
+
 const chargeText = async () => {
   const abailableLanguages = await loadAbailablesLanguages();
 
@@ -38,7 +37,7 @@ const chargeText = async () => {
 
   const selectedLanguage = abailableLanguages.includes(navigatorLanguage)
     ? navigatorLanguage
-    : "en";
+    : "es";
 
   try {
     const dictionary = await chargeDictionary(selectedLanguage);
