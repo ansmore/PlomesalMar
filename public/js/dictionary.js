@@ -1,5 +1,4 @@
 "use strict";
-// import fetch from "node-fetch";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -42,12 +41,13 @@ const chargeText = () => __awaiter(void 0, void 0, void 0, function* () {
     const navigatorLanguage = navigator.language.slice(0, 2);
     const selectedLanguage = abailableLanguages.includes(navigatorLanguage)
         ? navigatorLanguage
-        : "en";
+        : "es";
     try {
         const dictionary = yield chargeDictionary(selectedLanguage);
         document.getElementById("title").textContent = dictionary.title;
-        document.getElementById("description").textContent =
-            dictionary.description;
+        document.getElementById("description").textContent = dictionary.description;
+        document.getElementById("titleNuevo").textContent = dictionary.titleNuevo;
+        document.getElementById("descriptionDigitalizacion").textContent = dictionary.descriptionDigitalizacion;
     }
     catch (error) {
         console.error("Error loading the text", error);

@@ -1,6 +1,10 @@
 {
   "title": "La meva Página Web",
   "description": "Això es una descripció de la meva página web",
+  
+  "title-digitalizacion": "digitalizacion",
+  "description-digitalizacion": "Estás en digitalización",  
+  
   "salutation": "Hola, mon!",
   "bottonHello": "Fes clic aquí!"
 }

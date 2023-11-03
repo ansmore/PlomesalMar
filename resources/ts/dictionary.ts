@@ -40,11 +40,16 @@ const chargeText = async () => {
     : "es";
 
   try {
+     
     const dictionary = await chargeDictionary(selectedLanguage);
+
     document.getElementById("title")!.textContent = dictionary.title;
-    document.getElementById("description")!.textContent =
-      dictionary.description;
-  } catch (error) {
+    document.getElementById("description")!.textContent = dictionary.description;
+    document.getElementById("titleNuevo")!.textContent = dictionary.titleNuevo;
+    document.getElementById("descriptionDigitalizacion")!.textContent = dictionary.descriptionDigitalizacion;
+      
+  } 
+  catch (error) {
     console.error("Error loading the text", error);
   }
 };

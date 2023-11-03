@@ -1,6 +1,8 @@
 {
   "title": "Mi Página Web",
-  "description": "Esta es una descripción de mi página web 2.3.",
+  "description": "Esta es una descripción de mi página web 2.4.",
+  "titleNuevo": "digitalizacion",
+  "descriptionDigitalizacion": "Estás en digitalización",  
   "salutation": "Hola, mundo!",
   "bottonHello": "Haz clic aquí"
 }
