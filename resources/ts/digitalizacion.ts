@@ -1,6 +1,6 @@
 import { loadDictionary, loadAbailablesLanguages } from "./helpers/dictionary.js";
 
-const chargeText = async () => {
+export const chargeText = async () => {
     const abailableLanguages = await loadAbailablesLanguages();
   
     const navigatorLanguage = navigator.language.slice(0, 2);

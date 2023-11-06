@@ -1,25 +1,20 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.master')
 
-        <title>Laravel</title>
+@section('titulo', 'Digitalización')
+@section('components')
+    <!-- <body> -->
+        <main>
 
-        <!-- Fonts -->
-        <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+            <p id="descriptionDigitalizacion"></p>
+            <h1 id="titleNuevo"></h1>
 
-    </head>     
-
-    <body>
-        <p id="descriptionDigitalizacion"></p>
-        <h1 id="titleNuevo"></h1>
-
+        </main>
+<script type="modude" src="{{asset('js/helpers/dictionary.js')}}"></script>
+<script type="modude" src="{{asset('js/digitalizacion.js')}}"></script>
+<!-- 
         <button id="buttonHello"></button>
         <script type="module" src="{{ asset('js/helpers/dictionary.js') }}"></script>
         <script type="module" src="{{ asset('js/digitalizacion.js') }}"></script>
-    </body>
-
-</html>
+    </body> -->
+@endseection

@@ -8,7 +8,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 import { loadDictionary, loadAbailablesLanguages } from "./helpers/dictionary.js";
-const chargeText = () => __awaiter(void 0, void 0, void 0, function* () {
+export const chargeText = () => __awaiter(void 0, void 0, void 0, function* () {
     const abailableLanguages = yield loadAbailablesLanguages();
     const navigatorLanguage = navigator.language.slice(0, 2);
     const selectedLanguage = abailableLanguages.includes(navigatorLanguage)

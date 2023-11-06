@@ -29,29 +29,3 @@ export const loadAbailablesLanguages = async (): Promise<string[]> => {
     throw error;
   }
 };
-
-// const chargeText = async () => {
-//   const abailableLanguages = await loadAbailablesLanguages();
-
-//   const navigatorLanguage = navigator.language.slice(0, 2);
-
-//   const selectedLanguage = abailableLanguages.includes(navigatorLanguage)
-//     ? navigatorLanguage
-//     : "es";
-
-//   try {
-     
-//     const dictionary = await chargeDictionary(selectedLanguage);
-
-//     document.getElementById("title")!.textContent = dictionary.title;
-//     document.getElementById("description")!.textContent = dictionary.description;
-//     document.getElementById("titleNuevo")!.textContent = dictionary.titleNuevo;
-//     document.getElementById("descriptionDigitalizacion")!.textContent = dictionary.descriptionDigitalizacion;
-      
-//   } 
-//   catch (error) {
-//     console.error("Error loading the text", error);
-//   }
-// };
-
-// chargeText();
