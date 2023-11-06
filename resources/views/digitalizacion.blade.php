@@ -14,15 +14,12 @@
     </head>     
 
     <body>
-        <h1 id="title"></h1>
-        <p id="description"></p>
         <p id="descriptionDigitalizacion"></p>
         <h1 id="titleNuevo"></h1>
- 
 
         <button id="buttonHello"></button>
-        <script type="module" src="{{ asset('js/dictionary.js') }}"></script>
-        <script type="module" src="{{ asset('js/app.js') }}"></script>
+        <script type="module" src="{{ asset('js/helpers/dictionary.js') }}"></script>
+        <script type="module" src="{{ asset('js/digitalizacion.js') }}"></script>
     </body>
 
 </html>
