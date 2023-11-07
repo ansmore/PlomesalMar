@@ -1,12 +1,26 @@
 $primary-color: #007bff;
 $primary-color-dark: #023264;
 $base: #fbfbfb;
+$nav-height: 60px;
+
+* {
+  box-sizing: border-box;
+}
 
 html {
   background-color: $base;
+  display: flex;
 }
 body {
   font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.main {
+  margin-top: $nav-height;
+  padding: 10px;
 }
 
 h1 {
@@ -29,5 +43,50 @@ button {
     color: #fbfbfb;
     padding: 10px;
     border: 1px solid $primary-color-dark;
+  }
+}
+
+// Estilos para la barra de navegación
+.navbar {
+  background-color: $primary-color-dark;
+  color: $base;
+  height: $nav-height;
+  display: flex;
+
+  align-content: center;
+  flex-direction: row;
+
+  justify-content: end;
+  align-items: end;
+  padding: 0 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  @media screen and (max-width: 768px) {
+    height: 48px;
+  }
+
+  @media screen and (max-width: 480px) {
+    height: 36px;
+  }
+}
+
+// Estilos para los elementos de navegación
+.nav-item {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+
+  .nav-link {
+    color: $base;
+    text-decoration: none;
+    margin: 0 15px;
+
+    &:hover {
+      color: $primary-color;
+    }
   }
 }
