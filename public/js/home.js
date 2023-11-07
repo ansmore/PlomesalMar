@@ -7,7 +7,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import { loadDictionary, loadAbailablesLanguages } from "./helpers/dictionary.js";
+import { loadDictionary, loadAbailablesLanguages, } from "./helpers/dictionary.js";
 const chargeText = () => __awaiter(void 0, void 0, void 0, function* () {
     const abailableLanguages = yield loadAbailablesLanguages();
     const navigatorLanguage = navigator.language.slice(0, 2);
@@ -17,7 +17,8 @@ const chargeText = () => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const dictionary = yield loadDictionary(selectedLanguage);
         document.getElementById("title").textContent = dictionary.title;
-        document.getElementById("description").textContent = dictionary.description;
+        document.getElementById("description").textContent =
+            dictionary.description;
     }
     catch (error) {
         console.error("Error loading the text", error);

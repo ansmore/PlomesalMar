@@ -8,7 +8,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 import { loadDictionary, loadAbailablesLanguages, } from "./helpers/dictionary.js";
-export const chargeText = () => __awaiter(void 0, void 0, void 0, function* () {
+const chargeText = () => __awaiter(void 0, void 0, void 0, function* () {
     const abailableLanguages = yield loadAbailablesLanguages();
     const navigatorLanguage = navigator.language.slice(0, 2);
     const selectedLanguage = abailableLanguages.includes(navigatorLanguage)
@@ -16,9 +16,13 @@ export const chargeText = () => __awaiter(void 0, void 0, void 0, function* () {
         : "es";
     try {
         const dictionary = yield loadDictionary(selectedLanguage);
-        document.querySelector("#titleNuevo").textContent = dictionary.titleNuevo;
-        document.querySelector("#descriptionDigitalizacion").textContent =
-            dictionary.descriptionDigitalizacion;
+        document.getElementById("nav-service").textContent = dictionary.navService;
+        document.getElementById("nav-porfolio").textContent =
+            dictionary.navPorfolio;
+        document.getElementById("nav-team").textContent = dictionary.navTeam;
+        document.getElementById("nav-location").textContent =
+            dictionary.navLocation;
+        document.getElementById("nav-contact").textContent = dictionary.navContact;
     }
     catch (error) {
         console.error("Error loading the text", error);
