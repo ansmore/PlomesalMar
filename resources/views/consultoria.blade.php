@@ -18,8 +18,8 @@
     <p id="description"></p>
 
     <button id="buttonHello"></button>
-    <script type="module" src="{{ asset('js/dictionary.js') }}"></script>
-    <script type="module" src="{{ asset('js/app.js') }}"></script>
+
+
 </body>
 
 </html>

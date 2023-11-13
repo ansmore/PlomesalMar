@@ -1,7 +1,18 @@
 <nav class="navbar">
     <div class="container">
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav navbar-right">
+        <div class="logo--header">
+            <a href="/">
+                <img class="img-responsive" src="./img/logo.png" alt="Pymesoft" id="pymeso" />
+            </a>
+        </div>
+        <div class="logo--nav">
+            <ul>
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="/" id="nav-home"></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="digitalizacion" id="nav-digitalizacion"></a>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link page-scroll" href="index.html#services" id="nav-service"></a>
                 </li>

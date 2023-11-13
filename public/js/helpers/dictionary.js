@@ -7,10 +7,11 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-export const loadDictionary = (language) => __awaiter(void 0, void 0, void 0, function* () {
+export const loadDictionary = (language, page) => __awaiter(void 0, void 0, void 0, function* () {
     try {
+        // console.log("page:", page, "language:", language);
         // let languageCode = language;
-        const response = yield fetch(`./dictionary/${language}/${language}.json`);
+        const response = yield fetch(`./dictionary/${language}/${language}_${page}.json`);
         if (!response.ok) {
             throw new Error(`Error loading the language ${language}.`);
         }
@@ -32,6 +33,19 @@ export const loadAbailablesLanguages = () => __awaiter(void 0, void 0, void 0, f
     }
     catch (error) {
         console.error("Error loading white language list", error);
+        throw error;
+    }
+});
+export const loadAbailablesFiles = () => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const response = yield fetch(`./dictionary/listPages.json`);
+        if (!response.ok) {
+            throw new Error("Error loading white page list");
+        }
+        return yield response.json();
+    }
+    catch (error) {
+        console.error("Error loading white page list", error);
         throw error;
     }
 });

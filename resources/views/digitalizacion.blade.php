@@ -4,8 +4,8 @@
 @section('content')
 
     <body class="main">
-        <p id="descriptionDigitalizacion"></p>
         <h1 id="titleNuevo"></h1>
+        <p id="descriptionDigitalizacion"></p>
     </body>
 
     <script type="module" src="{{ asset('js/digitalizacion.js') }}"></script>
