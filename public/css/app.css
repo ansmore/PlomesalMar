@@ -1,3 +1,7 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700");
+@import url("https://fonts.googleapis.com/css?family=Kaushan+Script");
+@import url("https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic");
+@import url("https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700");
 * {
   box-sizing: border-box;
   margin: 0;
@@ -27,7 +31,7 @@ header {
   margin: 0;
   padding: 0;
   width: 100vw;
-  height: 600px;
+  height: 500px;
   background-image: url(../img/header-bg.jpg);
   background-repeat: none;
   background-attachment: scroll;
@@ -121,6 +125,56 @@ header .intro-text .intro-heading {
 .nav-item .nav-link:hover {
   color: #fbfbfb;
   background-color: #023264;
+}
+
+.container-services {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 15px;
+  margin: 0 auto;
+  width: 100%;
+}
+.container-services .row {
+  margin: -15px;
+  text-align: center;
+  position: relative;
+  min-height: 1px;
+  padding: 20x 15px;
+}
+.container-services .row .section-heading {
+  font-family: "Montserrat", sans-serif;
+  font-size: 40px;
+  margin: 0 0 15px;
+}
+.container-services .row .section-subheading {
+  font-size: 16px;
+  font-family: "Droid Serif", sans-serif;
+  text-transform: none;
+  font-style: italic;
+  font-weight: 400;
+  margin-bottom: 32px;
+  color: #777;
+}
+.container-services .row-1,
+.container-services .row-2 {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  position: relative;
+  min-height: 1px;
+  padding: 0 15px;
+}
+.container-services .row-1 .service-heading,
+.container-services .row-2 .service-heading {
+  margin: 15px 0;
+  text-transform: none;
+}
+.container-services .row-1-service,
+.container-services .row-2-service {
+  flex: 3.33;
+}
+.container-services .row-2-service {
+  flex: 5;
 }
 
 .main {

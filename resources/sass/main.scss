@@ -1,8 +1,11 @@
 @import "base/globals";
 @import "base/colors";
+@import "base/typography";
 
 @import "components/header";
 @import "components/navigation";
+
+@import "pages/home";
 
 .main {
   margin-top: $nav-height;

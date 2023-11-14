@@ -3,8 +3,9 @@
   "bottonHello": "Haz clic aquí",
   "homeServices": "Servicios",
   "homeServicesSubheading": "Análisis, desarrollo y formación de soluciones a sus procesos empresariales.",
-
-  "homeServdicses": "Servicios",
-  "homeServdices": "Servicios",
-  "homeServicses": "Servicios"
+  "services1": "Implementación de soluciones multiplataforma ( BIIT )",
+  "services2": "Outsourcing",
+  "services3": "Consultoría y desarrollo de soluciones entorno SAGE",
+  "services4": "Integración de soluciones hacia el ERP SAGE MURANO",
+  "services5": "Soluciones E-Commerce, SAT, SGA, Captura de datos de Planta, CRM ... Multiplataforma"
 }

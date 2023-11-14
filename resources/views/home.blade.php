@@ -6,58 +6,59 @@
     <body class="main">
         <!-- Services Section -->
         <section id="services">
-            <div class="container">
+            <div class="container-services">
                 <div class="row">
-                    <div class="col-lg-12 text-center">
+                    <div>
                         <h2 class="section-heading" id="home-services"></h2>
                         <h3 class="section-subheading text-muted" id="home-services-subheading"></h3>
                     </div>
                 </div>
-                <div class="row text-center">
-                    <div class="col-md-4">
+                <div class="row-1">
+                    <div class="row-1-service">
                         <span class="fa-stack fa-4x">
                             <span class="fa fa-circle fa-stack-2x text-primary"></span>
-                            <span class="fa fa-check-square-o  fa-stack-1x fa-inverse"></span>
+                            <span class="fa fa-check-square-o  fa-stack-1x fa-inverse">
+                                <i class="fas fa-check-square"></i>
+                            </span>
                         </span>
                         <h4 class="service-heading">
-                            <a href="https://biit.es">Implementaci&oacute;n de soluciones multiplataforma ( BIIT )</a>
+                            <a href="https://biit.es" id="services-1"></a>
                         </h4>
                     </div>
-                    <div class="col-md-4">
+                    <div class="row-1-service">
                         <span class="fa-stack fa-4x">
                             <span class="fa fa-circle fa-stack-2x text-primary"></span>
                             <span class="fa fa-users fa-stack-1x fa-inverse"></span>
                         </span>
-                        <h4 class="service-heading">Outsourcing</h4>
+                        <h4 class="service-heading" id="services-2"></h4>
                     </div>
-                    <div class="col-md-4">
+                    <div class="row-1-service">
                         <span class="fa-stack fa-4x">
                             <span class="fa fa-circle fa-stack-2x text-primary"></span>
                             <span class="fa fa-list-ul cart fa-stack-1x fa-inverse"></span>
                         </span>
                         <h4 class="service-heading">
-                            <a href="consultoria.html">Consultor&iacute;a y desarrollo de soluciones entorno SAGE</a>
+                            <a href="consultoria.html" id="services-3"></a>
                         </h4>
                     </div>
                 </div>
-                <div class="row text-center">
-                    <div class="col-md-6">
+                <div class="row-2">
+                    <div class="row-2-service">
                         <span class="fa-stack fa-4x">
                             <span class="fa fa-circle  fa-stack-2x text-primary"></span>
                             <span class="fa fa-shopping-cart fa-stack-1x fa-inverse"></span>
                         </span>
                         <h4 class="service-heading">
-                            <a href="https://biit.es/">Integraci&oacute;n de soluciones hacia el ERP SAGE MURANO</a>
+                            <a href="https://biit.es/" id="services-4"></a>
                         </h4>
                     </div>
-                    <div class="col-md-6">
+                    <div class="row-2-service">
                         <span class="fa-stack fa-4x">
                             <span class="fa fa-circle fa-stack-2x text-primary"></span>
                             <span class="fa fa-briefcase fa-stack-1x fa-inverse"></span>
                         </span>
                         <h4 class="service-heading">
-                            <a href="https://biit.es/">Soluciones E-Commerce, SAT, SGA, Captura de datos de Planta, CRM ...
-                                Multiplataforma</a>
+                            <a href="https://biit.es/" id="services-5"></a>
                         </h4>
                     </div>
                 </div>

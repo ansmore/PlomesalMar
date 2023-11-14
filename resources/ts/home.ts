@@ -26,7 +26,12 @@ const chargeText = async () => {
     document.querySelector("#home-services-subheading")!.textContent =
       dictionary.homeServicesSubheading;
 
-    document.querySelector("dfdfgtitle")!.textContent = dictionary.title;
+    document.querySelector("#services-1")!.textContent = dictionary.services1;
+
+    document.querySelector("#services-2")!.textContent = dictionary.services2;
+    document.querySelector("#services-3")!.textContent = dictionary.services3;
+    document.querySelector("#services-4")!.textContent = dictionary.services4;
+    document.querySelector("#services-5")!.textContent = dictionary.services5;
   } catch (error) {
     console.error("Error loading the text", error);
   }
