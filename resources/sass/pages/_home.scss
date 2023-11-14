@@ -1,0 +1,56 @@
+$container-padding: 15px;
+
+.container-services {
+  display: flex;
+  flex-direction: column;
+  padding: 20px $container-padding;
+  margin: 0 auto;
+  width: 100%;
+
+  .row {
+    margin: 0 -$container-padding;
+    text-align: center;
+    position: relative;
+    min-height: 1px;
+    padding: 20x $container-padding;
+
+    .section-heading {
+      font-family: "Montserrat", sans-serif;
+      font-size: 40px;
+      margin: 0 0 15px;
+    }
+
+    .section-subheading {
+      font-size: 16px;
+      font-family: "Droid Serif", sans-serif;
+      text-transform: none;
+      font-style: italic;
+      font-weight: 400;
+      margin-bottom: 32px;
+      color: #777;
+    }
+  }
+
+  .row-1,
+  .row-2 {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    position: relative;
+    min-height: 1px;
+    padding: 0 $container-padding;
+
+    .service-heading {
+      margin: 15px 0;
+      text-transform: none;
+    }
+
+    &-service {
+      flex: 3.33;
+    }
+  }
+
+  .row-2-service {
+    flex: 5;
+  }
+}

@@ -1,0 +1,65 @@
+$nav-height: 60px;
+
+// Estilos para la barra de navegación
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  height: $nav-height;
+
+  padding: 0 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  color: $base;
+  background-color: $primary-color;
+
+  @media screen and (max-width: 768px) {
+    height: 48px;
+  }
+
+  @media screen and (max-width: 480px) {
+    height: 36px;
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+}
+.logo--header {
+  align-items: center;
+  flex: 3;
+}
+.logo--nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  flex: 7;
+}
+
+// Estilos para los elementos de navegación
+.nav-item {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: inline-flex;
+
+  .nav-link {
+    color: $base;
+    text-decoration: none;
+    margin: 0 15px;
+
+    &:hover {
+      color: $base;
+      background-color: $primary-color-dark;
+    }
+  }
+}

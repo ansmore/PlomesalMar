@@ -1,49 +1,69 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700");
+@import url("https://fonts.googleapis.com/css?family=Kaushan+Script");
+@import url("https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic");
+@import url("https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700");
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  list-style: none;
+  text-decoration: none;
+  border: none;
+  outline: none;
 }
 
 html {
-  background-color: #fbfbfb;
-  display: flex;
+  font-size: 62.5%; /* 1rem -> 10px*/
 }
 
 body {
   font-family: Arial, Helvetica, sans-serif;
+  width: 100vw;
   margin: 0;
   padding: 0;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.main {
-  margin-top: 60px;
+header {
+  margin: 0;
   padding: 0;
-  height: 250vh;
+  width: 100vw;
+  height: 500px;
+  background-image: url(../img/header-bg.jpg);
+  background-repeat: none;
+  background-attachment: scroll;
+  background-position: center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  text-align: center;
+  color: #fff;
 }
 
-h1 {
-  color: #38709e;
+header .intro-text {
+  padding-top: 100px;
+  padding-bottom: 50px;
 }
 
-p {
-  font-size: 16px;
-  color: #023264;
+header .intro-text .intro-lead-in {
+  font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-style: italic;
+  font-size: 22px;
+  line-height: 22px;
+  margin-bottom: 25px;
 }
 
-button {
-  background-color: #023264;
-  color: #fbfbfb;
-  padding: 10px;
-  border: 1px solid #38709e;
-  cursor: pointer;
-}
-button :hover {
-  background-color: #38709e;
-  color: #fbfbfb;
-  padding: 10px;
-  border: 1px solid #023264;
+header .intro-text .intro-heading {
+  font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 50px;
+  line-height: 50px;
+  margin-bottom: 25px;
 }
 
 .navbar {
@@ -107,43 +127,82 @@ button :hover {
   background-color: #023264;
 }
 
-header {
-  margin: 0;
-  padding: 0;
-  width: 100vw;
-  height: 700px;
-  background-image: url(../img/header-bg.jpg);
-  background-repeat: none;
-  background-attachment: scroll;
-  background-position: center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  -o-background-size: cover;
+.container-services {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 15px;
+  margin: 0 auto;
+  width: 100%;
+}
+.container-services .row {
+  margin: -15px;
   text-align: center;
-  color: #fff;
+  position: relative;
+  min-height: 1px;
+  padding: 20x 15px;
 }
-
-header .intro-text {
-  padding-top: 100px;
-  padding-bottom: 50px;
+.container-services .row .section-heading {
+  font-family: "Montserrat", sans-serif;
+  font-size: 40px;
+  margin: 0 0 15px;
 }
-
-header .intro-text .intro-lead-in {
-  font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
+.container-services .row .section-subheading {
+  font-size: 16px;
+  font-family: "Droid Serif", sans-serif;
+  text-transform: none;
   font-style: italic;
-  font-size: 22px;
-  line-height: 22px;
-  margin-bottom: 25px;
+  font-weight: 400;
+  margin-bottom: 32px;
+  color: #777;
+}
+.container-services .row-1,
+.container-services .row-2 {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  position: relative;
+  min-height: 1px;
+  padding: 0 15px;
+}
+.container-services .row-1 .service-heading,
+.container-services .row-2 .service-heading {
+  margin: 15px 0;
+  text-transform: none;
+}
+.container-services .row-1-service,
+.container-services .row-2-service {
+  flex: 3.33;
+}
+.container-services .row-2-service {
+  flex: 5;
 }
 
-header .intro-text .intro-heading {
-  font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  text-transform: uppercase;
-  font-weight: 700;
-  font-size: 50px;
-  line-height: 50px;
-  margin-bottom: 25px;
+.main {
+  margin-top: 60px;
+  padding: 0;
+}
+
+h1 {
+  color: #38709e;
+}
+
+p {
+  font-size: 16px;
+  color: #023264;
+}
+
+button {
+  background-color: #023264;
+  color: #fbfbfb;
+  padding: 10px;
+  border: 1px solid #38709e;
+  cursor: pointer;
+}
+button :hover {
+  background-color: #38709e;
+  color: #fbfbfb;
+  padding: 10px;
+  border: 1px solid #023264;
 }
 
 /*# sourceMappingURL=app.css.map */
