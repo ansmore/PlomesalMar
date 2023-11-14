@@ -2,48 +2,64 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  list-style: none;
+  text-decoration: none;
+  border: none;
+  outline: none;
 }
 
 html {
-  background-color: #fbfbfb;
-  display: flex;
+  font-size: 62.5%; /* 1rem -> 10px*/
 }
 
 body {
   font-family: Arial, Helvetica, sans-serif;
+  width: 100vw;
   margin: 0;
   padding: 0;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.main {
-  margin-top: 60px;
+header {
+  margin: 0;
   padding: 0;
-  height: 250vh;
+  width: 100vw;
+  height: 600px;
+  background-image: url(../img/header-bg.jpg);
+  background-repeat: none;
+  background-attachment: scroll;
+  background-position: center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  text-align: center;
+  color: #fff;
 }
 
-h1 {
-  color: #38709e;
+header .intro-text {
+  padding-top: 100px;
+  padding-bottom: 50px;
 }
 
-p {
-  font-size: 16px;
-  color: #023264;
+header .intro-text .intro-lead-in {
+  font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-style: italic;
+  font-size: 22px;
+  line-height: 22px;
+  margin-bottom: 25px;
 }
 
-button {
-  background-color: #023264;
-  color: #fbfbfb;
-  padding: 10px;
-  border: 1px solid #38709e;
-  cursor: pointer;
-}
-button :hover {
-  background-color: #38709e;
-  color: #fbfbfb;
-  padding: 10px;
-  border: 1px solid #023264;
+header .intro-text .intro-heading {
+  font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 50px;
+  line-height: 50px;
+  margin-bottom: 25px;
 }
 
 .navbar {
@@ -107,43 +123,32 @@ button :hover {
   background-color: #023264;
 }
 
-header {
-  margin: 0;
+.main {
+  margin-top: 60px;
   padding: 0;
-  width: 100vw;
-  height: 700px;
-  background-image: url(../img/header-bg.jpg);
-  background-repeat: none;
-  background-attachment: scroll;
-  background-position: center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  -o-background-size: cover;
-  text-align: center;
-  color: #fff;
 }
 
-header .intro-text {
-  padding-top: 100px;
-  padding-bottom: 50px;
+h1 {
+  color: #38709e;
 }
 
-header .intro-text .intro-lead-in {
-  font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-style: italic;
-  font-size: 22px;
-  line-height: 22px;
-  margin-bottom: 25px;
+p {
+  font-size: 16px;
+  color: #023264;
 }
 
-header .intro-text .intro-heading {
-  font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  text-transform: uppercase;
-  font-weight: 700;
-  font-size: 50px;
-  line-height: 50px;
-  margin-bottom: 25px;
+button {
+  background-color: #023264;
+  color: #fbfbfb;
+  padding: 10px;
+  border: 1px solid #38709e;
+  cursor: pointer;
+}
+button :hover {
+  background-color: #38709e;
+  color: #fbfbfb;
+  padding: 10px;
+  border: 1px solid #023264;
 }
 
 /*# sourceMappingURL=app.css.map */

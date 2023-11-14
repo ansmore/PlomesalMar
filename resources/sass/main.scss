@@ -4,12 +4,10 @@
 @import "components/header";
 @import "components/navigation";
 
-$nav-height: 60px;
-
 .main {
   margin-top: $nav-height;
   padding: 0;
-  height: 250vh;
+  // height: 250vh;
 }
 
 h1 {
