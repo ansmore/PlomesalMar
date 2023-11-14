@@ -6,27 +6,28 @@ import {
 
 const chargeText = async () => {
   const abailableLanguages = await loadAbailablesLanguages();
-  const abailablePages = await loadAbailablesFiles();
+  // const abailablePages = await loadAbailablesFiles();
 
   const navigatorLanguage = navigator.language.slice(0, 2);
-  const fileName = window.location.href.split("/").slice(-1)[0];
+  // const fileName = window.location.href.split("/").slice(-1)[0];
   // temporal HardCode
-  // let fileName = "home";
-
   const selectedLanguage = abailableLanguages.includes(navigatorLanguage)
     ? navigatorLanguage
     : "es";
-  const selectedPage = abailablePages.includes(fileName) ? fileName : "home";
+  // const selectedPage = abailablePages.includes(fileName)
+  //   ? fileName
+  //   : "home";
 
+  let selectedPage = "header";
   try {
     const dictionary = await loadDictionary(selectedLanguage, selectedPage);
 
-    document.querySelector("#home-services")!.textContent =
-      dictionary.homeServices;
-    document.querySelector("#home-services-subheading")!.textContent =
-      dictionary.homeServicesSubheading;
-
-    document.querySelector("dfdfgtitle")!.textContent = dictionary.title;
+    document.querySelector("#intro-lead-in")!.textContent =
+      dictionary.introLeadIn;
+    document.querySelector("#intro-heading")!.textContent =
+      dictionary.introHeading;
+    document.querySelector("#intro-button")!.textContent =
+      dictionary.introButton;
   } catch (error) {
     console.error("Error loading the text", error);
   }

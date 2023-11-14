@@ -1,8 +1,10 @@
 {
-  "title": "Mi Página Web",
-  "description": "Esta es una descripción de mi página web 2.4.",
-  "titleNuevo": "digitalizacion",
-  "descriptionDigitalizacion": "Estás en digitalización",
   "salutation": "Hola, mundo!",
-  "bottonHello": "Haz clic aquí"
+  "bottonHello": "Haz clic aquí",
+  "homeServices": "Servicios",
+  "homeServicesSubheading": "Análisis, desarrollo y formación de soluciones a sus procesos empresariales.",
+
+  "homeServdicses": "Servicios",
+  "homeServdices": "Servicios",
+  "homeServicses": "Servicios"
 }

@@ -10,19 +10,25 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 import { loadDictionary, loadAbailablesLanguages, } from "./helpers/dictionary.js";
 const chargeText = () => __awaiter(void 0, void 0, void 0, function* () {
     const abailableLanguages = yield loadAbailablesLanguages();
+    // const abailablePages = await loadAbailablesFiles();
     const navigatorLanguage = navigator.language.slice(0, 2);
+    // const fileName = window.location.href.split("/").slice(-1)[0];
+    // temporal HardCode
     const selectedLanguage = abailableLanguages.includes(navigatorLanguage)
         ? navigatorLanguage
         : "es";
+    // const selectedPage = abailablePages.includes(fileName)
+    //   ? fileName
+    //   : "home";
+    let selectedPage = "header";
     try {
-        const dictionary = yield loadDictionary(selectedLanguage);
-        document.getElementById("nav-service").textContent = dictionary.navService;
-        document.getElementById("nav-porfolio").textContent =
-            dictionary.navPorfolio;
-        document.getElementById("nav-team").textContent = dictionary.navTeam;
-        document.getElementById("nav-location").textContent =
-            dictionary.navLocation;
-        document.getElementById("nav-contact").textContent = dictionary.navContact;
+        const dictionary = yield loadDictionary(selectedLanguage, selectedPage);
+        document.querySelector("#intro-lead-in").textContent =
+            dictionary.introLeadIn;
+        document.querySelector("#intro-heading").textContent =
+            dictionary.introHeading;
+        document.querySelector("#intro-button").textContent =
+            dictionary.introButton;
     }
     catch (error) {
         console.error("Error loading the text", error);
