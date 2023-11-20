@@ -20,7 +20,7 @@ const chargeText = () => __awaiter(void 0, void 0, void 0, function* () {
     // const selectedPage = abailablePages.includes(fileName)
     //   ? fileName
     //   : "home";
-    let selectedPage = "navigation";
+    let selectedPage = "navigationHome";
     try {
         const dictionary = yield loadDictionary(selectedLanguage, selectedPage);
         document.getElementById("nav-home").textContent = dictionary.navHome;
@@ -29,7 +29,6 @@ const chargeText = () => __awaiter(void 0, void 0, void 0, function* () {
         document.getElementById("nav-service").textContent = dictionary.navService;
         document.getElementById("nav-porfolio").textContent =
             dictionary.navPorfolio;
-        document.getElementById("nav-team").textContent = dictionary.navTeam;
         document.getElementById("nav-location").textContent =
             dictionary.navLocation;
         document.getElementById("nav-contact").textContent = dictionary.navContact;

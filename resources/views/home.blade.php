@@ -3,6 +3,8 @@
 @section('title', 'Inicio')
 @section('content')
 
+    @include('components.navigationHome')
+
     <body class="main">
         <!-- Services Section -->
         <section id="services">

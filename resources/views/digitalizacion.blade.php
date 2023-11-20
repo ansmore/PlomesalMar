@@ -3,6 +3,8 @@
 @section('title', 'Digitalización')
 @section('content')
 
+    @include('components.navigationDigitalizacion')
+
     <body class="main">
         <h1 id="titleNuevo"></h1>
         <p id="descriptionDigitalizacion"></p>
