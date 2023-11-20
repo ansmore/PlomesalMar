@@ -1,8 +1,5 @@
 {
-  "title": "Mi Página Web",
-  "description": "Esta es una descripción de mi página web 2.4.",
-  "titleNuevo": "digitalizacion",
-  "descriptionDigitalizacion": "Estás en digitalización",
-  "salutation": "Hola, mundo!",
-  "bottonHello": "Haz clic aquí"
+  "servicesHeading": "SERVICIOS",
+  "servicesText": "Si eres una pequeña empresa,microempresa o persona de autoempleo. Con el programa kit digital te ayudamos a digitalizar tu empresa. Como profesionales en el sector, te proporcionamos las herramientas necesarias para que puedas dar el salto de forma profesional y segura",
+  "servicesLetter": "Una empresa que avanza la digitalizacion en tus negocios"
 }
