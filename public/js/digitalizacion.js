@@ -21,9 +21,12 @@ const chargeText = () => __awaiter(void 0, void 0, void 0, function* () {
     const selectedPage = abailablePages.includes(fileName) ? fileName : "home";
     try {
         const dictionary = yield loadDictionary(selectedLanguage, selectedPage);
-        document.querySelector("#titleNuevo").textContent = dictionary.titleNuevo;
-        document.querySelector("#descriptionDigitalizacion").textContent =
-            dictionary.descriptionDigitalizacion;
+        document.querySelector("#services-heading").textContent =
+            dictionary.servicesHeading;
+        document.querySelector("#services-text").textContent =
+            dictionary.servicesText;
+        document.querySelector("#services-letter").textContent =
+            dictionary.servicesLetter;
     }
     catch (error) {
         console.error("Error loading the text", error);

@@ -14,13 +14,13 @@
                     <a class="nav-link page-scroll" href="digitalizacion#agente" id="nav-agente"></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" href="digitalizacion" id="nav-requisitos"></a>
+                    <a class="nav-link page-scroll" href="digitalizacion#requisitos" id="nav-requisitos"></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" href="http://biit.es/" id="nav-bono"></a>
+                    <a class="nav-link page-scroll" href="digitalizacion#bono" id="nav-bono"></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" href="/#site" id="nav-faq"></a>
+                    <a class="nav-link page-scroll" href="digitalizacion#faq" id="nav-faq"></a>
                 </li>
             </ul>
         </div>
