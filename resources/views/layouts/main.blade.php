@@ -9,11 +9,11 @@
 </head>
 
 <body>
-    @include('components.navigation')
     @include('components.header')
     <div class="content">
         @yield('content')
     </div>
+    @include('components.footer')
 </body>
 
 </html>
