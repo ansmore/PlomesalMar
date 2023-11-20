@@ -18,7 +18,7 @@ const chargeText = async () => {
   //   ? fileName
   //   : "home";
 
-  let selectedPage = "navigation";
+  let selectedPage = "navigationHome";
   try {
     const dictionary = await loadDictionary(selectedLanguage, selectedPage);
 
@@ -28,7 +28,6 @@ const chargeText = async () => {
     document.getElementById("nav-service")!.textContent = dictionary.navService;
     document.getElementById("nav-porfolio")!.textContent =
       dictionary.navPorfolio;
-    document.getElementById("nav-team")!.textContent = dictionary.navTeam;
     document.getElementById("nav-location")!.textContent =
       dictionary.navLocation;
     document.getElementById("nav-contact")!.textContent = dictionary.navContact;
