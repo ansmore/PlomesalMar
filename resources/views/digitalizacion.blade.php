@@ -4,6 +4,7 @@
 @section('content')
 
     @include('components.navigationDigitalizacion')
+    @include('components.header')
 
     <body class="main">
 
