@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    @include('components.header')
+
     <div class="content">
         @yield('content')
     </div>

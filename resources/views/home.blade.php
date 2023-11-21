@@ -4,6 +4,7 @@
 @section('content')
 
     @include('components.navigationHome')
+    @include('components.header')
 
     <body class="main">
         <!-- Services Section -->
@@ -40,7 +41,7 @@
                             <span class="fa fa-list-ul cart fa-stack-1x fa-inverse"></span>
                         </span>
                         <h4 class="service-heading">
-                            <a href="consultoria.html" id="services-3"></a>
+                            <a href="consultoria" id="services-3"></a>
                         </h4>
                     </div>
                 </div>
