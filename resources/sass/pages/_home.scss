@@ -8,7 +8,7 @@ $container-padding: 15px;
   width: 100%;
 
   .row {
-    margin: 0 -$container-padding;
+    margin: 0 (-$container-padding);
     text-align: center;
     position: relative;
     min-height: 1px;

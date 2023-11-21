@@ -135,7 +135,7 @@ header .intro-text .intro-heading {
   width: 100%;
 }
 .container-services .row {
-  margin: -15px;
+  margin: 0 -15px;
   text-align: center;
   position: relative;
   min-height: 1px;

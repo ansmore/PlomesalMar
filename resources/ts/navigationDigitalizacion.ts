@@ -22,12 +22,14 @@ const chargeText = async () => {
   try {
     const dictionary = await loadDictionary(selectedLanguage, selectedPage);
 
-    document.getElementById("nav-service")!.textContent = dictionary.navService;
-    document.getElementById("nav-agente")!.textContent = dictionary.navAgente;
-    document.getElementById("nav-requisitos")!.textContent =
-      dictionary.navRequisitos;
-    document.getElementById("nav-bono")!.textContent = dictionary.navBono;
-    document.getElementById("nav-faq")!.textContent = dictionary.navFaq;
+    const textsToChange = document.querySelectorAll("[value-text]");
+
+    textsToChange.forEach((element) => {
+      const dataValue = element.getAttribute("value-text");
+      if (dataValue && dictionary[dataValue]) {
+        element!.textContent = dictionary[dataValue];
+      }
+    });
   } catch (error) {
     console.error("Error loading the text", error);
   }

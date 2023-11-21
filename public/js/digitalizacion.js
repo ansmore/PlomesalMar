@@ -21,12 +21,13 @@ const chargeText = () => __awaiter(void 0, void 0, void 0, function* () {
     const selectedPage = abailablePages.includes(fileName) ? fileName : "home";
     try {
         const dictionary = yield loadDictionary(selectedLanguage, selectedPage);
-        document.querySelector("#services-heading").textContent =
-            dictionary.servicesHeading;
-        document.querySelector("#services-text").textContent =
-            dictionary.servicesText;
-        document.querySelector("#services-letter").textContent =
-            dictionary.servicesLetter;
+        const textsToChange = document.querySelectorAll("[value-text]");
+        textsToChange.forEach((element) => {
+            const dataValue = element.getAttribute("value-text");
+            if (dataValue && dictionary[dataValue]) {
+                element.textContent = dictionary[dataValue];
+            }
+        });
     }
     catch (error) {
         console.error("Error loading the text", error);

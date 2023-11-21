@@ -9,199 +9,145 @@
 
         <section id="servicios" class="letter">
             <div>
-                <h2 id="services-heading" class="titulos"></h2>
-                <p id="services-text" class="letter"></p>
-                <p id="services-letter" class="letter"></p>
-                <img src="./imagenesdg/banner.jpg" class="img-responsive img-centered">
+                <h2 value-text="servicesHeading" class="titulos"></h2>
+                <p value-text="servicesText" class="letter"></p>
+                <p value-text="servicesLetter" class="letter"></p>
+                <img src="./img/banner.jpg" class="img-responsive img-centered">
             </div>
         </section>
         <section id="agente" class="letter">
             <div>
-                <h2 class="titulos">AGENTE DIGITALIZADOR</h2>
+                <h2 value-text="agenteTitle" class="titulos"></h2>
 
-                <article class="letter"> Una empresa que ofrece soluciones y servicios tecnológicos que necesitan
-                    las
-                    pequeñas empresas para avanzar en la digitalización de sus negocios.</article>
+                <article value-text="agenteLetter" class="letter"></article>
 
-                <img src="./imagenesdg/kitdigital.png" alt="kitdigital" class="kitdigital">
+                <img src="./img/kitdigital.png" alt="kitdigital" class="kitdigital">
             </div>
         </section>
         <section>
             <div class="divbackground">
-                <p class="preguntakitd">¿QUE ES EL KIT DIGITAL?</p>
-                <p class="respuestakitd">El kit digital es una iniciativa del gobierno español, que tiene como
-                    objetivo
-                    subvencionar la implantación de soluciones digitales disponibles en el mercado para conseguir un
-                    avance significativo en el nivel de madurez digital</p>
+                <p value-text="kitPregunta" class="preguntakitd"></p>
+                <p value-text="kidRespuesta" class="respuestakitd"></p>
             </div>
         </section>
         <section>
             <div>
-                <p class="titulos">¿A QUIÉN VA DIRIGIDO?</p>
-                <p class="letter">Las soluciones digitales que proporciona el kit digital estan orientadas a las
-                    necesidades de las pequeñas empresas, microempresas y trabajadores autonómos, que pertenezcan a
-                    cualquier sector o tipología de negocio</p>
+                <p value-text="kitDirecction" class="titulos"></p>
+                <p value-text="kitSoluciones" class="letter"></p>
             </div>
         </section>
         <section>
             <div>
-                <p class="titulos">¿CUÁL ES EL IMPORTE DEL BONO?</p>
-                <p class="letter">Si cumples con las condiciones establecidas en las bases de la convocatoria de la
-                    ayuda del KIT Digital, podrás disponer de un bono digital que te permitirá acceder a las
-                    soluciones
-                    de digitalización.</p>
-                <p class="letter">Los bonos digitales oscilan entre 2.000 y 12.000 Euros en función del tamaño de tu
-                    empresa.</p>
+                <p value-text="bonoHeading" class="titulos"></p>
+                <p value-text="bonoCondiciones" class="letter"></p>
+                <p value-text="bonoCantidad" class="letter"></p>
             </div>
         </section>
         <section id="requisitos">
             <div>
-                <p class="titulos">REQUISITOS PARA SOLICITAR AYUDA</p>
+                <p value-text="requisitosHeading" class="titulos"></p>
                 <ul>
                     <li>
-                        <p class="letter">Ser una microempresa, pequeña empresa o trabajador autonómo. Tenga en
-                            cuenta
-                            que , en función del tamaño de su empresa, el bono del kit digital será de mayor o menor
-                            cuantía</p>
+                        <p value-text="requisitosMicroempresa" class="letter"></p>
                     </li>
                     <li>
-                        <p class="letter">No estar sujeto a una orden de recuperación pendiente de la comisión
-                            europea
-                            que haya declarado una ayuda ilegal e incompatible con el mercado común</p>
+                        <p value-text="requisitosRecuperacion" class="letter"></p>
                     </li>
                     <li>
-                        <p class="letter">Estar en situación de alta y tener antigüedad mínima establecida en la
-                            convocatoria</p>
+                        <p value-text="requisitosSituacion" class="letter"></p>
                     </li>
                     <li>
-                        <p class="letter">No tener la consideración de empresa en crisis</p>
+                        <p value-text="requisitosCrisis" class="letter"></p>
                     </li>
                     <li>
-                        <p class="letter">Estar al corriente de obligaciones tributarias con respecto a la seguridad
-                            social</p>
+                        <p value-text="requisitosObligaciones" class="letter"></p>
                     </li>
                     <li>
-                        <p class="letter">No incurrir en ninguna de las prohibiciones previstas en el articulo 13.2
-                            de
-                            la ley 38/2003, de 17 de noviembre, general de subvenciones</p>
+                        <p value-text="requisitosProhibiciones" class="letter"></p>
                     </li>
                     <li>
-                        <p class="letter">No superar el límite de ayudas mínimas</p>
+                        <p value-text="requisitosLimite" class="letter"></p>
                     </li>
                     <li>
-                        <p class="letter">Hacer previamente el test de Autoevaluación del nivel de madurez digital
-                            de
-                            accelera PYME. Aunque el resultado no determinará su concesión</p>
+                        <p value-text="requisitosAutoevaluacion" class="letter"></p>
                     </li>
                     <li>
-                        <p class="letter">Iniciar el proyecto en los tres meses desde la concesión del kit digital
-                        </p>
+                        <p value-text="requisitosIniciar" class="letter"></p>
                     </li>
                 </ul>
             </div>
         </section>
         <section>
             <div>
-                <p class="titulos">DESDE PYMESOFT PODEMOS AYUDARTE CON:</p>
-                <p class="frecuentes">Business Intelligence y Analítica</p>
-                <p class="letter">Todas nuestras aplicaciones están conectadas al módulo de análisis de negocio de
-                    SAGE
-                    200c, a través del cual se puede extraer informes de análisis y reporting.</p>
-
-                <p class="letter">Nuestro rango de precios oscila entre los 2000 y 6000 euros.</p>
-
-                <p class="frecuentes">Gestión de clientes</p>
-                <p class="letter">Nuestra solución BIIT Manager CRM permite una gestión integral de la relación con
-                    los
-                    clientes. La aplicación facilita el seguimiento comercial de forma ágil y eficaz.</p>
-
-                <p class="letter">Nuestro rango de precios oscila entre los 4000 y 10000 euros.</p>
-
-                <p class="frecuentes">Gestión de procesos</p>
-                <p class="letter">En Pymesoft disponemos de diferentes herramientas para automatizar y digitalizar
-                    los
-                    principales procesos de gestión empresarial. Desde gestión de almacén, fabricación, intranet,
-                    SAT o
-                    laboral.</p>
-
-                <p class="letter">Nuestro rango de precios oscila entre los 6000 y 30000 euros.</p>
-
-                <p class="frecuentes">Factura electrónica</p>
-
-                <p class="letter"> Todos nuestros módulos y soluciones envían información de facturación a SAGE
-                    200c.
-                    Este ERP permite despúes el envío de E-factura a los clientes.</p>
-                <p class="letter">Nuestro rango de precios oscila entre los 1500 y 6000 euros.</p>
-
-                <p class="frecuentes">Comercio Electrónico</p>
-                <p class="letter">Ofrecemos el montaje y personalización de la tienda electrónica para cualquier
-                    cliente
-                    que lo requiera. Esta solución sirve para comercio B2B y B2C.</p>
-                <p class="letter">Nuestro rango de precios oscila entre los 4000 y 8000 euros.</p>
+                <p value-text="ayudaHeading" class="titulos"></p>
+                <p value-text="ayudaBusines" class="frecuentes"></p>
+                <p value-text="ayudaAnalisis" class="letter"></p>
+                <p value-text="ayudaRango" class="letter"></p>
+                <p value-text="ayudaClientes" class="frecuentes"></p>
+                <p value-text="ayudaBIIT" class="letter"></p>
+                <p value-text="ayudaPrecios" class="letter"></p>
+                <p value-text="ayudaGestion" class="frecuentes"></p>
+                <p value-text="ayudaHerramientas" class="letter"></p>
+                <p value-text="ayudaNuestro" class="letter"></p>
+                <p value-text="ayudaFactura" class="frecuentes"></p>
+                <p value-text="ayudaModulos" class="letter"></p>
+                <p value-text="ayudaModulosSage" class="letter"></p>
+                <p value-text="ayudaComercio" class="frecuentes"></p>
+                <p value-text="ayudaComercioElectronico" class="letter"></p>
+                <p value-text="ayudaComercioPrecios" class="letter"></p>
             </div>
         </section>
         <section>
             <div>
-                <p class="titulos" id="bono digital">SOLICITAR BONO DIGITAL</p>
+                <p value-text="solicitarHeading" class="titulos" id="bono digital"></p>
                 <ul>
                     <li>
-                        <p class="letter">Regístrate en: <a
-                                href="https://www.acelerapyme.es/user/login">https://www.acelerapyme.gob.es/</a> y
-                            completa el <a
-                                href="https://acelerapyme.es/quieres-conocer-el-grado-de-digitalizacion-de-tu-pyme">
-                                Test de diagnóstico</a></p>
+                        <p value-text="solicitarRegistro" class="letter"> </p>
+                        <a value-text="solicitarWeb" href="https://www.acelerapyme.es/user/login"></a>
+                        <p value-text="solicitarCompleta"></p>
+                        <a value-text="solicitarTest"
+                            href="https://acelerapyme.es/quieres-conocer-el-grado-de-digitalizacion-de-tu-pyme"></a>
+
                     </li>
                     <li>
-                        <p class="letter">Consulta la información disponible de las <a
-                                href="https://acelerapyme.es/kit-digital/soluciones-digitales">soluciones de
-                                digitalización</a> que pondrá a tu disposición el programa kit digital</p>
+                        <p value-text="solicitarConsulta" class="letter"> </p>
+                        <a value-text="solicitarSoluciones"
+                            href="https://acelerapyme.es/kit-digital/soluciones-digitales"></a>
+                        <p value-text="solicitarKitDigital"></p>
+
                     </li>
                     <li>
-                        <p class="letter">Solicita la ayuda kit digital en la sede electrónica de <a
-                                href="https://sede.red.gob.es/"> Red.es</a> y completa todos los formularios </p>
+                        <p value-text="solicitarSedeElectronica" class="letter"></p>
+                        <a value-text="solicitarRed" href="https://sede.red.gob.es/"></a>
+                        <p value-text="solicitarFormularios"></p>
+
                     </li>
                 </ul>
             </div>
         </section>
         <section>
             <div id="faq">
-                <p class="titulos"> PREGUNTAS FRECUENTES</p>
+                <p value-text="faqPreguntas" class="titulos"></p>
             </div>
             <div>
                 <div>
-                    <p class="frecuentes">¿Puedo pedir un bono digital para mejorar un servicio que ya tengo?</p>
-                    <p class="letter">Sí, siempre y cuando la nueva solución suponga una mejora funcional con
-                        respecto a
-                        la que tienes actualmente y, por tanto, la sustituya. Por ejemplo, puedes destinar el bono
-                        digital a renovar tu página web actual o a mejorar tu sistema de copias de seguridad cloud
-                        por
-                        uno con doble copia y mayores prestaciones de seguridad</p>
+                    <p value-text="faqBono" class="frecuentes"></p>
+                    <p value-text="faqSolucion" class="letter"></p>
                 </div>
-
                 <div>
-                    <p class="frecuentes">¿Cómo y cuándo se cobran las ayudas?</p>
-                    <p class="letter">Las ayudas se cobrarán en forma de bono digital, y no podrán hacerse efectivos
-                        hasta que el agente digitalizador, en nombre de la empresa beneficiaria,justifique la
-                        realización de la actividad por la cual se concede la subvención y el órgano regulador
-                        considere
-                        aprobada su concesión.
-                        Para ello, la empresa beneficiaria debería firmar un acuerdo de Prestación de soluciones de
-                        Digitalización con alguno de los agntes digitalizadores adheridos a su seleccionado
-                    </p>
+                    <p value-text="faqCobrar" class="frecuentes"></p>
+                    <p value-text="faqAyudas" class="letter"></p>
                 </div>
-
                 <div>
-                    <p class="frecuentes">Quiero obtener mi kit digital</p>
-                    <p class="letter">Ponte en contacto con nosotros y te informaremos: <a href="/#contact">
-                            Contacto</a>
+                    <p value-text="faqObtener" class="frecuentes"></p>
+                    <p value-text="faqContacto" class="letter">
+                        <a value-text="faqContactUs" href="/#contact"></a>
                     </p>
                 </div>
             </div>
         </section>
 
-        <img src="./imagenesdg/kit-digital.png" class="img-responsive img-centered">
-
+        <img src="./img/kit-digital.png" class="img-responsive img-centered">
     </body>
-
     <script type="module" src="{{ asset('js/digitalizacion.js') }}"></script>
 @endsection
