@@ -9,13 +9,13 @@
 
         <section id="servicios" class="letter">
             <div>
-                <h2 id="services-heading" class="titulos">sghdrtjhd</h2>
+                <h2 id="services-heading" class="titulos"></h2>
                 <p id="services-text" class="letter"></p>
                 <p id="services-letter" class="letter"></p>
-                <img src="./img/banner.jpg" class="img-responsive img-centered">
+                <img src="./imagenesdg/banner.jpg" class="img-responsive img-centered">
             </div>
         </section>
-        <section id="agente digitalizador" class="letter">
+        <section id="agente" class="letter">
             <div>
                 <h2 class="titulos">AGENTE DIGITALIZADOR</h2>
 
