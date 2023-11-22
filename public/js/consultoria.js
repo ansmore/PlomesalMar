@@ -31,4 +31,4 @@ const chargeText = () => __awaiter(void 0, void 0, void 0, function* () {
         console.error("Error loading the text", error);
     }
 });
-chargeText();
+window.addEventListener("load", chargeText);

@@ -36,4 +36,4 @@ const chargeText = async () => {
   }
 };
 
-chargeText();
+window.addEventListener("load", chargeText);

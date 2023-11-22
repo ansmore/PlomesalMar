@@ -31,4 +31,5 @@ const chargeText = async () => {
     console.error("Error loading the text", error);
   }
 };
-chargeText();
+
+window.addEventListener("load", chargeText);

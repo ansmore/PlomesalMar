@@ -41,7 +41,6 @@
                         <p value-text="consultoriaIntegrado" class="text-muted text-justify"></p>
                         <p value-text="consultoriaMantenimiento" class="text-muted text-justify"></p>
                     </div>
-
                     <div class="col-lg-6 text-center  col-md-offset-0 col-lg-offset-3">
 
                         <span class="fa-stack fa-4x">
@@ -62,24 +61,19 @@
                         <p value-text="consultoriaNecesidades" class="text-muted text-justify"></p>
                         <p value-text="consultoriaAplicaciones" class="text-muted text-justify"></p>
                     </div>
-
                     <div class="col-lg-6 text-center">
 
                         <span class="fa-stack fa-4x">
                             <span class="fa fa-circle fa-stack-2x text-primary"></span>
                             <span class="fa fa-list-ul cart fa-stack-1x fa-inverse"></span>
                         </span>
-
                         <h3 value-text="consultoriaFormacion" class="section-heading"></h3>
                         <p value-text="consultoriaFormaconText" class="text-muted text-justify"></p>
-
                         <p value-text="consultoriaAulas" class="text-muted text-justify"></p>
                     </div>
                 </div>
             </div>
         </section>
-
-
     </body>
     <script type="module" src="{{ asset('js/digitalizacion.js') }}"></script>
 @endsection

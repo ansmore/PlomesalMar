@@ -109,7 +109,6 @@
         </section>
 
         <!-- Contact-Custom -->
-
         <section id="contact">
             <div class="container">
                 <div class="row">
@@ -123,7 +122,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="row">
                     <div
                         class="col-xs-8 col-sm-8 col-md-6 col-lg-6 col-xs-offset-2 col-sm-offset-2 col-md-offset-3 col-lg-offset-3">
@@ -133,19 +131,16 @@
                                 <input type="text" class="form-control" id="name" name="name"
                                     placeholder="Nombre" tabindex="1" required>
                             </div>
-
                             <div class="form-group">
                                 <label class="form-label" for="email" value-text="contactEmail"></label>
                                 <input type="email" class="form-control" id="email" name="email"
                                     placeholder="Email" tabindex="2" required>
                             </div>
-
                             <div class="form-group">
                                 <label class="form-label" for="phone" value-text="contactTelephone"></label>
                                 <input type="tel" class="form-control" id="phone" name="phone" maxlength="9"
                                     placeholder="Telèfono" tabindex="3" required>
                             </div>
-
                             <div class="form-group">
                                 <label class="form-label" for="message" value-text="contactMessage"></label>
                                 <textarea rows="5" cols="50" name="message" class="form-control" id="message"
@@ -167,19 +162,15 @@
                                         value-text="contactUse"></a>
                                 </div>
                             </div>
-
                             <div class="text-center">
                                 <button type="button" class="btn btn-start-order button-formulario"
                                     value-text="contactButton"></button>
                             </div>
-
                         </form>
                     </div>
                 </div>
             </div>
         </section>
-
     </body>
-
     <script type="module" src="{{ asset('js/home.js') }}"></script>
 @endsection
