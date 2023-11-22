@@ -67,16 +67,10 @@
                             <span class="fa fa-list-ul cart fa-stack-1x fa-inverse"></span>
                         </span>
 
-                        <h3 class="section-heading">Formación</h3>
-                        <p class="text-muted text-justify">La formación continua es una condición necesaria para obtener
-                            siempre el rendimiento adecuado de las herramientas y los equipos informáticos disponibles.
-                            Pymesoft informáticos le garantiza el máximo aprovechamiento de su tiempo, mediante el uso de
-                            las últimas tecnologías, la experiencia y el trato personalizado de nuestros profesores.</p>
+                        <h3 value-text="consultoriaFormacion" class="section-heading"></h3>
+                        <p value-text="consultoriaFormaconText" class="text-muted text-justify"></p>
 
-                        <p class="text-muted text-justify">Disponemos de diferentes aulas preparadas para impartir cursos de
-                            ofimática, gestión administrativa y comercial, fiscal y laboral, sistemas operativos y entornos,
-                            nuevas tecnologías en comunicaciones … con un enfoque práctico de los temarios, por parte de
-                            nuestros profesores.</p>
+                        <p value-text="consultoriaAulas" class="text-muted text-justify"></p>
                     </div>
                 </div>
             </div>
