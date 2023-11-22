@@ -12,7 +12,10 @@
             <div class="container">
                 <div class="intro-text">
                     <div value-text="consultoriaHeader" class="intro-heading"></div>
-                    <a value-text="consultoriaInformacion" href="#services2" class="page-scroll btn btn-xl"></a>
+                    <a value-text="consultoriaInformacion"
+                        href="{{ route('consultoria.section', ['section' => 'services2']) }}"
+                        class="page-scroll btn btn-xl"></a>
+                    {{-- #services2 --}}
                 </div>
             </div>
         </header>

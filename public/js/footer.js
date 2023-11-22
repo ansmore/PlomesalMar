@@ -20,14 +20,17 @@ const chargeText = () => __awaiter(void 0, void 0, void 0, function* () {
     // const selectedPage = abailablePages.includes(fileName)
     //   ? fileName
     //   : "home";
+    // Hardcode for components
     let selectedPage = "footer";
     try {
         const dictionary = yield loadDictionary(selectedLanguage, selectedPage);
-        document.querySelector("#footer-politica").textContent =
-            dictionary.footerPolitica;
-        document.querySelector("#footer-use").textContent = dictionary.footerUse;
-        document.querySelector("#footer-copyright").textContent =
-            dictionary.footerCopyright;
+        const textsToChange = document.querySelectorAll("[value-text]");
+        textsToChange.forEach((element) => {
+            const dataValue = element.getAttribute("value-text");
+            if (dataValue && dictionary[dataValue]) {
+                element.textContent = dictionary[dataValue];
+            }
+        });
     }
     catch (error) {
         console.error("Error loading the text", error);

@@ -18,16 +18,19 @@ const chargeText = async () => {
   //   ? fileName
   //   : "home";
 
+  // Hardcode for components
   let selectedPage = "header";
   try {
     const dictionary = await loadDictionary(selectedLanguage, selectedPage);
 
-    document.querySelector("#intro-lead-in")!.textContent =
-      dictionary.introLeadIn;
-    document.querySelector("#intro-heading")!.textContent =
-      dictionary.introHeading;
-    document.querySelector("#intro-button")!.textContent =
-      dictionary.introButton;
+    const textsToChange = document.querySelectorAll("[value-text]");
+
+    textsToChange.forEach((element) => {
+      const dataValue = element.getAttribute("value-text");
+      if (dataValue && dictionary[dataValue]) {
+        element!.textContent = dictionary[dataValue];
+      }
+    });
   } catch (error) {
     console.error("Error loading the text", error);
   }

@@ -18,6 +18,7 @@ const chargeText = async () => {
   //   ? fileName
   //   : "home";
 
+  // Hardcode for components
   let selectedPage = "navigationDigitalizacion";
   try {
     const dictionary = await loadDictionary(selectedLanguage, selectedPage);

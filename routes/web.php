@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\DigitizationController;
+use App\Http\Controllers\ConsultancyController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,14 +17,11 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', [HomeController::class, 'home'])->name('home');
+Route::get('/#{section?}', [HomeController::class, 'homeSection'])->name('home.section');
 
-Route::get('/consultoria', function () {
-    return view('consultoria');
-});
+Route::get('/consultoria', [ConsultancyController::class, 'consultoria'])->name('consultoria');
+Route::get('/consultoria#{section?}', [ConsultancyController::class, 'consultoriaSection'])->name('consultoria.section');
 
-Route::get('/digitalizacion', function () {
-    return view('digitalizacion');
-});
+Route::get('/digitalizacion', [DigitizationController::class, 'digitalizacion'])->name('digitalizacion');
+Route::get('/digitalizacion#{section?}', [DigitizationController::class, 'digitalizacionSection'])->name('digitalizacion.section');

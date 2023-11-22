@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-md-4">
                 <span> &copy;</span>
-                <span class="copyright" id="footer-copyright"><?php echo date('Y'); ?></span>
+                <span class="copyright" value-text="footerCopyright"><?php echo date('Y'); ?></span>
             </div>
             <div class="col-md-4">
                 <ul class="list-inline social-buttons">
@@ -23,10 +23,10 @@
             <div class="col-md-4">
                 <ul class="list-inline quicklinks">
                     <li>
-                        <a href="#" data-toggle="modal" data-target="#politica" id="footer-politica"></a>
+                        <a href="#" data-toggle="modal" data-target="#politica" value-text="footerPolitica"></a>
                     </li>
                     <li>
-                        <a href="#" data-toggle="modal" data-target="#terminos" id="footer-use"></a>
+                        <a href="#" data-toggle="modal" data-target="#terminos" value-text="footerUse"></a>
                     </li>
                 </ul>
             </div>

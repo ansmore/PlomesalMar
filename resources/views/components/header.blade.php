@@ -1,9 +1,10 @@
 <header>
     <div class="container">
         <div class="intro-text">
-            <div class="intro-lead-in" id="intro-lead-in"></div>
-            <div class="intro-heading" id="intro-heading"></div>
-            <a href="#services" class="page-scroll btn btn-xl" id="intro-button"></a>
+            <div class="intro-lead-in" value-text="introLeadIn"></div>
+            <div class="intro-heading" value-text="introHeading"></div>
+            <a href="{{ route('home', ['section' => 'services']) }}" class="page-scroll btn btn-xl"
+                value-text="introButton"></a>
         </div>
     </div>
 </header>

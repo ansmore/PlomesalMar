@@ -20,6 +20,7 @@ const chargeText = () => __awaiter(void 0, void 0, void 0, function* () {
     // const selectedPage = abailablePages.includes(fileName)
     //   ? fileName
     //   : "home";
+    // Hardcode for components
     let selectedPage = "navigationDigitalizacion";
     try {
         const dictionary = yield loadDictionary(selectedLanguage, selectedPage);
