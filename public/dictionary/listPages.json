@@ -1,9 +1,11 @@
 [
   "digitalizacion",
   "home",
-  "navigation",
   "header",
   "footer",
   "consultoria",
-  "biit"
+  "biit",
+  "navigationHome",
+  "navigationDigitalizacion",
+  "navigationBiit"
 ]

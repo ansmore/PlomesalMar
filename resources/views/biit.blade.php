@@ -3,7 +3,7 @@
 @section('title', 'Biit')
 @section('content')
 
-    @include('components.navigationHome')
+    @include('components.navigationBiit')
 
     <body class="main">
 
@@ -19,8 +19,8 @@
         </header>
 
         <!-- Services Section -->
-        <section id="services2">
-            <div>
+        <section>
+            <div id="biit">
                 <h3 value-text="biitHeading" class="section-heading"> </h3>
                 <p value-text="biitSubeading" class="text-muted text-justify"></p>
             </div>
