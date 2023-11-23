@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DigitizationController;
 use App\Http\Controllers\ConsultancyController;
+use App\Http\Controllers\BiitController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,3 +26,6 @@ Route::get('/consultoria#{section?}', [ConsultancyController::class, 'consultori
 
 Route::get('/digitalizacion', [DigitizationController::class, 'digitalizacion'])->name('digitalizacion');
 Route::get('/digitalizacion#{section?}', [DigitizationController::class, 'digitalizacionSection'])->name('digitalizacion.section');
+
+Route::get('/biit', [BiitController::class, 'biit'])->name('biit');
+Route::get('/biit#{section?}', [BiitController::class, 'biitSection'])->name('biit.section');
