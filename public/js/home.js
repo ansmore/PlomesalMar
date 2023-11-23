@@ -13,8 +13,6 @@ const chargeText = () => __awaiter(void 0, void 0, void 0, function* () {
     const abailablePages = yield loadAbailablesFiles();
     const navigatorLanguage = navigator.language.slice(0, 2);
     const fileName = window.location.href.split("/").slice(-1)[0];
-    // temporal HardCode
-    // let fileName = "home";
     const selectedLanguage = abailableLanguages.includes(navigatorLanguage)
         ? navigatorLanguage
         : "es";

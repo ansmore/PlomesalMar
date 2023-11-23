@@ -10,8 +10,6 @@ const chargeText = async () => {
 
   const navigatorLanguage = navigator.language.slice(0, 2);
   const fileName = window.location.href.split("/").slice(-1)[0];
-  // temporal HardCode
-  // let fileName = "home";
 
   const selectedLanguage = abailableLanguages.includes(navigatorLanguage)
     ? navigatorLanguage
