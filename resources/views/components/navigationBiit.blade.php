@@ -16,16 +16,22 @@
                 </li>
                 <li class="nav-item">
                     <div class="dropdown">
-                        <p class="nav-link page-scroll dropdown-toggle" id="navModulosDropdown" role="button"
+                        <a class="nav-link page-scroll dropdown-toggle" id="navModulosDropdown" role="button"
                             value-text="navModulos">Mo0dulos
-                        </p>
+                        </a>
                         <div class="dropdown-menu" aria-labelledby="navModulosDropdown">
-                            <a class="dropdown-item" href="{{ route('biit.section', ['section' => 1]) }}">Sección 1</a>
-                            <a class="dropdown-item" href="{{ route('biit.section', ['section' => 2]) }}">Sección 2</a>
-                            <a class="dropdown-item" href="{{ route('biit.section', ['section' => 3]) }}">Sección 3</a>
-                            <a class="dropdown-item" href="{{ route('biit.section', ['section' => 4]) }}">Sección 4</a>
-                            <a class="dropdown-item" href="{{ route('biit.section', ['section' => 5]) }}">Sección 5</a>
-                            <a class="dropdown-item" href="{{ route('biit.section', ['section' => 6]) }}">Sección 6</a>
+                            <a class="dropdown-item" href="{{ route('biitmodulos.section', ['section' => 'gestion']) }}"
+                                value-text="navGestion"></a>
+                            <a class="dropdown-item"
+                                href="{{ route('biitmodulos.section', ['section' => 'comercio']) }}"
+                                value-text="navComercio"></a>
+                            <a class="dropdown-item" href="{{ route('biitmodulos.section', ['section' => 'proceso']) }}"
+                                value-text="navProceso"></a>
+                            <a class="dropdown-item"
+                                href="{{ route('biitmodulos.section', ['section' => 'business']) }}"
+                                value-text="navBusiness"></a>
+                            <a class="dropdown-item" href="{{ route('biitmodulos.section', ['section' => 'factura']) }}"
+                                value-text="navFactura"></a>
                         </div>
                     </div>
                 </li>

@@ -2,5 +2,10 @@
   "navInicio": "INICIO",
   "navBiit": "POR QUE BIIT",
   "navModulos": "MÓDULOS",
-  "navContacto": "CONTACTO"
+  "navContacto": "CONTACTO",
+  "navGestion": "GESTIÓN CLIENTE",
+  "navComercio": "COMERCIO ELECTRÓNICO",
+  "navProceso": "GESTIÓN DE PROCESOS",
+  "navBusiness": "BUSINESS INTELLIGENCE Y ANÁLITICA",
+  "navFactura": "FACTURA ELECTRÓNICA"
 }

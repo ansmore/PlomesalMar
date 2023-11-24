@@ -29,3 +29,6 @@ Route::get('/digitalizacion#{section?}', [DigitizationController::class, 'digita
 
 Route::get('/biit', [BiitController::class, 'biit'])->name('biit');
 Route::get('/biit#{section?}', [BiitController::class, 'biitSection'])->name('biit.section');
+
+Route::get('/biitmodulos', [BiitController::class, 'biitmodulos'])->name('biitmodulos');
+Route::get('/biitmodulos#{section?}', [BiitController::class, 'biitmodulosSection'])->name('biitmodulos.section');
