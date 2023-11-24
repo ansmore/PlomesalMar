@@ -32,3 +32,5 @@ Route::get('/biit#{section?}', [BiitController::class, 'biitSection'])->name('bi
 
 Route::get('/biitModules', [BiitController::class, 'biitModules'])->name('biitModules');
 Route::get('/biitModules#{section?}', [BiitController::class, 'biitModulesSection'])->name('biitModules.section');
+
+Route::get('/biitContact', [BiitController::class, 'biitContact'])->name('biitContact');

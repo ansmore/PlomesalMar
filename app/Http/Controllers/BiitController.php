@@ -26,4 +26,9 @@ class BiitController extends Controller
     {
         return view('biitModules', ['section' => $section]);
     }
+
+    public function biitContact()
+    {
+        return view('biitContact');
+    }
 }
