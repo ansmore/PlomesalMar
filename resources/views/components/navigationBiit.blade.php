@@ -17,20 +17,20 @@
                 <li class="nav-item">
                     <div class="dropdown">
                         <a class="nav-link page-scroll dropdown-toggle" id="navModulosDropdown" role="button"
-                            value-text="navModulos">Mo0dulos
+                            value-text="navModulos">
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navModulosDropdown">
-                            <a class="dropdown-item" href="{{ route('biitmodulos.section', ['section' => 'gestion']) }}"
+                            <a class="dropdown-item" href="{{ route('biitModules.section', ['section' => 'gestion']) }}"
                                 value-text="navGestion"></a>
                             <a class="dropdown-item"
-                                href="{{ route('biitmodulos.section', ['section' => 'comercio']) }}"
+                                href="{{ route('biitModules.section', ['section' => 'comercio']) }}"
                                 value-text="navComercio"></a>
-                            <a class="dropdown-item" href="{{ route('biitmodulos.section', ['section' => 'proceso']) }}"
+                            <a class="dropdown-item" href="{{ route('biitModules.section', ['section' => 'proceso']) }}"
                                 value-text="navProceso"></a>
                             <a class="dropdown-item"
-                                href="{{ route('biitmodulos.section', ['section' => 'business']) }}"
+                                href="{{ route('biitModules.section', ['section' => 'business']) }}"
                                 value-text="navBusiness"></a>
-                            <a class="dropdown-item" href="{{ route('biitmodulos.section', ['section' => 'factura']) }}"
+                            <a class="dropdown-item" href="{{ route('biitModules.section', ['section' => 'factura']) }}"
                                 value-text="navFactura"></a>
                         </div>
                     </div>

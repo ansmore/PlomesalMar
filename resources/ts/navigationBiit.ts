@@ -36,30 +36,30 @@ const chargeText = async () => {
   }
 };
 
-const toggleDropdown = (event: MouseEvent | Event) => {
-  event.preventDefault();
-  console.log("Clic en el párrafo");
+// const toggleDropdown = (event: MouseEvent | Event) => {
+//   event.preventDefault();
+//   console.log("Clic en el párrafo");
 
-  const dropdownMenu = document.querySelector(".dropdown-menu")!;
-  dropdownMenu.classList.toggle("show");
-};
+//   const dropdownMenu = document.querySelector(".dropdown-menu")!;
+//   dropdownMenu.classList.toggle("show");
+// };
 
-const closeDropdown = (event: MouseEvent) => {
-  const dropdownMenu = document.querySelector(".dropdown-menu")!;
-  if (
-    !(event.target instanceof Element) ||
-    !event.target.matches(".dropdown-toggle")
-  ) {
-    dropdownMenu.classList.remove("show");
-  }
-};
+// const closeDropdown = (event: MouseEvent) => {
+//   const dropdownMenu = document.querySelector(".dropdown-menu")!;
+//   if (
+//     !(event.target instanceof Element) ||
+//     !event.target.matches(".dropdown-toggle")
+//   ) {
+//     dropdownMenu.classList.remove("show");
+//   }
+// };
 
-const handleDOMContentLoaded = () => {
-  const dropdownToggle = document.querySelector(".dropdown-toggle");
-  dropdownToggle?.addEventListener("click", toggleDropdown);
+// const handleDOMContentLoaded = () => {
+//   const dropdownToggle = document.querySelector(".dropdown-toggle");
+//   dropdownToggle?.addEventListener("click", toggleDropdown);
 
-  document.addEventListener("click", (event) => closeDropdown(event));
-};
+//   document.addEventListener("click", (event) => closeDropdown(event));
+// };
 
 window.addEventListener("load", chargeText);
-document.addEventListener("DOMContentLoaded", handleDOMContentLoaded);
+// document.addEventListener("DOMContentLoaded", handleDOMContentLoaded);

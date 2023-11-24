@@ -70,5 +70,6 @@
         </section>
         <br><br><br><br><br><br><br><br>
     </body>
-    <script type="module" src="{{ asset('js/biitmodulos.js') }}"></script>
+    @include('components.footerBiit')
+    <script type="module" src="{{ asset('js/biitModules.js') }}"></script>
 @endsection
