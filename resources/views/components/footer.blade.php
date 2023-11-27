@@ -33,4 +33,4 @@
         </div>
     </div>
 </footer>
-<script type="module" src="{{ asset('js/footer.js') }}"></script>
+<script type="module" src="{{ asset('js/footer.js') }}" defer></script>

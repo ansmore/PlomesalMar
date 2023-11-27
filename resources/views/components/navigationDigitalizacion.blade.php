@@ -39,4 +39,4 @@
         </div>
     </div>
 </nav>
-<script type="module" src="{{ asset('js/navigationDigitalizacion.js') }}"></script>
+<script type="module" src="{{ asset('js/navigationDigitalizacion.js') }}" defer></script>

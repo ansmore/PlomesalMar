@@ -8,4 +8,4 @@
         </div>
     </div>
 </header>
-<script type="module" src="{{ asset('js/header.js') }}"></script>
+<script type="module" src="{{ asset('js/header.js') }}" defer></script>

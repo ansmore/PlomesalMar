@@ -20,7 +20,7 @@
                     {{-- /#services --}}
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" href="http://biit.es/" value-text="navPorfolio"></a>
+                    <a class="nav-link page-scroll" href="{{ route('biit') }}" value-text="navPorfolio"></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link page-scroll" href="{{ route('home.section', ['section' => 'site']) }}"
@@ -36,4 +36,4 @@
         </div>
     </div>
 </nav>
-<script type="module" src="{{ asset('js/navigationHome.js') }}"></script>
+<script type="module" src="{{ asset('js/navigationHome.js') }}" defer></script>

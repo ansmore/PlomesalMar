@@ -6,7 +6,7 @@
     @include('components.navigationDigitalizacion')
     @include('components.header')
 
-    <body class="main">
+    <div class="main">
 
         <section id="servicios" class="letter">
             <div>
@@ -149,6 +149,6 @@
         </section>
 
         <img src="./img/kit-digital.png" class="img-responsive img-centered">
-    </body>
-    <script type="module" src="{{ asset('js/digitalizacion.js') }}"></script>
+    </div>
+    <script type="module" src="{{ asset('js/digitalizacion.js') }}" defer></script>
 @endsection

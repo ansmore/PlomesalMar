@@ -5,7 +5,7 @@
 
     @include('components.navigationHome')
 
-    <body class="main">
+    <div class="main">
 
         <!-- Header -->
         <header>
@@ -74,6 +74,6 @@
                 </div>
             </div>
         </section>
-    </body>
-    <script type="module" src="{{ asset('js/digitalizacion.js') }}"></script>
+    </div>
+    <script type="module" src="{{ asset('js/digitalizacion.js') }}" defer></script>
 @endsection

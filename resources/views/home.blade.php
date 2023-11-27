@@ -6,7 +6,7 @@
     @include('components.navigationHome')
     @include('components.header')
 
-    <body class="main">
+    <div class="main">
         <!-- Services Section -->
         <section id="services">
             <div class="container-services">
@@ -25,7 +25,7 @@
                             </span>
                         </span>
                         <h4 class="service-heading">
-                            <a href="https://biit.es" value-text="services1"></a>
+                            <a href="{{ route('biit') }}" value-text="services1"></a>
                         </h4>
                     </div>
                     <div class="row-1-service">
@@ -52,7 +52,7 @@
                             <span class="fa fa-shopping-cart fa-stack-1x fa-inverse"></span>
                         </span>
                         <h4 class="service-heading">
-                            <a href="https://biit.es/" value-text="services4"></a>
+                            <a href="{{ route('biit') }}" value-text="services4"></a>
                         </h4>
                     </div>
                     <div class="row-2-service">
@@ -61,7 +61,7 @@
                             <span class="fa fa-briefcase fa-stack-1x fa-inverse"></span>
                         </span>
                         <h4 class="service-heading">
-                            <a href="https://biit.es/" value-text="services5"></a>
+                            <a href="{{ route('biit') }}" value-text="services5"></a>
                         </h4>
                     </div>
                 </div>
@@ -72,7 +72,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 text-center">
-                        <a href="https://www.biit.es/">
+                        <a href="{{ route('biit') }}">
                             <img src="img/logos/banner.jpg" class="img-responsive img-centered" alt="banner">
                         </a>
                     </div>
@@ -87,7 +87,7 @@
                         <h2 class="section-heading" value-text="aboutHeading"></h2>
                         <hr class="light">
                         <h4 class="text-faded" value-text="aboutText"></h4>
-                        <a href="https://www.biit.es/" class="btn btn-default btn-xl" value-text="aboutButton"></a>
+                        <a href="{{ route('biit') }}" class="btn btn-default btn-xl" value-text="aboutButton"></a>
                     </div>
                 </div>
             </div>
@@ -127,7 +127,7 @@
                         class="col-xs-8 col-sm-8 col-md-6 col-lg-6 col-xs-offset-2 col-sm-offset-2 col-md-offset-3 col-lg-offset-3">
                         <form id="contact-form" class="form" action="#" method="POST" role="form">
                             <div class="form-group">
-                                <label class="form-label" for="name" value-text="contaName"></label>
+                                <label class="form-label" for="name" value-text="contactName"></label>
                                 <input type="text" class="form-control" id="name" name="name"
                                     placeholder="Nombre" tabindex="1" required>
                             </div>
@@ -171,6 +171,6 @@
                 </div>
             </div>
         </section>
-    </body>
-    <script type="module" src="{{ asset('js/home.js') }}"></script>
+    </div>
+    <script type="module" src="{{ asset('js/home.js') }}" defer></script>
 @endsection
