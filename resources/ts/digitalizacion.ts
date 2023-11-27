@@ -2,6 +2,7 @@ import {
   loadDictionary,
   loadAbailablesLanguages,
   loadAbailablesFiles,
+  getFileNameFromUrl,
 } from "./helpers/dictionary.js";
 
 const chargeText = async () => {
@@ -9,7 +10,8 @@ const chargeText = async () => {
   const abailablePages = await loadAbailablesFiles();
 
   const navigatorLanguage = navigator.language.slice(0, 2);
-  const fileName = window.location.href.split("/").slice(-1)[0];
+  const currentUrl = window.location.href;
+  const fileName = getFileNameFromUrl(currentUrl) as string;
 
   const selectedLanguage = abailableLanguages.includes(navigatorLanguage)
     ? navigatorLanguage
@@ -32,4 +34,4 @@ const chargeText = async () => {
   }
 };
 
-window.addEventListener("load", chargeText);
+document.addEventListener("DOMContentLoaded", chargeText);

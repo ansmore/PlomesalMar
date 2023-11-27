@@ -36,25 +36,4 @@ const chargeText = () => __awaiter(void 0, void 0, void 0, function* () {
         console.error("Error loading the text", error);
     }
 });
-// const toggleDropdown = (event: MouseEvent | Event) => {
-//   event.preventDefault();
-//   console.log("Clic en el párrafo");
-//   const dropdownMenu = document.querySelector(".dropdown-menu")!;
-//   dropdownMenu.classList.toggle("show");
-// };
-// const closeDropdown = (event: MouseEvent) => {
-//   const dropdownMenu = document.querySelector(".dropdown-menu")!;
-//   if (
-//     !(event.target instanceof Element) ||
-//     !event.target.matches(".dropdown-toggle")
-//   ) {
-//     dropdownMenu.classList.remove("show");
-//   }
-// };
-// const handleDOMContentLoaded = () => {
-//   const dropdownToggle = document.querySelector(".dropdown-toggle");
-//   dropdownToggle?.addEventListener("click", toggleDropdown);
-//   document.addEventListener("click", (event) => closeDropdown(event));
-// };
-window.addEventListener("load", chargeText);
-// document.addEventListener("DOMContentLoaded", handleDOMContentLoaded);
+document.addEventListener("DOMContentLoaded", chargeText);

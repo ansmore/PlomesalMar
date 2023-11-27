@@ -18,10 +18,10 @@
   "contactHeading": "Contacto",
   "contactPhone": "Teléfono de contacto: 937 24 25 00",
 
-  "contactName": "Nombre",
-  "contactEmail": "Email",
-  "contactTelephone": "Teléfono",
-  "contactMessage": "Mensaje",
+  "contactName": "Nombre: ",
+  "contactEmail": "Email: ",
+  "contactTelephone": "Teléfono: ",
+  "contactMessage": "Mensaje: ",
 
   "contactoClausulaContacto": "La comunicación enviada se utilizará exclusivamente para tratar sus datos y atender su solicitud, siempre de acuerdo al Reglamento (UE) 2016/679 (RGPD), la Ley Orgánica 15/1999 (LOPD) y el Real Decreto 1720/2007 de desarrollo de la (LOPD), sobre protección de datos. Sus datos no se comunicaran a terceros, excepto por  obligación legal, en ningún caso se utilizarán para acciones de márquetin y se mantendrán mientras no solicite su cancelación.",
   "contactoClausulaContacto2": "En cualquier momento usted puede ejercer los derechos de acceso, rectificación, portabilidad y oposición, o si procede, a la limitación y/o cancelación del tratamiento, comunicándolo por escrito, indicando sus datos personales a Avda. Can Deu, 4-6 ,local 08207, Sabadell o mediante un email a info@pymesoft.es.",
