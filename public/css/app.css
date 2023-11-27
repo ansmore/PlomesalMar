@@ -177,6 +177,42 @@ header .intro-text .intro-heading {
   flex: 5;
 }
 
+.navbar .dropdown {
+  position: relative;
+}
+.navbar .dropdown .dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  min-width: 160px;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  background-color: #fff;
+  padding: 0.5rem 0;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+}
+.navbar .dropdown .dropdown-menu .dropdown-item {
+  display: block;
+  width: 100%;
+  padding: 0.25rem 1.5rem;
+  clear: both;
+  font-weight: 400;
+  color: #212529;
+  text-align: inherit;
+  white-space: nowrap;
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+}
+.navbar .dropdown .dropdown-menu .dropdown-item:hover, .navbar .dropdown .dropdown-menu .dropdown-item:focus {
+  color: #fff;
+  background-color: #007bff;
+}
+.navbar .dropdown:hover .dropdown-menu {
+  display: block;
+}
+
 .main {
   margin-top: 60px;
   padding: 0;

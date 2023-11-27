@@ -1,1 +1,13 @@
-["digitalizacion", "home", "navigation", "header", "footer", "consultoria"]
+[
+  "digitalizacion",
+  "home",
+  "header",
+  "footer",
+  "consultoria",
+  "biit",
+  "biitContact",
+  "biitModules",
+  "navigationHome",
+  "navigationDigitalizacion",
+  "navigationBiit"
+]

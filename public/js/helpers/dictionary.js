@@ -49,3 +49,22 @@ export const loadAbailablesFiles = () => __awaiter(void 0, void 0, void 0, funct
         throw error;
     }
 });
+export const getFileNameFromUrl = (url) => {
+    const segments = url.split("/");
+    const lastSegment = segments.pop();
+    // Verifica si hay al menos un segmento en la URL
+    if (lastSegment !== undefined) {
+        const fileName = lastSegment.split("#")[0];
+        // Verifica si fileName no es undefined
+        if (fileName !== undefined) {
+            return fileName;
+        }
+        else {
+            console.error("fileName es undefined después de split('#').");
+        }
+    }
+    else {
+        console.error("La URL no tiene segmentos.");
+    }
+    return undefined;
+};

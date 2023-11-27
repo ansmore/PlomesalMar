@@ -36,4 +36,4 @@ const chargeText = async () => {
   }
 };
 
-chargeText();
+document.addEventListener("DOMContentLoaded", chargeText);

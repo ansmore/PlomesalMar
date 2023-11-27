@@ -7,14 +7,13 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import { loadDictionary, loadAbailablesLanguages, loadAbailablesFiles, } from "./helpers/dictionary.js";
+import { loadDictionary, loadAbailablesLanguages, loadAbailablesFiles, getFileNameFromUrl, } from "./helpers/dictionary.js";
 const chargeText = () => __awaiter(void 0, void 0, void 0, function* () {
     const abailableLanguages = yield loadAbailablesLanguages();
     const abailablePages = yield loadAbailablesFiles();
     const navigatorLanguage = navigator.language.slice(0, 2);
-    const fileName = window.location.href.split("/").slice(-1)[0];
-    // temporal HardCode
-    // let fileName = "home";
+    const currentUrl = window.location.href;
+    const fileName = getFileNameFromUrl(currentUrl);
     const selectedLanguage = abailableLanguages.includes(navigatorLanguage)
         ? navigatorLanguage
         : "es";
@@ -33,4 +32,4 @@ const chargeText = () => __awaiter(void 0, void 0, void 0, function* () {
         console.error("Error loading the text", error);
     }
 });
-chargeText();
+document.addEventListener("DOMContentLoaded", chargeText);
