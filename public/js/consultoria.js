@@ -13,7 +13,7 @@ const chargeText = () => __awaiter(void 0, void 0, void 0, function* () {
     const abailablePages = yield loadAbailablesFiles();
     const navigatorLanguage = navigator.language.slice(0, 2);
     const currentUrl = window.location.href;
-    const fileName = getFileNameFromUrl(currentUrl);
+    const fileName = (yield getFileNameFromUrl(currentUrl));
     const selectedLanguage = abailableLanguages.includes(navigatorLanguage)
         ? navigatorLanguage
         : "es";

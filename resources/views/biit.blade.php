@@ -16,7 +16,7 @@
                 </div>
             </div>
         </header>
-        <br><br><br><br><br><br><br><br>
+        <br><br><br><br>
         <!-- Biit Section -->
         <section>
             <div id="biit">
@@ -26,7 +26,7 @@
             <div>
                 <div>
                     <div>
-                        <p>Image</p>
+                        <!-- <p>image</p> -->
                     </div>
                     <div>
                         <div>
@@ -40,7 +40,7 @@
 
                 <div>
                     <div>
-                        <p>Image2</p>
+                        <!-- <p>image</p> -->
                     </div>
                     <div>
                         <div>
@@ -54,7 +54,7 @@
 
                 <div>
                     <div>
-                        <p>Image3</p>
+                        <!-- <p>image</p> -->
                     </div>
                     <div>
                         <div>
@@ -77,7 +77,7 @@
                 <div>
                     <div>
                         <div>
-                            <p>Image1</p>
+                            <!-- <p>image</p> -->
                         </div>
                         <div>
                             <h3 value-text="modulosCliente" class="section-heading"> </h3>
@@ -92,7 +92,7 @@
                 <div>
                     <div>
                         <div>
-                            <p>Image2</p>
+                            <!-- <p>image</p> -->
                         </div>
                         <div>
                             <h3 value-text="modulosComercio" class="section-heading"> </h3>
@@ -107,7 +107,7 @@
                 <div>
                     <div>
                         <div>
-                            <p>Image3</p>
+                            <!-- <p>image</p> -->
                         </div>
                         <div>
                             <h3 value-text="modulosProcesos" class="section-heading"> </h3>
@@ -122,7 +122,7 @@
                 <div>
                     <div>
                         <div>
-                            <p>Image4</p>
+                            <!-- <p>image</p> -->
                         </div>
                         <div>
                             <h3 value-text="modulosBusiness" class="section-heading"> </h3>
@@ -137,7 +137,7 @@
                 <div>
                     <div>
                         <div>
-                            <p>Image5</p>
+                            <!-- <p>image</p> -->
                         </div>
                         <div>
                             <h3 value-text="modulosFactura" class="section-heading"> </h3>

@@ -11,7 +11,7 @@ const chargeText = async () => {
 
   const navigatorLanguage = navigator.language.slice(0, 2);
   const currentUrl = window.location.href;
-  const fileName = getFileNameFromUrl(currentUrl) as string;
+  const fileName = (await getFileNameFromUrl(currentUrl)) as string;
 
   const selectedLanguage = abailableLanguages.includes(navigatorLanguage)
     ? navigatorLanguage
