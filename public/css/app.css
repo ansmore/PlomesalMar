@@ -10,14 +10,25 @@
 }
 
 ::selection {
-  background-color: #ffcc00; /* Color de fondo al seleccionar texto */
-  color: #333; /* Color del texto seleccionado */
+  background-color: #0097b2;
+  color: #ececec;
 }
 
 body,
 html,
-title {
+form,
+input,
+select {
   font-family: "Bruno Ace", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
 }
 
 html {
@@ -78,7 +89,7 @@ header .intro-text .intro-heading {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  height: 60px;
+  height: 70px;
   padding: 0 20px;
   position: fixed;
   top: 0;
@@ -86,6 +97,7 @@ header .intro-text .intro-heading {
   right: 0;
   color: #fafafa;
   background-color: #17265c;
+  font-size: 1.5rem;
 }
 @media screen and (max-width: 768px) {
   .navbar {

@@ -11,6 +11,6 @@
 }
 
 ::selection {
-  background-color: #ffcc00; /* Color de fondo al seleccionar texto */
-  color: #333; /* Color del texto seleccionado */
+  background-color: $secondary_main;
+  color: $neutral_light;
 }
