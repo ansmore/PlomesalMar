@@ -50,7 +50,7 @@ header {
   background-size: cover;
   -o-background-size: cover;
   text-align: center;
-  color: #fff;
+  color: #fafafa;
 }
 
 header .intro-text {
@@ -84,8 +84,8 @@ header .intro-text .intro-heading {
   top: 0;
   left: 0;
   right: 0;
-  color: #fbfbfb;
-  background-color: #38709e;
+  color: #fafafa;
+  background-color: #17265c;
 }
 @media screen and (max-width: 768px) {
   .navbar {
@@ -125,13 +125,13 @@ header .intro-text .intro-heading {
   display: inline-flex;
 }
 .nav-item .nav-link {
-  color: #fbfbfb;
+  color: #fafafa;
   text-decoration: none;
   margin: 0 15px;
 }
 .nav-item .nav-link:hover {
-  color: #fbfbfb;
-  background-color: #023264;
+  color: #fafafa;
+  background-color: #101b41;
 }
 
 .container-services {

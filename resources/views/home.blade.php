@@ -8,11 +8,11 @@
 
     <div class="main">
         <!-- Services Section -->
-        <section id="services">
+        <section id="soluciones">
             <div class="container-services">
                 <div class="row">
                     <div>
-                        <h2 class="section-heading" value-text="homeServices"></h2>
+                        <h2 class="section-heading" value-text="homeSoluciones"></h2>
                         <h3 class="section-subheading text-muted" value-text="homeServicesSubheading"></h3>
                     </div>
                 </div>
@@ -33,7 +33,7 @@
                             <span class="fa fa-circle fa-stack-2x text-primary"></span>
                             <span class="fa fa-users fa-stack-1x fa-inverse"></span>
                         </span>
-                        <h4 class="service-heading" value-text="services-2"></h4>
+                        <h4 class="service-heading" value-text="services2"></h4>
                     </div>
                     <div class="row-1-service">
                         <span class="fa-stack fa-4x">

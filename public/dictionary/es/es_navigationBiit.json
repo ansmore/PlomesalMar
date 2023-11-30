@@ -1,12 +1,12 @@
 {
-  "navInicio": "INICIO",
-  "navBiit": "POR QUE BIIT",
-  "navModulos": "MÓDULOS",
-  "navContacto": "CONTACTO",
-  "navGestion": "GESTIÓN CLIENTE",
-  "navComercio": "COMERCIO ELECTRÓNICO",
-  "navProceso": "GESTIÓN DE PROCESOS",
-  "navBusiness": "BUSINESS INTELLIGENCE Y ANÁLITICA",
-  "navFactura": "FACTURA ELECTRÓNICA",
-  "biitContact": "conacto | 54648431685"
+  "navHomePage": "Pymesoft",
+  "navInicio": "Inicio",
+  "navBiit": "Por que BIIT",
+  "navModulos": "Módulos",
+  "navContacto": "Contacto",
+  "navGestion": "Gestión cliente",
+  "navComercio": "Comercio electrónico",
+  "navProceso": "Gestión de procesos",
+  "navBusiness": "Busines Intelligence y análitica",
+  "navFactura": "Factura electrónica"
 }

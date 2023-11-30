@@ -8,6 +8,9 @@
         <div class="logo--nav">
             <ul>
                 <li class="nav-item">
+                    <a class="nav-link page-scroll" href="{{ route('home') }}" value-text="navHomePage"></a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link page-scroll" href="{{ route('home') }}" value-text="navHome"></a>
                 </li>
                 <li class="nav-item">
@@ -15,22 +18,15 @@
                         value-text="navDigitalizacion"></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" href="{{ route('home.section', ['section' => 'services']) }}"
+                    <a class="nav-link page-scroll" href="{{ route('home.section', ['section' => 'soluciones']) }}"
                         value-text="navService"></a>
-                    {{-- /#services --}}
                 </li>
                 <li class="nav-item">
                     <a class="nav-link page-scroll" href="{{ route('biit') }}" value-text="navPorfolio"></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" href="{{ route('home.section', ['section' => 'site']) }}"
-                        value-text="navLocation"></a>
-                    {{-- /#site --}}
-                </li>
-                <li class="nav-item">
                     <a class="nav-link page-scroll" href="{{ route('home.section', ['section' => 'contact']) }}"
                         value-text="navContact"></a>
-                    {{-- /#contact --}}
                 </li>
             </ul>
         </div>

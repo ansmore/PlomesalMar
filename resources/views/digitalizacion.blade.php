@@ -8,7 +8,7 @@
 
     <div class="main">
 
-        <section id="servicios" class="letter">
+        <section id="que-es" class="letter">
             <div>
                 <h2 value-text="servicesHeading" class="titulos"></h2>
                 <p value-text="servicesText" class="letter"></p>

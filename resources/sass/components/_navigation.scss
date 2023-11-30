@@ -15,8 +15,8 @@ $nav-height: 60px;
   left: 0;
   right: 0;
 
-  color: $base;
-  background-color: $primary-color;
+  color: $neutral_lighter;
+  background-color: $primary_origin;
 
   @media screen and (max-width: 768px) {
     height: 48px;
@@ -53,13 +53,13 @@ $nav-height: 60px;
   display: inline-flex;
 
   .nav-link {
-    color: $base;
+    color: $neutral_lighter;
     text-decoration: none;
     margin: 0 15px;
 
     &:hover {
-      color: $base;
-      background-color: $primary-color-dark;
+      color: $neutral_lighter;
+      background-color: $primary_dark;
     }
   }
 }

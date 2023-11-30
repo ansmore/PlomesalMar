@@ -8,8 +8,11 @@
         <div class="logo--nav">
             <ul>
                 <li class="nav-item">
+                    <a class="nav-link page-scroll" href="{{ route('home') }}" value-text="navHomePage"></a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link page-scroll"
-                        href="{{ route('digitalizacion.section', ['section' => 'servicios']) }}"
+                        href="{{ route('digitalizacion.section', ['section' => 'que-es']) }}"
                         value-text="navService"></a>
                     {{-- digitalizacion#services --}}
                 </li>

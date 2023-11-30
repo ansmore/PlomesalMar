@@ -6,11 +6,11 @@
             </a>
         </div>
         <div>
-            <div>
-                <h3 value-text="biitContact" class="text-muted text-justify"></h3>
-            </div>
             <div class="logo--nav">
                 <ul>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="{{ route('home') }}" value-text="navHomePage"></a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link page-scroll" href="{{ route('biit') }}" value-text="navInicio"></a>
                     </li>
