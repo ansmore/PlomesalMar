@@ -1,7 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700");
-@import url("https://fonts.googleapis.com/css?family=Kaushan+Script");
-@import url("https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic");
-@import url("https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700");
+@import url("https://fonts.googleapis.com/css2?family=Bruno+Ace&display=swap");
 * {
   box-sizing: border-box;
   margin: 0;
@@ -12,19 +9,31 @@
   outline: none;
 }
 
+::selection {
+  background-color: #ffcc00; /* Color de fondo al seleccionar texto */
+  color: #333; /* Color del texto seleccionado */
+}
+
+body,
+html,
+title {
+  font-family: "Bruno Ace", sans-serif;
+}
+
 html {
   font-size: 62.5%; /* 1rem -> 10px*/
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
   width: 100vw;
-  margin: 0;
-  padding: 0;
-  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+a,
+button {
+  cursor: pointer;
 }
 
 header {
@@ -50,7 +59,6 @@ header .intro-text {
 }
 
 header .intro-text .intro-lead-in {
-  font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-style: italic;
   font-size: 22px;
   line-height: 22px;
@@ -58,7 +66,6 @@ header .intro-text .intro-lead-in {
 }
 
 header .intro-text .intro-heading {
-  font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   font-weight: 700;
   font-size: 50px;
@@ -142,13 +149,11 @@ header .intro-text .intro-heading {
   padding: 20x 15px;
 }
 .container-services .row .section-heading {
-  font-family: "Montserrat", sans-serif;
   font-size: 40px;
   margin: 0 0 15px;
 }
 .container-services .row .section-subheading {
   font-size: 16px;
-  font-family: "Droid Serif", sans-serif;
   text-transform: none;
   font-style: italic;
   font-weight: 400;
@@ -211,34 +216,6 @@ header .intro-text .intro-heading {
 }
 .navbar .dropdown:hover .dropdown-menu {
   display: block;
-}
-
-.main {
-  margin-top: 60px;
-  padding: 0;
-}
-
-h1 {
-  color: #38709e;
-}
-
-p {
-  font-size: 16px;
-  color: #023264;
-}
-
-button {
-  background-color: #023264;
-  color: #fbfbfb;
-  padding: 10px;
-  border: 1px solid #38709e;
-  cursor: pointer;
-}
-button :hover {
-  background-color: #38709e;
-  color: #fbfbfb;
-  padding: 10px;
-  border: 1px solid #023264;
 }
 
 /*# sourceMappingURL=app.css.map */
