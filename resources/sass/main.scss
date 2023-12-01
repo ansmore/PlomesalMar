@@ -4,6 +4,9 @@
 @import "base/typography";
 @import "base/globals";
 
+@import "mixins/mixins";
+@import "mixins/mixinsNavbar";
+
 @import "components/header";
 @import "components/navigation";
 

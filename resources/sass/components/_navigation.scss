@@ -1,101 +1,78 @@
 // Estilos para la barra de navegación
 .navbar {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+  @include flexBox(row, space-between, center);
+  @include paddingMargin($padding);
+  @include style($neutral_lighter, $primary_main);
 
-  height: $nav-height;
+  min-height: $nav-height;
+  font-size: $size_medium;
 
-  padding: 20px;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
 
-  color: $neutral_lighter;
-  background-color: $primary_main;
-
-  font-size: $size_medium;
+  cursor: pointer;
 
   .container {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    justify-content: space-around;
-    align-items: center;
+    @include flexBox(row, space-around, center);
+
+    width: 100vw;
 
     .navbar__logo {
-      align-items: center;
+      @include flexBox(row, flex-start, center);
+      @include paddingMargin($padding, $margin);
       flex: 3;
     }
 
     .navbar__menu {
-      display: flex;
-      flex-direction: row;
-      justify-content: flex-end;
-      flex: 7;
-      // max-height: $nav-height;
+      @include flexBox(row, flex-end, center);
 
+      flex: 7;
       .navbar__list {
         .navbar__item {
+          @include paddingMargin;
+
           list-style: none;
-          margin: 0;
-          padding: 0;
           display: inline-flex;
 
           .navbar__link {
-            color: $neutral_lighter;
+            @include flexBox(row, center, center);
+            @include paddingMargin(0, 0 $margin);
+            @include style($neutral_lighter);
+
             max-height: $nav-height;
             height: $nav-height;
-            margin: 0 5px;
-            padding: 15px 0;
-            min-width: 102px;
-            justify-items: center;
-            justify-content: center;
+            min-width: 120px;
 
             text-decoration: none;
-            // display: contents;
-            display: flex;
-            align-items: center;
-            align-content: space-around;
           }
           &:hover {
-            color: $neutral_lighter;
-            background-color: $secondary_main;
+            @include style($neutral_lighter, $secondary_main);
           }
 
           .dropdown {
             position: relative;
 
             .navbar__link--dropdown-toggle {
-              color: $neutral_lighter;
-              text-decoration: none;
-              margin: 0 15px;
-              cursor: pointer;
+              @include paddingMargin(0, 0 $margin);
 
-              &:hover {
-                color: $neutral_lighter;
-                background-color: $secondary_main;
-              }
+              text-decoration: none;
             }
 
             .dropdown__menu {
+              @include flexBox(column, center, center);
               position: absolute;
               top: 100%;
               left: 0;
               display: none;
-              flex-direction: column;
-              background-color: $primary_main;
-
               .dropdown__item {
-                color: $neutral_lighter;
+                @include paddingMargin($padding);
+                @include style($neutral_lighter, $primary_main);
                 text-decoration: none;
-                padding: 10px;
-                cursor: pointer;
 
                 &:hover {
-                  background-color: $secondary_main;
+                  @include style($neutral_lighter, $secondary_main);
                 }
               }
             }
