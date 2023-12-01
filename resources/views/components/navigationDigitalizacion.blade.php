@@ -1,40 +1,37 @@
 <nav class="navbar">
     <div class="container">
-        <div class="logo--header">
+        <div class="navbar__logo">
             <a href="{{ route('home') }}">
                 <img class="img-responsive" src="./img/logo.png" alt="Pymesoft" id="pymeso" />
             </a>
         </div>
-        <div class="logo--nav">
-            <ul>
-                <li class="nav-item">
-                    <a class="nav-link page-scroll" href="{{ route('home') }}" value-text="navHomePage"></a>
+        <div class="navbar__menu">
+            <ul class="navbar__list">
+                <li class="navbar__item">
+                    <a class="navbar__link" href="{{ route('home') }}" value-text="navHomePage"></a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link page-scroll"
-                        href="{{ route('digitalizacion.section', ['section' => 'que-es']) }}"
+                <li class="navbar__item">
+                    <a class="navbar__link" href="{{ route('digitalizacion.section', ['section' => 'que-es']) }}"
                         value-text="navService"></a>
                     {{-- digitalizacion#services --}}
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link page-scroll"
-                        href="{{ route('digitalizacion.section', ['section' => 'agente']) }}"
+                <li class="navbar__item">
+                    <a class="navbar__link" href="{{ route('digitalizacion.section', ['section' => 'agente']) }}"
                         value-text="navAgente"></a>
                     {{-- digitalizacion#agente --}}
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link page-scroll"
-                        href="{{ route('digitalizacion.section', ['section' => 'requisitos']) }}"
+                <li class="navbar__item">
+                    <a class="navbar__link" href="{{ route('digitalizacion.section', ['section' => 'requisitos']) }}"
                         value-text="navRequisitos"></a>
                     {{-- digitalizacion#requisitos --}}
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link page-scroll" href="{{ route('digitalizacion.section', ['section' => 'bono']) }}"
+                <li class="navbar__item">
+                    <a class="navbar__link" href="{{ route('digitalizacion.section', ['section' => 'bono']) }}"
                         value-text="navBono"></a>
                     {{-- digitalizacion#bono --}}
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link page-scroll" href="{{ route('digitalizacion.section', ['section' => 'faq']) }}"
+                <li class="navbar__item">
+                    <a class="navbar__link" href="{{ route('digitalizacion.section', ['section' => 'faq']) }}"
                         value-text="navFaq"></a>
                     {{-- digitalizacion#faq --}}
                 </li>

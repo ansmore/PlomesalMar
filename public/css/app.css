@@ -11,7 +11,7 @@
 
 ::selection {
   background-color: #0097b2;
-  color: #ececec;
+  color: #17265c;
 }
 
 body,
@@ -90,7 +90,7 @@ header .intro-text .intro-heading {
   justify-content: space-between;
   align-items: center;
   height: 70px;
-  padding: 0 20px;
+  padding: 20px;
   position: fixed;
   top: 0;
   left: 0;
@@ -98,6 +98,80 @@ header .intro-text .intro-heading {
   color: #fafafa;
   background-color: #17265c;
   font-size: 1.5rem;
+}
+.navbar .container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+}
+.navbar .container .navbar__logo {
+  align-items: center;
+  flex: 3;
+}
+.navbar .container .navbar__menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  flex: 7;
+}
+.navbar .container .navbar__menu .navbar__list .navbar__item {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: inline-flex;
+}
+.navbar .container .navbar__menu .navbar__list .navbar__item .navbar__link {
+  color: #fafafa;
+  max-height: 70px;
+  height: 70px;
+  margin: 0 5px;
+  padding: 15px 0;
+  min-width: 102px;
+  justify-items: center;
+  justify-content: center;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  align-content: space-around;
+}
+.navbar .container .navbar__menu .navbar__list .navbar__item:hover {
+  color: #fafafa;
+  background-color: #0097b2;
+}
+.navbar .container .navbar__menu .navbar__list .navbar__item .dropdown {
+  position: relative;
+}
+.navbar .container .navbar__menu .navbar__list .navbar__item .dropdown .navbar__link--dropdown-toggle {
+  color: #fafafa;
+  text-decoration: none;
+  margin: 0 15px;
+  cursor: pointer;
+}
+.navbar .container .navbar__menu .navbar__list .navbar__item .dropdown .navbar__link--dropdown-toggle:hover {
+  color: #fafafa;
+  background-color: #0097b2;
+}
+.navbar .container .navbar__menu .navbar__list .navbar__item .dropdown .dropdown__menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: none;
+  flex-direction: column;
+  background-color: #17265c;
+}
+.navbar .container .navbar__menu .navbar__list .navbar__item .dropdown .dropdown__menu .dropdown__item {
+  color: #fafafa;
+  text-decoration: none;
+  padding: 10px;
+  cursor: pointer;
+}
+.navbar .container .navbar__menu .navbar__list .navbar__item .dropdown .dropdown__menu .dropdown__item:hover {
+  background-color: #0097b2;
+}
+.navbar .container .navbar__menu .navbar__list .navbar__item .dropdown:hover .dropdown__menu {
+  display: flex;
 }
 @media screen and (max-width: 768px) {
   .navbar {
@@ -108,42 +182,6 @@ header .intro-text .intro-heading {
   .navbar {
     height: 36px;
   }
-}
-
-.container {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.logo--header {
-  align-items: center;
-  flex: 3;
-}
-
-.logo--nav {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  flex: 7;
-}
-
-.nav-item {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: inline-flex;
-}
-.nav-item .nav-link {
-  color: #fafafa;
-  text-decoration: none;
-  margin: 0 15px;
-}
-.nav-item .nav-link:hover {
-  color: #fafafa;
-  background-color: #101b41;
 }
 
 .container-services {
@@ -192,42 +230,6 @@ header .intro-text .intro-heading {
 }
 .container-services .row-2-service {
   flex: 5;
-}
-
-.navbar .dropdown {
-  position: relative;
-}
-.navbar .dropdown .dropdown-menu {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  z-index: 1000;
-  min-width: 160px;
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-  background-color: #fff;
-  padding: 0.5rem 0;
-  border: 1px solid rgba(0, 0, 0, 0.125);
-}
-.navbar .dropdown .dropdown-menu .dropdown-item {
-  display: block;
-  width: 100%;
-  padding: 0.25rem 1.5rem;
-  clear: both;
-  font-weight: 400;
-  color: #212529;
-  text-align: inherit;
-  white-space: nowrap;
-  background-color: transparent;
-  border: 0;
-  cursor: pointer;
-}
-.navbar .dropdown .dropdown-menu .dropdown-item:hover, .navbar .dropdown .dropdown-menu .dropdown-item:focus {
-  color: #fff;
-  background-color: #007bff;
-}
-.navbar .dropdown:hover .dropdown-menu {
-  display: block;
 }
 
 /*# sourceMappingURL=app.css.map */
