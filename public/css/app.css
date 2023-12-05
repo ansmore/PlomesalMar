@@ -98,8 +98,6 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
-  padding: 0.5rem;
-  margin: 0;
   color: #fafafa;
   background-color: #17265c;
   height: 70px;
@@ -118,6 +116,8 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  padding: 0;
+  margin: 0;
   min-width: 100vw;
 }
 .navbar .container .navbar__logo {
@@ -142,7 +142,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
-  padding: 0.5rem;
+  padding: 0;
   margin: 0;
   flex: 7;
   margin-top: 90px;
@@ -225,7 +225,7 @@ header .intro-text .intro-heading {
 .navbar .container .navbar__menu .navbar__list .navbar__item .dropdown:hover .dropdown__menu {
   display: flex;
 }
-.navbar .container .navbar__menu .toggle-menu {
+.navbar .toggle-menu {
   width: 50px;
   position: absolute;
   z-index: 1;
@@ -233,16 +233,22 @@ header .intro-text .intro-heading {
   right: 1rem;
   cursor: pointer;
 }
-.navbar .container .navbar__menu .toggle-menu__checkbox {
+.navbar .toggle-menu__checkbox {
   display: none;
 }
-.navbar .container .navbar__menu .toggle-menu__checkbox:checked + .navbar__list {
+.navbar .toggle-menu__checkbox:checked + .container {
+  background-color: bisque;
+}
+.navbar .toggle-menu__checkbox:checked + .container .navbar__menu .navbar__list {
   transform: translateY(0);
 }
 
 @media screen and (min-width: 601px) and (max-width: 1024px) {
   .navbar {
     height: 70px;
+  }
+  .navbar .toggle-menu {
+    display: none;
   }
   .navbar .container .navbar__menu {
     display: flex;
@@ -254,9 +260,6 @@ header .intro-text .intro-heading {
     align-items: center;
     align-self: center;
     margin-top: 0;
-  }
-  .navbar .container .navbar__menu .toggle-menu {
-    display: none;
   }
   .navbar .container .navbar__menu .navbar__list {
     display: flex;

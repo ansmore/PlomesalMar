@@ -1,4 +1,10 @@
 <nav class="navbar">
+    <div class="toggle-menu">
+        <label for="toggle-menu-checkbox">
+            <img src="{{ asset('img/hamburger-menu.png') }}" alt="Menu hamburger">
+        </label>
+    </div>
+    <input type="checkbox" class="toggle-menu__checkbox" id="toggle-menu-checkbox">
     <div class="container">
         <div class="navbar__logo">
             <a href="/">
@@ -32,6 +38,7 @@
                 </li>
             </ul>
         </div>
+
     </div>
 </nav>
 <script type="module" src="{{ asset('js/navigationHome.js') }}" defer></script>

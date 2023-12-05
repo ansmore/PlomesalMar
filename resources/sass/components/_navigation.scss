@@ -1,7 +1,9 @@
 // Estilos para la barra de navegación
 .navbar {
   @include flexBox(row, space-between, center);
-  @include paddingMargin($padding);
+  //  Borrar padding?
+  // @include paddingMargin($padding);
+
   @include style($neutral_lighter, $primary_main);
 
   height: $nav-height;
@@ -14,7 +16,7 @@
 
   .container {
     @include flexBox(row, space-around, center);
-
+    @include paddingMargin;
     min-width: 100vw;
 
     .navbar__logo {
@@ -25,7 +27,9 @@
 
     .navbar__menu {
       @include flexBox(row, center, center);
-      @include paddingMargin($padding);
+      @include paddingMargin;
+      // borrar padding?
+      // @include paddingMargin($padding);
       // @include style($neutral_lighter, $primary_main);
       flex: 7;
       margin-top: 90px;
@@ -92,20 +96,30 @@
       //   transform: translateY(0);
       //   // height: 350px;
       // }
-
-      .toggle-menu {
-        width: 50px;
-        position: absolute;
-        z-index: 1;
-        top: 1rem;
-        right: 1rem;
-        cursor: pointer;
-      }
-      .toggle-menu__checkbox {
-        display: none;
-        &:checked + .navbar__list {
+    }
+  }
+  .toggle-menu {
+    width: 50px;
+    position: absolute;
+    z-index: 1;
+    top: 1rem;
+    right: 1rem;
+    cursor: pointer;
+  }
+  .toggle-menu__checkbox {
+    display: none;
+    // &:checked + .navbar__list,
+    &:checked + .container {
+      // transition: transform 0.5s;
+      // transform: translateY(0);
+      background-color: bisque;
+      .navbar__menu {
+        // background-color: antiquewhite;
+        .navbar__list {
           // @include style($neutral_lighter, $primary_main);
           transform: translateY(0);
+          // transition: transform 0.5s;
+          // background-color: aquamarine;
         }
       }
     }
@@ -119,13 +133,14 @@
   .navbar {
     // @include style($neutral_darker, $primary_main);
     height: $nav-height;
+    .toggle-menu {
+      display: none;
+    }
     .container {
       .navbar__menu {
         @include flexBox(row, flex-end, center);
         margin-top: 0;
-        .toggle-menu {
-          display: none;
-        }
+
         .navbar__list {
           @include flexBox(row);
           transform: translateY(0);
