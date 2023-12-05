@@ -12,3 +12,8 @@
   background-color: $secondary_main;
   color: $primary_main;
 }
+
+picture,
+img {
+  max-width: 100%;
+}

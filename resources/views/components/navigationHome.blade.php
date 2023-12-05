@@ -6,6 +6,12 @@
             </a>
         </div>
         <div class="navbar__menu">
+            <div class="toggle-menu">
+                <label for="toggle-menu-checkbox">
+                    <img src="{{ asset('img/hamburger-menu.png') }}" alt="Menu hamburger">
+                </label>
+            </div>
+            <input type="checkbox" class="toggle-menu__checkbox" id="toggle-menu-checkbox">
             <ul class="navbar__list">
                 <li class="navbar__item">
                     <a class="navbar__link" href="{{ route('home') }}" value-text="navHomePage"></a>

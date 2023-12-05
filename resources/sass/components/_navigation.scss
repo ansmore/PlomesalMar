@@ -4,7 +4,7 @@
   @include paddingMargin($padding);
   @include style($neutral_lighter, $primary_main);
 
-  min-height: $nav-height;
+  height: $nav-height;
   font-size: $size_medium;
 
   position: fixed;
@@ -12,12 +12,10 @@
   left: 0;
   right: 0;
 
-  cursor: pointer;
-
   .container {
     @include flexBox(row, space-around, center);
 
-    width: 100vw;
+    min-width: 100vw;
 
     .navbar__logo {
       @include flexBox(row, flex-start, center);
@@ -26,12 +24,27 @@
     }
 
     .navbar__menu {
-      @include flexBox(row, flex-end, center);
-
+      @include flexBox(row, center, center);
+      @include paddingMargin($padding);
+      @include style($neutral_lighter, $primary_main);
       flex: 7;
+      margin-top: 90px;
+      .toggle-menu {
+        width: 50px;
+        position: absolute;
+        z-index: 1;
+        top: 1rem;
+        right: 1rem;
+        cursor: pointer;
+      }
+
       .navbar__list {
+        @include flexBox(column);
+        cursor: pointer;
+        transition: transform 0.3s;
+        transform: translateY(-120%);
         .navbar__item {
-          @include paddingMargin;
+          @include paddingMargin($padding);
 
           list-style: none;
           display: inline-flex;
@@ -41,10 +54,7 @@
             @include paddingMargin(0, 0 $margin);
             @include style($neutral_lighter);
 
-            max-height: $nav-height;
-            height: $nav-height;
             min-width: 120px;
-
             text-decoration: none;
           }
           &:hover {
@@ -55,7 +65,7 @@
             position: relative;
 
             .navbar__link--dropdown-toggle {
-              @include paddingMargin(0, 0 $margin);
+              @include paddingMargin($padding, 0 $margin);
 
               text-decoration: none;
             }
@@ -83,18 +93,59 @@
           }
         }
       }
+
+      .main-menu--show {
+        transform: translateY(0);
+        // height: 350px;
+      }
+
+      .toggle-menu__checkbox {
+        display: none;
+        &:checked + .navbar__list {
+          // @include style($neutral_lighter, $primary_main);
+          transform: translateY(0);
+        }
+      }
     }
   }
+}
 
-  @media screen and (min-width: 376px) and (max-width: 600px) {
-    height: 48px;
-  }
+@media screen and (min-width: 376px) and (max-width: 600px) {
+}
 
-  @media screen and (min-width: 601px) and (max-width: 1024px) {
-    height: 48px;
-  }
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+  .navbar {
+    // @include style($neutral_darker, $primary_main);
+    height: $nav-height;
+    .container {
+      .navbar__menu {
+        @include flexBox(row, flex-end, center);
+        margin-top: 0;
+        .toggle-menu {
+          display: none;
+        }
+        .navbar__list {
+          @include flexBox(row);
+          transform: translateY(0);
 
-  @media screen and (min-width: 1025px) {
-    height: 36px;
+          .navbar__item {
+            @include paddingMargin;
+            .navbar__link {
+              max-height: $nav-height;
+              height: 48px;
+            }
+          }
+        }
+        // .toggle-menu__checkbox {
+        //   &:checked + .navbar__list {
+        //     // transform: translateY(0);
+        //     @include style($neutral_darker, $primary_main);
+        //   }
+        // }
+      }
+    }
   }
+}
+
+@media screen and (min-width: 1025px) {
 }
