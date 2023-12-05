@@ -26,22 +26,16 @@
     .navbar__menu {
       @include flexBox(row, center, center);
       @include paddingMargin($padding);
-      @include style($neutral_lighter, $primary_main);
+      // @include style($neutral_lighter, $primary_main);
       flex: 7;
       margin-top: 90px;
-      .toggle-menu {
-        width: 50px;
-        position: absolute;
-        z-index: 1;
-        top: 1rem;
-        right: 1rem;
-        cursor: pointer;
-      }
+      margin-top: $nav-height;
 
       .navbar__list {
         @include flexBox(column);
+        @include style($neutral_lighter, $primary_main);
         cursor: pointer;
-        transition: transform 0.3s;
+        transition: transform 0.5s;
         transform: translateY(-120%);
         .navbar__item {
           @include paddingMargin($padding);
@@ -94,11 +88,19 @@
         }
       }
 
-      .main-menu--show {
-        transform: translateY(0);
-        // height: 350px;
-      }
+      // .main-menu--show {
+      //   transform: translateY(0);
+      //   // height: 350px;
+      // }
 
+      .toggle-menu {
+        width: 50px;
+        position: absolute;
+        z-index: 1;
+        top: 1rem;
+        right: 1rem;
+        cursor: pointer;
+      }
       .toggle-menu__checkbox {
         display: none;
         &:checked + .navbar__list {
@@ -131,7 +133,7 @@
           .navbar__item {
             @include paddingMargin;
             .navbar__link {
-              max-height: $nav-height;
+              // max-height: $nav-height;
               height: 48px;
             }
           }

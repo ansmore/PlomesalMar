@@ -144,18 +144,9 @@ header .intro-text .intro-heading {
   align-self: center;
   padding: 0.5rem;
   margin: 0;
-  color: #fafafa;
-  background-color: #17265c;
   flex: 7;
   margin-top: 90px;
-}
-.navbar .container .navbar__menu .toggle-menu {
-  width: 50px;
-  position: absolute;
-  z-index: 1;
-  top: 1rem;
-  right: 1rem;
-  cursor: pointer;
+  margin-top: 70px;
 }
 .navbar .container .navbar__menu .navbar__list {
   display: flex;
@@ -166,8 +157,10 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  color: #fafafa;
+  background-color: #17265c;
   cursor: pointer;
-  transition: transform 0.3s;
+  transition: transform 0.5s;
   transform: translateY(-120%);
 }
 .navbar .container .navbar__menu .navbar__list .navbar__item {
@@ -232,8 +225,13 @@ header .intro-text .intro-heading {
 .navbar .container .navbar__menu .navbar__list .navbar__item .dropdown:hover .dropdown__menu {
   display: flex;
 }
-.navbar .container .navbar__menu .main-menu--show {
-  transform: translateY(0);
+.navbar .container .navbar__menu .toggle-menu {
+  width: 50px;
+  position: absolute;
+  z-index: 1;
+  top: 1rem;
+  right: 1rem;
+  cursor: pointer;
 }
 .navbar .container .navbar__menu .toggle-menu__checkbox {
   display: none;
@@ -276,7 +274,6 @@ header .intro-text .intro-heading {
     margin: 0;
   }
   .navbar .container .navbar__menu .navbar__list .navbar__item .navbar__link {
-    max-height: 70px;
     height: 48px;
   }
 }

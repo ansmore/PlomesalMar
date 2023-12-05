@@ -16,7 +16,7 @@
   margin: $margin;
 }
 
-@mixin style($color, $background-color: transparent) {
+@mixin style($color: $neutral_lighter, $background-color: transparent) {
   color: $color;
   background-color: $background-color;
 }
