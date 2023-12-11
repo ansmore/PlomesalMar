@@ -1,46 +1,46 @@
 // Tu archivo SASS existente
 
-.navbar {
-  // ... (estilos existentes) ...
+// .navbar {
+// ... (estilos existentes) ...
 
-  .dropdown {
-    position: relative;
+// .dropdown {
+//   position: relative;
 
-    .dropdown-menu {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      z-index: 1000;
-      min-width: 160px;
-      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-      background-color: #fff;
-      padding: 0.5rem 0;
-      border: 1px solid rgba(0, 0, 0, 0.125);
+//   .dropdown__menu {
+//     display: none;
+//     position: absolute;
+//     top: 100%;
+//     left: 0;
+//     z-index: 1000;
+//     min-width: 160px;
+//     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+//     background-color: #fff;
+//     padding: 0.5rem 0;
+//     border: 1px solid rgba(0, 0, 0, 0.125);
 
-      .dropdown-item {
-        display: block;
-        width: 100%;
-        padding: 0.25rem 1.5rem;
-        clear: both;
-        font-weight: 400;
-        color: #212529;
-        text-align: inherit;
-        white-space: nowrap;
-        background-color: transparent;
-        border: 0;
-        cursor: pointer;
+//     .dropdown__item {
+//       display: block;
+//       width: 100%;
+//       padding: 0.25rem 1.5rem;
+//       clear: both;
+//       font-weight: 400;
+//       color: #212529;
+//       text-align: inherit;
+//       white-space: nowrap;
+//       background-color: transparent;
+//       border: 0;
+//       cursor: pointer;
 
-        &:hover,
-        &:focus {
-          color: #fff;
-          background-color: #007bff;
-        }
-      }
-    }
+//       &:hover,
+//       &:focus {
+//         color: #fff;
+//         background-color: #007bff;
+//       }
+//     }
+//   }
 
-    &:hover .dropdown-menu {
-      display: block;
-    }
-  }
-}
+//   &:hover .dropdown__menu {
+//     display: block;
+//   }
+// }
+// }

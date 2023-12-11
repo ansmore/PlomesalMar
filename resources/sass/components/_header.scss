@@ -12,16 +12,16 @@ header {
   background-size: cover;
   -o-background-size: cover;
   text-align: center;
-  color: #fff;
+  color: $neutral_lighter;
 }
 
 header .intro-text {
-  padding-top: 100px;
+  padding-top: 200px;
   padding-bottom: 50px;
 }
 
 header .intro-text .intro-lead-in {
-  font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  // font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-style: italic;
   font-size: 22px;
   line-height: 22px;
@@ -29,7 +29,7 @@ header .intro-text .intro-lead-in {
 }
 
 header .intro-text .intro-heading {
-  font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  // font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   font-weight: 700;
   font-size: 50px;

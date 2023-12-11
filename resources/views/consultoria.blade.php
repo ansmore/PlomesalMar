@@ -57,7 +57,7 @@
                         </span>
                         <h3 value-text="consultoriaSoftware" class="section-heading"></h3>
                         <p value-text="consultoriaGamaSage" class="text-muted text-justify"></p>
-                        <p value-text="consultoriaMurano" class="text-muted text-justify"></p>
+                        <p value-text="consultoriaSage" class="text-muted text-justify"></p>
                         <p value-text="consultoriaNecesidades" class="text-muted text-justify"></p>
                         <p value-text="consultoriaAplicaciones" class="text-muted text-justify"></p>
                     </div>

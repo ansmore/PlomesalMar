@@ -1,65 +1,148 @@
-$nav-height: 60px;
-
 // Estilos para la barra de navegación
 .navbar {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+  @include flexBox(row, space-between, center);
 
+  @include style($neutral_lighter, $primary_main);
   height: $nav-height;
+  font-size: $size_medium;
 
-  padding: 0 20px;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
 
-  color: $base;
-  background-color: $primary-color;
+  .container {
+    @include flexBox(row, space-around, center);
+    @include paddingMargin;
+    min-width: 100vw;
 
-  @media screen and (max-width: 768px) {
-    height: 48px;
-  }
+    .navbar__logo {
+      @include flexBox(row, flex-start, center);
+      @include paddingMargin($padding, $margin);
+      flex: 3;
+    }
 
-  @media screen and (max-width: 480px) {
-    height: 36px;
-  }
-}
+    .navbar__menu {
+      @include flexBox(row, center, center);
+      @include paddingMargin;
 
-.container {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  justify-content: space-around;
-  align-items: center;
-}
-.logo--header {
-  align-items: center;
-  flex: 3;
-}
-.logo--nav {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  flex: 7;
-}
+      flex: 7;
+      margin-top: 90px;
+      margin-top: $nav-height;
 
-// Estilos para los elementos de navegación
-.nav-item {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: inline-flex;
+      .navbar__list {
+        @include flexBox(column);
+        @include style($neutral_lighter, $primary_main);
+        cursor: pointer;
 
-  .nav-link {
-    color: $base;
-    text-decoration: none;
-    margin: 0 15px;
+        transition: transform 1.5s;
+        transform: translateY(-120%);
+        .navbar__item {
+          @include paddingMargin($padding);
 
-    &:hover {
-      color: $base;
-      background-color: $primary-color-dark;
+          list-style: none;
+          display: inline-flex;
+
+          .navbar__link {
+            @include flexBox(row, center, center);
+            @include paddingMargin(0, 0 $margin);
+            @include style($neutral_lighter);
+
+            min-width: 120px;
+            text-decoration: none;
+          }
+          &:hover {
+            @include style($neutral_lighter, $secondary_main);
+          }
+
+          .dropdown {
+            position: relative;
+
+            .navbar__link--dropdown-toggle {
+              @include paddingMargin($padding, 0 $margin);
+
+              text-decoration: none;
+            }
+
+            .dropdown__menu {
+              @include flexBox(column, center, center);
+              position: absolute;
+              top: 100%;
+              left: 0;
+              display: none;
+              .dropdown__item {
+                @include paddingMargin($padding);
+                @include style($neutral_lighter, $primary_main);
+                text-decoration: none;
+
+                &:hover {
+                  @include style($neutral_lighter, $secondary_main);
+                }
+              }
+            }
+
+            &:hover .dropdown__menu {
+              display: flex;
+            }
+          }
+        }
+      }
     }
   }
+  .toggle-menu {
+    width: 50px;
+    position: absolute;
+    z-index: 1;
+    top: 1rem;
+    right: 1rem;
+    cursor: pointer;
+  }
+  .toggle-menu__checkbox {
+    display: none;
+
+    &:checked + .container {
+      @include style($neutral_lighter, $primary_main);
+
+      .navbar__menu {
+        .navbar__list {
+          transition: transform 0.5s;
+          transform: translateY(0);
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 376px) and (max-width: 600px) {
+}
+
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+  .navbar {
+    // @include style($neutral_darker, $primary_main);
+    height: $nav-height;
+    .toggle-menu {
+      display: none;
+    }
+    .container {
+      .navbar__menu {
+        @include flexBox(row, flex-end, center);
+        margin-top: 0;
+
+        .navbar__list {
+          @include flexBox(row);
+          transform: translateY(0);
+          .navbar__item {
+            @include paddingMargin;
+            .navbar__link {
+              // max-height: $nav-height;
+              height: 48px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1025px) {
 }

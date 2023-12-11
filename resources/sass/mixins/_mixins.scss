@@ -1,0 +1,22 @@
+@mixin flexBox($direction: row, $justify: flex-start, $align: center) {
+  display: flex;
+  flex-direction: $direction;
+
+  justify-content: $justify;
+  justify-items: center;
+  justify-self: center;
+
+  align-content: center;
+  align-items: $align;
+  align-self: center;
+}
+
+@mixin paddingMargin($padding: 0, $margin: 0) {
+  padding: $padding;
+  margin: $margin;
+}
+
+@mixin style($color: $neutral_lighter, $background-color: transparent) {
+  color: $color;
+  background-color: $background-color;
+}

@@ -1,36 +1,40 @@
 <nav class="navbar">
+    <div class="toggle-menu">
+        <label for="toggle-menu-checkbox">
+            <img src="{{ asset('img/hamburger-menu.png') }}" alt="Menu hamburger">
+        </label>
+    </div>
+    <input type="checkbox" class="toggle-menu__checkbox" id="toggle-menu-checkbox">
     <div class="container">
-        <div class="logo--header">
+        <div class="navbar__logo">
             <a href="/">
                 <img class="img-responsive" src="./img/logo.png" alt="Pymesoft" id="pymeso" />
             </a>
         </div>
-        <div class="logo--nav">
-            <ul>
-                <li class="nav-item">
-                    <a class="nav-link page-scroll" href="{{ route('home') }}" value-text="navHome"></a>
+        <div class="navbar__menu">
+            <div class="toggle-menu">
+                <label for="toggle-menu-checkbox">
+                    <img src="{{ asset('img/hamburger-menu.png') }}" alt="Menu hamburger">
+                </label>
+            </div>
+            <input type="checkbox" class="toggle-menu__checkbox" id="toggle-menu-checkbox">
+            <ul class="navbar__list">
+                <li class="navbar__item">
+                    <a class="navbar__link" href="{{ route('home') }}" value-text="navHomePage"></a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link page-scroll" href="{{ route('digitalizacion') }}"
-                        value-text="navDigitalizacion"></a>
+                <li class="navbar__item">
+                    <a class="navbar__link" href="{{ route('digitalizacion') }}" value-text="navDigitalizacion"></a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link page-scroll" href="{{ route('home.section', ['section' => 'services']) }}"
+                <li class="navbar__item">
+                    <a class="navbar__link" href="{{ route('home.section', ['section' => 'soluciones']) }}"
                         value-text="navService"></a>
-                    {{-- /#services --}}
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link page-scroll" href="{{ route('biit') }}" value-text="navPorfolio"></a>
+                <li class="navbar__item">
+                    <a class="navbar__link" href="{{ route('biit') }}" value-text="navPorfolio"></a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link page-scroll" href="{{ route('home.section', ['section' => 'site']) }}"
-                        value-text="navLocation"></a>
-                    {{-- /#site --}}
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link page-scroll" href="{{ route('home.section', ['section' => 'contact']) }}"
+                <li class="navbar__item">
+                    <a class="navbar__link" href="{{ route('home.section', ['section' => 'contact']) }}"
                         value-text="navContact"></a>
-                    {{-- /#contact --}}
                 </li>
             </ul>
         </div>
