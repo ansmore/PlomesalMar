@@ -1,11 +1,8 @@
 // Estilos para la barra de navegación
 .navbar {
   @include flexBox(row, space-between, center);
-  //  Borrar padding?
-  // @include paddingMargin($padding);
 
   @include style($neutral_lighter, $primary_main);
-
   height: $nav-height;
   font-size: $size_medium;
 
@@ -28,9 +25,7 @@
     .navbar__menu {
       @include flexBox(row, center, center);
       @include paddingMargin;
-      // borrar padding?
-      // @include paddingMargin($padding);
-      // @include style($neutral_lighter, $primary_main);
+
       flex: 7;
       margin-top: 90px;
       margin-top: $nav-height;
@@ -39,7 +34,8 @@
         @include flexBox(column);
         @include style($neutral_lighter, $primary_main);
         cursor: pointer;
-        transition: transform 0.5s;
+
+        transition: transform 1.5s;
         transform: translateY(-120%);
         .navbar__item {
           @include paddingMargin($padding);
@@ -91,11 +87,6 @@
           }
         }
       }
-
-      // .main-menu--show {
-      //   transform: translateY(0);
-      //   // height: 350px;
-      // }
     }
   }
   .toggle-menu {
@@ -108,18 +99,14 @@
   }
   .toggle-menu__checkbox {
     display: none;
-    // &:checked + .navbar__list,
+
     &:checked + .container {
-      // transition: transform 0.5s;
-      // transform: translateY(0);
-      background-color: bisque;
+      @include style($neutral_lighter, $primary_main);
+
       .navbar__menu {
-        // background-color: antiquewhite;
         .navbar__list {
-          // @include style($neutral_lighter, $primary_main);
+          transition: transform 0.5s;
           transform: translateY(0);
-          // transition: transform 0.5s;
-          // background-color: aquamarine;
         }
       }
     }
@@ -144,7 +131,6 @@
         .navbar__list {
           @include flexBox(row);
           transform: translateY(0);
-
           .navbar__item {
             @include paddingMargin;
             .navbar__link {
@@ -153,12 +139,6 @@
             }
           }
         }
-        // .toggle-menu__checkbox {
-        //   &:checked + .navbar__list {
-        //     // transform: translateY(0);
-        //     @include style($neutral_darker, $primary_main);
-        //   }
-        // }
       }
     }
   }

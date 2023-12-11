@@ -38,7 +38,6 @@
                 </li>
             </ul>
         </div>
-
     </div>
 </nav>
 <script type="module" src="{{ asset('js/navigationHome.js') }}" defer></script>

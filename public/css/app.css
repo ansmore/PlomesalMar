@@ -1,24 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Bruno+Ace&display=swap");
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  text-decoration: none;
-  border: none;
-  outline: none;
-}
-
-::selection {
-  background-color: #0097b2;
-  color: #17265c;
-}
-
-picture,
-img {
-  max-width: 100%;
-}
-
 body,
 html,
 form,
@@ -34,6 +14,120 @@ h4,
 h5,
 h6 {
   font-weight: 600;
+}
+
+* {
+  box-sizing: border-box;
+  vertical-align: baseline;
+  border: none;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  outline: none;
+}
+
+picture,
+img,
+video,
+iframe,
+figure {
+  max-width: 100%;
+  width: 100%;
+  display: block;
+}
+
+a {
+  display: block;
+}
+
+p a {
+  display: inline;
+}
+
+li {
+  list-style-type: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+a,
+strong,
+blockquote,
+i,
+b,
+u,
+em {
+  font-size: 1em;
+  font-weight: inherit;
+  font-style: inherit;
+  text-decoration: none;
+  color: inherit;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+form,
+input,
+textarea,
+select,
+button,
+label {
+  font-family: inherit;
+  font-size: inherit;
+  hyphens: auto;
+  background-color: transparent;
+  display: block;
+  color: inherit;
+  appearance: none;
+}
+
+table,
+tr,
+td,
+th {
+  border-collapse: collapse;
+  border-spacing: block;
+}
+
+svg {
+  width: 100%;
+  display: block;
+  fill: currentColor;
+}
+
+body {
+  min-height: 100vh;
+  font-size: 100%;
+  font-family: "Bruno Ace", sans-serif;
+  color: #000000;
+  background-color: #ffffff;
+  line-height: 1.4em;
+  hyphens: auto;
+  font-smooth: always;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background-color: #0097b2;
+  color: #17265c;
 }
 
 html {
@@ -70,7 +164,7 @@ header {
 }
 
 header .intro-text {
-  padding-top: 100px;
+  padding-top: 200px;
   padding-bottom: 50px;
 }
 
@@ -160,7 +254,7 @@ header .intro-text .intro-heading {
   color: #fafafa;
   background-color: #17265c;
   cursor: pointer;
-  transition: transform 0.5s;
+  transition: transform 1.5s;
   transform: translateY(-120%);
 }
 .navbar .container .navbar__menu .navbar__list .navbar__item {
@@ -237,9 +331,11 @@ header .intro-text .intro-heading {
   display: none;
 }
 .navbar .toggle-menu__checkbox:checked + .container {
-  background-color: bisque;
+  color: #fafafa;
+  background-color: #17265c;
 }
 .navbar .toggle-menu__checkbox:checked + .container .navbar__menu .navbar__list {
+  transition: transform 0.5s;
   transform: translateY(0);
 }
 
