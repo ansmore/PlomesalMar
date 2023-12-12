@@ -346,6 +346,9 @@ header .intro-text .intro-heading {
   .navbar .toggle-menu {
     display: none;
   }
+  .navbar .container {
+    max-height: 70px;
+  }
   .navbar .container .navbar__menu {
     display: flex;
     flex-direction: row;
@@ -373,7 +376,10 @@ header .intro-text .intro-heading {
     margin: 0;
   }
   .navbar .container .navbar__menu .navbar__list .navbar__item .navbar__link {
-    height: 48px;
+    height: 70px;
+  }
+  .navbar .container .navbar__menu .navbar__list .navbar__item:hover {
+    max-height: 70px;
   }
 }
 .container-services {

@@ -37,6 +37,7 @@
 
         transition: transform 1.5s;
         transform: translateY(-120%);
+
         .navbar__item {
           @include paddingMargin($padding);
 
@@ -51,6 +52,7 @@
             min-width: 120px;
             text-decoration: none;
           }
+
           &:hover {
             @include style($neutral_lighter, $secondary_main);
           }
@@ -60,7 +62,6 @@
 
             .navbar__link--dropdown-toggle {
               @include paddingMargin($padding, 0 $margin);
-
               text-decoration: none;
             }
 
@@ -70,7 +71,9 @@
               top: 100%;
               left: 0;
               display: none;
+
               .dropdown__item {
+                // @include paddingMargin(calc($padding * 2));
                 @include paddingMargin($padding);
                 @include style($neutral_lighter, $primary_main);
                 text-decoration: none;
@@ -89,6 +92,7 @@
       }
     }
   }
+
   .toggle-menu {
     width: 50px;
     position: absolute;
@@ -97,6 +101,7 @@
     right: 1rem;
     cursor: pointer;
   }
+
   .toggle-menu__checkbox {
     display: none;
 
@@ -118,12 +123,14 @@
 
 @media screen and (min-width: 601px) and (max-width: 1024px) {
   .navbar {
-    // @include style($neutral_darker, $primary_main);
     height: $nav-height;
+
     .toggle-menu {
       display: none;
     }
     .container {
+      max-height: $nav-height;
+
       .navbar__menu {
         @include flexBox(row, flex-end, center);
         margin-top: 0;
@@ -131,11 +138,16 @@
         .navbar__list {
           @include flexBox(row);
           transform: translateY(0);
+
           .navbar__item {
             @include paddingMargin;
+
             .navbar__link {
-              // max-height: $nav-height;
-              height: 48px;
+              height: $nav-height;
+            }
+
+            &:hover {
+              max-height: $nav-height;
             }
           }
         }
