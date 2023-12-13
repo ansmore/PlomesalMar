@@ -34,6 +34,7 @@
         @include flexBox(column);
         @include style($neutral_lighter, $primary_main);
         cursor: pointer;
+        min-width: 40vw;
 
         transition: transform 1.5s;
         transform: translateY(-120%);
@@ -49,12 +50,14 @@
             @include paddingMargin(0, 0 $margin);
             @include style($neutral_lighter);
 
-            min-width: 120px;
+            // min-width: 120px;
             text-decoration: none;
           }
 
           &:hover {
+            @include flexBox(column, center, center);
             @include style($neutral_lighter, $secondary_main);
+            min-width: 40vw;
           }
 
           .dropdown {
@@ -187,10 +190,12 @@
 
             .navbar__link {
               height: $nav-height;
+              min-width: 120px;
             }
 
             &:hover {
               max-height: $nav-height;
+              min-width: 120px;
             }
           }
         }

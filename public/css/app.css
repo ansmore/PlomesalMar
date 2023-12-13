@@ -253,6 +253,7 @@ header .intro-text .intro-heading {
   color: #fafafa;
   background-color: #17265c;
   cursor: pointer;
+  min-width: 40vw;
   transition: transform 1.5s;
   transform: translateY(-120%);
 }
@@ -275,12 +276,20 @@ header .intro-text .intro-heading {
   margin: 0 0.5rem;
   color: #fafafa;
   background-color: transparent;
-  min-width: 120px;
   text-decoration: none;
 }
 .navbar .container .navbar__menu .navbar__list .navbar__item:hover {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+  justify-self: center;
+  align-content: center;
+  align-items: center;
+  align-self: center;
   color: #fafafa;
   background-color: #0097b2;
+  min-width: 40vw;
 }
 .navbar .container .navbar__menu .navbar__list .navbar__item .dropdown {
   position: relative;
@@ -372,9 +381,11 @@ header .intro-text .intro-heading {
   }
   .navbar .container .navbar__menu .navbar__list .navbar__item .navbar__link {
     height: 70px;
+    min-width: 120px;
   }
   .navbar .container .navbar__menu .navbar__list .navbar__item:hover {
     max-height: 70px;
+    min-width: 120px;
   }
 }
 .main {
@@ -404,6 +415,7 @@ header .intro-text .intro-heading {
   align-self: center;
   padding: 0.5rem;
   margin: 0 auto;
+  min-width: 85vw;
 }
 .main .container-services .row {
   display: flex;
@@ -455,7 +467,7 @@ header .intro-text .intro-heading {
   padding: 1rem;
   margin: 1rem;
   color: #17265c;
-  background-color: #666666;
+  background-color: #8f8f8f;
   min-height: 8rem;
   flex: 5;
 }
@@ -484,7 +496,7 @@ header .intro-text .intro-heading {
     align-self: center;
     padding: 1rem;
     margin: 1rem;
-    min-height: 160px;
+    min-height: 200px;
   }
 }
 

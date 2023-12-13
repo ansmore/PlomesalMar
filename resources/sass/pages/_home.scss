@@ -10,6 +10,7 @@
   .container-services {
     @include flexBox(column, space-around, center);
     @include paddingMargin($padding, 0 auto);
+    min-width: 85vw;
 
     .row {
       @include flexBox(column, space-around, center);
@@ -46,8 +47,9 @@
     .row-1-service,
     .row-2-service {
       @include paddingMargin(1rem, 1rem);
-      @include style($primary_main, $neutral_dark);
+      @include style($primary_main, $neutral_main);
       min-height: 8rem;
+
       flex: 5;
     }
   }
@@ -66,8 +68,8 @@
       .row-2-service {
         @include flexBox(column, space-around, center);
         @include paddingMargin(1rem, 1rem);
-
-        min-height: 160px;
+        // min-width: 35vw;
+        min-height: 200px;
       }
     }
   }
