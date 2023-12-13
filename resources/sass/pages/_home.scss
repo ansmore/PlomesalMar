@@ -1,56 +1,77 @@
-$container-padding: 15px;
+// Estilos pagina Home
+.main {
+  @include flexBox(column, space-around);
+  @include paddingMargin($padding);
+  @include style($primary_main, $neutral_light);
 
-.container-services {
-  display: flex;
-  flex-direction: column;
-  padding: 20px $container-padding;
-  margin: 0 auto;
-  width: 100%;
+  font-size: $size_small;
+  margin-top: $nav-height;
 
-  .row {
-    margin: 0 (-$container-padding);
-    text-align: center;
-    position: relative;
-    min-height: 1px;
-    padding: 20x $container-padding;
+  .container-services {
+    @include flexBox(column, space-around, center);
+    @include paddingMargin($padding, 0 auto);
 
-    .section-heading {
-      // font-family: "Montserrat", sans-serif;
-      font-size: 40px;
-      margin: 0 0 15px;
+    .row {
+      @include flexBox(column, space-around, center);
+      @include paddingMargin(20px 15px, 0 -15px);
+      text-align: center;
+
+      .section-heading {
+        font-size: 40px;
+        margin: 0 0 15px;
+      }
+
+      .section-subheading {
+        font-size: 16px;
+        text-transform: none;
+        font-style: italic;
+        font-weight: 400;
+        margin-bottom: 32px;
+        color: $secondary_main;
+      }
     }
 
-    .section-subheading {
-      font-size: 16px;
-      // font-family: "Droid Serif", sans-serif;
-      text-transform: none;
-      font-style: italic;
-      font-weight: 400;
-      margin-bottom: 32px;
-      color: #777;
+    .row-1,
+    .row-2 {
+      @include flexBox(column, flex-start);
+      @include paddingMargin(0 15px);
+      text-align: center;
+
+      .service-heading {
+        @include paddingMargin(15px 0);
+        text-transform: none;
+      }
+    }
+
+    .row-1-service,
+    .row-2-service {
+      @include paddingMargin(1rem, 1rem);
+      @include style($primary_main, $neutral_dark);
+      min-height: 8rem;
+      flex: 5;
     }
   }
+}
+@media screen and (min-width: 376px) and (max-width: 600px) {
+}
 
-  .row-1,
-  .row-2 {
-    display: flex;
-    flex-direction: row;
-    text-align: center;
-    position: relative;
-    min-height: 1px;
-    padding: 0 $container-padding;
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+  .main {
+    .container-services {
+      .row-1,
+      .row-2 {
+        @include flexBox(row);
+      }
+      .row-1-service,
+      .row-2-service {
+        @include flexBox(column, space-around, center);
+        @include paddingMargin(1rem, 1rem);
 
-    .service-heading {
-      margin: 15px 0;
-      text-transform: none;
-    }
-
-    &-service {
-      flex: 3.33;
+        min-height: 160px;
+      }
     }
   }
+}
 
-  .row-2-service {
-    flex: 5;
-  }
+@media screen and (min-width: 1025px) {
 }

@@ -4,7 +4,7 @@
 @section('content')
 
     @include('components.navigationHome')
-    @include('components.header')
+    {{-- @include('components.header') --}}
 
     <div class="main">
         <!-- Services Section -->
@@ -28,13 +28,14 @@
                             <a href="{{ route('biit') }}" value-text="services1"></a>
                         </h4>
                     </div>
-                    <div class="row-1-service">
+                    {{-- outsourcing to delete --}}
+                    {{-- <div class="row-1-service">
                         <span class="fa-stack fa-4x">
                             <span class="fa fa-circle fa-stack-2x text-primary"></span>
                             <span class="fa fa-users fa-stack-1x fa-inverse"></span>
                         </span>
                         <h4 class="service-heading" value-text="services2"></h4>
-                    </div>
+                    </div> --}}
                     <div class="row-1-service">
                         <span class="fa-stack fa-4x">
                             <span class="fa fa-circle fa-stack-2x text-primary"></span>
