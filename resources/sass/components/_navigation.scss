@@ -4,7 +4,7 @@
 
   @include style($neutral_lighter, $primary_main);
   height: $nav-height;
-  font-size: $size_medium;
+  font-size: $size_small;
 
   position: fixed;
   top: 0;
@@ -27,8 +27,8 @@
       @include paddingMargin;
 
       flex: 7;
-      margin-top: 90px;
-      margin-top: $nav-height;
+      margin-top: 150px;
+      // margin-top: $nav-height;
 
       .navbar__list {
         @include flexBox(column);
@@ -97,8 +97,8 @@
     width: 50px;
     position: absolute;
     z-index: 1;
-    top: 1rem;
-    right: 1rem;
+    top: 0.5rem;
+    right: 0.5rem;
     cursor: pointer;
   }
 
@@ -106,7 +106,7 @@
     display: none;
 
     &:checked + .container {
-      @include style($neutral_lighter, $primary_main);
+      // @include style($neutral_lighter, $primary_light);
 
       .navbar__menu {
         .navbar__list {
@@ -122,6 +122,49 @@
 }
 
 @media screen and (min-width: 601px) and (max-width: 1024px) {
+  // .navbar {
+  //   height: $nav-height;
+
+  //   .toggle-menu {
+  //     display: none;
+  //   }
+  //   .container {
+  //     @include flexBox(row);
+  //     min-width: 100vw;
+  //     max-height: $nav-height;
+
+  //     .navbar__logo {
+  //       @include flexBox(row);
+  //       min-width: 30vw;
+  //       flex: 3;
+  //     }
+  //     .navbar__menu {
+  //       @include flexBox(row, flex-end, center);
+  //       margin-top: 0;
+  //       flex: 7;
+
+  //       .navbar__list {
+  //         @include flexBox(row);
+  //         transform: translateY(0);
+
+  //         .navbar__item {
+  //           @include paddingMargin;
+
+  //           .navbar__link {
+  //             height: $nav-height;
+  //           }
+
+  //           &:hover {
+  //             max-height: $nav-height;
+  //           }
+  //         }
+  //       }
+  //     }
+  //   }
+  // }
+}
+
+@media screen and (min-width: 1025px) {
   .navbar {
     height: $nav-height;
 
@@ -154,7 +197,4 @@
       }
     }
   }
-}
-
-@media screen and (min-width: 1025px) {
 }
