@@ -403,6 +403,7 @@ header .intro-text .intro-heading {
   background-color: #ececec;
   font-size: 1em;
   margin-top: 70px;
+  gap: 0.5rem;
 }
 .main .container-services {
   display: flex;
@@ -415,6 +416,8 @@ header .intro-text .intro-heading {
   align-self: center;
   padding: 0.5rem;
   margin: 0 auto;
+  color: #17265c;
+  background-color: aqua;
   min-width: 85vw;
 }
 .main .container-services .row {
@@ -426,21 +429,47 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
-  padding: 20px 15px;
-  margin: 0 -15px;
+  padding: 0;
+  margin: 0;
+  color: #17265c;
+  background-color: salmon;
   text-align: center;
+  min-width: 80vw;
+  min-height: 8rem;
 }
 .main .container-services .row .section-heading {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  justify-items: center;
+  justify-self: center;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  padding: 0.5rem;
+  margin: 0 15px;
+  color: #17265c;
+  background-color: green;
   font-size: 40px;
-  margin: 0 0 15px;
+  min-height: 4rem;
 }
 .main .container-services .row .section-subheading {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  justify-items: center;
+  justify-self: center;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  padding: 0.5rem;
+  margin: 0 15px;
+  color: #0097b2;
+  background-color: pink;
   font-size: 16px;
   text-transform: none;
   font-style: italic;
   font-weight: 400;
-  margin-bottom: 32px;
-  color: #0097b2;
 }
 .main .container-services .row-1,
 .main .container-services .row-2 {
@@ -454,6 +483,9 @@ header .intro-text .intro-heading {
   align-self: center;
   padding: 0 15px;
   margin: 0;
+  color: #17265c;
+  background-color: lightyellow;
+  min-width: 80vw;
   text-align: center;
 }
 .main .container-services .row-1 .service-heading,
@@ -471,8 +503,122 @@ header .intro-text .intro-heading {
   min-height: 8rem;
   flex: 5;
 }
+.main .container-aside {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  justify-items: center;
+  justify-self: center;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  padding: 0.5rem;
+  margin: 0;
+  color: #17265c;
+  background-color: rgb(255, 222, 228);
+  min-width: 85vw;
+}
+.main .container-aside .aside {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  justify-items: center;
+  justify-self: center;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  padding: 0.5rem;
+  margin: 0;
+  color: #17265c;
+  background-color: brown;
+}
+.main .container-about {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  justify-items: center;
+  justify-self: center;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  padding: 0.5rem;
+  margin: 0;
+  color: #17265c;
+  background-color: rgb(47, 129, 129);
+  min-width: 85vw;
+}
+.main .container-about .about {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  justify-items: center;
+  justify-self: center;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  padding: 0.5rem;
+  margin: 0;
+  color: #17265c;
+  background-color: rgb(142, 86, 142);
+}
+.main .container-contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  justify-items: center;
+  justify-self: center;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  padding: 0.5rem;
+  margin: 0;
+  color: #17265c;
+  background-color: rgb(194, 254, 254);
+  min-width: 85vw;
+  gap: 0.5rem;
+}
+.main .container-contact .contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  justify-items: center;
+  justify-self: center;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  padding: 0.5rem;
+  margin: 0;
+  color: #17265c;
+  background-color: rgb(141, 172, 230);
+  max-width: 90vw;
+  gap: 0.5rem;
+}
+.main .container-contact .contact .contact-text {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  justify-items: center;
+  justify-self: center;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  padding: 0.5rem;
+  margin: 0;
+  max-width: 90vw;
+}
+.main .container-contact .contact .contact-text .clausulaContacto {
+  padding: 10px;
+  max-width: 90vw;
+}
 
 @media screen and (min-width: 601px) and (max-width: 1024px) {
+  .main .container-services .row {
+    min-width: 90vw;
+  }
+  .main .container-services .row .section-heading,
+  .main .container-services .row .section-subheading {
+    max-width: 80vw;
+  }
   .main .container-services .row-1,
   .main .container-services .row-2 {
     display: flex;
@@ -483,6 +629,7 @@ header .intro-text .intro-heading {
     align-content: center;
     align-items: center;
     align-self: center;
+    max-width: 90vw;
   }
   .main .container-services .row-1-service,
   .main .container-services .row-2-service {
@@ -497,6 +644,21 @@ header .intro-text .intro-heading {
     padding: 1rem;
     margin: 1rem;
     min-height: 200px;
+  }
+  .main .container-aside .aside {
+    min-width: 90vw;
+    max-width: 90vw;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .main .container-services .row-1-service,
+  .main .container-services .row-2-service {
+    min-width: 60vw;
+    max-width: 60vw;
+  }
+  .main .container-aside .aside {
+    min-width: 80vw;
+    max-width: 80vw;
   }
 }
 

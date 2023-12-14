@@ -125,46 +125,6 @@
 }
 
 @media screen and (min-width: 601px) and (max-width: 1024px) {
-  // .navbar {
-  //   height: $nav-height;
-
-  //   .toggle-menu {
-  //     display: none;
-  //   }
-  //   .container {
-  //     @include flexBox(row);
-  //     min-width: 100vw;
-  //     max-height: $nav-height;
-
-  //     .navbar__logo {
-  //       @include flexBox(row);
-  //       min-width: 30vw;
-  //       flex: 3;
-  //     }
-  //     .navbar__menu {
-  //       @include flexBox(row, flex-end, center);
-  //       margin-top: 0;
-  //       flex: 7;
-
-  //       .navbar__list {
-  //         @include flexBox(row);
-  //         transform: translateY(0);
-
-  //         .navbar__item {
-  //           @include paddingMargin;
-
-  //           .navbar__link {
-  //             height: $nav-height;
-  //           }
-
-  //           &:hover {
-  //             max-height: $nav-height;
-  //           }
-  //         }
-  //       }
-  //     }
-  //   }
-  // }
 }
 
 @media screen and (min-width: 1025px) {

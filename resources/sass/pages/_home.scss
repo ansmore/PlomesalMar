@@ -6,29 +6,43 @@
 
   font-size: $size_small;
   margin-top: $nav-height;
+  gap: $gap;
 
   .container-services {
     @include flexBox(column, space-around, center);
     @include paddingMargin($padding, 0 auto);
+    @include style($primary_main, aqua);
     min-width: 85vw;
 
     .row {
       @include flexBox(column, space-around, center);
-      @include paddingMargin(20px 15px, 0 -15px);
+      @include paddingMargin;
+      @include style($primary_main, salmon);
       text-align: center;
 
+      min-width: 80vw;
+      min-height: 8rem;
+
       .section-heading {
+        @include flexBox(column, space-around, center);
+        @include paddingMargin($padding, 0 15px);
+        @include style($primary_main, green);
         font-size: 40px;
-        margin: 0 0 15px;
+
+        min-height: 4rem;
+        // margin: 0 0 15px;
       }
 
       .section-subheading {
+        @include flexBox(column, space-around, center);
+        @include paddingMargin($padding, 0 15px);
+        @include style($secondary_main, pink);
         font-size: 16px;
         text-transform: none;
         font-style: italic;
         font-weight: 400;
-        margin-bottom: 32px;
-        color: $secondary_main;
+        // margin-bottom: 32px;
+        // color: $secondary_main;
       }
     }
 
@@ -36,6 +50,8 @@
     .row-2 {
       @include flexBox(column, flex-start);
       @include paddingMargin(0 15px);
+      @include style($primary_main, lightyellow);
+      min-width: 80vw;
       text-align: center;
 
       .service-heading {
@@ -53,6 +69,53 @@
       flex: 5;
     }
   }
+  .container-aside {
+    @include flexBox(column, space-around, center);
+    @include paddingMargin($padding, 0);
+    @include style($primary_main, rgb(255, 222, 228));
+    min-width: 85vw;
+    .aside {
+      @include flexBox(column, space-around);
+      @include paddingMargin($padding);
+      @include style($primary_main, brown);
+    }
+  }
+
+  .container-about {
+    @include flexBox(column, space-around, center);
+    @include paddingMargin($padding, 0);
+    @include style($primary_main, rgb(47, 129, 129));
+    min-width: 85vw;
+    .about {
+      @include flexBox(column, space-around);
+      @include paddingMargin($padding);
+      @include style($primary_main, rgb(142, 86, 142));
+    }
+  }
+  .container-contact {
+    @include flexBox(column, space-around, center);
+    @include paddingMargin($padding, 0);
+    @include style($primary_main, rgb(194, 254, 254));
+    min-width: 85vw;
+    gap: $gap;
+    // max-width: 90vw;
+    .contact {
+      @include flexBox(column, space-around, center);
+      @include paddingMargin($padding, 0);
+      @include style($primary_main, rgb(141, 172, 230));
+      max-width: 90vw;
+      gap: $gap;
+      .contact-text {
+        @include flexBox;
+        @include paddingMargin($padding, 0);
+        max-width: 90vw;
+        .clausulaContacto {
+          padding: 10px;
+          max-width: 90vw;
+        }
+      }
+    }
+  }
 }
 @media screen and (min-width: 376px) and (max-width: 600px) {
 }
@@ -60,20 +123,52 @@
 @media screen and (min-width: 601px) and (max-width: 1024px) {
   .main {
     .container-services {
+      .row {
+        min-width: 90vw;
+
+        .section-heading,
+        .section-subheading {
+          max-width: 80vw;
+        }
+      }
+
       .row-1,
       .row-2 {
         @include flexBox(row);
+        max-width: 90vw;
       }
       .row-1-service,
       .row-2-service {
         @include flexBox(column, space-around, center);
         @include paddingMargin(1rem, 1rem);
         // min-width: 35vw;
+        // cambiar a vh ->
         min-height: 200px;
+      }
+    }
+    .container-aside {
+      .aside {
+        min-width: 90vw;
+        max-width: 90vw;
       }
     }
   }
 }
 
 @media screen and (min-width: 1025px) {
+  .main {
+    .container-services {
+      .row-1-service,
+      .row-2-service {
+        min-width: 60vw;
+        max-width: 60vw;
+      }
+    }
+    .container-aside {
+      .aside {
+        min-width: 80vw;
+        max-width: 80vw;
+      }
+    }
+  }
 }
