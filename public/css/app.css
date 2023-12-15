@@ -479,6 +479,10 @@ header .intro-text .intro-heading {
   min-height: 50px;
   min-width: 50px;
 }
+.main .solutions .box__icon:hover {
+  color: inherit;
+  background-color: transparent;
+}
 .main .solutions .box__title {
   display: flex;
   flex-direction: column;
@@ -596,9 +600,6 @@ header .intro-text .intro-heading {
 .main .about .box__button:hover {
   color: #fafafa;
   background-color: #00b4d4;
-  padding: 1rem;
-  margin: 1rem;
-  border-color: #fafafa;
 }
 
 @media screen and (min-width: 601px) and (max-width: 1024px) {
@@ -634,7 +635,7 @@ header .intro-text .intro-heading {
     margin: 0.5rem;
     min-height: 17rem;
   }
-  .main .container-aside .aside {
+  .main .aside__box {
     min-width: 85vw;
     max-width: 85vw;
   }

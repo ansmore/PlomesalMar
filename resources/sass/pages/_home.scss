@@ -47,6 +47,7 @@
         // Falta icono
         min-height: 50px;
         min-width: 50px;
+        @include hover;
       }
       &__title {
         @include flexBox(column, space-around, center);
@@ -55,7 +56,6 @@
         font-size: 40px;
 
         min-height: 4rem;
-        // margin: 0 0 15px;
       }
 
       &__content {
@@ -120,12 +120,12 @@
         @include paddingMargin(1rem, 1rem);
         border: 1px solid transparent;
 
-        &:hover {
-          @include style($neutral_lighter, $secondary_light);
-          @include paddingMargin(1rem, 1rem);
-
-          border-color: $neutral_lighter;
-        }
+        @include hover($secondary_light, $neutral_lighter) // &:hover {
+          //   @include style($neutral_lighter, $secondary_light);
+          //   @include paddingMargin(1rem, 1rem);
+          //   border-color: $neutral_lighter;
+          // }
+;
       }
     }
   }
@@ -183,8 +183,8 @@
         min-height: 17rem;
       }
     }
-    .container-aside {
-      .aside {
+    .aside {
+      &__box {
         min-width: 85vw;
         max-width: 85vw;
       }
