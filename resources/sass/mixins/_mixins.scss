@@ -20,3 +20,9 @@
   color: $color;
   background-color: $background-color;
 }
+
+@mixin hover($background: transparent, $color: inherit) {
+  &:hover {
+    @include style($color, $background);
+  }
+}
