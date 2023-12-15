@@ -47,7 +47,6 @@
         // Falta icono
         min-height: 50px;
         min-width: 50px;
-        @include hover;
       }
       &__title {
         @include flexBox(column, space-around, center);
@@ -120,7 +119,8 @@
         @include paddingMargin(1rem, 1rem);
         border: 1px solid transparent;
 
-        @include hover($secondary_light, $neutral_lighter) // &:hover {
+        @include hover($secondary_light, $neutral_lighter, $neutral_lighter)
+          // &:hover {
           //   @include style($neutral_lighter, $secondary_light);
           //   @include paddingMargin(1rem, 1rem);
           //   border-color: $neutral_lighter;

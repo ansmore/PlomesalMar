@@ -1,7 +1,6 @@
 // Estilos para la barra de navegación
-.navbar {
+.nav {
   @include flexBox(row, space-between, center);
-
   @include style($neutral_lighter, $primary_main);
   max-width: 100vw;
   height: $nav-height;
@@ -12,41 +11,42 @@
   left: 0;
   right: 0;
 
-  .container {
+  .navbar {
     @include flexBox(row, space-around, center);
     @include paddingMargin;
     min-width: 100vw;
 
-    .navbar__logo {
+    &__logo {
       @include flexBox(row, flex-start, center);
       @include paddingMargin($padding, $margin);
       flex: 3;
+      // min-height: 10vh;
     }
 
-    .navbar__menu {
+    &__menu {
       @include flexBox(row, center, center);
       @include paddingMargin;
 
       flex: 7;
       margin-top: 150px;
-      // margin-top: $nav-height;
 
-      .navbar__list {
+      .list {
         @include flexBox(column);
         @include style($neutral_lighter, $primary_main);
         cursor: pointer;
+        margin-top: calc($margin * 2);
         min-width: 40vw;
 
         transition: transform 1.5s;
         transform: translateY(-120%);
 
-        .navbar__item {
+        &__item {
           @include paddingMargin($padding);
 
           list-style: none;
           display: inline-flex;
 
-          .navbar__link {
+          &__link {
             @include flexBox(row, center, center);
             @include paddingMargin(0, 0 $margin);
             @include style($neutral_lighter);
@@ -63,24 +63,25 @@
 
           .dropdown {
             position: relative;
+            // Aqui???
+            // min-width: 40vw;
+            // max-width: 40vw;
 
-            .navbar__link--dropdown-toggle {
-              @include paddingMargin($padding, 0 $margin);
-              text-decoration: none;
-            }
-
-            .dropdown__menu {
+            &__menu {
               @include flexBox(column, center, center);
               position: absolute;
               top: 100%;
+              margin-top: $margin;
               left: 0;
               display: none;
 
-              .dropdown__item {
-                // @include paddingMargin(calc($padding * 2));
+              &__item {
                 @include paddingMargin($padding);
                 @include style($neutral_lighter, $primary_main);
                 text-decoration: none;
+
+                // min-width: 40vw;
+                // max-width: 40vw;
 
                 &:hover {
                   @include style($neutral_lighter, $secondary_main);
@@ -97,25 +98,23 @@
     }
   }
 
-  .toggle-menu {
+  .toggle {
     width: 50px;
     position: absolute;
     z-index: 1;
     top: 0.5rem;
     right: 0.5rem;
     cursor: pointer;
-  }
 
-  .toggle-menu__checkbox {
-    display: none;
+    &__checkbox {
+      display: none;
 
-    &:checked + .container {
-      // @include style($neutral_lighter, $primary_light);
-
-      .navbar__menu {
-        .navbar__list {
-          transition: transform 0.5s;
-          transform: translateY(0);
+      &:checked + .navbar {
+        .navbar__menu {
+          .list {
+            transition: transform 0.5s;
+            transform: translateY(0);
+          }
         }
       }
     }
@@ -126,30 +125,36 @@
 }
 
 @media screen and (min-width: 601px) and (max-width: 1024px) {
+  .navbar {
+    &__logo {
+      min-width: 30vw;
+    }
+  }
 }
 
 @media screen and (min-width: 1025px) {
-  .navbar {
+  .nav {
     height: $nav-height;
 
-    .toggle-menu {
+    .toggle {
       display: none;
     }
-    .container {
+    .navbar {
       max-height: $nav-height;
 
-      .navbar__menu {
+      &__menu {
         @include flexBox(row, flex-end, center);
         margin-top: 0;
 
-        .navbar__list {
+        .list {
           @include flexBox(row);
+          margin-top: 0;
           transform: translateY(0);
 
-          .navbar__item {
+          &__item {
             @include paddingMargin;
 
-            .navbar__link {
+            &__link {
               height: $nav-height;
               min-width: 120px;
             }
@@ -157,6 +162,12 @@
             &:hover {
               max-height: $nav-height;
               min-width: 120px;
+            }
+
+            .dropdown {
+              &__menu {
+                margin-top: 0;
+              }
             }
           }
         }
