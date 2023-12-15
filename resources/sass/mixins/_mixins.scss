@@ -24,6 +24,6 @@
 @mixin hover($background: transparent, $color: inherit, $border: transparent) {
   &:hover {
     @include style($color, $background);
-    border: 2px solid $border;
+    border: 1px solid $border;
   }
 }

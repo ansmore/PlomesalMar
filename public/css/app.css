@@ -604,7 +604,7 @@ header .intro-text .intro-heading {
 .main .about .box__button:hover {
   color: #fafafa;
   background-color: #00b4d4;
-  border: 2px solid #fafafa;
+  border: 1px solid #fafafa;
 }
 
 @media screen and (min-width: 601px) and (max-width: 1024px) {
