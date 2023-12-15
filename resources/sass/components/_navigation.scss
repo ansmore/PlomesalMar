@@ -3,6 +3,7 @@
   @include flexBox(row, space-between, center);
 
   @include style($neutral_lighter, $primary_main);
+  max-width: 100vw;
   height: $nav-height;
   font-size: $size_small;
 

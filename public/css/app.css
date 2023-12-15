@@ -132,6 +132,7 @@ body {
 
 html {
   font-size: 100%;
+  max-width: 100vw;
 }
 
 body {
@@ -194,6 +195,7 @@ header .intro-text .intro-heading {
   align-self: center;
   color: #fafafa;
   background-color: #17265c;
+  max-width: 100vw;
   height: 70px;
   font-size: 1em;
   position: fixed;
@@ -405,7 +407,7 @@ header .intro-text .intro-heading {
   margin-top: 70px;
   gap: 0.5rem;
 }
-.main .container-services {
+.main .solutions {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -415,12 +417,13 @@ header .intro-text .intro-heading {
   align-items: center;
   align-self: center;
   padding: 0.5rem;
-  margin: 0 auto;
+  margin: 0;
   color: #17265c;
-  background-color: aqua;
-  min-width: 85vw;
+  background-color: transparent;
+  min-width: 80vw;
+  max-width: 90vw;
 }
-.main .container-services .row {
+.main .solutions__row {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -429,50 +432,15 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
-  padding: 0;
+  padding: 0 15px;
   margin: 0;
   color: #17265c;
-  background-color: salmon;
+  background-color: transparent;
   text-align: center;
   min-width: 80vw;
   min-height: 8rem;
 }
-.main .container-services .row .section-heading {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  justify-items: center;
-  justify-self: center;
-  align-content: center;
-  align-items: center;
-  align-self: center;
-  padding: 0.5rem;
-  margin: 0 15px;
-  color: #17265c;
-  background-color: green;
-  font-size: 40px;
-  min-height: 4rem;
-}
-.main .container-services .row .section-subheading {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  justify-items: center;
-  justify-self: center;
-  align-content: center;
-  align-items: center;
-  align-self: center;
-  padding: 0.5rem;
-  margin: 0 15px;
-  color: #0097b2;
-  background-color: pink;
-  font-size: 16px;
-  text-transform: none;
-  font-style: italic;
-  font-weight: 400;
-}
-.main .container-services .row-1,
-.main .container-services .row-2 {
+.main .solutions__row1, .main .solutions__row2 {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -484,118 +452,13 @@ header .intro-text .intro-heading {
   padding: 0 15px;
   margin: 0;
   color: #17265c;
-  background-color: lightyellow;
+  background-color: transparent;
   min-width: 80vw;
   text-align: center;
 }
-.main .container-services .row-1 .service-heading,
-.main .container-services .row-2 .service-heading {
-  padding: 15px 0;
-  margin: 0;
-  text-transform: none;
-}
-.main .container-services .row-1-service,
-.main .container-services .row-2-service {
-  padding: 1rem;
-  margin: 1rem;
-  color: #17265c;
-  background-color: #8f8f8f;
-  min-height: 8rem;
-  flex: 5;
-}
-.main .container-aside {
+.main .solutions .box {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  justify-items: center;
-  justify-self: center;
-  align-content: center;
-  align-items: center;
-  align-self: center;
-  padding: 0.5rem;
-  margin: 0;
-  color: #17265c;
-  background-color: rgb(255, 222, 228);
-  min-width: 85vw;
-}
-.main .container-aside .aside {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  justify-items: center;
-  justify-self: center;
-  align-content: center;
-  align-items: center;
-  align-self: center;
-  padding: 0.5rem;
-  margin: 0;
-  color: #17265c;
-  background-color: brown;
-}
-.main .container-about {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  justify-items: center;
-  justify-self: center;
-  align-content: center;
-  align-items: center;
-  align-self: center;
-  padding: 0.5rem;
-  margin: 0;
-  color: #17265c;
-  background-color: rgb(47, 129, 129);
-  min-width: 85vw;
-}
-.main .container-about .about {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  justify-items: center;
-  justify-self: center;
-  align-content: center;
-  align-items: center;
-  align-self: center;
-  padding: 0.5rem;
-  margin: 0;
-  color: #17265c;
-  background-color: rgb(142, 86, 142);
-}
-.main .container-contact {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  justify-items: center;
-  justify-self: center;
-  align-content: center;
-  align-items: center;
-  align-self: center;
-  padding: 0.5rem;
-  margin: 0;
-  color: #17265c;
-  background-color: rgb(194, 254, 254);
-  min-width: 85vw;
-  gap: 0.5rem;
-}
-.main .container-contact .contact {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  justify-items: center;
-  justify-self: center;
-  align-content: center;
-  align-items: center;
-  align-self: center;
-  padding: 0.5rem;
-  margin: 0;
-  color: #17265c;
-  background-color: rgb(141, 172, 230);
-  max-width: 90vw;
-  gap: 0.5rem;
-}
-.main .container-contact .contact .contact-text {
-  display: flex;
-  flex-direction: row;
   justify-content: flex-start;
   justify-items: center;
   justify-self: center;
@@ -603,24 +466,151 @@ header .intro-text .intro-heading {
   align-items: center;
   align-self: center;
   padding: 0.5rem;
-  margin: 0;
+  margin: 0.5rem;
+  color: #17265c;
+  background-color: #8f8f8f;
+  min-height: 10rem;
+  gap: 0.5rem;
+  flex: 5;
+}
+.main .solutions .box__icon {
+  color: #17265c;
+  background-color: #17265c;
+  min-height: 50px;
+  min-width: 50px;
+}
+.main .solutions .box__title {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  justify-items: center;
+  justify-self: center;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  padding: 0.5rem;
+  margin: 0 15px;
+  color: #17265c;
+  background-color: transparent;
+  font-size: 40px;
+  min-height: 4rem;
+}
+.main .solutions .box__content {
+  padding: 0.5rem;
+  margin: 0.5rem;
+  color: #17265c;
+  background-color: transparent;
+}
+.main .solutions .box__content--title {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  justify-items: center;
+  justify-self: center;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  padding: 0.5rem;
+  margin: 0 15px;
+  color: #0097b2;
+  background-color: transparent;
+  font-size: 16px;
+  text-transform: none;
+  font-style: italic;
+  font-weight: 400;
+}
+.main .solutions .box--title {
+  color: #17265c;
+  background-color: transparent;
+}
+.main .aside {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  justify-items: center;
+  justify-self: center;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  min-width: 90vw;
   max-width: 90vw;
 }
-.main .container-contact .contact .contact-text .clausulaContacto {
-  padding: 10px;
+.main .about {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  justify-items: center;
+  justify-self: center;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  padding: 0.5rem;
+  margin: 1rem 0;
+  color: #17265c;
+  background-color: #17265c;
+  min-width: 100vw;
+  min-height: 30vh;
+}
+.main .about .box {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  justify-items: center;
+  justify-self: center;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  min-width: 80vw;
   max-width: 90vw;
+  min-height: 25vh;
+  gap: 1rem;
+}
+.main .about .box__title {
+  padding: 0.5rem;
+  margin: 0.5rem;
+  color: #fafafa;
+  background-color: transparent;
+  font-size: 30px;
+  line-height: 1.5;
+  text-align: center;
+}
+.main .about .box__content {
+  padding: 0.5rem;
+  margin: 0.5rem;
+  color: #fafafa;
+  background-color: transparent;
+  font-size: 16px;
+  text-transform: none;
+  font-style: italic;
+  font-weight: 400;
+}
+.main .about .box__button {
+  color: #fafafa;
+  background-color: #0097b2;
+  padding: 1rem;
+  margin: 1rem;
+  border: 1px solid transparent;
+}
+.main .about .box__button:hover {
+  color: #fafafa;
+  background-color: #00b4d4;
+  padding: 1rem;
+  margin: 1rem;
+  border-color: #fafafa;
 }
 
 @media screen and (min-width: 601px) and (max-width: 1024px) {
-  .main .container-services .row {
-    min-width: 90vw;
-  }
-  .main .container-services .row .section-heading,
-  .main .container-services .row .section-subheading {
+  .main .solutions__row {
+    min-width: 80vw;
     max-width: 80vw;
   }
-  .main .container-services .row-1,
-  .main .container-services .row-2 {
+  .main .solutions__row .section-heading,
+  .main .solutions__row .section-subheading {
+    max-width: 80vw;
+  }
+  .main .solutions__row1, .main .solutions__row2 {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -629,36 +619,37 @@ header .intro-text .intro-heading {
     align-content: center;
     align-items: center;
     align-self: center;
-    max-width: 90vw;
+    max-width: 80vw;
   }
-  .main .container-services .row-1-service,
-  .main .container-services .row-2-service {
+  .main .solutions .box {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: flex-start;
     justify-items: center;
     justify-self: center;
     align-content: center;
     align-items: center;
     align-self: center;
-    padding: 1rem;
-    margin: 1rem;
-    min-height: 200px;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    min-height: 17rem;
   }
   .main .container-aside .aside {
-    min-width: 90vw;
-    max-width: 90vw;
+    min-width: 85vw;
+    max-width: 85vw;
   }
 }
 @media screen and (min-width: 1025px) {
-  .main .container-services .row-1-service,
-  .main .container-services .row-2-service {
+  .main .solutions .box {
     min-width: 60vw;
     max-width: 60vw;
   }
-  .main .container-aside .aside {
+  .main .aside__box {
     min-width: 80vw;
     max-width: 80vw;
+  }
+  .main .about .box__title {
+    font-size: 40px;
   }
 }
 

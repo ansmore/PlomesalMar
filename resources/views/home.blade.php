@@ -8,93 +8,80 @@
 
     <div class="main">
         <!-- Services Section -->
-        <section id="soluciones" class="container-services">
+        <section id="soluciones" class="solutions">
 
-            <div class="row">
-                <div>
-                    <h2 class="section-heading" value-text="homeSoluciones"></h2>
-                    <h3 class="section-subheading text-muted" value-text="homeServicesSubheading"></h3>
+            <div class="solutions__row">
+                <div class="box--title">
+                    <h2 class="box__title" value-text="homeSoluciones"></h2>
+                    <h3 class="box__content--title" value-text="homeServicesSubheading"></h3>
                 </div>
             </div>
-            <div class="row-1">
-                <div class="row-1-service">
-                    <span class="fa-stack fa-4x">
+            <div class="solutions__row1">
+                <div class="box">
+                    <span class="box__icon">
                         <span class="fa fa-circle fa-stack-2x text-primary"></span>
                         <span class="fa fa-check-square-o  fa-stack-1x fa-inverse">
                             <i class="fas fa-check-square"></i>
                         </span>
                     </span>
-                    <h4 class="service-heading">
+                    <h4 class="box__content">
                         <a href="{{ route('biit') }}" value-text="services1"></a>
                     </h4>
                 </div>
-                {{-- outsourcing to delete --}}
-                {{-- <div class="row-1-service">
-                        <span class="fa-stack fa-4x">
-                            <span class="fa fa-circle fa-stack-2x text-primary"></span>
-                            <span class="fa fa-users fa-stack-1x fa-inverse"></span>
-                        </span>
-                        <h4 class="service-heading" value-text="services2"></h4>
-                    </div> --}}
-                <div class="row-1-service">
-                    <span class="fa-stack fa-4x">
+                <div class="box">
+                    <span class="box__icon">
                         <span class="fa fa-circle fa-stack-2x text-primary"></span>
                         <span class="fa fa-list-ul cart fa-stack-1x fa-inverse"></span>
                     </span>
-                    <h4 class="service-heading">
+                    <h4 class="box__content">
                         <a href="{{ route('consultoria') }}" value-text="services3"></a>
                     </h4>
                 </div>
             </div>
-            <div class="row-2">
-                <div class="row-2-service">
-                    <span class="fa-stack fa-4x">
+            <div class="solutions__row2">
+                <div class="box">
+                    <span class="box__icon">
                         <span class="fa fa-circle  fa-stack-2x text-primary"></span>
                         <span class="fa fa-shopping-cart fa-stack-1x fa-inverse"></span>
                     </span>
-                    <h4 class="service-heading">
+                    <h4 class="box__content">
                         <a href="{{ route('biit') }}" value-text="services4"></a>
                     </h4>
                 </div>
-                <div class="row-2-service">
-                    <span class="fa-stack fa-4x">
+                <div class="box">
+                    <span class="box__icon">
                         <span class="fa fa-circle fa-stack-2x text-primary"></span>
                         <span class="fa fa-briefcase fa-stack-1x fa-inverse"></span>
                     </span>
-                    <h4 class="service-heading">
+                    <h4 class="box__content">
                         <a href="{{ route('biit') }}" value-text="services5"></a>
                     </h4>
                 </div>
             </div>
         </section>
         <!-- Clients Aside -->
-        <section class="container-aside">
-            <div class="aside">
-                <div class="col-lg-12 text-center">
-                    <a href="{{ route('biit') }}">
-                        <img src="img/logos/banner.jpg" class="img-responsive img-centered" alt="banner">
-                    </a>
-                </div>
+        <section class="aside">
+            <div class="aside__box">
+                <a href="{{ route('biit') }}">
+                    <img src="img/logos/banner.jpg" class="img-responsive img-centered" alt="banner">
+                </a>
             </div>
-
         </section>
         <!-- About Section -->
-        <section id="about" class="container-about">
+        <section id="about" class="about">
+            <div class="about__row">
+                <div class="box">
+                    <h2 class="box__title" value-text="aboutHeading"></h2>
 
-            <div class="about">
-                <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h2 class="section-heading" value-text="aboutHeading"></h2>
-                    <hr class="light">
-                    <h4 class="text-faded" value-text="aboutText"></h4>
-                    <a href="{{ route('biit') }}" class="btn btn-default btn-xl" value-text="aboutButton"></a>
+                    <h4 class="box__content" value-text="aboutText"></h4>
+                    <a href="{{ route('biit') }}" class="box__button" value-text="aboutButton"></a>
                 </div>
-
             </div>
         </section>
 
         <!-- Sitemap & Contact Section -->
         <!-- Contact-Custom -->
-        <section id="contact" class="container-contact">
+        {{-- <section id="contact" class="container-contact">
             <div class="contact">
                 <h2 class="section-heading" value-text="sitemapHeading"></h2>
                 <h3 class="section-subheading text-muted">
@@ -165,7 +152,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> --}}
     </div>
     <script type="module" src="{{ asset('js/home.js') }}" defer></script>
 @endsection
