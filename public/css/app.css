@@ -279,6 +279,7 @@ header .intro-text .intro-heading {
   color: #fafafa;
   background-color: transparent;
   text-decoration: none;
+  text-align: center;
 }
 .nav .navbar__menu .list__item:hover {
   display: flex;
@@ -306,17 +307,17 @@ header .intro-text .intro-heading {
   align-items: center;
   align-self: center;
   position: absolute;
-  top: 100%;
-  margin-top: 0.5rem;
-  left: 0;
+  left: -3rem;
   display: none;
 }
 .nav .navbar__menu .list__item .dropdown__menu__item {
-  padding: 0.5rem;
+  padding: 0.5rem 1.5rem;
   margin: 0;
   color: #fafafa;
   background-color: #17265c;
   text-decoration: none;
+  min-width: 16rem;
+  max-width: 18rem;
 }
 .nav .navbar__menu .list__item .dropdown__menu__item:hover {
   color: #fafafa;
@@ -382,6 +383,8 @@ header .intro-text .intro-heading {
   .nav .navbar__menu .list__item {
     padding: 0;
     margin: 0;
+    min-width: 7rem;
+    max-width: 9rem;
   }
   .nav .navbar__menu .list__item__link {
     height: 70px;

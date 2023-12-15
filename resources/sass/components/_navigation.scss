@@ -35,14 +35,22 @@
         @include style($neutral_lighter, $primary_main);
         cursor: pointer;
         margin-top: calc($margin * 2);
+        // Revisar mida de la caixa per el hover
+        // Revisar
+        // a
         min-width: 40vw;
+        // b
+        // min-width: 16rem;
+        // max-width: 18rem;
 
         transition: transform 1.5s;
         transform: translateY(-120%);
 
         &__item {
           @include paddingMargin($padding);
-
+          // Mida del element de la llista????
+          // min-width: 40vw;
+          //
           list-style: none;
           display: inline-flex;
 
@@ -53,12 +61,18 @@
 
             // min-width: 120px;
             text-decoration: none;
+            text-align: center;
           }
 
           &:hover {
             @include flexBox(column, center, center);
             @include style($neutral_lighter, $secondary_main);
+            // Revisar
+            // a
             min-width: 40vw;
+            // b
+            // min-width: 16rem;
+            // max-width: 18rem;
           }
 
           .dropdown {
@@ -70,18 +84,19 @@
             &__menu {
               @include flexBox(column, center, center);
               position: absolute;
-              top: 100%;
-              margin-top: $margin;
-              left: 0;
+              // top: 100%;
+              // margin-top: $margin;
+              // top: 1.8rem;
+              left: -3rem;
               display: none;
 
               &__item {
-                @include paddingMargin($padding);
+                @include paddingMargin($padding calc($padding * 3));
                 @include style($neutral_lighter, $primary_main);
                 text-decoration: none;
 
-                // min-width: 40vw;
-                // max-width: 40vw;
+                min-width: 16rem;
+                max-width: 18rem;
 
                 &:hover {
                   @include style($neutral_lighter, $secondary_main);
@@ -153,6 +168,10 @@
 
           &__item {
             @include paddingMargin;
+            // min-width: 120px;
+            // max-width: 150px;
+            min-width: 7rem;
+            max-width: 9rem;
 
             &__link {
               height: $nav-height;
