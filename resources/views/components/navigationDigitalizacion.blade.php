@@ -8,7 +8,7 @@
     <div class="container">
         <div class="navbar__logo">
             <a href="{{ route('home') }}">
-                <img class="img-responsive" src="./img/logo.png" alt="Pymesoft" id="pymeso" />
+                <img class="img-responsive" src="./img/logos/Pymesoft_logo.png" alt="Pymesoft" id="pymeso" />
             </a>
         </div>
         <div class="navbar__menu">
