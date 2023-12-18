@@ -9,7 +9,6 @@
     <div class="main">
         <!-- Services Section -->
         <section id="soluciones" class="solutions">
-
             <div class="solutions__row">
                 <div class="box--title">
                     <h2 class="box__title" value-text="homeSoluciones"></h2>
@@ -81,58 +80,65 @@
 
         <!-- Sitemap & Contact Section -->
         <!-- Contact-Custom -->
-        {{-- <section id="contact" class="container-contact">
-            <div class="contact">
-                <h2 class="section-heading" value-text="sitemapHeading"></h2>
-                <h3 class="section-subheading text-muted">
-                    <span class="fa fa-map-marker" value-text="sitemapAddress"></span>
-                </h3>
-            </div>
-            <div id="overlay"> <!-- Obtener clave API -->
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2984.8365965213275!2d2.079309315088584!3d41.572780979247604!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a494c6bf0218b9%3A0xfb5a922369909333!2sPymesoft+Vall%C3%A9s+S.L.!5e0!3m2!1ses!2ses!4v1515689921450"
-                    width="100%" height="420" frameborder="0" style="border:0" allowfullscreen></iframe>
-            </div>
-            <div class="contact">
-                <div class="contact-text">
-                    <div class="text-center">
-                        <h2 class="section-heading" value-text="contactHeading"></h2>
-                        <h3 class="section-subheading text-muted">
-                            <span class="fa fa-phone" value-text="contactPhone"> </span>
-                        </h3>
-                        <div class="text-center">
-                            <label id="success"></label>
-                        </div>
-                    </div>
+        <section id="contact" class="contact">
+            <div class="contact__row">
+                <div class="box--title">
+                    <h2 class="box__title" value-text="sitemapHeading"></h2>
+                    <h3 class="box__content">
+                        <span class="fa fa-map-marker" value-text="sitemapAddress"></span>
+                    </h3>
                 </div>
-                <div class="contact-text">
-                    <div class="patata">
-                        <form id="contact-form" class="form" action="#" method="POST" role="form">
-                            <div class="form-group">
+            </div>
+            <div class="contact_row" id="overlay"> <!-- Obtener clave API -->
+                <iframe class="box--map"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2984.8365965213275!2d2.079309315088584!3d41.572780979247604!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a494c6bf0218b9%3A0xfb5a922369909333!2sPymesoft+Vall%C3%A9s+S.L.!5e0!3m2!1ses!2ses!4v1515689921450"
+                    frameborder="0" style="border:0" allowfullscreen></iframe>
+            </div>
+            <div class="contact_row">
+                <div class="box">
+                    <h2 class="box__title" value-text="contactHeading"></h2>
+                </div>
+                <div class="box">
+                    <h3 class="box__content" value-text="contactPhone">
+                    </h3>
+                    <h4 class="box__content" value-text="contactPhoneNumber">
+                    </h4>
+                    {{-- <span class="box__icon"> </span> --}}
+                </div>
+                <div class="box">
+                    <h3 class="box__content" value-text="contactAction"></h3>
+                    <a href="{{ route('biit') }}" class="box__button" value-text="contactActionMessage"></a>
+                </div>
+            </div>
+    </div>
+    {{-- <div class="contact-text box">
+                    <div class="patata box">
+                        <form id="contact-form" class="form box" action="#" method="POST" role="form">
+                            <div class="form-group box">
                                 <label class="form-label" for="name" value-text="contactName"></label>
                                 <input type="text" class="form-control" id="name" name="name"
                                     placeholder="Nombre" tabindex="1" required>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group box">
                                 <label class="form-label" for="email" value-text="contactEmail"></label>
                                 <input type="email" class="form-control" id="email" name="email"
                                     placeholder="Email" tabindex="2" required>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group box">
                                 <label class="form-label" for="phone" value-text="contactTelephone"></label>
                                 <input type="tel" class="form-control" id="phone" name="phone" maxlength="9"
                                     placeholder="Telèfono" tabindex="3" required>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group box">
                                 <label class="form-label" for="message" value-text="contactMessage"></label>
                                 <textarea rows="5" cols="50" name="message" class="form-control" id="message"
                                     placeholder="Mensaje..." tabindex="4" required></textarea>
                             </div>
-                            <div>
+                            <div class="box">
                                 <p class = 'clausulaContacto' value-text="contactoClausulaContacto"></p>
                                 <p class = 'clausulaContacto' value-text="contactoClausulaContacto2"></p>
                             </div>
-                            <div class="form-group text-center">
+                            <div class="form-group text-center box">
                                 <input id = 'checkboxAceptacion' class = 'checkboxAceptacion' type='checkbox'
                                     name='aceptacion' />
                                 <div>
@@ -151,8 +157,8 @@
                         </form>
                     </div>
                 </div>
-            </div>
-        </section> --}}
+            </div> --}}
+    </section>
     </div>
     <script type="module" src="{{ asset('js/home.js') }}" defer></script>
 @endsection
