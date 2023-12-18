@@ -47,7 +47,6 @@
         // Falta icono
         min-height: 50px;
         min-width: 50px;
-        @include hover;
       }
       &__title {
         @include flexBox(column, space-around, center);
@@ -120,40 +119,95 @@
         @include paddingMargin(1rem, 1rem);
         border: 1px solid transparent;
 
-        @include hover($secondary_light, $neutral_lighter) // &:hover {
-          //   @include style($neutral_lighter, $secondary_light);
-          //   @include paddingMargin(1rem, 1rem);
-          //   border-color: $neutral_lighter;
-          // }
-;
+        @include hover($secondary_light, $neutral_lighter, $neutral_lighter);
+        // &:hover {
+        //   @include style($neutral_lighter, $secondary_light);
+        //   @include paddingMargin(1rem, 1rem);
+        //   border-color: $neutral_lighter;
+        // }
       }
     }
   }
-  // .container-contact {
-  //   @include flexBox(column, space-around, center);
-  //   @include paddingMargin($padding, 0);
-  //   @include style($primary_main, rgb(194, 254, 254));
-  //   min-width: 80vw;
-  //   max-width: 80vw;
-  //   gap: $gap;
+  .contact {
+    @include flexBox(column, space-around, center);
+    @include paddingMargin($padding, 0);
+    @include style($primary_main, transparent);
+    min-width: 80vw;
+    max-width: 90vw;
 
-  //   .contact {
-  //     @include flexBox(column, space-around, center);
-  //     @include paddingMargin($padding, 0);
-  //     @include style($primary_main, rgb(141, 172, 230));
-  //     max-width: 80vw;
-  //     gap: $gap;
-  //     .contact-text {
-  //       @include flexBox;
-  //       @include paddingMargin($padding, 0);
-  //       max-width: 90vw;
-  //       .clausulaContacto {
-  //         padding: 10px;
-  //         max-width: 90vw;
-  //       }
-  //     }
-  //   }
-  // }
+    &__row {
+      @include flexBox(column, space-around, center);
+      @include paddingMargin(0 15px);
+      @include style($primary_main, transparent);
+      text-align: center;
+
+      min-width: 80vw;
+
+      // .contact-text {
+      //   @include flexBox;
+      //   @include paddingMargin($padding);
+      //   max-width: 90vw;
+      //   .clausulaContacto {
+      //     padding: 10px;
+      //     max-width: 90vw;
+      //   }
+      // }
+    }
+    .box {
+      @include flexBox(column, flex-start);
+      @include paddingMargin($padding, 0);
+      @include style($primary_main, transparent);
+
+      min-width: 80vw;
+      max-width: 80vw;
+
+      overflow: hidden;
+      &__title {
+        @include flexBox(column, space-around, center);
+        @include paddingMargin($padding, 0 15px);
+        @include style($primary_main, transparent);
+        font-size: 20px;
+
+        min-width: 75vw;
+        min-height: 4rem;
+
+        overflow: hidden;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+      }
+
+      &__content {
+        @include paddingMargin($padding, $margin);
+        @include style($primary_main, transparent);
+        overflow: hidden;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+
+        &--title {
+          @include flexBox(column, space-around, center);
+          @include paddingMargin($padding, 0 15px);
+          @include style($secondary_main, transparent);
+          font-size: 16px;
+          text-transform: none;
+          font-style: italic;
+          font-weight: 400;
+        }
+      }
+
+      &__button {
+        @include style($neutral_lighter, $secondary_main);
+        @include paddingMargin(1rem, 0);
+        border: 1px solid transparent;
+
+        @include hover($secondary_light, $neutral_lighter, $neutral_lighter);
+      }
+      &--map {
+        @include paddingMargin($padding);
+        width: 80vw;
+        height: 420px;
+      }
+    }
+  }
 }
 @media screen and (min-width: 376px) and (max-width: 600px) {
 }
@@ -189,6 +243,18 @@
         max-width: 85vw;
       }
     }
+    .contact {
+      .box {
+        @include flexBox(row, center, center);
+        &--title {
+          @include flexBox(column, flex-start, center);
+        }
+        &--map {
+          width: 85vw;
+          height: 600px;
+        }
+      }
+    }
   }
 }
 
@@ -210,6 +276,16 @@
       .box {
         &__title {
           font-size: 40px;
+        }
+      }
+    }
+    .contact {
+      .box {
+        @include flexBox(row, center, center);
+
+        &--map {
+          width: 85vw;
+          height: 700px;
         }
       }
     }

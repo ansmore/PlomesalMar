@@ -11,11 +11,15 @@
   "aboutText": "Valor a su negocio / Value for your business",
   "aboutButton": "Comenzar",
 
-  "sitemapHeading": "Donde estamos",
+  "sitemapHeading": "¿Dónde estamos?",
   "sitemapAddress": "Avinguda de Can Deu, 6, 08207 Sabadell, Barcelona",
 
   "contactHeading": "Contacto",
-  "contactPhone": "Teléfono de contacto: 937 24 25 00",
+  "contactPhone": "Teléfono de contacto: ",
+  "contactPhoneNumber": "937 24 25 00",
+
+  "contactAction": "Envianos un mensaje:",
+  "contactActionMessage": "Mensaje",
 
   "contactName": "Nombre: ",
   "contactEmail": "Email: ",

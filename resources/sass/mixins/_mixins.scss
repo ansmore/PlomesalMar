@@ -19,10 +19,25 @@
 @mixin style($color: $neutral_lighter, $background-color: transparent) {
   color: $color;
   background-color: $background-color;
+  // Developer mode:
+  // border: 1px solid $neutral_darkest;
 }
 
-@mixin hover($background: transparent, $color: inherit) {
+@mixin hover($background: transparent, $color: inherit, $border: transparent) {
   &:hover {
     @include style($color, $background);
+    border: 1px solid $border;
   }
 }
+
+// @mixin mediaScreen($medida: 480px) {
+//   @media screen and (max-width: $medida) {
+//     @content;
+//   }
+// }
+
+// @mixin mediaQueries($minWidth: 0px, $maxWidth: 376px) {
+//   @media screen and (min-width: $minWidth) and (max-width: $maxWidth) {
+//     @content;
+//   }
+// }
