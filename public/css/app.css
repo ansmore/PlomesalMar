@@ -147,6 +147,24 @@ button {
   cursor: pointer;
 }
 
+/**
+ * checkUnit Function
+ * 
+ * This function checks if a value has one of the specified units: px, em, rem, or %.This function checks if a value has one of the specified units: px, em, rem, vw, vh or %.
+ *
+ * @param {any} $value - Value to check.
+ * @return {boolean} - Returns true if it has a valid unit, otherwise, false.
+ */
+/**
+ * boxSize Mixin
+ * 
+ * This mixin allows setting the size properties of an element as well as its minimum and maximum properties.
+ *
+ * @param {string} $type - Size type ("width" or "height").
+ * @param {string} $min - Minimum size (optional).
+ * @param {string} $size - Main size (optional).
+ * @param {string} $max - Maximum size (optional).
+ */
 header {
   margin: 0;
   padding: 0;
@@ -194,6 +212,7 @@ header .intro-text .intro-heading {
   align-self: center;
   color: #fafafa;
   background-color: #17265c;
+  border: 1px solid #000000;
   max-width: 100vw;
   height: 70px;
   font-size: 1em;
@@ -253,6 +272,7 @@ header .intro-text .intro-heading {
   align-self: center;
   color: #fafafa;
   background-color: #17265c;
+  border: 1px solid #000000;
   cursor: pointer;
   margin-top: 1rem;
   min-width: 40vw;
@@ -278,6 +298,7 @@ header .intro-text .intro-heading {
   margin: 0 0.5rem;
   color: #fafafa;
   background-color: transparent;
+  border: 1px solid #000000;
   text-decoration: none;
   text-align: center;
 }
@@ -292,6 +313,7 @@ header .intro-text .intro-heading {
   align-self: center;
   color: #fafafa;
   background-color: #0097b2;
+  border: 1px solid #000000;
   min-width: 40vw;
 }
 .nav .navbar__menu .list__item .dropdown {
@@ -315,6 +337,7 @@ header .intro-text .intro-heading {
   margin: 0;
   color: #fafafa;
   background-color: #17265c;
+  border: 1px solid #000000;
   text-decoration: none;
   min-width: 16rem;
   max-width: 18rem;
@@ -322,6 +345,7 @@ header .intro-text .intro-heading {
 .nav .navbar__menu .list__item .dropdown__menu__item:hover {
   color: #fafafa;
   background-color: #0097b2;
+  border: 1px solid #000000;
 }
 .nav .navbar__menu .list__item .dropdown:hover .dropdown__menu {
   display: flex;
@@ -411,6 +435,7 @@ header .intro-text .intro-heading {
   margin: 0;
   color: #17265c;
   background-color: #ececec;
+  border: 1px solid #000000;
   font-size: 1em;
   margin-top: 70px;
   gap: 0.5rem;
@@ -428,7 +453,8 @@ header .intro-text .intro-heading {
   margin: 0;
   color: #17265c;
   background-color: transparent;
-  min-width: 80vw;
+  border: 1px solid #000000;
+  min-width: 90vw;
   max-width: 90vw;
 }
 .main .solutions__row {
@@ -444,8 +470,10 @@ header .intro-text .intro-heading {
   margin: 0;
   color: #17265c;
   background-color: transparent;
+  border: 1px solid #000000;
   text-align: center;
-  min-width: 80vw;
+  min-width: 85vw;
+  max-width: 85vw;
   min-height: 8rem;
 }
 .main .solutions__row1, .main .solutions__row2 {
@@ -461,7 +489,9 @@ header .intro-text .intro-heading {
   margin: 0;
   color: #17265c;
   background-color: transparent;
-  min-width: 80vw;
+  border: 1px solid #000000;
+  min-width: 85vw;
+  max-width: 85vw;
   text-align: center;
 }
 .main .solutions .box {
@@ -476,7 +506,8 @@ header .intro-text .intro-heading {
   padding: 0.5rem;
   margin: 0.5rem;
   color: #17265c;
-  background-color: #8f8f8f;
+  background-color: #c2c2c2;
+  border: 1px solid #000000;
   min-height: 10rem;
   gap: 0.5rem;
   flex: 5;
@@ -484,6 +515,7 @@ header .intro-text .intro-heading {
 .main .solutions .box__icon {
   color: #17265c;
   background-color: #17265c;
+  border: 1px solid #000000;
   min-height: 50px;
   min-width: 50px;
 }
@@ -500,6 +532,7 @@ header .intro-text .intro-heading {
   margin: 0 15px;
   color: #17265c;
   background-color: transparent;
+  border: 1px solid #000000;
   font-size: 40px;
   min-height: 4rem;
 }
@@ -508,6 +541,7 @@ header .intro-text .intro-heading {
   margin: 0.5rem;
   color: #17265c;
   background-color: transparent;
+  border: 1px solid #000000;
 }
 .main .solutions .box__content--title {
   display: flex;
@@ -522,6 +556,7 @@ header .intro-text .intro-heading {
   margin: 0 15px;
   color: #0097b2;
   background-color: transparent;
+  border: 1px solid #000000;
   font-size: 16px;
   text-transform: none;
   font-style: italic;
@@ -530,6 +565,7 @@ header .intro-text .intro-heading {
 .main .solutions .box--title {
   color: #17265c;
   background-color: transparent;
+  border: 1px solid #000000;
 }
 .main .aside {
   display: flex;
@@ -556,6 +592,7 @@ header .intro-text .intro-heading {
   margin: 1rem 0;
   color: #17265c;
   background-color: #17265c;
+  border: 1px solid #000000;
   min-width: 100vw;
   min-height: 30vh;
 }
@@ -580,6 +617,7 @@ header .intro-text .intro-heading {
   margin: 0.5rem;
   color: #fafafa;
   background-color: transparent;
+  border: 1px solid #000000;
   font-size: 30px;
   line-height: 1.5;
   text-align: center;
@@ -589,6 +627,7 @@ header .intro-text .intro-heading {
   margin: 0.5rem;
   color: #fafafa;
   background-color: transparent;
+  border: 1px solid #000000;
   font-size: 16px;
   text-transform: none;
   font-style: italic;
@@ -597,13 +636,15 @@ header .intro-text .intro-heading {
 .main .about .box__button {
   color: #fafafa;
   background-color: #0097b2;
-  padding: 1rem;
-  margin: 1rem;
+  border: 1px solid #000000;
+  padding: 0.5rem;
+  margin: 0;
   border: 1px solid transparent;
 }
 .main .about .box__button:hover {
   color: #fafafa;
   background-color: #00b4d4;
+  border: 1px solid #000000;
   border: 1px solid #fafafa;
 }
 .main .contact {
@@ -619,6 +660,7 @@ header .intro-text .intro-heading {
   margin: 0;
   color: #17265c;
   background-color: transparent;
+  border: 1px solid #000000;
   min-width: 80vw;
   max-width: 90vw;
 }
@@ -635,6 +677,7 @@ header .intro-text .intro-heading {
   margin: 0;
   color: #17265c;
   background-color: transparent;
+  border: 1px solid #000000;
   text-align: center;
   min-width: 80vw;
 }
@@ -651,6 +694,7 @@ header .intro-text .intro-heading {
   margin: 0;
   color: #17265c;
   background-color: transparent;
+  border: 1px solid #000000;
   min-width: 80vw;
   max-width: 80vw;
   overflow: hidden;
@@ -668,6 +712,7 @@ header .intro-text .intro-heading {
   margin: 0 15px;
   color: #17265c;
   background-color: transparent;
+  border: 1px solid #000000;
   font-size: 20px;
   min-width: 75vw;
   min-height: 4rem;
@@ -680,6 +725,7 @@ header .intro-text .intro-heading {
   margin: 0.5rem;
   color: #17265c;
   background-color: transparent;
+  border: 1px solid #000000;
   overflow: hidden;
   word-wrap: break-word;
   overflow-wrap: break-word;
@@ -697,6 +743,7 @@ header .intro-text .intro-heading {
   margin: 0 15px;
   color: #0097b2;
   background-color: transparent;
+  border: 1px solid #000000;
   font-size: 16px;
   text-transform: none;
   font-style: italic;
@@ -705,25 +752,32 @@ header .intro-text .intro-heading {
 .main .contact .box__button {
   color: #fafafa;
   background-color: #0097b2;
-  padding: 1rem;
+  border: 1px solid #000000;
+  padding: 0.5rem;
   margin: 0;
   border: 1px solid transparent;
 }
 .main .contact .box__button:hover {
   color: #fafafa;
   background-color: #00b4d4;
+  border: 1px solid #000000;
   border: 1px solid #fafafa;
 }
-.main .contact .box--map {
+.main .contact .box__map {
   padding: 0.5rem;
   margin: 0;
+  min-width: vw;
   width: 80vw;
+  max-width: vw;
+  min-height: vh;
   height: 420px;
+  max-height: vh;
 }
 
 @media screen and (min-width: 601px) and (max-width: 1024px) {
   .main .solutions__row {
     min-width: 80vw;
+    width: vw;
     max-width: 80vw;
   }
   .main .solutions__row .section-heading,
@@ -739,6 +793,9 @@ header .intro-text .intro-heading {
     align-content: center;
     align-items: center;
     align-self: center;
+    min-width: vw;
+    width: vw;
+    max-width: vw;
     max-width: 80vw;
   }
   .main .solutions .box {
