@@ -24,11 +24,14 @@
       min-height: 8rem;
 
       &--title {
-        @include flexBox(column, space-around, center);
-        @include style;
+        @extend .solutions__row;
+        // @include flexBox(column, space-around, center);
+        @include style(inherit);
       }
       &--content {
+        @extend .solutions__row;
         @include flexBox(column, flex-start);
+        @include style;
         // @include paddingMargin(0 15px);
         // @include style($primary_main);
 
@@ -38,7 +41,7 @@
     .box {
       @include flexBox(column, flex-start);
       @include paddingMargin($padding, $margin);
-      @include style($primary_main, $neutral_main);
+      @include style($primary_main);
       // min-width No!
       @include boxSize(width, null, null, 80vw);
       min-height: 10rem;
@@ -46,12 +49,14 @@
 
       // flex: 5;
       &--title {
-        @include paddingMargin($padding, $margin);
-        @include style($primary_main);
+        @extend .box;
+        // @include paddingMargin($padding, $margin);
+        // @include style($primary_main, blue);
       }
       &--content {
+        @extend .box;
         // @include paddingMargin($padding, $margin);
-        @include style($primary_main);
+        @include style($primary_main, $neutral_main);
       }
       &__icon {
         @include style($primary_main, $primary_main);
@@ -214,7 +219,7 @@
   .main {
     .solutions {
       &__row {
-        @include style($primary_main, purple);
+        // @include style($primary_main, purple);
 
         &--content {
           @include flexBox(row, flex-start);
@@ -237,6 +242,9 @@
         // cambiar a vh ->
         min-height: 17rem;
         flex: 5;
+        &--title {
+          @include boxSize(width, 80vw, null, 80vw);
+        }
       }
     }
     .aside {
