@@ -9,13 +9,13 @@
     <div class="main">
         <!-- Services Section -->
         <section id="soluciones" class="solutions">
-            <div class="solutions__row">
+            <div class="solutions__row--title">
                 <div class="box--title">
                     <h2 class="box__title" value-text="homeSoluciones"></h2>
                     <h3 class="box__content--title" value-text="homeServicesSubheading"></h3>
                 </div>
             </div>
-            <div class="solutions__row1">
+            <div class="solutions__row--content">
                 <div class="box">
                     <span class="box__icon">
                         <span class="fa fa-circle fa-stack-2x text-primary"></span>
@@ -37,7 +37,7 @@
                     </h4>
                 </div>
             </div>
-            <div class="solutions__row2">
+            <div class="solutions__row--content">
                 <div class="box">
                     <span class="box__icon">
                         <span class="fa fa-circle  fa-stack-2x text-primary"></span>

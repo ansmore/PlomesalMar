@@ -9,6 +9,9 @@
   align-content: center;
   align-items: $align;
   align-self: center;
+
+  // Developer mode:
+  border: 1px solid $neutral_darkest;
 }
 
 @mixin paddingMargin($padding: 0, $margin: 0) {
