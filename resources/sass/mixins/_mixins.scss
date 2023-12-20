@@ -9,6 +9,9 @@
   align-content: center;
   align-items: $align;
   align-self: center;
+
+  // Developer mode:
+  border: 1px solid $neutral_darkest;
 }
 
 @mixin paddingMargin($padding: 0, $margin: 0) {
@@ -20,24 +23,75 @@
   color: $color;
   background-color: $background-color;
   // Developer mode:
-  // border: 1px solid $neutral_darkest;
+  border: 1px solid $neutral_darkest;
 }
 
-@mixin hover($background: transparent, $color: inherit, $border: transparent) {
+@mixin hover(
+  $background: transparent,
+  $color: inherit,
+  $borderColor: transparent
+) {
   &:hover {
     @include style($color, $background);
-    border: 1px solid $border;
+    border: 1px solid $borderColor;
   }
 }
 
-// @mixin mediaScreen($medida: 480px) {
-//   @media screen and (max-width: $medida) {
-//     @content;
-//   }
-// }
+@mixin button(
+  $background: transparent,
+  $color: inherit,
+  $borderColor: transparent,
+  $paddingSize: $padding,
+  $marginSize: 0
+) {
+  @include style($color, $background);
+  @include paddingMargin($paddingSize, $marginSize);
+  border: 1px solid $borderColor;
+}
 
-// @mixin mediaQueries($minWidth: 0px, $maxWidth: 376px) {
-//   @media screen and (min-width: $minWidth) and (max-width: $maxWidth) {
-//     @content;
-//   }
-// }
+/**
+ * checkUnit Function
+ * 
+ * This function checks if a value has one of the specified units: px, em, rem, or %.This function checks if a value has one of the specified units: px, em, rem, vw, vh or %.
+ *
+ * @param {any} $value - Value to check.
+ * @return {boolean} - Returns true if it has a valid unit, otherwise, false.
+ */
+@function checkUnit($value) {
+  @if $value == null {
+    @return false;
+  }
+
+  @if type-of($value) == "number" {
+    $value: $value + "";
+  }
+
+  @return type-of($value) == "string" and str-slice($value, -1) == "%" or
+    str-slice($value, -2) == "px" or str-slice($value, -2) == "em" or
+    str-slice($value, -2) == "vw" or str-slice($value, -2) == "vh" or
+    str-slice($value, -3) == "rem";
+}
+
+/**
+ * boxSize Mixin
+ * 
+ * This mixin allows setting the size properties of an element as well as its minimum and maximum properties.
+ *
+ * @param {string} $type - Size type ("width" or "height").
+ * @param {string} $min - Minimum size (optional).
+ * @param {string} $size - Main size (optional).
+ * @param {string} $max - Maximum size (optional).
+ */
+@mixin boxSize($type: width, $min: null, $size: null, $max: null) {
+  @if $type == "width" {
+    min-width: if(checkUnit($min), $min, $min + vw);
+    width: if(checkUnit($size), $size, $size + vw);
+    max-width: if(checkUnit($max), $max, $max + vw);
+  } @else if $type == "height" {
+    min-height: if(checkUnit($min), $min, $min + vh);
+    height: if(checkUnit($size), $size, $size + vh);
+    max-height: if(checkUnit($max), $max, $max + vh);
+  } @else {
+    @warn "The first value must be only [width,height,null], please check the parameters!";
+  }
+}

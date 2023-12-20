@@ -9,13 +9,13 @@
     <div class="main">
         <!-- Services Section -->
         <section id="soluciones" class="solutions">
-            <div class="solutions__row">
+            <div class="solutions__row--title">
                 <div class="box--title">
                     <h2 class="box__title" value-text="homeSoluciones"></h2>
                     <h3 class="box__content--title" value-text="homeServicesSubheading"></h3>
                 </div>
             </div>
-            <div class="solutions__row1">
+            <div class="solutions__row--content">
                 <div class="box">
                     <span class="box__icon">
                         <span class="fa fa-circle fa-stack-2x text-primary"></span>
@@ -37,7 +37,7 @@
                     </h4>
                 </div>
             </div>
-            <div class="solutions__row2">
+            <div class="solutions__row--content">
                 <div class="box">
                     <span class="box__icon">
                         <span class="fa fa-circle  fa-stack-2x text-primary"></span>
@@ -90,7 +90,7 @@
                 </div>
             </div>
             <div class="contact_row" id="overlay"> <!-- Obtener clave API -->
-                <iframe class="box--map"
+                <iframe class="box__map"
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2984.8365965213275!2d2.079309315088584!3d41.572780979247604!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a494c6bf0218b9%3A0xfb5a922369909333!2sPymesoft+Vall%C3%A9s+S.L.!5e0!3m2!1ses!2ses!4v1515689921450"
                     frameborder="0" style="border:0" allowfullscreen></iframe>
             </div>
