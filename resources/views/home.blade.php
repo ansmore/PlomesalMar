@@ -16,7 +16,7 @@
                 </div>
             </div>
             <div class="solutions__row--content">
-                <div class="box">
+                <div class="box--content">
                     <span class="box__icon">
                         <span class="fa fa-circle fa-stack-2x text-primary"></span>
                         <span class="fa fa-check-square-o  fa-stack-1x fa-inverse">
@@ -27,7 +27,7 @@
                         <a href="{{ route('biit') }}" value-text="services1"></a>
                     </h4>
                 </div>
-                <div class="box">
+                <div class="box--content">
                     <span class="box__icon">
                         <span class="fa fa-circle fa-stack-2x text-primary"></span>
                         <span class="fa fa-list-ul cart fa-stack-1x fa-inverse"></span>
@@ -38,7 +38,7 @@
                 </div>
             </div>
             <div class="solutions__row--content">
-                <div class="box">
+                <div class="box--content">
                     <span class="box__icon">
                         <span class="fa fa-circle  fa-stack-2x text-primary"></span>
                         <span class="fa fa-shopping-cart fa-stack-1x fa-inverse"></span>
@@ -47,7 +47,7 @@
                         <a href="{{ route('biit') }}" value-text="services4"></a>
                     </h4>
                 </div>
-                <div class="box">
+                <div class="box--content">
                     <span class="box__icon">
                         <span class="fa fa-circle fa-stack-2x text-primary"></span>
                         <span class="fa fa-briefcase fa-stack-1x fa-inverse"></span>
