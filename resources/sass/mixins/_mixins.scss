@@ -10,8 +10,8 @@
   align-items: $align;
   align-self: center;
 
-  // // Developer mode:
-  // border: 1px solid $neutral_darkest;
+  // Developer mode:
+  border: 1px solid $danger_main;
 }
 
 @mixin paddingMargin($padding: 0, $margin: 0) {
@@ -23,7 +23,7 @@
   color: $color;
   background-color: $background-color;
   // Developer mode:
-  border: 1px solid $neutral_darkest;
+  border: 1px solid $danger_main;
 }
 
 @mixin hover(

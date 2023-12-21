@@ -101,8 +101,9 @@
   }
   .aside {
     @include flexBox(column, space-around, center);
-    min-width: 90vw;
-    max-width: 90vw;
+    @include boxSize(width, 90vw, null, 90vw);
+    // min-width: 90vw;
+    // max-width: 90vw;
   }
 
   .about {

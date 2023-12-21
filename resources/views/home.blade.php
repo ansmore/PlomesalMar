@@ -64,7 +64,7 @@
         <section class="aside">
             <div class="aside__box">
                 <a href="{{ route('biit') }}">
-                    <img src="img/logos/banner.jpg" class="img-responsive img-centered" alt="banner">
+                    <img src="img/logos/banner.jpg" alt="banner">
                 </a>
             </div>
         </section>
@@ -87,7 +87,8 @@
                 <div class="box--title">
                     <h2 class="box__title" value-text="sitemapHeading"></h2>
                     <h3 class="box__content">
-                        <span class="fa fa-map-marker" value-text="sitemapAddress"></span>
+                        <i class="fa fa-map-marker"></i>
+                        <p value-text="sitemapAddress"></p>
                     </h3>
                 </div>
             </div>

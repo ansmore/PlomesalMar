@@ -1,0 +1,31 @@
+// Footer style
+.footer {
+  @include flexBox(column, center, center);
+  @include style($neutral_lighter, $primary_main);
+  .logo {
+    @include flexBox(column, center, center);
+    @include paddingMargin($padding);
+    &__image {
+      @include flexBox(column, center, center);
+      @include paddingMargin;
+      @include boxSize(width, null, null, 90vw);
+    }
+    &__row {
+      @include flexBox(column);
+      @include paddingMargin($padding, $margin);
+      @include style;
+      text-align: center;
+    }
+  }
+}
+@media screen and (min-width: 376px) and (max-width: 600px) {
+}
+
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+}
+
+@media screen and (min-width: 1025px) {
+  .footer {
+    @include flexBox(row);
+  }
+}
