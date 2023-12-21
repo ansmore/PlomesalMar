@@ -59,10 +59,20 @@
         @include style($primary_main, $neutral_main);
       }
       &__icon {
-        @include style($primary_main, $primary_main);
+        @include flexBox(row, center, center);
+        @include style($neutral_lighter, $primary_main);
         // Falta icono
         @include boxSize(width, 50px);
         @include boxSize(height, 50px);
+
+        border-radius: 50%;
+        i {
+          @include flexBox(row, center, center);
+          // color: aqua;
+          // background-color: bisque;
+          padding: $padding;
+          // font-size: 36px;
+        }
       }
       &__title {
         @include flexBox(column, space-around, center);
