@@ -210,7 +210,6 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
-  border: 1px solid #000000;
   color: #fafafa;
   background-color: #17265c;
   border: 1px solid #000000;
@@ -231,7 +230,6 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
-  border: 1px solid #000000;
   padding: 0;
   margin: 0;
   min-width: 100vw;
@@ -245,7 +243,6 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
-  border: 1px solid #000000;
   padding: 0.5rem;
   margin: 0.5rem;
   flex: 3;
@@ -259,7 +256,6 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
-  border: 1px solid #000000;
   padding: 0;
   margin: 0;
   flex: 7;
@@ -274,7 +270,6 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
-  border: 1px solid #000000;
   color: #fafafa;
   background-color: #17265c;
   border: 1px solid #000000;
@@ -299,7 +294,6 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
-  border: 1px solid #000000;
   padding: 0;
   margin: 0 0.5rem;
   color: #fafafa;
@@ -317,7 +311,6 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
-  border: 1px solid #000000;
   color: #fafafa;
   background-color: #0097b2;
   border: 1px solid #000000;
@@ -335,7 +328,6 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
-  border: 1px solid #000000;
   position: absolute;
   left: -3rem;
   display: none;
@@ -398,7 +390,6 @@ header .intro-text .intro-heading {
     align-content: center;
     align-items: center;
     align-self: center;
-    border: 1px solid #000000;
     margin-top: 0;
   }
   .nav .navbar__menu .list {
@@ -410,7 +401,6 @@ header .intro-text .intro-heading {
     align-content: center;
     align-items: center;
     align-self: center;
-    border: 1px solid #000000;
     margin-top: 0;
     transform: translateY(0);
   }
@@ -441,7 +431,6 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
-  border: 1px solid #000000;
   padding: 0.5rem;
   margin: 0;
   color: #17265c;
@@ -460,7 +449,6 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
-  border: 1px solid #000000;
   padding: 0.5rem;
   margin: 0;
   color: #17265c;
@@ -479,7 +467,6 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
-  border: 1px solid #000000;
   padding: 0 15px;
   margin: 0;
   color: #17265c;
@@ -505,7 +492,6 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
-  border: 1px solid #000000;
   color: #fafafa;
   background-color: transparent;
   border: 1px solid #000000;
@@ -519,7 +505,6 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
-  border: 1px solid #000000;
   padding: 0.5rem;
   margin: 0.5rem;
   color: #17265c;
@@ -556,7 +541,6 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
-  border: 1px solid #000000;
   padding: 0.5rem;
   margin: 0 15px;
   color: #17265c;
@@ -581,7 +565,6 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
-  border: 1px solid #000000;
   padding: 0.5rem;
   margin: 0 15px;
   color: #0097b2;
@@ -601,7 +584,6 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
-  border: 1px solid #000000;
   min-width: 90vw;
   max-width: 90vw;
 }
@@ -614,7 +596,6 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
-  border: 1px solid #000000;
   padding: 0.5rem;
   margin: 1rem 0;
   color: #17265c;
@@ -632,7 +613,6 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
-  border: 1px solid #000000;
   padding: 0.5rem;
   margin: 0.5rem;
   min-width: 80vw;
@@ -684,7 +664,6 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
-  border: 1px solid #000000;
   padding: 0.5rem;
   margin: 0;
   color: #17265c;
@@ -702,7 +681,6 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
-  border: 1px solid #000000;
   padding: 0 15px;
   margin: 0;
   color: #17265c;
@@ -720,7 +698,6 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
-  border: 1px solid #000000;
   padding: 0.5rem;
   margin: 0;
   color: #17265c;
@@ -739,7 +716,6 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
-  border: 1px solid #000000;
   padding: 0.5rem;
   margin: 0 15px;
   color: #17265c;
@@ -771,7 +747,6 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
-  border: 1px solid #000000;
   padding: 0.5rem;
   margin: 0 15px;
   color: #0097b2;
@@ -822,18 +797,14 @@ header .intro-text .intro-heading {
     align-content: center;
     align-items: center;
     align-self: center;
-    border: 1px solid #000000;
     color: #17265c;
-    background-color: transparent;
+    background-color: pink;
     border: 1px solid #000000;
-    min-width: 90vw;
-    width: vw;
-    max-width: 90vw;
   }
   .main .solutions__row--title {
-    min-width: 90vw;
-    width: vw;
-    max-width: 90vw;
+    color: #17265c;
+    background-color: orange;
+    border: 1px solid #000000;
   }
   .main .solutions .box, .main .solutions .box--title, .main .solutions .box--content {
     display: flex;
@@ -844,19 +815,22 @@ header .intro-text .intro-heading {
     align-content: center;
     align-items: center;
     align-self: center;
-    border: 1px solid #000000;
     padding: 0.5rem;
     margin: 0.5rem;
     min-width: vw;
     width: vw;
     max-width: 80vw;
-    min-height: 17rem;
     flex: 5;
   }
   .main .solutions .box--title {
-    min-width: 80vw;
+    min-width: 85vw;
     width: vw;
-    max-width: 80vw;
+    max-width: 85vw;
+  }
+  .main .solutions .box--content {
+    min-height: 17rem;
+    height: vh;
+    max-height: vh;
   }
   .main .aside__box {
     min-width: 85vw;
@@ -871,7 +845,6 @@ header .intro-text .intro-heading {
     align-content: center;
     align-items: center;
     align-self: center;
-    border: 1px solid #000000;
   }
   .main .contact .box--title {
     display: flex;
@@ -882,7 +855,6 @@ header .intro-text .intro-heading {
     align-content: center;
     align-items: center;
     align-self: center;
-    border: 1px solid #000000;
   }
   .main .contact .box--map {
     width: 85vw;
@@ -915,7 +887,6 @@ header .intro-text .intro-heading {
     align-content: center;
     align-items: center;
     align-self: center;
-    border: 1px solid #000000;
   }
   .main .contact .box--map {
     width: 85vw;

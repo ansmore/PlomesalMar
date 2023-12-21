@@ -219,16 +219,14 @@
   .main {
     .solutions {
       &__row {
-        // @include style($primary_main, purple);
-
         &--content {
           @include flexBox(row, flex-start);
-          @include style($primary_main);
-          @include boxSize(width, 90vw, null, 90vw);
+          @include style($primary_main, pink);
+          // @include boxSize(width, 90vw, null, 90vw);
         }
         &--title {
-          // @include style($primary_main, orange);
-          @include boxSize(width, 90vw, null, 90vw);
+          @include style($primary_main, orange);
+          // @include boxSize(width, 90vw, null, 90vw);
         }
       }
       .box {
@@ -236,14 +234,13 @@
         @include paddingMargin($padding, $margin);
 
         @include boxSize(width, null, null, 80vw);
-        // min-width: 35vw;
-        // min-width: null;
-        // max-width: 35vw;
-        // cambiar a vh ->
-        min-height: 17rem;
+
         flex: 5;
         &--title {
-          @include boxSize(width, 80vw, null, 80vw);
+          @include boxSize(width, 85vw, null, 85vw);
+        }
+        &--content {
+          @include boxSize(height, 17rem, null, null);
         }
       }
     }
