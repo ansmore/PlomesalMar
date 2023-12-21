@@ -18,9 +18,8 @@
             <div class="solutions__row--content">
                 <div class="box--content">
                     <span class="box__icon">
-                        <span class="fa fa-circle fa-stack-2x text-primary"></span>
-                        <span class="fa fa-check-square-o  fa-stack-1x fa-inverse">
-                            <i class="fas fa-check-square"></i>
+                        <span class="i">
+                            <i class="fa  fa-check-square"></i>
                         </span>
                     </span>
                     <h4 class="box__content">
@@ -29,8 +28,9 @@
                 </div>
                 <div class="box--content">
                     <span class="box__icon">
-                        <span class="fa fa-circle fa-stack-2x text-primary"></span>
-                        <span class="fa fa-list-ul cart fa-stack-1x fa-inverse"></span>
+                        <span class="i">
+                            <i class="fa fa-list-ul"></i>
+                        </span>
                     </span>
                     <h4 class="box__content">
                         <a href="{{ route('consultoria') }}" value-text="services3"></a>
@@ -40,8 +40,9 @@
             <div class="solutions__row--content">
                 <div class="box--content">
                     <span class="box__icon">
-                        <span class="fa fa-circle  fa-stack-2x text-primary"></span>
-                        <span class="fa fa-shopping-cart fa-stack-1x fa-inverse"></span>
+                        <span class="i">
+                            <i class="fa fa-shopping-cart"></i>
+                        </span>
                     </span>
                     <h4 class="box__content">
                         <a href="{{ route('biit') }}" value-text="services4"></a>
@@ -49,8 +50,9 @@
                 </div>
                 <div class="box--content">
                     <span class="box__icon">
-                        <span class="fa fa-circle fa-stack-2x text-primary"></span>
-                        <span class="fa fa-briefcase fa-stack-1x fa-inverse"></span>
+                        <span class="i">
+                            <i class="fa fa-briefcase"></i>
+                        </span>
                     </span>
                     <h4 class="box__content">
                         <a href="{{ route('biit') }}" value-text="services5"></a>

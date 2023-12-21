@@ -522,7 +522,15 @@ header .intro-text .intro-heading {
   border: 1px solid #000000;
 }
 .main .solutions .box__icon {
-  color: #17265c;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  justify-items: center;
+  justify-self: center;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  color: #fafafa;
   background-color: #17265c;
   border: 1px solid #000000;
   min-width: 50px;
@@ -531,6 +539,18 @@ header .intro-text .intro-heading {
   min-height: 50px;
   height: vh;
   max-height: vh;
+  border-radius: 50%;
+}
+.main .solutions .box__icon i {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  justify-items: center;
+  justify-self: center;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  padding: 0.5rem;
 }
 .main .solutions .box__title {
   display: flex;
