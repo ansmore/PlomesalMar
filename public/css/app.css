@@ -147,6 +147,9 @@ button {
   cursor: pointer;
 }
 
+/** 
+* Must be the last line in all call to this mixin!
+*/
 /**
  * checkUnit Function
  * 
@@ -492,9 +495,92 @@ header .intro-text .intro-heading {
   border: 1px solid #ee0000;
   text-align: center;
 }
+.footer .contact .social .list {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  justify-items: center;
+  justify-self: center;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  border: 1px solid #ee0000;
+  cursor: pointer;
+}
+.footer .contact .social .list__item {
+  padding: 0.5rem;
+  margin: 0;
+  list-style: none;
+  display: inline-flex;
+}
+.footer .contact .social .list__item__link {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  justify-items: center;
+  justify-self: center;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  border: 1px solid #ee0000;
+  padding: 0.5rem;
+  margin: 0 0.5rem;
+  min-width: 50px;
+  width: vw;
+  max-width: vw;
+  min-height: 50px;
+  height: vh;
+  max-height: vh;
+  border: 1px solid transparent;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 50%;
+  border: 1px solid #8f8f8f;
+  box-shadow: 3px 3px 6px #c2c2c2, -3px -3px 6px #ececec;
+}
+.footer .contact .social .list__item__link:hover {
+  color: inherit;
+  background-color: #0097b2;
+  border: 1px solid #ee0000;
+  border: 1px solid #fafafa;
+}
+.footer .contact .policy .list {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  justify-items: center;
+  justify-self: center;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  border: 1px solid #ee0000;
+  cursor: pointer;
+}
+.footer .contact .policy .list__item {
+  list-style: none;
+  display: inline-flex;
+}
+.footer .contact .policy .list__item__link {
+  padding: 0.5rem;
+  margin: 0;
+  min-height: 50px;
+  height: vh;
+  max-height: vh;
+}
 
-@media screen and (min-width: 1025px) {
-  .footer {
+@media screen and (min-width: 376px) and (max-width: 600px) {
+  .footer .contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    justify-items: center;
+    justify-self: center;
+    align-content: center;
+    align-items: center;
+    align-self: center;
+    border: 1px solid #ee0000;
+  }
+  .footer .contact .policy .list {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -502,6 +588,69 @@ header .intro-text .intro-heading {
     justify-self: center;
     align-content: center;
     align-items: center;
+    align-self: center;
+    border: 1px solid #ee0000;
+  }
+}
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+  .footer .contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    justify-items: center;
+    justify-self: center;
+    align-content: center;
+    align-items: center;
+    align-self: center;
+    border: 1px solid #ee0000;
+  }
+  .footer .contact .policy .list {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    justify-items: center;
+    justify-self: center;
+    align-content: center;
+    align-items: center;
+    align-self: center;
+    border: 1px solid #ee0000;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    justify-items: center;
+    justify-self: center;
+    align-content: center;
+    align-items: center;
+    align-self: center;
+    border: 1px solid #ee0000;
+  }
+  .footer .contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    justify-items: center;
+    justify-self: center;
+    align-content: center;
+    align-items: center;
+    align-self: center;
+    border: 1px solid #ee0000;
+  }
+  .footer .contact .policy {
+    padding: 0.5rem;
+    margin: 0;
+  }
+  .footer .contact .policy .list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    justify-items: center;
+    justify-self: center;
+    align-content: center;
+    align-items: flex-end;
     align-self: center;
     border: 1px solid #ee0000;
   }
@@ -609,6 +758,9 @@ header .intro-text .intro-heading {
   color: #17265c;
   background-color: #c2c2c2;
   border: 1px solid #ee0000;
+  border-radius: 0;
+  border: 1px solid #8f8f8f;
+  box-shadow: 3px 3px 6px #c2c2c2, -3px -3px 6px #ececec;
 }
 .main .solutions .box__icon {
   display: flex;
@@ -921,12 +1073,12 @@ header .intro-text .intro-heading {
     align-self: center;
     border: 1px solid #ee0000;
     color: #17265c;
-    background-color: pink;
+    background-color: transparent;
     border: 1px solid #ee0000;
   }
   .main .solutions__row--title {
     color: #17265c;
-    background-color: orange;
+    background-color: transparent;
     border: 1px solid #ee0000;
   }
   .main .solutions .box, .main .solutions .box--title, .main .solutions .box--content {

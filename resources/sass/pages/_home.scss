@@ -57,6 +57,7 @@
         @extend .box;
         // @include paddingMargin($padding, $margin);
         @include style($primary_main, $neutral_main);
+        @include boxShadow;
       }
       &__icon {
         @include flexBox(row, center, center);
@@ -232,11 +233,11 @@
       &__row {
         &--content {
           @include flexBox(row, flex-start);
-          @include style($primary_main, pink);
+          @include style($primary_main);
           // @include boxSize(width, 90vw, null, 90vw);
         }
         &--title {
-          @include style($primary_main, orange);
+          @include style($primary_main);
           // @include boxSize(width, 90vw, null, 90vw);
         }
       }

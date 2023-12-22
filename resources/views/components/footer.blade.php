@@ -13,8 +13,8 @@
             </div>
         </div>
     </section>
-    <section class="Social">
-        <div class="Social__row">
+    <section class="contact">
+        <div class="social">
             <ul class="list">
                 <li class="list__item">
                     <a class="list__item__link" href="https://twitter.com/PymesoftValles">
@@ -30,17 +30,21 @@
                 </li>
             </ul>
         </div>
-        <div class="col-md-4">
-            <ul class="list-inline quicklinks">
-                <li>
-                    <a href="#" data-toggle="modal" data-target="#politica" value-text="footerPolitica"></a>
-                </li>
-                <li>
-                    <a href="#" data-toggle="modal" data-target="#terminos" value-text="footerUse"></a>
-                </li>
-            </ul>
-        </div>
+        <div class="policy">
+            <div class="policy__row">
+                <ul class="list">
+                    <li class="list__item">
+                        <a class="list__item__link" href="#" data-toggle="modal" data-target="#politica"
+                            value-text="footerPolitica"></a>
+                    </li>
+                    <li class="list__item">
+                        <a class="list__item__link" href="#" data-toggle="modal" data-target="#terminos"
+                            value-text="footerUse"></a>
+                    </li>
+                </ul>
+            </div>
 
         </div>
+    </section>
 </footer>
 <script type="module" src="{{ asset('js/footer.js') }}" defer></script>
