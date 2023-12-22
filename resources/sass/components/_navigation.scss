@@ -21,13 +21,16 @@
       @include paddingMargin($padding, $margin);
       flex: 3;
       // min-height: 10vh;
+      min-width: 30vw;
     }
 
     &__menu {
       @include flexBox(row, center, center);
       @include paddingMargin;
-
-      flex: 7;
+      // prova display absolute
+      position: absolute;
+      z-index: 1;
+      flex: 6;
       margin-top: 150px;
 
       .list {
@@ -111,6 +114,58 @@
         }
       }
     }
+    &__language {
+      @include flexBox(row, center, center);
+      @include paddingMargin;
+      margin-right: 60px;
+      flex: 1;
+
+      .list {
+        // @extend .list;
+        cursor: pointer;
+
+        &__item {
+          &__link {
+            @include flexBox(row, center, center);
+            @include style($neutral_lighter);
+            height: $nav-height;
+            min-width: 6rem;
+          }
+          &:hover {
+            @include flexBox(column, center, center);
+            @include style($neutral_lighter, $secondary_main);
+            min-width: 6rem;
+          }
+          .dropdown {
+            position: relative;
+            &__menu {
+              @include flexBox(column, center, center);
+              position: absolute;
+              // left: -1.5rem;
+              display: none;
+              &__item {
+                @include paddingMargin($padding calc($padding * 3));
+                @include style($neutral_lighter, $primary_main);
+                text-decoration: none;
+
+                min-width: 16rem;
+                max-width: 18rem;
+
+                &:hover {
+                  @include style($neutral_lighter, $secondary_main);
+                }
+              }
+            }
+            &:hover .dropdown__menu {
+              display: flex;
+            }
+          }
+        }
+        &:hover {
+          @include style($neutral_lighter, $secondary_main);
+        }
+      }
+    }
   }
 
   .toggle {
@@ -156,10 +211,16 @@
     }
     .navbar {
       max-height: $nav-height;
+      &__logo {
+        // prova absolute
+        min-width: 20vw;
+        max-width: 20vw;
+      }
 
       &__menu {
         @include flexBox(row, flex-end, center);
         margin-top: 0;
+        position: sticky;
 
         .list {
           @include flexBox(row);
@@ -190,6 +251,18 @@
             }
           }
         }
+      }
+      &__language {
+        margin-right: 0;
+        // .list {
+        //   &__item {
+        //     .dropdown {
+        //       &__menu {
+        //         left: 0;
+        //       }
+        //     }
+        //   }
+        // }
       }
     }
   }
