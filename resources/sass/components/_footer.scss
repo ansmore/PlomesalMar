@@ -1,0 +1,102 @@
+// Footer style
+.footer {
+  @include flexBox(column, center, center);
+  @include style($neutral_lighter, $primary_main);
+  .logo {
+    @include flexBox(column, center, center);
+    @include paddingMargin($padding);
+    &__image {
+      @include flexBox(column, center, center);
+      @include paddingMargin;
+      @include boxSize(width, null, null, 90vw);
+    }
+    &__row {
+      @include flexBox(column);
+      @include paddingMargin($padding, $margin);
+      @include style;
+      text-align: center;
+    }
+  }
+  .contact {
+    .social {
+      .list {
+        @include flexBox(row);
+        cursor: pointer;
+        &__item {
+          @include paddingMargin($padding);
+          list-style: none;
+          display: inline-flex;
+
+          &__link {
+            @include flexBox(row, center, center);
+            @include paddingMargin($padding, 0 $margin);
+            @include boxSize(width, 50px);
+            @include boxSize(height, 50px);
+            border: 1px solid transparent;
+            text-decoration: none;
+            text-align: center;
+
+            @include boxShadow(3px, 50%);
+            @include hover($secondary_main, inherit, $neutral_lighter);
+          }
+        }
+      }
+    }
+    .policy {
+      .list {
+        @include flexBox(column);
+        cursor: pointer;
+        &__item {
+          // @include paddingMargin($padding);
+          list-style: none;
+          display: inline-flex;
+
+          &__link {
+            @include paddingMargin($padding);
+            @include boxSize(height, 50px);
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (min-width: 376px) and (max-width: 600px) {
+  .footer {
+    .contact {
+      @include flexBox(column, space-around, center);
+      .policy {
+        .list {
+          @include flexBox(row);
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+  .footer {
+    .contact {
+      @include flexBox(column, space-around, center);
+      .policy {
+        .list {
+          @include flexBox(row);
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .footer {
+    @include flexBox(row, space-around, center);
+    .contact {
+      @include flexBox(column, space-around, center);
+      .policy {
+        @include paddingMargin($padding);
+        .list {
+          @include flexBox(row, space-around, flex-end);
+        }
+      }
+    }
+  }
+}

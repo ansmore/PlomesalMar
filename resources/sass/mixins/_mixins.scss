@@ -10,8 +10,8 @@
   align-items: $align;
   align-self: center;
 
-  // // Developer mode:
-  // border: 1px solid $neutral_darkest;
+  // Developer mode:
+  border: 1px solid $danger_main;
 }
 
 @mixin paddingMargin($padding: 0, $margin: 0) {
@@ -23,9 +23,11 @@
   color: $color;
   background-color: $background-color;
   // Developer mode:
-  border: 1px solid $neutral_darkest;
+  border: 1px solid $danger_main;
 }
-
+/** 
+* Must be the last line in all call to this mixin!
+*/
 @mixin hover(
   $background: transparent,
   $color: inherit,
@@ -94,4 +96,18 @@
   } @else {
     @warn "The first value must be only [width,height,null], please check the parameters!";
   }
+}
+
+@mixin boxShadow(
+  $axis: 3px,
+  $radius: 0,
+  $shadowColor: $neutral_main,
+  $shadowColorSecondary: $neutral_light,
+  $boderColor: $neutral_dark
+) {
+  border-radius: $radius;
+  border: 1px solid $boderColor;
+  box-shadow:
+    $axis $axis ($axis * 2) $shadowColor,
+    (-$axis) (-$axis) ($axis * 2) $shadowColorSecondary;
 }

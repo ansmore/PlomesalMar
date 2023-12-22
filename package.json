@@ -15,7 +15,7 @@
     "sass-w": "sass --watch resources/sass/main.scss public/css/app.css"
   },
   "devDependencies": {
-    "axios": "^0.25",
+    "axios": "^1.6",
     "concurrently": "^8.2.2",
     "eslint": "^8.52.0",
     "eslint-config-prettier": "^9.0.0",

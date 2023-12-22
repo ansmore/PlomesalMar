@@ -147,6 +147,9 @@ button {
   cursor: pointer;
 }
 
+/** 
+* Must be the last line in all call to this mixin!
+*/
 /**
  * checkUnit Function
  * 
@@ -210,9 +213,10 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   color: #fafafa;
   background-color: #17265c;
-  border: 1px solid #000000;
+  border: 1px solid #ee0000;
   max-width: 100vw;
   height: 70px;
   font-size: 1em;
@@ -230,6 +234,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   padding: 0;
   margin: 0;
   min-width: 100vw;
@@ -243,6 +248,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   padding: 0.5rem;
   margin: 0.5rem;
   flex: 3;
@@ -256,6 +262,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   padding: 0;
   margin: 0;
   flex: 7;
@@ -270,9 +277,10 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   color: #fafafa;
   background-color: #17265c;
-  border: 1px solid #000000;
+  border: 1px solid #ee0000;
   cursor: pointer;
   margin-top: 1rem;
   min-width: 40vw;
@@ -294,11 +302,12 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   padding: 0;
   margin: 0 0.5rem;
   color: #fafafa;
   background-color: transparent;
-  border: 1px solid #000000;
+  border: 1px solid #ee0000;
   text-decoration: none;
   text-align: center;
 }
@@ -311,9 +320,10 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   color: #fafafa;
   background-color: #0097b2;
-  border: 1px solid #000000;
+  border: 1px solid #ee0000;
   min-width: 40vw;
 }
 .nav .navbar__menu .list__item .dropdown {
@@ -328,6 +338,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   position: absolute;
   left: -3rem;
   display: none;
@@ -337,7 +348,7 @@ header .intro-text .intro-heading {
   margin: 0;
   color: #fafafa;
   background-color: #17265c;
-  border: 1px solid #000000;
+  border: 1px solid #ee0000;
   text-decoration: none;
   min-width: 16rem;
   max-width: 18rem;
@@ -345,7 +356,7 @@ header .intro-text .intro-heading {
 .nav .navbar__menu .list__item .dropdown__menu__item:hover {
   color: #fafafa;
   background-color: #0097b2;
-  border: 1px solid #000000;
+  border: 1px solid #ee0000;
 }
 .nav .navbar__menu .list__item .dropdown:hover .dropdown__menu {
   display: flex;
@@ -390,6 +401,7 @@ header .intro-text .intro-heading {
     align-content: center;
     align-items: center;
     align-self: center;
+    border: 1px solid #ee0000;
     margin-top: 0;
   }
   .nav .navbar__menu .list {
@@ -401,6 +413,7 @@ header .intro-text .intro-heading {
     align-content: center;
     align-items: center;
     align-self: center;
+    border: 1px solid #ee0000;
     margin-top: 0;
     transform: translateY(0);
   }
@@ -422,6 +435,226 @@ header .intro-text .intro-heading {
     margin-top: 0;
   }
 }
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+  justify-self: center;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  border: 1px solid #ee0000;
+  color: #fafafa;
+  background-color: #17265c;
+  border: 1px solid #ee0000;
+}
+.footer .logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+  justify-self: center;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  border: 1px solid #ee0000;
+  padding: 0.5rem;
+  margin: 0;
+}
+.footer .logo__image {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+  justify-self: center;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  border: 1px solid #ee0000;
+  padding: 0;
+  margin: 0;
+  min-width: vw;
+  width: vw;
+  max-width: 90vw;
+}
+.footer .logo__row {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  justify-items: center;
+  justify-self: center;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  border: 1px solid #ee0000;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  color: #fafafa;
+  background-color: transparent;
+  border: 1px solid #ee0000;
+  text-align: center;
+}
+.footer .contact .social .list {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  justify-items: center;
+  justify-self: center;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  border: 1px solid #ee0000;
+  cursor: pointer;
+}
+.footer .contact .social .list__item {
+  padding: 0.5rem;
+  margin: 0;
+  list-style: none;
+  display: inline-flex;
+}
+.footer .contact .social .list__item__link {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  justify-items: center;
+  justify-self: center;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  border: 1px solid #ee0000;
+  padding: 0.5rem;
+  margin: 0 0.5rem;
+  min-width: 50px;
+  width: vw;
+  max-width: vw;
+  min-height: 50px;
+  height: vh;
+  max-height: vh;
+  border: 1px solid transparent;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 50%;
+  border: 1px solid #8f8f8f;
+  box-shadow: 3px 3px 6px #c2c2c2, -3px -3px 6px #ececec;
+}
+.footer .contact .social .list__item__link:hover {
+  color: inherit;
+  background-color: #0097b2;
+  border: 1px solid #ee0000;
+  border: 1px solid #fafafa;
+}
+.footer .contact .policy .list {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  justify-items: center;
+  justify-self: center;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  border: 1px solid #ee0000;
+  cursor: pointer;
+}
+.footer .contact .policy .list__item {
+  list-style: none;
+  display: inline-flex;
+}
+.footer .contact .policy .list__item__link {
+  padding: 0.5rem;
+  margin: 0;
+  min-height: 50px;
+  height: vh;
+  max-height: vh;
+}
+
+@media screen and (min-width: 376px) and (max-width: 600px) {
+  .footer .contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    justify-items: center;
+    justify-self: center;
+    align-content: center;
+    align-items: center;
+    align-self: center;
+    border: 1px solid #ee0000;
+  }
+  .footer .contact .policy .list {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    justify-items: center;
+    justify-self: center;
+    align-content: center;
+    align-items: center;
+    align-self: center;
+    border: 1px solid #ee0000;
+  }
+}
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+  .footer .contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    justify-items: center;
+    justify-self: center;
+    align-content: center;
+    align-items: center;
+    align-self: center;
+    border: 1px solid #ee0000;
+  }
+  .footer .contact .policy .list {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    justify-items: center;
+    justify-self: center;
+    align-content: center;
+    align-items: center;
+    align-self: center;
+    border: 1px solid #ee0000;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    justify-items: center;
+    justify-self: center;
+    align-content: center;
+    align-items: center;
+    align-self: center;
+    border: 1px solid #ee0000;
+  }
+  .footer .contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    justify-items: center;
+    justify-self: center;
+    align-content: center;
+    align-items: center;
+    align-self: center;
+    border: 1px solid #ee0000;
+  }
+  .footer .contact .policy {
+    padding: 0.5rem;
+    margin: 0;
+  }
+  .footer .contact .policy .list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    justify-items: center;
+    justify-self: center;
+    align-content: center;
+    align-items: flex-end;
+    align-self: center;
+    border: 1px solid #ee0000;
+  }
+}
 .main {
   display: flex;
   flex-direction: column;
@@ -431,11 +664,12 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   padding: 0.5rem;
   margin: 0;
   color: #17265c;
   background-color: #ececec;
-  border: 1px solid #000000;
+  border: 1px solid #ee0000;
   font-size: 1em;
   margin-top: 70px;
   gap: 0.5rem;
@@ -449,11 +683,12 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   padding: 0.5rem;
   margin: 0;
   color: #17265c;
   background-color: transparent;
-  border: 1px solid #000000;
+  border: 1px solid #ee0000;
   min-width: 95vw;
   width: vw;
   max-width: 95vw;
@@ -467,11 +702,12 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   padding: 0 15px;
   margin: 0;
   color: #17265c;
   background-color: transparent;
-  border: 1px solid #000000;
+  border: 1px solid #ee0000;
   text-align: center;
   min-width: 90vw;
   width: vw;
@@ -481,7 +717,7 @@ header .intro-text .intro-heading {
 .main .solutions__row--title {
   color: inherit;
   background-color: transparent;
-  border: 1px solid #000000;
+  border: 1px solid #ee0000;
 }
 .main .solutions__row--content {
   display: flex;
@@ -492,9 +728,10 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   color: #fafafa;
   background-color: transparent;
-  border: 1px solid #000000;
+  border: 1px solid #ee0000;
 }
 .main .solutions .box, .main .solutions .box--content, .main .solutions .box--title {
   display: flex;
@@ -505,11 +742,12 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   padding: 0.5rem;
   margin: 0.5rem;
   color: #17265c;
   background-color: transparent;
-  border: 1px solid #000000;
+  border: 1px solid #ee0000;
   min-width: vw;
   width: vw;
   max-width: 80vw;
@@ -519,7 +757,10 @@ header .intro-text .intro-heading {
 .main .solutions .box--content {
   color: #17265c;
   background-color: #c2c2c2;
-  border: 1px solid #000000;
+  border: 1px solid #ee0000;
+  border-radius: 0;
+  border: 1px solid #8f8f8f;
+  box-shadow: 3px 3px 6px #c2c2c2, -3px -3px 6px #ececec;
 }
 .main .solutions .box__icon {
   display: flex;
@@ -530,9 +771,10 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   color: #fafafa;
   background-color: #17265c;
-  border: 1px solid #000000;
+  border: 1px solid #ee0000;
   min-width: 50px;
   width: vw;
   max-width: vw;
@@ -550,6 +792,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   padding: 0.5rem;
 }
 .main .solutions .box__title {
@@ -561,11 +804,12 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   padding: 0.5rem;
   margin: 0 15px;
   color: #17265c;
   background-color: transparent;
-  border: 1px solid #000000;
+  border: 1px solid #ee0000;
   font-size: 35px;
   min-height: 4rem;
 }
@@ -574,7 +818,7 @@ header .intro-text .intro-heading {
   margin: 0.5rem;
   color: #17265c;
   background-color: transparent;
-  border: 1px solid #000000;
+  border: 1px solid #ee0000;
 }
 .main .solutions .box__content--title {
   display: flex;
@@ -585,11 +829,12 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   padding: 0.5rem;
   margin: 0 15px;
   color: #0097b2;
   background-color: transparent;
-  border: 1px solid #000000;
+  border: 1px solid #ee0000;
   font-size: 16px;
   text-transform: none;
   font-style: italic;
@@ -604,7 +849,9 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   min-width: 90vw;
+  width: vw;
   max-width: 90vw;
 }
 .main .about {
@@ -616,11 +863,12 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   padding: 0.5rem;
   margin: 1rem 0;
   color: #17265c;
   background-color: #17265c;
-  border: 1px solid #000000;
+  border: 1px solid #ee0000;
   min-width: 100vw;
   min-height: 30vh;
 }
@@ -633,6 +881,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   padding: 0.5rem;
   margin: 0.5rem;
   min-width: 80vw;
@@ -645,7 +894,7 @@ header .intro-text .intro-heading {
   margin: 0.5rem;
   color: #fafafa;
   background-color: transparent;
-  border: 1px solid #000000;
+  border: 1px solid #ee0000;
   font-size: 30px;
   line-height: 1.5;
   text-align: center;
@@ -655,7 +904,7 @@ header .intro-text .intro-heading {
   margin: 0.5rem;
   color: #fafafa;
   background-color: transparent;
-  border: 1px solid #000000;
+  border: 1px solid #ee0000;
   font-size: 16px;
   text-transform: none;
   font-style: italic;
@@ -664,7 +913,7 @@ header .intro-text .intro-heading {
 .main .about .box__button {
   color: #fafafa;
   background-color: #0097b2;
-  border: 1px solid #000000;
+  border: 1px solid #ee0000;
   padding: 0.5rem;
   margin: 0;
   border: 1px solid transparent;
@@ -672,7 +921,7 @@ header .intro-text .intro-heading {
 .main .about .box__button:hover {
   color: #fafafa;
   background-color: #00b4d4;
-  border: 1px solid #000000;
+  border: 1px solid #ee0000;
   border: 1px solid #fafafa;
 }
 .main .contact {
@@ -684,11 +933,12 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   padding: 0.5rem;
   margin: 0;
   color: #17265c;
   background-color: transparent;
-  border: 1px solid #000000;
+  border: 1px solid #ee0000;
   min-width: 95vw;
   max-width: 95vw;
 }
@@ -701,11 +951,12 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   padding: 0 15px;
   margin: 0;
   color: #17265c;
   background-color: transparent;
-  border: 1px solid #000000;
+  border: 1px solid #ee0000;
   text-align: center;
   min-width: 80vw;
 }
@@ -718,11 +969,12 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   padding: 0.5rem;
   margin: 0;
   color: #17265c;
   background-color: transparent;
-  border: 1px solid #000000;
+  border: 1px solid #ee0000;
   min-width: 80vw;
   max-width: 80vw;
   overflow: hidden;
@@ -736,11 +988,12 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   padding: 0.5rem;
   margin: 0 15px;
   color: #17265c;
   background-color: transparent;
-  border: 1px solid #000000;
+  border: 1px solid #ee0000;
   font-size: 20px;
   min-width: 75vw;
   min-height: 4rem;
@@ -753,7 +1006,7 @@ header .intro-text .intro-heading {
   margin: 0.5rem;
   color: #17265c;
   background-color: transparent;
-  border: 1px solid #000000;
+  border: 1px solid #ee0000;
   overflow: hidden;
   word-wrap: break-word;
   overflow-wrap: break-word;
@@ -767,11 +1020,12 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   padding: 0.5rem;
   margin: 0 15px;
   color: #0097b2;
   background-color: transparent;
-  border: 1px solid #000000;
+  border: 1px solid #ee0000;
   font-size: 16px;
   text-transform: none;
   font-style: italic;
@@ -780,7 +1034,7 @@ header .intro-text .intro-heading {
 .main .contact .box__button {
   color: #fafafa;
   background-color: #0097b2;
-  border: 1px solid #000000;
+  border: 1px solid #ee0000;
   padding: 0.5rem;
   margin: 0;
   border: 1px solid transparent;
@@ -788,7 +1042,7 @@ header .intro-text .intro-heading {
 .main .contact .box__button:hover {
   color: #fafafa;
   background-color: #00b4d4;
-  border: 1px solid #000000;
+  border: 1px solid #ee0000;
   border: 1px solid #fafafa;
 }
 .main .contact .box__map {
@@ -817,14 +1071,15 @@ header .intro-text .intro-heading {
     align-content: center;
     align-items: center;
     align-self: center;
+    border: 1px solid #ee0000;
     color: #17265c;
-    background-color: pink;
-    border: 1px solid #000000;
+    background-color: transparent;
+    border: 1px solid #ee0000;
   }
   .main .solutions__row--title {
     color: #17265c;
-    background-color: orange;
-    border: 1px solid #000000;
+    background-color: transparent;
+    border: 1px solid #ee0000;
   }
   .main .solutions .box, .main .solutions .box--title, .main .solutions .box--content {
     display: flex;
@@ -835,6 +1090,7 @@ header .intro-text .intro-heading {
     align-content: center;
     align-items: center;
     align-self: center;
+    border: 1px solid #ee0000;
     padding: 0.5rem;
     margin: 0.5rem;
     min-width: vw;
@@ -865,6 +1121,7 @@ header .intro-text .intro-heading {
     align-content: center;
     align-items: center;
     align-self: center;
+    border: 1px solid #ee0000;
   }
   .main .contact .box--title {
     display: flex;
@@ -875,6 +1132,7 @@ header .intro-text .intro-heading {
     align-content: center;
     align-items: center;
     align-self: center;
+    border: 1px solid #ee0000;
   }
   .main .contact .box--map {
     width: 85vw;
@@ -907,6 +1165,7 @@ header .intro-text .intro-heading {
     align-content: center;
     align-items: center;
     align-self: center;
+    border: 1px solid #ee0000;
   }
   .main .contact .box--map {
     width: 85vw;
