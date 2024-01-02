@@ -1,7 +1,9 @@
 // Footer style
 .footer {
   @include flexBox(column, center, center);
+  @include paddingMargin(1rem 0 0 0);
   @include style($neutral_lighter, $primary_main);
+
   .logo {
     @include flexBox(column, center, center);
     @include paddingMargin($padding);
