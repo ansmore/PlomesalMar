@@ -14,40 +14,36 @@
   .navbar {
     @include flexBox(row, space-around, center);
     @include paddingMargin;
-    min-width: 100vw;
+    @include boxSize(width, 100vw);
 
     &__logo {
       @include flexBox(row, flex-start, center);
       @include paddingMargin($padding, $margin);
       flex: 3;
       // min-height: 10vh;
-      min-width: 30vw;
+      @include boxSize(width, 30);
     }
 
     &__menu {
       @include flexBox(row, center, center);
-      @include paddingMargin;
+      @include paddingMargin(0, 246px 0 0 0);
       // prova display absolute
       position: absolute;
       z-index: 1;
       flex: 6;
-      margin-top: 150px;
+      // margin-top: 150px;
 
       .list {
         @include flexBox(column);
+        @include paddingMargin(0, calc($margin * 2) 0 0 0);
         @include style($neutral_lighter, $primary_main);
+        @include boxSize(width, 40);
         cursor: pointer;
-        margin-top: calc($margin * 2);
-        // Revisar mida de la caixa per el hover
-        // Revisar
-        // a
-        min-width: 40vw;
-        // b
-        // min-width: 16rem;
-        // max-width: 18rem;
+        // margin-top: calc($margin * 2);
+        // min-width: 40vw;
 
         transition: transform 1.5s;
-        transform: translateY(-120%);
+        transform: translateY(-140%);
 
         &__item {
           @include paddingMargin($padding);
@@ -69,13 +65,9 @@
 
           &:hover {
             @include flexBox(column, center, center);
+            @include boxSize(width, 40);
+            // min-width: 40vw;
             @include style($neutral_lighter, $secondary_main);
-            // Revisar
-            // a
-            min-width: 40vw;
-            // b
-            // min-width: 16rem;
-            // max-width: 18rem;
           }
 
           .dropdown {

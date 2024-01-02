@@ -152,7 +152,7 @@ button {
 */
 /**
  * checkUnit Function
- * 
+ *
  * This function checks if a value has one of the specified units: px, em, rem, or %.This function checks if a value has one of the specified units: px, em, rem, vw, vh or %.
  *
  * @param {any} $value - Value to check.
@@ -160,7 +160,7 @@ button {
  */
 /**
  * boxSize Mixin
- * 
+ *
  * This mixin allows setting the size properties of an element as well as its minimum and maximum properties.
  *
  * @param {string} $type - Size type ("width" or "height").
@@ -260,11 +260,10 @@ header .intro-text .intro-heading {
   align-items: center;
   align-self: center;
   padding: 0;
-  margin: 0;
+  margin: 246px 0 0 0;
   position: absolute;
   z-index: 1;
   flex: 6;
-  margin-top: 150px;
 }
 .nav .navbar__menu .list {
   display: flex;
@@ -275,13 +274,14 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  padding: 0;
+  margin: 1rem 0 0 0;
   color: #fafafa;
   background-color: #17265c;
-  cursor: pointer;
-  margin-top: 1rem;
   min-width: 40vw;
+  cursor: pointer;
   transition: transform 1.5s;
-  transform: translateY(-120%);
+  transform: translateY(-140%);
 }
 .nav .navbar__menu .list__item {
   padding: 0.5rem;
@@ -314,9 +314,9 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  min-width: 40vw;
   color: #fafafa;
   background-color: #0097b2;
-  min-width: 40vw;
 }
 .nav .navbar__menu .list__item .dropdown {
   position: relative;
@@ -518,6 +518,8 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  padding: 1rem 0 0 0;
+  margin: 0;
   color: #fafafa;
   background-color: #17265c;
 }
@@ -544,8 +546,6 @@ header .intro-text .intro-heading {
   align-self: center;
   padding: 0;
   margin: 0;
-  min-width: vw;
-  width: vw;
   max-width: 90vw;
 }
 .footer .logo__row {
@@ -592,11 +592,7 @@ header .intro-text .intro-heading {
   padding: 0.5rem;
   margin: 0 0.5rem;
   min-width: 50px;
-  width: vw;
-  max-width: vw;
   min-height: 50px;
-  height: vh;
-  max-height: vh;
   border: 1px solid transparent;
   text-decoration: none;
   text-align: center;
@@ -628,8 +624,6 @@ header .intro-text .intro-heading {
   padding: 0.5rem;
   margin: 0;
   min-height: 50px;
-  height: vh;
-  max-height: vh;
 }
 
 @media screen and (min-width: 376px) and (max-width: 600px) {
@@ -743,7 +737,6 @@ header .intro-text .intro-heading {
   color: #17265c;
   background-color: transparent;
   min-width: 95vw;
-  width: vw;
   max-width: 95vw;
 }
 .main .solutions__row, .main .solutions__row--content, .main .solutions__row--title {
@@ -761,7 +754,6 @@ header .intro-text .intro-heading {
   background-color: transparent;
   text-align: center;
   min-width: 90vw;
-  width: vw;
   max-width: 90vw;
   min-height: 8rem;
 }
@@ -794,8 +786,6 @@ header .intro-text .intro-heading {
   margin: 0.5rem;
   color: #17265c;
   background-color: transparent;
-  min-width: vw;
-  width: vw;
   max-width: 80vw;
   min-height: 10rem;
   gap: 0.5rem;
@@ -819,11 +809,7 @@ header .intro-text .intro-heading {
   color: #fafafa;
   background-color: #17265c;
   min-width: 50px;
-  width: vw;
-  max-width: vw;
   min-height: 50px;
-  height: vh;
-  max-height: vh;
   border-radius: 50%;
 }
 .main .solutions .box__icon i {
@@ -887,7 +873,6 @@ header .intro-text .intro-heading {
   align-items: center;
   align-self: center;
   min-width: 90vw;
-  width: vw;
   max-width: 90vw;
 }
 .main .about {
@@ -1064,12 +1049,8 @@ header .intro-text .intro-heading {
 .main .contact .box__map {
   padding: 0.5rem;
   margin: 0;
-  min-width: vw;
   width: 80vw;
-  max-width: vw;
-  min-height: vh;
   height: 420px;
-  max-height: vh;
 }
 
 @media screen and (min-width: 376px) and (max-width: 600px) {
@@ -1105,20 +1086,15 @@ header .intro-text .intro-heading {
     align-self: center;
     padding: 0.5rem;
     margin: 0.5rem;
-    min-width: vw;
-    width: vw;
     max-width: 80vw;
     flex: 5;
   }
   .main .solutions .box--title {
     min-width: 85vw;
-    width: vw;
     max-width: 85vw;
   }
   .main .solutions .box--content {
     min-height: 17rem;
-    height: vh;
-    max-height: vh;
   }
   .main .aside__box {
     min-width: 85vw;
@@ -1152,7 +1128,6 @@ header .intro-text .intro-heading {
 @media screen and (min-width: 1025px) {
   .main .solutions__row, .main .solutions__row--title, .main .solutions__row--content {
     min-width: 90vw;
-    width: vw;
     max-width: 90vw;
   }
   .main .solutions .box, .main .solutions .box--title, .main .solutions .box--content {

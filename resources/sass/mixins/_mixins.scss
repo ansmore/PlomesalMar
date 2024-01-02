@@ -53,7 +53,7 @@
 
 /**
  * checkUnit Function
- * 
+ *
  * This function checks if a value has one of the specified units: px, em, rem, or %.This function checks if a value has one of the specified units: px, em, rem, vw, vh or %.
  *
  * @param {any} $value - Value to check.
@@ -61,7 +61,7 @@
  */
 @function checkUnit($value) {
   @if $value == null {
-    @return false;
+    @return true;
   }
 
   @if type-of($value) == "number" {
@@ -76,7 +76,7 @@
 
 /**
  * boxSize Mixin
- * 
+ *
  * This mixin allows setting the size properties of an element as well as its minimum and maximum properties.
  *
  * @param {string} $type - Size type ("width" or "height").
