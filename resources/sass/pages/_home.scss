@@ -40,11 +40,14 @@
     }
     .box {
       @include flexBox(column, flex-start);
+      border-radius: 50%;
       @include paddingMargin($padding, $margin);
+      padding-top: 7rem;
       @include style($primary_main);
       // min-width No!
       @include boxSize(width, null, null, 80vw);
-      @include boxSize(height, 10rem);
+      @include boxSize(height, 24rem);
+      min-height: 24rem;
       // min-height: 10rem;
       gap: $gap;
 
@@ -57,9 +60,11 @@
       &--content {
         @extend .box;
         // @include paddingMargin($padding, $margin);
+        border-radius: 50%;
         @include style($primary_main, $neutral_main);
         @include boxShadow;
-        padding-top: 2rem;
+        padding-top: 7rem;
+        @include boxSize(height, 24rem);
         @include hover($secondary_main, inherit, $neutral_darker);
       }
       &__icon {

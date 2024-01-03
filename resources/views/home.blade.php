@@ -17,6 +17,7 @@
             </div>
             <div class="solutions__row--content">
                 <div class="box--content">
+                    {{-- box--content --}}
                     <span class="box__icon">
                         <span class="i">
                             <i class="fa  fa-check-square"></i>
@@ -27,6 +28,7 @@
                     </h4>
                 </div>
                 <div class="box--content">
+                    {{-- box--content --}}
                     <span class="box__icon">
                         <span class="i">
                             <i class="fa fa-list-ul"></i>
