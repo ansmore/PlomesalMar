@@ -39,17 +39,13 @@
         @include style($neutral_lighter, $primary_main);
         @include boxSize(width, 40);
         cursor: pointer;
-        // margin-top: calc($margin * 2);
-        // min-width: 40vw;
 
         transition: transform 1.5s;
         transform: translateY(-140%);
 
         &__item {
           @include paddingMargin($padding);
-          // Mida del element de la llista????
-          // min-width: 40vw;
-          //
+
           list-style: none;
           display: inline-flex;
 
@@ -58,7 +54,6 @@
             @include paddingMargin(0, 0 $margin);
             @include style($neutral_lighter);
 
-            // min-width: 120px;
             text-decoration: none;
             text-align: center;
           }
@@ -66,22 +61,16 @@
           &:hover {
             @include flexBox(column, center, center);
             @include boxSize(width, 40);
-            // min-width: 40vw;
             @include style($neutral_lighter, $secondary_main);
           }
 
           .dropdown {
             position: relative;
-            // Aqui???
-            // min-width: 40vw;
-            // max-width: 40vw;
 
             &__menu {
               @include flexBox(column, center, center);
               position: absolute;
-              // top: 100%;
-              // margin-top: $margin;
-              // top: 1.8rem;
+
               left: -3rem;
               display: none;
 
@@ -89,9 +78,9 @@
                 @include paddingMargin($padding calc($padding * 3));
                 @include style($neutral_lighter, $primary_main);
                 text-decoration: none;
-
-                min-width: 16rem;
-                max-width: 18rem;
+                @include boxSize(width, 16rem, null, 18rem);
+                // min-width: 16rem;
+                // max-width: 18rem;
 
                 &:hover {
                   @include style($neutral_lighter, $secondary_main);
@@ -113,20 +102,19 @@
       flex: 1;
 
       .list {
-        // @extend .list;
         cursor: pointer;
 
         &__item {
           &__link {
             @include flexBox(row, center, center);
             @include style($neutral_lighter);
-            height: $nav-height;
-            min-width: 6rem;
+            @include boxSize(width, 6rem);
+            @include boxSize(height, null, $nav-height);
           }
           &:hover {
             @include flexBox(column, center, center);
             @include style($neutral_lighter, $secondary_main);
-            min-width: 6rem;
+            @include boxSize(width, 6rem);
           }
           .dropdown {
             position: relative;
@@ -138,10 +126,11 @@
               &__item {
                 @include paddingMargin($padding calc($padding * 3));
                 @include style($neutral_lighter, $primary_main);
+                @include boxSize(width, 16rem, null, 18rem);
                 text-decoration: none;
 
-                min-width: 16rem;
-                max-width: 18rem;
+                // min-width: 16rem;
+                // max-width: 18rem;
 
                 &:hover {
                   @include style($neutral_lighter, $secondary_main);
@@ -161,7 +150,8 @@
   }
 
   .toggle {
-    width: 50px;
+    @include boxSize(width, null, 50px);
+    // width: 50px;
     position: absolute;
     z-index: 1;
     top: 0.5rem;
@@ -189,24 +179,27 @@
 @media screen and (min-width: 601px) and (max-width: 1024px) {
   .navbar {
     &__logo {
-      min-width: 30vw;
+      @include boxSize(width, 30vw);
+      // min-width: 30vw;
     }
   }
 }
 
 @media screen and (min-width: 1025px) {
   .nav {
-    height: $nav-height;
+    @include boxSize(height, null, $nav-height);
 
     .toggle {
       display: none;
     }
     .navbar {
-      max-height: $nav-height;
+      @include boxSize(height, null, null, $nav-height);
+      // max-height: $nav-height;
       &__logo {
         // prova absolute
-        min-width: 20vw;
-        max-width: 20vw;
+        @include boxSize(width, 20vw, null, 20vw);
+        // min-width: 20vw;
+        // max-width: 20vw;
       }
 
       &__menu {
@@ -223,17 +216,22 @@
             @include paddingMargin;
             // min-width: 120px;
             // max-width: 150px;
-            min-width: 7rem;
-            max-width: 9rem;
+            @include boxSize(width, 7rem, null, 9rem);
+            // min-width: 7rem;
+            // max-width: 9rem;
 
             &__link {
-              height: $nav-height;
-              min-width: 120px;
+              @include boxSize(width, 120px);
+              @include boxSize(height, null, $nav-height);
+              // height: $nav-height;
+              // min-width: 120px;
             }
 
             &:hover {
-              max-height: $nav-height;
-              min-width: 120px;
+              @include boxSize(width, 120px);
+              @include boxSize(height, null, null, $nav-height);
+              // max-height: $nav-height;
+              // min-width: 120px;
             }
 
             .dropdown {
@@ -246,15 +244,6 @@
       }
       &__language {
         margin-right: 0;
-        // .list {
-        //   &__item {
-        //     .dropdown {
-        //       &__menu {
-        //         left: 0;
-        //       }
-        //     }
-        //   }
-        // }
       }
     }
   }

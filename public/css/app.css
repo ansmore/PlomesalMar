@@ -378,8 +378,8 @@ header .intro-text .intro-heading {
   align-self: center;
   color: #fafafa;
   background-color: transparent;
-  height: 70px;
   min-width: 6rem;
+  height: 70px;
 }
 .nav .navbar__language .list__item:hover {
   display: flex;
@@ -414,9 +414,9 @@ header .intro-text .intro-heading {
   margin: 0;
   color: #fafafa;
   background-color: #17265c;
-  text-decoration: none;
   min-width: 16rem;
   max-width: 18rem;
+  text-decoration: none;
 }
 .nav .navbar__language .list__item .dropdown__menu__item:hover {
   color: #fafafa;
@@ -495,12 +495,12 @@ header .intro-text .intro-heading {
     max-width: 9rem;
   }
   .nav .navbar__menu .list__item__link {
-    height: 70px;
     min-width: 120px;
+    height: 70px;
   }
   .nav .navbar__menu .list__item:hover {
-    max-height: 70px;
     min-width: 120px;
+    max-height: 70px;
   }
   .nav .navbar__menu .list__item .dropdown__menu {
     margin-top: 0;
