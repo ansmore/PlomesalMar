@@ -52,6 +52,20 @@
                 </li>
             </ul>
         </div>
+        <div class="navbar__language">
+            <ul class="list">
+                <li class="list__item">
+                    <div class="dropdown">
+                        <a class="list__item__link" id="navModulosDropdown" role="button">DDD</a>
+                        <div class="dropdown__menu" aria-labelledby="navModulosDropdown">
+                            <a class="dropdown__menu__item" href="#">DDD</a>
+                            <a class="dropdown__menu__item" href="#">FFF</a>
+                            <a class="dropdown__menu__item" href="#">GGG</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
     </div>
 </nav>
 <script type="module" src="{{ asset('js/navigationBiit.js') }}" defer></script>

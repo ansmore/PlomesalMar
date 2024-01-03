@@ -41,7 +41,6 @@
                             <a class="dropdown__menu__item" href="#">DDD</a>
                             <a class="dropdown__menu__item" href="#">FFF</a>
                             <a class="dropdown__menu__item" href="#">GGG</a>
-
                         </div>
                     </div>
                 </li>
