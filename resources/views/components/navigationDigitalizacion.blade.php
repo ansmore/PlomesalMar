@@ -48,11 +48,11 @@
             <ul class="list">
                 <li class="list__item">
                     <div class="dropdown">
-                        <a class="list__item__link" id="navModulosDropdown" role="button">DDD</a>
+                        <a class="list__item__link" id="navModulosDropdown" role="button">CAS</a>
                         <div class="dropdown__menu" aria-labelledby="navModulosDropdown">
-                            <a class="dropdown__menu__item" href="#">DDD</a>
-                            <a class="dropdown__menu__item" href="#">FFF</a>
-                            <a class="dropdown__menu__item" href="#">GGG</a>
+                            <a class="dropdown__menu__item" href="#">CASTELLANO</a>
+                            <a class="dropdown__menu__item" href="#">ENGLISH</a>
+                            <a class="dropdown__menu__item" href="#">FRANÇAIS</a>
                         </div>
                     </div>
                 </li>
