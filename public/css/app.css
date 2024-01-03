@@ -260,7 +260,7 @@ header .intro-text .intro-heading {
   align-items: center;
   align-self: center;
   padding: 0;
-  margin: 246px 0 0 0;
+  margin: 208px 0 0 0;
   position: absolute;
   z-index: 1;
   flex: 6;
@@ -281,7 +281,7 @@ header .intro-text .intro-heading {
   min-width: 40vw;
   cursor: pointer;
   transition: transform 1.5s;
-  transform: translateY(-140%);
+  transform: translateY(-200%);
 }
 .nav .navbar__menu .list__item {
   padding: 0.5rem;
@@ -376,10 +376,15 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
-  color: #fafafa;
-  background-color: transparent;
+  color: #17265c;
+  background-color: #fafafa;
   min-width: 6rem;
   height: 70px;
+}
+.nav .navbar__language .list__item__link:hover {
+  color: #fafafa;
+  background-color: #0097b2;
+  border: 1px solid transparent;
 }
 .nav .navbar__language .list__item:hover {
   display: flex;
@@ -796,6 +801,7 @@ header .intro-text .intro-heading {
   border-radius: 0;
   border: 1px solid #8f8f8f;
   box-shadow: 3px 3px 6px #c2c2c2, -3px -3px 6px #ececec;
+  padding-top: 2rem;
 }
 .main .solutions .box--content:hover {
   color: inherit;
@@ -844,6 +850,7 @@ header .intro-text .intro-heading {
   background-color: transparent;
   min-height: 4rem;
   font-size: 35px;
+  line-height: 1.5;
 }
 .main .solutions .box__content {
   padding: 0.5rem;

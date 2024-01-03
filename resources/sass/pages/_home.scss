@@ -59,6 +59,7 @@
         // @include paddingMargin($padding, $margin);
         @include style($primary_main, $neutral_main);
         @include boxShadow;
+        padding-top: 2rem;
         @include hover($secondary_main, inherit, $neutral_darker);
       }
       &__icon {
@@ -85,6 +86,7 @@
         @include boxSize(height, 4rem);
         // min-height: 4rem;
         font-size: 35px;
+        line-height: 1.5;
       }
       &__content {
         @include paddingMargin($padding, $margin);

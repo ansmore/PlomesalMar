@@ -26,7 +26,7 @@
 
     &__menu {
       @include flexBox(row, center, center);
-      @include paddingMargin(0, 246px 0 0 0);
+      @include paddingMargin(0, 208px 0 0 0);
       // prova display absolute
       position: absolute;
       z-index: 1;
@@ -41,7 +41,7 @@
         cursor: pointer;
 
         transition: transform 1.5s;
-        transform: translateY(-140%);
+        transform: translateY(-200%);
 
         &__item {
           @include paddingMargin($padding);
@@ -107,9 +107,11 @@
         &__item {
           &__link {
             @include flexBox(row, center, center);
-            @include style($neutral_lighter);
+            @include style($primary_main, $neutral_lighter);
             @include boxSize(width, 6rem);
             @include boxSize(height, null, $nav-height);
+
+            @include hover($secondary_main, $neutral_lighter);
           }
           &:hover {
             @include flexBox(column, center, center);

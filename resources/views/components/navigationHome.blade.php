@@ -20,10 +20,6 @@
                     <a class="list__item__link" href="{{ route('digitalizacion') }}" value-text="navDigitalizacion"></a>
                 </li>
                 <li class="list__item">
-                    <a class="list__item__link" href="{{ route('home.section', ['section' => 'soluciones']) }}"
-                        value-text="navService"></a>
-                </li>
-                <li class="list__item">
                     <a class="list__item__link" href="{{ route('biit') }}" value-text="navPorfolio"></a>
                 </li>
                 <li class="list__item">
@@ -36,11 +32,11 @@
             <ul class="list">
                 <li class="list__item">
                     <div class="dropdown">
-                        <a class="list__item__link" id="navModulosDropdown" role="button">DDD</a>
+                        <a class="list__item__link" id="navModulosDropdown" role="button">ESP</a>
                         <div class="dropdown__menu" aria-labelledby="navModulosDropdown">
-                            <a class="dropdown__menu__item" href="#">DDD</a>
-                            <a class="dropdown__menu__item" href="#">FFF</a>
-                            <a class="dropdown__menu__item" href="#">GGG</a>
+                            <a class="dropdown__menu__item" href="#">ESP</a>
+                            <a class="dropdown__menu__item" href="#">ENG</a>
+                            <a class="dropdown__menu__item" href="#">FRA</a>
                         </div>
                     </div>
                 </li>

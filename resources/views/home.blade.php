@@ -37,7 +37,7 @@
                     </h4>
                 </div>
             </div>
-            <div class="solutions__row--content">
+            {{-- <div class="solutions__row--content">
                 <div class="box--content">
                     <span class="box__icon">
                         <span class="i">
@@ -58,7 +58,7 @@
                         <a href="{{ route('biit') }}" value-text="services5"></a>
                     </h4>
                 </div>
-            </div>
+            </div> --}}
         </section>
         <!-- Clients Aside -->
         <section class="aside">
