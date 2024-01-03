@@ -44,7 +44,8 @@
       @include style($primary_main);
       // min-width No!
       @include boxSize(width, null, null, 80vw);
-      min-height: 10rem;
+      @include boxSize(height, 10rem);
+      // min-height: 10rem;
       gap: $gap;
 
       // flex: 5;
@@ -58,6 +59,7 @@
         // @include paddingMargin($padding, $margin);
         @include style($primary_main, $neutral_main);
         @include boxShadow;
+        @include hover($secondary_main, inherit, $neutral_darker);
       }
       &__icon {
         @include flexBox(row, center, center);
@@ -71,7 +73,8 @@
           @include flexBox(row, center, center);
           // color: aqua;
           // background-color: bisque;
-          padding: $padding;
+          @include paddingMargin($padding);
+          // padding: $padding;
           // font-size: 36px;
         }
       }
@@ -79,9 +82,9 @@
         @include flexBox(column, space-around, center);
         @include paddingMargin($padding, 0 15px);
         @include style($primary_main);
+        @include boxSize(height, 4rem);
+        // min-height: 4rem;
         font-size: 35px;
-
-        min-height: 4rem;
       }
       &__content {
         @include paddingMargin($padding, $margin);
@@ -111,15 +114,19 @@
     @include flexBox(column, space-around, center);
     @include paddingMargin($padding, 1rem 0);
     @include style($primary_main, $primary_main);
-    min-width: 100vw;
-    min-height: 30vh;
+    @include boxSize(width, 100vw);
+    @include boxSize(height, 30vw);
+    // min-width: 100vw;
+    // min-height: 30vh;
 
     .box {
       @include flexBox(column, flex-start);
       @include paddingMargin($padding, $margin);
-      min-width: 80vw;
-      max-width: 80vw;
-      min-height: 25vh;
+      @include boxSize(width, 80vw, null, 80vw);
+      @include boxSize(height, 25vw);
+      // min-width: 80vw;
+      // max-width: 80vw;
+      // min-height: 25vh;
       gap: calc($gap * 2);
 
       &__title {
@@ -149,34 +156,36 @@
     @include flexBox(column, space-around, center);
     @include paddingMargin($padding, 0);
     @include style($primary_main);
-    min-width: 95vw;
-    max-width: 95vw;
+    @include boxSize(width, 95vw, null, 95vw);
+    // min-width: 95vw;
+    // max-width: 95vw;
 
     &__row {
       @include flexBox(column, space-around, center);
       @include paddingMargin(0 15px);
       @include style($primary_main);
+      @include boxSize(width, 80vw);
+      // min-width: 80vw;
       text-align: center;
-
-      min-width: 80vw;
     }
     .box {
       @include flexBox(column, flex-start);
       @include paddingMargin($padding, 0);
       @include style($primary_main);
-
-      min-width: 80vw;
-      max-width: 80vw;
+      @include boxSize(width, 80vw, null, 80vw);
+      // min-width: 80vw;
+      // max-width: 80vw;
 
       overflow: hidden;
       &__title {
         @include flexBox(column, space-around, center);
         @include paddingMargin($padding, 0 15px);
         @include style($primary_main);
+        @include boxSize(width, 75vw);
+        @include boxSize(height, 4rem);
+        // min-width: 75vw;
+        // min-height: 4rem;
         font-size: 20px;
-
-        min-width: 75vw;
-        min-height: 4rem;
 
         overflow: hidden;
         word-wrap: break-word;
@@ -253,13 +262,15 @@
         }
         &--content {
           @include boxSize(height, 17rem, null, null);
+          padding-top: 2rem;
         }
       }
     }
     .aside {
       &__box {
-        min-width: 85vw;
-        max-width: 85vw;
+        @include boxSize(width, 85vw, null, 85vw);
+        // min-width: 85vw;
+        // max-width: 85vw;
       }
     }
     .contact {
@@ -269,8 +280,10 @@
           @include flexBox(column, flex-start, center);
         }
         &--map {
-          width: 85vw;
-          height: 600px;
+          @include boxSize(width, null, 85vw);
+          @include boxSize(height, null, 600px);
+          // width: 85vw;
+          // height: 600px;
         }
       }
     }
@@ -284,14 +297,16 @@
         @include boxSize(width, 90, null, 90vw);
       }
       .box {
-        min-width: 80vw;
-        max-width: 80vw;
+        @include boxSize(width, 80vw, null, 80vw);
+        //   min-width: 80vw;
+        //   max-width: 80vw;
       }
     }
     .aside {
       &__box {
-        min-width: 80vw;
-        max-width: 80vw;
+        @include boxSize(width, 80vw, null, 80vw);
+        // min-width: 80vw;
+        // max-width: 80vw;
       }
     }
     .about {
@@ -306,8 +321,10 @@
         @include flexBox(row, center, center);
 
         &--map {
-          width: 85vw;
-          height: 700px;
+          @include boxSize(width, null, 85vw);
+          @include boxSize(height, null, 700px);
+          // width: 85vw;
+          // height: 700px;
         }
       }
     }

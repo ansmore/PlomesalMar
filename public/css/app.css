@@ -797,6 +797,11 @@ header .intro-text .intro-heading {
   border: 1px solid #8f8f8f;
   box-shadow: 3px 3px 6px #c2c2c2, -3px -3px 6px #ececec;
 }
+.main .solutions .box--content:hover {
+  color: inherit;
+  background-color: #0097b2;
+  border: 1px solid #1f1f1f;
+}
 .main .solutions .box__icon {
   display: flex;
   flex-direction: row;
@@ -822,6 +827,7 @@ header .intro-text .intro-heading {
   align-items: center;
   align-self: center;
   padding: 0.5rem;
+  margin: 0;
 }
 .main .solutions .box__title {
   display: flex;
@@ -836,8 +842,8 @@ header .intro-text .intro-heading {
   margin: 0 15px;
   color: #17265c;
   background-color: transparent;
-  font-size: 35px;
   min-height: 4rem;
+  font-size: 35px;
 }
 .main .solutions .box__content {
   padding: 0.5rem;
@@ -889,7 +895,7 @@ header .intro-text .intro-heading {
   color: #17265c;
   background-color: #17265c;
   min-width: 100vw;
-  min-height: 30vh;
+  min-height: 30vw;
 }
 .main .about .box, .main .about .solutions .box--title, .main .solutions .about .box--title, .main .about .solutions .box--content, .main .solutions .about .box--content {
   display: flex;
@@ -904,7 +910,7 @@ header .intro-text .intro-heading {
   margin: 0.5rem;
   min-width: 80vw;
   max-width: 80vw;
-  min-height: 25vh;
+  min-height: 25vw;
   gap: 1rem;
 }
 .main .about .box__title {
@@ -967,8 +973,8 @@ header .intro-text .intro-heading {
   margin: 0;
   color: #17265c;
   background-color: transparent;
-  text-align: center;
   min-width: 80vw;
+  text-align: center;
 }
 .main .contact .box, .main .contact .solutions .box--title, .main .solutions .contact .box--title, .main .contact .solutions .box--content, .main .solutions .contact .box--content {
   display: flex;
@@ -1000,9 +1006,9 @@ header .intro-text .intro-heading {
   margin: 0 15px;
   color: #17265c;
   background-color: transparent;
-  font-size: 20px;
   min-width: 75vw;
   min-height: 4rem;
+  font-size: 20px;
   overflow: hidden;
   word-wrap: break-word;
   overflow-wrap: break-word;
@@ -1095,6 +1101,7 @@ header .intro-text .intro-heading {
   }
   .main .solutions .box--content {
     min-height: 17rem;
+    padding-top: 2rem;
   }
   .main .aside__box {
     min-width: 85vw;
