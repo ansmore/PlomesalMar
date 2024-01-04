@@ -128,7 +128,7 @@
               &__item {
                 @include paddingMargin($padding calc($padding * 3));
                 @include style($neutral_lighter, $primary_main);
-                @include boxSize(width, 16rem, null, 18rem);
+                @include boxSize(width, 12rem, null, 14rem);
                 text-decoration: none;
 
                 // min-width: 16rem;
@@ -246,6 +246,18 @@
       }
       &__language {
         margin-right: 0;
+        .list {
+          &__item {
+            .dropdown {
+              &__menu {
+                right: 0rem;
+                &__item {
+                  @include boxSize(width, 12rem, null, 14rem);
+                }
+              }
+            }
+          }
+        }
       }
     }
   }

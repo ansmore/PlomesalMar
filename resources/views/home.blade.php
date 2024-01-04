@@ -20,7 +20,8 @@
                     {{-- box--content --}}
                     <span class="circle__icon">
                         <span class="i">
-                            <i class="fa  fa-check-square"></i>
+                            {{-- <i class="fa  fa-check-square"></i> --}}
+                            <img src="img/logos/logo_biit.png" alt="">
                         </span>
                     </span>
                     <h4 class="circle__content">
@@ -31,7 +32,8 @@
                     {{-- box--content --}}
                     <span class="circle__icon">
                         <span class="i">
-                            <i class="fa fa-list-ul"></i>
+                            {{-- <i class="fa fa-list-ul"></i> --}}
+                            <img src="img/logos/sage.svg" alt="">
                         </span>
                     </span>
                     <h4 class="circle__content">

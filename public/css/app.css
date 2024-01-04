@@ -119,7 +119,6 @@ body {
   color: #000000;
   background-color: #ffffff;
   line-height: 1.4em;
-  hyphens: auto;
   font-smooth: always;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -215,7 +214,6 @@ header .intro-text .intro-heading {
   align-self: center;
   color: #fafafa;
   background-color: #17265c;
-  border: 1px solid #ee0000;
   max-width: 100vw;
   height: 70px;
   font-size: 1em;
@@ -279,7 +277,6 @@ header .intro-text .intro-heading {
   margin: 1rem 0 0 0;
   color: #fafafa;
   background-color: #17265c;
-  border: 1px solid #ee0000;
   min-width: 40vw;
   cursor: pointer;
   transition: transform 1.5s;
@@ -304,7 +301,6 @@ header .intro-text .intro-heading {
   margin: 0 0.5rem;
   color: #fafafa;
   background-color: transparent;
-  border: 1px solid #ee0000;
   text-decoration: none;
   text-align: center;
 }
@@ -320,7 +316,6 @@ header .intro-text .intro-heading {
   min-width: 40vw;
   color: #fafafa;
   background-color: #0097b2;
-  border: 1px solid #ee0000;
 }
 .nav .navbar__menu .list__item .dropdown {
   position: relative;
@@ -343,7 +338,6 @@ header .intro-text .intro-heading {
   margin: 0;
   color: #fafafa;
   background-color: #17265c;
-  border: 1px solid #ee0000;
   text-decoration: none;
   min-width: 16rem;
   max-width: 18rem;
@@ -351,7 +345,6 @@ header .intro-text .intro-heading {
 .nav .navbar__menu .list__item .dropdown__menu__item:hover {
   color: #fafafa;
   background-color: #0097b2;
-  border: 1px solid #ee0000;
 }
 .nav .navbar__menu .list__item .dropdown:hover .dropdown__menu {
   display: flex;
@@ -384,14 +377,13 @@ header .intro-text .intro-heading {
   align-self: center;
   color: #17265c;
   background-color: #fafafa;
-  border: 1px solid #ee0000;
   min-width: 6rem;
   height: 70px;
+  border: 1px solid transparent;
 }
 .nav .navbar__language .list__item__link:hover {
   color: #fafafa;
   background-color: #0097b2;
-  border: 1px solid #ee0000;
   border: 1px solid transparent;
 }
 .nav .navbar__language .list__item:hover {
@@ -405,7 +397,6 @@ header .intro-text .intro-heading {
   align-self: center;
   color: #fafafa;
   background-color: #0097b2;
-  border: 1px solid #ee0000;
   min-width: 6rem;
 }
 .nav .navbar__language .list__item .dropdown {
@@ -428,15 +419,13 @@ header .intro-text .intro-heading {
   margin: 0;
   color: #fafafa;
   background-color: #17265c;
-  border: 1px solid #ee0000;
-  min-width: 16rem;
-  max-width: 18rem;
+  min-width: 12rem;
+  max-width: 14rem;
   text-decoration: none;
 }
 .nav .navbar__language .list__item .dropdown__menu__item:hover {
   color: #fafafa;
   background-color: #0097b2;
-  border: 1px solid #ee0000;
 }
 .nav .navbar__language .list__item .dropdown:hover .dropdown__menu {
   display: flex;
@@ -444,7 +433,6 @@ header .intro-text .intro-heading {
 .nav .navbar__language .list:hover {
   color: #fafafa;
   background-color: #0097b2;
-  border: 1px solid #ee0000;
 }
 .nav .toggle {
   width: 50px;
@@ -525,6 +513,13 @@ header .intro-text .intro-heading {
   .nav .navbar__language {
     margin-right: 0;
   }
+  .nav .navbar__language .list__item .dropdown__menu {
+    right: 0rem;
+  }
+  .nav .navbar__language .list__item .dropdown__menu__item {
+    min-width: 12rem;
+    max-width: 14rem;
+  }
 }
 .footer {
   display: flex;
@@ -539,7 +534,6 @@ header .intro-text .intro-heading {
   margin: 0;
   color: #fafafa;
   background-color: #17265c;
-  border: 1px solid #ee0000;
 }
 .footer .logo {
   display: flex;
@@ -579,7 +573,6 @@ header .intro-text .intro-heading {
   margin: 0.5rem;
   color: #fafafa;
   background-color: transparent;
-  border: 1px solid #ee0000;
   text-align: center;
 }
 .footer .contact .social .list {
@@ -616,13 +609,13 @@ header .intro-text .intro-heading {
   text-decoration: none;
   text-align: center;
   border-radius: 50%;
-  border: 1px solid #8f8f8f;
+  border: 1px solid;
   box-shadow: 3px 3px 6px #c2c2c2, -3px -3px 6px #ececec;
+  border: 1px solid transparent;
 }
 .footer .contact .social .list__item__link:hover {
   color: inherit;
   background-color: #0097b2;
-  border: 1px solid #ee0000;
   border: 1px solid #fafafa;
 }
 .footer .contact .policy .list {
@@ -739,7 +732,6 @@ header .intro-text .intro-heading {
   margin: 0;
   color: #17265c;
   background-color: #ececec;
-  border: 1px solid #ee0000;
   font-size: 1em;
   margin-top: 70px;
   gap: 0.5rem;
@@ -757,7 +749,6 @@ header .intro-text .intro-heading {
   margin: 0;
   color: #17265c;
   background-color: transparent;
-  border: 1px solid #ee0000;
   min-width: 95vw;
   max-width: 95vw;
 }
@@ -774,7 +765,6 @@ header .intro-text .intro-heading {
   margin: 0;
   color: #17265c;
   background-color: transparent;
-  border: 1px solid #ee0000;
   text-align: center;
   min-width: 90vw;
   max-width: 90vw;
@@ -783,7 +773,6 @@ header .intro-text .intro-heading {
 .main .solutions__row--title {
   color: inherit;
   background-color: transparent;
-  border: 1px solid #ee0000;
 }
 .main .solutions__row--content {
   display: flex;
@@ -796,7 +785,6 @@ header .intro-text .intro-heading {
   align-self: center;
   color: #fafafa;
   background-color: transparent;
-  border: 1px solid #ee0000;
   gap: 1rem;
 }
 .main .solutions .box, .main .solutions .box--content, .main .solutions .box--title {
@@ -812,22 +800,20 @@ header .intro-text .intro-heading {
   margin: 0.5rem;
   color: #17265c;
   background-color: transparent;
-  border: 1px solid #ee0000;
   max-width: 25rem;
   gap: 0.5rem;
 }
 .main .solutions .box--content {
   color: #17265c;
   background-color: #c2c2c2;
-  border: 1px solid #ee0000;
   border-radius: 0;
-  border: 1px solid #8f8f8f;
+  border: 1px solid transparent;
   box-shadow: 3px 3px 6px #c2c2c2, -3px -3px 6px #ececec;
+  border: 1px solid transparent;
 }
 .main .solutions .box--content:hover {
   color: inherit;
   background-color: #0097b2;
-  border: 1px solid #ee0000;
   border: 1px solid #1f1f1f;
 }
 .main .solutions .box__title {
@@ -843,7 +829,6 @@ header .intro-text .intro-heading {
   margin: 0 15px;
   color: #17265c;
   background-color: transparent;
-  border: 1px solid #ee0000;
   min-height: 4rem;
   font-size: 35px;
   line-height: 1.5;
@@ -853,7 +838,6 @@ header .intro-text .intro-heading {
   margin: 0.5rem;
   color: #17265c;
   background-color: transparent;
-  border: 1px solid #ee0000;
 }
 .main .solutions .box__content--title {
   display: flex;
@@ -868,7 +852,6 @@ header .intro-text .intro-heading {
   margin: 0 15px;
   color: #0097b2;
   background-color: transparent;
-  border: 1px solid #ee0000;
   font-size: 16px;
   text-transform: none;
   font-style: italic;
@@ -887,7 +870,6 @@ header .intro-text .intro-heading {
   margin: 0.5rem;
   color: inherit;
   background-color: #c2c2c2;
-  border: 1px solid #ee0000;
   min-width: 20rem;
   max-width: 20rem;
   min-height: 20rem;
@@ -895,7 +877,8 @@ header .intro-text .intro-heading {
   border: 1px solid #8f8f8f;
   box-shadow: 3px 3px 6px #c2c2c2, -3px -3px 6px #ececec;
   border-radius: 50%;
-  padding-top: 5rem;
+  padding-top: 3rem;
+  border: 1px solid #8f8f8f;
 }
 .main .solutions .circle__icon {
   display: flex;
@@ -907,12 +890,11 @@ header .intro-text .intro-heading {
   align-items: center;
   align-self: center;
   color: #fafafa;
-  background-color: #17265c;
-  border: 1px solid #ee0000;
-  min-width: 50px;
-  max-width: 50px;
-  min-height: 50px;
-  max-height: 50px;
+  background-color: #fafafa;
+  min-width: 80px;
+  max-width: 100px;
+  min-height: 80px;
+  max-height: 100px;
   border-radius: 50%;
 }
 .main .solutions .circle__icon i {
@@ -927,6 +909,10 @@ header .intro-text .intro-heading {
   padding: 0.5rem;
   margin: 0;
 }
+.main .solutions .circle__icon img {
+  max-width: 50px;
+  max-height: 50px;
+}
 .main .solutions .circle__content {
   display: flex;
   flex-direction: column;
@@ -940,8 +926,9 @@ header .intro-text .intro-heading {
   margin: 0.5rem;
   color: #fafafa;
   background-color: transparent;
-  border: 1px solid #ee0000;
-  max-width: 10rem;
+  max-width: 15rem;
+  border-bottom-left-radius: 25%;
+  border-bottom-right-radius: 25%;
   font-size: 16px;
   text-transform: none;
   font-style: italic;
@@ -950,7 +937,6 @@ header .intro-text .intro-heading {
 .main .solutions .circle:hover {
   color: inherit;
   background-color: #0097b2;
-  border: 1px solid #ee0000;
   border: 1px solid #1f1f1f;
 }
 .main .aside {
@@ -978,7 +964,6 @@ header .intro-text .intro-heading {
   margin: 1rem 0;
   color: #17265c;
   background-color: #17265c;
-  border: 1px solid #ee0000;
   min-width: 100vw;
   min-height: 30vw;
 }
@@ -1003,7 +988,6 @@ header .intro-text .intro-heading {
   margin: 0.5rem;
   color: #fafafa;
   background-color: transparent;
-  border: 1px solid #ee0000;
   font-size: 30px;
   line-height: 1.5;
   text-align: center;
@@ -1013,7 +997,6 @@ header .intro-text .intro-heading {
   margin: 0.5rem;
   color: #fafafa;
   background-color: transparent;
-  border: 1px solid #ee0000;
   font-size: 16px;
   text-transform: none;
   font-style: italic;
@@ -1022,15 +1005,14 @@ header .intro-text .intro-heading {
 .main .about .box__button {
   color: #fafafa;
   background-color: #0097b2;
-  border: 1px solid #ee0000;
   padding: 0.5rem;
   margin: 0;
+  border: 1px solid transparent;
   border: 1px solid transparent;
 }
 .main .about .box__button:hover {
   color: #fafafa;
   background-color: #00b4d4;
-  border: 1px solid #ee0000;
   border: 1px solid #fafafa;
 }
 .main .contact {
@@ -1046,7 +1028,6 @@ header .intro-text .intro-heading {
   margin: 0;
   color: #17265c;
   background-color: transparent;
-  border: 1px solid #ee0000;
   min-width: 95vw;
   max-width: 95vw;
 }
@@ -1063,7 +1044,6 @@ header .intro-text .intro-heading {
   margin: 0;
   color: #17265c;
   background-color: transparent;
-  border: 1px solid #ee0000;
   min-width: 80vw;
   text-align: center;
 }
@@ -1080,7 +1060,6 @@ header .intro-text .intro-heading {
   margin: 0;
   color: #17265c;
   background-color: transparent;
-  border: 1px solid #ee0000;
   min-width: 80vw;
   max-width: 80vw;
   overflow: hidden;
@@ -1098,7 +1077,6 @@ header .intro-text .intro-heading {
   margin: 0 15px;
   color: #17265c;
   background-color: transparent;
-  border: 1px solid #ee0000;
   min-width: 75vw;
   min-height: 4rem;
   font-size: 20px;
@@ -1111,7 +1089,6 @@ header .intro-text .intro-heading {
   margin: 0.5rem;
   color: #17265c;
   background-color: transparent;
-  border: 1px solid #ee0000;
   overflow: hidden;
   word-wrap: break-word;
   overflow-wrap: break-word;
@@ -1129,7 +1106,6 @@ header .intro-text .intro-heading {
   margin: 0 15px;
   color: #0097b2;
   background-color: transparent;
-  border: 1px solid #ee0000;
   font-size: 16px;
   text-transform: none;
   font-style: italic;
@@ -1138,16 +1114,15 @@ header .intro-text .intro-heading {
 .main .contact .box__button {
   color: #fafafa;
   background-color: #0097b2;
-  border: 1px solid #ee0000;
   padding: 0.5rem;
   margin: 0;
+  border: 1px solid transparent;
   border: 1px solid transparent;
 }
 .main .contact .box__button:hover {
   color: #fafafa;
   background-color: #00b4d4;
-  border: 1px solid #ee0000;
-  border: 1px solid #fafafa;
+  border: 1px solid #8f8f8f;
 }
 .main .contact .box__map {
   padding: 0.5rem;
@@ -1173,12 +1148,10 @@ header .intro-text .intro-heading {
     align-self: center;
     color: #17265c;
     background-color: transparent;
-    border: 1px solid #ee0000;
   }
   .main .solutions__row--title {
     color: #17265c;
     background-color: transparent;
-    border: 1px solid #ee0000;
   }
   .main .solutions .box, .main .solutions .box--title, .main .solutions .box--content {
     display: flex;

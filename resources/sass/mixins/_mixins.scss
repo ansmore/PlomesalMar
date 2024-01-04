@@ -22,8 +22,9 @@
 @mixin style($color: $neutral_lighter, $background-color: transparent) {
   color: $color;
   background-color: $background-color;
+
   // Developer mode:
-  border: 1px solid $danger_main;
+  // border: 1px solid $danger_main;
 }
 /** 
 * Must be the last line in all call to this mixin!
@@ -31,8 +32,10 @@
 @mixin hover(
   $background: transparent,
   $color: inherit,
-  $borderColor: transparent
+  $borderColor: transparent,
+  $preBorderColor: transparent
 ) {
+  border: 1px solid $preBorderColor;
   &:hover {
     @include style($color, $background);
     border: 1px solid $borderColor;
@@ -99,11 +102,11 @@
 }
 
 @mixin boxShadow(
+  $boderColor: transparent,
   $axis: 3px,
   $radius: 0,
   $shadowColor: $neutral_main,
-  $shadowColorSecondary: $neutral_light,
-  $boderColor: $neutral_dark
+  $shadowColorSecondary: $neutral_light
 ) {
   border-radius: $radius;
   border: 1px solid $boderColor;
