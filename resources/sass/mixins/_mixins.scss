@@ -22,6 +22,7 @@
 @mixin style($color: $neutral_lighter, $background-color: transparent) {
   color: $color;
   background-color: $background-color;
+
   // Developer mode:
   // border: 1px solid $danger_main;
 }
@@ -31,8 +32,10 @@
 @mixin hover(
   $background: transparent,
   $color: inherit,
-  $borderColor: transparent
+  $borderColor: transparent,
+  $preBorderColor: transparent
 ) {
+  border: 1px solid $preBorderColor;
   &:hover {
     @include style($color, $background);
     border: 1px solid $borderColor;
@@ -53,7 +56,7 @@
 
 /**
  * checkUnit Function
- * 
+ *
  * This function checks if a value has one of the specified units: px, em, rem, or %.This function checks if a value has one of the specified units: px, em, rem, vw, vh or %.
  *
  * @param {any} $value - Value to check.
@@ -61,7 +64,7 @@
  */
 @function checkUnit($value) {
   @if $value == null {
-    @return false;
+    @return true;
   }
 
   @if type-of($value) == "number" {
@@ -76,7 +79,7 @@
 
 /**
  * boxSize Mixin
- * 
+ *
  * This mixin allows setting the size properties of an element as well as its minimum and maximum properties.
  *
  * @param {string} $type - Size type ("width" or "height").
@@ -99,11 +102,11 @@
 }
 
 @mixin boxShadow(
+  $boderColor: transparent,
   $axis: 3px,
   $radius: 0,
   $shadowColor: $neutral_main,
-  $shadowColorSecondary: $neutral_light,
-  $boderColor: $neutral_dark
+  $shadowColorSecondary: $neutral_light
 ) {
   border-radius: $radius;
   border: 1px solid $boderColor;

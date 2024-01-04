@@ -10,52 +10,34 @@
         <!-- Services Section -->
         <section id="soluciones" class="solutions">
             <div class="solutions__row--title">
-                <div class="box--title">
+                <div class="box">
                     <h2 class="box__title" value-text="homeSoluciones"></h2>
-                    <h3 class="box__content--title" value-text="homeServicesSubheading"></h3>
+                    <h3 class="box__content" value-text="homeServicesSubheading"></h3>
                 </div>
             </div>
             <div class="solutions__row--content">
-                <div class="box--content">
-                    <span class="box__icon">
+                <div class="circle">
+                    {{-- box--content --}}
+                    <span class="circle__icon">
                         <span class="i">
-                            <i class="fa  fa-check-square"></i>
+                            {{-- <i class="fa  fa-check-square"></i> --}}
+                            <img src="img/logos/logo_biit.png" alt="">
                         </span>
                     </span>
-                    <h4 class="box__content">
+                    <h4 class="circle__content">
                         <a href="{{ route('biit') }}" value-text="services1"></a>
                     </h4>
                 </div>
-                <div class="box--content">
-                    <span class="box__icon">
+                <div class="circle">
+                    {{-- box--content --}}
+                    <span class="circle__icon">
                         <span class="i">
-                            <i class="fa fa-list-ul"></i>
+                            {{-- <i class="fa fa-list-ul"></i> --}}
+                            <img src="img/logos/sage.svg" alt="">
                         </span>
                     </span>
-                    <h4 class="box__content">
+                    <h4 class="circle__content">
                         <a href="{{ route('consultoria') }}" value-text="services3"></a>
-                    </h4>
-                </div>
-            </div>
-            <div class="solutions__row--content">
-                <div class="box--content">
-                    <span class="box__icon">
-                        <span class="i">
-                            <i class="fa fa-shopping-cart"></i>
-                        </span>
-                    </span>
-                    <h4 class="box__content">
-                        <a href="{{ route('biit') }}" value-text="services4"></a>
-                    </h4>
-                </div>
-                <div class="box--content">
-                    <span class="box__icon">
-                        <span class="i">
-                            <i class="fa fa-briefcase"></i>
-                        </span>
-                    </span>
-                    <h4 class="box__content">
-                        <a href="{{ route('biit') }}" value-text="services5"></a>
                     </h4>
                 </div>
             </div>

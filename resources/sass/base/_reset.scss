@@ -106,7 +106,8 @@ body {
   background-color: $neutral_lightest;
   // optional
   line-height: 1.4em;
-  hyphens: auto;
+  // Tallar paraules amb - i salt de línea
+  // hyphens: auto;
   font-smooth: always;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
