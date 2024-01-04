@@ -103,8 +103,8 @@
 
 @mixin boxShadow(
   $boderColor: transparent,
-  $axis: 3px,
   $radius: 0,
+  $axis: 3px,
   $shadowColor: $neutral_main,
   $shadowColorSecondary: $neutral_light
 ) {

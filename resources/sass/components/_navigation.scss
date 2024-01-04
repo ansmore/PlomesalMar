@@ -124,6 +124,7 @@
               @include flexBox(column, center, center);
               position: absolute;
               // left: -1.5rem;
+              right: -4rem;
               display: none;
               &__item {
                 @include paddingMargin($padding calc($padding * 3));

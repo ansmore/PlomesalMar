@@ -48,6 +48,20 @@
 
       // min-width No!
       // flex: 5;
+
+      &__image {
+        @include flexBox(column);
+        @include paddingMargin($padding, $margin);
+        @include style(null, $neutral_lighter);
+        @include boxShadow($neutral_lighter, 50%);
+
+        overflow: hidden;
+        img {
+          @include boxSize(width, 250px, null, 300px);
+          @include boxSize(height, 250px, null, 300px);
+        }
+      }
+
       &--title {
         @extend .box;
       }
