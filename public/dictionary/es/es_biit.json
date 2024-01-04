@@ -19,5 +19,6 @@
   "modulosBusiness": "BUSINESS INTELLIGENCE Y ANÁLITICA",
   "modulosBusinessText": "Todas nuestras aplicaciones están conectadas al módulo de análisis de negocio de SAGE 200c, a través del cual se puede extraer informes de análisis y reporting. Nuestro rango de precios oscila entre los 2000 y 6000 euros.",
   "modulosFactura": "FACTURA ELECTRÓNICA",
-  "modulosFacturaText": "Todos nuestros módulos y soluciones envían información de facturación a SAGE 200c. Este ERP permite despúes el envío de E-factura a los clientes. Nuestro rango de precios oscila entre los 1500 y 6000 euros."
+  "modulosFacturaText": "Todos nuestros módulos y soluciones envían información de facturación a SAGE 200c. Este ERP permite despúes el envío de E-factura a los clientes. Nuestro rango de precios oscila entre los 1500 y 6000 euros.",
+  "aboutButton": "¿Por qué Biit? "
 }

@@ -17,6 +17,16 @@ class BiitController extends Controller
         return view('biit', ['section' => $section]);
     }
 
+     public function whyBiit()
+    {
+        return view('whyBiit');
+    }
+
+    public function whyBiitSection($section = null)
+    {
+        return view('whyBiit', ['section' => $section]);
+    }
+
     public function biitModules()
     {
         return view('biitModules');

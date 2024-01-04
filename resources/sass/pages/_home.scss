@@ -84,9 +84,10 @@
         font-size: 35px;
         line-height: 1.5;
       }
+
       &__content {
         @include paddingMargin($padding, $margin);
-        @include style($primary_main);
+        @include style($secondary_main);
 
         &--title {
           @include flexBox(column, space-around, center);
@@ -267,6 +268,7 @@
     }
   }
 }
+
 @media screen and (min-width: 376px) and (max-width: 600px) {
   .main {
     .solutions {

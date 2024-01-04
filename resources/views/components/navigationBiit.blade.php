@@ -8,16 +8,14 @@
     <div class="navbar">
         <div class="navbar__logo">
             <a href="{{ route('biit') }}">
-                <img class="img-responsive" src="./img/logos/logo_biit.png" alt="Pymesoft" id="pymeso" />
+                <img class="img-responsive" src="{{ asset('./img/logos/logo_biit.png') }}" alt="Pymesoft"
+                    id="pymeso" />
             </a>
         </div>
         <div class="navbar__menu">
             <ul class="list">
                 <li class="list__item">
                     <a class="list__item__link" href="{{ route('home') }}" value-text="navHomePage"></a>
-                </li>
-                <li class="list__item">
-                    <a class="list__item__link" href="{{ route('biit') }}" value-text="navInicio"></a>
                 </li>
                 <li class="list__item">
                     <a class="list__item__link" href="{{ route('biit.section', ['section' => 'porque']) }}"
