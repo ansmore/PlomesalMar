@@ -11,6 +11,9 @@
         <section id="soluciones" class="solutions">
             <div class="solutions__row--title">
                 <div class="box">
+                    <span class="box__image">
+                        <img src="{{ asset('img/logos/pymesoft_logo_image.png') }}" alt="">
+                    </span>
                     <h2 class="box__title" value-text="homeSoluciones"></h2>
                     <h3 class="box__content" value-text="homeServicesSubheading"></h3>
                 </div>
@@ -21,7 +24,7 @@
                     <span class="circle__icon">
                         <span class="i">
                             {{-- <i class="fa  fa-check-square"></i> --}}
-                            <img src="img/logos/logo_biit.png" alt="">
+                            <img src="{{ asset('img/logos/logo_biit.png') }}" alt="">
                         </span>
                     </span>
                     <h4 class="circle__content">
@@ -33,7 +36,7 @@
                     <span class="circle__icon">
                         <span class="i">
                             {{-- <i class="fa fa-list-ul"></i> --}}
-                            <img src="img/logos/sage.svg" alt="">
+                            <img src="{{ asset('img/logos/sage.svg') }}" alt="">
                         </span>
                     </span>
                     <h4 class="circle__content">
@@ -46,7 +49,7 @@
         <section class="aside">
             <div class="aside__box">
                 <a href="{{ route('biit') }}">
-                    <img src="img/logos/banner.jpg" alt="banner">
+                    <img src="{{ asset('img/logos/banner.jpg') }}" alt="banner">
                 </a>
             </div>
         </section>

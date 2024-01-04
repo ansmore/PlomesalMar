@@ -20,8 +20,13 @@
       @include flexBox(row, flex-start, center);
       @include paddingMargin($padding, $margin);
       flex: 3;
-      // min-height: 10vh;
       @include boxSize(width, 30);
+      // min-height: 10vh;
+
+      img {
+        @include paddingMargin($padding 1rem);
+        @include style(null, $neutral_lighter);
+      }
     }
 
     &__menu {
@@ -124,6 +129,7 @@
               @include flexBox(column, center, center);
               position: absolute;
               // left: -1.5rem;
+              right: -4rem;
               display: none;
               &__item {
                 @include paddingMargin($padding calc($padding * 3));
