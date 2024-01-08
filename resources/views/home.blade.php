@@ -95,7 +95,7 @@
                 </div>
                 <div class="box">
                     <h3 class="box__content" value-text="contactAction"></h3>
-                    <a href="{{ route('biit') }}" class="box__button" value-text="contactActionMessage"></a>
+                    <a href="{{ route('biitContact') }}" class="box__button" value-text="contactActionMessage"></a>
                 </div>
             </div>
     </div>

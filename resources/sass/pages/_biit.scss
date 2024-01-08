@@ -31,7 +31,13 @@
         @include flexBox(column);
         @include paddingMargin($padding, $margin);
         @include style(null, $neutral_lighter);
-        @include boxShadow($neutral_lighter, 50%);
+        @include boxShadow(
+          $neutral_lighter,
+          50%,
+          3px,
+          $secondary_main,
+          $secondary_light
+        );
         @include boxSize(width, 250px, null, 300px);
         @include boxSize(height, 250px, null, 300px);
 

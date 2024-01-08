@@ -53,7 +53,13 @@
         @include flexBox(column);
         @include paddingMargin($padding, $margin);
         @include style(null, $neutral_lighter);
-        @include boxShadow($neutral_lighter, 50%);
+        @include boxShadow(
+          $neutral_lighter,
+          50%,
+          3px,
+          $secondary_main,
+          $secondary_light
+        );
 
         overflow: hidden;
         img {
