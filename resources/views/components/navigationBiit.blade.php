@@ -18,8 +18,7 @@
                     <a class="list__item__link" href="{{ route('home') }}" value-text="navHomePage"></a>
                 </li>
                 <li class="list__item">
-                    <a class="list__item__link" href="{{ route('biit.section', ['section' => 'porque']) }}"
-                        value-text="navBiit"></a>
+                    <a class="list__item__link" href="{{ route('whyBiit') }}" value-text="navBiit"></a>
                 </li>
                 <li class="list__item">
                     <div class="dropdown">

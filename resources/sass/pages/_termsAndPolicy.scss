@@ -1,0 +1,199 @@
+// Style Terms of Use and Privacy Policy page
+.main {
+  @include flexBox(column, space-around);
+  @include paddingMargin($padding);
+  @include style($primary_main, $neutral_light);
+  font-size: $size_small;
+  margin-top: $nav-height;
+  gap: $gap;
+  .termsAndPolicy {
+    @include flexBox(column, space-around, center);
+    @include paddingMargin($padding, 0);
+    @include boxSize(width, 95vw, null, 95vw);
+    &__row {
+      @include flexBox(column, space-around, center);
+      @include paddingMargin(0 15px);
+      @include boxSize(width, 90vw, null, 90vw);
+
+      .circle {
+        @include flexBox(row, space-around, center);
+        @include paddingMargin($padding 0);
+        @include boxSize(width, 80vw, null, 80vw);
+
+        &__image {
+          @include flexBox(column, center, center);
+          @include paddingMargin($padding, $margin);
+          @include style(null, $neutral_lighter);
+          @include boxShadow(
+            $neutral_lighter,
+            50%,
+            3px,
+            $secondary_main,
+            $secondary_light
+          );
+          @include boxSize(width, 125px, null, 150px);
+          @include boxSize(height, 125px, null, 150px);
+
+          overflow: hidden;
+
+          img {
+            @include flexBox(column, center, center);
+            @include paddingMargin($padding);
+            padding-top: 1rem;
+            @include boxSize(width, 75px, null, 100px);
+            @include boxSize(height, 75px, null, 100px);
+          }
+        }
+      }
+      .box {
+        @include flexBox(column, flex-start, center);
+        @include paddingMargin($padding, $margin);
+        @include style($primary_main);
+        @include boxSize(width, 80vw, null, 80vw);
+        gap: $gap;
+
+        &__title {
+          @include flexBox(column, space-around, center);
+          @include paddingMargin($padding, 0 15px);
+          @include style($primary_main);
+          @include boxSize(height, 4rem);
+          // min-height: 4rem;
+          font-size: 25px;
+          line-height: 1.5;
+        }
+      }
+      .form {
+        @include flexBox(column, space-around, center);
+        @include style($primary_main);
+        @include boxSize(width, 80vw, null, 80vw);
+        &__group {
+          @include flexBox(column, space-around, center);
+          @include paddingMargin($padding, $margin);
+          &__content {
+            @include paddingMargin($padding, $margin);
+            font-size: 16px;
+            text-transform: none;
+            font-weight: 400;
+          }
+          &__input {
+            @include paddingMargin(1rem, $margin);
+            @include style($secondary_main, $neutral_lighter);
+            @include boxSize(width, 75vw, null, 75vw);
+
+            @include hover(
+              $neutral_lightest,
+              null,
+              $secondary_main,
+              $neutral_dark
+            );
+          }
+          &__button {
+            @include flexBox(column, center, center);
+            @include paddingMargin($padding, $margin);
+            @include button($secondary_main, $neutral_lighter);
+            @include boxSize(width, 35vw);
+            @include boxSize(height, 5rem);
+            font-size: 16px;
+            @include hover(
+              $secondary_light,
+              $neutral_lighter,
+              $neutral_lighter
+            );
+          }
+          &--consent {
+            @include flexBox(row, center, center);
+            gap: $gap;
+            &__consent {
+              @include boxSize(width, 35vw, null, 35vw);
+              font-size: 12px;
+            }
+            &__check {
+              appearance: checkbox;
+              width: 1rem;
+              height: 1rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 376px) and (max-width: 600px) {
+  .main {
+    .termsAndPolicy {
+      &__row {
+        .circle {
+          &__image {
+            @include boxSize(width, 150px, null, 175px);
+            @include boxSize(height, 150px, null, 175px);
+
+            img {
+              @include boxSize(width, 100px, null, 125px);
+              @include boxSize(height, 100px, null, 125px);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+  .main {
+    .termsAndPolicy {
+      &__row {
+        .circle {
+          @include flexBox(row, center, center);
+          @include paddingMargin(3rem $padding, $margin);
+          gap: calc($gap * 2);
+          &__image {
+            @include boxSize(width, 250px, null, 300px);
+            @include boxSize(height, 250px, null, 300px);
+
+            img {
+              @include boxSize(width, 150px, null, 200px);
+              @include boxSize(height, 150px, null, 200px);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .main {
+    .termsAndPolicy {
+      &__row {
+        .circle {
+          @include flexBox(row, center, center);
+          @include paddingMargin(5rem $padding, $margin);
+          gap: calc($gap * 3);
+          &__image {
+            @include boxSize(width, 250px, null, 300px);
+            @include boxSize(height, 250px, null, 300px);
+
+            img {
+              @include boxSize(width, 150px, null, 200px);
+              @include boxSize(height, 150px, null, 200px);
+            }
+          }
+        }
+        .form {
+          &__group {
+            @include flexBox(row, flex-end, center);
+            @include boxSize(width, 75vw, null, 75vw);
+            &__input {
+              @include boxSize(width, 50vw, null, 50vw);
+            }
+            &__button {
+              @include flexBox(column, center, center);
+              @include paddingMargin($padding, $margin auto);
+            }
+          }
+        }
+      }
+    }
+  }
+}
