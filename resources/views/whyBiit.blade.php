@@ -143,5 +143,5 @@
         </section>
 
     </div>
-    <script type="module" src="{{ asset('js/biit.js') }}" defer></script>
+    <script type="module" src="{{ asset('js/whyBiit.js') }}" defer></script>
 @endsection
