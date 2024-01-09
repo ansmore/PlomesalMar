@@ -16,10 +16,12 @@
       @include boxSize(width, 90vw, null, 90vw);
 
       .circle {
-        @include flexBox(row, space-around, center);
+        @include flexBox(column, space-around, center);
         @include paddingMargin($padding 0);
         @include boxSize(width, 80vw, null, 80vw);
+        gap: $gap;
 
+        overflow: hidden;
         &__image {
           @include flexBox(column, center, center);
           @include paddingMargin($padding, $margin);
@@ -82,7 +84,7 @@
 
             @include hover(
               $neutral_lightest,
-              null,
+              inherit,
               $secondary_main,
               $neutral_dark
             );
@@ -151,9 +153,10 @@
             @include boxSize(width, 250px, null, 300px);
             @include boxSize(height, 250px, null, 300px);
 
+            overflow: hidden;
             img {
               @include boxSize(width, 150px, null, 200px);
-              @include boxSize(height, 150px, null, 200px);
+              @include boxSize(height, 125px, null, 200px);
             }
           }
         }
