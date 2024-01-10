@@ -104,7 +104,8 @@
           }
           &--consent {
             @include flexBox(row, center, center);
-            gap: $gap;
+            @include paddingMargin(0, $margin auto);
+            // gap: $gap;
             &__consent {
               @include boxSize(width, 35vw, null, 35vw);
               font-size: 12px;

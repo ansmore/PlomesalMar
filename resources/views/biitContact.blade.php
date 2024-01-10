@@ -41,11 +41,13 @@
                             <label class="form__group__content" for="mensaje" value-text="formMensaje"></label>
                             <textarea class="form__group__input" id="mensaje" name="mensaje" rows="4" required></textarea>
                         </div>
-                        <div class="form__group--consent">
-                            <input class="form__group--consent__check" type="checkbox" id="aceptarTerminos"
-                                name="aceptarTerminos" required>
-                            <label class="form__group--consent__consent" for="aceptarTerminos"
-                                value-text="formAceptarTerminos"></label>
+                        <div class="form__group">
+                            <div class="form__group--consent">
+                                <input class="form__group--consent__check" type="checkbox" id="aceptarTerminos"
+                                    name="aceptarTerminos" required>
+                                <label class="form__group--consent__consent" for="aceptarTerminos"
+                                    value-text="formAceptarTerminos"></label>
+                            </div>
                         </div>
                         <div class="form__group">
                             <button class="form__group__button type="submit" value-text="formEnviar"></button>

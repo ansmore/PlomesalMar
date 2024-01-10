@@ -46,73 +46,52 @@
         }
       }
       .box {
-        @include flexBox(column, flex-start, center);
+        // @include flexBox(column, flex-start, center);
         @include paddingMargin($padding, $margin);
         @include style($primary_main);
         @include boxSize(width, 80vw, null, 80vw);
         gap: $gap;
+        hyphens: auto;
+        font-size: 1em;
 
         &__title {
-          @include flexBox(column, space-around, center);
-          @include paddingMargin($padding, 0 15px);
           @include style($primary_main);
-          @include boxSize(height, 4rem);
-          // min-height: 4rem;
-          font-size: 25px;
+          line-height: 2;
+          font-size: 24px;
+          font-weight: bold;
+        }
+
+        &__subtitle {
+          @include style($secondary_main);
           line-height: 1.5;
+          font-size: 1.5em;
+          font-weight: bold;
+        }
+
+        &__name {
+          @include style($secondary_main);
+        }
+
+        &__content {
+          @include style($primary_main);
+        }
+
+        &__company {
+          @include style($secondary_main);
         }
       }
-      .form {
-        @include flexBox(column, space-around, center);
-        @include style($primary_main);
+      .info {
+        @include flexBox(row, center, center);
         @include boxSize(width, 80vw, null, 80vw);
-        &__group {
-          @include flexBox(column, space-around, center);
-          @include paddingMargin($padding, $margin);
-          &__content {
-            @include paddingMargin($padding, $margin);
-            font-size: 16px;
-            text-transform: none;
-            font-weight: 400;
-          }
-          &__input {
-            @include paddingMargin(1rem, $margin);
-            @include style($secondary_main, $neutral_lighter);
-            @include boxSize(width, 75vw, null, 75vw);
-
-            @include hover(
-              $neutral_lightest,
-              null,
-              $secondary_main,
-              $neutral_dark
-            );
-          }
-          &__button {
-            @include flexBox(column, center, center);
-            @include paddingMargin($padding, $margin);
-            @include button($secondary_main, $neutral_lighter);
-            @include boxSize(width, 35vw);
-            @include boxSize(height, 5rem);
-            font-size: 16px;
-            @include hover(
-              $secondary_light,
-              $neutral_lighter,
-              $neutral_lighter
-            );
-          }
-          &--consent {
-            @include flexBox(row, center, center);
-            gap: $gap;
-            &__consent {
-              @include boxSize(width, 35vw, null, 35vw);
-              font-size: 12px;
-            }
-            &__check {
-              appearance: checkbox;
-              width: 1rem;
-              height: 1rem;
-            }
-          }
+        gap: $gap;
+        line-height: 1.5;
+        &__column__left {
+          @include flexBox(column, flex-end, flex-end);
+          @include boxSize(width, 35vw, null, 35vw);
+        }
+        &__column__right {
+          @include flexBox(column, flex-start, flex-start);
+          @include boxSize(width, 35vw, null, 35vw);
         }
       }
     }
@@ -177,19 +156,6 @@
             img {
               @include boxSize(width, 150px, null, 200px);
               @include boxSize(height, 150px, null, 200px);
-            }
-          }
-        }
-        .form {
-          &__group {
-            @include flexBox(row, flex-end, center);
-            @include boxSize(width, 75vw, null, 75vw);
-            &__input {
-              @include boxSize(width, 50vw, null, 50vw);
-            }
-            &__button {
-              @include flexBox(column, center, center);
-              @include paddingMargin($padding, $margin auto);
             }
           }
         }
