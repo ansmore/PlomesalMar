@@ -18,8 +18,7 @@
                     <a class="list__item__link" href="{{ route('home') }}" value-text="navHomePage"></a>
                 </li>
                 <li class="list__item">
-                    <a class="list__item__link" href="{{ route('biit.section', ['section' => 'porque']) }}"
-                        value-text="navBiit"></a>
+                    <a class="list__item__link" href="{{ route('whyBiit') }}" value-text="navBiit"></a>
                 </li>
                 <li class="list__item">
                     <div class="dropdown">
@@ -57,8 +56,8 @@
                         <a class="list__item__link" id="navModulosDropdown" role="button">CAS</a>
                         <div class="dropdown__menu" aria-labelledby="navModulosDropdown">
                             <a class="dropdown__menu__item" href="#">CASTELLANO</a>
+                            <a class="dropdown__menu__item" href="#">CATALÀ</a>
                             <a class="dropdown__menu__item" href="#">ENGLISH</a>
-                            <a class="dropdown__menu__item" href="#">FRANÇAIS</a>
                         </div>
                     </div>
                 </li>

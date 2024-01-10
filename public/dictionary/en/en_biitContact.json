@@ -1,0 +1,9 @@
+{
+  "formTitulo": "Contact Form",
+  "formNombre": "Your Name: ",
+  "formCorreo": "Your Email: ",
+  "formAsunto": "Subject: ",
+  "formMensaje": "Your Message: ",
+  "formAceptarTerminos": "Check here if you accept these terms",
+  "formEnviar": "Send"
+}

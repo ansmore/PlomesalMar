@@ -37,3 +37,7 @@ Route::get('/biitModules', [BiitController::class, 'biitModules'])->name('biitMo
 Route::get('/biitModules#{section?}', [BiitController::class, 'biitModulesSection'])->name('biitModules.section');
 
 Route::get('/biitContact', [BiitController::class, 'biitContact'])->name('biitContact');
+
+Route::get('/privacyPolicy', [HomeController::class, 'privacyPolicy'])->name('privacyPolicy');
+
+Route::get('/termsOfUse', [HomeController::class, 'termsOfUse'])->name('termsOfUse');

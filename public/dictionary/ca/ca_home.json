@@ -1,0 +1,36 @@
+{
+  "homeSoluciones": "Som el teu aliat en la digitalització i automatització dels teus processos empresarials",
+  "homeServicesSubheading": "El millor soci per a la teva transformació digital",
+  "services1": "Consultoria i desenvolupament de solucions multiplataforma (BIIT)",
+  "services3": "Suport d'aplicacions entorn SAGE",
+  "services4": "Integració de solucions cap a l'ERP SAGE",
+  "services5": "Solucions E-Commerce, SAT, SGA, Captura de dades de Planta, CRM ... Multiplataforma",
+  "aboutHeading": "Si és possible, compta amb nosaltres.",
+  "aboutText": "Valor pel teu negoci",
+  "aboutButton": "Començar",
+
+  "sitemapHeading": "On estem?",
+  "sitemapAddress": "Avinguda de Can Deu, 6, 08207 Sabadell, Barcelona",
+
+  "contactHeading": "Contacte:",
+  "contactPhone": "Telèfon de contacte: ",
+  "contactPhoneNumber": "937 24 25 00",
+
+  "contactAction": "Envia'ns un missatge:",
+  "contactActionMessage": "Missatge",
+
+  "contactName": "Nom: ",
+  "contactEmail": "Email: ",
+  "contactTelephone": "Telèfon: ",
+  "contactMessage": "Missatge: ",
+
+  "contactoClausulaContacto": "La comunicació enviada es farà servir exclusivament per tractar les teves dades i atendre la teva sol·licitud, sempre d'acord amb el Reglament (UE) 2016/679 (RGPD), la Llei Orgànica 15/1999 (LOPD) i el Reial decret 1720/2007 de desenvolupament de la (LOPD), sobre protecció de dades. Les teves dades no es comunicaran a tercers, excepte per obligació legal, en cap cas s'utilitzaran per a accions de màrqueting i es mantindran mentre no sol·licitis la seva cancel·lació.",
+  "contactoClausulaContacto2": "En qualsevol moment pots exercir els drets d'accés, rectificació, portabilitat i oposició, o si escau, a la limitació i/o cancel·lació del tractament, comunicant-ho per escrit, indicant les teves dades personals a Av. Can Deu, 4-6, local 08207, Sabadell o mitjançant un correu electrònic a info@pymesoft.es.",
+
+  "contactAccept": "Accepto la ",
+  "contactPolitica": "Política de privacitat",
+  "contactAccept2": "i els ",
+  "contactUse": "termes d'ús",
+
+  "contactButton": "Enviar"
+}

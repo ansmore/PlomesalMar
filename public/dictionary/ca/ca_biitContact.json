@@ -1,0 +1,9 @@
+{
+  "formTitulo": "Formulari de Contacte",
+  "formNombre": "El Teu Nom: ",
+  "formCorreo": "El Teu Correu: ",
+  "formAsunto": "Assumpte: ",
+  "formMensaje": "El Teu Missatge: ",
+  "formAceptarTerminos": "Marca aquí si acceptes aquests termes",
+  "formEnviar": "Enviar"
+}

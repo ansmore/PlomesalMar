@@ -34,12 +34,12 @@
             <div class="policy__row">
                 <ul class="list">
                     <li class="list__item">
-                        <a class="list__item__link" href="#" data-toggle="modal" data-target="#politica"
-                            value-text="footerPolitica"></a>
+                        <a class="list__item__link" href="{{ route('privacyPolicy') }}" data-toggle="modal"
+                            data-target="#politica" value-text="footerPolitica"></a>
                     </li>
                     <li class="list__item">
-                        <a class="list__item__link" href="#" data-toggle="modal" data-target="#terminos"
-                            value-text="footerUse"></a>
+                        <a class="list__item__link" href="{{ route('termsOfUse') }}" data-toggle="modal"
+                            data-target="#terminos" value-text="footerUse"></a>
                     </li>
                 </ul>
             </div>

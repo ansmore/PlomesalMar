@@ -16,4 +16,14 @@ class HomeController extends Controller
     {
         return view('home', ['section' => $section]);
     }
+
+    public function privacyPolicy()
+    {
+        return view('privacyPolicy');
+    }
+
+    public function termsOfUse()
+    {
+        return view('termsOfUse');
+    }
 }
