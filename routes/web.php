@@ -19,7 +19,9 @@ use App\Http\Controllers\BiitController;
 */
 
 Route::get('/', [HomeController::class, 'home'])->name('home');
+Route::get('/home', [HomeController::class, 'home'])->name('home');
 Route::get('/#{section?}', [HomeController::class, 'homeSection'])->name('home.section');
+Route::get('/home#{section?}', [HomeController::class, 'homeSection'])->name('home.section');
 
 Route::get('/consultoria', [ConsultancyController::class, 'consultoria'])->name('consultoria');
 Route::get('/consultoria#{section?}', [ConsultancyController::class, 'consultoriaSection'])->name('consultoria.section');
