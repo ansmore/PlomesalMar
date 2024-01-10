@@ -22,7 +22,7 @@ export const loadDictionary = async (
   }
 };
 
-// const abailableLanguages = ["en", "es"];
+// const abailableLanguages = ["en", "es", "ca"];
 export const loadAbailablesLanguages = async (): Promise<string[]> => {
   try {
     const response = await fetch(`./dictionary/listLanguages.json`);
@@ -68,4 +68,42 @@ export const getFileNameFromUrl = (url: string): string | undefined => {
   }
 
   return undefined;
+};
+
+export const getSelectedLanguage = async (): Promise<string> => {
+  try {
+    const response = await fetch("./dictionary/selectedLanguage.json");
+    if (!response.ok) {
+      throw new Error("Error loading selected language");
+    }
+    return await response.json();
+  } catch (error) {
+    console.error("Error loading selected language", error);
+    throw error;
+  }
+};
+
+// export const getCurrentPage = () => {
+//   const currentUrl = window.location.href;
+//   const fileName = getFileNameFromUrl(currentUrl) as string;
+//   return fileName || "home";
+// };
+
+export const changeLanguage = async (language: string): Promise<void> => {
+  try {
+    const response = await fetch("./dictionary/selectedLanguage.json", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ language }),
+    });
+
+    if (!response.ok) {
+      throw new Error("Error changing language");
+    }
+  } catch (error) {
+    console.error("Error changing language", error);
+    throw error;
+  }
 };

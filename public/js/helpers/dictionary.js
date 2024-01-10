@@ -22,7 +22,7 @@ export const loadDictionary = (language, page) => __awaiter(void 0, void 0, void
         throw error;
     }
 });
-// const abailableLanguages = ["en", "es"];
+// const abailableLanguages = ["en", "es", "ca"];
 export const loadAbailablesLanguages = () => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const response = yield fetch(`./dictionary/listLanguages.json`);
@@ -68,3 +68,39 @@ export const getFileNameFromUrl = (url) => {
     }
     return undefined;
 };
+export const getSelectedLanguage = () => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const response = yield fetch("./dictionary/selectedLanguage.json");
+        if (!response.ok) {
+            throw new Error("Error loading selected language");
+        }
+        return yield response.json();
+    }
+    catch (error) {
+        console.error("Error loading selected language", error);
+        throw error;
+    }
+});
+// export const getCurrentPage = () => {
+//   const currentUrl = window.location.href;
+//   const fileName = getFileNameFromUrl(currentUrl) as string;
+//   return fileName || "home";
+// };
+export const changeLanguage = (language) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const response = yield fetch("./dictionary/selectedLanguage.json", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ language }),
+        });
+        if (!response.ok) {
+            throw new Error("Error changing language");
+        }
+    }
+    catch (error) {
+        console.error("Error changing language", error);
+        throw error;
+    }
+});
