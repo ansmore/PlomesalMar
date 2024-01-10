@@ -1,0 +1,36 @@
+{
+  "homeSoluciones": "We are your ally in the digitization and automation of your business processes",
+  "homeServicesSubheading": "The best partner for your digital transformation",
+  "services1": "Consultancy and development of multi-platform solutions (BIIT)",
+  "services3": "Support for SAGE environment applications",
+  "services4": "Integration of solutions towards SAGE ERP",
+  "services5": "E-Commerce solutions, SAT, SGA, Plant Data Capture, CRM... Multiplatform",
+  "aboutHeading": "If it's possible, count on us.",
+  "aboutText": "Value for your business",
+  "aboutButton": "Get Started",
+
+  "sitemapHeading": "Where are we?",
+  "sitemapAddress": "Avinguda de Can Deu, 6, 08207 Sabadell, Barcelona",
+
+  "contactHeading": "Contact:",
+  "contactPhone": "Contact Phone: ",
+  "contactPhoneNumber": "937 24 25 00",
+
+  "contactAction": "Send us a message:",
+  "contactActionMessage": "Message",
+
+  "contactName": "Name: ",
+  "contactEmail": "Email: ",
+  "contactTelephone": "Phone: ",
+  "contactMessage": "Message: ",
+
+  "contactoClausulaContacto": "The communication sent will be used exclusively to process your data and attend to your request, always in accordance with Regulation (EU) 2016/679 (GDPR), Organic Law 15/1999 (LOPD), and Royal Decree 1720/2007 developing the (LOPD), on data protection. Your data will not be communicated to third parties, except for legal obligation, under no circumstances will they be used for marketing actions and will be kept until you request their cancellation.",
+  "contactoClausulaContacto2": "At any time, you can exercise the rights of access, rectification, portability, and opposition, or if applicable, limitation and/or cancellation of the treatment, by communicating it in writing, indicating your personal data to Av. Can Deu, 4-6, local 08207, Sabadell or by email to info@pymesoft.es.",
+
+  "contactAccept": "I accept the ",
+  "contactPolitica": "Privacy Policy",
+  "contactAccept2": "and the ",
+  "contactUse": "Terms of Use",
+
+  "contactButton": "Send"
+}

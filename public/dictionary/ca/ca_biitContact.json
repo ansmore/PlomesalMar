@@ -1,9 +1,9 @@
 {
-  "formTitulo": "Formulario de Contacto",
-  "formNombre": "Tu Nombre: ",
-  "formCorreo": "Tu Correo: ",
-  "formAsunto": "Asunto: ",
-  "formMensaje": "Tu Mensaje: ",
-  "formAceptarTerminos": "Check here if you accept these terms",
+  "formTitulo": "Formulari de Contacte",
+  "formNombre": "El Teu Nom: ",
+  "formCorreo": "El Teu Correu: ",
+  "formAsunto": "Assumpte: ",
+  "formMensaje": "El Teu Missatge: ",
+  "formAceptarTerminos": "Marca aquí si acceptes aquests termes",
   "formEnviar": "Enviar"
 }

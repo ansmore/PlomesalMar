@@ -1,6 +1,4 @@
 {
-  "salutation": "Hola, mundo!",
-  "bottonHello": "Haz clic aquí",
   "homeSoluciones": "Somos tu aliado en la digitalización y automatización de tus procesos empresariales",
   "homeServicesSubheading": "El mejor partner para tu transformación digital",
   "services1": "Consultoría y desarrollo de soluciones multiplataforma ( BIIT )",
@@ -8,7 +6,7 @@
   "services4": "Integración de soluciones hacia el ERP SAGE",
   "services5": "Soluciones E-Commerce, SAT, SGA, Captura de datos de Planta, CRM ... Multiplataforma",
   "aboutHeading": "Si es posible, cuenta con nosotros.",
-  "aboutText": "Valor a su negocio / Value for your business",
+  "aboutText": "Valor a su negocio",
   "aboutButton": "Comenzar",
 
   "sitemapHeading": "¿Dónde estamos?",
