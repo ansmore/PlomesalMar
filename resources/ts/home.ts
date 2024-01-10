@@ -9,13 +9,16 @@ const setLanguage = async (selectedLanguage: string) => {
   try {
     const navigatorLanguage = navigator.language.slice(0, 2);
 
-    if (navigatorLanguage !== selectedLanguage) {
-      console.log("Selected language:", selectedLanguage);
-
-      localStorage.setItem("selectedLanguage", selectedLanguage);
-
-      await chargeText();
+    if (navigatorLanguage === selectedLanguage) {
+      console.log(
+        "Selected language is the same of browser:",
+        selectedLanguage,
+      );
     }
+
+    localStorage.setItem("selectedLanguage", selectedLanguage);
+    console.log("Selected language:", selectedLanguage);
+    await chargeText();
   } catch (error) {
     console.error("Error handling language click", error);
   }

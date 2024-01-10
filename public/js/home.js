@@ -11,11 +11,12 @@ import { loadDictionary, loadAbailablesLanguages, loadAbailablesFiles, getFileNa
 const setLanguage = (selectedLanguage) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const navigatorLanguage = navigator.language.slice(0, 2);
-        if (navigatorLanguage !== selectedLanguage) {
-            console.log("Selected language:", selectedLanguage);
-            localStorage.setItem("selectedLanguage", selectedLanguage);
-            yield chargeText();
+        if (navigatorLanguage === selectedLanguage) {
+            console.log("Selected language is the same of browser:", selectedLanguage);
         }
+        localStorage.setItem("selectedLanguage", selectedLanguage);
+        console.log("Selected language:", selectedLanguage);
+        yield chargeText();
     }
     catch (error) {
         console.error("Error handling language click", error);
