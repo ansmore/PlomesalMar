@@ -61,4 +61,4 @@
         </div>
     </div>
 </nav>
-<script type="module" src="{{ asset('js/navigationDigitalizacion.js') }}" defer></script>
+<script type="module" src="{{ asset('js/navigation.js') }}" defer></script>

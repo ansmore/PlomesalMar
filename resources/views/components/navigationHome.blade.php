@@ -33,11 +33,12 @@
             <ul class="list">
                 <li class="list__item">
                     <div class="dropdown">
-                        <a class="list__item__link" id="navModulosDropdown" role="button">CAS</a>
-                        <div class="dropdown__menu" aria-labelledby="navModulosDropdown">
-                            <a class="dropdown__menu__item" href="#">CASTELLANO</a>
-                            <a class="dropdown__menu__item" href="#">CATALÀ</a>
-                            <a class="dropdown__menu__item" href="#">ENGLISH</a>
+                        <a class="list__item__link" id="navModulosDropdown" role="button"
+                            value-text="currentLanguage"></a>
+                        <div id="setLanguages" class="dropdown__menu" aria-labelledby="navModulosDropdown">
+                            <a id="es" value-text="cas" class="dropdown__menu__item" href="#"></a>
+                            <a id="ca" value-text="cat" class="dropdown__menu__item" href="#"></a>
+                            <a id="en" value-text="eng" class="dropdown__menu__item" href="#"></a>
                         </div>
                     </div>
                 </li>
@@ -45,4 +46,4 @@
         </div>
     </div>
 </nav>
-<script type="module" src="{{ asset('js/navigationHome.js') }}" defer></script>
+<script type="module" src="{{ asset('js/navigation.js') }}" defer></script>
