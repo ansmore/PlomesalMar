@@ -11,10 +11,14 @@
             <div class="contact__row">
                 <div class="circle">
                     <span class="circle__image">
-                        <img src="{{ asset('img/logos/pymesoft_logo_image.png') }}" alt="">
+                        <a href="{{ route('home') }}">
+                            <img src="{{ asset('img/logos/pymesoft_logo_image.png') }}" alt="">
+                        </a>
                     </span>
                     <span class="circle__image">
-                        <img src="{{ asset('img/logos/logo_biit.png') }}" alt="">
+                        <a href="{{ route('biit') }}">
+                            <img src="{{ asset('img/logos/logo_biit.png') }}" alt="">
+                        </a>
                     </span>
                 </div>
             </div>
