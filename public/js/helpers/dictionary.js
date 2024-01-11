@@ -9,8 +9,6 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 export const loadDictionary = (language, page) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        // // Develope mode
-        // console.log("page:", page, "language:", language);
         const response = yield fetch(`./dictionary/${language}/${language}_${page}.json`);
         if (!response.ok) {
             throw new Error(`Error loading the language ${language}.`);
@@ -68,11 +66,12 @@ export const getFileNameFromUrl = (url) => {
     }
     return undefined;
 };
-export const isLanguageSupported = (language, supportedLanguages) => {
+export const isLanguageSupported = (language) => __awaiter(void 0, void 0, void 0, function* () {
+    const supportedLanguages = yield loadAbailablesLanguages();
     // Si el idioma no está en la lista, devolverá false
     console.log(`Dictionary->Unsupported navigator language: ${language}. Sorry!`);
     return supportedLanguages.includes(language);
-};
+});
 export const getNavigatorLanguage = () => {
     return navigator.language.slice(0, 2) || "";
 };
@@ -83,34 +82,5 @@ export const getCurrentFileName = () => {
 };
 export const getSelectedLanguage = () => {
     let selectedLanguage = localStorage.getItem("selectedLanguage") || "";
-    console.log("1.Language ", selectedLanguage);
-    if (selectedLanguage === "") {
-        console.log("2.no language ", selectedLanguage);
-        selectedLanguage = "es";
-    }
-    console.log("3.Language is ", selectedLanguage);
     return selectedLanguage;
 };
-// export const getCurrentPage = () => {
-//   const currentUrl = window.location.href;
-//   const fileName = getFileNameFromUrl(currentUrl) as string;
-//   return fileName || "home";
-// };
-export const changeLanguage = (language) => __awaiter(void 0, void 0, void 0, function* () {
-    try {
-        const response = yield fetch("./dictionary/selectedLanguage.json", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({ language }),
-        });
-        if (!response.ok) {
-            throw new Error("Error changing language");
-        }
-    }
-    catch (error) {
-        console.error("Error changing language", error);
-        throw error;
-    }
-});

@@ -8,15 +8,20 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 import { loadDictionary, loadAbailablesLanguages, loadAbailablesFiles, isLanguageSupported, getNavigatorLanguage, getCurrentFileName, getSelectedLanguage, } from "./helpers/dictionary.js";
-const setLanguage = (selectedLanguage, supportedLanguages) => __awaiter(void 0, void 0, void 0, function* () {
+let countersetLanguage = 0;
+let countersetupLanguageDropdown = 0;
+let counterchargeText = 0;
+const setLanguage = (selectedLanguage) => __awaiter(void 0, void 0, void 0, function* () {
+    countersetLanguage += 1;
     try {
         let navigatorLanguage = yield getNavigatorLanguage();
-        console.log("before", navigatorLanguage);
-        if (!isLanguageSupported(navigatorLanguage, supportedLanguages)) {
-            console.log(`Home->Unsupported navigator language: ${navigatorLanguage}. Sorry!`);
+        // const supportedLanguages = await loadAbailablesLanguages();
+        // If return true, this language is not in white list!
+        if (!isLanguageSupported(navigatorLanguage)) {
+            console.log(`Your navigator languages unsuported! ${navigatorLanguage}. Sorry!`);
             navigatorLanguage = "";
         }
-        console.log("after", navigatorLanguage);
+        // Check if selected language an browser language is the same! -> To delete!
         if (navigatorLanguage === selectedLanguage) {
             console.log("Selected language is the same of browser:", selectedLanguage);
         }
@@ -28,22 +33,26 @@ const setLanguage = (selectedLanguage, supportedLanguages) => __awaiter(void 0, 
         console.error("Error handling language click", error);
     }
 });
-const setupLanguageDropdown = (availableLanguages) => {
+const setupLanguageDropdown = () => __awaiter(void 0, void 0, void 0, function* () {
+    countersetupLanguageDropdown += 1;
     const setLanguages = document.getElementById("setLanguages");
+    const availableLanguages = yield loadAbailablesLanguages();
     if (setLanguages) {
         setLanguages.addEventListener("click", (event) => __awaiter(void 0, void 0, void 0, function* () {
             event.preventDefault();
             const selectedLanguageElement = event.target;
             const selectedLanguage = selectedLanguageElement.id;
             if (availableLanguages.includes(selectedLanguage)) {
-                yield setLanguage(selectedLanguage, availableLanguages);
+                yield setLanguage(selectedLanguage);
             }
         }));
     }
-};
+});
 const chargeText = () => __awaiter(void 0, void 0, void 0, function* () {
+    counterchargeText += 1;
     const abailableLanguages = yield loadAbailablesLanguages();
     const abailablePages = yield loadAbailablesFiles();
+    setupLanguageDropdown();
     const selectedLanguage = yield getSelectedLanguage();
     const navigatorLanguage = yield getNavigatorLanguage();
     const fileName = yield getCurrentFileName();
@@ -52,7 +61,6 @@ const chargeText = () => __awaiter(void 0, void 0, void 0, function* () {
         ? selectedLanguage || navigatorLanguage
         : "en";
     const selectedPage = abailablePages.includes(fileName) ? fileName : "home";
-    console.log("list", abailableLanguages);
     console.log("navigator", navigatorLanguage);
     try {
         const dictionary = yield loadDictionary(finalSelectedLanguage, selectedPage);
@@ -62,10 +70,6 @@ const chargeText = () => __awaiter(void 0, void 0, void 0, function* () {
             if (dataValue && dictionary[dataValue]) {
                 element.textContent = dictionary[dataValue];
             }
-            // if (dataValue && dictionary[dataValue]) {
-            //   const { textContent } = element;
-            //   element.textContent = dictionary[dataValue];
-            // }
         });
     }
     catch (error) {
@@ -73,8 +77,3 @@ const chargeText = () => __awaiter(void 0, void 0, void 0, function* () {
     }
 });
 document.addEventListener("DOMContentLoaded", chargeText);
-document.addEventListener("DOMContentLoaded", () => __awaiter(void 0, void 0, void 0, function* () {
-    const availableLanguages = yield loadAbailablesLanguages();
-    setupLanguageDropdown(availableLanguages);
-    chargeText();
-}));
