@@ -2,13 +2,26 @@ import {
   loadDictionary,
   loadAbailablesLanguages,
   loadAbailablesFiles,
-  getFileNameFromUrl,
+  isLanguageSupported,
+  getNavigatorLanguage,
+  getCurrentFileName,
+  getSelectedLanguage,
 } from "./helpers/dictionary.js";
 
-const setLanguage = async (selectedLanguage: string) => {
+const setLanguage = async (
+  selectedLanguage: string,
+  supportedLanguages: string[],
+) => {
   try {
-    const navigatorLanguage = navigator.language.slice(0, 2);
-
+    let navigatorLanguage = await getNavigatorLanguage();
+    console.log("before", navigatorLanguage);
+    if (!isLanguageSupported(navigatorLanguage, supportedLanguages)) {
+      console.log(
+        `Home->Unsupported navigator language: ${navigatorLanguage}. Sorry!`,
+      );
+      navigatorLanguage = "";
+    }
+    console.log("after", navigatorLanguage);
     if (navigatorLanguage === selectedLanguage) {
       console.log(
         "Selected language is the same of browser:",
@@ -35,7 +48,7 @@ const setupLanguageDropdown = (availableLanguages: string[]) => {
       const selectedLanguage = selectedLanguageElement.id;
 
       if (availableLanguages.includes(selectedLanguage)) {
-        await setLanguage(selectedLanguage);
+        await setLanguage(selectedLanguage, availableLanguages);
       }
     });
   }
@@ -45,20 +58,19 @@ const chargeText = async () => {
   const abailableLanguages = await loadAbailablesLanguages();
   const abailablePages = await loadAbailablesFiles();
 
-  // Recupera el idioma almacenado localmente
-  const selectedLanguage = localStorage.getItem("selectedLanguage") || "";
+  const selectedLanguage = await getSelectedLanguage();
 
-  const navigatorLanguage = navigator.language.slice(0, 2);
-  const currentUrl = window.location.href;
-  const fileName = getFileNameFromUrl(currentUrl) as string;
+  const navigatorLanguage = await getNavigatorLanguage();
+  const fileName = await getCurrentFileName();
 
   const finalSelectedLanguage =
-    abailableLanguages.includes(navigatorLanguage) ||
+    abailableLanguages.includes(selectedLanguage) ||
     abailableLanguages.includes(navigatorLanguage)
       ? selectedLanguage || navigatorLanguage
-      : "es";
+      : "en";
   const selectedPage = abailablePages.includes(fileName) ? fileName : "home";
-
+  console.log("list", abailableLanguages);
+  console.log("navigator", navigatorLanguage);
   try {
     const dictionary = await loadDictionary(
       finalSelectedLanguage,
@@ -72,6 +84,10 @@ const chargeText = async () => {
       if (dataValue && dictionary[dataValue]) {
         element!.textContent = dictionary[dataValue];
       }
+      // if (dataValue && dictionary[dataValue]) {
+      //   const { textContent } = element;
+      //   element.textContent = dictionary[dataValue];
+      // }
     });
   } catch (error) {
     console.error("Error loading the text", error);
@@ -83,4 +99,5 @@ document.addEventListener("DOMContentLoaded", chargeText);
 document.addEventListener("DOMContentLoaded", async () => {
   const availableLanguages = await loadAbailablesLanguages();
   setupLanguageDropdown(availableLanguages);
+  chargeText();
 });

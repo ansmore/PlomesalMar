@@ -18,6 +18,8 @@ use App\Http\Controllers\BiitController;
 |
 */
 
+// Route::get('/{$lang}/', [HomeController::class, 'home'])->name('home');
+
 Route::get('/', [HomeController::class, 'home'])->name('home');
 Route::get('/home', [HomeController::class, 'home'])->name('home');
 Route::get('/#{section?}', [HomeController::class, 'homeSection'])->name('home.section');

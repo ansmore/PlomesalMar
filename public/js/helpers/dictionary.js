@@ -9,8 +9,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 export const loadDictionary = (language, page) => __awaiter(void 0, void 0, void 0, function* () {
     try {
+        // // Develope mode
         // console.log("page:", page, "language:", language);
-        // let languageCode = language;
         const response = yield fetch(`./dictionary/${language}/${language}_${page}.json`);
         if (!response.ok) {
             throw new Error(`Error loading the language ${language}.`);
@@ -68,19 +68,29 @@ export const getFileNameFromUrl = (url) => {
     }
     return undefined;
 };
-export const getSelectedLanguage = () => __awaiter(void 0, void 0, void 0, function* () {
-    try {
-        const response = yield fetch("./dictionary/selectedLanguage.json");
-        if (!response.ok) {
-            throw new Error("Error loading selected language");
-        }
-        return yield response.json();
+export const isLanguageSupported = (language, supportedLanguages) => {
+    // Si el idioma no está en la lista, devolverá false
+    console.log(`Dictionary->Unsupported navigator language: ${language}. Sorry!`);
+    return supportedLanguages.includes(language);
+};
+export const getNavigatorLanguage = () => {
+    return navigator.language.slice(0, 2) || "";
+};
+export const getCurrentFileName = () => {
+    const currentUrl = window.location.href;
+    const fileName = getFileNameFromUrl(currentUrl);
+    return fileName;
+};
+export const getSelectedLanguage = () => {
+    let selectedLanguage = localStorage.getItem("selectedLanguage") || "";
+    console.log("1.Language ", selectedLanguage);
+    if (selectedLanguage === "") {
+        console.log("2.no language ", selectedLanguage);
+        selectedLanguage = "es";
     }
-    catch (error) {
-        console.error("Error loading selected language", error);
-        throw error;
-    }
-});
+    console.log("3.Language is ", selectedLanguage);
+    return selectedLanguage;
+};
 // export const getCurrentPage = () => {
 //   const currentUrl = window.location.href;
 //   const fileName = getFileNameFromUrl(currentUrl) as string;

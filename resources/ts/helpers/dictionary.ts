@@ -7,8 +7,9 @@ export const loadDictionary = async (
   page: string,
 ): Promise<Dictionary> => {
   try {
+    // // Develope mode
     // console.log("page:", page, "language:", language);
-    // let languageCode = language;
+
     const response = await fetch(
       `./dictionary/${language}/${language}_${page}.json`,
     );
@@ -70,17 +71,39 @@ export const getFileNameFromUrl = (url: string): string | undefined => {
   return undefined;
 };
 
-export const getSelectedLanguage = async (): Promise<string> => {
-  try {
-    const response = await fetch("./dictionary/selectedLanguage.json");
-    if (!response.ok) {
-      throw new Error("Error loading selected language");
-    }
-    return await response.json();
-  } catch (error) {
-    console.error("Error loading selected language", error);
-    throw error;
+export const isLanguageSupported = (
+  language: string,
+  supportedLanguages: string[],
+): boolean => {
+  // Si el idioma no está en la lista, devolverá false
+  console.log(
+    `Dictionary->Unsupported navigator language: ${language}. Sorry!`,
+  );
+  return supportedLanguages.includes(language);
+};
+
+export const getNavigatorLanguage = (): string => {
+  return navigator.language.slice(0, 2) || "";
+};
+
+export const getCurrentFileName = (): string => {
+  const currentUrl = window.location.href;
+  const fileName = getFileNameFromUrl(currentUrl) as string;
+  return fileName;
+};
+
+export const getSelectedLanguage = (): string => {
+  let selectedLanguage = localStorage.getItem("selectedLanguage") || "";
+  console.log("1.Language ", selectedLanguage);
+
+  if (selectedLanguage === "") {
+    console.log("2.no language ", selectedLanguage);
+    selectedLanguage = "es";
   }
+
+  console.log("3.Language is ", selectedLanguage);
+
+  return selectedLanguage;
 };
 
 // export const getCurrentPage = () => {
