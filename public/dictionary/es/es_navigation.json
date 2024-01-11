@@ -1,0 +1,29 @@
+{
+  "navHomePage": "Pymesoft",
+
+  "navHome": "Inicio",
+  "navSolutions": "Soluciones",
+  "navPorfolio": "BIIT corner",
+  "navDigitalizacion": "Kid Digital",
+  "navContact": "Contacto",
+
+  "navInicio": "Inicio",
+  "navBiit": "¿Por qué BIIT?",
+  "navModulos": "Módulos",
+  "navContacto": "Contacto",
+  "navGestion": "Gestión cliente",
+  "navComercio": "Comercio electrónico",
+  "navProceso": "Gestión de procesos",
+  "navBusiness": "Busines Intelligence y análitica",
+  "navFactura": "Factura electrónica",
+
+  "navService": "¿Que es?",
+  "navAgente": "Agente Digitalizador",
+  "navRequisitos": "Requisitos",
+  "navBono": "Bono digital",
+  "navFaq": "FAQ",
+
+  "cas": "Castellano",
+  "cat": "Català",
+  "eng": "English"
+}

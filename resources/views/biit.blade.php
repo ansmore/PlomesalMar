@@ -14,7 +14,7 @@
                         <img src="{{ asset('img/logos/logo_biit.png') }}" alt="">
                     </span>
 
-                    <div value-text="biitHeader" class="box__title"></div>
+                    <h2 value-text="biitHeader" class="box__title"></h2>
                     <p value-text="biitSubheader" class="box__content"></p>
                     <a href="{{ route('whyBiit') }}" class="box__button" value-text="aboutButton"></a>
                 </div>
