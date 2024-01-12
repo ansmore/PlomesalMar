@@ -7,27 +7,9 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import { loadDictionary, loadAbailablesLanguages, } from "./helpers/dictionary.js";
-const chargeText = () => __awaiter(void 0, void 0, void 0, function* () {
-    const abailableLanguages = yield loadAbailablesLanguages();
-    const navigatorLanguage = navigator.language.slice(0, 2);
-    const selectedLanguage = abailableLanguages.includes(navigatorLanguage)
-        ? navigatorLanguage
-        : "es";
-    // Hardcode for components
-    let selectedPage = "navigation";
-    try {
-        const dictionary = yield loadDictionary(selectedLanguage, selectedPage);
-        const textsToChange = document.querySelectorAll("[value-text]");
-        textsToChange.forEach((element) => {
-            const dataValue = element.getAttribute("value-text");
-            if (dataValue && dictionary[dataValue]) {
-                element.textContent = dictionary[dataValue];
-            }
-        });
-    }
-    catch (error) {
-        console.error("Error loading the text", error);
-    }
+import { chargeTextComponent } from "./helpers/dictionary.js";
+export const navbar = "navigation";
+const main = () => __awaiter(void 0, void 0, void 0, function* () {
+    chargeTextComponent(navbar);
 });
-document.addEventListener("DOMContentLoaded", chargeText);
+document.addEventListener("DOMContentLoaded", main);
