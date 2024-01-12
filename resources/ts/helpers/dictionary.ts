@@ -1,6 +1,7 @@
 type Dictionary = {
   [clave: string]: string;
 };
+const defaultLanguage = "es";
 
 export const loadDictionary = async (
   language: string,
@@ -72,12 +73,13 @@ export const isLanguageSupported = async (
   language: string,
 ): Promise<boolean> => {
   const supportedLanguages = await loadAbailablesLanguages();
+  console.log(supportedLanguages);
+  console.log(language);
+  console.log("dictionary->", supportedLanguages.includes(language));
 
+  // const suported = supportedLanguages.includes(language);
   // Si el idioma no está en la lista, devolverá false
-  console.log(
-    `Dictionary->Unsupported navigator language: ${language}. Sorry!`,
-  );
-  return supportedLanguages.includes(language);
+  return !supportedLanguages.includes(language);
 };
 
 export const getNavigatorLanguage = (): string => {
@@ -94,4 +96,25 @@ export const getSelectedLanguage = (): string => {
   let selectedLanguage = localStorage.getItem("selectedLanguage") || "";
 
   return selectedLanguage;
+};
+
+export const getFinalLanguage = async (): Promise<string> => {
+  try {
+    const abailableLanguages = await loadAbailablesLanguages();
+
+    const selectedLanguage = await getSelectedLanguage();
+    const navigatorLanguage = await getNavigatorLanguage();
+
+    const finalSelectedLanguage =
+      abailableLanguages.includes(selectedLanguage) ||
+      abailableLanguages.includes(navigatorLanguage)
+        ? selectedLanguage || navigatorLanguage
+        : defaultLanguage;
+
+    return finalSelectedLanguage;
+  } catch (error) {
+    console.error("Error loading the text", error);
+
+    return defaultLanguage;
+  }
 };

@@ -7,6 +7,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+const defaultLanguage = "es";
 export const loadDictionary = (language, page) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const response = yield fetch(`./dictionary/${language}/${language}_${page}.json`);
@@ -68,9 +69,12 @@ export const getFileNameFromUrl = (url) => {
 };
 export const isLanguageSupported = (language) => __awaiter(void 0, void 0, void 0, function* () {
     const supportedLanguages = yield loadAbailablesLanguages();
+    console.log(supportedLanguages);
+    console.log(language);
+    console.log("dictionary->", supportedLanguages.includes(language));
+    // const suported = supportedLanguages.includes(language);
     // Si el idioma no está en la lista, devolverá false
-    console.log(`Dictionary->Unsupported navigator language: ${language}. Sorry!`);
-    return supportedLanguages.includes(language);
+    return !supportedLanguages.includes(language);
 });
 export const getNavigatorLanguage = () => {
     return navigator.language.slice(0, 2) || "";
@@ -84,3 +88,19 @@ export const getSelectedLanguage = () => {
     let selectedLanguage = localStorage.getItem("selectedLanguage") || "";
     return selectedLanguage;
 };
+export const getFinalLanguage = () => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const abailableLanguages = yield loadAbailablesLanguages();
+        const selectedLanguage = yield getSelectedLanguage();
+        const navigatorLanguage = yield getNavigatorLanguage();
+        const finalSelectedLanguage = abailableLanguages.includes(selectedLanguage) ||
+            abailableLanguages.includes(navigatorLanguage)
+            ? selectedLanguage || navigatorLanguage
+            : defaultLanguage;
+        return finalSelectedLanguage;
+    }
+    catch (error) {
+        console.error("Error loading the text", error);
+        return defaultLanguage;
+    }
+});

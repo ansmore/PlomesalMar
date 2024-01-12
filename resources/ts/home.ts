@@ -6,22 +6,18 @@ import {
   getNavigatorLanguage,
   getCurrentFileName,
   getSelectedLanguage,
+  getFinalLanguage,
 } from "./helpers/dictionary.js";
 
-let countersetLanguage = 0;
-let countersetupLanguageDropdown = 0;
-let counterchargeText = 0;
-
 const setLanguage = async (selectedLanguage: string) => {
-  countersetLanguage += 1;
   try {
     let navigatorLanguage = await getNavigatorLanguage();
     // const supportedLanguages = await loadAbailablesLanguages();
 
-    // If return true, this language is not in white list!
-    if (!isLanguageSupported(navigatorLanguage)) {
+    // If return false, this language is not in white list!
+    if (await isLanguageSupported(navigatorLanguage)) {
       console.log(
-        `Your navigator languages unsuported! ${navigatorLanguage}. Sorry!`,
+        `Home->Your navigator languages unsuported! ${navigatorLanguage}. Sorry!`,
       );
       navigatorLanguage = "";
     }
@@ -42,7 +38,6 @@ const setLanguage = async (selectedLanguage: string) => {
 };
 
 const setupLanguageDropdown = async () => {
-  countersetupLanguageDropdown += 1;
   const setLanguages = document.getElementById("setLanguages");
   const availableLanguages = await loadAbailablesLanguages();
 
@@ -61,25 +56,14 @@ const setupLanguageDropdown = async () => {
 };
 
 const chargeText = async () => {
-  counterchargeText += 1;
-  const abailableLanguages = await loadAbailablesLanguages();
-  const abailablePages = await loadAbailablesFiles();
-  setupLanguageDropdown();
-  const selectedLanguage = await getSelectedLanguage();
-
-  const navigatorLanguage = await getNavigatorLanguage();
-  const fileName = await getCurrentFileName();
-
-  const finalSelectedLanguage =
-    abailableLanguages.includes(selectedLanguage) ||
-    abailableLanguages.includes(navigatorLanguage)
-      ? selectedLanguage || navigatorLanguage
-      : "en";
-
-  const selectedPage = abailablePages.includes(fileName) ? fileName : "home";
-
-  console.log("navigator", navigatorLanguage);
   try {
+    const abailablePages = await loadAbailablesFiles();
+    setupLanguageDropdown();
+    const fileName = await getCurrentFileName();
+    const finalSelectedLanguage = await getFinalLanguage();
+
+    const selectedPage = abailablePages.includes(fileName) ? fileName : "home";
+
     const dictionary = await loadDictionary(
       finalSelectedLanguage,
       selectedPage,

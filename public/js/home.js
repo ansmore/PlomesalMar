@@ -7,18 +7,14 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import { loadDictionary, loadAbailablesLanguages, loadAbailablesFiles, isLanguageSupported, getNavigatorLanguage, getCurrentFileName, getSelectedLanguage, } from "./helpers/dictionary.js";
-let countersetLanguage = 0;
-let countersetupLanguageDropdown = 0;
-let counterchargeText = 0;
+import { loadDictionary, loadAbailablesLanguages, loadAbailablesFiles, isLanguageSupported, getNavigatorLanguage, getCurrentFileName, getFinalLanguage, } from "./helpers/dictionary.js";
 const setLanguage = (selectedLanguage) => __awaiter(void 0, void 0, void 0, function* () {
-    countersetLanguage += 1;
     try {
         let navigatorLanguage = yield getNavigatorLanguage();
         // const supportedLanguages = await loadAbailablesLanguages();
-        // If return true, this language is not in white list!
-        if (!isLanguageSupported(navigatorLanguage)) {
-            console.log(`Your navigator languages unsuported! ${navigatorLanguage}. Sorry!`);
+        // If return false, this language is not in white list!
+        if (yield isLanguageSupported(navigatorLanguage)) {
+            console.log(`Home->Your navigator languages unsuported! ${navigatorLanguage}. Sorry!`);
             navigatorLanguage = "";
         }
         // Check if selected language an browser language is the same! -> To delete!
@@ -34,7 +30,6 @@ const setLanguage = (selectedLanguage) => __awaiter(void 0, void 0, void 0, func
     }
 });
 const setupLanguageDropdown = () => __awaiter(void 0, void 0, void 0, function* () {
-    countersetupLanguageDropdown += 1;
     const setLanguages = document.getElementById("setLanguages");
     const availableLanguages = yield loadAbailablesLanguages();
     if (setLanguages) {
@@ -49,20 +44,12 @@ const setupLanguageDropdown = () => __awaiter(void 0, void 0, void 0, function* 
     }
 });
 const chargeText = () => __awaiter(void 0, void 0, void 0, function* () {
-    counterchargeText += 1;
-    const abailableLanguages = yield loadAbailablesLanguages();
-    const abailablePages = yield loadAbailablesFiles();
-    setupLanguageDropdown();
-    const selectedLanguage = yield getSelectedLanguage();
-    const navigatorLanguage = yield getNavigatorLanguage();
-    const fileName = yield getCurrentFileName();
-    const finalSelectedLanguage = abailableLanguages.includes(selectedLanguage) ||
-        abailableLanguages.includes(navigatorLanguage)
-        ? selectedLanguage || navigatorLanguage
-        : "en";
-    const selectedPage = abailablePages.includes(fileName) ? fileName : "home";
-    console.log("navigator", navigatorLanguage);
     try {
+        const abailablePages = yield loadAbailablesFiles();
+        setupLanguageDropdown();
+        const fileName = yield getCurrentFileName();
+        const finalSelectedLanguage = yield getFinalLanguage();
+        const selectedPage = abailablePages.includes(fileName) ? fileName : "home";
         const dictionary = yield loadDictionary(finalSelectedLanguage, selectedPage);
         const textsToChange = document.querySelectorAll("[value-text]");
         textsToChange.forEach((element) => {
