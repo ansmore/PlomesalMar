@@ -115,7 +115,7 @@
             @include style($primary_main, $neutral_lighter);
             @include boxSize(width, 6rem);
             @include boxSize(height, null, $nav-height);
-
+            letter-spacing: 0.25em;
             @include hover($secondary_main, $neutral_lighter);
           }
           &:hover {
