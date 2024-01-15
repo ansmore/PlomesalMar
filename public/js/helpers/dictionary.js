@@ -7,10 +7,14 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+// Pending import from globals
+const defaultLanguage = "es";
+import { navbar } from "../navigation.js";
+import { footer } from "../footer.js";
+export let counterComponent = 0;
+export let counterPage = 0;
 export const loadDictionary = (language, page) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        // // Develope mode
-        // console.log("page:", page, "language:", language);
         const response = yield fetch(`./dictionary/${language}/${language}_${page}.json`);
         if (!response.ok) {
             throw new Error(`Error loading the language ${language}.`);
@@ -68,11 +72,15 @@ export const getFileNameFromUrl = (url) => {
     }
     return undefined;
 };
-export const isLanguageSupported = (language, supportedLanguages) => {
+export const isLanguageSupported = (language) => __awaiter(void 0, void 0, void 0, function* () {
+    const supportedLanguages = yield loadAbailablesLanguages();
+    // console.log(supportedLanguages);
+    // console.log(language);
+    // console.log("dictionary->", supportedLanguages.includes(language));
+    // const suported = supportedLanguages.includes(language);
     // Si el idioma no está en la lista, devolverá false
-    console.log(`Dictionary->Unsupported navigator language: ${language}. Sorry!`);
-    return supportedLanguages.includes(language);
-};
+    return !supportedLanguages.includes(language);
+});
 export const getNavigatorLanguage = () => {
     return navigator.language.slice(0, 2) || "";
 };
@@ -83,34 +91,101 @@ export const getCurrentFileName = () => {
 };
 export const getSelectedLanguage = () => {
     let selectedLanguage = localStorage.getItem("selectedLanguage") || "";
-    console.log("1.Language ", selectedLanguage);
-    if (selectedLanguage === "") {
-        console.log("2.no language ", selectedLanguage);
-        selectedLanguage = "es";
-    }
-    console.log("3.Language is ", selectedLanguage);
     return selectedLanguage;
 };
-// export const getCurrentPage = () => {
-//   const currentUrl = window.location.href;
-//   const fileName = getFileNameFromUrl(currentUrl) as string;
-//   return fileName || "home";
-// };
-export const changeLanguage = (language) => __awaiter(void 0, void 0, void 0, function* () {
+export const getFinalLanguage = () => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const response = yield fetch("./dictionary/selectedLanguage.json", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({ language }),
-        });
-        if (!response.ok) {
-            throw new Error("Error changing language");
-        }
+        const abailableLanguages = yield loadAbailablesLanguages();
+        const selectedLanguage = yield getSelectedLanguage();
+        const navigatorLanguage = yield getNavigatorLanguage();
+        const finalSelectedLanguage = abailableLanguages.includes(selectedLanguage) ||
+            abailableLanguages.includes(navigatorLanguage)
+            ? selectedLanguage || navigatorLanguage
+            : defaultLanguage;
+        return finalSelectedLanguage;
     }
     catch (error) {
-        console.error("Error changing language", error);
-        throw error;
+        console.error("Error loading the text", error);
+        return defaultLanguage;
+    }
+});
+export const setLanguage = (selectedLanguage) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        let navigatorLanguage = yield getNavigatorLanguage();
+        // If return false, this language is not in white list!
+        if (yield isLanguageSupported(navigatorLanguage)) {
+            console.log(`Home->Your navigator languages unsuported! ${navigatorLanguage}. Sorry!`);
+            navigatorLanguage = "";
+        }
+        // // Check if selected language an browser language is the same! -> To delete!
+        // if (navigatorLanguage === selectedLanguage) {
+        //   console.log(
+        //     "Selected language is the same of browser:",
+        //     selectedLanguage,
+        //   );
+        // }
+        localStorage.setItem("selectedLanguage", selectedLanguage);
+        console.log(`Desde setLanguage()-> ${selectedLanguage}`);
+        yield loadText();
+        yield loadTextComponent(navbar);
+        yield loadTextComponent(footer);
+    }
+    catch (error) {
+        console.error("Error handling language click", error);
+    }
+});
+export const setupLanguageDropdown = () => __awaiter(void 0, void 0, void 0, function* () {
+    const setLanguages = document.getElementById("setLanguages");
+    const availableLanguages = yield loadAbailablesLanguages();
+    if (setLanguages) {
+        setLanguages.addEventListener("click", (event) => __awaiter(void 0, void 0, void 0, function* () {
+            event.preventDefault();
+            const selectedLanguageElement = event.target;
+            const selectedLanguage = selectedLanguageElement.id;
+            if (availableLanguages.includes(selectedLanguage)) {
+                yield setLanguage(selectedLanguage);
+            }
+        }));
+    }
+});
+export const loadText = () => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        counterPage += 1;
+        const abailablePages = yield loadAbailablesFiles();
+        // console.log(`loadText -> pagina ${counterPage}`);
+        const fileName = yield getCurrentFileName();
+        const finalSelectedLanguage = yield getFinalLanguage();
+        const selectedPage = abailablePages.includes(fileName) ? fileName : "home";
+        const dictionary = yield loadDictionary(finalSelectedLanguage, selectedPage);
+        const textsToChange = document.querySelectorAll("[value-text]");
+        textsToChange.forEach((element) => {
+            const dataValue = element.getAttribute("value-text");
+            if (dataValue && dictionary[dataValue]) {
+                element.textContent = dictionary[dataValue];
+            }
+        });
+    }
+    catch (error) {
+        console.error("Error loading the text", error);
+    }
+});
+export const loadTextComponent = (component) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        counterComponent += 1;
+        // console.log(`loadTerxt -> componente ${counterComponent}`);
+        const finalSelectedLanguage = yield getFinalLanguage();
+        // From components parameter
+        let selectedPage = component;
+        const dictionary = yield loadDictionary(finalSelectedLanguage, selectedPage);
+        const textsToChange = document.querySelectorAll("[value-text]");
+        textsToChange.forEach((element) => {
+            const dataValue = element.getAttribute("value-text");
+            if (dataValue && dictionary[dataValue]) {
+                element.textContent = dictionary[dataValue];
+            }
+        });
+    }
+    catch (error) {
+        console.error("Error loading the text", error);
     }
 });

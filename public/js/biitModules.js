@@ -8,7 +8,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 import { loadDictionary, loadAbailablesLanguages, loadAbailablesFiles, getFileNameFromUrl, } from "./helpers/dictionary.js";
-const chargeText = () => __awaiter(void 0, void 0, void 0, function* () {
+const loadText = () => __awaiter(void 0, void 0, void 0, function* () {
     const abailableLanguages = yield loadAbailablesLanguages();
     const abailablePages = yield loadAbailablesFiles();
     const navigatorLanguage = navigator.language.slice(0, 2);
@@ -32,4 +32,4 @@ const chargeText = () => __awaiter(void 0, void 0, void 0, function* () {
         console.error("Error loading the text", error);
     }
 });
-document.addEventListener("DOMContentLoaded", chargeText);
+document.addEventListener("DOMContentLoaded", loadText);

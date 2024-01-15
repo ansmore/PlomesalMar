@@ -2,14 +2,18 @@ type Dictionary = {
   [clave: string]: string;
 };
 
+// Pending import from globals
+const defaultLanguage = "es";
+import { navbar } from "../navigation.js";
+import { footer } from "../footer.js";
+export let counterComponent = 0;
+export let counterPage = 0;
+
 export const loadDictionary = async (
   language: string,
   page: string,
 ): Promise<Dictionary> => {
   try {
-    // // Develope mode
-    // console.log("page:", page, "language:", language);
-
     const response = await fetch(
       `./dictionary/${language}/${language}_${page}.json`,
     );
@@ -71,15 +75,17 @@ export const getFileNameFromUrl = (url: string): string | undefined => {
   return undefined;
 };
 
-export const isLanguageSupported = (
+export const isLanguageSupported = async (
   language: string,
-  supportedLanguages: string[],
-): boolean => {
+): Promise<boolean> => {
+  const supportedLanguages = await loadAbailablesLanguages();
+  // console.log(supportedLanguages);
+  // console.log(language);
+  // console.log("dictionary->", supportedLanguages.includes(language));
+
+  // const suported = supportedLanguages.includes(language);
   // Si el idioma no está en la lista, devolverá false
-  console.log(
-    `Dictionary->Unsupported navigator language: ${language}. Sorry!`,
-  );
-  return supportedLanguages.includes(language);
+  return !supportedLanguages.includes(language);
 };
 
 export const getNavigatorLanguage = (): string => {
@@ -94,39 +100,130 @@ export const getCurrentFileName = (): string => {
 
 export const getSelectedLanguage = (): string => {
   let selectedLanguage = localStorage.getItem("selectedLanguage") || "";
-  console.log("1.Language ", selectedLanguage);
-
-  if (selectedLanguage === "") {
-    console.log("2.no language ", selectedLanguage);
-    selectedLanguage = "es";
-  }
-
-  console.log("3.Language is ", selectedLanguage);
 
   return selectedLanguage;
 };
 
-// export const getCurrentPage = () => {
-//   const currentUrl = window.location.href;
-//   const fileName = getFileNameFromUrl(currentUrl) as string;
-//   return fileName || "home";
-// };
-
-export const changeLanguage = async (language: string): Promise<void> => {
+export const getFinalLanguage = async (): Promise<string> => {
   try {
-    const response = await fetch("./dictionary/selectedLanguage.json", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ language }),
-    });
+    const abailableLanguages = await loadAbailablesLanguages();
 
-    if (!response.ok) {
-      throw new Error("Error changing language");
-    }
+    const selectedLanguage = await getSelectedLanguage();
+    const navigatorLanguage = await getNavigatorLanguage();
+
+    const finalSelectedLanguage =
+      abailableLanguages.includes(selectedLanguage) ||
+      abailableLanguages.includes(navigatorLanguage)
+        ? selectedLanguage || navigatorLanguage
+        : defaultLanguage;
+
+    return finalSelectedLanguage;
   } catch (error) {
-    console.error("Error changing language", error);
-    throw error;
+    console.error("Error loading the text", error);
+
+    return defaultLanguage;
+  }
+};
+
+export const setLanguage = async (selectedLanguage: string) => {
+  try {
+    let navigatorLanguage = await getNavigatorLanguage();
+
+    // If return false, this language is not in white list!
+    if (await isLanguageSupported(navigatorLanguage)) {
+      console.log(
+        `Home->Your navigator languages unsuported! ${navigatorLanguage}. Sorry!`,
+      );
+      navigatorLanguage = "";
+    }
+
+    // // Check if selected language an browser language is the same! -> To delete!
+    // if (navigatorLanguage === selectedLanguage) {
+    //   console.log(
+    //     "Selected language is the same of browser:",
+    //     selectedLanguage,
+    //   );
+    // }
+
+    localStorage.setItem("selectedLanguage", selectedLanguage);
+    console.log(`Desde setLanguage()-> ${selectedLanguage}`);
+    await loadText();
+    await loadTextComponent(navbar);
+    await loadTextComponent(footer);
+  } catch (error) {
+    console.error("Error handling language click", error);
+  }
+};
+
+export const setupLanguageDropdown = async () => {
+  const setLanguages = document.getElementById("setLanguages");
+  const availableLanguages = await loadAbailablesLanguages();
+
+  if (setLanguages) {
+    setLanguages.addEventListener("click", async (event) => {
+      event.preventDefault();
+
+      const selectedLanguageElement = event.target as HTMLElement;
+      const selectedLanguage = selectedLanguageElement.id;
+
+      if (availableLanguages.includes(selectedLanguage)) {
+        await setLanguage(selectedLanguage);
+      }
+    });
+  }
+};
+
+export const loadText = async () => {
+  try {
+    counterPage += 1;
+    const abailablePages = await loadAbailablesFiles();
+    // console.log(`loadText -> pagina ${counterPage}`);
+    const fileName = await getCurrentFileName();
+    const finalSelectedLanguage = await getFinalLanguage();
+
+    const selectedPage = abailablePages.includes(fileName) ? fileName : "home";
+
+    const dictionary = await loadDictionary(
+      finalSelectedLanguage,
+      selectedPage,
+    );
+
+    const textsToChange = document.querySelectorAll("[value-text]");
+
+    textsToChange.forEach((element) => {
+      const dataValue = element.getAttribute("value-text");
+      if (dataValue && dictionary[dataValue]) {
+        element!.textContent = dictionary[dataValue];
+      }
+    });
+  } catch (error) {
+    console.error("Error loading the text", error);
+  }
+};
+
+export const loadTextComponent = async (component: string) => {
+  try {
+    counterComponent += 1;
+    // console.log(`loadTerxt -> componente ${counterComponent}`);
+    const finalSelectedLanguage = await getFinalLanguage();
+
+    // From components parameter
+    let selectedPage = component;
+
+    const dictionary = await loadDictionary(
+      finalSelectedLanguage,
+      selectedPage,
+    );
+
+    const textsToChange = document.querySelectorAll("[value-text]");
+
+    textsToChange.forEach((element) => {
+      const dataValue = element.getAttribute("value-text");
+      if (dataValue && dictionary[dataValue]) {
+        element!.textContent = dictionary[dataValue];
+      }
+    });
+  } catch (error) {
+    console.error("Error loading the text", error);
   }
 };

@@ -1,34 +1,22 @@
-import {
-  loadDictionary,
-  loadAbailablesLanguages,
-} from "./helpers/dictionary.js";
+import { loadTextComponent, setLanguage } from "./helpers/dictionary.js";
+export const navbar = "navigation";
 
-const chargeText = async () => {
-  const abailableLanguages = await loadAbailablesLanguages();
-
-  const navigatorLanguage = navigator.language.slice(0, 2);
-
-  const selectedLanguage = abailableLanguages.includes(navigatorLanguage)
-    ? navigatorLanguage
-    : "es";
-
-  // Hardcode for components
-  let selectedPage = "navigation";
-
-  try {
-    const dictionary = await loadDictionary(selectedLanguage, selectedPage);
-
-    const textsToChange = document.querySelectorAll("[value-text]");
-
-    textsToChange.forEach((element) => {
-      const dataValue = element.getAttribute("value-text");
-      if (dataValue && dictionary[dataValue]) {
-        element!.textContent = dictionary[dataValue];
-      }
-    });
-  } catch (error) {
-    console.error("Error loading the text", error);
-  }
+const main = async () => {
+  loadTextComponent(navbar);
 };
 
-document.addEventListener("DOMContentLoaded", chargeText);
+const handleClick = (event: MouseEvent) => {
+  event.preventDefault();
+
+  const selectedOption = (event.target as HTMLElement).id;
+  setLanguage(selectedOption);
+};
+
+document.addEventListener("DOMContentLoaded", () => {
+  const dropDownLinks = document.querySelectorAll("#setLanguages a");
+  dropDownLinks.forEach((link) => {
+    link.addEventListener("click", handleClick as EventListener);
+  });
+});
+
+document.addEventListener("DOMContentLoaded", main);
