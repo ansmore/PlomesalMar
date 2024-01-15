@@ -25,5 +25,7 @@
 
   "cas": "Castellano",
   "cat": "Català",
-  "eng": "English"
+  "eng": "English",
+
+  "currentLanguage": "CAS"
 }

@@ -384,6 +384,7 @@ header .intro-text .intro-heading {
   background-color: #fafafa;
   min-width: 6rem;
   height: 70px;
+  letter-spacing: 0.25em;
   border: 1px solid transparent;
 }
 .nav .navbar__language .list__item__link:hover {
