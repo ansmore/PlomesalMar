@@ -1,7 +1,7 @@
-import { chargeText } from "./helpers/dictionary.js";
+import { loadText } from "./helpers/dictionary.js";
 
 const main = () => {
-  chargeText();
+  loadText();
 };
 
 document.addEventListener("DOMContentLoaded", main);

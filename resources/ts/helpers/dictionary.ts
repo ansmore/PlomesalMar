@@ -4,8 +4,10 @@ type Dictionary = {
 
 // Pending import from globals
 const defaultLanguage = "es";
-const navbar = "navigation";
-const footer = "footer";
+import { navbar } from "../navigation.js";
+import { footer } from "../footer.js";
+export let counterComponent = 0;
+export let counterPage = 0;
 
 export const loadDictionary = async (
   language: string,
@@ -77,9 +79,9 @@ export const isLanguageSupported = async (
   language: string,
 ): Promise<boolean> => {
   const supportedLanguages = await loadAbailablesLanguages();
-  console.log(supportedLanguages);
-  console.log(language);
-  console.log("dictionary->", supportedLanguages.includes(language));
+  // console.log(supportedLanguages);
+  // console.log(language);
+  // console.log("dictionary->", supportedLanguages.includes(language));
 
   // const suported = supportedLanguages.includes(language);
   // Si el idioma no está en la lista, devolverá false
@@ -126,7 +128,6 @@ export const getFinalLanguage = async (): Promise<string> => {
 export const setLanguage = async (selectedLanguage: string) => {
   try {
     let navigatorLanguage = await getNavigatorLanguage();
-    // const supportedLanguages = await loadAbailablesLanguages();
 
     // If return false, this language is not in white list!
     if (await isLanguageSupported(navigatorLanguage)) {
@@ -136,16 +137,19 @@ export const setLanguage = async (selectedLanguage: string) => {
       navigatorLanguage = "";
     }
 
-    // Check if selected language an browser language is the same! -> To delete!
-    if (navigatorLanguage === selectedLanguage) {
-      console.log(
-        "Selected language is the same of browser:",
-        selectedLanguage,
-      );
-    }
+    // // Check if selected language an browser language is the same! -> To delete!
+    // if (navigatorLanguage === selectedLanguage) {
+    //   console.log(
+    //     "Selected language is the same of browser:",
+    //     selectedLanguage,
+    //   );
+    // }
+
     localStorage.setItem("selectedLanguage", selectedLanguage);
-    console.log("Selected language:", selectedLanguage);
-    await chargeText();
+    console.log(`Desde setLanguage()-> ${selectedLanguage}`);
+    await loadText();
+    await loadTextComponent(navbar);
+    await loadTextComponent(footer);
   } catch (error) {
     console.error("Error handling language click", error);
   }
@@ -169,10 +173,11 @@ export const setupLanguageDropdown = async () => {
   }
 };
 
-export const chargeText = async () => {
+export const loadText = async () => {
   try {
+    counterPage += 1;
     const abailablePages = await loadAbailablesFiles();
-    setupLanguageDropdown();
+    // console.log(`loadText -> pagina ${counterPage}`);
     const fileName = await getCurrentFileName();
     const finalSelectedLanguage = await getFinalLanguage();
 
@@ -191,23 +196,18 @@ export const chargeText = async () => {
         element!.textContent = dictionary[dataValue];
       }
     });
-
-    //Recursive calling to component
-    chargeTextComponent(navbar);
-    chargeTextComponent(footer);
   } catch (error) {
     console.error("Error loading the text", error);
   }
 };
 
-export const chargeTextComponent = async (component: string) => {
+export const loadTextComponent = async (component: string) => {
   try {
-    setupLanguageDropdown();
-
+    counterComponent += 1;
+    // console.log(`loadTerxt -> componente ${counterComponent}`);
     const finalSelectedLanguage = await getFinalLanguage();
 
-    // Hardcode for components
-    // let component = "navigation";
+    // From components parameter
     let selectedPage = component;
 
     const dictionary = await loadDictionary(

@@ -9,8 +9,10 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 // Pending import from globals
 const defaultLanguage = "es";
-const navbar = "navigation";
-const footer = "footer";
+import { navbar } from "../navigation.js";
+import { footer } from "../footer.js";
+export let counterComponent = 0;
+export let counterPage = 0;
 export const loadDictionary = (language, page) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const response = yield fetch(`./dictionary/${language}/${language}_${page}.json`);
@@ -72,9 +74,9 @@ export const getFileNameFromUrl = (url) => {
 };
 export const isLanguageSupported = (language) => __awaiter(void 0, void 0, void 0, function* () {
     const supportedLanguages = yield loadAbailablesLanguages();
-    console.log(supportedLanguages);
-    console.log(language);
-    console.log("dictionary->", supportedLanguages.includes(language));
+    // console.log(supportedLanguages);
+    // console.log(language);
+    // console.log("dictionary->", supportedLanguages.includes(language));
     // const suported = supportedLanguages.includes(language);
     // Si el idioma no está en la lista, devolverá false
     return !supportedLanguages.includes(language);
@@ -110,19 +112,23 @@ export const getFinalLanguage = () => __awaiter(void 0, void 0, void 0, function
 export const setLanguage = (selectedLanguage) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         let navigatorLanguage = yield getNavigatorLanguage();
-        // const supportedLanguages = await loadAbailablesLanguages();
         // If return false, this language is not in white list!
         if (yield isLanguageSupported(navigatorLanguage)) {
             console.log(`Home->Your navigator languages unsuported! ${navigatorLanguage}. Sorry!`);
             navigatorLanguage = "";
         }
-        // Check if selected language an browser language is the same! -> To delete!
-        if (navigatorLanguage === selectedLanguage) {
-            console.log("Selected language is the same of browser:", selectedLanguage);
-        }
+        // // Check if selected language an browser language is the same! -> To delete!
+        // if (navigatorLanguage === selectedLanguage) {
+        //   console.log(
+        //     "Selected language is the same of browser:",
+        //     selectedLanguage,
+        //   );
+        // }
         localStorage.setItem("selectedLanguage", selectedLanguage);
-        console.log("Selected language:", selectedLanguage);
-        yield chargeText();
+        console.log(`Desde setLanguage()-> ${selectedLanguage}`);
+        yield loadText();
+        yield loadTextComponent(navbar);
+        yield loadTextComponent(footer);
     }
     catch (error) {
         console.error("Error handling language click", error);
@@ -142,10 +148,11 @@ export const setupLanguageDropdown = () => __awaiter(void 0, void 0, void 0, fun
         }));
     }
 });
-export const chargeText = () => __awaiter(void 0, void 0, void 0, function* () {
+export const loadText = () => __awaiter(void 0, void 0, void 0, function* () {
     try {
+        counterPage += 1;
         const abailablePages = yield loadAbailablesFiles();
-        setupLanguageDropdown();
+        // console.log(`loadText -> pagina ${counterPage}`);
         const fileName = yield getCurrentFileName();
         const finalSelectedLanguage = yield getFinalLanguage();
         const selectedPage = abailablePages.includes(fileName) ? fileName : "home";
@@ -157,20 +164,17 @@ export const chargeText = () => __awaiter(void 0, void 0, void 0, function* () {
                 element.textContent = dictionary[dataValue];
             }
         });
-        //Recursive calling to component
-        chargeTextComponent(navbar);
-        chargeTextComponent(footer);
     }
     catch (error) {
         console.error("Error loading the text", error);
     }
 });
-export const chargeTextComponent = (component) => __awaiter(void 0, void 0, void 0, function* () {
+export const loadTextComponent = (component) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        setupLanguageDropdown();
+        counterComponent += 1;
+        // console.log(`loadTerxt -> componente ${counterComponent}`);
         const finalSelectedLanguage = yield getFinalLanguage();
-        // Hardcode for components
-        // let component = "navigation";
+        // From components parameter
         let selectedPage = component;
         const dictionary = yield loadDictionary(finalSelectedLanguage, selectedPage);
         const textsToChange = document.querySelectorAll("[value-text]");

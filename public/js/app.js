@@ -10,7 +10,7 @@
 //   loadAbailablesFiles,
 //   getFileNameFromUrl,
 // } from "./helpers/dictionary.js";
-// const chargeText = async () => {
+// const loadText = async () => {
 //   try {
 //     const [availableLanguages, availablePages] = await Promise.all([
 //       loadAvailableLanguages(),
@@ -27,7 +27,7 @@
 //     console.error("Error loading the text", error);
 //   }
 // };
-// document.addEventListener("DOMContentLoaded", chargeText);
+// document.addEventListener("DOMContentLoaded", loadText);
 // // dictionary
 // // helpers/dictionary.js
 // export const loadDictionary = async (
@@ -50,7 +50,7 @@
 //   }
 // };
 // // main.ts
-// const chargeText = async () => {
+// const loadText = async () => {
 //   try {
 //     const [availableLanguages, availablePages] = await Promise.all([
 //       loadAvailableLanguages(),

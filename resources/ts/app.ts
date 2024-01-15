@@ -13,7 +13,7 @@
 //   getFileNameFromUrl,
 // } from "./helpers/dictionary.js";
 
-// const chargeText = async () => {
+// const loadText = async () => {
 //   try {
 //     const [availableLanguages, availablePages] = await Promise.all([
 //       loadAvailableLanguages(),
@@ -33,7 +33,7 @@
 //   }
 // };
 
-// document.addEventListener("DOMContentLoaded", chargeText);
+// document.addEventListener("DOMContentLoaded", loadText);
 
 // // dictionary
 
@@ -61,7 +61,7 @@
 // };
 
 // // main.ts
-// const chargeText = async () => {
+// const loadText = async () => {
 //   try {
 //     const [availableLanguages, availablePages] = await Promise.all([
 //       loadAvailableLanguages(),

@@ -7,9 +7,20 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import { chargeTextComponent } from "./helpers/dictionary.js";
+import { loadTextComponent, setLanguage } from "./helpers/dictionary.js";
 export const navbar = "navigation";
 const main = () => __awaiter(void 0, void 0, void 0, function* () {
-    chargeTextComponent(navbar);
+    loadTextComponent(navbar);
+});
+const handleClick = (event) => {
+    event.preventDefault();
+    const selectedOption = event.target.id;
+    setLanguage(selectedOption);
+};
+document.addEventListener("DOMContentLoaded", () => {
+    const dropDownLinks = document.querySelectorAll("#setLanguages a");
+    dropDownLinks.forEach((link) => {
+        link.addEventListener("click", handleClick);
+    });
 });
 document.addEventListener("DOMContentLoaded", main);

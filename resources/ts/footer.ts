@@ -1,7 +1,8 @@
-import { chargeTextComponent } from "./helpers/dictionary.js";
-export const footer = "navigation";
+import { loadTextComponent } from "./helpers/dictionary.js";
+export const footer = "footer";
 
 const main = async () => {
-  chargeTextComponent(footer);
+  loadTextComponent(footer);
 };
+
 document.addEventListener("DOMContentLoaded", main);
