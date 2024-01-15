@@ -5,7 +5,7 @@ import {
   getFileNameFromUrl,
 } from "./helpers/dictionary.js";
 
-const chargeText = async () => {
+const loadText = async () => {
   const abailableLanguages = await loadAbailablesLanguages();
   const abailablePages = await loadAbailablesFiles();
 
@@ -34,4 +34,4 @@ const chargeText = async () => {
   }
 };
 
-document.addEventListener("DOMContentLoaded", chargeText);
+document.addEventListener("DOMContentLoaded", loadText);
