@@ -30,7 +30,8 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 const changeLanguage = (language) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        console.log("before->", selectedOption);
+        language = "japan";
+        console.log("before->", language);
         const response = yield fetch("/set-language", {
             method: "POST",
             headers: {
@@ -39,28 +40,14 @@ const changeLanguage = (language) => __awaiter(void 0, void 0, void 0, function*
             body: JSON.stringify({ language }),
         });
         if (!response.ok) {
-            throw new Error(`Error en la solicitud: ${response.status}`);
+            console.log("response.ok->", language);
+            throw new Error(`-> Error en la solicitud: ${response.status}`);
         }
         window.location.reload();
-        console.log("change->", selectedOption);
+        console.log("change->", language);
     }
     catch (error) {
         console.error("Error al cambiar el idioma:", error);
     }
 });
 document.addEventListener("DOMContentLoaded", main);
-// Variable en JavaScript
-// let language = "es";
-// // Redirige a la misma página incluyendo la variable en la URL
-// window.location.href = "main.blade.php?language=" + language;
-// // Crea un formulario dinámico y envía la variable por POST
-// let form = document.createElement("form");
-// form.method = "get";
-// form.action = "main.blade.php";
-// let input = document.createElement("input");
-// input.type = "hidden";
-// input.name = "language";
-// input.value = language;
-// form.appendChild(input);
-// document.body.appendChild(form);
-// form.submit();

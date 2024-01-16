@@ -1,3 +1,12 @@
+<p>
+    {{-- aqui imprimim --}}
+    {{ Session::get('language', 'pt3') }}
+</p>
+<?php
+$language = Session::get('language', 'pt3');
+// $language = 'patata3q';
+var_dump('a->', $language);
+?>
 <nav class="nav">
     <div class="toggle">
         <label for="toggle-menu-checkbox">
@@ -15,7 +24,8 @@
         <div class="navbar__menu">
             <ul class="list">
                 <li class="list__item">
-                    <a class="list__item__link" href="{{ route('home') }}" value-text="navHomePage"></a>
+                    <a class="list__item__link" href="{{ route('home', ['language' => $language]) }}"
+                        value-text="navHomePage"></a>
                 </li>
                 <li class="list__item">
                     <a class="list__item__link" href="{{ route('digitalizacion') }}" value-text="navDigitalizacion"></a>

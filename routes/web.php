@@ -22,11 +22,12 @@ use App\Http\Controllers\LanguageController;
 // Route::get('/{$lang}/', [HomeController::class, 'home'])->name('home');
 
 Route::post('/set-language', [LanguageController::class, 'changeLanguage']);
-Route::prefix('/{language?}')->group(function () {
-  Route::get('/', [HomeController::class, 'home'])->name('home');
-  Route::get('/home', [HomeController::class, 'home'])->name('home');
-  Route::get('/#{section?}', [HomeController::class, 'homeSection'])->name('home.section');
-  Route::get('/home#{section?}', [HomeController::class, 'homeSection'])->name('home.section');
+
+// Route::prefix('/{language?}')->group(function () {
+  Route::get('/{language?}/', [HomeController::class, 'home'])->name('home');
+  Route::get('/{language?}/home', [HomeController::class, 'home'])->name('home');
+  Route::get('/{language?}/#{section?}', [HomeController::class, 'homeSection'])->name('home.section');
+  Route::get('/{language?}/home#{section?}', [HomeController::class, 'homeSection'])->name('home.section');
 
   Route::get('/consultoria', [ConsultancyController::class, 'consultoria'])->name('consultoria');
   Route::get('/consultoria#{section?}', [ConsultancyController::class, 'consultoriaSection'])->name('consultoria.section');
@@ -48,4 +49,4 @@ Route::prefix('/{language?}')->group(function () {
   Route::get('/privacyPolicy', [HomeController::class, 'privacyPolicy'])->name('privacyPolicy');
 
   Route::get('/termsOfUse', [HomeController::class, 'termsOfUse'])->name('termsOfUse');
-});
+// });
