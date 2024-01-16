@@ -213,7 +213,7 @@ header .intro-text .intro-heading {
   align-items: center;
   align-self: center;
   color: #fafafa;
-  background-color: #17265c;
+  background-color: transparent;
   max-width: 100vw;
   height: 70px;
   font-size: 1em;

@@ -155,23 +155,23 @@ export const setLanguage = async (selectedLanguage: string) => {
   }
 };
 
-export const setupLanguageDropdown = async () => {
-  const setLanguages = document.getElementById("setLanguages");
-  const availableLanguages = await loadAbailablesLanguages();
+// export const setupLanguageDropdown = async () => {
+//   const setLanguages = document.getElementById("setLanguages");
+//   const availableLanguages = await loadAbailablesLanguages();
 
-  if (setLanguages) {
-    setLanguages.addEventListener("click", async (event) => {
-      event.preventDefault();
+//   if (setLanguages) {
+//     setLanguages.addEventListener("click", async (event) => {
+//       event.preventDefault();
 
-      const selectedLanguageElement = event.target as HTMLElement;
-      const selectedLanguage = selectedLanguageElement.id;
+//       const selectedLanguageElement = event.target as HTMLElement;
+//       const selectedLanguage = selectedLanguageElement.id;
 
-      if (availableLanguages.includes(selectedLanguage)) {
-        await setLanguage(selectedLanguage);
-      }
-    });
-  }
-};
+//       if (availableLanguages.includes(selectedLanguage)) {
+//         await setLanguage(selectedLanguage);
+//       }
+//     });
+//   }
+// };
 
 export const loadText = async () => {
   try {

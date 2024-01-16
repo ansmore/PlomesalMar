@@ -9,13 +9,18 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 import { loadTextComponent, setLanguage } from "./helpers/dictionary.js";
 export const navbar = "navigation";
+let selectedOption = "en";
 const main = () => __awaiter(void 0, void 0, void 0, function* () {
     loadTextComponent(navbar);
+    changeLanguage(selectedOption);
+    console.log("main->", selectedOption);
 });
 const handleClick = (event) => {
     event.preventDefault();
-    const selectedOption = event.target.id;
+    selectedOption = event.target.id;
     setLanguage(selectedOption);
+    console.log("aqui->", selectedOption);
+    changeLanguage(selectedOption);
 };
 document.addEventListener("DOMContentLoaded", () => {
     const dropDownLinks = document.querySelectorAll("#setLanguages a");
@@ -23,4 +28,39 @@ document.addEventListener("DOMContentLoaded", () => {
         link.addEventListener("click", handleClick);
     });
 });
+const changeLanguage = (language) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        console.log("before->", selectedOption);
+        const response = yield fetch("/set-language", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ language }),
+        });
+        if (!response.ok) {
+            throw new Error(`Error en la solicitud: ${response.status}`);
+        }
+        window.location.reload();
+        console.log("change->", selectedOption);
+    }
+    catch (error) {
+        console.error("Error al cambiar el idioma:", error);
+    }
+});
 document.addEventListener("DOMContentLoaded", main);
+// Variable en JavaScript
+// let language = "es";
+// // Redirige a la misma página incluyendo la variable en la URL
+// window.location.href = "main.blade.php?language=" + language;
+// // Crea un formulario dinámico y envía la variable por POST
+// let form = document.createElement("form");
+// form.method = "get";
+// form.action = "main.blade.php";
+// let input = document.createElement("input");
+// input.type = "hidden";
+// input.name = "language";
+// input.value = language;
+// form.appendChild(input);
+// document.body.appendChild(form);
+// form.submit();
