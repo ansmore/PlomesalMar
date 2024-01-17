@@ -16,8 +16,8 @@ class HomeController extends Controller
 
         $fallbackLocale = config('app.fallback_locale', 'es');
         $defaultLanguage = in_array($language, config('app.available_locales')) ? $language : $fallbackLocale;
-
-        return Redirect::to("/$defaultLanguage/home");
+        // "/$defaultLanguage/home"
+        return Redirect::to("/home");
     }
 
     public function home($language = null)
@@ -34,8 +34,8 @@ class HomeController extends Controller
         $language = Session::get('language', env('FALLBACK_LOCALE', 'es')); // 'es' es el valor predeterminado
         var_dump("after get->",$language);
 
-
-          return view('home', ['language' => $language]);
+          // , ['language' => $language]
+          return view('home');
     }
 
     public function homeSection($language = null, $section = null)

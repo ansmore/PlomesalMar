@@ -26,10 +26,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const changeLanguage = async (language: string) => {
   try {
-    language = "japan";
     console.log("before->", language);
-
-    const response = await fetch("/set-language", {
+    // fetch `/{language}/set-language`
+    const response = await fetch(`/set-language`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

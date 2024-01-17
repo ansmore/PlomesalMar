@@ -43,7 +43,7 @@ export const loadAbailablesLanguages = async (): Promise<string[]> => {
 
 export const loadAbailablesFiles = async (): Promise<string[]> => {
   try {
-    const response = await fetch(`./dictionary/listPages.json`);
+    const response = await fetch(`./../dictionary/listPages.json`);
     if (!response.ok) {
       throw new Error("Error loading white page list");
     }
@@ -57,7 +57,9 @@ export const loadAbailablesFiles = async (): Promise<string[]> => {
 export const getFileNameFromUrl = (url: string): string | undefined => {
   const segments = url.split("/");
   const lastSegment = segments.pop();
-
+  console.log("ultimo:", lastSegment);
+  const languageUrl = segments.pop();
+  console.log("Language:", languageUrl);
   // Verifica si hay al menos un segmento en la URL
   if (lastSegment !== undefined) {
     const fileName = lastSegment.split("#")[0];

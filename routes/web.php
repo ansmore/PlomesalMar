@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Session;
 |
 */
 // explorar esta via...
-$language = Session::get('language', env('FALLBACK_LOCALE', 'es')); // 'es' es el valor predeterminado
+// $language = Session::get('language', env('FALLBACK_LOCALE', 'es')); // 'es' es el valor predeterminado
 
 Route::post('/set-language', [LanguageController::class, 'changeLanguage']);
 

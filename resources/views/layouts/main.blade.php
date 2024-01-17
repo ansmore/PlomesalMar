@@ -12,10 +12,10 @@
 <body>
     {{-- <p>
         {{ Session::get('language', 'en') }}
-    </p>
-    <?php
+    {{-- </p> --}}
+    {{-- <?php
     
-    var_dump('main.blade ', 'language');
+    // var_dump('main.blade ', 'language');
     ?> --}}
     <div class="content">
         @yield('content')

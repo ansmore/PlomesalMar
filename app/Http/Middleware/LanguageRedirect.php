@@ -18,7 +18,8 @@ class LanguageRedirect
     public function handle(Request $request, Closure $next)
     {
       try {
-
+        // seguir provant aqui!!!!
+        // dd("aqui middleware");
         $segment = $request->segment(1);
         // var_dump("Segmemnt", $segment);
         // var_dump("Available_locales", config('app.available_locales'));

@@ -30,9 +30,9 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 const changeLanguage = (language) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        language = "japan";
         console.log("before->", language);
-        const response = yield fetch("/set-language", {
+        // fetch `/{language}/set-language`
+        const response = yield fetch(`/set-language`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
