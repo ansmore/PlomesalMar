@@ -33,10 +33,10 @@ var_dump('a->', $language);
                 <li class="list__item">
                     <a class="list__item__link" href="{{ route('biit') }}" value-text="navPorfolio"></a>
                 </li>
-                <li class="list__item">
+                {{-- <li class="list__item">
                     <a class="list__item__link" href="{{ route('home.section', ['section' => 'contact']) }}"
                         value-text="navContact"></a>
-                </li>
+                </li> --}}
             </ul>
         </div>
         <div class="navbar__language">
