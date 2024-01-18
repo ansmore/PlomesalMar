@@ -15,7 +15,7 @@ export const loadDictionary = async (
 ): Promise<Dictionary> => {
   try {
     const response = await fetch(
-      `./dictionary/${language}/${language}_${page}.json`,
+      `./../dictionary/${language}/${language}_${page}.json`,
     );
     if (!response.ok) {
       throw new Error(`Error loading the language ${language}.`);
@@ -30,7 +30,7 @@ export const loadDictionary = async (
 // const abailableLanguages = ["en", "es", "ca"];
 export const loadAbailablesLanguages = async (): Promise<string[]> => {
   try {
-    const response = await fetch(`./dictionary/listLanguages.json`);
+    const response = await fetch(`./../dictionary/listLanguages.json`);
     if (!response.ok) {
       throw new Error("Error loading white language list");
     }
@@ -119,6 +119,8 @@ export const getFinalLanguage = async (): Promise<string> => {
         ? selectedLanguage || navigatorLanguage
         : defaultLanguage;
 
+    localStorage.setItem("selectedLanguage", finalSelectedLanguage);
+
     return finalSelectedLanguage;
   } catch (error) {
     console.error("Error loading the text", error);
@@ -205,7 +207,7 @@ export const loadText = async () => {
 
 export const loadTextComponent = async (component: string) => {
   try {
-    counterComponent += 1;
+    // counterComponent += 1;
     // console.log(`loadTerxt -> componente ${counterComponent}`);
     const finalSelectedLanguage = await getFinalLanguage();
 

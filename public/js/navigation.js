@@ -7,13 +7,18 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import { loadTextComponent, setLanguage } from "./helpers/dictionary.js";
+import { getFinalLanguage, getNavigatorLanguage, loadTextComponent, setLanguage, } from "./helpers/dictionary.js";
 export const navbar = "navigation";
-let selectedOption = "en";
+let selectedOption = null;
 const main = () => __awaiter(void 0, void 0, void 0, function* () {
     loadTextComponent(navbar);
-    changeLanguage(selectedOption);
-    console.log("main->", selectedOption);
+    const finalSelectedLanguage = yield getFinalLanguage();
+    changeLanguage(finalSelectedLanguage);
+    // selectedOption = localStorage.getItem("selectedLanguage") || "";
+    // console.log("navigation storage->", selectedOption);
+    const navigatorLanguage = yield getNavigatorLanguage();
+    console.log("navigation navigator->", navigatorLanguage);
+    // console.log("navigation final->", finalSelectedLanguage);
 });
 const handleClick = (event) => {
     event.preventDefault();
@@ -29,13 +34,17 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 const changeLanguage = (language) => __awaiter(void 0, void 0, void 0, function* () {
+    var _a;
     try {
-        console.log("before->", language);
-        // fetch `/{language}/set-language`
+        console.log("chLang before send->", language);
+        const csrfToken = (_a = document
+            .querySelector("meta[name=csrf-token]")) === null || _a === void 0 ? void 0 : _a.getAttribute("content");
+        // fetch `/${language}/set-language`
         const response = yield fetch(`/set-language`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
+                "X-CSRF-TOKEN": csrfToken || "",
             },
             body: JSON.stringify({ language }),
         });

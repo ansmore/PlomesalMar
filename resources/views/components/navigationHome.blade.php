@@ -1,11 +1,10 @@
-<p>
-    {{-- aqui imprimim --}}
-    {{ Session::get('language', 'pt3') }}
-</p>
 <?php
-$language = Session::get('language', 'pt3');
-// $language = 'patata3q';
-var_dump('a->', $language);
+// $language = 'ak';
+// Session::put('language', $language);
+$language = Session::get('language', 'it');
+var_dump('Navigation After get->', $language, "\n");
+// var_dump('Navigation Before put->', $language, "\n");
+// var_dump('Navigation After put->', $language, "\n");
 ?>
 <nav class="nav">
     <div class="toggle">
@@ -33,10 +32,10 @@ var_dump('a->', $language);
                 <li class="list__item">
                     <a class="list__item__link" href="{{ route('biit') }}" value-text="navPorfolio"></a>
                 </li>
-                {{-- <li class="list__item">
+                <li class="list__item">
                     <a class="list__item__link" href="{{ route('home.section', ['section' => 'contact']) }}"
                         value-text="navContact"></a>
-                </li> --}}
+                </li>
             </ul>
         </div>
         <div class="navbar__language">

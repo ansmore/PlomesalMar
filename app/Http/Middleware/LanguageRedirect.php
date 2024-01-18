@@ -20,8 +20,18 @@ class LanguageRedirect
       try {
         // seguir provant aqui!!!!
         // dd("aqui middleware");
+
+
         $segment = $request->segment(1);
-        // var_dump("Segmemnt", $segment);
+        var_dump("Segmemnt middleware", $segment);
+        $jsonData = $request->json()->all();
+        var_dump("Json-> ",$jsonData);
+        // $segment = 'ru';
+        $lang = Session::get('language', env('FALLBACK_LOCALE', 'kin')); // 'es' es el valor predeterminado
+        var_dump("middleware after get", $lang);
+        // var_dump("Middleware After get->",$segment, "\n");
+
+
         // var_dump("Available_locales", config('app.available_locales'));
         // dd("Segment: ", $segment, "Available Locales: ", config('app.available_locales'));
 
@@ -34,8 +44,11 @@ class LanguageRedirect
           // Verificar si el idioma predeterminado está en la lista de idiomas disponibles
           $language = in_array($fallbackLocale, config('app.available_locales')) ? $fallbackLocale : 'es';
 
+          // // Construir la URL de redirección correctamente
+          // $redirectUrl = "/$language" . ($request->getPathInfo() == '/' ? '' : '/' . ltrim($request->getPathInfo(), '/'));
+
           // Construir la URL de redirección correctamente
-          $redirectUrl = "/$language" . ($request->getPathInfo() == '/' ? '' : '/' . ltrim($request->getPathInfo(), '/'));
+          $redirectUrl = "/$language" . $request->getPathInfo();
 
 
           return redirect()->to($redirectUrl);

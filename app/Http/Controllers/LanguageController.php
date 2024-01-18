@@ -8,11 +8,13 @@ use Illuminate\Support\Facades\Session;
 
 class LanguageController extends Controller
 {
-  public function changeLanguage(Request $request)
+  public function getLanguage(Request $request)
   {
+    dd("Aqui get l");
     try{
-    $language = $request->input('language', 'pt2');
+    $language = $request->input('language', 'it');
     // $language = "aqui no";
+    dd("changeLanguage", $language);
     Session::put('language', $language);
     var_dump("request->",$request);
     var_dump("language->",$language);

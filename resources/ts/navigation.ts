@@ -1,11 +1,22 @@
-import { loadTextComponent, setLanguage } from "./helpers/dictionary.js";
+import {
+  getFinalLanguage,
+  getNavigatorLanguage,
+  loadTextComponent,
+  setLanguage,
+} from "./helpers/dictionary.js";
 export const navbar = "navigation";
-let selectedOption = "en";
+let selectedOption = null;
 
 const main = async () => {
   loadTextComponent(navbar);
-  changeLanguage(selectedOption);
-  console.log("main->", selectedOption);
+  const finalSelectedLanguage = await getFinalLanguage();
+  changeLanguage(finalSelectedLanguage);
+
+  // selectedOption = localStorage.getItem("selectedLanguage") || "";
+  // console.log("navigation storage->", selectedOption);
+  const navigatorLanguage = await getNavigatorLanguage();
+  console.log("navigation navigator->", navigatorLanguage);
+  // console.log("navigation final->", finalSelectedLanguage);
 };
 
 const handleClick = (event: MouseEvent) => {
@@ -26,12 +37,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const changeLanguage = async (language: string) => {
   try {
-    console.log("before->", language);
-    // fetch `/{language}/set-language`
+    console.log("chLang before send->", language);
+
+    const csrfToken = document
+      .querySelector("meta[name=csrf-token]")
+      ?.getAttribute("content");
+
+    // fetch `/${language}/set-language`
     const response = await fetch(`/set-language`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        "X-CSRF-TOKEN": csrfToken || "",
       },
       body: JSON.stringify({ language }),
     });
