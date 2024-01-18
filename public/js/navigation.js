@@ -39,8 +39,10 @@ const changeLanguage = (language) => __awaiter(void 0, void 0, void 0, function*
         console.log("chLang before send->", language);
         const csrfToken = (_a = document
             .querySelector("meta[name=csrf-token]")) === null || _a === void 0 ? void 0 : _a.getAttribute("content");
-        // fetch `/${language}/set-language`
-        const response = yield fetch(`/set-language`, {
+        console.log("CSRF Token:", csrfToken);
+        console.log("JSON a enviar:", JSON.stringify({ language }));
+        // fetch `/${language}/sendLanguage`
+        const response = yield fetch(`/sendLanguage`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

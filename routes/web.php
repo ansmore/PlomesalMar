@@ -22,7 +22,7 @@ use Illuminate\Support\Facades\Session;
 // explorar esta via...
 // $language = Session::get('language', env('FALLBACK_LOCALE', 'es')); // 'es' es el valor predeterminado
 
-Route::post('/set-language', [LanguageController::class, 'getLanguage']);
+Route::post('/sendLanguage', [LanguageController::class, 'sendLanguage']);
 
 // Route::middleware(['LanguageRedirect'])->group(function () {
   Route::prefix('/{language?}')->group(function () {

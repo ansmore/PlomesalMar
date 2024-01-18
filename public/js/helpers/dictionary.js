@@ -138,20 +138,6 @@ export const setLanguage = (selectedLanguage) => __awaiter(void 0, void 0, void 
         console.error("Error handling language click", error);
     }
 });
-// export const setupLanguageDropdown = async () => {
-//   const setLanguages = document.getElementById("setLanguages");
-//   const availableLanguages = await loadAbailablesLanguages();
-//   if (setLanguages) {
-//     setLanguages.addEventListener("click", async (event) => {
-//       event.preventDefault();
-//       const selectedLanguageElement = event.target as HTMLElement;
-//       const selectedLanguage = selectedLanguageElement.id;
-//       if (availableLanguages.includes(selectedLanguage)) {
-//         await setLanguage(selectedLanguage);
-//       }
-//     });
-//   }
-// };
 export const loadText = () => __awaiter(void 0, void 0, void 0, function* () {
     try {
         counterPage += 1;

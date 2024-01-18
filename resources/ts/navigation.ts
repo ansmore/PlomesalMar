@@ -43,8 +43,10 @@ const changeLanguage = async (language: string) => {
       .querySelector("meta[name=csrf-token]")
       ?.getAttribute("content");
 
-    // fetch `/${language}/set-language`
-    const response = await fetch(`/set-language`, {
+    console.log("CSRF Token:", csrfToken);
+    console.log("JSON a enviar:", JSON.stringify({ language }));
+    // fetch `/${language}/sendLanguage`
+    const response = await fetch(`/sendLanguage`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
