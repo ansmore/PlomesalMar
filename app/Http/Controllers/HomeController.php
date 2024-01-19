@@ -11,31 +11,33 @@ class HomeController extends Controller
 {
     public function index()
     {
+      // $fallbackLocale = config('app.fallback_locale', 'es');
+      // $defaultLanguage = in_array($language, config('app.available_locales')) ? $language : $fallbackLocale;
+      // // "/$defaultLanguage/home"
 
-        // $language = Session::get('language', env('FALLBACK_LOCALE', 'es'));
 
-        // $fallbackLocale = config('app.fallback_locale', 'es');
-        // $defaultLanguage = in_array($language, config('app.available_locales')) ? $language : $fallbackLocale;
-        // // "/$defaultLanguage/home"
-        return Redirect::to("/home");
+        $language = Session::get('language',  'tu');
+
+        return Redirect::to("/$language/home");
     }
 
     public function home($language = null)
     {
+        if (!$language) {
+            return "No hay idioma en los parámetros.";
+        }
+      // Si se proporciona un valor en la URL, establecerlo en la sesión
+        if ($language) {
+            Session::put('language', $language);
+        }
+
         // var_dump("HomeControl Before put->",$language, "\n");
-        // // Si se proporciona un valor en la URL, establecerlo en la sesión
-        // if ($language) {
-        //   // se puede modificar
-        //   $language= "kor";
-        //     Session::put('language', $language);
-        // }
 
         // Obtener el valor de la variable 'language' de la sesión
-        // $language = Session::get('language', env('FALLBACK_LOCALE', 'es')); // 'es' es el valor predeterminado
+        $language = Session::get('language', 'ko');
         // var_dump("HomeController After get->",$language, "\n");
 
-          // , ['language' => $language]
-          return view('home');
+        return view('home', ['language' => $language]);
     }
 
     public function homeSection($language = null, $section = null)

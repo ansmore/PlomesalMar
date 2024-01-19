@@ -1,8 +1,8 @@
 <?php
-// $language = 'ak';
+// $language = 'kl';
 // Session::put('language', $language);
-// $language = Session::get('language', 'it');
-// var_dump('Navigation After get->', $language);
+$language = Session::get('language', 'it');
+var_dump('Navigation After get->', $language);
 // // var_dump('Navigation Before put->', $language, "\n");
 // var_dump('Navigation After put->', $language, "\n");
 ?>
@@ -23,11 +23,7 @@
         <div class="navbar__menu">
             <ul class="list">
                 <li class="list__item">
-                    <a class="list__item__link"
-                        href="{{ route(
-                            'home',
-                            // ['language' => $language]
-                        ) }}"
+                    <a class="list__item__link" href="{{ route('home', ['language' => $language]) }}"
                         value-text="navHomePage"></a>
                 </li>
                 <li class="list__item">

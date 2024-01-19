@@ -59,6 +59,12 @@ const changeLanguage = async (language: string) => {
       console.log("response.ok->", language);
       throw new Error(`-> Error en la solicitud: ${response.status}`);
     }
+    if (response.ok) {
+      const responseData = await response.json();
+      // Redirige a la nueva URL después de la solicitud POST exitosa
+      window.location.href = responseData.newUrl;
+      // window.location.reload();
+    }
     window.location.reload();
     console.log("change->", language);
   } catch (error) {
