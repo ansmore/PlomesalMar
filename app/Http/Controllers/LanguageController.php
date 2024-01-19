@@ -14,10 +14,9 @@ class LanguageController extends Controller
         // Set language fron Request of file JSON
         $putLanguage = $request->input('language', 'it');
         $putPage = $request->input('fileName', 'patata');
-        // var_dump("LC->BeforePut->",$putLanguage);
+
         Session::put('language', $putLanguage);
         $getLanguage = session('language');
-        // var_dump("LC->AfterGet->", $value);
 
 
         // Construye la nueva URL con el idioma actual

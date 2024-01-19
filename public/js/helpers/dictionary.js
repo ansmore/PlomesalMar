@@ -56,9 +56,6 @@ export const loadAbailablesFiles = () => __awaiter(void 0, void 0, void 0, funct
 export const getFileNameFromUrl = (url) => {
     const segments = url.split("/");
     const lastSegment = segments.pop();
-    console.log("ultimo:", lastSegment);
-    const languageUrl = segments.pop();
-    console.log("Language:", languageUrl);
     // Verifica si hay al menos un segmento en la URL
     if (lastSegment !== undefined) {
         const fileName = lastSegment.split("#")[0];
@@ -77,11 +74,6 @@ export const getFileNameFromUrl = (url) => {
 };
 export const isLanguageSupported = (language) => __awaiter(void 0, void 0, void 0, function* () {
     const supportedLanguages = yield loadAbailablesLanguages();
-    // console.log(supportedLanguages);
-    // console.log(language);
-    // console.log("dictionary->", supportedLanguages.includes(language));
-    // const suported = supportedLanguages.includes(language);
-    // Si el idioma no está en la lista, devolverá false
     return !supportedLanguages.includes(language);
 });
 export const getNavigatorLanguage = () => {
@@ -118,18 +110,10 @@ export const setLanguage = (selectedLanguage) => __awaiter(void 0, void 0, void 
         let navigatorLanguage = yield getNavigatorLanguage();
         // If return false, this language is not in white list!
         if (yield isLanguageSupported(navigatorLanguage)) {
-            console.log(`Home->Your navigator languages unsuported! ${navigatorLanguage}. Sorry!`);
+            console.error(`Home->Your navigator languages unsuported! ${navigatorLanguage}. Sorry!`);
             navigatorLanguage = "";
         }
-        // // Check if selected language an browser language is the same! -> To delete!
-        // if (navigatorLanguage === selectedLanguage) {
-        //   console.log(
-        //     "Selected language is the same of browser:",
-        //     selectedLanguage,
-        //   );
-        // }
         localStorage.setItem("selectedLanguage", selectedLanguage);
-        console.log(`Desde setLanguage()-> ${selectedLanguage}`);
         yield loadText();
         yield loadTextComponent(navbar);
         yield loadTextComponent(footer);
@@ -142,7 +126,6 @@ export const loadText = () => __awaiter(void 0, void 0, void 0, function* () {
     try {
         counterPage += 1;
         const abailablePages = yield loadAbailablesFiles();
-        // console.log(`loadText -> pagina ${counterPage}`);
         const fileName = yield getCurrentFileName();
         const finalSelectedLanguage = yield getFinalLanguage();
         const selectedPage = abailablePages.includes(fileName) ? fileName : "home";
@@ -161,8 +144,6 @@ export const loadText = () => __awaiter(void 0, void 0, void 0, function* () {
 });
 export const loadTextComponent = (component) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        // counterComponent += 1;
-        // console.log(`loadTerxt -> componente ${counterComponent}`);
         const finalSelectedLanguage = yield getFinalLanguage();
         // From components parameter
         let selectedPage = component;

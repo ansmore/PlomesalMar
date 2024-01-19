@@ -57,9 +57,7 @@ export const loadAbailablesFiles = async (): Promise<string[]> => {
 export const getFileNameFromUrl = (url: string): string | undefined => {
   const segments = url.split("/");
   const lastSegment = segments.pop();
-  console.log("ultimo:", lastSegment);
-  const languageUrl = segments.pop();
-  console.log("Language:", languageUrl);
+
   // Verifica si hay al menos un segmento en la URL
   if (lastSegment !== undefined) {
     const fileName = lastSegment.split("#")[0];
@@ -81,12 +79,7 @@ export const isLanguageSupported = async (
   language: string,
 ): Promise<boolean> => {
   const supportedLanguages = await loadAbailablesLanguages();
-  // console.log(supportedLanguages);
-  // console.log(language);
-  // console.log("dictionary->", supportedLanguages.includes(language));
 
-  // const suported = supportedLanguages.includes(language);
-  // Si el idioma no está en la lista, devolverá false
   return !supportedLanguages.includes(language);
 };
 
@@ -135,22 +128,14 @@ export const setLanguage = async (selectedLanguage: string) => {
 
     // If return false, this language is not in white list!
     if (await isLanguageSupported(navigatorLanguage)) {
-      console.log(
+      console.error(
         `Home->Your navigator languages unsuported! ${navigatorLanguage}. Sorry!`,
       );
       navigatorLanguage = "";
     }
 
-    // // Check if selected language an browser language is the same! -> To delete!
-    // if (navigatorLanguage === selectedLanguage) {
-    //   console.log(
-    //     "Selected language is the same of browser:",
-    //     selectedLanguage,
-    //   );
-    // }
-
     localStorage.setItem("selectedLanguage", selectedLanguage);
-    console.log(`Desde setLanguage()-> ${selectedLanguage}`);
+
     await loadText();
     await loadTextComponent(navbar);
     await loadTextComponent(footer);
@@ -163,7 +148,7 @@ export const loadText = async () => {
   try {
     counterPage += 1;
     const abailablePages = await loadAbailablesFiles();
-    // console.log(`loadText -> pagina ${counterPage}`);
+
     const fileName = await getCurrentFileName();
     const finalSelectedLanguage = await getFinalLanguage();
 
@@ -189,8 +174,6 @@ export const loadText = async () => {
 
 export const loadTextComponent = async (component: string) => {
   try {
-    // counterComponent += 1;
-    // console.log(`loadTerxt -> componente ${counterComponent}`);
     const finalSelectedLanguage = await getFinalLanguage();
 
     // From components parameter
