@@ -1,3 +1,11 @@
+<?php
+// $language = 'kl';
+// Session::put('language', $language);
+$language = Session::get('language', 'it');
+var_dump('Navigation After get->', $language);
+// // var_dump('Navigation Before put->', $language, "\n");
+// var_dump('Navigation After put->', $language, "\n");
+?>
 <nav class="nav">
     <div class="toggle">
         <label for="toggle-menu-checkbox">
@@ -15,16 +23,20 @@
         <div class="navbar__menu">
             <ul class="list">
                 <li class="list__item">
-                    <a class="list__item__link" href="{{ route('home') }}" value-text="navHomePage"></a>
+                    <a class="list__item__link" href="{{ route('home', ['language' => $language]) }}"
+                        value-text="navHomePage"></a>
                 </li>
                 <li class="list__item">
-                    <a class="list__item__link" href="{{ route('digitalizacion') }}" value-text="navDigitalizacion"></a>
+                    <a class="list__item__link" href="{{ route('digitalizacion', ['language' => $language]) }}"
+                        value-text="navDigitalizacion"></a>
                 </li>
                 <li class="list__item">
-                    <a class="list__item__link" href="{{ route('biit') }}" value-text="navPorfolio"></a>
+                    <a class="list__item__link" href="{{ route('biit', ['language' => $language]) }}"
+                        value-text="navPorfolio"></a>
                 </li>
                 <li class="list__item">
-                    <a class="list__item__link" href="{{ route('home.section', ['section' => 'contact']) }}"
+                    <a class="list__item__link"
+                        href="{{ route('home.section', ['section' => 'contact', 'language' => $language]) }}"
                         value-text="navContact"></a>
                 </li>
             </ul>
@@ -36,9 +48,12 @@
                         <a class="list__item__link" id="navModulosDropdown" role="button"
                             value-text="currentLanguage"></a>
                         <div id="setLanguages" class="dropdown__menu" aria-labelledby="navModulosDropdown">
-                            <a id="es" value-text="cas" class="dropdown__menu__item" href="#"></a>
-                            <a id="ca" value-text="cat" class="dropdown__menu__item" href="#"></a>
-                            <a id="en" value-text="eng" class="dropdown__menu__item" href="#"></a>
+                            <a id="es" value-text="cas" class="dropdown__menu__item" href="#"
+                                {{-- onclick="changeLanguage('es')" --}}></a>
+                            <a id="ca" value-text="cat" class="dropdown__menu__item" href="#"
+                                {{-- onclick="changeLanguage('ca')" --}}></a>
+                            <a id="en" value-text="eng" class="dropdown__menu__item" href="#"
+                                {{-- onclick="changeLanguage('en')" --}}></a>
                         </div>
                     </div>
                 </li>

@@ -15,10 +15,12 @@
         <div class="navbar__menu">
             <ul class="list">
                 <li class="list__item">
-                    <a class="list__item__link" href="{{ route('home') }}" value-text="navHomePage"></a>
+                    <a class="list__item__link" href="{{ route('home', ['language' => $language]) }}"
+                        value-text="navHomePage"></a>
                 </li>
                 <li class="list__item">
-                    <a class="list__item__link" href="{{ route('whyBiit') }}" value-text="navBiit"></a>
+                    <a class="list__item__link" href="{{ route('whyBiit', ['language' => $language]) }}"
+                        value-text="navBiit"></a>
                 </li>
                 <li class="list__item">
                     <div class="dropdown">
@@ -26,25 +28,26 @@
                         </a>
                         <div class="dropdown__menu" aria-labelledby="navModulosDropdown">
                             <a class="dropdown__menu__item"
-                                href="{{ route('biitModules.section', ['section' => 'gestion']) }}"
+                                href="{{ route('biitModules.section', ['section' => 'gestion', 'language' => $language]) }}"
                                 value-text="navGestion"></a>
                             <a class="dropdown__menu__item"
-                                href="{{ route('biitModules.section', ['section' => 'comercio']) }}"
+                                href="{{ route('biitModules.section', ['section' => 'comercio', 'language' => $language]) }}"
                                 value-text="navComercio"></a>
                             <a class="dropdown__menu__item"
-                                href="{{ route('biitModules.section', ['section' => 'proceso']) }}"
+                                href="{{ route('biitModules.section', ['section' => 'proceso', 'language' => $language]) }}"
                                 value-text="navProceso"></a>
                             <a class="dropdown__menu__item"
-                                href="{{ route('biitModules.section', ['section' => 'business']) }}"
+                                href="{{ route('biitModules.section', ['section' => 'business', 'language' => $language]) }}"
                                 value-text="navBusiness"></a>
                             <a class="dropdown__menu__item"
-                                href="{{ route('biitModules.section', ['section' => 'factura']) }}"
+                                href="{{ route('biitModules.section', ['section' => 'factura', 'language' => $language]) }}"
                                 value-text="navFactura"></a>
                         </div>
                     </div>
                 </li>
                 <li class="list__item">
-                    <a class="list__item__link" href="{{ route('biitContact') }}" value-text="navContacto"></a>
+                    <a class="list__item__link" href="{{ route('biitContact', ['language' => $language]) }}"
+                        value-text="navContacto"></a>
                     {{-- Pendiente de hacer la pagina de contacto --}}
                 </li>
             </ul>

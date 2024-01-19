@@ -2,43 +2,53 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Session;
 
 class BiitController extends Controller
 {
     public function biit()
     {
-        return view('biit');
+       $language = Session::get('language', 'ko');
+
+        return view('biit', ['language' => $language]);
     }
 
     public function biitSection($section = null)
     {
-        return view('biit', ['section' => $section]);
+
+       $language = Session::get('language', 'ko');
+        return view('biit', ['section' => $section, 'language' => $language]);
     }
 
      public function whyBiit()
     {
-        return view('whyBiit');
+       $language = Session::get('language', 'ko');
+        return view('whyBiit', ['language' => $language]);
     }
 
     public function whyBiitSection($section = null)
     {
-        return view('whyBiit', ['section' => $section]);
+       $language = Session::get('language', 'ko');
+        return view('whyBiit', ['section' => $section, 'language' => $language]);
     }
 
     public function biitModules()
     {
-        return view('biitModules');
+       $language = Session::get('language', 'ko');
+        return view('biitModules', ['language' => $language]);
     }
 
     public function biitModulesSection($section = null)
     {
-        return view('biitModules', ['section' => $section]);
+       $language = Session::get('language', 'ko');
+        return view('biitModules', ['section' => $section, 'language' => $language]);
     }
 
     public function biitContact()
     {
-        return view('biitContact');
+       $language = Session::get('language', 'ko');
+        return view('biitContact', ['language' => $language]);
     }
 }

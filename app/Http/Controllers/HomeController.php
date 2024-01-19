@@ -2,28 +2,52 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Redirect;
 
 class HomeController extends Controller
 {
-    public function home()
+    public function index()
     {
-        return view('home');
+        $language = Session::get('language',  'tu');
+
+        return Redirect::to("/$language/home");
     }
 
-    public function homeSection($section = null)
+    public function home($language = null)
     {
-        return view('home', ['section' => $section]);
+        if ($language) {
+            Session::put('language', $language);
+        }
+
+        $language = Session::get('language', 'ko');
+
+        return view('home', ['language' => $language]);
     }
 
-    public function privacyPolicy()
+    public function homeSection($language = null, $section = null)
     {
-        return view('privacyPolicy');
+
+        $language = Session::get('language', 'ka');
+
+        return view('home', ['section' => $section,'language' => $language ]);
+    }
+
+    public function privacyPolicy($language = null)
+    {
+   $language = Session::get('language', 'ki');
+
+
+        return view('privacyPolicy',['language' => $language]);
     }
 
     public function termsOfUse()
     {
-        return view('termsOfUse');
+
+         $language = Session::get('language', 'ko');
+
+        return view('termsOfUse',['language' => $language]);
     }
 }
