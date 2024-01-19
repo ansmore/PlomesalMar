@@ -7,7 +7,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import { getFinalLanguage, getNavigatorLanguage, loadTextComponent, setLanguage, } from "./helpers/dictionary.js";
+import { getFinalLanguage, getNavigatorLanguage, loadTextComponent, setLanguage, getCurrentFileName, } from "./helpers/dictionary.js";
 export const navbar = "navigation";
 let selectedOption = null;
 const main = () => __awaiter(void 0, void 0, void 0, function* () {
@@ -37,18 +37,19 @@ const changeLanguage = (language) => __awaiter(void 0, void 0, void 0, function*
     var _a;
     try {
         console.log("chLang before send->", language);
+        const fileName = yield getCurrentFileName();
+        console.log("chLang fileName!->", fileName);
         const csrfToken = (_a = document
             .querySelector("meta[name=csrf-token]")) === null || _a === void 0 ? void 0 : _a.getAttribute("content");
         console.log("CSRF Token:", csrfToken);
         console.log("JSON a enviar:", JSON.stringify({ language }));
-        // fetch `/${language}/sendLanguage`
         const response = yield fetch(`/sendLanguage`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
                 "X-CSRF-TOKEN": csrfToken || "",
             },
-            body: JSON.stringify({ language }),
+            body: JSON.stringify({ language, fileName }),
         });
         if (!response.ok) {
             console.log("response.ok->", language);

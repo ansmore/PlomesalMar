@@ -27,13 +27,16 @@ var_dump('Navigation After get->', $language);
                         value-text="navHomePage"></a>
                 </li>
                 <li class="list__item">
-                    <a class="list__item__link" href="{{ route('digitalizacion') }}" value-text="navDigitalizacion"></a>
+                    <a class="list__item__link" href="{{ route('digitalizacion', ['language' => $language]) }}"
+                        value-text="navDigitalizacion"></a>
                 </li>
                 <li class="list__item">
-                    <a class="list__item__link" href="{{ route('biit') }}" value-text="navPorfolio"></a>
+                    <a class="list__item__link" href="{{ route('biit', ['language' => $language]) }}"
+                        value-text="navPorfolio"></a>
                 </li>
                 <li class="list__item">
-                    <a class="list__item__link" href="{{ route('home.section', ['section' => 'contact']) }}"
+                    <a class="list__item__link"
+                        href="{{ route('home.section', ['section' => 'contact', 'language' => $language]) }}"
                         value-text="navContact"></a>
                 </li>
             </ul>

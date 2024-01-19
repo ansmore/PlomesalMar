@@ -3,6 +3,7 @@ import {
   getNavigatorLanguage,
   loadTextComponent,
   setLanguage,
+  getCurrentFileName,
 } from "./helpers/dictionary.js";
 export const navbar = "navigation";
 let selectedOption = null;
@@ -38,21 +39,22 @@ document.addEventListener("DOMContentLoaded", () => {
 const changeLanguage = async (language: string) => {
   try {
     console.log("chLang before send->", language);
-
+    const fileName = await getCurrentFileName();
+    console.log("chLang fileName!->", fileName);
     const csrfToken = document
       .querySelector("meta[name=csrf-token]")
       ?.getAttribute("content");
 
     console.log("CSRF Token:", csrfToken);
     console.log("JSON a enviar:", JSON.stringify({ language }));
-    // fetch `/${language}/sendLanguage`
+
     const response = await fetch(`/sendLanguage`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         "X-CSRF-TOKEN": csrfToken || "",
       },
-      body: JSON.stringify({ language }),
+      body: JSON.stringify({ language, fileName }),
     });
 
     if (!response.ok) {
