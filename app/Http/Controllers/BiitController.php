@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Mail\Contact;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Mail;
-use App\Mail\ContactMessage;
 
 class BiitController extends Controller
 {
@@ -53,7 +53,7 @@ class BiitController extends Controller
         return view('biitModules', ['section' => $section, 'language' => $language]);
     }
 
-    public function biitContact()
+    public function biitContactForm()
     {
         $language = Session::get('language',  config('app.fallback_locale', 'es'));
 
@@ -63,31 +63,36 @@ class BiitController extends Controller
 
     public function biitContactSubmit(Request $request)
     {
-        $language = Session::get('language',  config('app.fallback_locale', 'es'));
+
+
+
+
+        // $language = Session::get('language',  config('app.fallback_locale', 'es'));
 
         // Validar el formulario si es necesario
-        $request->validate([
+       $request->validate([
             'name' => 'required',
             'email' => 'required|email',
             'mailsubject' => 'required',
             'message' => 'required',
-            // Otros campos del formulario...
+
         ]);
 
         // Obtener los datos del formulario
-        $messageData = [
-            'name' => $request->input('name'),
-            'email' => $request->input('email'),
-            'mailsubject' => $request->input('mailsubject'),
-            'message' => $request->input('message'),
-            // Otros campos del formulario...
-        ];
+        $messages = new \stdClass();
+        $messages->name = $request->name;
+        $messages->email = $request->email;
+        $messages->mailsubject = $request->mailsubject;
+        $messages->message = $request->message;
 
-        Mail::to('albert.vabe@gmail.com')->send(new ContactMessage($messageData));
+        var_dump($messages);
+        Mail::to('albert.vabe@gmail.com')->send(new Contact($messages));
 
         // Mail::to($request->input('email'))->send(new AutoReplyMessage());
 
 
         return back()->with('success', 'Mensaje enviado con exito!');
+
+        // return view('biitContact', ['language' => $language])->with('success', 'Mensaje enviado con exito!');
     }
 }

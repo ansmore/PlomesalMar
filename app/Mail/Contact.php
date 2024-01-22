@@ -9,7 +9,7 @@ use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
-class ContactMessage extends Mailable
+class Contact extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -23,13 +23,24 @@ class ContactMessage extends Mailable
     public function __construct($message)
     {
        $this->messages = $message;
-        // var_dump("message->",$message);
-        // var_dump("messages-> ", $this->messages);
-        // var_dump("aQUI PARTATAT->");
-        // var_dump("message->",$message);
-        // var_dump("messages-> ", $this->messages);
+
     }
 
+
+    /**
+     * Crear la vista del mail
+     */
+    public function build(){
+
+        $email = $this
+        ->from($this->messages->email)
+        ->subject('Message send: '.$this->messages->mailsubject)
+        ->with('Pymesoft', 'Pymesoft Vallès')
+        ->view('emails.contact');
+
+
+        return $email;
+    }
     /**
      * Get the message envelope.
      *
@@ -38,7 +49,7 @@ class ContactMessage extends Mailable
     public function envelope()
     {
         return new Envelope(
-            subject: 'Contact Message',
+            subject: 'Contact',
         );
     }
 
@@ -62,20 +73,5 @@ class ContactMessage extends Mailable
     public function attachments()
     {
         return [];
-    }
-
-    /**
-     * Crear la vista del mail
-     */
-    public function build(){
-
-        $email = $this
-            ->from($this->messages['email'])
-            ->subject('Message send: '.$this->messages['mailsubject'])
-            ->with('Pymesoft', 'Pymesoft Vallès')
-            ->view('emails.contact');
-
-
-       return $email;
     }
 }

@@ -22,11 +22,12 @@ use App\Http\Controllers\LanguageController;
 // $language = Session::get('language', 'rus'); // 'es' es el valor predeterminado
 
 Route::post('/sendLanguage', [LanguageController::class, 'sendLanguage']);
+Route::post('/biitContact', [BiitController::class, 'biitContactSubmit'])->name('biitContact.submit');
 
 Route::prefix('/{language?}')->group(function () {
     Route::get('/', [HomeController::class, 'index'])->name('index');
     Route::get('/home', [HomeController::class, 'home'])->name('home');
-    Route::get('/#{section?}', [HomeController::class, 'homeSection'])->name('home.section');
+    Route::get('/#{section?}', [HomeController::class, 'indexSection'])->name('index.section');
     Route::get('/home#{section?}', [HomeController::class, 'homeSection'])->name('home.section');
 
     Route::get('/consultoria', [ConsultancyController::class, 'consultoria'])->name('consultoria');
@@ -44,8 +45,7 @@ Route::prefix('/{language?}')->group(function () {
     Route::get('/biitModules', [BiitController::class, 'biitModules'])->name('biitModules');
     Route::get('/biitModules#{section?}', [BiitController::class, 'biitModulesSection'])->name('biitModules.section');
 
-    Route::get('/biitContact', [BiitController::class, 'biitContact'])->name('biitContact');
-    Route::post('/biitContact', [BiitController::class, 'biitContactSubmit'])->name('biitContact.submit');
+    Route::get('/biitContact', [BiitController::class, 'biitContactForm'])->name('biitContact');
 
     Route::get('/privacyPolicy', [HomeController::class, 'privacyPolicy'])->name('privacyPolicy');
 
