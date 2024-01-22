@@ -215,10 +215,10 @@ header .intro-text .intro-heading {
   color: #fafafa;
   background-color: #17265c;
   max-width: 100vw;
-  height: 70px;
+  height: 80px;
   font-size: 1em;
   position: fixed;
-  top: 5rem;
+  top: 0;
   left: 0;
   right: 0;
 }
@@ -383,7 +383,7 @@ header .intro-text .intro-heading {
   color: #17265c;
   background-color: #fafafa;
   min-width: 6rem;
-  height: 70px;
+  height: 80px;
   letter-spacing: 0.25em;
   border: 1px solid transparent;
 }
@@ -464,13 +464,13 @@ header .intro-text .intro-heading {
 }
 @media screen and (min-width: 1025px) {
   .nav {
-    height: 70px;
+    height: 80px;
   }
   .nav .toggle {
     display: none;
   }
   .nav .navbar {
-    max-height: 70px;
+    max-height: 80px;
   }
   .nav .navbar__logo {
     min-width: 20vw;
@@ -508,11 +508,11 @@ header .intro-text .intro-heading {
   }
   .nav .navbar__menu .list__item__link {
     min-width: 120px;
-    height: 70px;
+    height: 80px;
   }
   .nav .navbar__menu .list__item:hover {
     min-width: 120px;
-    max-height: 70px;
+    max-height: 80px;
   }
   .nav .navbar__menu .list__item .dropdown__menu {
     margin-top: 0;
@@ -740,7 +740,7 @@ header .intro-text .intro-heading {
   color: #17265c;
   background-color: #ececec;
   font-size: 1em;
-  margin-top: 70px;
+  margin-top: 80px;
   gap: 0.5rem;
 }
 .main .solutions {
@@ -1297,7 +1297,7 @@ header .intro-text .intro-heading {
   color: #17265c;
   background-color: #ececec;
   font-size: 1em;
-  margin-top: 70px;
+  margin-top: 80px;
   gap: 0.5rem;
 }
 .main .header {
@@ -1470,7 +1470,7 @@ header .intro-text .intro-heading {
   color: #17265c;
   background-color: #ececec;
   font-size: 1em;
-  margin-top: 70px;
+  margin-top: 80px;
   gap: 0.5rem;
 }
 .main .contact {
@@ -1796,7 +1796,7 @@ header .intro-text .intro-heading {
   color: #17265c;
   background-color: #ececec;
   font-size: 1em;
-  margin-top: 70px;
+  margin-top: 80px;
   gap: 0.5rem;
 }
 .main .termsAndPolicy {
