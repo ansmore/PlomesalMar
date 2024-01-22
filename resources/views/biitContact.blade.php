@@ -27,23 +27,28 @@
                     <h2 class="box__title" value-text="formTitulo"></h2>
                 </div>
                 <div class="form">
-                    <form id="contactForm" action="{{ route('biitContact', ['language' => $language]) }}" method="post">
+                    <form id="contactForm" action="{{ route('biitContact', ['language' => $language]) }}" method="post"
+                        enctype="multipart/form-data">
                         @csrf
                         <div class="form__group">
-                            <label class="form__group__content" for="nombre" value-text="formNombre"></label>
-                            <input class="form__group__input" type="text" id="nombre" name="nombre" required>
+                            <label class="form__group__content" for="name" value-text="formNombre"></label>
+                            <input class="form__group__input" type="text" id="nombre" name="name"
+                                placeholder="Name" value="{{ old('name') }}" required>
                         </div>
                         <div class="form__group">
-                            <label class="form__group__content" for="correo" value-text="formCorreo"></label>
-                            <input class="form__group__input" type="email" id="correo" name="correo" required>
+                            <label class="form__group__content" for="email" value-text="formCorreo"></label>
+                            <input class="form__group__input" type="email" id="correo" name="email"
+                                placeholder="Email" value="{{ old('email') }}" required>
                         </div>
                         <div class="form__group">
-                            <label class="form__group__content" for="asunto" value-text="formAsunto"></label>
-                            <input class="form__group__input" type="text" id="asunto" name="asunto" required>
+                            <label class="form__group__content" for="mailsubject" value-text="formAsunto"></label>
+                            <input class="form__group__input" type="text" id="asunto" name="mailsubject"
+                                placeholder="Subject" value="{{ old('subject') }}" required>
                         </div>
                         <div class="form__group">
-                            <label class="form__group__content" for="mensaje" value-text="formMensaje"></label>
-                            <textarea class="form__group__input" id="mensaje" name="mensaje" rows="4" required></textarea>
+                            <label class="form__group__content" for="messageSubject" value-text="formMensaje"></label>
+                            <input class="form__group__input" id="mensaje" name="messageSubject" rows="4"
+                                placeholder="Mail subject" value="{{ old('massageSubject') }}" required></input>
                         </div>
                         <div class="form__group">
                             <div class="form__group--consent">

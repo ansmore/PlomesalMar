@@ -7,7 +7,6 @@ use App\Http\Controllers\DigitizationController;
 use App\Http\Controllers\ConsultancyController;
 use App\Http\Controllers\BiitController;
 use App\Http\Controllers\LanguageController;
-use Illuminate\Support\Facades\Session;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,8 +23,7 @@ use Illuminate\Support\Facades\Session;
 
 Route::post('/sendLanguage', [LanguageController::class, 'sendLanguage']);
 
-// Route::middleware(['LanguageRedirect'])->group(function () {
-  Route::prefix('/{language?}')->group(function () {
+Route::prefix('/{language?}')->group(function () {
     Route::get('/', [HomeController::class, 'index'])->name('index');
     Route::get('/home', [HomeController::class, 'home'])->name('home');
     Route::get('/#{section?}', [HomeController::class, 'homeSection'])->name('home.section');
@@ -47,9 +45,11 @@ Route::post('/sendLanguage', [LanguageController::class, 'sendLanguage']);
     Route::get('/biitModules#{section?}', [BiitController::class, 'biitModulesSection'])->name('biitModules.section');
 
     Route::get('/biitContact', [BiitController::class, 'biitContact'])->name('biitContact');
+    Route::post('/biitContact', [BiitController::class, 'biitContactSubmit'])->name('biitContact.submit');
 
     Route::get('/privacyPolicy', [HomeController::class, 'privacyPolicy'])->name('privacyPolicy');
 
     Route::get('/termsOfUse', [HomeController::class, 'termsOfUse'])->name('termsOfUse');
-  });
-// });
+});
+
+Route::fallback([HomeController::class, 'index']);
