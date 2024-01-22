@@ -37,7 +37,7 @@ class HomeController extends Controller
 
     public function privacyPolicy($language = null)
     {
-   $language = Session::get('language', 'ki');
+$language = Session::get('language', 'ki');
 
 
         return view('privacyPolicy',['language' => $language]);
@@ -46,7 +46,7 @@ class HomeController extends Controller
     public function termsOfUse()
     {
 
-         $language = Session::get('language', 'ko');
+        $language = Session::get('language', 'ko');
 
         return view('termsOfUse',['language' => $language]);
     }

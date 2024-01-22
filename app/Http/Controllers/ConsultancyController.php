@@ -2,18 +2,23 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Session;
 
 class ConsultancyController extends Controller
 {
     public function consultoria()
     {
-        return view('consultoria');
+         $language = Session::get('language', 'ka');
+
+        return view('consultoria', ['language' => $language]);
     }
 
     public function consultoriaSection($section = null)
     {
-        return view('consultoria', ['section' => $section]);
+         $language = Session::get('language', 'ka');
+
+        return view('consultoria', ['section' => $section, 'language' => $language]);
     }
 }

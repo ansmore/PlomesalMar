@@ -9,8 +9,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 // Pending import from globals
 const defaultLanguage = "es";
-import { navbar } from "../navigation.js";
-import { footer } from "../footer.js";
+import { navbar } from "../components/navigation.js";
+import { footer } from "../components/footer.js";
 export let counterComponent = 0;
 export let counterPage = 0;
 export const loadDictionary = (language, page) => __awaiter(void 0, void 0, void 0, function* () {

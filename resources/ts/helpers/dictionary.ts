@@ -4,8 +4,8 @@ type Dictionary = {
 
 // Pending import from globals
 const defaultLanguage = "es";
-import { navbar } from "../navigation.js";
-import { footer } from "../footer.js";
+import { navbar } from "../components/navigation.js";
+import { footer } from "../components/footer.js";
 export let counterComponent = 0;
 export let counterPage = 0;
 

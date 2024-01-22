@@ -18,7 +18,6 @@ class LanguageController extends Controller
         Session::put('language', $putLanguage);
         $getLanguage = session('language');
 
-
         // Construye la nueva URL con el idioma actual
         $newUrl = route($putPage, ['language' => $getLanguage]);
 
