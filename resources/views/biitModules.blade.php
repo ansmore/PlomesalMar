@@ -68,7 +68,6 @@
                 </div>
             </div>
         </section>
-        <br><br><br><br><br><br><br><br>
     </div>
     @include('components.footerBiit')
     <script type="module" src="{{ asset('js/biitModules.js') }}" defer></script>

@@ -11,18 +11,14 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $language = Session::get('language',  'tu');
+        $language = Session::get('language',  config('app.fallback_locale', 'es'));
 
         return Redirect::to("/$language/home");
     }
 
     public function home($language = null)
     {
-        if ($language) {
-            Session::put('language', $language);
-        }
-
-        $language = Session::get('language', 'ko');
+        $language = Session::get('language',  config('app.fallback_locale', 'es'));
 
         return view('home', ['language' => $language]);
     }
@@ -30,15 +26,14 @@ class HomeController extends Controller
     public function homeSection($language = null, $section = null)
     {
 
-        $language = Session::get('language', 'ka');
+        $language = Session::get('language',  config('app.fallback_locale', 'es'));
 
         return view('home', ['section' => $section,'language' => $language ]);
     }
 
     public function privacyPolicy($language = null)
     {
-   $language = Session::get('language', 'ki');
-
+        $language = Session::get('language',  config('app.fallback_locale', 'es'));
 
         return view('privacyPolicy',['language' => $language]);
     }
@@ -46,7 +41,7 @@ class HomeController extends Controller
     public function termsOfUse()
     {
 
-         $language = Session::get('language', 'ko');
+        $language = Session::get('language',  config('app.fallback_locale', 'es'));
 
         return view('termsOfUse',['language' => $language]);
     }

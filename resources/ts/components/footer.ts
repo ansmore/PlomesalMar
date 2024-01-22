@@ -1,4 +1,4 @@
-import { loadTextComponent } from "./helpers/dictionary.js";
+import { loadTextComponent } from "../helpers/dictionary.js";
 export const footer = "footer";
 
 const main = async () => {

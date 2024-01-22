@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ session('language', 'en') }}">
 
 <head>
     <meta charset="UTF-8">
@@ -11,13 +11,6 @@
 </head>
 
 <body>
-    {{-- <p>
-        {{ Session::get('language', 'en') }}
-    {{-- </p> --}}
-    {{-- <?php
-    
-    // var_dump('main.blade ', 'language');
-    ?> --}}
     <div class="content">
         @yield('content')
     </div>

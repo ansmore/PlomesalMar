@@ -11,12 +11,12 @@
             <div class="contact__row">
                 <div class="circle">
                     <span class="circle__image">
-                        <a href="{{ route('home') }}">
+                        <a href="{{ route('home', ['language' => $language]) }}">
                             <img src="{{ asset('img/logos/pymesoft_logo_image.png') }}" alt="">
                         </a>
                     </span>
                     <span class="circle__image">
-                        <a href="{{ route('biit') }}">
+                        <a href="{{ route('biit', ['language' => $language]) }}">
                             <img src="{{ asset('img/logos/logo_biit.png') }}" alt="">
                         </a>
                     </span>
@@ -27,7 +27,7 @@
                     <h2 class="box__title" value-text="formTitulo"></h2>
                 </div>
                 <div class="form">
-                    <form id="contactForm" action="{{ route('biitContact') }}" method="post">
+                    <form id="contactForm" action="{{ route('biitContact', ['language' => $language]) }}" method="post">
                         @csrf
                         <div class="form__group">
                             <label class="form__group__content" for="nombre" value-text="formNombre"></label>

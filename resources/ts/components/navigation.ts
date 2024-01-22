@@ -4,7 +4,7 @@ import {
   loadTextComponent,
   setLanguage,
   getCurrentFileName,
-} from "./helpers/dictionary.js";
+} from "../helpers/dictionary.js";
 export const navbar = "navigation";
 let selectedOption = null;
 

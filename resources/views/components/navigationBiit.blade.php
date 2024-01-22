@@ -7,7 +7,7 @@
     <input type="checkbox" class="toggle__checkbox" id="toggle-menu-checkbox">
     <div class="navbar">
         <div class="navbar__logo">
-            <a href="{{ route('biit') }}">
+            <a href="{{ route('biit', ['language' => $language]) }}">
                 <img class="img-responsive" src="{{ asset('./img/logos/logo_biit.png') }}" alt="Pymesoft"
                     id="pymeso" />
             </a>

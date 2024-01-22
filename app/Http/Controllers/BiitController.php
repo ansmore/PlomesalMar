@@ -10,7 +10,7 @@ class BiitController extends Controller
 {
     public function biit()
     {
-       $language = Session::get('language', 'ko');
+        $language = Session::get('language',  config('app.fallback_locale', 'es'));
 
         return view('biit', ['language' => $language]);
     }
@@ -18,37 +18,43 @@ class BiitController extends Controller
     public function biitSection($section = null)
     {
 
-       $language = Session::get('language', 'ko');
+        $language = Session::get('language',  config('app.fallback_locale', 'es'));
+
         return view('biit', ['section' => $section, 'language' => $language]);
     }
 
-     public function whyBiit()
+    public function whyBiit()
     {
-       $language = Session::get('language', 'ko');
+        $language = Session::get('language',  config('app.fallback_locale', 'es'));
+
         return view('whyBiit', ['language' => $language]);
     }
 
     public function whyBiitSection($section = null)
     {
-       $language = Session::get('language', 'ko');
+        $language = Session::get('language',  config('app.fallback_locale', 'es'));
+
         return view('whyBiit', ['section' => $section, 'language' => $language]);
     }
 
     public function biitModules()
     {
-       $language = Session::get('language', 'ko');
+        $language = Session::get('language',  config('app.fallback_locale', 'es'));
+
         return view('biitModules', ['language' => $language]);
     }
 
     public function biitModulesSection($section = null)
     {
-       $language = Session::get('language', 'ko');
+        $language = Session::get('language',  config('app.fallback_locale', 'es'));
+
         return view('biitModules', ['section' => $section, 'language' => $language]);
     }
 
     public function biitContact()
     {
-       $language = Session::get('language', 'ko');
+        $language = Session::get('language',  config('app.fallback_locale', 'es'));
+
         return view('biitContact', ['language' => $language]);
     }
 }

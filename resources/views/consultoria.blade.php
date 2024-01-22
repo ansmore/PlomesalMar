@@ -13,7 +13,7 @@
                 <div class="intro-text">
                     <div value-text="consultoriaHeader" class="intro-heading"></div>
                     <a value-text="consultoriaInformacion"
-                        href="{{ route('consultoria.section', ['section' => 'services2']) }}"
+                        href="{{ route('consultoria.section', ['section' => 'services2', 'language' => $language]) }}"
                         class="page-scroll btn btn-xl"></a>
                     {{-- #services2 --}}
                 </div>
