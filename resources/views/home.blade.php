@@ -28,7 +28,7 @@
                         </span>
                     </span>
                     <h4 class="circle__content">
-                        <a href="{{ route('biit') }}" value-text="services1"></a>
+                        <a href="{{ route('biit', ['language' => $language]) }}" value-text="services1"></a>
                     </h4>
                 </div>
                 <div class="circle">
@@ -40,7 +40,7 @@
                         </span>
                     </span>
                     <h4 class="circle__content">
-                        <a href="{{ route('consultoria') }}" value-text="services3"></a>
+                        <a href="{{ route('consultoria', ['language' => $language]) }}" value-text="services3"></a>
                     </h4>
                 </div>
             </div>
@@ -48,7 +48,7 @@
         <!-- Clients Aside -->
         <section class="aside">
             <div class="aside__box">
-                <a href="{{ route('biit') }}">
+                <a href="{{ route('biit', ['language' => $language]) }}">
                     <img src="{{ asset('img/logos/banner.jpg') }}" alt="banner">
                 </a>
             </div>
@@ -60,7 +60,8 @@
                     <h2 class="box__title" value-text="aboutHeading"></h2>
 
                     <h4 class="box__content" value-text="aboutText"></h4>
-                    <a href="{{ route('biit') }}" class="box__button" value-text="aboutButton"></a>
+                    <a href="{{ route('biit', ['language' => $language]) }}" class="box__button"
+                        value-text="aboutButton"></a>
                 </div>
             </div>
         </section>
@@ -95,7 +96,8 @@
                 </div>
                 <div class="box">
                     <h3 class="box__content" value-text="contactAction"></h3>
-                    <a href="{{ route('biitContact') }}" class="box__button" value-text="contactActionMessage"></a>
+                    <a href="{{ route('biitContact', ['language' => $language]) }}" class="box__button"
+                        value-text="contactActionMessage"></a>
                 </div>
             </div>
     </div>

@@ -16,7 +16,8 @@
 
                     <h2 value-text="biitHeader" class="box__title"></h2>
                     <p value-text="biitSubheader" class="box__content"></p>
-                    <a href="{{ route('whyBiit') }}" class="box__button" value-text="aboutButton"></a>
+                    <a href="{{ route('whyBiit', ['language' => $language]) }}" class="box__button"
+                        value-text="aboutButton"></a>
                 </div>
             </div>
         </section>

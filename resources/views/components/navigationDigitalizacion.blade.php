@@ -7,7 +7,7 @@
     <input type="checkbox" class="toggle__checkbox" id="toggle-menu-checkbox">
     <div class="navbar">
         <div class="navbar__logo">
-            <a href="{{ route('home') }}">
+            <a href="{{ route('home', ['language' => $language]) }}">
                 <img class="img-responsive" src="{{ asset('img/logos/pymesoft_logo_text.png') }}" alt="Pymesoft"
                     id="pymeso" />
             </a>
@@ -15,31 +15,36 @@
         <div class="navbar__menu">
             <ul class="list">
                 <li class="list__item">
-                    <a class="list__item__link" href="{{ route('home') }}" value-text="navHomePage"></a>
+                    <a class="list__item__link" href="{{ route('home', ['language' => $language]) }}"
+                        value-text="navHomePage"></a>
                 </li>
                 <li class="list__item">
-                    <a class="list__item__link" href="{{ route('digitalizacion.section', ['section' => 'que-es']) }}"
+                    <a class="list__item__link"
+                        href="{{ route('digitalizacion.section', ['section' => 'que-es', 'language' => $language]) }}"
                         value-text="navService"></a>
                     {{-- digitalizacion#services --}}
                 </li>
                 <li class="list__item">
-                    <a class="list__item__link" href="{{ route('digitalizacion.section', ['section' => 'agente']) }}"
+                    <a class="list__item__link"
+                        href="{{ route('digitalizacion.section', ['section' => 'agente', 'language' => $language]) }}"
                         value-text="navAgente"></a>
                     {{-- digitalizacion#agente --}}
                 </li>
                 <li class="list__item">
                     <a class="list__item__link"
-                        href="{{ route('digitalizacion.section', ['section' => 'requisitos']) }}"
+                        href="{{ route('digitalizacion.section', ['section' => 'requisitos', 'language' => $language]) }}"
                         value-text="navRequisitos"></a>
                     {{-- digitalizacion#requisitos --}}
                 </li>
                 <li class="list__item">
-                    <a class="list__item__link" href="{{ route('digitalizacion.section', ['section' => 'bono']) }}"
+                    <a class="list__item__link"
+                        href="{{ route('digitalizacion.section', ['section' => 'bono', 'language' => $language]) }}"
                         value-text="navBono"></a>
                     {{-- digitalizacion#bono --}}
                 </li>
                 <li class="list__item">
-                    <a class="list__item__link" href="{{ route('digitalizacion.section', ['section' => 'faq']) }}"
+                    <a class="list__item__link"
+                        href="{{ route('digitalizacion.section', ['section' => 'faq', 'language' => $language]) }}"
                         value-text="navFaq"></a>
                     {{-- digitalizacion#faq --}}
                 </li>
