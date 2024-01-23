@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Mail\Contact;
+use App\Mail\ContactConfirmation;
+use App\Mail\ContactMessage;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Mail;
 
@@ -82,7 +83,9 @@ class BiitController extends Controller
         $messages->message = $request->message;
 
         var_dump($messages);
-        Mail::to('albert.vabe@gmail.com')->send(new Contact($messages));
+        Mail::to('albert.vabe@gmail.com')->send(new ContactMessage($messages));
+
+         Mail::to($request->input('email'))->send(new ContactConfirmation($messages));
 
         // Mail::to($request->input('email'))->send(new AutoReplyMessage());
 

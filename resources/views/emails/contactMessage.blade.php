@@ -25,7 +25,7 @@
         <p>{{ $messages->message }}</p>
     </main>
     <footer class="mail-footer bg-light">
-        <p>Aplicació creada per: Albert a CIFO </p>
+        <p>Pymesoft </p>
     </footer>
 </body>
 

@@ -9,7 +9,7 @@ use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
-class Contact extends Mailable
+class ContactConfirmation extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -33,10 +33,9 @@ class Contact extends Mailable
     public function build(){
 
         $email = $this
-        ->from($this->messages->email)
-        ->subject('Message send: '.$this->messages->mailsubject)
-        ->with('Pymesoft', 'Pymesoft Vallès')
-        ->view('emails.contact');
+        ->from(config('mail.from.address'))
+        ->subject('Respuesta Automática - Confirmación de Contacto')
+            ->view('emails.contactConfirmation');
 
 
         return $email;
@@ -49,7 +48,7 @@ class Contact extends Mailable
     public function envelope()
     {
         return new Envelope(
-            subject: 'Contact',
+            subject: 'ContactConfirmation',
         );
     }
 
@@ -61,7 +60,7 @@ class Contact extends Mailable
     public function content()
     {
         return new Content(
-            view: 'emails.contact',
+            view: 'emails.contactConfirmation',
         );
     }
 
