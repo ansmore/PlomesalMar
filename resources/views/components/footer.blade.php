@@ -9,7 +9,7 @@
             <div class="col-md-4">
                 <span> &copy;</span>
                 <span class="copyright" value-text="footerCopyright"></span>
-                <span><?php echo date('Y'); ?></span>
+                <span>{{ date('Y') }}</span>
             </div>
         </div>
     </section>

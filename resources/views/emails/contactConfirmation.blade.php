@@ -13,26 +13,51 @@
 <body class="mail p-3">
     <header class="mail row bg-light">
         <figure class="img-fluid col-2">
-            <img src="{{ asset('images/logos/logo_biit.png') }}" alt="logo">
+            <img src="public/img/logos/logo_biit.png" alt="1">
         </figure>
+        <img src="public/img/banner.jpg" alt="2">
+        <img src="public/img/logos/pymesoft_logo_text_full.png" alt="3">
+        <img src="{{ asset('public/img/logos/logo_biit.png') }}" alt="4">
+        <img src="{{ asset('/public/img/logos/logo_biit.png') }}" alt="5">
+        <img src="{{ asset('public/img/banner.jpg') }}" alt="6">
+        <img src="{{ asset('/public/img/banner.jpg') }}" alt="6b">
+        <img src="{{ asset('./img/logos/logo_biit.png') }}" alt="7">
+        <img src="{{ asset('./img/banner.jpg') }}" alt="8">
+        <img src="/public/img/logos/logo_biit.png" alt="9">
+        <img src="public/img/logos/logo_biit.png" alt="10">
+        <img src="public/img/logos/logo_biit.png" alt="11">
+        <img src="public/img/logos/logo_biit.png" alt="12">
+        {{ asset('img/logos/logo_biit.png') }}
+
         <h1 class="col-10">{{ config('app.name') }}</h1>
     </header>
     <main>
-        <h2>Gracias por ponerte en contacto con nosotros</h2>
-        <p class="cursiva">Tu mensaje ha sido recibido correctamente.</p>
-        <p>Detalles del mensaje:</p>
+        <h2>{{ $dictionary['thanksContact'] }}</h2>
+        <p class="cursiva">{{ $dictionary['messageRecibed'] }}</p>
+        <p>{{ $dictionary['messageDetails'] }}</p>
         <ul>
-            <li>Asunto: {{ $messages->mailsubject }}</li>
-            <li>Nombre: {{ $messages->name }}</li>
-            <li>Correo electrónico: <a href="mailto:{{ $messages->email }}">&lt;{{ $messages->email }}&gt;</a></li>
-            <li>Mensaje: {{ $messages->message }}</li>
+            <li>
+                <span>{{ $dictionary['subject'] }}</span>
+                <span>{{ $messages->mailsubject }}</span>
+            </li>
+            <li>
+                <span>{{ $dictionary['name'] }}</span>
+                <span>{{ $messages->name }}</span>
+            </li>
+            <li>
+                <span>{{ $dictionary['email'] }}</span>
+                <a href="mailto:{{ $messages->email }}">&lt;{{ $messages->email }}&gt;</a>
+            </li>
+            <li>
+                <span>{{ $dictionary['message'] }}</span>
+                <span>{{ $messages->message }}</span>
+            </li>
         </ul>
-        <p>Agradecemos tu interés en {{ config('app.name') }}. Hemos recibido tu solicitud y nos pondremos en contacto
-            contigo en un plazo de 72 horas laborables.</p>
-        <p>Mientras tanto, si tienes alguna pregunta adicional, no dudes en contactarnos.</p>
+        <p>{{ $dictionary['interest'] }}{{ config('app.name') }}{{ $dictionary['answer'] }}</p>
+        <p>{{ $dictionary['additional'] }}</p>
     </main>
     <footer class="mail-footer bg-light">
-        <p>pymesoft web </p>
+        <p>{{ $dictionary['corporativeName'] }}{{ date('Y') }} </p>
     </footer>
 </body>
 

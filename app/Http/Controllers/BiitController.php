@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-use App\Mail\ContactConfirmation;
 use App\Mail\ContactMessage;
-use Illuminate\Support\Facades\Session;
+use Illuminate\Http\Request;
+use App\Mail\ContactConfirmation;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Session;
 
 class BiitController extends Controller
 {
@@ -82,15 +83,23 @@ class BiitController extends Controller
         $messages->mailsubject = $request->mailsubject;
         $messages->message = $request->message;
 
-        var_dump($messages);
+        // $dictionaryPath = base_path("./../dictionary/{$language}/{$language}_emails.json");
+
+        $dictionaryPath = base_path("public/dictionary/{$language}/{$language}_emails.json");
+
+        if(File::exists($dictionaryPath)){
+            $dictionary = json_decode(File::get($dictionaryPath), true);
+        }else {
+            // Manejar el caso donde el archivo del diccionario no existe
+            $dictionary = [];
+        }
+
+
+        // dd("contenido diccionario", $dictionary);
+
         Mail::to('albert.vabe@gmail.com')->send(new ContactMessage($messages));
 
-         Mail::to($request->input('email'))->send(new ContactConfirmation($messages));
-
-        // Mail::to($request->input('email'))->send(new AutoReplyMessage());
-
-
-        // return back()->with('success', 'Mensaje enviado con exito!');
+        Mail::to($request->input('email'))->send(new ContactConfirmation($messages, $dictionary));
 
         return view('biitContact', ['language' => $language])->with('success', 'Mensaje enviado con exito!');
     }

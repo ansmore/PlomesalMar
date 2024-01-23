@@ -14,15 +14,17 @@ class ContactConfirmation extends Mailable
     use Queueable, SerializesModels;
 
     public $messages;
+    public $dictionary;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($message)
+    public function __construct($message, $dictionary)
     {
-       $this->messages = $message;
+        $this->messages = $message;
+        $this->dictionary = $dictionary;
 
     }
 
@@ -34,22 +36,11 @@ class ContactConfirmation extends Mailable
 
         $email = $this
         ->from(config('mail.from.address'))
-        ->subject('Respuesta Automática - Confirmación de Contacto')
+        ->subject($this->dictionary['automatedResponse'])
             ->view('emails.contactConfirmation');
 
 
         return $email;
-    }
-    /**
-     * Get the message envelope.
-     *
-     * @return \Illuminate\Mail\Mailables\Envelope
-     */
-    public function envelope()
-    {
-        return new Envelope(
-            subject: 'ContactConfirmation',
-        );
     }
 
     /**

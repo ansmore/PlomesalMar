@@ -13,7 +13,7 @@
 <body class="mail p-3">
     <header class="mail row bg-light">
         <figure class="img-fluid col-2">
-            <img src="{{ asset('images/logos/logo_biit.png') }}" alt="logo">
+            <img src="{{ asset('img/logos/logo_biit.png') }}" alt="logo">
         </figure>
         <h1 class="col-10">{{ config('app.name') }}</h1>
     </header>
