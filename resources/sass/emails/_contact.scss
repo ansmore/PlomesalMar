@@ -1,17 +1,16 @@
-/* Estilos para emular clases de Bootstrap */
-
-/* Contenedor */
 .mail {
-  width: 100%;
+  @include flexBox(column, space-around);
+  @include paddingMargin($padding, auto);
+  @include style($primary_main, transparent);
   padding-right: 15px;
   padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
+  // margin-right: auto;
+  // margin-left: auto;
 }
 
 /* Espaciado interno */
 .p-3 {
-  padding: 1rem !important;
+  padding: 1rem;
 }
 
 /* Encabezado */
@@ -23,13 +22,13 @@
 }
 
 .bg-light {
-  background-color: #f8f9fa !important;
+  background-color: #f8f9fa;
 }
 
 /* Imagen fluida */
 .img-fluid {
-  max-width: 100%;
-  height: auto;
+  max-width: 30vw;
+  height: 30vh;
 }
 
 /* Títulos */
@@ -55,7 +54,7 @@ p {
   padding: 1rem;
   margin-top: 2rem;
   color: #6c757d;
-  background-color: #f8f9fa !important;
+  background-color: $primary_main;
   text-align: center;
   font-size: 80%;
 }

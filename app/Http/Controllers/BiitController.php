@@ -65,6 +65,17 @@ class BiitController extends Controller
 
     public function biitContactSubmit(Request $request)
     {
+        //     $viewData = [
+        //     'messages' => $messages,
+        //     'dictionary' => $dictionary,
+        // ];
+
+        // $emailPreview = view('emails.contactConfirmation', $viewData)->render();
+
+        // Aquí puedes imprimir o hacer lo que necesites con $emailPreview
+        // por ejemplo: dd($emailPreview);
+
+
         $language = Session::get('language',  config('app.fallback_locale', 'es'));
 
         // Validar el formulario si es necesario

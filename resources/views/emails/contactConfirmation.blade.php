@@ -1,37 +1,30 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="{{ session('language', 'en') }}">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    <title>Respuesta Automática - Confirmación de Contacto</title>
+    {{-- <link rel="stylesheet" href="../../../public/css/app.css"> --}}
+    <script src="https://kit.fontawesome.com/811a7316ca.js" crossorigin="anonymous"></script>
+    <title>{{ $dictionary['automatedResponse'] }}</title>
 </head>
 
-<body class="mail p-3">
+<body class="mail">
     <header class="mail row bg-light">
         <figure class="img-fluid col-2">
-            <img src="public/img/logos/logo_biit.png" alt="1">
+            <img src="https://media.istockphoto.com/id/1156307040/es/vector/escudo-escolar-dise%C3%B1o-dise%C3%B1o-de-vectores-educativos-ilustraci%C3%B3n-del-emblema-de-la-universidad.jpg?s=612x612&w=0&k=20&c=GhuIqLPgZ71p1wCmZRuLROvTRYqQIYgM9NeqGYnVZAs="
+                alt="biit">
         </figure>
-        <img src="public/img/banner.jpg" alt="2">
-        <img src="public/img/logos/pymesoft_logo_text_full.png" alt="3">
-        <img src="{{ asset('public/img/logos/logo_biit.png') }}" alt="4">
-        <img src="{{ asset('/public/img/logos/logo_biit.png') }}" alt="5">
-        <img src="{{ asset('public/img/banner.jpg') }}" alt="6">
-        <img src="{{ asset('/public/img/banner.jpg') }}" alt="6b">
-        <img src="{{ asset('./img/logos/logo_biit.png') }}" alt="7">
-        <img src="{{ asset('./img/banner.jpg') }}" alt="8">
-        <img src="/public/img/logos/logo_biit.png" alt="9">
-        <img src="public/img/logos/logo_biit.png" alt="10">
-        <img src="public/img/logos/logo_biit.png" alt="11">
-        <img src="public/img/logos/logo_biit.png" alt="12">
-        {{ asset('img/logos/logo_biit.png') }}
-
+        <figure class="img-fluid col-2">
+            <img src="https://i.pinimg.com/736x/9d/1f/43/9d1f434700aea18dfd4b993cc8db7f40.jpg" alt="pymesoft">
+        </figure>
         <h1 class="col-10">{{ config('app.name') }}</h1>
     </header>
-    <main>
+    <main class="mail">
         <h2>{{ $dictionary['thanksContact'] }}</h2>
         <p class="cursiva">{{ $dictionary['messageRecibed'] }}</p>
         <p>{{ $dictionary['messageDetails'] }}</p>

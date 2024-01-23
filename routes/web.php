@@ -1,12 +1,14 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\DigitizationController;
-use App\Http\Controllers\ConsultancyController;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Session;
 use App\Http\Controllers\BiitController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LanguageController;
+use App\Http\Controllers\ConsultancyController;
+use App\Http\Controllers\DigitizationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +22,27 @@ use App\Http\Controllers\LanguageController;
 */
 // explorar esta via...
 // $language = Session::get('language', 'rus'); // 'es' es el valor predeterminado
+
+Route::get('/confirmation', function () {
+      $language = Session::get('language',  config('app.fallback_locale', 'es'));
+
+    $dictionaryPath = base_path("public/dictionary/{$language}/{$language}_emails.json");
+
+    if (File::exists($dictionaryPath)) {
+        $dictionary = json_decode(File::get($dictionaryPath), true);
+    } else {
+        $dictionary = [];
+    }
+
+    $messages = new \stdClass();
+    // Puedes establecer valores predeterminados para las variables necesarias
+    $messages->name = 'Nombre de ejemplo';
+    $messages->email = 'correo@example.com';
+    $messages->mailsubject = 'Asunto de ejemplo';
+    $messages->message = 'Mensaje de ejemplo';
+
+    return view('emails.contactConfirmation', compact('messages', 'dictionary'));
+});
 
 Route::post('/sendLanguage', [LanguageController::class, 'sendLanguage']);
 Route::post('/biitContact', [BiitController::class, 'biitContactSubmit'])->name('biitContact.submit');
@@ -52,5 +75,7 @@ Route::prefix('/{language?}')->group(function () {
 
     Route::get('/termsOfUse', [HomeController::class, 'termsOfUse'])->name('termsOfUse');
 });
+
+
 
 Route::fallback([HomeController::class, 'index']);
