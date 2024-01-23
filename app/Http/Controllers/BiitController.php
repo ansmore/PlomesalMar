@@ -63,11 +63,7 @@ class BiitController extends Controller
 
     public function biitContactSubmit(Request $request)
     {
-
-
-
-
-        // $language = Session::get('language',  config('app.fallback_locale', 'es'));
+        $language = Session::get('language',  config('app.fallback_locale', 'es'));
 
         // Validar el formulario si es necesario
        $request->validate([
@@ -91,8 +87,8 @@ class BiitController extends Controller
         // Mail::to($request->input('email'))->send(new AutoReplyMessage());
 
 
-        return back()->with('success', 'Mensaje enviado con exito!');
+        // return back()->with('success', 'Mensaje enviado con exito!');
 
-        // return view('biitContact', ['language' => $language])->with('success', 'Mensaje enviado con exito!');
+        return view('biitContact', ['language' => $language])->with('success', 'Mensaje enviado con exito!');
     }
 }

@@ -14,6 +14,10 @@ class VerifyCsrfToken extends Middleware
     protected $except = [
         '/sendLanguage', // Añade tu ruta aquí
         '/biitContact',
-        '{ca,en,es}/biitContact',
+        '/es/biitContact',
+        '/en/biitContact',
+        '/ca/biitContact',
+        '/{ca,en,es}/biitContact',
+
     ];
 }

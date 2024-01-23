@@ -46,6 +46,7 @@ Route::prefix('/{language?}')->group(function () {
     Route::get('/biitModules#{section?}', [BiitController::class, 'biitModulesSection'])->name('biitModules.section');
 
     Route::get('/biitContact', [BiitController::class, 'biitContactForm'])->name('biitContact');
+    // Route::post('/biitContact', [BiitController::class, 'biitContactSubmit'])->name('biitContact.submit');
 
     Route::get('/privacyPolicy', [HomeController::class, 'privacyPolicy'])->name('privacyPolicy');
 
