@@ -163,9 +163,9 @@
         <!-- Agrega más filas según sea necesario -->
         <tr class="footer color">
 
-            <td colspan="9" class="center middle" style="width: 100%; text-align: center; ">
+            <th colspan="9" class="center middle" style="width: 100%; text-align: center; ">
                 {{ $dictionary['corporativeName'] }}{{ date('Y') }}
-            </td>
+            </th>
 
         </tr>
     </table>
