@@ -108,7 +108,7 @@ class BiitController extends Controller
 
         // dd("contenido diccionario", $dictionary);
 
-        Mail::to('albert.vabe@gmail.com')->send(new ContactMessage($messages));
+        Mail::to(env('MAIL_FROM_ADDRESS', 'avalls89@gmail.com'))->send(new ContactMessage($messages));
 
         Mail::to($request->input('email'))->send(new ContactConfirmation($messages, $dictionary));
 
