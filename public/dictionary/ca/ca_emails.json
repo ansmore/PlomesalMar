@@ -1,14 +1,14 @@
 {
-  "automatedResponse": "Resposta Automática - Confirmació de Contactes",
-  "thanksContact": "Gràcies per possar-te en contacte amb nosaltres",
-  "messageRecibed": "Tu mensaje ha sido recibido correctamente.",
-  "messageDetails": "Detalles del mensaje:",
-  "subject": "Asunto:",
-  "name": "Nombre:",
-  "email": "Correo electrónico:",
-  "message": "Mensaje:",
-  "interest": "Agradecemos tu interés en ",
-  "answer": ". Hemos recibido tu solicitud y nos pondremos en contacto contigo en un plazo de 72 horas laborables.",
-  "additional": "Mientras tanto, si tienes alguna pregunta adicional, no dudes en contactarnos.",
-  "corporativeName": " PYMESOFT VALLÉS, S.L.  -  "
+  "automatedResponse": "Resposta Automática - Confirmació de Contacte",
+  "thanksContact": "Gràcies per posar-te en contacte amb nosaltres",
+  "messageRecibed": "El teu missatge s'ha rebut correctament",
+  "messageDetails": "Detalls del missatge:",
+  "subject": "Assumpte: ",
+  "name": "Nom: ",
+  "email": "Correu electrònic: ",
+  "message": "Misstge: ",
+  "interest": "Agraïm el teu interès en",
+  "answer": ". Hem rebut la teva sol·licitud i ens posem en contacte amb tu en un termini de 72 hores laborables.",
+  "additional": "Mentrestant, si tens alguna pregunta addicional, no dubtis a contactar-nos.",
+  "corporativeName": " PYMESOFT VALLÉS, S.L.   -   "
 }
