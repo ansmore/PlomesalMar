@@ -1,32 +1,152 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="{{ session('language', 'en') }}">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        .mail {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            justify-items: center;
+            justify-self: center;
+            align-content: center;
+            align-items: center;
+            align-self: center;
+            padding: 0;
+            margin: 0;
+            font-family: 'Bruno Ace', sans-serif;
+            background-color: #fafafa;
+        }
 
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    <title>Document</title>
+        .color {
+            background-color: #17265c;
+            color: #ffffff;
+        }
+
+        .color-invert {
+            color: #17265c;
+            background-color: #fafafa;
+        }
+
+        .color-secondary {
+            background-color: #fafafa;
+            color: #0097b2;
+        }
+
+        .height {
+            min-height: 80px;
+            height: 80px;
+            max-height: 80px;
+        }
+
+        .footer {
+            margin-top: 50px;
+        }
+
+        .header {
+            margin-bottom: 50px;
+        }
+
+        .center {
+            display: flex;
+            justify-content: space-around;
+            justify-items: center;
+            justify-self: center;
+            align-content: center;
+            align-items: center;
+            align-self: center;
+            margin: 0 auto;
+        }
+
+        .middle {
+            vertical-align: middle;
+        }
+    </style>
+    <title>{{ $dictionary['automatedResponse'] }}</title>
 </head>
 
-<body class="mail p-3">
-    <header class="mail row bg-light">
-        <figure class="img-fluid col-2">
-            <img src="{{ asset('img/logos/logo_biit.png') }}" alt="logo">
-        </figure>
-        <h1 class="col-10">{{ config('app.name') }}</h1>
-    </header>
-    <main>
-        <h2>Missatge rebut: {{ $messages->mailsubject }}</h2>
-        <p class="cursiva">De: {{ $messages->name }}
-            <a href="mailto:{{ $messages->email }}">&lt;{{ $messages->email }}&gt;</a>
-        </p>
-        <p>{{ $messages->message }}</p>
-    </main>
-    <footer class="mail-footer bg-light">
-        <p>Pymesoft </p>
-    </footer>
+<body class="mail">
+    <table cellspacing="0" cellpadding="0" class="mail">
+        <tr class="center height header">
+            <th colspan="9" class="color" style="width: 100%; text-align: center; ">
+                <h1 class="middle">
+                    {{ config('app.name') }}
+                </h1>
+            </th>
+        </tr>
+        <tr class="center middle mail">
+            <td colspan="1" style="width: 9%;"></td>
+            <td colspan="3" class="center" style="width: 40%; ">
+                <img class="center" src="https://i.pinimg.com/736x/9d/1f/43/9d1f434700aea18dfd4b993cc8db7f40.jpg"
+                    alt="biit" style="max-width: 50%;">
+            </td>
+            <td colspan="1" style="width:2%;"></td>
+            <td colspan="3" class="center" style="width: 40%;  ">
+                <img class="center" src="https://i.pinimg.com/736x/9d/1f/43/9d1f434700aea18dfd4b993cc8db7f40.jpg"
+                    alt="pymesoft" style="max-width: 50%; ">
+            </td>
+            <td colspan="1" style="width: 9%;"></td>
+        </tr>
+        <tr class="mail footer" style="color: #17265c">
+            <td colspan="1" style="width: 9%;"></td>
+            <td colspan="3" style="width: 40%; text-align: right;">
+                {{ $dictionary['subject'] }}
+            </td>
+            <td colspan="1" style="width: 2%;"></td>
+            <td colspan="3" class="color-secondary" style="width: 40%; text-align: left;">
+                {{ $dictionary['recived'] }}
+                {{ $messages->mailsubject }}</td>
+            <td colspan="1" style="width: 9%;"></td>
+        </tr>
+        <tr class="mail" style="color: #17265c">
+            <td colspan="1" style="width: 9%;"></td>
+            <td colspan="3" style="width: 40%; text-align: right;">
+                {{ $dictionary['name'] }}
+            </td>
+            <td colspan="1" style="width: 2%;"></td>
+            <td colspan="3" class="color-secondary" style="width: 40%; text-align: left;">
+                {{ $messages->name }}
+            </td>
+            <td colspan="1" style="width: 9%;"></td>
+        </tr>
+        <tr class="mail" style="color: #17265c">
+            <td colspan="1" style="width: 9%;"></td>
+            <td colspan="3" style="width: 40%; text-align: right;">
+                {{ $dictionary['message'] }}
+            </td>
+            <td colspan="1" style="width: 2%;"></td>
+            <td colspan="3" class="color-secondary" style="width: 40%; text-align: left;">
+                {{ $messages->message }}
+            </td>
+            <td colspan="1" style="width: 9%;"></td>
+        </tr>
+        <tr class="mail" style="color: #17265c">
+            <td colspan="1" style="width: 9%;"></td>
+            <td colspan="3" style="width: 40%; text-align: right;">
+                {{ $dictionary['email'] }}
+            </td>
+            <td colspan="1" style="width: 2%;"></td>
+            <td colspan="3" class="color-secondary" style="width: 40%; text-align: left;">
+                <a href="mailto:{{ $messages->email }}">&lt;{{ $messages->email }}&gt;</a>
+            </td>
+            <td colspan="1" style="width: 9%;"></td>
+        </tr>
+        <tr class="mail header" style="color: #17265c">
+            <td colspan="1" style="width: 9%;"></td>
+            <td colspan="3" style="width: 40%; text-align: right;">
+                {{ $dictionary['language'] }}
+            </td>
+            <td colspan="1" style="width: 2%;"></td>
+            <td colspan="3" class="color-secondary" style="width: 40%; text-align: left;">
+                {{ session('language', 'en') }}
+            </td>
+            <td colspan="1" style="width: 9%;"></td>
+        </tr>
+    </table>
+
 </body>
 
 </html>

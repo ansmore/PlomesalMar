@@ -8,14 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    {{-- <link rel="stylesheet" href="../../../public/css/app.css"> --}}
-
-    <script src="https://kit.fontawesome.com/811a7316ca.js" crossorigin="anonymous"></script>
     <style>
-        @import url("https://fonts.googleapis.com/css2?family=Bruno+Ace&display=swap");
-
         .mail {
             display: flex;
             flex-direction: column;
@@ -68,25 +61,19 @@
             align-content: center;
             align-items: center;
             align-self: center;
-        }
-
-        .center {
-            display: flex;
             margin: 0 auto;
-            justify-content: space-around;
-
         }
 
         .middle {
             vertical-align: middle;
         }
     </style>
-    <title>{{ $dictionary['automatedResponse'] }}</title>
+    <title>{{ $dictionary['automatedResponse'] }}-{{ $dictionary['automatedResponse2'] }}</title>
 </head>
 
 <body class="mail">
     <table cellspacing="0" cellpadding="0" class="mail">
-        <tr class="center heigth header">
+        <tr class="center height header">
             <th colspan="9" class="color" style="width: 100%; text-align: center; ">
                 <h1 class="middle">
                     {{ config('app.name') }}

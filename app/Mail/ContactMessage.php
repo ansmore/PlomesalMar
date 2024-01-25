@@ -14,16 +14,17 @@ class ContactMessage extends Mailable
     use Queueable, SerializesModels;
 
     public $messages;
+    public $dictionary;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($message)
+    public function __construct($message, $dictionary)
     {
-       $this->messages = $message;
-
+        $this->messages = $message;
+        $this->dictionary = $dictionary;
     }
 
 
@@ -34,23 +35,11 @@ class ContactMessage extends Mailable
 
         $email = $this
         ->from($this->messages->email)
-        ->subject('Message send: '.$this->messages->mailsubject)
-        ->with('Pymesoft', 'Pymesoft Vallès')
+        ->subject($this->dictionary['recived'].$this->messages->mailsubject)
         ->view('emails.contactMessage');
 
 
         return $email;
-    }
-    /**
-     * Get the message envelope.
-     *
-     * @return \Illuminate\Mail\Mailables\Envelope
-     */
-    public function envelope()
-    {
-        return new Envelope(
-            subject: 'ContactMessage',
-        );
     }
 
     /**
