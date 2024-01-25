@@ -1,0 +1,121 @@
+<?php
+$idurl = explode('/', $_SERVER["REQUEST_URI"]);
+$paginaPDF = end($idurl);
+$dom_fiscal = json_decode($cabecera[0]->fiscal)[0];
+$dom_envio = json_decode($cabecera[0]->envio)[0];
+
+(empty($dom_envio) ? $dom_envio = $dom_fiscal : NULL);
+?>
+
+<!-- CABECERA -->
+
+<table style="width:100%">
+    <tr>
+        <td style="width:22%">
+            <img src="cid:logo" width="150px">
+        </td>
+        <td style="width:26%; vertical-align:top">
+            <h4 style="background-color:<?= $this->config->item('color_corporativo') ?>;
+                color:white; padding:6px;">Pedido</h4>
+            <p style="font-size: 13px;">
+                <b><?= lang('numero_pedido') . '</b> ' . $paginaPDF ?></b><br>
+                <b><?= lang('fecha') . ':</b> ' . date("d/m/y") ?></b><br>
+                <b><?= lang('cliente') . ':</b> ' . $cabecera[0]->cliente ?></b><br>
+                <b><?= lang('comercial') . ':</b> ' . $cabecera[0]->comercial ?></b>
+            </p>
+        </td>
+        <td style="width:26%; vertical-align:top">
+            <h4 style="background-color:<?= $this->config->item('color_corporativo') ?>;
+                color:white; padding:6px;"><?= lang('domicilio_fiscal') ?></h4>
+            <p style="font-size: 13px;">
+                <?= $dom_fiscal->Nombre ?><br>
+                <span style="color: #7c7272"><?= $dom_fiscal->Direccion ?></span><br>
+                <span style="color: #7c7272"><?= $dom_fiscal->Municipio ?></span><br>
+                <span style="color: #7c7272">CIF: <?= $dom_fiscal->Identificacion ?></span><br>
+                <span style="color: #7c7272">T: <?= $dom_fiscal->Telefono ?></span>
+            </p>
+        </td>
+        <td style="width:26%; vertical-align:top">
+            <h4 style="background-color:<?= $this->config->item('color_corporativo') ?>;
+                color:white; padding:6px;"><?= lang('domicilio_envio') ?></h4>
+            <p style="font-size: 13px;">
+                <?= $dom_envio->Nombre ?><br>
+                <span style="color: #7c7272"><?= $dom_envio->Direccion ?></span><br>
+                <span style="color: #7c7272"><?= $dom_envio->Municipio ?></span><br>
+                <span style="color: #7c7272">CIF: <?= $dom_envio->Identificacion ?></span><br>
+                <span style="color: #7c7272">T:<?= $dom_envio->Telefono ?></span>
+            </p>
+        </td>
+    </tr>
+</table>
+
+
+
+<div style="margin:20px 0px">    
+    <b><?= lang('su_pedido') . ':</b> ' . $cabecera[0]->suPedido ?></b><br>
+    <b><?= lang('observaciones') . ':</b> ' . $cabecera[0]->observaciones ?></b>    
+</div>
+
+<!-- FIN CABECERA -->
+
+<!-- CUERPO PEDIDOS -->
+
+<div style="margin:10px auto">
+    <table style="width:100%">
+        <?php $cnt = 0;
+        foreach ($lineas as $linea) { ?>
+            <?php $lineaCab = json_decode($linea->cabecera, true)[0];
+            if (!empty($lineaCab)) {
+                $cabeceras = array_keys($lineaCab);
+                if ($cnt == 0) { ?>
+                    <thead>
+                        <tr style="background-color:<?= $this->config->item('color_corporativo') ?>">
+                            <?php foreach ($cabeceras as $value) { ?>
+                                <th style="color: white"><?= $value ?></th>
+                            <?php } ?>
+                        </tr>
+                    </thead>
+                <?php } ?>
+                <tr>
+                    <?php foreach ($lineaCab as $cabecera => $value) { ?>
+                        <td style="text-align: center" class="<?= $cabecera ?>"><?= $value ?></td>
+                    <?php } ?>
+                </tr>
+            <?php } ?>
+        <?php $cnt++;
+        } ?>
+    </table>
+</div>
+
+<hr style="border-top: 1px dotted #c3cfda; margin-top: 25px">
+
+<div>
+    <table style="width: 100%">
+        <tr>
+            <th style="text-align: right" width="20%"><b><?= lang('importe_neto') ?></b></th>
+            <th style="text-align: right" width="20%">&nbsp;</th>
+            <th style="text-align: right" width="18%"><b><?= lang('total_euros') ?></b></th>
+        </tr>
+        <tr>
+            <td style="text-align: right"><?= $pie[0]->ImporteNeto ?>&nbsp;€</td>
+            <td style="text-align: right">&nbsp;</td>
+            <td style="text-align: right"><?= $pie[0]->TotalEuros ?>&nbsp;€</td>
+        </tr>
+    </table>
+    <span style="font-size: 16px; margin: 50px 0px; width: 100%">Sin incluir Impuestos ni Portes.</span>
+</div>
+
+<!-- FIN CUERPO PEDIDOS -->
+
+<footer>
+    <br>
+    Muchas gracias por comprar con nosotros, puede contactarnos en:
+    <br>
+    <b><?= $this->config->item('nombreCorporativo') ?></b>
+    <br>
+    <span style="font-weight: 100;"><?=lang('direccion_empresa')?> 
+    <br>
+    T: <?=lang('telefono_empresa')?></span>
+    <br>
+    E: <a href="mailto:<?= lang('email_empresa') ?>"><?= lang('email_empresa') ?></a>
+</footer>

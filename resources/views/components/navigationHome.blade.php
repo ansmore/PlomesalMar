@@ -16,7 +16,7 @@ var_dump('Navigation After get->', $language);
     <div class="navbar">
         <div class="navbar__logo">
             <a href="/">
-                <img class="img-responsive" src="{{ asset('img/logos/pymesoft_logo_text.png') }}" alt="Pymesoft"
+                <img class="img-responsive" src="{{ asset('../img/logos/pymesoft_logo_text.png') }}" alt="Pymesoft"
                     id="pymeso" />
             </a>
         </div>

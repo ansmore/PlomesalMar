@@ -23,6 +23,14 @@ class HomeController extends Controller
         return view('home', ['language' => $language]);
     }
 
+    public function indexSection($language = null, $section = null)
+    {
+
+        $language = Session::get('language',  config('app.fallback_locale', 'es'));
+
+        return view('home', ['section' => $section,'language' => $language ]);
+    }
+
     public function homeSection($language = null, $section = null)
     {
 

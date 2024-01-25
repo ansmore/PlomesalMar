@@ -2,14 +2,15 @@
     <section class="logo">
         <div class="logo__image">
             <picture>
-                <img class="img-responsive" src="./img/logos/pymesoft_logo_text.png" alt="Pymesoft" id="pymeso" />
+                <img class="img-responsive" src="{{ asset('../img/logos/pymesoft_logo_text.png') }}" alt="Pymesoft"
+                    id="pymesoft" />
             </picture>
         </div>
         <div class="logo__row">
             <div class="col-md-4">
                 <span> &copy;</span>
                 <span class="copyright" value-text="footerCopyright"></span>
-                <span><?php echo date('Y'); ?></span>
+                <span>{{ date('Y') }}</span>
             </div>
         </div>
     </section>

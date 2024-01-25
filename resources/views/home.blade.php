@@ -101,53 +101,6 @@
                 </div>
             </div>
     </div>
-    {{-- <div class="contact-text box">
-                    <div class="patata box">
-                        <form id="contact-form" class="form box" action="#" method="POST" role="form">
-                            <div class="form-group box">
-                                <label class="form-label" for="name" value-text="contactName"></label>
-                                <input type="text" class="form-control" id="name" name="name"
-                                    placeholder="Nombre" tabindex="1" required>
-                            </div>
-                            <div class="form-group box">
-                                <label class="form-label" for="email" value-text="contactEmail"></label>
-                                <input type="email" class="form-control" id="email" name="email"
-                                    placeholder="Email" tabindex="2" required>
-                            </div>
-                            <div class="form-group box">
-                                <label class="form-label" for="phone" value-text="contactTelephone"></label>
-                                <input type="tel" class="form-control" id="phone" name="phone" maxlength="9"
-                                    placeholder="Telèfono" tabindex="3" required>
-                            </div>
-                            <div class="form-group box">
-                                <label class="form-label" for="message" value-text="contactMessage"></label>
-                                <textarea rows="5" cols="50" name="message" class="form-control" id="message"
-                                    placeholder="Mensaje..." tabindex="4" required></textarea>
-                            </div>
-                            <div class="box">
-                                <p class = 'clausulaContacto' value-text="contactoClausulaContacto"></p>
-                                <p class = 'clausulaContacto' value-text="contactoClausulaContacto2"></p>
-                            </div>
-                            <div class="form-group text-center box">
-                                <input id = 'checkboxAceptacion' class = 'checkboxAceptacion' type='checkbox'
-                                    name='aceptacion' />
-                                <div>
-                                    <span class = 'mensajeAceptacion' value-text="contactAccept"></span>
-                                    <a href="#" data-toggle="modal" data-target="#politica"
-                                        value-text="contactPolitica"></a>
-                                    <span class = 'mensajeAceptacion' value-text="contactAccept2"></span>
-                                    <a href="#" data-toggle="modal" data-target="#terminos"
-                                        value-text="contactUse"></a>
-                                </div>
-                            </div>
-                            <div class="text-center">
-                                <button type="button" class="btn btn-start-order button-formulario"
-                                    value-text="contactButton"></button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div> --}}
     </section>
     </div>
     <script type="module" src="{{ asset('js/home.js') }}" defer></script>
