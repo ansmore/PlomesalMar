@@ -85,6 +85,176 @@
                     </div>
                 </article>
             </div>
+            <div class="termsAndPolicy__row">
+                <article class="box">
+                    <p value-text="termsObjectHeader" class="box__subtitle"></p>
+                    <p>
+                        <span value-text="termsName" class="box__name"></span>
+                        <span value-text="termsObjectA" class="box__content"></span>
+                    </p>
+                    <p>
+                        <span value-text="termsObjectB" class="box__content"></span>
+                        <span value-text="termsName" class="box__name"></span>
+                        <span value-text="termsObjectC" class="box__content"></span>
+                    </p>
+                    <p>
+                        <span value-text="termsObjectD" class="box__content"></span>
+                    </p>
+                    <p>
+                        <span value-text="termsObjectE" class="box__content"></span>
+                    </p>
+                </article>
+            </div>
+            <div class="termsAndPolicy__row">
+                <article class="box">
+                    <p value-text="conditions" class="box__subtitle"></p>
+                    <p value-text="characterHeader" class="box__subtitle__secondary"></p>
+                    <div>
+                        <span value-text="character" class="box__content"></span>
+                        <span value-text="termsName" class="box__name"></span>
+                        <span value-text="character2" class="box__content"></span>
+                    </div>
+                    <p value-text="registerHeader" class="box__subtitle__secondary"></p>
+                    <div>
+                        <span value-text="register" class="box__content"></span>
+                    </div>
+                    <p value-text="veracityHeader" class="box__subtitle__secondary"></p>
+                    <div>
+                        <span value-text="veracity" class="box__content"></span>
+                        <span value-text="termsName" class="box__name"></span>
+                        <span value-text="veracity2" class="box__content"></span>
+                    </div>
+                    <p value-text="minorsHeader" class="box__subtitle__secondary"></p>
+                    <div>
+                        <span value-text="minors" class="box__content"></span>
+                    </div>
+                    <p value-text="obligationHeader" class="box__subtitle__secondary"></p>
+                    <div>
+                        <p>
+                            <span value-text="obligation1" class="box__content"></span>
+                        </p>
+                        <p>
+                            <span value-text="obligation2" class="box__content"></span>
+                        </p>
+                        <p>
+                            <span value-text="obligation3" class="box__content"></span>
+                        </p>
+
+                        <p>
+                            <span value-text="obligation4" class="box__content"></span>
+                        </p>
+                        <p>
+                            <span value-text="obligation5" class="box__content"></span>
+                        </p>
+                        <p>
+                            <span value-text="obligation6" class="box__content"></span>
+                        </p>
+                        <p>
+                            <span value-text="obligation7" class="box__content"></span>
+                        </p>
+                        <p>
+                            <span value-text="obligation8" class="box__content"></span>
+                        </p>
+                    </div>
+                </article>
+            </div>
+            <div class="termsAndPolicy__row">
+                <article class="box">
+                    <p value-text="exclusionHeader" class="box__subtitle"></p>
+                    <p>
+                        <span value-text="exclusion" class="box__content"></span>
+                    </p>
+                    <p>
+                        <span value-text="exclusion2" class="box__content"></span>
+                    </p>
+                    <p>
+                        <span value-text="termsName" class="box__name"></span>
+                        <span value-text="exclusion3" class="box__content"></span>
+                    </p>
+                    <p>
+                        <span value-text="exclusion4" class="box__content"></span>
+                    </p>
+                </article>
+            </div>
+            <div class="termsAndPolicy__row">
+                <article class="box">
+                    <p value-text="cookiesHeader" class="box__subtitle"></p>
+                    <p>
+                        <span value-text="cookies" class="box__content"></span>
+                    </p>
+                </article>
+            </div>
+            <div class="termsAndPolicy__row">
+                <article class="box">
+                    <p value-text="linksHeader" class="box__subtitle"></p>
+                    <p>
+                        <span value-text="links" class="box__content"></span>
+                        <span value-text="termsName" class="box__name"></span>
+                        <span value-text="links2" class="box__content"></span>
+                    </p>
+                    <p>
+                        <span value-text="links3" class="box__content"></span>
+                    </p>
+                </article>
+            </div>
+            <div class="termsAndPolicy__row">
+                <article class="box">
+                    <p value-text="protectionHeader" class="box__subtitle"></p>
+                    <p>
+                        <span value-text="protection" class="box__content"></span>
+                        <a value-text="privacypolicy" class="box__name"
+                            href="{{ route('privacyPolicy', ['language' => $language]) }}"></a>
+
+                    </p>
+                </article>
+            </div>
+            <div class="termsAndPolicy__row">
+                <article class="box">
+                    <p value-text="socialMediaHeader" class="box__subtitle"></p>
+                    <p>
+                        <span value-text="socialMedia" class="box__content"></span>
+                        <span value-text="termsName" class="box__name"></span>
+                        <span value-text="socialMedia2" class="box__content"></span>
+                        <span value-text="termsName" class="box__name"></span>
+                        <span value-text="socialMedia3" class="box__content"></span>
+                    </p>
+                    <p>
+                        <span value-text="socialMedia4" class="box__content"></span>
+                    </p>
+                    <p>
+                        <span value-text="socialMedia5" class="box__content"></span>
+                    </p>
+                    <p>
+                        <span value-text="socialMedia6" class="box__content"></span>
+                        <span value-text="termsName" class="box__name"></span>
+                        <span value-text="socialMedia7" class="box__content"></span>
+                    </p>
+                    <p>
+                        <span value-text="socialMedia8" class="box__content"></span>
+                    </p>
+                    <p>
+                        <span value-text="socialMedia9" class="box__content"></span>
+                        <span value-text="termsName" class="box__name"></span>
+                        <span value-text="socialMedia10" class="box__content"></span>
+                    </p>
+                </article>
+            </div>
+            <div class="termsAndPolicy__row">
+                <article class="box">
+                    <p value-text="propietyHeader" class="box__subtitle"></p>
+                    <p value-text="propiety" class="box__content"></p>
+                    <p value-text="propiety3" class="box__content"></p>
+                    <p value-text="propiety4" class="box__content"></p>
+                    <p value-text="propiety5" class="box__content"></p>
+                    <p value-text="propiety6" class="box__content"></p>
+                </article>
+            </div>
+            <div class="termsAndPolicy__row">
+                <article class="box">
+                    <p value-text="lawHeader" class="box__subtitle"></p>
+                    <p value-text="law" class="box__content"></p>
+                </article>
+            </div>
         </section>
     </div>
     <script type="module" src="{{ asset('js/whyBiit.js') }}" defer></script>
