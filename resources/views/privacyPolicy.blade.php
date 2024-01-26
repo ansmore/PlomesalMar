@@ -85,27 +85,27 @@
             <div class="termsAndPolicy__row">
                 <article class="box">
                     <p value-text="politicaConfidencialidadHeader" class="box__subtitle"></p>
-                    <div>
+                    <p>
                         <span value-text="politicaConfidencialidadA" class="box__content"></span>
-                    </div>
-                    <div>
+                    </p>
+                    <p>
                         <span value-text="politicaName" class="box__name"></span>
                         <span value-text="politicaConfidencialidadB" class="box__content"></span>
-                    </div>
+                    </p>
                 </article>
             </div>
             <div class="termsAndPolicy__row">
                 <article class="box">
                     <p value-text="politicaAceptacionHeader" class="box__subtitle"></p>
-                    <div>
+                    <p>
                         <span value-text="politicaAceptacionA" class="box__content"></span>
                         <span value-text="politicaName" class="box__name"></span>
                         <span value-text="politicaAceptacionB" class="box__content"></span>
-                    </div>
-                    <div>
+                    </p>
+                    <p>
                         <span value-text="politicaAceptacionC" class="box__content"></span>
                         <span value-text="politicaName" class="box__name"></span>
-                    </div>
+                    </p>
                 </article>
             </div>
             <div class="termsAndPolicy__row">
@@ -119,31 +119,31 @@
             <div class="termsAndPolicy__row">
                 <article class="box">
                     <p value-text="politicaContenidoHeader" class="box__subtitle"></p>
-                    <div>
+                    <p>
                         <span value-text="politicaName" class="box__name"></span>
                         <span value-text="politicaContenidoA" class="box__content"></span>
-                    </div>
-                    <div>
+                    </p>
+                    <p>
                         <span value-text="politicaName" class="box__name"></span>
                         <span value-text="politicaContenidoB" class="box__content"></span>
-                    </div>
-                    <div>
+                    </p>
+                    <p>
                         <span value-text="politicaContenidoC" class="box__content"></span>
-                    </div>
+                    </p>
                 </article>
             </div>
             <div class="termsAndPolicy__row">
                 <article class="box">
                     <p value-text="politicaEnvioCVHeader" class="box__subtitle"></p>
-                    <div>
+                    <p>
                         <span value-text="politicaEnvioCVA" class="box__content"></span>
-                    </div>
-                    <div>
+                    </p>
+                    <p>
                         <span value-text="politicaEnvioCVB" class="box__content"></span>
-                    </div>
-                    <div>
+                    </p>
+                    <p>
                         <span value-text="politicaEnvioCVC" class="box__content"></span>
-                    </div>
+                    </p>
                 </article>
             </div>
             <div class="termsAndPolicy__row">

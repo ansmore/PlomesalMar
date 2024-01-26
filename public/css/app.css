@@ -1905,6 +1905,14 @@ header .intro-text .intro-heading {
   font-size: 1.5em;
   font-weight: bold;
 }
+.main .termsAndPolicy__row .box__subtitle__secondary {
+  color: #0097b2;
+  background-color: transparent;
+  margin-top: 1rem;
+  line-height: 1.2;
+  font-size: 1.2em;
+  font-weight: lighter;
+}
 .main .termsAndPolicy__row .box__name {
   color: #0097b2;
   background-color: transparent;

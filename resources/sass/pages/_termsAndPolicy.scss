@@ -66,6 +66,14 @@
           line-height: 1.5;
           font-size: 1.5em;
           font-weight: bold;
+
+          &__secondary {
+            @include style($secondary_main);
+            margin-top: calc($margin * 2);
+            line-height: 1.2;
+            font-size: 1.2em;
+            font-weight: lighter;
+          }
         }
 
         &__name {
