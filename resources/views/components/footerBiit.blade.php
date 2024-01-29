@@ -1,7 +1,7 @@
 <section>
     <div class="container">
         <div>
-            <img src="img/kit-digital.png" class="img-responsive img-centered" alt="banner">
+            <img src="{{ asset('./img/kit-digital.png') }}" class="box__image" alt="banner">
         </div>
     </div>
 </section>
