@@ -53,8 +53,8 @@ Route::prefix('/{language?}')->group(function () {
     Route::get('/#{section?}', [HomeController::class, 'indexSection'])->name('index.section');
     Route::get('/home#{section?}', [HomeController::class, 'homeSection'])->name('home.section');
 
-    Route::get('/consultoria', [ConsultancyController::class, 'consultoria'])->name('consultoria');
-    Route::get('/consultoria#{section?}', [ConsultancyController::class, 'consultoriaSection'])->name('consultoria.section');
+    Route::get('/consultancy', [ConsultancyController::class, 'consultancy'])->name('consultancy');
+    Route::get('/consultancy#{section?}', [ConsultancyController::class, 'consultancySection'])->name('consultancy.section');
 
     Route::get('/digitalization', [DigitizationController::class, 'digitalization'])->name('digitalization');
     Route::get('/digitalization#{section?}', [DigitizationController::class, 'digitalizationSection'])->name('digitalization.section');

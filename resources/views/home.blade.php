@@ -40,7 +40,7 @@
                         </span>
                     </span>
                     <h4 class="circle__content">
-                        <a href="{{ route('consultoria', ['language' => $language]) }}" value-text="services3"></a>
+                        <a href="{{ route('consultancy', ['language' => $language]) }}" value-text="services3"></a>
                     </h4>
                 </div>
             </div>
