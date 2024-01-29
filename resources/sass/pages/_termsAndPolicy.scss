@@ -6,9 +6,10 @@
   font-size: $size_small;
   margin-top: $nav-height;
   gap: $gap;
-  .termsAndPolicy {
+  .termsAndPolicy,
+  .whatIs {
     @include flexBox(column, space-around, center);
-    @include paddingMargin($padding, 0);
+    @include paddingMargin(4rem $padding $padding $padding, 0);
     @include boxSize(width, 95vw, null, 95vw);
     &__row {
       @include flexBox(column, space-around, center);

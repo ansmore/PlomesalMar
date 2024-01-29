@@ -27,8 +27,8 @@ var_dump('Navigation After get->', $language);
                         value-text="navHomePage"></a>
                 </li>
                 <li class="list__item">
-                    <a class="list__item__link" href="{{ route('digitalizacion', ['language' => $language]) }}"
-                        value-text="navDigitalizacion"></a>
+                    <a class="list__item__link" href="{{ route('digitalization', ['language' => $language]) }}"
+                        value-text="navDigitalization"></a>
                 </li>
                 <li class="list__item">
                     <a class="list__item__link" href="{{ route('biit', ['language' => $language]) }}"

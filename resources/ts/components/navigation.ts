@@ -20,12 +20,39 @@ const handleClick = (event: MouseEvent) => {
   selectedOption = (event.target as HTMLElement).id;
   setLanguage(selectedOption);
   changeLanguage(selectedOption);
+
+  const toggleCheckbox = document.getElementById(
+    "toggle-menu-checkbox",
+  ) as HTMLInputElement;
+  toggleCheckbox.checked = false;
 };
 
 document.addEventListener("DOMContentLoaded", () => {
   const dropDownLinks = document.querySelectorAll("#setLanguages a");
   dropDownLinks.forEach((link) => {
     link.addEventListener("click", handleClick as EventListener);
+  });
+
+  const menuLinks = document.querySelectorAll(
+    ".navbar__menu .list__item__link",
+  );
+  menuLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      const toggleCheckbox = document.getElementById(
+        "toggle-menu-checkbox",
+      ) as HTMLInputElement;
+      toggleCheckbox.checked = false;
+    });
+  });
+
+  const submenuLinks = document.querySelectorAll(".dropdown__menu__item");
+  submenuLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      const toggleCheckbox = document.getElementById(
+        "toggle-menu-checkbox",
+      ) as HTMLInputElement;
+      toggleCheckbox.checked = false;
+    });
   });
 });
 

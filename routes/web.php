@@ -56,8 +56,8 @@ Route::prefix('/{language?}')->group(function () {
     Route::get('/consultoria', [ConsultancyController::class, 'consultoria'])->name('consultoria');
     Route::get('/consultoria#{section?}', [ConsultancyController::class, 'consultoriaSection'])->name('consultoria.section');
 
-    Route::get('/digitalizacion', [DigitizationController::class, 'digitalizacion'])->name('digitalizacion');
-    Route::get('/digitalizacion#{section?}', [DigitizationController::class, 'digitalizacionSection'])->name('digitalizacion.section');
+    Route::get('/digitalization', [DigitizationController::class, 'digitalization'])->name('digitalization');
+    Route::get('/digitalization#{section?}', [DigitizationController::class, 'digitalizationSection'])->name('digitalization.section');
 
     Route::get('/biit', [BiitController::class, 'biit'])->name('biit');
     Route::get('/biit#{section?}', [BiitController::class, 'biitSection'])->name('biit.section');

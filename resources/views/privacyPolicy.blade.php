@@ -169,9 +169,7 @@
                     <span value-text="politicaLegislacionB" class="box__content"></span>
                 </article>
             </div>
-    </div>
-    </div>
-    </section>
+        </section>
     </div>
     <script type="module" src="{{ asset('js/whyBiit.js') }}" defer></script>
 @endsection

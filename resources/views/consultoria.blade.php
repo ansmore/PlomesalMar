@@ -75,5 +75,5 @@
             </div>
         </section>
     </div>
-    <script type="module" src="{{ asset('js/digitalizacion.js') }}" defer></script>
+    <script type="module" src="{{ asset('js/digitalization.js') }}" defer></script>
 @endsection
