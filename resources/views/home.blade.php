@@ -58,7 +58,6 @@
             <div class="about__row">
                 <div class="box">
                     <h2 class="box__title" value-text="aboutHeading"></h2>
-
                     <h4 class="box__content" value-text="aboutText"></h4>
                     <a href="{{ route('biit', ['language' => $language]) }}" class="box__button"
                         value-text="aboutButton"></a>

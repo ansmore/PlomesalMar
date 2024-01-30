@@ -6,7 +6,25 @@
     @include('components.navigationBiit')
 
     <div class="main">
-
+        <section class="biit">
+            <div class="biit__row--content" id="mainContainer">
+                <div class="first circle" id="firstModal" data-modal-id="firstModal">
+                    <h4 class="circle__title" value-text="modulosCliente"></h4>
+                </div>
+                <div class="second circle" id="secondModal" data-modal-id="secondModal">
+                    <h4 class="circle__title" value-text="modulosComercio"></h4>
+                </div>
+                <div class="third circle" id="thirdModal" data-modal-id="thirdModal">
+                    <h4 class="circle__title" value-text="modulosProcesos"></h4>
+                </div>
+                <div class="fourth circle" id="fourthModal" data-modal-id="fourthModal">
+                    <h4 class="circle__title" value-text="modulosFactura"></h4>
+                </div>
+                <div class="fifth circle" id="fifthModal" data-modal-id="fifthModal">
+                    <h4 class="circle__title" value-text="modulosBusiness"></h4>
+                </div>
+            </div>
+        </section>
         <!-- Biit Section -->
         <section>
             <div id="biit">
