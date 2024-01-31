@@ -1,51 +1,87 @@
-// Función para mostrar el modal
-function showModal(modalId: string) {
-  const modal = document.getElementById(modalId);
-  if (modal) {
-    modal.style.display = "block";
-  }
-}
+// helpers/modal.ts
+// let activeModalId: string | null = null;
 
-// Función para ocultar el modal
-function closeModal(modalId: string) {
+export const openModal = (modalId: string): void => {
   const modal = document.getElementById(modalId);
+  const infoModalBox = document.getElementById("infoModal");
+
+  if (modal && infoModalBox) {
+    console.log("modal -> ", modalId);
+    infoModalBox.style.display = "block";
+    // activeModalId = modalId;
+  }
+};
+
+export const closeModal = (modalId: string): void => {
+  const modal = document.getElementById(modalId);
+
+  // const padre = document.querySelector("#infoModal");
+  // && (activeModalId === modalId || (padre && padre.id === modalId))
+
   if (modal) {
+    console.log("close -> ", modalId);
     modal.style.display = "none";
+    // activeModalId = null;
   }
-}
+};
 
-// Función para manejar el evento clic y determinar qué modal mostrar
-function handleModalClick(event: Event) {
-  const target = event.target as HTMLElement;
-  const modalId = target.getAttribute("data-modal-id");
+export const setupModalButtons = (): void => {
+  const modalButtons = document.querySelectorAll(".modal-button");
 
-  if (modalId) {
-    showModal(modalId);
-  }
-}
-
-function onContentLoaded() {
-  // Asignar manejadores de eventos a todos los discos
-  const circleElements = document.querySelectorAll(".circle");
-  circleElements.forEach((circle) => {
-    circle.addEventListener("click", (event) => handleModalClick(event));
+  modalButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const modalId = button.getAttribute("data-modal-id");
+      if (modalId) {
+        console.log("click -> ", modalId);
+        openModal(modalId);
+      }
+    });
   });
+};
 
-  // También puedes asignar manejadores para ocultar el modal, por ejemplo, al hacer clic fuera del modal
-  const closeModalButton = document.getElementById("closeModalButton");
-  if (closeModalButton) {
-    closeModalButton.addEventListener("click", () =>
-      closeModal("specificModalId"),
-    );
-  }
+export const setupCloseModalButtons = (): void => {
+  const closeModalButtons = document.querySelectorAll(".close");
 
-  // Asignar manejador de eventos al contenedor principal para delegación de eventos
-  const mainContainer = document.getElementById("mainContainer");
-  if (mainContainer) {
-    // También puedes asignar manejadores para ocultar el modal al hacer clic fuera de él
-    mainContainer.addEventListener("click", () => closeModal("modalId"));
-  }
-}
+  closeModalButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const modal = button.closest(".modal");
+      if (modal) {
+        console.log("cierre modal button", modal.id);
+        closeModal(modal.id);
+      }
+    });
+  });
+};
 
-// Agregar un manejador de eventos al contenido cargado
-document.addEventListener("DOMContentLoaded", onContentLoaded);
+export const setupOutsideModalClick = (): void => {
+  document.addEventListener("click", (event: MouseEvent) => {
+    const modals = document.querySelectorAll(".modal");
+    // const padre = document.querySelector("#infoModal");
+
+    modals.forEach((modal) => {
+      const modalContent = modal.querySelector(".modal-content");
+
+      if (
+        modal instanceof HTMLElement &&
+        modal.style.display === "block" &&
+        modalContent &&
+        !modalContent.contains(event.target as Node) &&
+        !(
+          event.target instanceof HTMLElement &&
+          event.target.classList.contains("modal-button")
+        ) &&
+        !(
+          event.target instanceof HTMLElement &&
+          event.target.classList.contains("modal-content")
+        )
+      ) {
+        // const modalOpener = event.target as HTMLElement;
+        // if (!modalOpener.classList.contains("modal-button")) {
+        console.log("cierre modal outside", modal.id);
+        //   // const padreId = padre.id;
+        //   closeModal(modal.id);
+        // }
+      }
+    });
+  });
+};
