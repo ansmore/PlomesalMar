@@ -1,11 +1,19 @@
 // helpers/modal.ts
 
+import {
+  loadTextComponent,
+  loadText,
+  getFinalLanguage,
+  loadDictionary,
+} from "./dictionary";
+
 export const openModal = (modalId: string): void => {
   const modal = document.getElementById(modalId);
   const infoModalBox = document.getElementById("infoModal");
 
   if (modal && infoModalBox) {
-    // console.log("modal -> ", modalId);
+    console.log("modal -> ", modalId);
+    updateModalAttributes(modalId);
     infoModalBox.style.display = "block";
   }
 };
@@ -77,4 +85,61 @@ export const setupOutsideModalClick = (): void => {
       }
     }
   });
+};
+
+export const updateModalAttributes = async (modalId: string): Promise<void> => {
+  const modalTitle = document.getElementById("modalTitle");
+  const modalDynamicContent = document.getElementById("modalDynamicContent");
+  const component = "whyBiit";
+
+  if (modalTitle && modalDynamicContent) {
+    try {
+      const finalSelectedLanguage = await getFinalLanguage();
+      const dictionary = await loadDictionary(finalSelectedLanguage, component);
+
+      console.log("dictionary", dictionary);
+      console.log("language", finalSelectedLanguage);
+      // Ajusta el valor de value-text según el data-modal-id
+      switch (modalId) {
+        case "firstModal":
+          console.log("1");
+          modalTitle.setAttribute("value-text", "modulosCliente");
+          modalDynamicContent.setAttribute("value-text", "modulosClienteText");
+
+          break;
+        case "secondModal":
+          console.log("2");
+          modalTitle.setAttribute("value-text", "modulosComercio");
+          modalDynamicContent.setAttribute("value-text", "modulosComercioText");
+          break;
+        case "thirdModal":
+          console.log("3");
+          modalTitle.setAttribute("value-text", "modulosProcesos");
+          modalDynamicContent.setAttribute("value-text", "modulosProcesosText");
+          break;
+        case "fourthModal":
+          console.log("4");
+          modalTitle.setAttribute("value-text", "modulosBusiness");
+          modalDynamicContent.setAttribute("value-text", "modulosBusinessText");
+          break;
+        case "fifthModal":
+          console.log("5");
+          modalTitle.setAttribute("value-text", "modulosFactura");
+          modalDynamicContent.setAttribute("value-text", "modulosFacturaText");
+          break;
+        // Añade más casos según sea necesario para otros modales
+        default:
+          // Por defecto
+          modalTitle.setAttribute("value-text", "");
+          modalDynamicContent.setAttribute("value-text", "");
+          break;
+      }
+      // Carga el contenido desde el archivo JSON
+      const modalContentText =
+        dictionary[modalDynamicContent.getAttribute("value-text") || "1"];
+      modalDynamicContent.innerHTML = modalContentText || "2";
+    } catch (error) {
+      console.error("Error updating modal attributes", error);
+    }
+  }
 };

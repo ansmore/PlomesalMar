@@ -29,11 +29,13 @@
 
         <div id="infoModal" class="modal">
             <div class="modal-content">
-                <span class="close" id="closeModalButton">&times;</span>
+                <span class="close" id="closeModalButton">
+                    <i class="fa-solid fa-xmark"></i>
+                </span>
                 <div id="modalBodyContent">
                     <!-- Contenido del Modal -->
-                    <h2 id="modalTitle">Título del Modal</h2>
-                    <div id="modalDynamicContent">
+                    <h2 id="modalTitle" value-text=""></h2>
+                    <div id="modalDynamicContent" value-text="">
 
                     </div>
 
