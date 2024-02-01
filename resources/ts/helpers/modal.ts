@@ -14,14 +14,38 @@ export const openModal = (modalId: string): void => {
 
 export const closeModal = (modalId: string): void => {
   const modal = document.getElementById(modalId);
+  const padre = document.querySelector("#infoModal");
+  // const padreId = padre.id;
 
-  // const padre = document.querySelector("#infoModal");
   // && (activeModalId === modalId || (padre && padre.id === modalId))
 
+  // Verificar si el ID corresponde al modal o al padre
+  const esModal = modalId === modal?.id;
+  const esPadre = modalId === padre?.id;
+  // console.log("Modal esPadre -> ", esPadre);
+  // console.log("Modal esHijo -> ", esModal);
+
+  // if (modalId === "infoModal") {
+  //   console.log("dentro de infoModal -> ", modalId);
+  // }
+
+  // // Ocultar el modal
+  // if (modal && esModal) {
+  //   console.log("Modal hijo -> ", modalId);
+  //   modal.style.display = "none";
+  // }
+
+  // // Ocultar el padre solo si es un elemento HTML con propiedad style
+  // if (padre && esPadre) {
+  //   console.log("Modal padre -> ", modalId);
+  //   if (padre instanceof HTMLElement && padre.style) {
+  //     padre.style.display = "none";
+  //   }
+  // }
+
   if (modal) {
-    console.log("close -> ", modalId);
+    console.log("close trueeee -> ", modalId);
     modal.style.display = "none";
-    // activeModalId = null;
   }
 };
 
@@ -56,7 +80,6 @@ export const setupCloseModalButtons = (): void => {
 export const setupOutsideModalClick = (): void => {
   document.addEventListener("click", (event: MouseEvent) => {
     const modals = document.querySelectorAll(".modal");
-    // const padre = document.querySelector("#infoModal");
 
     modals.forEach((modal) => {
       const modalContent = modal.querySelector(".modal-content");
@@ -75,12 +98,15 @@ export const setupOutsideModalClick = (): void => {
           event.target.classList.contains("modal-content")
         )
       ) {
-        // const modalOpener = event.target as HTMLElement;
-        // if (!modalOpener.classList.contains("modal-button")) {
-        console.log("cierre modal outside", modal.id);
-        //   // const padreId = padre.id;
-        //   closeModal(modal.id);
-        // }
+        console.log("click detectado", modal.id);
+
+        modal.addEventListener("click", () => {
+          const modalButton = modal.closest(".modal");
+          if (modalButton) {
+            console.log("detectado click outside?", modalButton.id);
+            // closeModal(modalButton.id);
+          }
+        });
       }
     });
   });
