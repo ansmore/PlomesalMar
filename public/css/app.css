@@ -2265,6 +2265,13 @@ header .intro-text .intro-heading {
   line-height: 1.5;
   text-align: center;
 }
+.main .biit .circle__subtitle {
+  color: #0097b2;
+  background-color: transparent;
+  line-height: 1.5;
+  font-size: 1.5em;
+  font-weight: bold;
+}
 .main .biit .circle__content {
   display: flex;
   flex-direction: column;
@@ -2342,6 +2349,36 @@ header .intro-text .intro-heading {
   height: 80%;
   padding: 20px;
   border-radius: 5px;
+}
+.main .modal .modal-content .circle__subtitle {
+  color: #0097b2;
+  background-color: transparent;
+  line-height: 1.5;
+  font-size: 1.5em;
+  font-weight: bold;
+  text-align: center;
+}
+.main .modal .modal-content .circle__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  justify-items: center;
+  justify-self: center;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  color: #17265c;
+  background-color: transparent;
+  border-bottom-left-radius: 25%;
+  border-bottom-right-radius: 25%;
+  font-size: 1.5em;
+  line-height: 1.5;
+  text-transform: none;
+  font-style: italic;
+  font-weight: 400;
+  text-align: center;
 }
 .main .modal .close {
   position: absolute;

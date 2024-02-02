@@ -50,6 +50,13 @@
         text-align: center;
       }
 
+      &__subtitle {
+        @include style($secondary_main);
+        line-height: 1.5;
+        font-size: 1.5em;
+        font-weight: bold;
+      }
+
       &__content {
         @include flexBox(column, space-around, center);
         @include paddingMargin($padding, $margin);
@@ -120,6 +127,31 @@
       height: 80%;
       padding: 20px;
       border-radius: 5px;
+
+      .circle {
+        &__subtitle {
+          @include style($secondary_main);
+          line-height: 1.5;
+          font-size: 1.5em;
+          font-weight: bold;
+          text-align: center;
+        }
+
+        &__content {
+          @include flexBox(column, space-around, center);
+          @include paddingMargin($padding, $margin);
+          @include style($primary_main);
+          // @include boxSize(width, null, null, 15rem);
+          border-bottom-left-radius: 25%;
+          border-bottom-right-radius: 25%;
+          font-size: 1.5em;
+          line-height: 1.5;
+          text-transform: none;
+          font-style: italic;
+          font-weight: 400;
+          text-align: center;
+        }
+      }
     }
 
     .close {
