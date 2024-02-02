@@ -2329,6 +2329,51 @@ header .intro-text .intro-heading {
   left: -50%;
   top: 65vh;
 }
+.main .biit .line1::before,
+.main .biit .line1::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50px;
+  height: 15vh;
+  background-color: purple;
+  transform-origin: 50% 0;
+}
+.main .biit .line1::before {
+  transform: translateY(-5vh) rotateX(0deg);
+}
+.main .biit .line1::after {
+  transform: translateY(5vh) rotateX(0deg);
+}
+.main .biit .line1::before,
+.main .biit .line1::after {
+  background-size: 50% 2px;
+  background-image: linear-gradient(to right, purple 50%, transparent 50%);
+  animation: conveyorMovement 2s linear infinite;
+}
+@keyframes conveyorMovement {
+  to {
+    background-position: 100% 0;
+  }
+}
+.main .lines-svg {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.main .lines {
+  stroke: pink;
+  stroke-width: 9;
+  stroke-dasharray: 10 5;
+  animation: dash 5s linear infinite;
+}
+@keyframes dash {
+  to {
+    stroke-dashoffset: -1000; /* Ajusta según la longitud total de la línea */
+  }
+}
 .main .modal {
   display: none;
   position: fixed;
@@ -2395,6 +2440,19 @@ header .intro-text .intro-heading {
   background-color: #ffeded;
   border: 1px solid #ee0000;
   cursor: pointer;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  z-index: 9;
+  background: linear-gradient(to right, #349333 1px, transparent 1px), linear-gradient(to bottom, #349333 1px, transparent 1px);
+  background-size: 5vw 5vh, 5vw 5vh;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
 }
 
 .mail {

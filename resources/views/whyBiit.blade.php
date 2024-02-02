@@ -8,6 +8,12 @@
     <div class="main">
         <section class="biit">
             <div class="biit__row--content" id="mainContainer">
+                <div class="line-container">
+                    <div class="line1"></div>
+                </div>
+                <svg class="lines-svg">
+                    <line class="lines" x1="50px" y1="50px" x2="100px" y2="100px"></line>
+                </svg>
                 <div class="first circle modal-button" id="firstModal" data-modal-id="firstModal">
                     <h4 class="circle__title" value-text="modulosCliente"></h4>
                 </div>
