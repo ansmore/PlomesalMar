@@ -10,6 +10,7 @@
   top: 0;
   left: 0;
   right: 0;
+  z-index: 1;
 
   .navbar {
     @include flexBox(row, space-around, center);
@@ -34,7 +35,7 @@
       @include paddingMargin(0, 208px 0 0 0);
       // prova display absolute
       position: absolute;
-      z-index: 1;
+      z-index: 2;
       flex: 6;
       // margin-top: 150px;
 
@@ -161,7 +162,7 @@
     @include boxSize(width, null, 50px);
     // width: 50px;
     position: absolute;
-    z-index: 1;
+    z-index: 2;
     top: 0.5rem;
     right: 0.5rem;
     cursor: pointer;

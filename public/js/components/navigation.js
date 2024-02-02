@@ -20,11 +20,27 @@ const handleClick = (event) => {
     selectedOption = event.target.id;
     setLanguage(selectedOption);
     changeLanguage(selectedOption);
+    const toggleCheckbox = document.getElementById("toggle-menu-checkbox");
+    toggleCheckbox.checked = false;
 };
 document.addEventListener("DOMContentLoaded", () => {
     const dropDownLinks = document.querySelectorAll("#setLanguages a");
     dropDownLinks.forEach((link) => {
         link.addEventListener("click", handleClick);
+    });
+    const menuLinks = document.querySelectorAll(".navbar__menu .list__item__link");
+    menuLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+            const toggleCheckbox = document.getElementById("toggle-menu-checkbox");
+            toggleCheckbox.checked = false;
+        });
+    });
+    const submenuLinks = document.querySelectorAll(".dropdown__menu__item");
+    submenuLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+            const toggleCheckbox = document.getElementById("toggle-menu-checkbox");
+            toggleCheckbox.checked = false;
+        });
     });
 });
 const changeLanguage = (language) => __awaiter(void 0, void 0, void 0, function* () {

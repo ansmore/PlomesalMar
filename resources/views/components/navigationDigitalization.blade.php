@@ -20,33 +20,33 @@
                 </li>
                 <li class="list__item">
                     <a class="list__item__link"
-                        href="{{ route('digitalizacion.section', ['section' => 'que-es', 'language' => $language]) }}"
+                        href="{{ route('digitalization.section', ['section' => 'whatIs', 'language' => $language]) }}"
                         value-text="navService"></a>
-                    {{-- digitalizacion#services --}}
+                    {{-- digitalization#services --}}
                 </li>
                 <li class="list__item">
                     <a class="list__item__link"
-                        href="{{ route('digitalizacion.section', ['section' => 'agente', 'language' => $language]) }}"
+                        href="{{ route('digitalization.section', ['section' => 'agent', 'language' => $language]) }}"
                         value-text="navAgente"></a>
-                    {{-- digitalizacion#agente --}}
+                    {{-- digitalization#agente --}}
                 </li>
                 <li class="list__item">
                     <a class="list__item__link"
-                        href="{{ route('digitalizacion.section', ['section' => 'requisitos', 'language' => $language]) }}"
+                        href="{{ route('digitalization.section', ['section' => 'requirements', 'language' => $language]) }}"
                         value-text="navRequisitos"></a>
-                    {{-- digitalizacion#requisitos --}}
+                    {{-- digitalization#requisitos --}}
                 </li>
                 <li class="list__item">
                     <a class="list__item__link"
-                        href="{{ route('digitalizacion.section', ['section' => 'bono', 'language' => $language]) }}"
+                        href="{{ route('digitalization.section', ['section' => 'bond', 'language' => $language]) }}"
                         value-text="navBono"></a>
-                    {{-- digitalizacion#bono --}}
+                    {{-- digitalization#bono --}}
                 </li>
                 <li class="list__item">
                     <a class="list__item__link"
-                        href="{{ route('digitalizacion.section', ['section' => 'faq', 'language' => $language]) }}"
+                        href="{{ route('digitalization.section', ['section' => 'faq', 'language' => $language]) }}"
                         value-text="navFaq"></a>
-                    {{-- digitalizacion#faq --}}
+                    {{-- digitalization#faq --}}
                 </li>
             </ul>
         </div>

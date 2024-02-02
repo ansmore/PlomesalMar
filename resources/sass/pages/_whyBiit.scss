@@ -1,0 +1,174 @@
+.main {
+  @include flexBox(column, space-around);
+  @include paddingMargin($padding);
+  @include style($primary_main, $neutral_light);
+  font-size: $size_small;
+  margin-top: $nav-height;
+  gap: $gap;
+  // @include boxSize(height, 300rem, 300rem, 300rem);
+  // @include boxSize(height, 300%, 300%, 300%);
+  min-height: fit-content;
+  .biit {
+    @include flexBox(column, flex-start, center);
+    @include paddingMargin($padding, 0);
+    @include style($primary_main);
+    @include boxSize(width, 95vw, null, 95vw);
+    // @include boxSize(height, 500rem, 500rem, 500rem);
+    flex-direction: column;
+    min-height: 160rem;
+    flex: 1;
+
+    &__row {
+      @include flexBox(column, space-around, center);
+      @include paddingMargin(0 15px);
+      @include style($primary_main);
+      text-align: center;
+
+      @include boxSize(width, 90vw, null, 90vw);
+
+      min-height: 8rem;
+    }
+
+    .circle {
+      @include flexBox(column, flex-start, center);
+      @include paddingMargin($padding, $margin);
+      @include style(inherit, $neutral_main);
+      @include boxSize(width, 20rem, null, 20rem);
+      @include boxSize(height, 20rem);
+      @include boxShadow($neutral_dark);
+      border-radius: 50%;
+      padding-top: 5rem;
+
+      &__title {
+        @include flexBox(column, space-around, center);
+        @include paddingMargin($padding, 0 15px);
+        @include style($primary_main);
+        @include boxSize(height, 4rem);
+        // min-height: 4rem;
+        font-size: 30px;
+        line-height: 1.5;
+        text-align: center;
+      }
+
+      &__subtitle {
+        @include style($secondary_main);
+        line-height: 1.5;
+        font-size: 1.5em;
+        font-weight: bold;
+      }
+
+      &__content {
+        @include flexBox(column, space-around, center);
+        @include paddingMargin($padding, $margin);
+        @include style($neutral_lighter);
+        @include boxSize(width, null, null, 15rem);
+        border-bottom-left-radius: 25%;
+        border-bottom-right-radius: 25%;
+        font-size: 16px;
+        text-transform: none;
+        font-style: italic;
+        font-weight: 400;
+      }
+
+      @include hover($secondary_main, inherit, $neutral_darker, $neutral_dark);
+    }
+    .first,
+    .second,
+    .third,
+    .fourth,
+    .fifth {
+      @extend .circle;
+      position: relative;
+    }
+
+    .first {
+      left: -50%;
+      top: 5vh;
+    }
+
+    .second {
+      left: 50%;
+      top: 20vh;
+    }
+
+    .third {
+      left: -50%;
+      top: 35vh;
+    }
+
+    .fourth {
+      left: 50%;
+      top: 50vh;
+    }
+
+    .fifth {
+      left: -50%;
+      top: 65vh;
+    }
+  }
+
+  .modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba($neutral_main, 0.5);
+    justify-content: center;
+    align-items: center;
+
+    .modal-content {
+      position: relative;
+      background: $neutral_lighter;
+      top: 10vh;
+      left: 10vw;
+      width: 80%;
+      height: 80%;
+      padding: 20px;
+      border-radius: 5px;
+
+      .circle {
+        &__subtitle {
+          @include style($secondary_main);
+          line-height: 1.5;
+          font-size: 1.5em;
+          font-weight: bold;
+          text-align: center;
+        }
+
+        &__content {
+          @include flexBox(column, space-around, center);
+          @include paddingMargin($padding, $margin);
+          @include style($primary_main);
+          // @include boxSize(width, null, null, 15rem);
+          border-bottom-left-radius: 25%;
+          border-bottom-right-radius: 25%;
+          font-size: 1.5em;
+          line-height: 1.5;
+          text-transform: none;
+          font-style: italic;
+          font-weight: 400;
+          text-align: center;
+        }
+      }
+    }
+
+    .close {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 50px;
+      height: 50px;
+      text-align: center;
+      justify-content: center;
+      justify-self: center;
+      justify-items: center;
+      font-size: 50px;
+      color: $danger_main;
+      background-color: $danger_lighter;
+      border: 1px solid $danger_main;
+      cursor: pointer;
+    }
+  }
+}

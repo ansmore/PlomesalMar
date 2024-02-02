@@ -8,17 +8,17 @@ use Illuminate\Support\Facades\Session;
 
 class ConsultancyController extends Controller
 {
-    public function consultoria()
+    public function consultancy()
     {
         $language = Session::get('language',  config('app.fallback_locale', 'es'));
 
-        return view('consultoria', ['language' => $language]);
+        return view('consultancy', ['language' => $language]);
     }
 
-    public function consultoriaSection($section = null)
+    public function consultancySection($section = null)
     {
         $language = Session::get('language',  config('app.fallback_locale', 'es'));
 
-        return view('consultoria', ['section' => $section, 'language' => $language]);
+        return view('consultancy', ['section' => $section, 'language' => $language]);
     }
 }

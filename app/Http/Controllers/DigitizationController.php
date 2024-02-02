@@ -8,17 +8,17 @@ use Illuminate\Support\Facades\Session;
 
 class DigitizationController extends Controller
 {
-    public function digitalizacion()
+    public function digitalization()
     {
         $language = Session::get('language',  config('app.fallback_locale', 'es'));
 
-        return view('digitalizacion', [ 'language' => $language]);
+        return view('digitalization', [ 'language' => $language]);
     }
 
-    public function digitalizacionSection($section = null)
+    public function digitalizationSection($section = null)
     {
         $language = Session::get('language',  config('app.fallback_locale', 'es'));
 
-        return view('digitalizacion', ['section' => $section, 'language' => $language]);
+        return view('digitalization', ['section' => $section, 'language' => $language]);
     }
 }
