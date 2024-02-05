@@ -2190,7 +2190,7 @@ header .intro-text .intro-heading {
   justify-items: center;
   justify-self: center;
   align-content: center;
-  align-items: center;
+  align-items: flex-start;
   align-self: center;
   padding: 0.5rem;
   margin: 0;
@@ -2205,11 +2205,11 @@ header .intro-text .intro-heading {
 .main .biit__row {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: flex-start;
   justify-items: center;
   justify-self: center;
   align-content: center;
-  align-items: center;
+  align-items: flex-start;
   align-self: center;
   padding: 0 15px;
   margin: 0;
@@ -2308,75 +2308,32 @@ header .intro-text .intro-heading {
 .main .biit .fourth,
 .main .biit .fifth {
   position: relative;
+  z-index: 2;
 }
 .main .biit .first {
-  left: -50%;
+  left: 5vw;
   top: 5vh;
 }
 .main .biit .second {
-  left: 50%;
+  left: 35vw;
   top: 20vh;
 }
 .main .biit .third {
-  left: -50%;
+  left: 5vw;
   top: 35vh;
 }
 .main .biit .fourth {
-  left: 50%;
+  left: 35vw;
   top: 50vh;
 }
 .main .biit .fifth {
-  left: -50%;
+  left: 5vw;
   top: 65vh;
-}
-.main .biit .line1::before,
-.main .biit .line1::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 50px;
-  height: 15vh;
-  background-color: purple;
-  transform-origin: 50% 0;
-}
-.main .biit .line1::before {
-  transform: translateY(-5vh) rotateX(0deg);
-}
-.main .biit .line1::after {
-  transform: translateY(5vh) rotateX(0deg);
-}
-.main .biit .line1::before,
-.main .biit .line1::after {
-  background-size: 50% 2px;
-  background-image: linear-gradient(to right, purple 50%, transparent 50%);
-  animation: conveyorMovement 2s linear infinite;
-}
-@keyframes conveyorMovement {
-  to {
-    background-position: 100% 0;
-  }
-}
-.main .lines-svg {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-}
-.main .lines {
-  stroke: pink;
-  stroke-width: 9;
-  stroke-dasharray: 10 5;
-  animation: dash 5s linear infinite;
-}
-@keyframes dash {
-  to {
-    stroke-dashoffset: -1000; /* Ajusta según la longitud total de la línea */
-  }
 }
 .main .modal {
   display: none;
   position: fixed;
+  z-index: 3;
   top: 0;
   left: 0;
   width: 100%;
@@ -2385,7 +2342,7 @@ header .intro-text .intro-heading {
   justify-content: center;
   align-items: center;
 }
-.main .modal .modal-content {
+.main .modal__content {
   position: relative;
   background: #fafafa;
   top: 10vh;
@@ -2395,7 +2352,7 @@ header .intro-text .intro-heading {
   padding: 20px;
   border-radius: 5px;
 }
-.main .modal .modal-content .circle__subtitle {
+.main .modal__content .circle__subtitle {
   color: #0097b2;
   background-color: transparent;
   line-height: 1.5;
@@ -2403,7 +2360,7 @@ header .intro-text .intro-heading {
   font-weight: bold;
   text-align: center;
 }
-.main .modal .modal-content .circle__content {
+.main .modal__content .circle__content {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -2425,7 +2382,7 @@ header .intro-text .intro-heading {
   font-weight: 400;
   text-align: center;
 }
-.main .modal .close {
+.main .modal__content .close {
   position: absolute;
   top: 0;
   right: 0;
@@ -2441,18 +2398,32 @@ header .intro-text .intro-heading {
   border: 1px solid #ee0000;
   cursor: pointer;
 }
-
-body::before {
-  content: "";
-  position: fixed;
-  z-index: 9;
-  background: linear-gradient(to right, #349333 1px, transparent 1px), linear-gradient(to bottom, #349333 1px, transparent 1px);
-  background-size: 5vw 5vh, 5vw 5vh;
+.main .lines-svg {
+  position: absolute;
+  z-index: 8;
   top: 0;
-  right: 0;
-  bottom: 0;
   left: 0;
+  width: 100%;
+  height: 100%;
   pointer-events: none;
+}
+.main .line {
+  position: absolute;
+  stroke: lightcoral;
+  stroke-width: 9;
+  stroke-dasharray: 10 5;
+  animation: dash 5s linear infinite;
+}
+.main .first-line {
+  top: 250px;
+  left: 250px;
+  width: 50vw;
+  height: 50vh;
+}
+@keyframes dash {
+  to {
+    stroke-dashoffset: 500;
+  }
 }
 
 .mail {

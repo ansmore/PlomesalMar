@@ -9,7 +9,7 @@
   // @include boxSize(height, 300%, 300%, 300%);
   min-height: fit-content;
   .biit {
-    @include flexBox(column, flex-start, center);
+    @include flexBox(column, flex-start, flex-start);
     @include paddingMargin($padding, 0);
     @include style($primary_main);
     @include boxSize(width, 95vw, null, 95vw);
@@ -19,7 +19,7 @@
     flex: 1;
 
     &__row {
-      @include flexBox(column, space-around, center);
+      @include flexBox(column, flex-start, flex-start);
       @include paddingMargin(0 15px);
       @include style($primary_main);
       text-align: center;
@@ -72,6 +72,7 @@
 
       @include hover($secondary_main, inherit, $neutral_darker, $neutral_dark);
     }
+
     .first,
     .second,
     .third,
@@ -79,221 +80,39 @@
     .fifth {
       @extend .circle;
       position: relative;
+      z-index: 2;
     }
 
     .first {
-      left: -50%;
+      left: 5vw;
       top: 5vh;
     }
 
     .second {
-      left: 50%;
+      left: 35vw;
       top: 20vh;
     }
 
     .third {
-      left: -50%;
+      left: 5vw;
       top: 35vh;
     }
 
     .fourth {
-      left: 50%;
+      left: 35vw;
       top: 50vh;
     }
 
     .fifth {
-      left: -50%;
+      left: 5vw;
       top: 65vh;
     }
-
-    .line1::before,
-    .line1::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 50%;
-      width: 50px;
-      height: 15vh;
-      background-color: purple;
-      transform-origin: 50% 0;
-    }
-
-    .line1::before {
-      transform: translateY(-5vh) rotateX(0deg);
-    }
-
-    .line1::after {
-      transform: translateY(5vh) rotateX(0deg);
-    }
-
-    .line1::before,
-    .line1::after {
-      background-size: 50% 2px;
-      background-image: linear-gradient(to right, purple 50%, transparent 50%);
-      animation: conveyorMovement 2s linear infinite;
-    }
-
-    @keyframes conveyorMovement {
-      to {
-        background-position: 100% 0;
-      }
-    }
-
-    // .line1::before,
-    // .line1::after {
-    //   content: "";
-    //   position: absolute;
-    //   top: 0;
-    //   left: 50%;
-    //   width: 50px; /* Grosor de la línea */
-    //   height: 15vh; /* Altura de la línea */
-    //   background-color: purple; /* Color de la línea */
-    //   transform-origin: 50% 0; /* Punto de rotación en la parte superior del disco */
-    // }
-
-    // .line1::before {
-    //   transform: translateY(-5vh) rotateX(0deg);
-    // }
-
-    // .line1::after {
-    //   transform: translateY(5vh) rotateX(0deg);
-    // }
-
-    // .line1::before,
-    // .line1::after {
-    //   animation: dash 2s linear infinite;
-    // }
-
-    // @keyframes dash {
-    //   to {
-    //     stroke-dashoffset: -1000;
-    //   }
-    // }
-    // @keyframes conveyorMovement {
-    //   to {
-    //     transform: translateY(100%);
-    //   }
-    // }
-
-    // .first::before,
-    // .second::before,
-    // .third::before,
-    // .fourth::before,
-    // .fifth::before {
-    //   content: "";
-    //   position: absolute;
-    //   top: 0;
-    //   left: 50%;
-    //   width: 50px; // Grosor de la línea
-    //   height: 15vh; // Altura de la línea
-    //   background-color: purple; // Color de la línea
-    //   transform-origin: 50% 0; // Punto de rotación en la parte superior del disco
-    // }
-
-    // .first::after,
-    // .second::after,
-    // .third::after,
-    // .fourth::after,
-    // .fifth::after {
-    //   content: "";
-    //   position: absolute;
-    //   bottom: 0;
-    //   left: 50%;
-    //   width: 50px; // Grosor de la línea
-    //   height: calc(100% - 65vh); // Altura de la línea
-    //   background-color: red; // Color de la línea
-    //   transform-origin: 50% 100%; // Punto de rotación en la parte inferior del disco
-    // }
-
-    // .first::before {
-    //   transform: translateY(-5vh) rotateX(20deg);
-    // }
-
-    // .second::before {
-    //   transform: translateY(-20vh) rotateX(0deg);
-    // }
-
-    // .third::before {
-    //   transform: translateY(-35vh) rotateX(0deg);
-    // }
-
-    // .fourth::before {
-    //   transform: translateY(-50vh) rotateX(0deg);
-    // }
-
-    // .fifth::before {
-    //   transform: translateY(-65vh) rotateX(0deg);
-    // }
-
-    // .first::after {
-    //   transform: translateY(5vh) rotateX(0deg);
-    // }
-
-    // .second::after {
-    //   transform: translateY(20vh) rotateX(0deg);
-    // }
-
-    // .third::after {
-    //   transform: translateY(35vh) rotateX(0deg);
-    // }
-
-    // .fourth::after {
-    //   transform: translateY(50vh) rotateX(0deg);
-    // }
-
-    // .fifth::after {
-    //   transform: translateY(70vh) rotateX(0deg);
-    // }
-
-    // @keyframes conveyorMovement {
-    //   0% {
-    //     transform: translateY(-100%);
-    //   }
-    //   100% {
-    //     transform: translateY(100%);
-    //   }
-    // }
   }
-  .lines-svg {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-  }
-
-  .lines {
-    stroke: pink;
-    stroke-width: 9;
-    stroke-dasharray: 10 5;
-    animation: dash 5s linear infinite;
-  }
-
-  @keyframes dash {
-    to {
-      stroke-dashoffset: -1000; /* Ajusta según la longitud total de la línea */
-    }
-  }
-
-  // .line-container {
-  //   position: absolute;
-  //   width: 100%;
-  //   height: 100%;
-  //   pointer-events: none;
-  //   overflow: hidden;
-  // }
-
-  // .line {
-  //   position: absolute;
-  //   background-color: yellow;
-  //   width: 50px; /* Grosor de la línea */
-  //   height: 15vh; /* Altura de la línea */
-  //   transform-origin: 50% 0;
-  //   animation: conveyorMovement 5s linear infinite;
-  // }
 
   .modal {
     display: none;
     position: fixed;
+    z-index: 3;
     top: 0;
     left: 0;
     width: 100%;
@@ -302,7 +121,7 @@
     justify-content: center;
     align-items: center;
 
-    .modal-content {
+    &__content {
       position: relative;
       background: $neutral_lighter;
       top: 10vh;
@@ -336,39 +155,53 @@
           text-align: center;
         }
       }
-    }
 
-    .close {
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 50px;
-      height: 50px;
-      text-align: center;
-      justify-content: center;
-      justify-self: center;
-      justify-items: center;
-      font-size: 50px;
-      color: $danger_main;
-      background-color: $danger_lighter;
-      border: 1px solid $danger_main;
-      cursor: pointer;
+      .close {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 50px;
+        height: 50px;
+        text-align: center;
+        justify-content: center;
+        justify-self: center;
+        justify-items: center;
+        font-size: 50px;
+        color: $danger_main;
+        background-color: $danger_lighter;
+        border: 1px solid $danger_main;
+        cursor: pointer;
+      }
     }
   }
-}
 
-body::before {
-  content: "";
-  position: fixed;
-  z-index: 9;
-  background: linear-gradient(to right, #349333 1px, transparent 1px),
-    linear-gradient(to bottom, #349333 1px, transparent 1px);
-  background-size:
-    5vw 5vh,
-    5vw 5vh;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  pointer-events: none;
+  .lines-svg {
+    position: absolute;
+    z-index: 8;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+
+  .line {
+    position: absolute;
+    stroke: lightcoral;
+    stroke-width: 9;
+    stroke-dasharray: 10 5;
+    animation: dash 5s linear infinite;
+  }
+  .first-line {
+    top: 250px;
+    left: 250px;
+    width: 50vw;
+    height: 50vh;
+  }
+
+  @keyframes dash {
+    to {
+      stroke-dashoffset: 500;
+    }
+  }
 }
