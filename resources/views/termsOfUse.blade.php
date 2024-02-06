@@ -10,12 +10,12 @@
         <section id="header__biit" class="termsAndPolicy">
             <div class="termsAndPolicy__row">
                 <div class="circle">
-                    <span class="circle__image">
+                    <span class="circle__pyme">
                         <a href="{{ route('home') }}">
-                            <img src="{{ asset('img/logos/pymesoft_logo_image.png') }}" alt="">
+                            <img src="{{ asset('img/logo.png') }}" alt="">
                         </a>
                     </span>
-                    <span class="circle__image">
+                    <span class="circle__biit">
                         <a href="{{ route('biit') }}">
                             <img src="{{ asset('img/logos/logo_biit.png') }}" alt="">
                         </a>

@@ -10,7 +10,7 @@
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1;
+  z-index: 3;
 
   .navbar {
     @include flexBox(row, space-around, center);
@@ -101,6 +101,7 @@
         }
       }
     }
+
     &__language {
       @include flexBox(row, center, center);
       @include paddingMargin;
@@ -119,19 +120,23 @@
             letter-spacing: 0.25em;
             @include hover($secondary_main, $neutral_lighter);
           }
+
           &:hover {
             @include flexBox(column, center, center);
             @include style($neutral_lighter, $secondary_main);
             @include boxSize(width, 6rem);
           }
+
           .dropdown {
             position: relative;
+
             &__menu {
               @include flexBox(column, center, center);
               position: absolute;
               // left: -1.5rem;
               right: -4rem;
               display: none;
+
               &__item {
                 @include paddingMargin($padding calc($padding * 3));
                 @include style($neutral_lighter, $primary_main);
@@ -146,11 +151,13 @@
                 }
               }
             }
+
             &:hover .dropdown__menu {
               display: flex;
             }
           }
         }
+
         &:hover {
           @include style($neutral_lighter, $secondary_main);
         }
@@ -170,7 +177,7 @@
     &__checkbox {
       display: none;
 
-      &:checked + .navbar {
+      &:checked+.navbar {
         .navbar__menu {
           .list {
             transition: transform 0.5s;
@@ -182,8 +189,7 @@
   }
 }
 
-@media screen and (min-width: 376px) and (max-width: 600px) {
-}
+@media screen and (min-width: 376px) and (max-width: 600px) {}
 
 @media screen and (min-width: 601px) and (max-width: 1024px) {
   .navbar {
@@ -201,8 +207,10 @@
     .toggle {
       display: none;
     }
+
     .navbar {
       @include boxSize(height, null, null, $nav-height);
+
       // max-height: $nav-height;
       &__logo {
         // prova absolute
@@ -251,13 +259,16 @@
           }
         }
       }
+
       &__language {
         margin-right: 0;
+
         .list {
           &__item {
             .dropdown {
               &__menu {
                 right: 0rem;
+
                 &__item {
                   @include boxSize(width, 12rem, null, 14rem);
                 }

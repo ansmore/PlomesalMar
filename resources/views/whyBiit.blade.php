@@ -7,10 +7,13 @@
 
     <div class="main">
         <section class="biit">
-            <div class="biit__row--content" id="mainContainer">
+            <div class="biit__row" id="mainContainer">
                 <div class="first circle modal-button" id="firstModal" data-modal-id="firstModal">
                     <h4 class="circle__title" value-text="modulosCliente"></h4>
                 </div>
+                <svg class="lines-svg">
+                    <line class="line first-line"></line>
+                </svg>
                 <div class="second circle modal-button" id="secondModal" data-modal-id="secondModal">
                     <h4 class="circle__title" value-text="modulosComercio"></h4>
                 </div>
@@ -29,7 +32,7 @@
 
 
         <section id="infoModal" class="modal">
-            <div class="modal-content">
+            <div class="modal__content">
                 <span class="close" id="closeModalButton">
                     <i class="fa-solid fa-xmark"></i>
                 </span>

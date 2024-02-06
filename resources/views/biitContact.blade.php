@@ -10,12 +10,12 @@
         <section id="contact" class="contact">
             <div class="contact__row">
                 <div class="circle">
-                    <span class="circle__image">
+                    <span class="circle__pyme">
                         <a href="{{ route('home', ['language' => $language]) }}">
-                            <img src="{{ asset('img/logos/pymesoft_logo_image.png') }}" alt="">
+                            <img src="{{ asset('img/logo.png') }}" alt="">
                         </a>
                     </span>
-                    <span class="circle__image">
+                    <span class="circle__biit">
                         <a href="{{ route('biit', ['language' => $language]) }}">
                             <img src="{{ asset('img/logos/logo_biit.png') }}" alt="">
                         </a>

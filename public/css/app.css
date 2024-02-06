@@ -222,7 +222,7 @@ header .intro-text .intro-heading {
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1;
+  z-index: 3;
 }
 .nav .navbar {
   display: flex;
@@ -825,7 +825,7 @@ header .intro-text .intro-heading {
   align-self: center;
   padding: 0.5rem;
   margin: 0.5rem;
-  background-color: #fafafa;
+  background-color: #17265c;
   border-radius: 50%;
   border: 1px solid #fafafa;
   box-shadow: 3px 3px 6px #0097b2, -3px -3px 6px #00b4d4;
@@ -836,10 +836,11 @@ header .intro-text .intro-heading {
   overflow: hidden;
 }
 .main .solutions .box__image img {
-  min-width: 250px;
-  max-width: 300px;
-  min-height: 250px;
-  max-height: 300px;
+  min-width: 175px;
+  max-width: 200px;
+  min-height: 175px;
+  max-height: 200px;
+  padding-top: 3rem;
 }
 .main .solutions .box--content {
   color: #17265c;
@@ -895,15 +896,7 @@ header .intro-text .intro-heading {
   font-style: italic;
   font-weight: 400;
 }
-.main .solutions .circle, .main .solutions .biit .first, .main .biit .solutions .first,
-.main .solutions .biit .second,
-.main .biit .solutions .second,
-.main .solutions .biit .third,
-.main .biit .solutions .third,
-.main .solutions .biit .fourth,
-.main .biit .solutions .fourth,
-.main .solutions .biit .fifth,
-.main .biit .solutions .fifth {
+.main .solutions .circle {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -980,15 +973,7 @@ header .intro-text .intro-heading {
   font-style: italic;
   font-weight: 400;
 }
-.main .solutions .circle:hover, .main .solutions .biit .first:hover, .main .biit .solutions .first:hover,
-.main .solutions .biit .second:hover,
-.main .biit .solutions .second:hover,
-.main .solutions .biit .third:hover,
-.main .biit .solutions .third:hover,
-.main .solutions .biit .fourth:hover,
-.main .biit .solutions .fourth:hover,
-.main .solutions .biit .fifth:hover,
-.main .biit .solutions .fifth:hover {
+.main .solutions .circle:hover {
   color: inherit;
   background-color: #0097b2;
   border: 1px solid #1f1f1f;
@@ -1519,15 +1504,7 @@ header .intro-text .intro-heading {
   min-width: 90vw;
   max-width: 90vw;
 }
-.main .contact__row .circle, .main .contact__row .biit .first, .main .biit .contact__row .first,
-.main .contact__row .biit .second,
-.main .biit .contact__row .second,
-.main .contact__row .biit .third,
-.main .biit .contact__row .third,
-.main .contact__row .biit .fourth,
-.main .biit .contact__row .fourth,
-.main .contact__row .biit .fifth,
-.main .biit .contact__row .fifth {
+.main .contact__row .circle {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -1543,7 +1520,45 @@ header .intro-text .intro-heading {
   gap: 0.5rem;
   overflow: hidden;
 }
-.main .contact__row .circle__image {
+.main .contact__row .circle__pyme {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+  justify-self: center;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  background-color: #17265c;
+  border-radius: 50%;
+  border: 1px solid #fafafa;
+  box-shadow: 3px 3px 6px #0097b2, -3px -3px 6px #00b4d4;
+  min-width: 125px;
+  max-width: 150px;
+  min-height: 125px;
+  max-height: 150px;
+  overflow: hidden;
+}
+.main .contact__row .circle__pyme img {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+  justify-self: center;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  padding: 0.5rem;
+  margin: 0;
+  padding-top: 1rem;
+  min-width: 75px;
+  max-width: 100px;
+  min-height: 75px;
+  max-height: 100px;
+}
+.main .contact__row .circle__biit {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1564,7 +1579,7 @@ header .intro-text .intro-heading {
   max-height: 150px;
   overflow: hidden;
 }
-.main .contact__row .circle__image img {
+.main .contact__row .circle__biit img {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1726,15 +1741,7 @@ header .intro-text .intro-heading {
   }
 }
 @media screen and (min-width: 601px) and (max-width: 1024px) {
-  .main .contact__row .circle, .main .contact__row .biit .first, .main .biit .contact__row .first,
-  .main .contact__row .biit .second,
-  .main .biit .contact__row .second,
-  .main .contact__row .biit .third,
-  .main .biit .contact__row .third,
-  .main .contact__row .biit .fourth,
-  .main .biit .contact__row .fourth,
-  .main .contact__row .biit .fifth,
-  .main .biit .contact__row .fifth {
+  .main .contact__row .circle {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -1762,15 +1769,7 @@ header .intro-text .intro-heading {
   }
 }
 @media screen and (min-width: 1025px) {
-  .main .contact__row .circle, .main .contact__row .biit .first, .main .biit .contact__row .first,
-  .main .contact__row .biit .second,
-  .main .biit .contact__row .second,
-  .main .contact__row .biit .third,
-  .main .biit .contact__row .third,
-  .main .contact__row .biit .fourth,
-  .main .biit .contact__row .fourth,
-  .main .contact__row .biit .fifth,
-  .main .biit .contact__row .fifth {
+  .main .contact__row .circle {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -1871,26 +1870,8 @@ header .intro-text .intro-heading {
   min-width: 90vw;
   max-width: 90vw;
 }
-.main .termsAndPolicy__row .circle, .main .termsAndPolicy__row .biit .first, .main .biit .termsAndPolicy__row .first,
-.main .termsAndPolicy__row .biit .second,
-.main .biit .termsAndPolicy__row .second,
-.main .termsAndPolicy__row .biit .third,
-.main .biit .termsAndPolicy__row .third,
-.main .termsAndPolicy__row .biit .fourth,
-.main .biit .termsAndPolicy__row .fourth,
-.main .termsAndPolicy__row .biit .fifth,
-.main .biit .termsAndPolicy__row .fifth,
-.main .whatIs__row .circle,
-.main .whatIs__row .biit .first,
-.main .biit .whatIs__row .first,
-.main .whatIs__row .biit .second,
-.main .biit .whatIs__row .second,
-.main .whatIs__row .biit .third,
-.main .biit .whatIs__row .third,
-.main .whatIs__row .biit .fourth,
-.main .biit .whatIs__row .fourth,
-.main .whatIs__row .biit .fifth,
-.main .biit .whatIs__row .fifth {
+.main .termsAndPolicy__row .circle,
+.main .whatIs__row .circle {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -1904,8 +1885,48 @@ header .intro-text .intro-heading {
   min-width: 80vw;
   max-width: 80vw;
 }
-.main .termsAndPolicy__row .circle__image,
-.main .whatIs__row .circle__image {
+.main .termsAndPolicy__row .circle__pyme,
+.main .whatIs__row .circle__pyme {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+  justify-self: center;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  background-color: #17265c;
+  border-radius: 50%;
+  border: 1px solid #fafafa;
+  box-shadow: 3px 3px 6px #0097b2, -3px -3px 6px #00b4d4;
+  min-width: 125px;
+  max-width: 150px;
+  min-height: 125px;
+  max-height: 150px;
+  overflow: hidden;
+}
+.main .termsAndPolicy__row .circle__pyme img,
+.main .whatIs__row .circle__pyme img {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+  justify-self: center;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  padding: 0.5rem;
+  margin: 0;
+  padding-top: 1rem;
+  min-width: 75px;
+  max-width: 100px;
+  min-height: 75px;
+  max-height: 100px;
+}
+.main .termsAndPolicy__row .circle__biit,
+.main .whatIs__row .circle__biit {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1926,8 +1947,8 @@ header .intro-text .intro-heading {
   max-height: 150px;
   overflow: hidden;
 }
-.main .termsAndPolicy__row .circle__image img,
-.main .whatIs__row .circle__image img {
+.main .termsAndPolicy__row .circle__biit img,
+.main .whatIs__row .circle__biit img {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -2057,15 +2078,7 @@ header .intro-text .intro-heading {
   }
 }
 @media screen and (min-width: 601px) and (max-width: 1024px) {
-  .main .termsAndPolicy__row .circle, .main .termsAndPolicy__row .biit .first, .main .biit .termsAndPolicy__row .first,
-  .main .termsAndPolicy__row .biit .second,
-  .main .biit .termsAndPolicy__row .second,
-  .main .termsAndPolicy__row .biit .third,
-  .main .biit .termsAndPolicy__row .third,
-  .main .termsAndPolicy__row .biit .fourth,
-  .main .biit .termsAndPolicy__row .fourth,
-  .main .termsAndPolicy__row .biit .fifth,
-  .main .biit .termsAndPolicy__row .fifth {
+  .main .termsAndPolicy__row .circle {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -2092,15 +2105,7 @@ header .intro-text .intro-heading {
   }
 }
 @media screen and (min-width: 1025px) {
-  .main .termsAndPolicy__row .circle, .main .termsAndPolicy__row .biit .first, .main .biit .termsAndPolicy__row .first,
-  .main .termsAndPolicy__row .biit .second,
-  .main .biit .termsAndPolicy__row .second,
-  .main .termsAndPolicy__row .biit .third,
-  .main .biit .termsAndPolicy__row .third,
-  .main .termsAndPolicy__row .biit .fourth,
-  .main .biit .termsAndPolicy__row .fourth,
-  .main .termsAndPolicy__row .biit .fifth,
-  .main .biit .termsAndPolicy__row .fifth {
+  .main .termsAndPolicy__row .circle {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -2172,7 +2177,7 @@ header .intro-text .intro-heading {
   justify-items: center;
   justify-self: center;
   align-content: center;
-  align-items: center;
+  align-items: flex-start;
   align-self: center;
   padding: 0.5rem;
   margin: 0;
@@ -2190,7 +2195,7 @@ header .intro-text .intro-heading {
   justify-items: center;
   justify-self: center;
   align-content: center;
-  align-items: center;
+  align-items: flex-start;
   align-self: center;
   padding: 0.5rem;
   margin: 0;
@@ -2199,17 +2204,17 @@ header .intro-text .intro-heading {
   min-width: 95vw;
   max-width: 95vw;
   flex-direction: column;
-  min-height: 160rem;
+  min-height: 110rem;
   flex: 1;
 }
 .main .biit__row {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: flex-start;
   justify-items: center;
   justify-self: center;
   align-content: center;
-  align-items: center;
+  align-items: flex-start;
   align-self: center;
   padding: 0 15px;
   margin: 0;
@@ -2220,18 +2225,14 @@ header .intro-text .intro-heading {
   max-width: 90vw;
   min-height: 8rem;
 }
-.main .biit .circle, .main .biit .first,
-.main .biit .second,
-.main .biit .third,
-.main .biit .fourth,
-.main .biit .fifth {
+.main .biit .circle {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   justify-items: center;
   justify-self: center;
   align-content: center;
-  align-items: center;
+  align-items: flex-start;
   align-self: center;
   padding: 0.5rem;
   margin: 0.5rem;
@@ -2261,7 +2262,7 @@ header .intro-text .intro-heading {
   color: #17265c;
   background-color: transparent;
   min-height: 4rem;
-  font-size: 30px;
+  font-size: 25px;
   line-height: 1.5;
   text-align: center;
 }
@@ -2293,11 +2294,7 @@ header .intro-text .intro-heading {
   font-style: italic;
   font-weight: 400;
 }
-.main .biit .circle:hover, .main .biit .first:hover,
-.main .biit .second:hover,
-.main .biit .third:hover,
-.main .biit .fourth:hover,
-.main .biit .fifth:hover {
+.main .biit .circle:hover {
   color: inherit;
   background-color: #0097b2;
   border: 1px solid #1f1f1f;
@@ -2307,31 +2304,45 @@ header .intro-text .intro-heading {
 .main .biit .third,
 .main .biit .fourth,
 .main .biit .fifth {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  justify-items: center;
+  justify-self: center;
+  align-content: center;
+  align-items: flex-start;
+  align-self: center;
+  min-width: 250px;
+  max-width: 275px;
+  min-height: 250px;
+  max-height: 275px;
   position: relative;
+  z-index: 2;
 }
 .main .biit .first {
-  left: -50%;
+  left: -15vw;
   top: 5vh;
 }
 .main .biit .second {
-  left: 50%;
-  top: 20vh;
+  left: 15vw;
+  top: 15vh;
 }
 .main .biit .third {
-  left: -50%;
-  top: 35vh;
+  left: -15vw;
+  top: 25vh;
 }
 .main .biit .fourth {
-  left: 50%;
-  top: 50vh;
+  left: 15vw;
+  top: 35vh;
 }
 .main .biit .fifth {
-  left: -50%;
-  top: 65vh;
+  left: -15vw;
+  top: 45vh;
 }
 .main .modal {
   display: none;
   position: fixed;
+  z-index: 3;
   top: 0;
   left: 0;
   width: 100%;
@@ -2340,7 +2351,7 @@ header .intro-text .intro-heading {
   justify-content: center;
   align-items: center;
 }
-.main .modal .modal-content {
+.main .modal__content {
   position: relative;
   background: #fafafa;
   top: 10vh;
@@ -2350,7 +2361,7 @@ header .intro-text .intro-heading {
   padding: 20px;
   border-radius: 5px;
 }
-.main .modal .modal-content .circle__subtitle {
+.main .modal__content .circle__subtitle {
   color: #0097b2;
   background-color: transparent;
   line-height: 1.5;
@@ -2358,7 +2369,7 @@ header .intro-text .intro-heading {
   font-weight: bold;
   text-align: center;
 }
-.main .modal .modal-content .circle__content {
+.main .modal__content .circle__content {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -2373,14 +2384,14 @@ header .intro-text .intro-heading {
   background-color: transparent;
   border-bottom-left-radius: 25%;
   border-bottom-right-radius: 25%;
-  font-size: 1.5em;
+  font-size: 1.2em;
   line-height: 1.5;
   text-transform: none;
   font-style: italic;
   font-weight: 400;
   text-align: center;
 }
-.main .modal .close {
+.main .modal__content .close {
   position: absolute;
   top: 0;
   right: 0;
@@ -2396,7 +2407,52 @@ header .intro-text .intro-heading {
   border: 1px solid #ee0000;
   cursor: pointer;
 }
+.main .lines-svg {
+  position: absolute;
+  z-index: 8;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.main .line {
+  position: absolute;
+  stroke: lightcoral;
+  stroke-width: 9;
+  stroke-dasharray: 10 5;
+  animation: dash 5s linear infinite;
+}
+.main .first-line {
+  top: 250px;
+  left: 250px;
+  width: 50vw;
+  height: 50vh;
+}
+@keyframes dash {
+  to {
+    stroke-dashoffset: 500;
+  }
+}
 
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+  .main {
+    min-height: 130rem;
+  }
+  .main .biit .circle__title {
+    font-size: 30px;
+  }
+  .main .biit .first,
+  .main .biit .second,
+  .main .biit .third,
+  .main .biit .fourth,
+  .main .biit .fifth {
+    min-width: 300px;
+    max-width: 325px;
+    min-height: 300px;
+    max-height: 325px;
+  }
+}
 .mail {
   display: flex;
   flex-direction: column;

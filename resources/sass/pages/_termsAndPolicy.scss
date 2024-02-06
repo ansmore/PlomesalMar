@@ -6,11 +6,13 @@
   font-size: $size_small;
   margin-top: $nav-height;
   gap: $gap;
+
   .termsAndPolicy,
   .whatIs {
     @include flexBox(column, space-around, center);
     @include paddingMargin(4rem $padding $padding $padding, 0);
     @include boxSize(width, 95vw, null, 95vw);
+
     &__row {
       @include flexBox(column, space-around, center);
       @include paddingMargin(0 15px);
@@ -21,21 +23,20 @@
         @include paddingMargin($padding 0);
         @include boxSize(width, 80vw, null, 80vw);
 
-        &__image {
+        &__pyme {
           @include flexBox(column, center, center);
           @include paddingMargin($padding, $margin);
-          @include style(null, $neutral_lighter);
-          @include boxShadow(
-            $neutral_lighter,
+          @include style(null, $primary_main);
+          @include boxShadow($neutral_lighter,
             50%,
             3px,
             $secondary_main,
-            $secondary_light
-          );
+            $secondary_light );
           @include boxSize(width, 125px, null, 150px);
           @include boxSize(height, 125px, null, 150px);
 
           overflow: hidden;
+
 
           img {
             @include flexBox(column, center, center);
@@ -44,8 +45,35 @@
             @include boxSize(width, 75px, null, 100px);
             @include boxSize(height, 75px, null, 100px);
           }
+
+        }
+
+        &__biit {
+          @include flexBox(column, center, center);
+          @include paddingMargin($padding, $margin);
+          @include style(null, $neutral_lighter);
+          @include boxShadow($neutral_lighter,
+            50%,
+            3px,
+            $secondary_main,
+            $secondary_light );
+          @include boxSize(width, 125px, null, 150px);
+          @include boxSize(height, 125px, null, 150px);
+
+          overflow: hidden;
+
+
+          img {
+            @include flexBox(column, center, center);
+            @include paddingMargin($padding);
+            padding-top: 1rem;
+            @include boxSize(width, 75px, null, 100px);
+            @include boxSize(height, 75px, null, 100px);
+          }
+
         }
       }
+
       .box {
         // @include flexBox(column, flex-start, center);
         @include paddingMargin($padding, $margin);
@@ -89,15 +117,18 @@
           @include style($secondary_main);
         }
       }
+
       .info {
         @include flexBox(row, center, center);
         @include boxSize(width, 80vw, null, 80vw);
         gap: $gap;
         line-height: 1.5;
+
         &__column__left {
           @include flexBox(column, flex-end, flex-end);
           @include boxSize(width, 35vw, null, 35vw);
         }
+
         &__column__right {
           @include flexBox(column, flex-start, flex-start);
           @include boxSize(width, 35vw, null, 35vw);
@@ -135,6 +166,7 @@
           @include flexBox(row, center, center);
           @include paddingMargin(3rem $padding, $margin);
           gap: calc($gap * 2);
+
           &__image {
             @include boxSize(width, 250px, null, 300px);
             @include boxSize(height, 250px, null, 300px);
@@ -158,6 +190,7 @@
           @include flexBox(row, center, center);
           @include paddingMargin(5rem $padding, $margin);
           gap: calc($gap * 3);
+
           &__image {
             @include boxSize(width, 250px, null, 300px);
             @include boxSize(height, 250px, null, 300px);

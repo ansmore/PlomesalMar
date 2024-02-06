@@ -6,10 +6,12 @@
   font-size: $size_small;
   margin-top: $nav-height;
   gap: $gap;
+
   .contact {
     @include flexBox(column, space-around, center);
     @include paddingMargin($padding, 0);
     @include boxSize(width, 95vw, null, 95vw);
+
     &__row {
       @include flexBox(column, space-around, center);
       @include paddingMargin(0 15px);
@@ -22,17 +24,39 @@
         gap: $gap;
 
         overflow: hidden;
-        &__image {
+
+        &__pyme {
           @include flexBox(column, center, center);
           @include paddingMargin($padding, $margin);
-          @include style(null, $neutral_lighter);
-          @include boxShadow(
-            $neutral_lighter,
+          @include style(null, $primary_main);
+          @include boxShadow($neutral_lighter,
             50%,
             3px,
             $secondary_main,
-            $secondary_light
-          );
+            $secondary_light );
+          @include boxSize(width, 125px, null, 150px);
+          @include boxSize(height, 125px, null, 150px);
+
+          overflow: hidden;
+
+          img {
+            @include flexBox(column, center, center);
+            @include paddingMargin($padding);
+            padding-top: 1rem;
+            @include boxSize(width, 75px, null, 100px);
+            @include boxSize(height, 75px, null, 100px);
+          }
+        }
+
+        &__biit {
+          @include flexBox(column, center, center);
+          @include paddingMargin($padding, $margin);
+          @include style(null, $neutral_lighter);
+          @include boxShadow($neutral_lighter,
+            50%,
+            3px,
+            $secondary_main,
+            $secondary_light );
           @include boxSize(width, 125px, null, 150px);
           @include boxSize(height, 125px, null, 150px);
 
@@ -47,6 +71,7 @@
           }
         }
       }
+
       .box {
         @include flexBox(column, flex-start, center);
         @include paddingMargin($padding, $margin);
@@ -64,31 +89,34 @@
           line-height: 1.5;
         }
       }
+
       .form {
         @include flexBox(column, space-around, center);
         @include style($primary_main);
         @include boxSize(width, 80vw, null, 80vw);
+
         &__group {
           @include flexBox(column, space-around, center);
           @include paddingMargin($padding, $margin);
+
           &__content {
             @include paddingMargin($padding, $margin);
             font-size: 16px;
             text-transform: none;
             font-weight: 400;
           }
+
           &__input {
             @include paddingMargin(1rem, $margin);
             @include style($secondary_main, $neutral_lighter);
             @include boxSize(width, 75vw, null, 75vw);
 
-            @include hover(
-              $neutral_lightest,
+            @include hover($neutral_lightest,
               inherit,
               $secondary_main,
-              $neutral_dark
-            );
+              $neutral_dark );
           }
+
           &__button {
             @include flexBox(column, center, center);
             @include paddingMargin($padding, $margin);
@@ -96,20 +124,21 @@
             @include boxSize(width, 35vw);
             @include boxSize(height, 5rem);
             font-size: 16px;
-            @include hover(
-              $secondary_light,
+            @include hover($secondary_light,
               $neutral_lighter,
-              $neutral_lighter
-            );
+              $neutral_lighter );
           }
+
           &--consent {
             @include flexBox(row, center, center);
             @include paddingMargin(0, $margin auto);
+
             // gap: $gap;
             &__consent {
               @include boxSize(width, 35vw, null, 35vw);
               font-size: 12px;
             }
+
             &__check {
               appearance: checkbox;
               width: 1rem;
@@ -150,11 +179,13 @@
           @include flexBox(row, center, center);
           @include paddingMargin(3rem $padding, $margin);
           gap: calc($gap * 2);
+
           &__image {
             @include boxSize(width, 250px, null, 300px);
             @include boxSize(height, 250px, null, 300px);
 
             overflow: hidden;
+
             img {
               @include boxSize(width, 150px, null, 200px);
               @include boxSize(height, 125px, null, 200px);
@@ -174,6 +205,7 @@
           @include flexBox(row, center, center);
           @include paddingMargin(5rem $padding, $margin);
           gap: calc($gap * 3);
+
           &__image {
             @include boxSize(width, 250px, null, 300px);
             @include boxSize(height, 250px, null, 300px);
@@ -184,13 +216,16 @@
             }
           }
         }
+
         .form {
           &__group {
             @include flexBox(row, flex-end, center);
             @include boxSize(width, 75vw, null, 75vw);
+
             &__input {
               @include boxSize(width, 50vw, null, 50vw);
             }
+
             &__button {
               @include flexBox(column, center, center);
               @include paddingMargin($padding, $margin auto);
