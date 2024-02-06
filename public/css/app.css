@@ -825,7 +825,7 @@ header .intro-text .intro-heading {
   align-self: center;
   padding: 0.5rem;
   margin: 0.5rem;
-  background-color: #fafafa;
+  background-color: #17265c;
   border-radius: 50%;
   border: 1px solid #fafafa;
   box-shadow: 3px 3px 6px #0097b2, -3px -3px 6px #00b4d4;
@@ -836,10 +836,11 @@ header .intro-text .intro-heading {
   overflow: hidden;
 }
 .main .solutions .box__image img {
-  min-width: 250px;
-  max-width: 300px;
-  min-height: 250px;
-  max-height: 300px;
+  min-width: 175px;
+  max-width: 200px;
+  min-height: 175px;
+  max-height: 200px;
+  padding-top: 3rem;
 }
 .main .solutions .box--content {
   color: #17265c;
@@ -1519,7 +1520,45 @@ header .intro-text .intro-heading {
   gap: 0.5rem;
   overflow: hidden;
 }
-.main .contact__row .circle__image {
+.main .contact__row .circle__pyme {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+  justify-self: center;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  background-color: #17265c;
+  border-radius: 50%;
+  border: 1px solid #fafafa;
+  box-shadow: 3px 3px 6px #0097b2, -3px -3px 6px #00b4d4;
+  min-width: 125px;
+  max-width: 150px;
+  min-height: 125px;
+  max-height: 150px;
+  overflow: hidden;
+}
+.main .contact__row .circle__pyme img {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+  justify-self: center;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  padding: 0.5rem;
+  margin: 0;
+  padding-top: 1rem;
+  min-width: 75px;
+  max-width: 100px;
+  min-height: 75px;
+  max-height: 100px;
+}
+.main .contact__row .circle__biit {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1540,7 +1579,7 @@ header .intro-text .intro-heading {
   max-height: 150px;
   overflow: hidden;
 }
-.main .contact__row .circle__image img {
+.main .contact__row .circle__biit img {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1846,8 +1885,48 @@ header .intro-text .intro-heading {
   min-width: 80vw;
   max-width: 80vw;
 }
-.main .termsAndPolicy__row .circle__image,
-.main .whatIs__row .circle__image {
+.main .termsAndPolicy__row .circle__pyme,
+.main .whatIs__row .circle__pyme {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+  justify-self: center;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  background-color: #17265c;
+  border-radius: 50%;
+  border: 1px solid #fafafa;
+  box-shadow: 3px 3px 6px #0097b2, -3px -3px 6px #00b4d4;
+  min-width: 125px;
+  max-width: 150px;
+  min-height: 125px;
+  max-height: 150px;
+  overflow: hidden;
+}
+.main .termsAndPolicy__row .circle__pyme img,
+.main .whatIs__row .circle__pyme img {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+  justify-self: center;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  padding: 0.5rem;
+  margin: 0;
+  padding-top: 1rem;
+  min-width: 75px;
+  max-width: 100px;
+  min-height: 75px;
+  max-height: 100px;
+}
+.main .termsAndPolicy__row .circle__biit,
+.main .whatIs__row .circle__biit {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1868,8 +1947,8 @@ header .intro-text .intro-heading {
   max-height: 150px;
   overflow: hidden;
 }
-.main .termsAndPolicy__row .circle__image img,
-.main .whatIs__row .circle__image img {
+.main .termsAndPolicy__row .circle__biit img,
+.main .whatIs__row .circle__biit img {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -2305,7 +2384,7 @@ header .intro-text .intro-heading {
   background-color: transparent;
   border-bottom-left-radius: 25%;
   border-bottom-right-radius: 25%;
-  font-size: 1.5em;
+  font-size: 1.2em;
   line-height: 1.5;
   text-transform: none;
   font-style: italic;

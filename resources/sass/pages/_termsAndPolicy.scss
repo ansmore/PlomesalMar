@@ -23,7 +23,32 @@
         @include paddingMargin($padding 0);
         @include boxSize(width, 80vw, null, 80vw);
 
-        &__image {
+        &__pyme {
+          @include flexBox(column, center, center);
+          @include paddingMargin($padding, $margin);
+          @include style(null, $primary_main);
+          @include boxShadow($neutral_lighter,
+            50%,
+            3px,
+            $secondary_main,
+            $secondary_light );
+          @include boxSize(width, 125px, null, 150px);
+          @include boxSize(height, 125px, null, 150px);
+
+          overflow: hidden;
+
+
+          img {
+            @include flexBox(column, center, center);
+            @include paddingMargin($padding);
+            padding-top: 1rem;
+            @include boxSize(width, 75px, null, 100px);
+            @include boxSize(height, 75px, null, 100px);
+          }
+
+        }
+
+        &__biit {
           @include flexBox(column, center, center);
           @include paddingMargin($padding, $margin);
           @include style(null, $neutral_lighter);
@@ -37,6 +62,7 @@
 
           overflow: hidden;
 
+
           img {
             @include flexBox(column, center, center);
             @include paddingMargin($padding);
@@ -44,6 +70,7 @@
             @include boxSize(width, 75px, null, 100px);
             @include boxSize(height, 75px, null, 100px);
           }
+
         }
       }
 
