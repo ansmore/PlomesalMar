@@ -1,5 +1,5 @@
 .main {
-  @include flexBox(column, space-around);
+  @include flexBox(column, space-around, flex-start);
   @include paddingMargin($padding);
   @include style($primary_main, $neutral_light);
   font-size: $size_small;
@@ -8,6 +8,7 @@
   // @include boxSize(height, 300rem, 300rem, 300rem);
   // @include boxSize(height, 300%, 300%, 300%);
   min-height: fit-content;
+
   .biit {
     @include flexBox(column, flex-start, flex-start);
     @include paddingMargin($padding, 0);
@@ -15,7 +16,7 @@
     @include boxSize(width, 95vw, null, 95vw);
     // @include boxSize(height, 500rem, 500rem, 500rem);
     flex-direction: column;
-    min-height: 160rem;
+    min-height: 110rem;
     flex: 1;
 
     &__row {
@@ -30,7 +31,7 @@
     }
 
     .circle {
-      @include flexBox(column, flex-start, center);
+      @include flexBox(column, flex-start, flex-start);
       @include paddingMargin($padding, $margin);
       @include style(inherit, $neutral_main);
       @include boxSize(width, 20rem, null, 20rem);
@@ -45,7 +46,7 @@
         @include style($primary_main);
         @include boxSize(height, 4rem);
         // min-height: 4rem;
-        font-size: 30px;
+        font-size: 25px;
         line-height: 1.5;
         text-align: center;
       }
@@ -78,34 +79,37 @@
     .third,
     .fourth,
     .fifth {
-      @extend .circle;
+      // @extend .circle;
+      @include flexBox(column, flex-start, flex-start);
+      @include boxSize(width, 250px, null, 275px);
+      @include boxSize(height, 250px, null, 275px);
       position: relative;
       z-index: 2;
     }
 
     .first {
-      left: 5vw;
+      left: -15vw;
       top: 5vh;
     }
 
     .second {
-      left: 35vw;
-      top: 20vh;
+      left: 15vw;
+      top: 15vh;
     }
 
     .third {
-      left: 5vw;
-      top: 35vh;
+      left: -15vw;
+      top: 25vh;
     }
 
     .fourth {
-      left: 35vw;
-      top: 50vh;
+      left: 15vw;
+      top: 35vh;
     }
 
     .fifth {
-      left: 5vw;
-      top: 65vh;
+      left: -15vw;
+      top: 45vh;
     }
   }
 
@@ -192,6 +196,7 @@
     stroke-dasharray: 10 5;
     animation: dash 5s linear infinite;
   }
+
   .first-line {
     top: 250px;
     left: 250px;
@@ -205,3 +210,30 @@
     }
   }
 }
+
+@media screen and (min-width: 376px) and (max-width: 600px) {}
+
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+  .main {
+    min-height: 130rem;
+
+    .biit {
+      .circle {
+        &__title {
+          font-size: 30px;
+        }
+      }
+
+      .first,
+      .second,
+      .third,
+      .fourth,
+      .fifth {
+        @include boxSize(width, 300px, null, 325px);
+        @include boxSize(height, 300px, null, 325px);
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1025px) {}

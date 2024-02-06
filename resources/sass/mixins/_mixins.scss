@@ -30,26 +30,23 @@
 /** 
 * Must be the last line in all call to this mixin!
 */
-@mixin hover(
-  $background: transparent,
+@mixin hover($background: transparent,
   $color: inherit,
   $borderColor: transparent,
-  $preBorderColor: transparent
-) {
+  $preBorderColor: transparent) {
   border: 1px solid $preBorderColor;
+
   &:hover {
     @include style($color, $background);
     border: 1px solid $borderColor;
   }
 }
 
-@mixin button(
-  $background: transparent,
+@mixin button($background: transparent,
   $color: inherit,
   $borderColor: transparent,
   $paddingSize: $padding,
-  $marginSize: 0
-) {
+  $marginSize: 0) {
   @include style($color, $background);
   @include paddingMargin($paddingSize, $marginSize);
   border: 1px solid $borderColor;
@@ -64,18 +61,15 @@
  * @return {boolean} - Returns true if it has a valid unit, otherwise, false.
  */
 @function checkUnit($value) {
-  @if $value == null {
+  @if $value ==null {
     @return true;
   }
 
-  @if type-of($value) == "number" {
+  @if type-of($value)=="number" {
     $value: $value + "";
   }
 
-  @return type-of($value) == "string" and str-slice($value, -1) == "%" or
-    str-slice($value, -2) == "px" or str-slice($value, -2) == "em" or
-    str-slice($value, -2) == "vw" or str-slice($value, -2) == "vh" or
-    str-slice($value, -3) == "rem";
+  @return type-of($value)=="string" and str-slice($value, -1)=="%" or str-slice($value, -2)=="px" or str-slice($value, -2)=="em" or str-slice($value, -2)=="vw" or str-slice($value, -2)=="vh" or str-slice($value, -3)=="rem";
 }
 
 /**
@@ -89,29 +83,32 @@
  * @param {string} $max - Maximum size (optional).
  */
 @mixin boxSize($type: width, $min: null, $size: null, $max: null) {
-  @if $type == "width" {
+  @if $type =="width" {
     min-width: if(checkUnit($min), $min, $min + vw);
     width: if(checkUnit($size), $size, $size + vw);
     max-width: if(checkUnit($max), $max, $max + vw);
-  } @else if $type == "height" {
+  }
+
+  @else if $type =="height" {
     min-height: if(checkUnit($min), $min, $min + vh);
     height: if(checkUnit($size), $size, $size + vh);
     max-height: if(checkUnit($max), $max, $max + vh);
-  } @else {
+  }
+
+  @else {
     @warn "The first value must be only [width,height,null], please check the parameters!";
   }
 }
 
-@mixin boxShadow(
-  $boderColor: transparent,
+@mixin boxShadow($boderColor: transparent,
   $radius: 0,
   $axis: 3px,
   $shadowColor: $neutral_main,
-  $shadowColorSecondary: $neutral_light
-) {
+  $shadowColorSecondary: $neutral_light) {
   border-radius: $radius;
   border: 1px solid $boderColor;
   box-shadow:
-    $axis $axis ($axis * 2) $shadowColor,
+    $axis $axis (
+    $axis * 2) $shadowColor,
     (-$axis) (-$axis) ($axis * 2) $shadowColorSecondary;
 }
