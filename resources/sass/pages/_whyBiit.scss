@@ -5,8 +5,6 @@
   font-size: $size_small;
   margin-top: $nav-height;
   gap: $gap;
-  // @include boxSize(height, 300rem, 300rem, 300rem);
-  // @include boxSize(height, 300%, 300%, 300%);
   min-height: fit-content;
 
   .biit {
@@ -14,9 +12,9 @@
     @include paddingMargin($padding, 0);
     @include style($primary_main);
     @include boxSize(width, 95vw, null, 95vw);
-    // @include boxSize(height, 500rem, 500rem, 500rem);
     flex-direction: column;
-    min-height: 110rem;
+    // min-height: 30rem;
+    // max-height: 70rem;
     flex: 1;
 
     &__row {
@@ -27,7 +25,7 @@
 
       @include boxSize(width, 90vw, null, 90vw);
 
-      min-height: 8rem;
+      // min-height: 8rem;
     }
 
     .circle {
@@ -38,17 +36,20 @@
       @include boxSize(height, 20rem);
       @include boxShadow($neutral_dark);
       border-radius: 50%;
-      padding-top: 5rem;
+      padding-top: 4rem;
+      position: relative;
 
       &__title {
         @include flexBox(column, space-around, center);
         @include paddingMargin($padding, 0 15px);
         @include style($primary_main);
         @include boxSize(height, 4rem);
-        // min-height: 4rem;
         font-size: 25px;
         line-height: 1.5;
         text-align: center;
+
+        border-top-left-radius: 25%;
+        border-top-right-radius: 25%;
       }
 
       &__subtitle {
@@ -92,24 +93,77 @@
       top: 5vh;
     }
 
+
+
     .second {
       left: 15vw;
-      top: 15vh;
+      top: -5vh;
     }
 
     .third {
       left: -15vw;
-      top: 25vh;
+      top: -15vh;
     }
 
     .fourth {
       left: 15vw;
-      top: 35vh;
+      top: -25vh;
     }
 
     .fifth {
       left: -15vw;
-      top: 45vh;
+      top: -35vh;
+    }
+
+    .lines {
+      @include flexBox(column, flex-start, flex-start);
+      @include style(inherit, transparent);
+      @include boxSize(width, 100px, null, 150px);
+
+      position: relative;
+      z-index: 1;
+    }
+
+    .first-line {
+      left: 0vw;
+      top: 0vh;
+    }
+
+    .second-line {
+      left: 0vw;
+      top: -10vh;
+    }
+
+    .third-line {
+      left: 0vw;
+      top: -20vh;
+    }
+
+    .fourth-line {
+      left: 0vw;
+      top: -30vh;
+    }
+
+    .lines-svg {
+      position: relative;
+
+    }
+
+    // Estilos para la línea SVG utilizando las variables
+    .mi-linea {
+      stroke: $secondary_main;
+      stroke-width: 9;
+      stroke-dasharray: 5 5;
+      animation: dash 15s linear infinite;
+      position: relative;
+      z-index: 1;
+
+    }
+
+    @keyframes dash {
+      to {
+        stroke-dashoffset: -500;
+      }
     }
   }
 
@@ -125,7 +179,7 @@
     justify-content: center;
     align-items: center;
 
-    &__content {
+    &__box {
       position: relative;
       background: $neutral_lighter;
       top: 10vh;
@@ -176,64 +230,85 @@
         border: 1px solid $danger_main;
         cursor: pointer;
       }
-    }
-  }
 
-  .lines-svg {
-    position: absolute;
-    z-index: 8;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-  }
-
-  .line {
-    position: absolute;
-    stroke: lightcoral;
-    stroke-width: 9;
-    stroke-dasharray: 10 5;
-    animation: dash 5s linear infinite;
-  }
-
-  .first-line {
-    top: 250px;
-    left: 250px;
-    width: 50vw;
-    height: 50vh;
-  }
-
-  @keyframes dash {
-    to {
-      stroke-dashoffset: 500;
+      @include hover($neutral_lighter,
+        inherit,
+        $secondary_main,
+        transparent);
     }
   }
 }
 
-@media screen and (min-width: 376px) and (max-width: 600px) {}
+@media screen and (min-width: 376px) and (max-width: 600px) {
+  .main {
+    .biit {
+      // min-height: 50rem;
+
+      &__row {
+        .lines {
+          @include boxSize(width, 150px, null, 175px);
+        }
+      }
+    }
+  }
+}
 
 @media screen and (min-width: 601px) and (max-width: 1024px) {
   .main {
     .biit {
-      min-height: 130rem;
+      // min-height: 50rem;
 
-      .circle {
-        &__title {
-          font-size: 30px;
+      &__row {
+
+        .circle {
+          &__title {
+            font-size: 28px;
+          }
         }
-      }
 
-      .first,
-      .second,
-      .third,
-      .fourth,
-      .fifth {
-        @include boxSize(width, 300px, null, 325px);
-        @include boxSize(height, 300px, null, 325px);
+        .first,
+        .second,
+        .third,
+        .fourth,
+        .fifth {
+          @include boxSize(width, 300px, null, 325px);
+          @include boxSize(height, 300px, null, 325px);
+        }
+
+        .lines {
+          @include boxSize(width, 200px, null, 250px);
+        }
       }
     }
   }
 }
 
-@media screen and (min-width: 1025px) {}
+@media screen and (min-width: 1025px) {
+  .main {
+    .biit {
+      // min-height: 50rem;
+
+      &__row {
+
+        .circle {
+          &__title {
+            font-size: 30px;
+          }
+        }
+
+        .first,
+        .second,
+        .third,
+        .fourth,
+        .fifth {
+          @include boxSize(width, 325px, null, 350px);
+          @include boxSize(height, 325px, null, 350px);
+        }
+
+        .lines {
+          @include boxSize(width, 300px, null, 400px);
+        }
+      }
+    }
+  }
+}
