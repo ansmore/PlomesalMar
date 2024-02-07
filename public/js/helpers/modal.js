@@ -54,22 +54,22 @@ export const setupOutsideModalClick = () => {
         const modals = document.querySelectorAll(".modal");
         let clickedInsideModal = false;
         modals.forEach((modal) => {
-            const modalContent = modal.querySelector(".modal-content");
+            const modalContent = modal.querySelector(".modal__content");
             if (modal instanceof HTMLElement &&
                 modal.style.display === "block" &&
                 modalContent instanceof HTMLElement &&
                 modalContent.contains(event.target) &&
                 event.target instanceof HTMLElement &&
                 (event.target.classList.contains("modal-button") ||
-                    event.target.classList.contains("modal-content"))) {
-                // console.log("click detectado dentro del modal", modal.id);
+                    event.target.classList.contains("modal__content"))) {
+                console.log("click detectado dentro del modal", modal.id);
                 clickedInsideModal = true;
             }
         });
         if (!clickedInsideModal) {
             const modalButton = event.target.closest(".modal");
             if (modalButton) {
-                // console.log("detectado click outside", modalButton.id);
+                console.log("detectado click outside", modalButton.id);
                 closeModal(modalButton.id);
             }
         }
@@ -81,11 +81,6 @@ export const updateModalAttributes = (modalId) => __awaiter(void 0, void 0, void
     const component = "whyBiit";
     if (modalTitle && modalDynamicContent) {
         try {
-            // const finalSelectedLanguage = await getFinalLanguage();
-            // const dictionary = await loadDictionary(finalSelectedLanguage, component);
-            // console.log("dictionary", dictionary);
-            // console.log("language", finalSelectedLanguage);
-            // Ajusta el valor de value-text según el data-modal-id
             switch (modalId) {
                 case "firstModal":
                     console.log("1");
@@ -117,7 +112,6 @@ export const updateModalAttributes = (modalId) => __awaiter(void 0, void 0, void
                     modalDynamicContent.setAttribute("value-text", "modulosBusinessText");
                     // loadTextComponent(component);
                     break;
-                // Añade más casos según sea necesario para otros modales
                 default:
                     // Por defecto
                     modalTitle.setAttribute("value-text", "default");

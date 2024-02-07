@@ -32,12 +32,11 @@
 
 
         <section id="infoModal" class="modal">
-            <div class="modal__content">
+            <div id="modalContent" class="modal__content">
                 <span class="close" id="closeModalButton">
                     <i class="fa-solid fa-xmark"></i>
                 </span>
                 <div id="modalBodyContent">
-                    <!-- Contenido del Modal -->
                     <h2 class="circle__subtitle" id="modalTitle" value-text=""></h2>
                     <div class="circle__content" id="modalDynamicContent" value-text="">
                     </div>

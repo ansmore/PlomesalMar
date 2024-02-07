@@ -2360,6 +2360,7 @@ header .intro-text .intro-heading {
   height: 80%;
   padding: 20px;
   border-radius: 5px;
+  border: 1px solid transparent;
 }
 .main .modal__content .circle__subtitle {
   color: #0097b2;
@@ -2406,6 +2407,11 @@ header .intro-text .intro-heading {
   background-color: #ffeded;
   border: 1px solid #ee0000;
   cursor: pointer;
+}
+.main .modal__content:hover {
+  color: inherit;
+  background-color: #fafafa;
+  border: 1px solid #0097b2;
 }
 .main .lines-svg {
   position: absolute;

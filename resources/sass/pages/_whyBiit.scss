@@ -176,6 +176,11 @@
         border: 1px solid $danger_main;
         cursor: pointer;
       }
+
+      @include hover($neutral_lighter,
+        inherit,
+        $secondary_main,
+        transparent);
     }
   }
 

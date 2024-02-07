@@ -61,7 +61,7 @@ export const setupOutsideModalClick = (): void => {
     let clickedInsideModal = false;
 
     modals.forEach((modal) => {
-      const modalContent = modal.querySelector(".modal-content");
+      const modalContent = modal.querySelector(".modal__content");
 
       if (
         modal instanceof HTMLElement &&
@@ -70,9 +70,9 @@ export const setupOutsideModalClick = (): void => {
         modalContent.contains(event.target as Node) &&
         event.target instanceof HTMLElement &&
         (event.target.classList.contains("modal-button") ||
-          event.target.classList.contains("modal-content"))
+          event.target.classList.contains("modal__content"))
       ) {
-        // console.log("click detectado dentro del modal", modal.id);
+        console.log("click detectado dentro del modal", modal.id);
         clickedInsideModal = true;
       }
     });
@@ -80,7 +80,7 @@ export const setupOutsideModalClick = (): void => {
     if (!clickedInsideModal) {
       const modalButton = (event.target as HTMLElement).closest(".modal");
       if (modalButton) {
-        // console.log("detectado click outside", modalButton.id);
+        console.log("detectado click outside", modalButton.id);
         closeModal(modalButton.id);
       }
     }
@@ -94,12 +94,6 @@ export const updateModalAttributes = async (modalId: string): Promise<void> => {
 
   if (modalTitle && modalDynamicContent) {
     try {
-      // const finalSelectedLanguage = await getFinalLanguage();
-      // const dictionary = await loadDictionary(finalSelectedLanguage, component);
-
-      // console.log("dictionary", dictionary);
-      // console.log("language", finalSelectedLanguage);
-      // Ajusta el valor de value-text según el data-modal-id
       switch (modalId) {
         case "firstModal":
           console.log("1");
@@ -131,7 +125,7 @@ export const updateModalAttributes = async (modalId: string): Promise<void> => {
           modalDynamicContent.setAttribute("value-text", "modulosBusinessText");
           // loadTextComponent(component);
           break;
-        // Añade más casos según sea necesario para otros modales
+
         default:
           // Por defecto
           modalTitle.setAttribute("value-text", "default");
