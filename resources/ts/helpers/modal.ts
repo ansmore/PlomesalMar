@@ -42,7 +42,7 @@ export const setupModalButtons = (): void => {
 };
 
 export const setupCloseModalButtons = (): void => {
-  const closeModalButtons = document.querySelectorAll(".close");
+  const closeModalButtons = document.querySelectorAll("#closeModalButton");
 
   closeModalButtons.forEach((button) => {
     button.addEventListener("click", () => {
@@ -61,16 +61,16 @@ export const setupOutsideModalClick = (): void => {
     let clickedInsideModal = false;
 
     modals.forEach((modal) => {
-      const modalContent = modal.querySelector(".modal__content");
+      const modalBox = modal.querySelector("#modalBox");
 
       if (
         modal instanceof HTMLElement &&
         modal.style.display === "block" &&
-        modalContent instanceof HTMLElement &&
-        modalContent.contains(event.target as Node) &&
+        modalBox instanceof HTMLElement &&
+        modalBox.contains(event.target as Node) &&
         event.target instanceof HTMLElement &&
         (event.target.classList.contains("modal-button") ||
-          event.target.classList.contains("modal__content"))
+          event.target.classList.contains("modal__box"))
       ) {
         console.log("click detectado dentro del modal", modal.id);
         clickedInsideModal = true;
@@ -89,57 +89,52 @@ export const setupOutsideModalClick = (): void => {
 
 export const updateModalAttributes = async (modalId: string): Promise<void> => {
   const modalTitle = document.getElementById("modalTitle");
-  const modalDynamicContent = document.getElementById("modalDynamicContent");
+  const modalContent = document.getElementById("modalContent");
   const component = "whyBiit";
 
-  if (modalTitle && modalDynamicContent) {
+  if (modalTitle && modalContent) {
     try {
       switch (modalId) {
         case "firstModal":
           console.log("1");
           modalTitle.setAttribute("value-text", "modulosCliente");
-          modalDynamicContent.setAttribute("value-text", "modulosClienteText");
+          modalContent.setAttribute("value-text", "modulosClienteText");
           // loadTextComponent(component);
           break;
         case "secondModal":
           console.log("2");
           modalTitle.setAttribute("value-text", "modulosComercio");
-          modalDynamicContent.setAttribute("value-text", "modulosComercioText");
+          modalContent.setAttribute("value-text", "modulosComercioText");
           // loadTextComponent(component);
           break;
         case "thirdModal":
           console.log("3");
           modalTitle.setAttribute("value-text", "modulosProcesos");
-          modalDynamicContent.setAttribute("value-text", "modulosProcesosText");
+          modalContent.setAttribute("value-text", "modulosProcesosText");
           // loadTextComponent(component);
           break;
         case "fourthModal":
           console.log("4");
           modalTitle.setAttribute("value-text", "modulosFactura");
-          modalDynamicContent.setAttribute("value-text", "modulosFacturaText");
+          modalContent.setAttribute("value-text", "modulosFacturaText");
           // loadTextComponent(component);
           break;
         case "fifthModal":
           console.log("5");
           modalTitle.setAttribute("value-text", "modulosBusiness");
-          modalDynamicContent.setAttribute("value-text", "modulosBusinessText");
+          modalContent.setAttribute("value-text", "modulosBusinessText");
           // loadTextComponent(component);
           break;
 
         default:
           // Por defecto
           modalTitle.setAttribute("value-text", "default");
-          modalDynamicContent.setAttribute("value-text", "default");
+          modalContent.setAttribute("value-text", "default");
           // loadTextComponent(component);
           break;
       }
 
       loadTextComponent(component);
-
-      // // Carga el contenido desde el archivo JSON
-      // const modalContentText =
-      //   dictionary[modalDynamicContent.getAttribute("value-text") || "1"];
-      // modalDynamicContent.innerHTML = modalContentText || "2";
     } catch (error) {
       console.error("Error updating modal attributes", error);
     }

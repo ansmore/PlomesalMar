@@ -2351,7 +2351,7 @@ header .intro-text .intro-heading {
   justify-content: center;
   align-items: center;
 }
-.main .modal__content {
+.main .modal__box {
   position: relative;
   background: #fafafa;
   top: 10vh;
@@ -2362,7 +2362,7 @@ header .intro-text .intro-heading {
   border-radius: 5px;
   border: 1px solid transparent;
 }
-.main .modal__content .circle__subtitle {
+.main .modal__box .circle__subtitle {
   color: #0097b2;
   background-color: transparent;
   line-height: 1.5;
@@ -2370,7 +2370,7 @@ header .intro-text .intro-heading {
   font-weight: bold;
   text-align: center;
 }
-.main .modal__content .circle__content {
+.main .modal__box .circle__content {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -2392,7 +2392,7 @@ header .intro-text .intro-heading {
   font-weight: 400;
   text-align: center;
 }
-.main .modal__content .close {
+.main .modal__box .close {
   position: absolute;
   top: 0;
   right: 0;
@@ -2408,7 +2408,7 @@ header .intro-text .intro-heading {
   border: 1px solid #ee0000;
   cursor: pointer;
 }
-.main .modal__content:hover {
+.main .modal__box:hover {
   color: inherit;
   background-color: #fafafa;
   border: 1px solid #0097b2;

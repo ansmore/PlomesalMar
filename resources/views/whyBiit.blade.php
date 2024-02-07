@@ -32,13 +32,13 @@
 
 
         <section id="infoModal" class="modal">
-            <div id="modalContent" class="modal__content">
+            <div id="modalBox" class="modal__box">
                 <span class="close" id="closeModalButton">
                     <i class="fa-solid fa-xmark"></i>
                 </span>
                 <div id="modalBodyContent">
                     <h2 class="circle__subtitle" id="modalTitle" value-text=""></h2>
-                    <div class="circle__content" id="modalDynamicContent" value-text="">
+                    <div class="circle__content" id="modalContent" value-text="">
                     </div>
                 </div>
             </div>
