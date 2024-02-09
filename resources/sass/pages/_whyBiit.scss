@@ -5,14 +5,13 @@
   font-size: $size_small;
   margin-top: $nav-height;
   gap: $gap;
-  // min-height: fit-content;
 
   .whyBiit {
     @include flexBox(column, flex-start, flex-start);
     @include paddingMargin($padding, 0);
     @include style($primary_main);
     @include boxSize(width, 95vw, null, 95vw);
-    @include boxSize(height, 95rem, null, 100rem);
+    @include boxSize(height, 110rem, null, 115rem);
     flex-direction: column;
     flex: 1;
 
@@ -23,7 +22,7 @@
       text-align: center;
 
       @include boxSize(width, 90vw, null, 90vw);
-      @include boxSize(height, 95rem, null, 100rem);
+      @include boxSize(height, 110rem, null, 115rem);
     }
 
     .circle {
@@ -236,10 +235,10 @@
 @media screen and (min-width: 376px) and (max-width: 600px) {
   .main {
     .whyBiit {
-      @include boxSize(height, 105rem, null, 110rem);
+      @include boxSize(height, 120rem, null, 125rem);
 
       &__row {
-        @include boxSize(height, 105rem, null, 110rem);
+        @include boxSize(height, 120rem, null, 125rem);
 
         .lines {
           @include boxSize(width, 150px, null, 175px);
@@ -252,10 +251,10 @@
 @media screen and (min-width: 601px) and (max-width: 1024px) {
   .main {
     .whyBiit {
-      @include boxSize(height, 140rem, null, 145rem);
+      @include boxSize(height, 150rem, null, 155rem);
 
       &__row {
-        @include boxSize(height, 140rem, null, 145rem);
+        @include boxSize(height, 150rem, null, 155rem);
 
         .circle {
           &__title {
@@ -283,11 +282,11 @@
 @media screen and (min-width: 1025px) {
   .main {
     .whyBiit {
-      @include boxSize(height, 140rem, null, 145rem);
+      @include boxSize(height, 155rem, null, 160rem);
 
       &__row {
         @include flexBox(column, flex-start, center);
-        @include boxSize(height, 140rem, null, 145rem);
+        @include boxSize(height, 155rem, null, 160rem);
 
         .circle {
           &__title {
@@ -305,27 +304,27 @@
         }
 
         .first {
-          left: -14rem;
+          left: -10rem;
 
         }
 
         .second {
-          left: 14rem;
+          left: 10rem;
 
         }
 
         .third {
-          left: -14rem;
+          left: -10rem;
 
         }
 
         .fourth {
-          left: 14rem;
+          left: 10rem;
 
         }
 
         .fifth {
-          left: -14rem;
+          left: -10rem;
 
         }
 

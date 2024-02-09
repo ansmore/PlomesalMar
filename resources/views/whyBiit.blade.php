@@ -8,9 +8,6 @@
     <div class="main">
         <section class="whyBiit">
             <div class="whyBiit__row" id="mainContainer">
-                {{-- <svg class="lines-svg">
-                    <line class="liness first-lines" x1="65" y1="10" x2="85" y2="95"></line>
-                </svg> --}}
                 <div class="first circle modal-button" id="firstModal" data-modal-id="firstModal">
                     <h4 class="circle__title" value-text="modulosCliente"></h4>
                 </div>
