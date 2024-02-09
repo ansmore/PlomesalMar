@@ -3,17 +3,18 @@
   @include flexBox(column, center, center);
   @include paddingMargin(1rem 0 0 0);
   @include style($neutral_lighter, $primary_main);
-  // position: relative;
-  // bottom: auto;
+
 
   .logo {
     @include flexBox(column, center, center);
     @include paddingMargin($padding);
+
     &__image {
       @include flexBox(column, center, center);
       @include paddingMargin;
       @include boxSize(width, null, null, 90vw);
     }
+
     &__row {
       @include flexBox(column);
       @include paddingMargin($padding, $margin);
@@ -21,11 +22,13 @@
       text-align: center;
     }
   }
+
   .contact {
     .social {
       .list {
         @include flexBox(row);
         cursor: pointer;
+
         &__item {
           @include paddingMargin($padding);
           list-style: none;
@@ -46,10 +49,12 @@
         }
       }
     }
+
     .policy {
       .list {
         @include flexBox(column);
         cursor: pointer;
+
         &__item {
           // @include paddingMargin($padding);
           list-style: none;
@@ -64,10 +69,12 @@
     }
   }
 }
+
 @media screen and (min-width: 376px) and (max-width: 600px) {
   .footer {
     .contact {
       @include flexBox(column, space-around, center);
+
       .policy {
         .list {
           @include flexBox(row);
@@ -81,6 +88,7 @@
   .footer {
     .contact {
       @include flexBox(column, space-around, center);
+
       .policy {
         .list {
           @include flexBox(row);
@@ -92,11 +100,15 @@
 
 @media screen and (min-width: 1025px) {
   .footer {
-    @include flexBox(row, space-around, center);
+    @include flexBox(row, space-around, flex-end);
+    min-height: 255px;
+
     .contact {
       @include flexBox(column, space-around, center);
+
       .policy {
         @include paddingMargin($padding);
+
         .list {
           @include flexBox(row, space-around, flex-end);
         }

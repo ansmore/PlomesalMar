@@ -6,8 +6,8 @@
     @include('components.navigationBiit')
 
     <div class="main">
-        <section class="biit">
-            <div class="biit__row" id="mainContainer">
+        <section class="whyBiit">
+            <div class="whyBiit__row" id="mainContainer">
                 {{-- <svg class="lines-svg">
                     <line class="liness first-lines" x1="65" y1="10" x2="85" y2="95"></line>
                 </svg> --}}
@@ -17,7 +17,7 @@
                 <div class="lines first-line">
                     <svg class="lines-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
                         <!-- Línea SVG -->
-                        <line class="mi-linea" x1="10" y1="0" x2="90" y2="100"></line>
+                        <line class="dashed-line" x1="10" y1="0" x2="90" y2="100"></line>
                     </svg>
                 </div>
                 <div class="second circle modal-button" id="secondModal" data-modal-id="secondModal">
@@ -26,7 +26,7 @@
                 <div class="lines second-line">
                     <svg class="lines-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
                         <!-- Línea SVG -->
-                        <line class="mi-linea" x1="90" y1="0" x2="10" y2="100"></line>
+                        <line class="dashed-line" x1="90" y1="0" x2="10" y2="100"></line>
                     </svg>
                 </div>
                 <div class="third circle modal-button" id="thirdModal" data-modal-id="thirdModal">
@@ -35,7 +35,7 @@
                 <div class="lines third-line">
                     <svg class="lines-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
                         <!-- Línea SVG -->
-                        <line class="mi-linea" x1="10" y1="0" x2="90" y2="100"></line>
+                        <line class="dashed-line" x1="10" y1="0" x2="90" y2="100"></line>
                     </svg>
                 </div>
                 <div class="fourth circle modal-button" id="fourthModal" data-modal-id="fourthModal">
@@ -44,7 +44,7 @@
                 <div class="lines fourth-line">
                     <svg class="lines-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
                         <!-- Línea SVG -->
-                        <line class="mi-linea" x1="90" y1="0" x2="10" y2="100"></line>
+                        <line class="dashed-line" x1="90" y1="0" x2="10" y2="100"></line>
                     </svg>
                 </div>
                 <div class="fifth circle modal-button" id="fifthModal" data-modal-id="fifthModal">

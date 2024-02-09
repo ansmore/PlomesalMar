@@ -5,16 +5,15 @@
   font-size: $size_small;
   margin-top: $nav-height;
   gap: $gap;
-  min-height: fit-content;
+  // min-height: fit-content;
 
-  .biit {
+  .whyBiit {
     @include flexBox(column, flex-start, flex-start);
     @include paddingMargin($padding, 0);
     @include style($primary_main);
     @include boxSize(width, 95vw, null, 95vw);
+    @include boxSize(height, 95rem, null, 100rem);
     flex-direction: column;
-    // min-height: 30rem;
-    // max-height: 70rem;
     flex: 1;
 
     &__row {
@@ -24,8 +23,7 @@
       text-align: center;
 
       @include boxSize(width, 90vw, null, 90vw);
-
-      // min-height: 8rem;
+      @include boxSize(height, 95rem, null, 100rem);
     }
 
     .circle {
@@ -93,8 +91,6 @@
       top: 5vh;
     }
 
-
-
     .second {
       left: 15vw;
       top: -5vh;
@@ -122,6 +118,25 @@
 
       position: relative;
       z-index: 1;
+
+      .lines-svg {
+        position: relative;
+
+        .dashed-line {
+          stroke: $secondary_main;
+          stroke-width: 9;
+          stroke-dasharray: 5 5;
+          animation: dash 15s linear infinite;
+          position: relative;
+          z-index: 1;
+        }
+      }
+
+      @keyframes dash {
+        to {
+          stroke-dashoffset: -500;
+        }
+      }
     }
 
     .first-line {
@@ -144,27 +159,6 @@
       top: -30vh;
     }
 
-    .lines-svg {
-      position: relative;
-
-    }
-
-    // Estilos para la línea SVG utilizando las variables
-    .mi-linea {
-      stroke: $secondary_main;
-      stroke-width: 9;
-      stroke-dasharray: 5 5;
-      animation: dash 15s linear infinite;
-      position: relative;
-      z-index: 1;
-
-    }
-
-    @keyframes dash {
-      to {
-        stroke-dashoffset: -500;
-      }
-    }
   }
 
   .modal {
@@ -241,10 +235,12 @@
 
 @media screen and (min-width: 376px) and (max-width: 600px) {
   .main {
-    .biit {
-      // min-height: 50rem;
+    .whyBiit {
+      @include boxSize(height, 105rem, null, 110rem);
 
       &__row {
+        @include boxSize(height, 105rem, null, 110rem);
+
         .lines {
           @include boxSize(width, 150px, null, 175px);
         }
@@ -255,10 +251,11 @@
 
 @media screen and (min-width: 601px) and (max-width: 1024px) {
   .main {
-    .biit {
-      // min-height: 50rem;
+    .whyBiit {
+      @include boxSize(height, 140rem, null, 145rem);
 
       &__row {
+        @include boxSize(height, 140rem, null, 145rem);
 
         .circle {
           &__title {
@@ -285,14 +282,16 @@
 
 @media screen and (min-width: 1025px) {
   .main {
-    .biit {
-      // min-height: 50rem;
+    .whyBiit {
+      @include boxSize(height, 140rem, null, 145rem);
 
       &__row {
+        @include flexBox(column, flex-start, center);
+        @include boxSize(height, 140rem, null, 145rem);
 
         .circle {
           &__title {
-            font-size: 30px;
+            font-size: 28px;
           }
         }
 
@@ -301,12 +300,37 @@
         .third,
         .fourth,
         .fifth {
-          @include boxSize(width, 325px, null, 350px);
-          @include boxSize(height, 325px, null, 350px);
+          @include boxSize(width, 300px, null, 325px);
+          @include boxSize(height, 300px, null, 325px);
+        }
+
+        .first {
+          left: -14rem;
+
+        }
+
+        .second {
+          left: 14rem;
+
+        }
+
+        .third {
+          left: -14rem;
+
+        }
+
+        .fourth {
+          left: 14rem;
+
+        }
+
+        .fifth {
+          left: -14rem;
+
         }
 
         .lines {
-          @include boxSize(width, 300px, null, 400px);
+          @include boxSize(width, 200px, null, 250px);
         }
       }
     }
