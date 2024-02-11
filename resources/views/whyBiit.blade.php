@@ -6,31 +6,49 @@
     @include('components.navigationBiit')
 
     <div class="main">
-        <section class="biit">
-            <div class="biit__row" id="mainContainer">
+        <section class="whyBiit">
+            <div class="whyBiit__row" id="mainContainer">
                 <div class="first circle modal-button" id="firstModal" data-modal-id="firstModal">
                     <h4 class="circle__title" value-text="modulosCliente"></h4>
                 </div>
-                <svg class="lines-svg">
-                    <line class="line first-line"></line>
-                </svg>
+                <div class="lines first-line">
+                    <svg class="lines-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+                        <!-- Línea SVG -->
+                        <line class="dashed-line" x1="10" y1="0" x2="90" y2="100"></line>
+                    </svg>
+                </div>
                 <div class="second circle modal-button" id="secondModal" data-modal-id="secondModal">
                     <h4 class="circle__title" value-text="modulosComercio"></h4>
+                </div>
+                <div class="lines second-line">
+                    <svg class="lines-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+                        <!-- Línea SVG -->
+                        <line class="dashed-line" x1="90" y1="0" x2="10" y2="100"></line>
+                    </svg>
                 </div>
                 <div class="third circle modal-button" id="thirdModal" data-modal-id="thirdModal">
                     <h4 class="circle__title" value-text="modulosProcesos"></h4>
                 </div>
+                <div class="lines third-line">
+                    <svg class="lines-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+                        <!-- Línea SVG -->
+                        <line class="dashed-line" x1="10" y1="0" x2="90" y2="100"></line>
+                    </svg>
+                </div>
                 <div class="fourth circle modal-button" id="fourthModal" data-modal-id="fourthModal">
                     <h4 class="circle__title" value-text="modulosFactura"></h4>
+                </div>
+                <div class="lines fourth-line">
+                    <svg class="lines-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+                        <!-- Línea SVG -->
+                        <line class="dashed-line" x1="90" y1="0" x2="10" y2="100"></line>
+                    </svg>
                 </div>
                 <div class="fifth circle modal-button" id="fifthModal" data-modal-id="fifthModal">
                     <h4 class="circle__title" value-text="modulosBusiness"></h4>
                 </div>
             </div>
-
         </section>
-
-
         <section id="infoModal" class="modal">
             <div id="modalBox" class="modal__box">
                 <span class="close" id="closeModalButton">
