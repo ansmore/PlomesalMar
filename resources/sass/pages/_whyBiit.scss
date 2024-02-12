@@ -23,6 +23,10 @@
 
       @include boxSize(width, 90vw, null, 90vw);
       @include boxSize(height, 110rem, null, 115rem);
+
+      // try -> border-line
+      // border: 1px solid $danger_main;
+      // border-radius: 1rem;
     }
 
     .circle {
@@ -86,27 +90,27 @@
     }
 
     .first {
-      left: -15vw;
+      left: -5vw;
       top: 5vh;
     }
 
     .second {
-      left: 15vw;
+      left: 5vw;
       top: -5vh;
     }
 
     .third {
-      left: -15vw;
+      left: -5vw;
       top: -15vh;
     }
 
     .fourth {
-      left: 15vw;
+      left: 5vw;
       top: -25vh;
     }
 
     .fifth {
-      left: -15vw;
+      left: -5vw;
       top: -35vh;
     }
 
@@ -240,6 +244,31 @@
       &__row {
         @include boxSize(height, 120rem, null, 125rem);
 
+        // .first {
+        //   left: -10vw;
+
+        // }
+
+        // .second {
+        //   left: 10vw;
+
+        // }
+
+        // .third {
+        //   left: -10vw;
+
+        // }
+
+        // .fourth {
+        //   left: 10vw;
+
+        // }
+
+        // .fifth {
+        //   left: -10vw;
+
+        // }
+
         .lines {
           @include boxSize(width, 150px, null, 175px);
         }
@@ -269,6 +298,26 @@
         .fifth {
           @include boxSize(width, 300px, null, 325px);
           @include boxSize(height, 300px, null, 325px);
+        }
+
+        .first {
+          left: -10vw;
+        }
+
+        .second {
+          left: 10vw;
+        }
+
+        .third {
+          left: -10vw;
+        }
+
+        .fourth {
+          left: 10vw;
+        }
+
+        .fifth {
+          left: -10vw;
         }
 
         .lines {
@@ -305,27 +354,22 @@
 
         .first {
           left: -10rem;
-
         }
 
         .second {
           left: 10rem;
-
         }
 
         .third {
           left: -10rem;
-
         }
 
         .fourth {
           left: 10rem;
-
         }
 
         .fifth {
           left: -10rem;
-
         }
 
         .lines {

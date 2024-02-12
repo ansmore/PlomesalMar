@@ -266,7 +266,7 @@ header .intro-text .intro-heading {
   align-items: center;
   align-self: center;
   padding: 0;
-  margin: 208px 0 0 0;
+  margin: 218px 0 0 0;
   position: absolute;
   z-index: 2;
   flex: 6;
@@ -369,6 +369,7 @@ header .intro-text .intro-heading {
   margin: 0;
   margin-right: 60px;
   flex: 1;
+  z-index: 3;
 }
 .nav .navbar__language .list {
   cursor: pointer;
@@ -2325,23 +2326,23 @@ header .intro-text .intro-heading {
   z-index: 2;
 }
 .main .whyBiit .first {
-  left: -15vw;
+  left: -5vw;
   top: 5vh;
 }
 .main .whyBiit .second {
-  left: 15vw;
+  left: 5vw;
   top: -5vh;
 }
 .main .whyBiit .third {
-  left: -15vw;
+  left: -5vw;
   top: -15vh;
 }
 .main .whyBiit .fourth {
-  left: 15vw;
+  left: 5vw;
   top: -25vh;
 }
 .main .whyBiit .fifth {
-  left: -15vw;
+  left: -5vw;
   top: -35vh;
 }
 .main .whyBiit .lines {
@@ -2502,6 +2503,21 @@ header .intro-text .intro-heading {
     max-width: 325px;
     min-height: 300px;
     max-height: 325px;
+  }
+  .main .whyBiit__row .first {
+    left: -10vw;
+  }
+  .main .whyBiit__row .second {
+    left: 10vw;
+  }
+  .main .whyBiit__row .third {
+    left: -10vw;
+  }
+  .main .whyBiit__row .fourth {
+    left: 10vw;
+  }
+  .main .whyBiit__row .fifth {
+    left: -10vw;
   }
   .main .whyBiit__row .lines {
     min-width: 200px;

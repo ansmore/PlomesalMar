@@ -32,12 +32,10 @@
 
     &__menu {
       @include flexBox(row, center, center);
-      @include paddingMargin(0, 208px 0 0 0);
-      // prova display absolute
+      @include paddingMargin(0, 218px 0 0 0);
       position: absolute;
       z-index: 2;
       flex: 6;
-      // margin-top: 150px;
 
       .list {
         @include flexBox(column);
@@ -107,6 +105,7 @@
       @include paddingMargin;
       margin-right: 60px;
       flex: 1;
+      z-index: 3;
 
       .list {
         cursor: pointer;
