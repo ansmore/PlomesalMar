@@ -75,7 +75,7 @@
       }
 
       .box {
-        // @include flexBox(column, flex-start, center);
+        @include flexBox(column, flex-start, center);
         @include paddingMargin($padding, $margin);
         @include style($primary_main);
         @include boxSize(width, 80vw, null, 80vw);
@@ -116,6 +116,11 @@
         &__company {
           @include style($secondary_main);
         }
+
+        &__image {
+          @include boxSize(width, null, null, 50vw);
+        }
+
       }
 
       .info {

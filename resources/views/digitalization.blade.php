@@ -13,19 +13,9 @@
                 <div class="box">
                     <h2 value-text="servicesHeading" class="box__subtitle"></h2>
                     <p value-text="servicesText" class="box__content"></p>
-                    <p value-text="servicesLetter" class="box__content"></p>
-                    <img src="{{ asset('./img/banner.jpg') }}" class="box__image">
-                </div>
-            </div>
-        </section>
-        <section id="agent" class="whatIs">
-            <div class="whatIs__row">
-                <div class="box">
-                    <h2 value-text="agenteTitle" class="box__subtitle"></h2>
-
-                    <article value-text="agenteLetter" class="box__content"></article>
-
-                    <img src="{{ asset('./img/kitdigital.png') }}" alt="kitdigital" class="box__image">
+                    {{-- Contenido eliminado  --}}
+                    {{-- <p value-text="servicesLetter" class="box__content"></p> --}}
+                    {{-- <img src="{{ asset('./img/banner.jpg') }}" class="box__image"> --}}
                 </div>
             </div>
         </section>
@@ -33,11 +23,42 @@
             <div class="about__row">
                 <div class="box">
                     <p value-text="kitPregunta" class="box__title"></p>
-                    <p value-text="kidRespuesta" class="box__content"></p>
+                </div>
+                <div class="box">
+                    <div class="box__columns">
+                        <div class="box__columns__col">
+                            <div class="box__columns__col__item">
+                                <p value-text="kidRespuestaA" class="box__content"></p>
+                            </div>
+                            <div class="box__columns__col__item">
+                                <p value-text="kidRespuestaB" class="box__content"></p>
+                            </div>
+                        </div>
+                        <div class="box__columns__col">
+                            <div class="box__columns__col__item">
+                                <p value-text="kidRespuestaC" class="box__content"></p>
+                            </div>
+                            <div class="box__columns__col__item">
+                                <p value-text="kidRespuestaD" class="box__content"></p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
-
+        <section id="agent" class="whatIs">
+            <div class="whatIs__row">
+                <div class="box">
+                    <h2 value-text="agenteTitle" class="box__subtitle"></h2>
+                    <article class="box__content">
+                        <span value-text="agenteLetterA" class="box__content"></span>
+                        <span value-text="businessName" class="box__name"></span>
+                        <span value-text="agenteLetterB" class="box__content"></span>
+                    </article>
+                    <img src="{{ asset('./img/kitdigital.png') }}" alt="kitdigital" class="box__image">
+                </div>
+            </div>
+        </section>
         <section class="whatIs">
             <div class="whatIs__row">
                 <div class="box">
@@ -46,15 +67,7 @@
                 </div>
             </div>
         </section>
-        <section class="whatIs">
-            <div class="whatIs__row">
-                <div class="box">
-                    <p value-text="bonoHeading" class="box__subtitle"></p>
-                    <p value-text="bonoCondiciones" class="box__content"></p>
-                    <p value-text="bonoCantidad" class="box__content"></p>
-                </div>
-            </div>
-        </section>
+
         <section id="requirements" class="whatIs">
             <div class="whatIs__row">
                 <div class="box">
@@ -94,22 +107,11 @@
         <section class="whatIs">
             <div class="whatIs__row">
                 <div class="box">
-                    <p value-text="ayudaHeading" class="box__subtitle"></p>
-                    <p value-text="ayudaBusines" class="box__subtitle__secondary"></p>
-                    <p value-text="ayudaAnalisis" class="box__content"></p>
-                    <p value-text="ayudaRango" class="box__content"></p>
-                    <p value-text="ayudaClientes" class="box__subtitle__secondary"></p>
-                    <p value-text="ayudaBIIT" class="box__content"></p>
-                    <p value-text="ayudaPrecios" class="box__content"></p>
-                    <p value-text="ayudaGestion" class="box__subtitle__secondary"></p>
-                    <p value-text="ayudaHerramientas" class="box__content"></p>
-                    <p value-text="ayudaNuestro" class="box__content"></p>
-                    <p value-text="ayudaFactura" class="box__subtitle__secondary"></p>
-                    <p value-text="ayudaModulos" class="box__content"></p>
-                    <p value-text="ayudaModulosSage" class="box__content"></p>
-                    <p value-text="ayudaComercio" class="box__subtitle__secondary"></p>
-                    <p value-text="ayudaComercioElectronico" class="box__content"></p>
-                    <p value-text="ayudaComercioPrecios" class="box__content"></p>
+                    <p value-text="bonoHeading" class="box__subtitle"></p>
+                    <article>
+                        <span value-text="bonoCondiciones" class="box__content"></span>
+                        <span value-text="bonoCantidad" class="box__content"></span>
+                    </article>
                 </div>
             </div>
         </section>
@@ -141,6 +143,29 @@
                 </div>
             </div>
         </section>
+        <section class="whatIs">
+            <div class="whatIs__row">
+                <div class="box">
+                    <p value-text="ayudaHeading" class="box__subtitle"></p>
+                    <p value-text="ayudaBusines" class="box__subtitle__secondary"></p>
+                    <p value-text="ayudaAnalisis" class="box__content"></p>
+                    <p value-text="ayudaRango" class="box__content"></p>
+                    <p value-text="ayudaClientes" class="box__subtitle__secondary"></p>
+                    <p value-text="ayudaBIIT" class="box__content"></p>
+                    <p value-text="ayudaPrecios" class="box__content"></p>
+                    <p value-text="ayudaGestion" class="box__subtitle__secondary"></p>
+                    <p value-text="ayudaHerramientas" class="box__content"></p>
+                    <p value-text="ayudaNuestro" class="box__content"></p>
+                    <p value-text="ayudaFactura" class="box__subtitle__secondary"></p>
+                    <p value-text="ayudaModulos" class="box__content"></p>
+                    <p value-text="ayudaModulosSage" class="box__content"></p>
+                    <p value-text="ayudaComercio" class="box__subtitle__secondary"></p>
+                    <p value-text="ayudaComercioElectronico" class="box__content"></p>
+                    <p value-text="ayudaComercioPrecios" class="box__content"></p>
+                </div>
+            </div>
+        </section>
+
         <section id="faq" class="whatIs">
             <div class="whatIs__row">
                 <div class="box">
