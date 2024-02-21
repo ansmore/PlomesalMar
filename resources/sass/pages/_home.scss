@@ -184,7 +184,7 @@
       @include flexBox(column, flex-start);
       @include paddingMargin($padding, $margin);
       @include boxSize(width, 90vw, null, 90vw);
-      @include boxSize(height, 25vw);
+      @include boxSize(height, 15vh);
 
       gap: calc($gap * 2);
 
@@ -218,6 +218,7 @@
         &__col {
           @include flexBox(column, flex-start, center);
           @include paddingMargin($padding, $margin);
+          column-gap: 2rem;
 
           &__item {
             @include flexBox(column, flex-start, flex-start);

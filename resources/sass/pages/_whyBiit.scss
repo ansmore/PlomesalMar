@@ -16,7 +16,7 @@
     flex: 1;
 
     &__row {
-      @include flexBox(column, flex-start, flex-start);
+      @include flexBox(row, center, flex-start);
       @include paddingMargin(0 15px);
       @include style($primary_main);
       text-align: center;
@@ -27,141 +27,163 @@
       // try -> border-line
       // border: 1px solid $danger_main;
       // border-radius: 1rem;
-    }
+      &__left,
+      &__right {
+        display: none;
 
-    .circle {
-      @include flexBox(column, flex-start, flex-start);
-      @include paddingMargin($padding, $margin);
-      @include style(inherit, $neutral_main);
-      @include boxSize(width, 20rem, null, 20rem);
-      @include boxSize(height, 20rem);
-      @include boxShadow($neutral_dark);
-      border-radius: 50%;
-      padding-top: 4rem;
-      position: relative;
-
-      &__title {
-        @include flexBox(column, space-around, center);
-        @include paddingMargin($padding, 0 15px);
-        @include style($primary_main);
-        @include boxSize(height, 4rem);
-        font-size: 25px;
-        line-height: 1.5;
-        text-align: center;
-
-        border-top-left-radius: 25%;
-        border-top-right-radius: 25%;
-      }
-
-      &__subtitle {
-        @include style($secondary_main);
-        line-height: 1.5;
-        font-size: 1.5em;
-        font-weight: bold;
-      }
-
-      &__content {
-        @include flexBox(column, space-around, center);
         @include paddingMargin($padding, $margin);
-        @include style($neutral_lighter);
-        @include boxSize(width, null, null, 15rem);
-        border-bottom-left-radius: 25%;
-        border-bottom-right-radius: 25%;
-        font-size: 16px;
-        text-transform: none;
-        font-style: italic;
-        font-weight: 400;
+        @include style($primary_main);
+        border: 1px solid $secondary_main;
+        @include boxSize(width, 10vw, null, 10vw);
+        @include boxSize(height, 80vh);
       }
 
-      @include hover($secondary_main, inherit, $neutral_darker, $neutral_dark);
-    }
 
-    .first,
-    .second,
-    .third,
-    .fourth,
-    .fifth {
-      // @extend .circle;
-      @include flexBox(column, flex-start, flex-start);
-      @include boxSize(width, 250px, null, 275px);
-      @include boxSize(height, 250px, null, 275px);
-      position: relative;
-      z-index: 2;
-    }
+      &__central {
+        // display: block;
+        @include flexBox(column, flex-start, flex-start);
+        // @include paddingMargin($padding, $margin);
+        @include style($primary_main);
+        border: 1px solid $secondary_main;
+        @include boxSize(width, 60vw, null, 60vw);
+        @include boxSize(height, 70vh);
+        // text-align: center;
+        // margin-top: 3rem;
 
-    .first {
-      left: -5vw;
-      top: 5vh;
-    }
+        .circle {
+          @include flexBox(column, flex-start, flex-start);
+          @include paddingMargin($padding, $margin);
+          @include style(inherit, $neutral_main);
+          @include boxSize(width, 20rem, null, 20rem);
+          @include boxSize(height, 20rem);
+          @include boxShadow($neutral_dark);
+          border-radius: 50%;
+          padding-top: 4rem;
+          position: relative;
 
-    .second {
-      left: 5vw;
-      top: -5vh;
-    }
+          &__title {
+            @include flexBox(column, space-around, center);
+            @include paddingMargin($padding, 0 15px);
+            @include style($primary_main);
+            @include boxSize(height, 4rem);
+            font-size: 25px;
+            line-height: 1.5;
+            text-align: center;
 
-    .third {
-      left: -5vw;
-      top: -15vh;
-    }
+            border-top-left-radius: 25%;
+            border-top-right-radius: 25%;
+          }
 
-    .fourth {
-      left: 5vw;
-      top: -25vh;
-    }
+          &__subtitle {
+            @include style($secondary_main);
+            line-height: 1.5;
+            font-size: 1.5em;
+            font-weight: bold;
+          }
 
-    .fifth {
-      left: -5vw;
-      top: -35vh;
-    }
+          &__content {
+            @include flexBox(column, space-around, center);
+            @include paddingMargin($padding, $margin);
+            @include style($neutral_lighter);
+            @include boxSize(width, null, null, 15rem);
+            border-bottom-left-radius: 25%;
+            border-bottom-right-radius: 25%;
+            font-size: 16px;
+            text-transform: none;
+            font-style: italic;
+            font-weight: 400;
+          }
 
-    .lines {
-      @include flexBox(column, flex-start, flex-start);
-      @include style(inherit, transparent);
-      @include boxSize(width, 100px, null, 150px);
+          @include hover($secondary_main, inherit, $neutral_darker, $neutral_dark);
+        }
 
-      position: relative;
-      z-index: 1;
+        .first,
+        .second,
+        .third,
+        .fourth,
+        .fifth {
+          // @extend .circle;
+          @include flexBox(column, flex-start, flex-start);
+          @include boxSize(width, 250px, null, 275px);
+          @include boxSize(height, 250px, null, 275px);
+          position: relative;
+          z-index: 2;
+        }
 
-      .lines-svg {
-        position: relative;
+        .first {
+          left: -5vw;
+          top: 5vh;
+        }
 
-        .dashed-line {
-          stroke: $secondary_main;
-          stroke-width: 9;
-          stroke-dasharray: 5 5;
-          animation: dash 15s linear infinite;
+        .second {
+          left: 5vw;
+          top: -5vh;
+        }
+
+        .third {
+          left: -5vw;
+          top: -15vh;
+        }
+
+        .fourth {
+          left: 5vw;
+          top: -25vh;
+        }
+
+        .fifth {
+          left: -5vw;
+          top: -35vh;
+        }
+
+        .lines {
+          @include flexBox(column, flex-start, flex-start);
+          @include style(inherit, transparent);
+          @include boxSize(width, 100px, null, 150px);
+
           position: relative;
           z-index: 1;
+
+          .lines-svg {
+            position: relative;
+
+            .dashed-line {
+              stroke: $secondary_main;
+              stroke-width: 9;
+              stroke-dasharray: 5 5;
+              animation: dash 15s linear infinite;
+              position: relative;
+              z-index: 1;
+            }
+          }
+
+          @keyframes dash {
+            to {
+              stroke-dashoffset: -500;
+            }
+          }
+        }
+
+        .first-line {
+          left: 0vw;
+          top: 0vh;
+        }
+
+        .second-line {
+          left: 0vw;
+          top: -10vh;
+        }
+
+        .third-line {
+          left: 0vw;
+          top: -20vh;
+        }
+
+        .fourth-line {
+          left: 0vw;
+          top: -30vh;
         }
       }
-
-      @keyframes dash {
-        to {
-          stroke-dashoffset: -500;
-        }
-      }
     }
-
-    .first-line {
-      left: 0vw;
-      top: 0vh;
-    }
-
-    .second-line {
-      left: 0vw;
-      top: -10vh;
-    }
-
-    .third-line {
-      left: 0vw;
-      top: -20vh;
-    }
-
-    .fourth-line {
-      left: 0vw;
-      top: -30vh;
-    }
-
   }
 
   .modal {
@@ -296,8 +318,8 @@
         .third,
         .fourth,
         .fifth {
-          @include boxSize(width, 300px, null, 325px);
-          @include boxSize(height, 300px, null, 325px);
+          @include boxSize(width, 275px, null, 300px);
+          @include boxSize(height, 275px, null, 300px);
         }
 
         .first {
@@ -321,7 +343,7 @@
         }
 
         .lines {
-          @include boxSize(width, 200px, null, 250px);
+          @include boxSize(width, 175px, null, 200px);
         }
       }
     }
@@ -331,49 +353,63 @@
 @media screen and (min-width: 1025px) {
   .main {
     .whyBiit {
-      @include boxSize(height, 155rem, null, 160rem);
+      // @include boxSize(height, 155rem, null, 160rem);
 
       &__row {
-        @include flexBox(column, flex-start, center);
-        @include boxSize(height, 155rem, null, 160rem);
 
-        .circle {
-          &__title {
-            font-size: 28px;
+        &__left,
+        &__right {
+          display: block;
+          @include paddingMargin($padding, $margin);
+          @include style($primary_main);
+          border: 1px solid $secondary_main;
+          @include boxSize(width, 10vw, null, 10vw);
+          @include boxSize(height, 80vh);
+        }
+
+
+        &__central {
+          // @include flexBox(column, flex-start, center);
+          // @include boxSize(height, 155rem, null, 160rem);
+
+          // .circle {
+          //   &__title {
+          //     font-size: 28px;
+          //   }
+          // }
+
+          // .first,
+          // .second,
+          // .third,
+          // .fourth,
+          // .fifth {
+          //   @include boxSize(width, 300px, null, 325px);
+          //   @include boxSize(height, 300px, null, 325px);
+          // }
+
+          // .first {
+          //   left: -10rem;
+          // }
+
+          // .second {
+          //   left: 10rem;
+          // }
+
+          // .third {
+          //   left: -10rem;
+          // }
+
+          // .fourth {
+          //   left: 10rem;
+          // }
+
+          // .fifth {
+          //   left: -10rem;
+          // }
+
+          .lines {
+            @include boxSize(width, 200px, null, 210px);
           }
-        }
-
-        .first,
-        .second,
-        .third,
-        .fourth,
-        .fifth {
-          @include boxSize(width, 300px, null, 325px);
-          @include boxSize(height, 300px, null, 325px);
-        }
-
-        .first {
-          left: -10rem;
-        }
-
-        .second {
-          left: 10rem;
-        }
-
-        .third {
-          left: -10rem;
-        }
-
-        .fourth {
-          left: 10rem;
-        }
-
-        .fifth {
-          left: -10rem;
-        }
-
-        .lines {
-          @include boxSize(width, 200px, null, 250px);
         }
       }
     }
