@@ -112,6 +112,31 @@
                         <span value-text="bonoCondiciones" class="box__content"></span>
                         <span value-text="bonoCantidad" class="box__content"></span>
                     </article>
+                    <article>
+                        <p>
+                            <span value-text="baseReguladora" class="box__content"></span>
+                            <span>
+                                <a class="box__name" value-text="baseReguladoraA"
+                                    href="https://www.acelerapyme.gob.es/sites/acelerapyme/files/2021-12/BOE-A-2021-21873.pdf"></a>
+                            </span>
+                            <span value-text="baseReguladoraB" class="box__content"></span>
+                            <span>
+                                <a value-text="baseReguladoraC" class="box__name"
+                                    href="https://www.acelerapyme.gob.es/sites/acelerapyme/files/2022-08/BOE-A-2022-12734.pdf"></a>
+                            </span>
+                            <span value-text="baseReguladoraD" class="box__content"></span>
+                            <span>
+                                <a value-text="baseReguladoraE" class="box__name"
+                                    href="https://www.acelerapyme.gob.es/sites/acelerapyme/files/2023-12/BOE-A-2023-15817.pdf"></a>
+                            </span>
+                            <span value-text="baseReguladoraF" class="box__content"></span>
+                        </p>
+                    </article>
+                    <article class="box">
+                        <p value-text="subvencionesHeading" class="box__subtitle__secondary"></p>
+                        <a href="https://www.acelerapyme.gob.es/sites/acelerapyme/files/2021-12/BOE-A-2021-21873.pdf#page=20"
+                            class="box__button" value-text="subvencionesButton"></a>
+                    </article>
                 </div>
             </div>
         </section>

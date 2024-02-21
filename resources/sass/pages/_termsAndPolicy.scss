@@ -121,6 +121,17 @@
           @include boxSize(width, null, null, 50vw);
         }
 
+        ul li {
+          list-style-type: disc;
+        }
+
+        &__button {
+          @include flexBox(row, center, center);
+          @include button($secondary_main, $neutral_lighter);
+          @include hover($secondary_light, $neutral_lighter, $neutral_lighter);
+          @include boxSize(width, 20vw, null, 20vw);
+        }
+
       }
 
       .info {

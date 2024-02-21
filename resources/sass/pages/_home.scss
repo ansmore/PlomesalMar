@@ -222,8 +222,13 @@
           &__item {
             @include flexBox(column, flex-start, flex-start);
             @include paddingMargin($padding, $margin);
-            // @include boxSize(height, 460px, null, 470px);
+            @include style($primary_main, $neutral_light);
             @include boxSize(width, null, null, 70vw);
+
+            p {
+              @include style($primary_main, $neutral_light);
+
+            }
           }
         }
       }

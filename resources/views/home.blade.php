@@ -46,13 +46,13 @@
             </div>
         </section>
         <!-- Clients Aside -->
-        <section class="aside">
+        {{-- <section class="aside">
             <div class="aside__box">
                 <a href="{{ route('biit', ['language' => $language]) }}">
                     <img src="{{ asset('img/logos/banner.jpg') }}" alt="banner">
                 </a>
             </div>
-        </section>
+        </section> --}}
         <!-- About Section -->
         <section id="about" class="about">
             <div class="about__row">
@@ -62,6 +62,11 @@
                     <a href="{{ route('biit', ['language' => $language]) }}" class="box__button"
                         value-text="aboutButton"></a>
                 </div>
+            </div>
+            <div class="aside__box">
+                <a href="{{ route('biit', ['language' => $language]) }}">
+                    <img src="{{ asset('img/logos/banner.jpg') }}" alt="banner">
+                </a>
             </div>
         </section>
 
