@@ -12,6 +12,9 @@
                     <div class="photo second-photo">
                         <img src="{{ asset('img/logo.png') }}" alt="">
                     </div>
+                    <div class="photo fourth-photo">
+                        <img src="{{ asset('img/logo.png') }}" alt="">
+                    </div>
                 </div>
                 <div class="whyBiit__row__central">
                     <div class="first circle modal-button" id="firstModal" data-modal-id="firstModal">
@@ -56,6 +59,18 @@
                 </div>
                 <div class="whyBiit__row__right">
                     <div class="photo first-photo">
+                        {{-- <img src="https://lottie.host/embed/0734090d-b22d-4df4-a0c7-112c41e51274/QYglip8ncc.json"
+                            alt=""> --}}
+                        <iframe
+                            src="https://lottie.host/embed/0734090d-b22d-4df4-a0c7-112c41e51274/QYglip8ncc.json"></iframe>
+                    </div>
+                    <div class="photo third-photo">
+                        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+                        <lottie-player src="https://lottie.host/0734090d-b22d-4df4-a0c7-112c41e51274/QYglip8ncc.json"
+                            background="transparent" speed="1" style="width: 400px; height: 400px" direction="1"
+                            mode="normal" loop autoplay></lottie-player>
+                    </div>
+                    <div class="photo fifth-photo">
                         <img src="{{ asset('img/logo.png') }}" alt="">
                     </div>
                 </div>

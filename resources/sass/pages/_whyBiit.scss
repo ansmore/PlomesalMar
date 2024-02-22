@@ -24,32 +24,26 @@
       @include boxSize(width, 90vw, null, 90vw);
       @include boxSize(height, 110rem, null, 115rem);
 
-      // try -> border-line
-      // border: 1px solid $danger_main;
-      // border-radius: 1rem;
       &__left,
       &__right {
         @include flexBox(column, flex-start, flex-start);
         display: none;
         @include paddingMargin($padding, $margin);
         @include style($primary_main);
-        border: 1px solid $secondary_main;
         @include boxSize(width, 10vw, null, 10vw);
         @include boxSize(height, 80vh);
-
       }
 
-
       &__central {
-        // display: block;
         @include flexBox(column, flex-start, flex-start);
-        // @include paddingMargin($padding, $margin);
+        @include paddingMargin($padding, $margin);
         @include style($primary_main);
-        border: 1px solid $secondary_main;
         @include boxSize(width, 60vw, null, 60vw);
-        @include boxSize(height, 70vh);
+        @include boxSize(height, 100vh, null, 100vh);
+        align-self: start;
         // text-align: center;
         // margin-top: 3rem;
+
 
         .circle {
           @include flexBox(column, flex-start, flex-start);
@@ -71,8 +65,7 @@
             line-height: 1.5;
             text-align: center;
 
-            border-top-left-radius: 25%;
-            border-top-right-radius: 25%;
+            border-radius: 25%;
           }
 
           &__subtitle {
@@ -364,86 +357,51 @@
           @include flexBox(column, flex-start, flex-start);
           @include paddingMargin($padding, $margin);
           @include style($primary_main);
-          border: 1px solid $secondary_main;
           @include boxSize(width, 20vw, null, 20vw);
-          @include boxSize(height, 80vh);
+          @include boxSize(height, 100vh);
           align-self: start;
 
           .photo {
             @include flexBox(column, center, center);
-            // @include paddingMargin($padding, $margin);
-            @include style(null, $primary_main);
-            // @include boxShadow($neutral_lighter,
-            //   50%,
-            //   3px,
-            //   $secondary_main,
-            //   $secondary_light );
-
+            @include style(null, $neutral_light);
             @include boxSize(width, 250px, null, 250px);
             @include boxSize(height, 250px, null, 250px);
             position: relative;
             z-index: 2;
             overflow: hidden;
 
-            img {
-              // @include flexBox(column, center, center);
+            img,
+            iframe {
               @include boxSize(width, 175px, null, 200px);
               @include boxSize(height, 175px, null, 200px);
             }
           }
 
           .first-photo {
-            // left: -2vw;
             top: 5vh;
           }
 
           .second-photo {
-            // left: 2vw;
             top: 25vh;
+          }
+
+          .third-photo {
+            top: 29vh;
+          }
+
+          .fourth-photo {
+            top: 48vh;
+          }
+
+          .fifth-photo {
+            top: 52vh;
           }
         }
 
-
         &__central {
           @include boxSize(width, 35vw, null, 35vw);
-          margin-top: 23rem;
-          // @include flexBox(column, flex-start, center);
-          // @include boxSize(height, 155rem, null, 160rem);
+          align-self: start;
 
-          // .circle {
-          //   &__title {
-          //     font-size: 28px;
-          //   }
-          // }
-
-          // .first,
-          // .second,
-          // .third,
-          // .fourth,
-          // .fifth {
-          //   @include boxSize(width, 300px, null, 325px);
-          //   @include boxSize(height, 300px, null, 325px);
-          // }
-
-          // .first {
-          //   left: -10rem;
-          // }
-
-          // .second {
-          //   left: 10rem;
-          // }
-
-          // .third {
-          //   left: -10rem;
-          // }
-
-          // .fourth {
-          //   left: 10rem;
-          // }
-
-          // .fifth {
-          //   left: -10rem;
-          // }
 
           .lines {
             @include boxSize(width, 200px, null, 210px);
