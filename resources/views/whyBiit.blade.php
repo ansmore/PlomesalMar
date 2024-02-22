@@ -9,6 +9,9 @@
         <section class="whyBiit">
             <div class="whyBiit__row" id="mainContainer">
                 <div class="whyBiit__row__left">
+                    <div class="photo second-photo">
+                        <img src="{{ asset('img/logo.png') }}" alt="">
+                    </div>
                 </div>
                 <div class="whyBiit__row__central">
                     <div class="first circle modal-button" id="firstModal" data-modal-id="firstModal">
@@ -52,6 +55,9 @@
                     </div>
                 </div>
                 <div class="whyBiit__row__right">
+                    <div class="photo first-photo">
+                        <img src="{{ asset('img/logo.png') }}" alt="">
+                    </div>
                 </div>
             </div>
         </section>

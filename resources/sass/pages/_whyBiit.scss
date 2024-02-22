@@ -29,13 +29,14 @@
       // border-radius: 1rem;
       &__left,
       &__right {
+        @include flexBox(column, flex-start, flex-start);
         display: none;
-
         @include paddingMargin($padding, $margin);
         @include style($primary_main);
         border: 1px solid $secondary_main;
         @include boxSize(width, 10vw, null, 10vw);
         @include boxSize(height, 80vh);
+
       }
 
 
@@ -360,15 +361,52 @@
         &__left,
         &__right {
           display: block;
+          @include flexBox(column, flex-start, flex-start);
           @include paddingMargin($padding, $margin);
           @include style($primary_main);
           border: 1px solid $secondary_main;
-          @include boxSize(width, 10vw, null, 10vw);
+          @include boxSize(width, 20vw, null, 20vw);
           @include boxSize(height, 80vh);
+          align-self: start;
+
+          .photo {
+            @include flexBox(column, center, center);
+            // @include paddingMargin($padding, $margin);
+            @include style(null, $primary_main);
+            // @include boxShadow($neutral_lighter,
+            //   50%,
+            //   3px,
+            //   $secondary_main,
+            //   $secondary_light );
+
+            @include boxSize(width, 250px, null, 250px);
+            @include boxSize(height, 250px, null, 250px);
+            position: relative;
+            z-index: 2;
+            overflow: hidden;
+
+            img {
+              // @include flexBox(column, center, center);
+              @include boxSize(width, 175px, null, 200px);
+              @include boxSize(height, 175px, null, 200px);
+            }
+          }
+
+          .first-photo {
+            // left: -2vw;
+            top: 5vh;
+          }
+
+          .second-photo {
+            // left: 2vw;
+            top: 25vh;
+          }
         }
 
 
         &__central {
+          @include boxSize(width, 35vw, null, 35vw);
+          margin-top: 23rem;
           // @include flexBox(column, flex-start, center);
           // @include boxSize(height, 155rem, null, 160rem);
 
