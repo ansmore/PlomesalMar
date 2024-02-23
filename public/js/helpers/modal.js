@@ -80,10 +80,29 @@ export const setupOutsideModalClick = () => {
         }
     });
 };
+export const loadImage = (url) => {
+    const bodyPhoto = document.querySelector("#modalPhoto");
+    if (bodyPhoto instanceof HTMLImageElement) {
+        // Modifica el atributo src de la imagen
+        bodyPhoto.onload = () => {
+            // La imagen se ha cargado completamente
+            console.log("Imagen cargada correctamente");
+            console.log("url", url);
+        };
+        bodyPhoto === null || bodyPhoto === void 0 ? void 0 : bodyPhoto.setAttribute("src", url);
+        console.log("url", url);
+        // bodyPhoto.src = url;
+    }
+    else {
+        console.error("Error: Elemento body__photo no es una etiqueta de imagen válida.");
+    }
+};
 export const updateModalAttributes = (modalId) => __awaiter(void 0, void 0, void 0, function* () {
     const modalTitle = document.getElementById("modalTitle");
     const modalContent = document.getElementById("modalContent");
+    // const modalPhoto = document.querySelector("#modalPhoto");
     const component = "whyBiit";
+    let imageUrl = "";
     if (modalTitle && modalContent) {
         try {
             switch (modalId) {
@@ -91,40 +110,55 @@ export const updateModalAttributes = (modalId) => __awaiter(void 0, void 0, void
                     console.log("1");
                     modalTitle.setAttribute("value-text", "modulosCliente");
                     modalContent.setAttribute("value-text", "modulosClienteText");
+                    imageUrl =
+                        "https://www.tooltyp.com/wp-content/uploads/2014/10/1900x920-8-beneficios-de-usar-imagenes-en-nuestros-sitios-web.jpg";
+                    // lottie.host/9addabc8-898b-4ee6-962e-34f3df25d702/q2VBNhlQ5Y.json
+                    // modalPhoto?.setAttribute("src", "{{ asset('img/logo.png') }}");
                     // loadTextComponent(component);
-                    break;
+                    https: break;
                 case "secondModal":
                     console.log("2");
                     modalTitle.setAttribute("value-text", "modulosComercio");
                     modalContent.setAttribute("value-text", "modulosComercioText");
+                    imageUrl =
+                        "https://media.es.wired.com/photos/6501e7429fa9000811a95fe8/16:9/w_2560%2Cc_limit/Adobe%2520Firefly.jpeg";
+                    // modalPhoto?.setAttribute("src", "img/banner.jpg");
                     // loadTextComponent(component);
                     break;
                 case "thirdModal":
                     console.log("3");
                     modalTitle.setAttribute("value-text", "modulosProcesos");
                     modalContent.setAttribute("value-text", "modulosProcesosText");
+                    imageUrl = "../../img/logos/banner.jpg";
+                    // modalPhoto?.setAttribute("src", "img/banner.jpg");
                     // loadTextComponent(component);
                     break;
                 case "fourthModal":
                     console.log("4");
                     modalTitle.setAttribute("value-text", "modulosFactura");
                     modalContent.setAttribute("value-text", "modulosFacturaText");
+                    imageUrl = "../../img/logos/banner.jpg";
+                    // modalPhoto?.setAttribute("src", "img/banner.jpg");
                     // loadTextComponent(component);
                     break;
                 case "fifthModal":
                     console.log("5");
                     modalTitle.setAttribute("value-text", "modulosBusiness");
                     modalContent.setAttribute("value-text", "modulosBusinessText");
+                    imageUrl = "../../img/logo5.png";
+                    // modalPhoto?.setAttribute("src", "img/banner.jpg");
                     // loadTextComponent(component);
                     break;
                 default:
                     // Por defecto
                     modalTitle.setAttribute("value-text", "default");
                     modalContent.setAttribute("value-text", "default");
+                    // modalPhoto?.setAttribute("src", "img/banner.jpg");
                     // loadTextComponent(component);
                     break;
             }
             loadTextComponent(component);
+            loadImage(imageUrl);
         }
         catch (error) {
             console.error("Error updating modal attributes", error);

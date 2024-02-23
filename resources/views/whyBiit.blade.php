@@ -10,10 +10,16 @@
             <div class="whyBiit__row" id="mainContainer">
                 <div class="whyBiit__row__left">
                     <div class="photo second-photo">
-                        <img src="{{ asset('img/logo.png') }}" alt="">
+                        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+                        <lottie-player src="https://lottie.host/4988d73d-0d49-4562-8729-c12a9add5725/6HwavVnFbt.json"
+                            background="transparent" speed="1" style="width: 250px; height: 250px" direction="1"
+                            mode="normal" loop autoplay></lottie-player>
                     </div>
                     <div class="photo fourth-photo">
-                        <img src="{{ asset('img/logo.png') }}" alt="">
+                        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+                        <lottie-player src="https://lottie.host/0734090d-b22d-4df4-a0c7-112c41e51274/QYglip8ncc.json"
+                            background="transparent" speed="1" style="width: 250px; height: 250px" direction="1"
+                            mode="normal" loop autoplay></lottie-player>
                     </div>
                 </div>
                 <div class="whyBiit__row__central">
@@ -59,19 +65,31 @@
                 </div>
                 <div class="whyBiit__row__right">
                     <div class="photo first-photo">
-                        {{-- <img src="https://lottie.host/embed/0734090d-b22d-4df4-a0c7-112c41e51274/QYglip8ncc.json"
-                            alt=""> --}}
-                        <iframe
-                            src="https://lottie.host/embed/0734090d-b22d-4df4-a0c7-112c41e51274/QYglip8ncc.json"></iframe>
+                        {{-- <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+                        <lottie-player src="https://lottie.host/0734090d-b22d-4df4-a0c7-112c41e51274/QYglip8ncc.json"
+                            background="transparent" speed="1" style="width: 250px; height: 250px" direction="1"
+                            mode="normal" loop autoplay></lottie-player> --}}
+                        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+                        <lottie-player src="https://lottie.host/9addabc8-898b-4ee6-962e-34f3df25d702/q2VBNhlQ5Y.json"
+                            background="transparent" speed="1" style="width: 300px; height: 300px" direction="1"
+                            mode="normal" loop autoplay></lottie-player>
+                        {{-- <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+                        <dotlottie-player src="https://lottie.host/9addabc8-898b-4ee6-962e-34f3df25d702/q2VBNhlQ5Y.json"
+                            background="transparent" speed="1" style="width: 250px; height: 250px" direction="1"
+                            playMode="normal" loop autoplay></dotlottie-player> --}}
+                        {{-- https://lottie.host/9addabc8-898b-4ee6-962e-34f3df25d702/q2VBNhlQ5Y.json --}}
                     </div>
                     <div class="photo third-photo">
                         <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-                        <lottie-player src="https://lottie.host/0734090d-b22d-4df4-a0c7-112c41e51274/QYglip8ncc.json"
-                            background="transparent" speed="1" style="width: 400px; height: 400px" direction="1"
+                        <lottie-player src="https://lottie.host/00a7d5c0-3302-4c36-8e6f-08a6c3d85be7/xwvdrMnD4u.json"
+                            background="transparent" speed="1" style="width: 250px; height: 250px" direction="1"
                             mode="normal" loop autoplay></lottie-player>
                     </div>
                     <div class="photo fifth-photo">
-                        <img src="{{ asset('img/logo.png') }}" alt="">
+                        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+                        <lottie-player src="https://lottie.host/4988d73d-0d49-4562-8729-c12a9add5725/6HwavVnFbt.json"
+                            background="transparent" speed="1" style="width: 250px; height: 250px" direction="1"
+                            mode="normal" loop autoplay></lottie-player>
                     </div>
                 </div>
             </div>
@@ -82,8 +100,15 @@
                     <i class="fa-solid fa-xmark"></i>
                 </span>
                 <div id="modalBodyContent">
-                    <h2 class="circle__subtitle" id="modalTitle" value-text=""></h2>
-                    <div class="circle__content" id="modalContent" value-text="">
+                    <h2 class="body__subtitle" id="modalTitle" value-text=""></h2>
+                    <span class="body__content" id="modalContent" value-text="">
+                    </span>
+                    <div class="body__photo">
+                        <img src="" alt="" id="modalPhoto" style="width: 250px; height: 250px">
+                        {{-- <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+                        <lottie-player src="https://lottie.host/0734090d-b22d-4df4-a0c7-112c41e51274/QYglip8ncc.json"
+                            background="transparent" speed="1" style="width: 250px; height: 250px" direction="1"
+                            mode="normal" loop autoplay></lottie-player> --}}
                     </div>
                 </div>
             </div>

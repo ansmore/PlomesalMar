@@ -11,7 +11,7 @@
   align-self: center;
 
   // Developer mode:
-  // border: 1px solid $danger_main;
+  border: 1px solid $danger_main;
 }
 
 @mixin paddingMargin($padding: 0, $margin: 0) {

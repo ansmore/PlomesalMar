@@ -202,7 +202,7 @@
       padding: 20px;
       border-radius: 5px;
 
-      .circle {
+      .body {
         &__subtitle {
           @include style($secondary_main);
           line-height: 1.5;
@@ -225,6 +225,13 @@
           font-weight: 400;
           text-align: center;
         }
+
+        &__photo {
+          @include flexBox(column, flex-end, center);
+          @include boxSize(height, 100px, null, 100px);
+        }
+
+
       }
 
       .close {
@@ -259,31 +266,6 @@
 
       &__row {
         @include boxSize(height, 120rem, null, 125rem);
-
-        // .first {
-        //   left: -10vw;
-
-        // }
-
-        // .second {
-        //   left: 10vw;
-
-        // }
-
-        // .third {
-        //   left: -10vw;
-
-        // }
-
-        // .fourth {
-        //   left: 10vw;
-
-        // }
-
-        // .fifth {
-        //   left: -10vw;
-
-        // }
 
         .lines {
           @include boxSize(width, 150px, null, 175px);
@@ -347,9 +329,10 @@
 @media screen and (min-width: 1025px) {
   .main {
     .whyBiit {
-      // @include boxSize(height, 155rem, null, 160rem);
+      @include boxSize(height, 122rem, null, 122rem);
 
       &__row {
+        @include boxSize(height, 121rem, null, 121rem);
 
         &__left,
         &__right {
@@ -358,7 +341,7 @@
           @include paddingMargin($padding, $margin);
           @include style($primary_main);
           @include boxSize(width, 20vw, null, 20vw);
-          @include boxSize(height, 100vh);
+          @include boxSize(height, 225vh);
           align-self: start;
 
           .photo {
@@ -382,24 +365,25 @@
           }
 
           .second-photo {
-            top: 25vh;
+            top: 52vh;
           }
 
           .third-photo {
-            top: 29vh;
+            top: 70vh;
           }
 
           .fourth-photo {
-            top: 48vh;
+            top: 115vh;
           }
 
           .fifth-photo {
-            top: 52vh;
+            top: 132vh;
           }
         }
 
         &__central {
           @include boxSize(width, 35vw, null, 35vw);
+          @include boxSize(height, 225vh, null, 225vh);
           align-self: start;
 
 
