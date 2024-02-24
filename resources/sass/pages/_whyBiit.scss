@@ -352,6 +352,8 @@
             position: relative;
             z-index: 2;
             overflow: hidden;
+            // developer mode
+            border: 2px dotted $secondary_main;
 
             img,
             iframe {
@@ -365,19 +367,23 @@
           }
 
           .second-photo {
-            top: 52vh;
+            top: 48vh;
+            // top: 52vh;
           }
 
           .third-photo {
-            top: 70vh;
+            top: 62vh;
+            // top: 70vh;
           }
 
           .fourth-photo {
-            top: 115vh;
+            top: 105vh;
+            // top: 115vh;
           }
 
           .fifth-photo {
-            top: 132vh;
+            top: 119vh;
+            // top: 132vh;
           }
         }
 
