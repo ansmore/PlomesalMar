@@ -29,12 +29,12 @@
           @include flexBox(column, center, center);
           @include paddingMargin($padding, $margin);
           @include style(null, $primary_main);
-          @include boxShadow($neutral_lighter,
-            50%,
-            3px,
+          @include boxShadow($primary_main,
+            5px,
+            2px,
             $secondary_main,
             $secondary_light );
-          @include boxSize(width, 125px, null, 150px);
+          @include boxSize(width, 225px, null, 225px);
           @include boxSize(height, 125px, null, 150px);
 
           overflow: hidden;
@@ -43,7 +43,7 @@
             @include flexBox(column, center, center);
             @include paddingMargin($padding);
             padding-top: 1rem;
-            @include boxSize(width, 75px, null, 100px);
+            @include boxSize(width, 200px, null, 200px);
             @include boxSize(height, 75px, null, 100px);
           }
         }
@@ -53,11 +53,11 @@
           @include paddingMargin($padding, $margin);
           @include style(null, $neutral_lighter);
           @include boxShadow($neutral_lighter,
-            50%,
-            3px,
+            5px,
+            2px,
             $secondary_main,
             $secondary_light );
-          @include boxSize(width, 125px, null, 150px);
+          @include boxSize(width, 225px, null, 225px);
           @include boxSize(height, 125px, null, 150px);
 
           overflow: hidden;

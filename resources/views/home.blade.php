@@ -12,7 +12,7 @@
             <div class="solutions__row--title">
                 <div class="box">
                     <span class="box__image">
-                        <img src="{{ asset('img/logo.png') }}" alt="">
+                        <img src="{{ asset('../img/logos/pymesoft_logo_text.png') }}" alt="">
                     </span>
                     <h2 class="box__title" value-text="homeSoluciones"></h2>
                     <h3 class="box__content" value-text="homeServicesSubheading"></h3>

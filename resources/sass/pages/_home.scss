@@ -56,20 +56,21 @@
         @include flexBox(column);
         @include paddingMargin($padding, $margin);
         @include style(null, $primary_main);
-        @include boxShadow($neutral_lighter,
-          50%,
+        @include boxShadow($primary_main,
+          5px,
           3px,
           $secondary_main,
           $secondary_light );
 
-        @include boxSize(width, 250px, null, 300px);
-        @include boxSize(height, 250px, null, 300px);
+
+        @include boxSize(width, 400px, null, 400px);
+        @include boxSize(height, 200px, null, 200px);
 
         overflow: hidden;
 
         img {
-          @include boxSize(width, 175px, null, 200px);
-          @include boxSize(height, 175px, null, 200px);
+          @include boxSize(width, 350px, null, 350px);
+          @include boxSize(height, 125px, null, 125px);
           padding-top: 3rem;
         }
       }

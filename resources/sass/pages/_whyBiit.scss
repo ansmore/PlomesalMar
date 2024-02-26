@@ -228,7 +228,7 @@
 
         &__photo {
           @include flexBox(column, flex-end, center);
-          @include boxSize(height, 100px, null, 100px);
+          @include boxSize(height, 300px, null, 300px);
         }
 
 
@@ -363,26 +363,31 @@
           }
 
           .first-photo {
-            top: 5vh;
+            top: 3rem;
+            // top: 5vh;
           }
 
           .second-photo {
-            top: 48vh;
+            top: 28rem;
+            // top: 48vh;
             // top: 52vh;
           }
 
           .third-photo {
-            top: 62vh;
+            top: 36.5rem;
+            // top: 62vh;
             // top: 70vh;
           }
 
           .fourth-photo {
-            top: 105vh;
+            top: 61rem;
+            // top: 105vh;
             // top: 115vh;
           }
 
           .fifth-photo {
-            top: 119vh;
+            top: 70rem;
+            // top: 119vh;
             // top: 132vh;
           }
         }

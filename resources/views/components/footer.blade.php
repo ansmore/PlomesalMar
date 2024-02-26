@@ -19,15 +19,19 @@
             <ul class="list">
                 <li class="list__item">
                     <a class="list__item__link" href="https://twitter.com/PymesoftValles">
-                        <i class="fab fa-twitter"></i></a>
+                        <i class="fa-brands fa-x-twitter">
+                        </i>
+                    </a>
                 </li>
                 <li class="list__item">
-                    <a class="list__item__link" href="https://www.facebook.com/Pymesoft-Valles-sl-205440757738"><i
-                            class="fab fa-facebook"></i></a>
+                    <a class="list__item__link" href="https://www.facebook.com/Pymesoft-Valles-sl-205440757738">
+                        <i class="fab fa-facebook"></i>
+                    </a>
                 </li>
                 <li class="list__item">
-                    <a class="list__item__link" href="https://es.linkedin.com/company/pymesoft-vall-s"><i
-                            class="fab fa-linkedin"></i></a>
+                    <a class="list__item__link" href="https://es.linkedin.com/company/pymesoft-vall-s">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
                 </li>
             </ul>
         </div>

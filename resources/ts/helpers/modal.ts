@@ -24,7 +24,14 @@ export const closeModal = (modalId: string): void => {
   if (modal) {
     // console.log("close trueeee -> ", modalId);
     modal.style.display = "none";
+    resetImage();
   }
+};
+
+const resetImage = (): void => {
+  const bodyPhoto = document.querySelector("#modalPhoto");
+
+  bodyPhoto?.setAttribute("src", "");
 };
 
 export const setupModalButtons = (): void => {
@@ -77,7 +84,7 @@ export const setupOutsideModalClick = (): void => {
             (modalBodyContent.contains(event.target as Node) ||
               modalBodyContent.isSameNode(event.target as Node))))
       ) {
-        console.log("click detectado dentro del modal", modal.id);
+        // console.log("click detectado dentro del modal", modal.id);
         clickedInsideModal = true;
       }
     });
@@ -85,7 +92,7 @@ export const setupOutsideModalClick = (): void => {
     if (!clickedInsideModal) {
       const modalButton = (event.target as HTMLElement).closest(".modal");
       if (modalButton) {
-        console.log("detectado click outside", modalButton.id);
+        // console.log("detectado click outside", modalButton.id);
         closeModal(modalButton.id);
       }
     }
@@ -95,7 +102,7 @@ export const setupOutsideModalClick = (): void => {
 export const loadImage = (url: string): void => {
   const bodyPhoto = document.querySelector("#modalPhoto");
 
-  if (bodyPhoto instanceof HTMLImageElement) {
+  if (bodyPhoto instanceof HTMLElement) {
     // Modifica el atributo src de la imagen
 
     bodyPhoto.onload = () => {
@@ -104,7 +111,7 @@ export const loadImage = (url: string): void => {
       console.log("url", url);
     };
     bodyPhoto?.setAttribute("src", url);
-    console.log("url", url);
+    console.log("url->", url);
     // bodyPhoto.src = url;
   } else {
     console.error(
@@ -128,17 +135,16 @@ export const updateModalAttributes = async (modalId: string): Promise<void> => {
           modalTitle.setAttribute("value-text", "modulosCliente");
           modalContent.setAttribute("value-text", "modulosClienteText");
           imageUrl =
-            "https://www.tooltyp.com/wp-content/uploads/2014/10/1900x920-8-beneficios-de-usar-imagenes-en-nuestros-sitios-web.jpg";
-          // lottie.host/9addabc8-898b-4ee6-962e-34f3df25d702/q2VBNhlQ5Y.json
+            "https://lottie.host/embed/9addabc8-898b-4ee6-962e-34f3df25d702/q2VBNhlQ5Y.json";
           // modalPhoto?.setAttribute("src", "{{ asset('img/logo.png') }}");
           // loadTextComponent(component);
-          https: break;
+          break;
         case "secondModal":
           console.log("2");
           modalTitle.setAttribute("value-text", "modulosComercio");
           modalContent.setAttribute("value-text", "modulosComercioText");
           imageUrl =
-            "https://media.es.wired.com/photos/6501e7429fa9000811a95fe8/16:9/w_2560%2Cc_limit/Adobe%2520Firefly.jpeg";
+            "https://lottie.host/embed/a5e8a5f8-6431-471c-bff3-69cdda4020bb/UiDRnszEKS.json";
           // modalPhoto?.setAttribute("src", "img/banner.jpg");
           // loadTextComponent(component);
           break;
@@ -146,7 +152,8 @@ export const updateModalAttributes = async (modalId: string): Promise<void> => {
           console.log("3");
           modalTitle.setAttribute("value-text", "modulosProcesos");
           modalContent.setAttribute("value-text", "modulosProcesosText");
-          imageUrl = "../../img/logos/banner.jpg";
+          imageUrl =
+            "https://lottie.host/embed/00a7d5c0-3302-4c36-8e6f-08a6c3d85be7/xwvdrMnD4u.json";
           // modalPhoto?.setAttribute("src", "img/banner.jpg");
           // loadTextComponent(component);
           break;
@@ -154,7 +161,8 @@ export const updateModalAttributes = async (modalId: string): Promise<void> => {
           console.log("4");
           modalTitle.setAttribute("value-text", "modulosFactura");
           modalContent.setAttribute("value-text", "modulosFacturaText");
-          imageUrl = "../../img/logos/banner.jpg";
+          imageUrl =
+            "https://lottie.host/embed/928097fb-7738-4e2d-9eb4-6e4fb4641d89/wivNW9NuVC.json";
           // modalPhoto?.setAttribute("src", "img/banner.jpg");
           // loadTextComponent(component);
           break;
@@ -162,7 +170,8 @@ export const updateModalAttributes = async (modalId: string): Promise<void> => {
           console.log("5");
           modalTitle.setAttribute("value-text", "modulosBusiness");
           modalContent.setAttribute("value-text", "modulosBusinessText");
-          imageUrl = "../../img/logo5.png";
+          imageUrl =
+            "https://lottie.host/embed/4988d73d-0d49-4562-8729-c12a9add5725/6HwavVnFbt.json";
           // modalPhoto?.setAttribute("src", "img/banner.jpg");
           // loadTextComponent(component);
           break;
