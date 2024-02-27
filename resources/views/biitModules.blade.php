@@ -7,10 +7,9 @@
 
     <div class="main">
 
-
         <!-- Biit Modulos Section -->
-        <section id="management" class="whatIs">
-            <div class="whatIs__row">
+        <section id="management" class="biitModules">
+            <div class="biitModules__row">
                 <div class="box">
                     <h3 value-text="gestionHeading" class="box__subtitle"></h3>
                     <p value-text="gestionSubeading" class="box__content"></p>
@@ -20,8 +19,8 @@
                 </div>
             </div>
         </section>
-        <section id="trade" class="whatIs">
-            <div class="whatIs__row">
+        <section id="trade" class="biitModules">
+            <div class="biitModules__row">
                 <div class="box">
                     <h3 value-text="comercioHeading" class="box__subtitle"></h3>
                     <p value-text="comercioSubeading" class="box__content"></p>
@@ -31,8 +30,8 @@
                 </div>
             </div>
         </section>
-        <section id="process" class="whatIs">
-            <div class="whatIs__row">
+        <section id="process" class="biitModules">
+            <div class="biitModules__row">
                 <div class="box">
                     <h3 value-text="procesosHeading" class="box__subtitle"></h3>
                     <p value-text="procesosSubeading" class="box__content"></p>
@@ -42,25 +41,25 @@
                 </div>
             </div>
         </section>
-        <section id="business" class="whatIs">
-            <div class="whatIs__row">
-                <div class="box">
-                    <h3 value-text="businessHeading" class="box__subtitle"></h3>
-                    <p value-text="businessSubeading" class="box__content"></p>
-                </div>
-                <div class="box">
-                    <img src="{{ asset('img/biit/gestion.png') }}" class="box__image" alt="banner">
-                </div>
-            </div>
-        </section>
-        <section id="bill" class="whatIs">
-            <div class="whatIs__row">
+        <section id="bill" class="biitModules">
+            <div class="biitModules__row">
                 <div class="box">
                     <h3 value-text="facturaHeading" class="box__subtitle"></h3>
                     <p value-text="facturaSubeading" class="box__content"></p>
                 </div>
                 <div class="box">
                     <img src="{{ asset('img/biit/facturacion.png') }}" class="box__image" alt="banner">
+                </div>
+            </div>
+        </section>
+        <section id="business" class="biitModules">
+            <div class="biitModules__row">
+                <div class="box">
+                    <h3 value-text="businessHeading" class="box__subtitle"></h3>
+                    <p value-text="businessSubeading" class="box__content"></p>
+                </div>
+                <div class="box">
+                    <img src="{{ asset('img/biit/gestion.png') }}" class="box__image" alt="banner">
                 </div>
             </div>
         </section>

@@ -1,4 +1,4 @@
-<nav class="nav">
+a<nav class="nav">
     <div class="toggle">
         <label for="toggle-menu-checkbox">
             <img src="{{ asset('img/hamburger-menu.png') }}" alt="Menu hamburger">
@@ -37,11 +37,11 @@
                                 href="{{ route('biitModules.section', ['section' => 'process', 'language' => $language]) }}"
                                 value-text="navProceso"></a>
                             <a class="dropdown__menu__item"
-                                href="{{ route('biitModules.section', ['section' => 'business', 'language' => $language]) }}"
-                                value-text="navBusiness"></a>
-                            <a class="dropdown__menu__item"
                                 href="{{ route('biitModules.section', ['section' => 'bill', 'language' => $language]) }}"
                                 value-text="navFactura"></a>
+                            <a class="dropdown__menu__item"
+                                href="{{ route('biitModules.section', ['section' => 'business', 'language' => $language]) }}"
+                                value-text="navBusiness"></a>
                         </div>
                     </div>
                 </li>

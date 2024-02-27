@@ -90,20 +90,15 @@
                 <span class="close" id="closeModalButton">
                     <i class="fa-solid fa-xmark"></i>
                 </span>
-                <div id="modalBodyContent">
+                <div id="modalBodyContent" class="body">
                     <h2 class="body__subtitle" id="modalTitle" value-text=""></h2>
                     <span class="body__content" id="modalContent" value-text="">
                     </span>
                     <div class="body__photo">
-                        {{-- <img src="" alt="" id="modalPhoto" style="width: 250px; height: 250px"> --}}
-                        {{-- <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script> --}}
-                        {{-- <lottie-player id="modalPhoto" src="" background="transparent" speed="1"
-                            style="width: 250px; height: 250px" direction="1" mode="normal" loop
-                            autoplay></lottie-player> --}}
                         <iframe id="modalPhoto" src="" style="width: 300px; height: 300px"></iframe>
-
-
                     </div>
+                    <a href="{{ route('biitContact', ['language' => $language]) }}" class="body__button"
+                        value-text="whyBiitActionMessage"></a>
                 </div>
             </div>
         </section>

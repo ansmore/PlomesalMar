@@ -11,14 +11,18 @@
   "biitOnlineText": "Tu gestor de clientes, ecommerce, servicio de atención al cliente, intranet con tus empleados, proveedores, etc…",
   "modulosHeader": "NUESTROS MÓDULOS",
   "modulosCliente": "GESTIÓN CLIENTE",
-  "modulosClienteText": "Nuestra solución BIIT Manager CRM permite una gestión integral de la relación con los clientes. La aplicación facilita el seguimiento comercial de forma ágil y eficaz. Nuestro rango de precios oscila entre los 4000 y 10000 euros.",
+  "modulosClienteText": "Explora BIITCRM, la solución de gestión de clientes desarrollada por PYMESOFT. Diseñada para potenciar las relaciones empresariales, BIITCRM centraliza información, ofrece automatización inteligente, análisis avanzado y colaboración en tiempo real. Desarrollada a medida, esta plataforma escalable impulsa la eficiencia y productividad. Descubre cómo PYMESOFT redefine la gestión de clientes, brindando a las empresas una herramienta personalizada para alcanzar el éxito.",
+  "modulosClienteTextOld": "Nuestra solución BIIT Manager CRM permite una gestión integral de la relación con los clientes. La aplicación facilita el seguimiento comercial de forma ágil y eficaz. Nuestro rango de precios oscila entre los 4000 y 10000 euros.",
   "modulosComercio": "COMERCIO ELÉCTRONICO",
-  "modulosComercioText": "Ofrecemos el montaje y personalización de la tienda electrónica para cualquier cliente que lo requiera. Esta solución sirve para comercio B2B y B2C. Nuestro rango de precios oscila entre los 4000 y 8000 euros.",
+  "modulosComercioText": "Descubre la potente solución de comercio electrónico de PYMESOFT, diseñada para impulsar tu negocio en línea. Con un enfoque intuitivo, nuestra plataforma simplifica la gestión de tu tienda virtual, garantizando una experiencia de usuario excepcional. Desde la optimización integral hasta la velocidad de carga rápida, cada detalle se ha cuidado para mejorar la visibilidad y eficiencia de tu sitio web. Con un diseño adaptable a dispositivos móviles y una gestión de contenido sencilla, PYMESOFT ofrece la clave para destacar en el competitivo mundo del comercio electrónico. Asegura transacciones seguras y fortalece la confianza del cliente con nuestra sólida seguridad en línea. Descubre cómo PYMESOFT puede transformar tu presencia digital y brindar una experiencia de compra inigualable a tus clientes. ¡Impulsa tu negocio hoy!",
+  "modulosComercioTextOld": "Ofrecemos el montaje y personalización de la tienda electrónica para cualquier cliente que lo requiera. Esta solución sirve para comercio B2B y B2C. Nuestro rango de precios oscila entre los 4000 y 8000 euros.",
   "modulosProcesos": "GESTIÓN DE PROCESOS",
-  "modulosProcesosText": "En Pymesoft disponemos de diferentes herramientas para automatizar y digitalizar los principales procesos de gestión empresarial. Desde gestión de almacén, fabricación, intranet, SAT o laboral. Nuestro rango de precios oscila entre los 6000 y 30000 euros.",
+  "modulosProcesosText": "Elige nuestra solución integral para experimentar una transformación completa en la gestión de tus procesos empresariales. Optimiza, simplifica y crece con BIITSAT, BIITSGA, BIITFAB, BIITLAB y BIITSIGN.",
+  "modulosProcesosTextOld": "En Pymesoft disponemos de diferentes herramientas para automatizar y digitalizar los principales procesos de gestión empresarial. Desde gestión de almacén, fabricación, intranet, SAT o laboral. Nuestro rango de precios oscila entre los 6000 y 30000 euros.",
   "modulosBusiness": "BUSINESS INTELLIGENCE Y ANÁLITICA",
   "modulosBusinessText": "Todas nuestras aplicaciones están conectadas al módulo de análisis de negocio de SAGE 200c, a través del cual se puede extraer informes de análisis y reporting. Nuestro rango de precios oscila entre los 2000 y 6000 euros.",
   "modulosFactura": "FACTURA ELECTRÓNICA",
   "modulosFacturaText": "Todos nuestros módulos y soluciones envían información de facturación a SAGE 200c. Este ERP permite despúes el envío de E-factura a los clientes. Nuestro rango de precios oscila entre los 1500 y 6000 euros.",
-  "aboutButton": "¿Por qué Biit? "
+  "aboutButton": "¿Por qué Biit? ",
+  "whyBiitActionMessage": "MÁS INFO"
 }
