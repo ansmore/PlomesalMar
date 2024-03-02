@@ -28,11 +28,11 @@
           @include paddingMargin($padding, $margin);
           @include style(null, $primary_main);
           @include boxShadow($neutral_lighter,
-            50%,
-            3px,
+            5px,
+            2px,
             $secondary_main,
             $secondary_light );
-          @include boxSize(width, 125px, null, 150px);
+          @include boxSize(width, 225px, null, 225px);
           @include boxSize(height, 125px, null, 150px);
 
           overflow: hidden;
@@ -42,7 +42,7 @@
             @include flexBox(column, center, center);
             @include paddingMargin($padding);
             padding-top: 1rem;
-            @include boxSize(width, 75px, null, 100px);
+            @include boxSize(width, 200px, null, 200px);
             @include boxSize(height, 75px, null, 100px);
           }
 
@@ -53,11 +53,11 @@
           @include paddingMargin($padding, $margin);
           @include style(null, $neutral_lighter);
           @include boxShadow($neutral_lighter,
-            50%,
-            3px,
+            5px,
+            2px,
             $secondary_main,
             $secondary_light );
-          @include boxSize(width, 125px, null, 150px);
+          @include boxSize(width, 225px, null, 225px);
           @include boxSize(height, 125px, null, 150px);
 
           overflow: hidden;
@@ -78,10 +78,10 @@
         @include flexBox(column, flex-start, center);
         @include paddingMargin($padding, $margin);
         @include style($primary_main);
-        @include boxSize(width, 80vw, null, 80vw);
+        @include boxSize(width, 70vw, null, 70vw);
         gap: $gap;
         hyphens: auto;
-        font-size: 1em;
+        font-size: 0.9em;
 
         &__title {
           @include style($primary_main);

@@ -12,7 +12,7 @@
                 <div class="circle">
                     <span class="circle__pyme">
                         <a href="{{ route('home') }}">
-                            <img src="{{ asset('img/logo.png') }}" alt="">
+                            <img src="{{ asset('../img/logos/pymesoft_logo_text.png') }}" alt="">
                         </a>
                     </span>
                     <span class="circle__biit">
