@@ -11,8 +11,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 const defaultLanguage = "es";
 import { navbar } from "../components/navigation.js";
 import { footer } from "../components/footer.js";
-export let counterComponent = 0;
-export let counterPage = 0;
+// export let counterComponent = 0;
+// export let counterPage = 0;
 export const loadDictionary = (language, page) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const response = yield fetch(`./../dictionary/${language}/${language}_${page}.json`);
@@ -124,7 +124,7 @@ export const setLanguage = (selectedLanguage) => __awaiter(void 0, void 0, void 
 });
 export const loadText = () => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        counterPage += 1;
+        // counterPage += 1;
         const abailablePages = yield loadAbailablesFiles();
         const fileName = yield getCurrentFileName();
         const finalSelectedLanguage = yield getFinalLanguage();

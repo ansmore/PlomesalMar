@@ -6,8 +6,8 @@ type Dictionary = {
 const defaultLanguage = "es";
 import { navbar } from "../components/navigation.js";
 import { footer } from "../components/footer.js";
-export let counterComponent = 0;
-export let counterPage = 0;
+// export let counterComponent = 0;
+// export let counterPage = 0;
 
 export const loadDictionary = async (
   language: string,
@@ -146,7 +146,7 @@ export const setLanguage = async (selectedLanguage: string) => {
 
 export const loadText = async () => {
   try {
-    counterPage += 1;
+    // counterPage += 1;
     const abailablePages = await loadAbailablesFiles();
 
     const fileName = await getCurrentFileName();

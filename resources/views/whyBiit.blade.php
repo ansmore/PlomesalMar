@@ -73,7 +73,7 @@
                     <div class="photo third-photo">
                         {{-- <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script> --}}
                         <lottie-player src="https://lottie.host/00a7d5c0-3302-4c36-8e6f-08a6c3d85be7/xwvdrMnD4u.json"
-                            background="transparent" speed="1" style="width: 250px; height: 250px" direction="1"
+                            background="#fafafa" speed="1" style="width: 250px; height: 250px" direction="1"
                             mode="normal" loop autoplay></lottie-player>
                     </div>
                     <div class="photo fifth-photo">
