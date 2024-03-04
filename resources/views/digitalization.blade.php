@@ -10,13 +10,12 @@
 
         <section id="whatIs" class="whatIs">
             <div class="whatIs__row">
-                <div class="box">
-                    <h2 value-text="servicesHeading" class="box__subtitle"></h2>
-                    <p value-text="servicesText" class="box__content"></p>
-                    {{-- Contenido eliminado  --}}
-                    {{-- <p value-text="servicesLetter" class="box__content"></p> --}}
-                    {{-- <img src="{{ asset('./img/banner.jpg') }}" class="box__image"> --}}
-                </div>
+                <article class="box">
+                    <p value-text="servicesHeading" class="box__subtitle"></p>
+                    <p>
+                        <span value-text="servicesText" class="box__content"></span>
+                    </p>
+                </article>
             </div>
         </section>
         <section id="about" class="about">
@@ -70,79 +69,78 @@
 
         <section id="requirements" class="whatIs">
             <div class="whatIs__row">
-                <div class="box">
+                <article class="box">
                     <p value-text="requisitosHeading" class="box__subtitle"></p>
                     <ul>
                         <li>
-                            <p value-text="requisitosMicroempresa" class="box__content"></p>
+                            <span value-text="requisitosMicroempresa" class="box__content"></span>
                         </li>
                         <li>
-                            <p value-text="requisitosRecuperacion" class="box__content"></p>
+                            <span value-text="requisitosRecuperacion" class="box__content"></span>
                         </li>
                         <li>
-                            <p value-text="requisitosSituacion" class="box__content"></p>
+                            <span value-text="requisitosSituacion" class="box__content"></span>
                         </li>
                         <li>
-                            <p value-text="requisitosCrisis" class="box__content"></p>
+                            <span value-text="requisitosCrisis" class="box__content"></span>
                         </li>
                         <li>
-                            <p value-text="requisitosObligaciones" class="box__content"></p>
+                            <span value-text="requisitosObligaciones" class="box__content"></span>
                         </li>
                         <li>
-                            <p value-text="requisitosProhibiciones" class="box__content"></p>
+                            <span value-text="requisitosProhibiciones" class="box__content"></span>
                         </li>
                         <li>
-                            <p value-text="requisitosLimite" class="box__content"></p>
+                            <span value-text="requisitosLimite" class="box__content"></span>
                         </li>
                         <li>
-                            <p value-text="requisitosAutoevaluacion" class="box__content"></p>
+                            <span value-text="requisitosAutoevaluacion" class="box__content"></span>
                         </li>
                         <li>
-                            <p value-text="requisitosIniciar" class="box__content"></p>
+                            <span value-text="requisitosIniciar" class="box__content"></span>
                         </li>
                     </ul>
-                </div>
+                </article>
             </div>
         </section>
         <section class="whatIs">
             <div class="whatIs__row">
-                <div class="box">
+                <article class="box">
                     <p value-text="bonoHeading" class="box__subtitle"></p>
-                    <article>
+                    <p>
                         <span value-text="bonoCondiciones" class="box__content"></span>
                         <span value-text="bonoCantidad" class="box__content"></span>
-                    </article>
-                    <article>
-                        <p>
-                            <span value-text="baseReguladora" class="box__content"></span>
-                            <span>
-                                <a class="box__name" value-text="baseReguladoraA"
-                                    href="https://www.acelerapyme.gob.es/sites/acelerapyme/files/2021-12/BOE-A-2021-21873.pdf"></a>
-                            </span>
-                            <span value-text="baseReguladoraB" class="box__content"></span>
-                            <span>
-                                <a value-text="baseReguladoraC" class="box__name"
-                                    href="https://www.acelerapyme.gob.es/sites/acelerapyme/files/2022-08/BOE-A-2022-12734.pdf"></a>
-                            </span>
-                            <span value-text="baseReguladoraD" class="box__content"></span>
-                            <span>
-                                <a value-text="baseReguladoraE" class="box__name"
-                                    href="https://www.acelerapyme.gob.es/sites/acelerapyme/files/2023-12/BOE-A-2023-15817.pdf"></a>
-                            </span>
-                            <span value-text="baseReguladoraF" class="box__content"></span>
-                        </p>
-                    </article>
-                    <article class="box">
-                        <p value-text="subvencionesHeading" class="box__subtitle__secondary"></p>
+                    </p>
+                    <p>
+
+                        <span value-text="baseReguladora" class="box__content"></span>
+                        <span>
+                            <a class="box__name" value-text="baseReguladoraA"
+                                href="https://www.acelerapyme.gob.es/sites/acelerapyme/files/2021-12/BOE-A-2021-21873.pdf"></a>
+                        </span>
+                        <span value-text="baseReguladoraB" class="box__content"></span>
+                        <span>
+                            <a value-text="baseReguladoraC" class="box__name"
+                                href="https://www.acelerapyme.gob.es/sites/acelerapyme/files/2022-08/BOE-A-2022-12734.pdf"></a>
+                        </span>
+                        <span value-text="baseReguladoraD" class="box__content"></span>
+                        <span>
+                            <a value-text="baseReguladoraE" class="box__name"
+                                href="https://www.acelerapyme.gob.es/sites/acelerapyme/files/2023-12/BOE-A-2023-15817.pdf"></a>
+                        </span>
+                        <span value-text="baseReguladoraF" class="box__content"></span>
+                    </p>
+                    <p class="box">
+                        <span value-text="subvencionesHeading" class="box__subtitle__secondary"></span>
                         <a href="https://www.acelerapyme.gob.es/sites/acelerapyme/files/2021-12/BOE-A-2021-21873.pdf#page=20"
                             class="box__button" value-text="subvencionesButton"></a>
-                    </article>
-                </div>
+                    </p>
+                </article>
             </div>
         </section>
         <section id="bond" class="whatIs">
             <div class="whatIs__row">
-                <div class="box">
+                <article class="box">
                     <p value-text="solicitarHeading" class="box__subtitle"></p>
                     <p>
                         <span value-text="solicitarRegistro" class="box__content"></span>
@@ -165,12 +163,12 @@
                         <span value-text="solicitarFormularios"></span>
 
                     </p>
-                </div>
+                </article>
             </div>
         </section>
         <section class="whatIs">
             <div class="whatIs__row">
-                <div class="box">
+                <article class="box">
                     <p value-text="ayudaHeading" class="box__subtitle"></p>
                     <p value-text="ayudaBusines" class="box__subtitle__secondary"></p>
                     <p value-text="ayudaAnalisis" class="box__content"></p>
@@ -187,20 +185,19 @@
                     <p value-text="ayudaComercio" class="box__subtitle__secondary"></p>
                     <p value-text="ayudaComercioElectronico" class="box__content"></p>
                     <p value-text="ayudaComercioPrecios" class="box__content"></p>
-                </div>
+                </article>
             </div>
         </section>
 
         <section id="faq" class="whatIs">
             <div class="whatIs__row">
-                <div class="box">
+                <article class="box">
                     <p value-text="faqPreguntas" class="box__subtitle"></p>
-                </div>
-                <div class="box">
-                    <div>
-                        <p value-text="faqBono" class="box__subtitle__secondary"></p>
-                        <p value-text="faqSolucion" class="box__content"></p>
-                    </div>
+
+                    <p value-text="faqBono" class="box__subtitle__secondary"></p>
+                    <p>
+                        <span value-text="faqSolucion" class="box__content"></span>
+                    </p>
                     <div>
                         <p value-text="faqCobrar" class="box__subtitle__secondary"></p>
                         <p value-text="faqAyudas" class="box__content"></p>
@@ -210,8 +207,10 @@
                         <p value-text="faqContacto" class="box__content">
                             <a value-text="faqContactUs" href="/#contact"></a>
                         </p>
+                        <a href="{{ route('biitContact', ['language' => $language]) }}" class="box__button"
+                            value-text="contactActionMessage"></a>
                     </div>
-                </div>
+                </article>
             </div>
         </section>
 

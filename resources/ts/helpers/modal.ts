@@ -25,7 +25,7 @@ export const closeModalButton = (): void => {
 
   closeModalButtons.forEach((button) => {
     button.addEventListener("click", () => {
-      const modal = button.closest(".modal");
+      const modal = button.closest("#infoModal");
       if (modal) {
         closeModal(modal.id);
       }
@@ -35,7 +35,7 @@ export const closeModalButton = (): void => {
 
 export const closeModalOutside = (): void => {
   document.addEventListener("click", (event: MouseEvent) => {
-    const modals = document.querySelectorAll(".modal");
+    const modals = document.querySelectorAll("#infoModal");
     let clickedInsideModal = false;
 
     modals.forEach((modal) => {
@@ -50,7 +50,8 @@ export const closeModalOutside = (): void => {
         modalBox.contains(event.target as Node) &&
         event.target instanceof HTMLElement &&
         (event.target === closeButton ||
-          event.target.classList.contains("modal__box") ||
+          // event.target.classList.contains("modal__box") ||
+          event.target.id === "modalBox" ||
           (modalBodyContent &&
             (modalBodyContent.contains(event.target as Node) ||
               modalBodyContent.isSameNode(event.target as Node))))

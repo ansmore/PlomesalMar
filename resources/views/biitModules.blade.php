@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title', 'Biit')
+@section('title', 'Biit Modules')
 @section('content')
 
     @include('components.navigationBiit')

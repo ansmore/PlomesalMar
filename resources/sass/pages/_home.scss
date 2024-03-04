@@ -445,7 +445,7 @@
             &__item {
 
               @include boxSize(height, 460px, null, 470px);
-              @include boxSize(width, null, null, 20vw);
+              @include boxSize(width, 20vw, null, 20vw);
             }
           }
         }

@@ -80,7 +80,8 @@ const changeLanguage = async (language: string) => {
       const responseData = await response.json();
 
       const newUrl = responseData.newUrl;
-      history.pushState({}, "", newUrl);
+      // history.pushState({}, "", newUrl);
+      history.replaceState({ url: newUrl }, "", newUrl);
     }
   } catch (error) {
     console.error("Error al cambiar el idioma:", error);

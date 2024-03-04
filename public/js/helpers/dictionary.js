@@ -110,7 +110,7 @@ export const setLanguage = (selectedLanguage) => __awaiter(void 0, void 0, void 
         let navigatorLanguage = yield getNavigatorLanguage();
         // If return false, this language is not in white list!
         if (yield isLanguageSupported(navigatorLanguage)) {
-            console.error(`Home->Your navigator languages unsuported! ${navigatorLanguage}. Sorry!`);
+            console.log(`Your navigator languages unsuported! ${navigatorLanguage}. Sorry!`);
             navigatorLanguage = "";
         }
         localStorage.setItem("selectedLanguage", selectedLanguage);

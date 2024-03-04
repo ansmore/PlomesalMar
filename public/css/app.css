@@ -1360,6 +1360,7 @@ header .intro-text .intro-heading {
   .main .about .box__columns__col__item {
     min-height: 460px;
     max-height: 470px;
+    min-width: 20vw;
     max-width: 20vw;
   }
   .main .contact .box, .main .contact .solutions .box--title, .main .solutions .contact .box--title, .main .contact .solutions .box--content, .main .solutions .contact .box--content {
@@ -2085,7 +2086,7 @@ header .intro-text .intro-heading {
   color: #17265c;
   background-color: transparent;
   line-height: 2;
-  font-size: 24px;
+  font-size: 2em;
   font-weight: bold;
 }
 .main .termsAndPolicy__row .box__subtitle,

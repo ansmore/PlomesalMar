@@ -61,4 +61,4 @@ var_dump('Navigation After get->', $language);
         </div>
     </div>
 </nav>
-<script type="module" src="{{ asset('js/navigation.js') }}" defer></script>
+<script type="module" src="{{ asset('js/components/navigation.js') }}" defer></script>

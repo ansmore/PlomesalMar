@@ -128,8 +128,8 @@ export const setLanguage = async (selectedLanguage: string) => {
 
     // If return false, this language is not in white list!
     if (await isLanguageSupported(navigatorLanguage)) {
-      console.error(
-        `Home->Your navigator languages unsuported! ${navigatorLanguage}. Sorry!`,
+      console.log(
+        `Your navigator languages unsuported! ${navigatorLanguage}. Sorry!`,
       );
       navigatorLanguage = "";
     }

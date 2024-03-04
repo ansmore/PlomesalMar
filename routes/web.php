@@ -23,26 +23,27 @@ use App\Http\Controllers\DigitizationController;
 // explorar esta via...
 // $language = Session::get('language', 'rus'); // 'es' es el valor predeterminado
 
-Route::get('/confirmation', function () {
-      $language = Session::get('language',  config('app.fallback_locale', 'es'));
+// // Prueba mail
+// Route::get('/confirmation', function () {
+//       $language = Session::get('language',  config('app.fallback_locale', 'es'));
 
-    $dictionaryPath = base_path("public/dictionary/{$language}/{$language}_emails.json");
+//     $dictionaryPath = base_path("public/dictionary/{$language}/{$language}_emails.json");
 
-    if (File::exists($dictionaryPath)) {
-        $dictionary = json_decode(File::get($dictionaryPath), true);
-    } else {
-        $dictionary = [];
-    }
+//     if (File::exists($dictionaryPath)) {
+//         $dictionary = json_decode(File::get($dictionaryPath), true);
+//     } else {
+//         $dictionary = [];
+//     }
 
-    $messages = new \stdClass();
-    // Puedes establecer valores predeterminados para las variables necesarias
-    $messages->name = 'Nombre de ejemplo';
-    $messages->email = 'correo@example.com';
-    $messages->mailsubject = 'Asunto de ejemplo';
-    $messages->message = 'Mensaje de ejemplo';
+//     $messages = new \stdClass();
+//     // Puedes establecer valores predeterminados para las variables necesarias
+//     $messages->name = 'Nombre de ejemplo';
+//     $messages->email = 'correo@example.com';
+//     $messages->mailsubject = 'Asunto de ejemplo';
+//     $messages->message = 'Mensaje de ejemplo';
 
-    return view('emails.contactConfirmation', compact('messages', 'dictionary'));
-});
+//     return view('emails.contactConfirmation', compact('messages', 'dictionary'));
+// });
 
 Route::post('/sendLanguage', [LanguageController::class, 'sendLanguage']);
 Route::post('/biitContact', [BiitController::class, 'biitContactSubmit'])->name('biitContact.submit');

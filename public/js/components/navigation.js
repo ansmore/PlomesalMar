@@ -64,7 +64,8 @@ const changeLanguage = (language) => __awaiter(void 0, void 0, void 0, function*
         if (response.ok) {
             const responseData = yield response.json();
             const newUrl = responseData.newUrl;
-            history.pushState({}, "", newUrl);
+            // history.pushState({}, "", newUrl);
+            history.replaceState({ url: newUrl }, "", newUrl);
         }
     }
     catch (error) {
