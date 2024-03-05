@@ -1,4 +1,4 @@
-a<nav class="nav">
+<nav class="nav">
     <div class="toggle">
         <label for="toggle-menu-checkbox">
             <img src="{{ asset('img/hamburger-menu.png') }}" alt="Menu hamburger">

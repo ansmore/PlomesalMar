@@ -16,7 +16,7 @@
                             mode="normal" loop autoplay></lottie-player>
                     </div>
                     <div class="photo fourth-photo">
-                        {{-- <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script> --}}
+
                         <lottie-player src="https://lottie.host/928097fb-7738-4e2d-9eb4-6e4fb4641d89/wivNW9NuVC.json"
                             background="transparent" speed="1" style="width: 250px; height: 250px" direction="1"
                             mode="normal" loop autoplay></lottie-player>
@@ -65,19 +65,19 @@
                 </div>
                 <div class="whyBiit__row__right">
                     <div class="photo first-photo">
-                        {{-- <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script> --}}
+
                         <lottie-player src="https://lottie.host/9addabc8-898b-4ee6-962e-34f3df25d702/q2VBNhlQ5Y.json"
                             background="transparent" speed="1" style="width: 300px; height: 300px" direction="1"
                             mode="normal" loop autoplay></lottie-player>
                     </div>
                     <div class="photo third-photo">
-                        {{-- <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script> --}}
+
                         <lottie-player src="https://lottie.host/00a7d5c0-3302-4c36-8e6f-08a6c3d85be7/xwvdrMnD4u.json"
-                            background="#fafafa" speed="1" style="width: 250px; height: 250px" direction="1"
+                            background="transparent" speed="1" style="width: 250px; height: 250px" direction="1"
                             mode="normal" loop autoplay></lottie-player>
                     </div>
                     <div class="photo fifth-photo">
-                        {{-- <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script> --}}
+
                         <lottie-player src="https://lottie.host/4988d73d-0d49-4562-8729-c12a9add5725/6HwavVnFbt.json"
                             background="transparent" speed="1" style="width: 250px; height: 250px" direction="1"
                             mode="normal" loop autoplay></lottie-player>
