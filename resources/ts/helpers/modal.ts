@@ -61,7 +61,7 @@ export const closeModalOutside = (): void => {
     });
 
     if (!clickedInsideModal) {
-      const modalButton = (event.target as HTMLElement).closest(".modal");
+      const modalButton = (event.target as HTMLElement).closest("#infoModal");
       if (modalButton) {
         closeModal(modalButton.id);
       }
@@ -69,13 +69,13 @@ export const closeModalOutside = (): void => {
   });
 };
 
-export const resetContend = (): void => {
-  const modalBodyContent = document.querySelector("#modalBodyContent");
+// export const resetContend = (): void => {
+//   const modalBodyContent = document.querySelector("#modalBodyContent");
 
-  if (modalBodyContent) {
-    modalBodyContent.innerHTML = "";
-  }
-};
+//   if (modalBodyContent) {
+//     modalBodyContent.innerHTML = "";
+//   }
+// };
 
 export const resetImage = (): void => {
   const bodyPhoto = document.querySelector("#modalPhoto");

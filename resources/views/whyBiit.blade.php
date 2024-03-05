@@ -95,7 +95,8 @@
                     <span class="body__content" id="modalContent" value-text="">
                     </span>
                     <div class="body__photo">
-                        <iframe id="modalPhoto" src="" style="width: 300px; height: 300px"></iframe>
+                        {{-- Pendiente actualizar el tag a lottie-player para cargar imagen --}}
+                        <img id="modalPhoto" src="" style="width: 300px; height: 300px"></img>
                     </div>
                     <a href="{{ route('biitContact', ['language' => $language]) }}" class="body__button"
                         value-text="whyBiitActionMessage"></a>

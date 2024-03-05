@@ -49,19 +49,19 @@ export const closeModalOutside = () => {
             }
         });
         if (!clickedInsideModal) {
-            const modalButton = event.target.closest(".modal");
+            const modalButton = event.target.closest("#infoModal");
             if (modalButton) {
                 closeModal(modalButton.id);
             }
         }
     });
 };
-export const resetContend = () => {
-    const modalBodyContent = document.querySelector("#modalBodyContent");
-    if (modalBodyContent) {
-        modalBodyContent.innerHTML = "";
-    }
-};
+// export const resetContend = (): void => {
+//   const modalBodyContent = document.querySelector("#modalBodyContent");
+//   if (modalBodyContent) {
+//     modalBodyContent.innerHTML = "";
+//   }
+// };
 export const resetImage = () => {
     const bodyPhoto = document.querySelector("#modalPhoto");
     bodyPhoto === null || bodyPhoto === void 0 ? void 0 : bodyPhoto.setAttribute("src", "");

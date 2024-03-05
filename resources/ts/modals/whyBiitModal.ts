@@ -1,18 +1,17 @@
 import { openModal } from "../helpers/modal.js";
 import { loadTextComponent } from "../helpers/dictionary.js";
 
+const component = "whyBiit";
 const modalTitle = document.getElementById("modalTitle");
 const modalContent = document.getElementById("modalContent");
-// const modalPhoto = document.querySelector("#modalPhoto");
 const modalPhoto = document.querySelector("#modalPhoto");
-const component = "whyBiit";
 let imageUrl = "";
 
-export const loadImage = (url: string): void => {
-  if (modalPhoto instanceof HTMLElement) {
-    // Modifica el atributo src de la imagen
+const loadImage = (url: string): void => {
+  // Eliminado del if el campo -> "instanceof HTMLElement"
 
-    // modalPhoto.onload = () => {};
+  if (modalPhoto) {
+    // Modifica el atributo src de la imagen
     modalPhoto?.setAttribute("src", url);
   } else {
     console.error(
@@ -91,6 +90,7 @@ export const selectContend = async (modalId: string): Promise<void> => {
 };
 
 export const loadModal = (): void => {
+  // Pendiente de cambiar a abrir por Id
   const modalButtons = document.querySelectorAll(".modal-button");
 
   modalButtons.forEach((button) => {
