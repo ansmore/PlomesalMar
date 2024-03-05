@@ -96,7 +96,10 @@
                     </span>
                     <div class="body__photo">
                         {{-- Pendiente actualizar el tag a lottie-player para cargar imagen --}}
-                        <img id="modalPhoto" src="" style="width: 300px; height: 300px"></img>
+                        {{-- <img id="modalPhoto" src="" style="width: 300px; height: 300px"></img> --}}
+                        <lottie-player src="" id="modalPhoto" background="transparent" speed="1"
+                            style="width: 250px; height: 250px" direction="1" mode="normal" loop
+                            autoplay></lottie-player>
                     </div>
                     <a href="{{ route('biitContact', ['language' => $language]) }}" class="body__button"
                         value-text="whyBiitActionMessage"></a>
