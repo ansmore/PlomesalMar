@@ -16,9 +16,10 @@ const modalPhoto = document.querySelector("#modalPhoto");
 let imageUrl = "";
 const loadImage = (url) => __awaiter(void 0, void 0, void 0, function* () {
     // Eliminado del if el campo -> "instanceof HTMLElement"
-    if (modalPhoto instanceof HTMLElement) {
+    if (modalPhoto && modalPhoto.tagName.toLowerCase() === "lottie-player") {
         // Modifica el atributo src de la imagen
-        modalPhoto === null || modalPhoto === void 0 ? void 0 : modalPhoto.setAttribute("src", url);
+        modalPhoto.load(url);
+        // modalPhoto?.setAttribute("src", url);
     }
     else {
         console.error("Error: Elemento body__photo no es una etiqueta de imagen válida.");
@@ -57,7 +58,7 @@ const fiveModal = () => {
     modalTitle === null || modalTitle === void 0 ? void 0 : modalTitle.setAttribute("value-text", "modulosBusiness");
     modalContent === null || modalContent === void 0 ? void 0 : modalContent.setAttribute("value-text", "modulosBusinessText");
     imageUrl =
-        "https://lottie.host/embed/4988d73d-0d49-4562-8729-c12a9add5725/6HwavVnFbt.json";
+        "https://lottie.host/4988d73d-0d49-4562-8729-c12a9add5725/6HwavVnFbt.json";
 };
 export const selectContend = (modalId) => __awaiter(void 0, void 0, void 0, function* () {
     if (modalTitle && modalContent) {

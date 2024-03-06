@@ -26,9 +26,12 @@
     "node-sass": "^9.0.0",
     "postcss": "^8.1.14",
     "prettier": "^3.0.3",
+    "sass": "^1.69.7",
     "sass-loader": "^13.3.2",
     "ts-loader": "^9.5.0",
-    "typescript": "^5.2.2",
-    "sass": "^1.69.7"
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "lottie-web": "^5.12.2"
   }
 }

@@ -5,10 +5,10 @@
 
     @include('components.navigationBiit')
 
-    <div class="main">
+    <main class="main">
         <section class="whyBiit">
-            <div class="whyBiit__row" id="mainContainer">
-                <div class="whyBiit__row__left">
+            <article class="whyBiit__row" id="mainContainer">
+                <aside class="whyBiit__row__left">
                     <div class="photo second-photo">
                         <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
                         <lottie-player src="https://lottie.host/a5e8a5f8-6431-471c-bff3-69cdda4020bb/UiDRnszEKS.json"
@@ -21,49 +21,49 @@
                             background="transparent" speed="1" style="width: 250px; height: 250px" direction="1"
                             mode="normal" loop autoplay></lottie-player>
                     </div>
-                </div>
+                </aside>
                 <div class="whyBiit__row__central">
-                    <div class="first circle modal-button" id="firstModal" data-modal-id="firstModal">
+                    <figure class="first circle modal-button" id="firstModal" data-modal-id="firstModal">
                         <h4 class="circle__title" value-text="modulosCliente"></h4>
-                    </div>
-                    <div class="lines first-line">
+                    </figure>
+                    <figure class="lines first-line">
                         <svg class="lines-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
                             <!-- Línea SVG -->
                             <line class="dashed-line" x1="20" y1="0" x2="80" y2="100"></line>
                         </svg>
-                    </div>
-                    <div class="second circle modal-button" id="secondModal" data-modal-id="secondModal">
+                    </figure>
+                    <figure class="second circle modal-button" id="secondModal" data-modal-id="secondModal">
                         <h4 class="circle__title" value-text="modulosComercio"></h4>
-                    </div>
-                    <div class="lines second-line">
+                    </figure>
+                    <figure class="lines second-line">
                         <svg class="lines-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
                             <!-- Línea SVG -->
                             <line class="dashed-line" x1="80" y1="0" x2="20" y2="100"></line>
                         </svg>
-                    </div>
-                    <div class="third circle modal-button" id="thirdModal" data-modal-id="thirdModal">
+                    </figure>
+                    <figure class="third circle modal-button" id="thirdModal" data-modal-id="thirdModal">
                         <h4 class="circle__title" value-text="modulosProcesos"></h4>
-                    </div>
-                    <div class="lines third-line">
+                    </figure>
+                    <figure class="lines third-line">
                         <svg class="lines-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
                             <!-- Línea SVG -->
                             <line class="dashed-line" x1="20" y1="0" x2="80" y2="100"></line>
                         </svg>
-                    </div>
-                    <div class="fourth circle modal-button" id="fourthModal" data-modal-id="fourthModal">
+                    </figure>
+                    <figure class="fourth circle modal-button" id="fourthModal" data-modal-id="fourthModal">
                         <h4 class="circle__title" value-text="modulosFactura"></h4>
-                    </div>
-                    <div class="lines fourth-line">
+                    </figure>
+                    <figure class="lines fourth-line">
                         <svg class="lines-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
                             <!-- Línea SVG -->
                             <line class="dashed-line" x1="80" y1="0" x2="20" y2="100"></line>
                         </svg>
-                    </div>
-                    <div class="fifth circle modal-button" id="fifthModal" data-modal-id="fifthModal">
+                    </figure>
+                    <figure class="fifth circle modal-button" id="fifthModal" data-modal-id="fifthModal">
                         <h4 class="circle__title" value-text="modulosBusiness"></h4>
-                    </div>
+                    </figure>
                 </div>
-                <div class="whyBiit__row__right">
+                <aside class="whyBiit__row__right">
                     <div class="photo first-photo">
 
                         <lottie-player src="https://lottie.host/9addabc8-898b-4ee6-962e-34f3df25d702/q2VBNhlQ5Y.json"
@@ -82,8 +82,8 @@
                             background="transparent" speed="1" style="width: 250px; height: 250px" direction="1"
                             mode="normal" loop autoplay></lottie-player>
                     </div>
-                </div>
-            </div>
+                </aside>
+            </article>
         </section>
         <section id="infoModal" class="modal">
             <div id="modalBox" class="modal__box">
@@ -95,9 +95,7 @@
                     <span class="body__content" id="modalContent" value-text="">
                     </span>
                     <div class="body__photo">
-                        {{-- Pendiente actualizar el tag a lottie-player para cargar imagen --}}
-                        {{-- <img id="modalPhoto" src="" style="width: 300px; height: 300px"></img> --}}
-                        <lottie-player src="" id="modalPhoto" background="transparent" speed="1"
+                        <lottie-player id="modalPhoto" background="transparent" speed="1"
                             style="width: 250px; height: 250px" direction="1" mode="normal" loop
                             autoplay></lottie-player>
                     </div>
@@ -106,6 +104,6 @@
                 </div>
             </div>
         </section>
-    </div>
+    </main>
     <script type="module" src="{{ asset('js/whyBiit.js') }}" defer></script>
 @endsection

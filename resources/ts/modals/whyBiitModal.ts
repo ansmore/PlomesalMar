@@ -1,18 +1,23 @@
 import { openModal } from "../helpers/modal.js";
 import { loadTextComponent } from "../helpers/dictionary.js";
 
+interface LottiePlayerElement extends Element {
+  load: (url: string) => void;
+}
+
 const component = "whyBiit";
 const modalTitle = document.getElementById("modalTitle");
 const modalContent = document.getElementById("modalContent");
-const modalPhoto = document.querySelector("#modalPhoto");
+const modalPhoto = document.querySelector("#modalPhoto") as LottiePlayerElement;
 let imageUrl = "";
 
 const loadImage = async (url: string): Promise<void> => {
   // Eliminado del if el campo -> "instanceof HTMLElement"
 
-  if (modalPhoto instanceof HTMLElement) {
+  if (modalPhoto && modalPhoto.tagName.toLowerCase() === "lottie-player") {
     // Modifica el atributo src de la imagen
-    modalPhoto?.setAttribute("src", url);
+    modalPhoto.load(url);
+    // modalPhoto?.setAttribute("src", url);
   } else {
     console.error(
       "Error: Elemento body__photo no es una etiqueta de imagen válida.",
@@ -53,7 +58,7 @@ const fiveModal = () => {
   modalTitle?.setAttribute("value-text", "modulosBusiness");
   modalContent?.setAttribute("value-text", "modulosBusinessText");
   imageUrl =
-    "https://lottie.host/embed/4988d73d-0d49-4562-8729-c12a9add5725/6HwavVnFbt.json";
+    "https://lottie.host/4988d73d-0d49-4562-8729-c12a9add5725/6HwavVnFbt.json";
 };
 
 export const selectContend = async (modalId: string): Promise<void> => {
