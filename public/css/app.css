@@ -856,10 +856,6 @@ header .intro-text .intro-heading {
   color: #17265c;
   background-color: transparent;
 }
-.main .solutions__row .box__content, .main .solutions__row--title .box__content, .main .solutions__row--content .box__content {
-  color: #0097b2;
-  background-color: transparent;
-}
 .main .solutions__row .box__image, .main .solutions__row--title .box__image, .main .solutions__row--content .box__image {
   display: flex;
   flex-direction: column;
@@ -921,8 +917,6 @@ header .intro-text .intro-heading {
   line-height: 1.5;
 }
 .main .solutions__row .box__content, .main .solutions__row--title .box__content, .main .solutions__row--content .box__content {
-  padding: 0.5rem;
-  margin: 0.5rem;
   color: #0097b2;
   background-color: transparent;
 }

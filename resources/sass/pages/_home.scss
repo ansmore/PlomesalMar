@@ -58,9 +58,9 @@
           @include style($primary_main);
         }
 
-        &__content {
-          @include style($secondary_main);
-        }
+        // &__content {
+        //   @include style($secondary_main);
+        // }
 
         &__image {
           @include flexBox(column);
@@ -110,7 +110,7 @@
         }
 
         &__content {
-          @include paddingMargin($padding, $margin);
+          // @include paddingMargin($padding, $margin);
           @include style($secondary_main);
 
           &--title {
