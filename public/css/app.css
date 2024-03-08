@@ -213,6 +213,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   color: #fafafa;
   background-color: #17265c;
   max-width: 100vw;
@@ -233,6 +234,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   padding: 0;
   margin: 0;
   min-width: 100vw;
@@ -246,6 +248,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   padding: 0.5rem;
   margin: 0.5rem;
   flex: 3;
@@ -265,6 +268,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   padding: 0;
   margin: -300px 0 0 0;
   position: absolute;
@@ -280,6 +284,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   padding: 0;
   margin: 1rem 0 0 0;
   color: #fafafa;
@@ -304,6 +309,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   padding: 0;
   margin: 0 0.5rem;
   color: #fafafa;
@@ -320,6 +326,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   min-width: 40vw;
   color: #fafafa;
   background-color: #0097b2;
@@ -336,6 +343,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   position: absolute;
   left: -3rem;
   display: none;
@@ -365,6 +373,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   padding: 0;
   margin: 0;
   margin-right: 60px;
@@ -383,6 +392,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   color: #17265c;
   background-color: #fafafa;
   min-width: 6rem;
@@ -404,6 +414,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   color: #fafafa;
   background-color: #0097b2;
   min-width: 6rem;
@@ -420,6 +431,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   position: absolute;
   right: -4rem;
   display: none;
@@ -492,6 +504,7 @@ header .intro-text .intro-heading {
     align-content: center;
     align-items: center;
     align-self: center;
+    border: 1px solid #ee0000;
     margin-top: 0;
     position: sticky;
   }
@@ -504,6 +517,7 @@ header .intro-text .intro-heading {
     align-content: center;
     align-items: center;
     align-self: center;
+    border: 1px solid #ee0000;
     margin-top: 0;
     transform: translateY(0);
   }
@@ -544,6 +558,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   padding: 1rem 0 0 0;
   margin: 0;
   color: #fafafa;
@@ -558,6 +573,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   padding: 0.5rem;
   margin: 0;
 }
@@ -570,6 +586,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   padding: 0;
   margin: 0;
   max-width: 90vw;
@@ -583,6 +600,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   padding: 0.5rem;
   margin: 0.5rem;
   color: #fafafa;
@@ -598,6 +616,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   cursor: pointer;
 }
 .footer .contact .social .list__item {
@@ -615,6 +634,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   padding: 0.5rem;
   margin: 0 0.5rem;
   min-width: 50px;
@@ -641,6 +661,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   cursor: pointer;
 }
 .footer .contact .policy .list__item {
@@ -663,6 +684,7 @@ header .intro-text .intro-heading {
     align-content: center;
     align-items: center;
     align-self: center;
+    border: 1px solid #ee0000;
   }
   .footer .contact .policy .list {
     display: flex;
@@ -673,6 +695,7 @@ header .intro-text .intro-heading {
     align-content: center;
     align-items: center;
     align-self: center;
+    border: 1px solid #ee0000;
   }
 }
 @media screen and (min-width: 601px) and (max-width: 1024px) {
@@ -685,6 +708,7 @@ header .intro-text .intro-heading {
     align-content: center;
     align-items: center;
     align-self: center;
+    border: 1px solid #ee0000;
   }
   .footer .contact .policy .list {
     display: flex;
@@ -695,6 +719,7 @@ header .intro-text .intro-heading {
     align-content: center;
     align-items: center;
     align-self: center;
+    border: 1px solid #ee0000;
   }
 }
 @media screen and (min-width: 1025px) {
@@ -707,6 +732,7 @@ header .intro-text .intro-heading {
     align-content: center;
     align-items: flex-end;
     align-self: center;
+    border: 1px solid #ee0000;
     min-height: 255px;
   }
   .footer .contact {
@@ -718,6 +744,7 @@ header .intro-text .intro-heading {
     align-content: center;
     align-items: center;
     align-self: center;
+    border: 1px solid #ee0000;
   }
   .footer .contact .policy {
     padding: 0.5rem;
@@ -732,6 +759,7 @@ header .intro-text .intro-heading {
     align-content: center;
     align-items: flex-end;
     align-self: center;
+    border: 1px solid #ee0000;
   }
 }
 .main {
@@ -743,6 +771,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   padding: 0.5rem;
   margin: 0;
   color: #17265c;
@@ -760,6 +789,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   padding: 0.5rem;
   margin: 0;
   color: #17265c;
@@ -776,11 +806,9 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   padding: 0 15px;
   margin: 0;
-  color: #17265c;
-  background-color: transparent;
-  text-align: center;
   min-width: 90vw;
   max-width: 90vw;
   min-height: 8rem;
@@ -798,11 +826,12 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   color: #fafafa;
   background-color: transparent;
   gap: 1rem;
 }
-.main .solutions .box, .main .solutions .box--content, .main .solutions .box--title {
+.main .solutions__row .box, .main .solutions__row .box--content, .main .solutions__row .box--title, .main .solutions__row--title .box, .main .solutions__row--title .box--content, .main .solutions__row--title .box--title, .main .solutions__row--content .box, .main .solutions__row--content .box--content, .main .solutions__row--content .box--title {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -811,16 +840,27 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   padding: 0.5rem;
   margin: 0.5rem;
   color: #17265c;
   background-color: transparent;
-  min-width: 80vw;
-  max-width: 80vw;
+  min-width: 70vw;
+  max-width: 70vw;
   gap: 0.5rem;
+  hyphens: auto;
+  font-size: 0.9em;
   overflow: hidden;
 }
-.main .solutions .box__image {
+.main .solutions__row .box__name, .main .solutions__row--title .box__name, .main .solutions__row--content .box__name {
+  color: #17265c;
+  background-color: transparent;
+}
+.main .solutions__row .box__content, .main .solutions__row--title .box__content, .main .solutions__row--content .box__content {
+  color: #0097b2;
+  background-color: transparent;
+}
+.main .solutions__row .box__image, .main .solutions__row--title .box__image, .main .solutions__row--content .box__image {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -829,6 +869,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   padding: 0.5rem;
   margin: 0.5rem;
   background-color: #17265c;
@@ -841,14 +882,14 @@ header .intro-text .intro-heading {
   max-height: 200px;
   overflow: hidden;
 }
-.main .solutions .box__image img {
+.main .solutions__row .box__image img, .main .solutions__row--title .box__image img, .main .solutions__row--content .box__image img {
   min-width: 350px;
   max-width: 350px;
   min-height: 125px;
   max-height: 125px;
   padding-top: 3rem;
 }
-.main .solutions .box--content {
+.main .solutions__row .box--content, .main .solutions__row--title .box--content, .main .solutions__row--content .box--content {
   color: #17265c;
   background-color: #c2c2c2;
   border-radius: 0;
@@ -856,12 +897,12 @@ header .intro-text .intro-heading {
   box-shadow: 3px 3px 6px #c2c2c2, -3px -3px 6px #ececec;
   border: 1px solid transparent;
 }
-.main .solutions .box--content:hover {
+.main .solutions__row .box--content:hover, .main .solutions__row--title .box--content:hover, .main .solutions__row--content .box--content:hover {
   color: inherit;
   background-color: #0097b2;
   border: 1px solid #1f1f1f;
 }
-.main .solutions .box__title {
+.main .solutions__row .box__title, .main .solutions__row--title .box__title, .main .solutions__row--content .box__title {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -870,6 +911,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   padding: 0.5rem;
   margin: 0 15px;
   color: #17265c;
@@ -878,13 +920,13 @@ header .intro-text .intro-heading {
   font-size: 35px;
   line-height: 1.5;
 }
-.main .solutions .box__content {
+.main .solutions__row .box__content, .main .solutions__row--title .box__content, .main .solutions__row--content .box__content {
   padding: 0.5rem;
   margin: 0.5rem;
   color: #0097b2;
   background-color: transparent;
 }
-.main .solutions .box__content--title {
+.main .solutions__row .box__content--title, .main .solutions__row--title .box__content--title, .main .solutions__row--content .box__content--title {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -893,6 +935,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   padding: 0.5rem;
   margin: 0 15px;
   color: #0097b2;
@@ -902,7 +945,7 @@ header .intro-text .intro-heading {
   font-style: italic;
   font-weight: 400;
 }
-.main .solutions .circle {
+.main .solutions__row .circle, .main .solutions__row--title .circle, .main .solutions__row--content .circle {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -911,6 +954,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   padding: 0.5rem;
   margin: 0.5rem;
   color: inherit;
@@ -925,7 +969,7 @@ header .intro-text .intro-heading {
   padding-top: 3rem;
   border: 1px solid #8f8f8f;
 }
-.main .solutions .circle__icon {
+.main .solutions__row .circle__icon, .main .solutions__row--title .circle__icon, .main .solutions__row--content .circle__icon {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -934,6 +978,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   color: #fafafa;
   background-color: #fafafa;
   min-width: 80px;
@@ -942,7 +987,7 @@ header .intro-text .intro-heading {
   max-height: 100px;
   border-radius: 50%;
 }
-.main .solutions .circle__icon i {
+.main .solutions__row .circle__icon i, .main .solutions__row--title .circle__icon i, .main .solutions__row--content .circle__icon i {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -951,14 +996,15 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   padding: 0.5rem;
   margin: 0;
 }
-.main .solutions .circle__icon img {
+.main .solutions__row .circle__icon img, .main .solutions__row--title .circle__icon img, .main .solutions__row--content .circle__icon img {
   max-width: 50px;
   max-height: 50px;
 }
-.main .solutions .circle__content {
+.main .solutions__row .circle__content, .main .solutions__row--title .circle__content, .main .solutions__row--content .circle__content {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -967,6 +1013,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   padding: 0.5rem;
   margin: 0.5rem;
   color: #fafafa;
@@ -979,7 +1026,7 @@ header .intro-text .intro-heading {
   font-style: italic;
   font-weight: 400;
 }
-.main .solutions .circle:hover {
+.main .solutions__row .circle:hover, .main .solutions__row--title .circle:hover, .main .solutions__row--content .circle:hover {
   color: inherit;
   background-color: #0097b2;
   border: 1px solid #1f1f1f;
@@ -993,6 +1040,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   min-width: 90vw;
   max-width: 90vw;
 }
@@ -1005,6 +1053,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   padding: 0.5rem;
   margin: 1rem 0;
   color: #17265c;
@@ -1012,7 +1061,7 @@ header .intro-text .intro-heading {
   min-width: 100vw;
   min-height: 30vw;
 }
-.main .about .box, .main .about .solutions .box--title, .main .solutions .about .box--title, .main .about .solutions .box--content, .main .solutions .about .box--content {
+.main .about .box, .main .about .solutions__row .box--title, .main .solutions__row .about .box--title, .main .about .solutions__row--title .box--title, .main .solutions__row--title .about .box--title, .main .about .solutions__row--content .box--title, .main .solutions__row--content .about .box--title, .main .about .solutions__row .box--content, .main .solutions__row .about .box--content, .main .about .solutions__row--title .box--content, .main .solutions__row--title .about .box--content, .main .about .solutions__row--content .box--content, .main .solutions__row--content .about .box--content {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -1021,6 +1070,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   padding: 0.5rem;
   margin: 0.5rem;
   min-width: 90vw;
@@ -1069,6 +1119,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   padding: 0.5rem;
   margin: 0.5rem;
 }
@@ -1081,6 +1132,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   padding: 0.5rem;
   margin: 0.5rem;
   column-gap: 2rem;
@@ -1094,6 +1146,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: flex-start;
   align-self: center;
+  border: 1px solid #ee0000;
   padding: 0.5rem;
   margin: 0.5rem;
   color: #17265c;
@@ -1113,6 +1166,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   padding: 0.5rem;
   margin: 0;
   color: #17265c;
@@ -1129,6 +1183,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   padding: 0 15px;
   margin: 0;
   color: #17265c;
@@ -1136,7 +1191,7 @@ header .intro-text .intro-heading {
   min-width: 80vw;
   text-align: center;
 }
-.main .contact .box, .main .contact .solutions .box--title, .main .solutions .contact .box--title, .main .contact .solutions .box--content, .main .solutions .contact .box--content {
+.main .contact .box, .main .contact .solutions__row .box--title, .main .solutions__row .contact .box--title, .main .contact .solutions__row--title .box--title, .main .solutions__row--title .contact .box--title, .main .contact .solutions__row--content .box--title, .main .solutions__row--content .contact .box--title, .main .contact .solutions__row .box--content, .main .solutions__row .contact .box--content, .main .contact .solutions__row--title .box--content, .main .solutions__row--title .contact .box--content, .main .contact .solutions__row--content .box--content, .main .solutions__row--content .contact .box--content {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -1145,6 +1200,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   padding: 0.5rem;
   margin: 0;
   color: #17265c;
@@ -1162,6 +1218,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   padding: 0.5rem;
   margin: 0 15px;
   color: #17265c;
@@ -1191,6 +1248,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   padding: 0.5rem;
   margin: 0 15px;
   color: #0097b2;
@@ -1235,6 +1293,7 @@ header .intro-text .intro-heading {
     align-content: center;
     align-items: center;
     align-self: center;
+    border: 1px solid #ee0000;
     color: #17265c;
     background-color: transparent;
   }
@@ -1242,7 +1301,7 @@ header .intro-text .intro-heading {
     color: #17265c;
     background-color: transparent;
   }
-  .main .solutions .box, .main .solutions .box--title, .main .solutions .box--content {
+  .main .solutions .box, .main .solutions .solutions__row .box--title, .main .solutions__row .solutions .box--title, .main .solutions .solutions__row--title .box--title, .main .solutions__row--title .solutions .box--title, .main .solutions .solutions__row--content .box--title, .main .solutions__row--content .solutions .box--title, .main .solutions .solutions__row .box--content, .main .solutions__row .solutions .box--content, .main .solutions .solutions__row--title .box--content, .main .solutions__row--title .solutions .box--content, .main .solutions .solutions__row--content .box--content, .main .solutions__row--content .solutions .box--content {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -1251,6 +1310,7 @@ header .intro-text .intro-heading {
     align-content: center;
     align-items: center;
     align-self: center;
+    border: 1px solid #ee0000;
     padding: 0.5rem;
     margin: 0.5rem;
     max-width: 80vw;
@@ -1277,13 +1337,14 @@ header .intro-text .intro-heading {
     align-content: center;
     align-items: center;
     align-self: center;
+    border: 1px solid #ee0000;
   }
   .main .about .box__columns__col__item {
     min-height: 410px;
     max-height: 410px;
     max-width: 35vw;
   }
-  .main .contact .box, .main .contact .solutions .box--title, .main .solutions .contact .box--title, .main .contact .solutions .box--content, .main .solutions .contact .box--content {
+  .main .contact .box, .main .contact .solutions__row .box--title, .main .solutions__row .contact .box--title, .main .contact .solutions__row--title .box--title, .main .solutions__row--title .contact .box--title, .main .contact .solutions__row--content .box--title, .main .solutions__row--content .contact .box--title, .main .contact .solutions__row .box--content, .main .solutions__row .contact .box--content, .main .contact .solutions__row--title .box--content, .main .solutions__row--title .contact .box--content, .main .contact .solutions__row--content .box--content, .main .solutions__row--content .contact .box--content {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -1292,6 +1353,7 @@ header .intro-text .intro-heading {
     align-content: center;
     align-items: center;
     align-self: center;
+    border: 1px solid #ee0000;
   }
   .main .contact .box--title {
     display: flex;
@@ -1302,6 +1364,7 @@ header .intro-text .intro-heading {
     align-content: center;
     align-items: center;
     align-self: center;
+    border: 1px solid #ee0000;
   }
   .main .contact .box--map {
     width: 85vw;
@@ -1322,12 +1385,13 @@ header .intro-text .intro-heading {
     align-content: center;
     align-items: center;
     align-self: center;
+    border: 1px solid #ee0000;
     padding: 0.5rem;
     margin: 0;
   }
-  .main .solutions .box, .main .solutions .box--title, .main .solutions .box--content {
-    min-width: 80vw;
-    max-width: 80vw;
+  .main .solutions__row .box, .main .solutions__row--title .box, .main .solutions__row--content .box, .main .solutions__row .box--title, .main .solutions__row--title .box--title, .main .solutions__row--content .box--title, .main .solutions__row .box--content, .main .solutions__row--title .box--content, .main .solutions__row--content .box--content {
+    min-width: 70vw;
+    max-width: 70vw;
   }
   .main .aside__box {
     min-width: 80vw;
@@ -1346,6 +1410,7 @@ header .intro-text .intro-heading {
     align-content: center;
     align-items: flex-start;
     align-self: center;
+    border: 1px solid #ee0000;
   }
   .main .about .box__columns__col {
     display: flex;
@@ -1356,6 +1421,7 @@ header .intro-text .intro-heading {
     align-content: center;
     align-items: center;
     align-self: center;
+    border: 1px solid #ee0000;
   }
   .main .about .box__columns__col__item {
     min-height: 460px;
@@ -1363,7 +1429,7 @@ header .intro-text .intro-heading {
     min-width: 20vw;
     max-width: 20vw;
   }
-  .main .contact .box, .main .contact .solutions .box--title, .main .solutions .contact .box--title, .main .contact .solutions .box--content, .main .solutions .contact .box--content {
+  .main .contact .box, .main .contact .solutions__row .box--title, .main .solutions__row .contact .box--title, .main .contact .solutions__row--title .box--title, .main .solutions__row--title .contact .box--title, .main .contact .solutions__row--content .box--title, .main .solutions__row--content .contact .box--title, .main .contact .solutions__row .box--content, .main .solutions__row .contact .box--content, .main .contact .solutions__row--title .box--content, .main .solutions__row--title .contact .box--content, .main .contact .solutions__row--content .box--content, .main .solutions__row--content .contact .box--content {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -1372,6 +1438,7 @@ header .intro-text .intro-heading {
     align-content: center;
     align-items: center;
     align-self: center;
+    border: 1px solid #ee0000;
   }
   .main .contact .box--map {
     width: 85vw;
@@ -1387,6 +1454,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   padding: 0.5rem;
   margin: 0;
   color: #17265c;
@@ -1404,6 +1472,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   padding: 0.5rem;
   margin: 0;
   color: #17265c;
@@ -1420,6 +1489,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   padding: 0 15px;
   margin: 0;
   color: #17265c;
@@ -1428,7 +1498,7 @@ header .intro-text .intro-heading {
   min-width: 90vw;
   max-width: 90vw;
 }
-.main .header .box, .main .header .solutions .box--title, .main .solutions .header .box--title, .main .header .solutions .box--content, .main .solutions .header .box--content {
+.main .header .box, .main .header .solutions__row .box--title, .main .solutions__row .header .box--title, .main .header .solutions__row--title .box--title, .main .solutions__row--title .header .box--title, .main .header .solutions__row--content .box--title, .main .solutions__row--content .header .box--title, .main .header .solutions__row .box--content, .main .solutions__row .header .box--content, .main .header .solutions__row--title .box--content, .main .solutions__row--title .header .box--content, .main .header .solutions__row--content .box--content, .main .solutions__row--content .header .box--content {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -1437,6 +1507,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   padding: 0.5rem;
   margin: 0.5rem;
   color: #17265c;
@@ -1454,6 +1525,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   padding: 0.5rem;
   margin: 0.5rem;
   background-color: #fafafa;
@@ -1475,6 +1547,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   padding: 0.5rem;
   margin: 0;
   padding-top: 4rem;
@@ -1492,6 +1565,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   padding: 0.5rem;
   margin: 0 15px;
   color: #17265c;
@@ -1515,6 +1589,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   padding: 0.5rem;
   margin: 0 15px;
   color: #0097b2;
@@ -1533,6 +1608,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   padding: 0.5rem;
   margin: 0.5rem;
   color: #fafafa;
@@ -1560,6 +1636,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   padding: 0.5rem;
   margin: 0;
   color: #17265c;
@@ -1577,6 +1654,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   padding: 0.5rem;
   margin: 0;
   min-width: 95vw;
@@ -1591,6 +1669,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   padding: 0 15px;
   margin: 0;
   min-width: 90vw;
@@ -1605,6 +1684,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   padding: 0.5rem 0;
   margin: 0;
   min-width: 80vw;
@@ -1621,6 +1701,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   padding: 0.5rem;
   margin: 0.5rem;
   background-color: #17265c;
@@ -1642,6 +1723,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   padding: 0.5rem;
   margin: 0;
   padding-top: 1rem;
@@ -1659,6 +1741,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   padding: 0.5rem;
   margin: 0.5rem;
   background-color: #fafafa;
@@ -1680,6 +1763,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   padding: 0.5rem;
   margin: 0;
   padding-top: 1rem;
@@ -1688,7 +1772,7 @@ header .intro-text .intro-heading {
   min-height: 75px;
   max-height: 100px;
 }
-.main .contact__row .box, .main .contact__row .solutions .box--title, .main .solutions .contact__row .box--title, .main .contact__row .solutions .box--content, .main .solutions .contact__row .box--content {
+.main .contact__row .box, .main .contact__row .solutions__row .box--title, .main .solutions__row .contact__row .box--title, .main .contact__row .solutions__row--title .box--title, .main .solutions__row--title .contact__row .box--title, .main .contact__row .solutions__row--content .box--title, .main .solutions__row--content .contact__row .box--title, .main .contact__row .solutions__row .box--content, .main .solutions__row .contact__row .box--content, .main .contact__row .solutions__row--title .box--content, .main .solutions__row--title .contact__row .box--content, .main .contact__row .solutions__row--content .box--content, .main .solutions__row--content .contact__row .box--content {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -1697,6 +1781,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   padding: 0.5rem;
   margin: 0.5rem;
   color: #17265c;
@@ -1714,6 +1799,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   padding: 0.5rem;
   margin: 0 15px;
   color: #17265c;
@@ -1731,6 +1817,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   color: #17265c;
   background-color: transparent;
   min-width: 80vw;
@@ -1745,6 +1832,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   padding: 0.5rem;
   margin: 0.5rem;
 }
@@ -1778,6 +1866,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   padding: 0.5rem;
   margin: 0.5rem;
   color: #fafafa;
@@ -1804,6 +1893,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   padding: 0;
   margin: 0.5rem auto;
 }
@@ -1842,6 +1932,7 @@ header .intro-text .intro-heading {
     align-content: center;
     align-items: center;
     align-self: center;
+    border: 1px solid #ee0000;
     padding: 3rem 0.5rem;
     margin: 0.5rem;
     gap: 1rem;
@@ -1870,6 +1961,7 @@ header .intro-text .intro-heading {
     align-content: center;
     align-items: center;
     align-self: center;
+    border: 1px solid #ee0000;
     padding: 5rem 0.5rem;
     margin: 0.5rem;
     gap: 1.5rem;
@@ -1895,6 +1987,7 @@ header .intro-text .intro-heading {
     align-content: center;
     align-items: center;
     align-self: center;
+    border: 1px solid #ee0000;
     min-width: 75vw;
     max-width: 75vw;
   }
@@ -1911,6 +2004,7 @@ header .intro-text .intro-heading {
     align-content: center;
     align-items: center;
     align-self: center;
+    border: 1px solid #ee0000;
     padding: 0.5rem;
     margin: 0.5rem auto;
   }
@@ -1924,6 +2018,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   padding: 0.5rem;
   margin: 0;
   color: #17265c;
@@ -1942,6 +2037,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   padding: 4rem 0.5rem 0.5rem 0.5rem;
   margin: 0;
   min-width: 95vw;
@@ -1957,6 +2053,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   padding: 0 15px;
   margin: 0;
   min-width: 90vw;
@@ -1972,6 +2069,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   padding: 0.5rem 0;
   margin: 0;
   min-width: 80vw;
@@ -1987,6 +2085,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   padding: 0.5rem;
   margin: 0.5rem;
   background-color: #17265c;
@@ -2009,6 +2108,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   padding: 0.5rem;
   margin: 0;
   padding-top: 1rem;
@@ -2027,6 +2127,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   padding: 0.5rem;
   margin: 0.5rem;
   background-color: #fafafa;
@@ -2049,6 +2150,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   padding: 0.5rem;
   margin: 0;
   padding-top: 1rem;
@@ -2057,12 +2159,20 @@ header .intro-text .intro-heading {
   min-height: 75px;
   max-height: 100px;
 }
-.main .termsAndPolicy__row .box, .main .termsAndPolicy__row .solutions .box--title, .main .solutions .termsAndPolicy__row .box--title, .main .termsAndPolicy__row .solutions .box--content, .main .solutions .termsAndPolicy__row .box--content,
+.main .termsAndPolicy__row .box, .main .termsAndPolicy__row .solutions__row .box--title, .main .solutions__row .termsAndPolicy__row .box--title, .main .termsAndPolicy__row .solutions__row--title .box--title, .main .solutions__row--title .termsAndPolicy__row .box--title, .main .termsAndPolicy__row .solutions__row--content .box--title, .main .solutions__row--content .termsAndPolicy__row .box--title, .main .termsAndPolicy__row .solutions__row .box--content, .main .solutions__row .termsAndPolicy__row .box--content, .main .termsAndPolicy__row .solutions__row--title .box--content, .main .solutions__row--title .termsAndPolicy__row .box--content, .main .termsAndPolicy__row .solutions__row--content .box--content, .main .solutions__row--content .termsAndPolicy__row .box--content,
 .main .whatIs__row .box,
-.main .whatIs__row .solutions .box--title,
-.main .solutions .whatIs__row .box--title,
-.main .whatIs__row .solutions .box--content,
-.main .solutions .whatIs__row .box--content {
+.main .whatIs__row .solutions__row .box--title,
+.main .solutions__row .whatIs__row .box--title,
+.main .whatIs__row .solutions__row--title .box--title,
+.main .solutions__row--title .whatIs__row .box--title,
+.main .whatIs__row .solutions__row--content .box--title,
+.main .solutions__row--content .whatIs__row .box--title,
+.main .whatIs__row .solutions__row .box--content,
+.main .solutions__row .whatIs__row .box--content,
+.main .whatIs__row .solutions__row--title .box--content,
+.main .solutions__row--title .whatIs__row .box--content,
+.main .whatIs__row .solutions__row--content .box--content,
+.main .solutions__row--content .whatIs__row .box--content {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -2071,6 +2181,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   padding: 0.5rem;
   margin: 0.5rem;
   color: #17265c;
@@ -2125,12 +2236,20 @@ header .intro-text .intro-heading {
 .main .whatIs__row .box__image {
   max-width: 50vw;
 }
-.main .termsAndPolicy__row .box ul li, .main .termsAndPolicy__row .solutions .box--title ul li, .main .solutions .termsAndPolicy__row .box--title ul li, .main .termsAndPolicy__row .solutions .box--content ul li, .main .solutions .termsAndPolicy__row .box--content ul li,
+.main .termsAndPolicy__row .box ul li, .main .termsAndPolicy__row .solutions__row .box--title ul li, .main .solutions__row .termsAndPolicy__row .box--title ul li, .main .termsAndPolicy__row .solutions__row--title .box--title ul li, .main .solutions__row--title .termsAndPolicy__row .box--title ul li, .main .termsAndPolicy__row .solutions__row--content .box--title ul li, .main .solutions__row--content .termsAndPolicy__row .box--title ul li, .main .termsAndPolicy__row .solutions__row .box--content ul li, .main .solutions__row .termsAndPolicy__row .box--content ul li, .main .termsAndPolicy__row .solutions__row--title .box--content ul li, .main .solutions__row--title .termsAndPolicy__row .box--content ul li, .main .termsAndPolicy__row .solutions__row--content .box--content ul li, .main .solutions__row--content .termsAndPolicy__row .box--content ul li,
 .main .whatIs__row .box ul li,
-.main .whatIs__row .solutions .box--title ul li,
-.main .solutions .whatIs__row .box--title ul li,
-.main .whatIs__row .solutions .box--content ul li,
-.main .solutions .whatIs__row .box--content ul li {
+.main .whatIs__row .solutions__row .box--title ul li,
+.main .solutions__row .whatIs__row .box--title ul li,
+.main .whatIs__row .solutions__row--title .box--title ul li,
+.main .solutions__row--title .whatIs__row .box--title ul li,
+.main .whatIs__row .solutions__row--content .box--title ul li,
+.main .solutions__row--content .whatIs__row .box--title ul li,
+.main .whatIs__row .solutions__row .box--content ul li,
+.main .solutions__row .whatIs__row .box--content ul li,
+.main .whatIs__row .solutions__row--title .box--content ul li,
+.main .solutions__row--title .whatIs__row .box--content ul li,
+.main .whatIs__row .solutions__row--content .box--content ul li,
+.main .solutions__row--content .whatIs__row .box--content ul li {
   list-style-type: disc;
 }
 .main .termsAndPolicy__row .box__button,
@@ -2143,6 +2262,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   color: #fafafa;
   background-color: #0097b2;
   padding: 0.5rem;
@@ -2168,6 +2288,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   min-width: 80vw;
   max-width: 80vw;
   gap: 0.5rem;
@@ -2183,6 +2304,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: flex-end;
   align-self: center;
+  border: 1px solid #ee0000;
   min-width: 35vw;
   max-width: 35vw;
 }
@@ -2196,6 +2318,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: flex-start;
   align-self: center;
+  border: 1px solid #ee0000;
   min-width: 35vw;
   max-width: 35vw;
 }
@@ -2224,6 +2347,7 @@ header .intro-text .intro-heading {
     align-content: center;
     align-items: center;
     align-self: center;
+    border: 1px solid #ee0000;
     padding: 3rem 0.5rem;
     margin: 0.5rem;
     gap: 1rem;
@@ -2251,6 +2375,7 @@ header .intro-text .intro-heading {
     align-content: center;
     align-items: center;
     align-self: center;
+    border: 1px solid #ee0000;
     padding: 5rem 0.5rem;
     margin: 0.5rem;
     gap: 1.5rem;
@@ -2277,6 +2402,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   padding: 0.5rem;
   margin: 0 0.5rem;
   color: #fafafa;
@@ -2299,6 +2425,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   color: #fafafa;
   background-color: #17265c;
   min-width: 35px;
@@ -2316,6 +2443,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: flex-start;
   align-self: center;
+  border: 1px solid #ee0000;
   padding: 0.5rem;
   margin: 0;
   color: #17265c;
@@ -2333,6 +2461,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: flex-start;
   align-self: center;
+  border: 1px solid #ee0000;
   padding: 0.5rem;
   margin: 0;
   color: #17265c;
@@ -2353,6 +2482,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: flex-start;
   align-self: center;
+  border: 1px solid #ee0000;
   padding: 0 15px;
   margin: 0;
   color: #17265c;
@@ -2372,6 +2502,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: flex-start;
   align-self: center;
+  border: 1px solid #ee0000;
   display: none;
   padding: 0.5rem;
   margin: 0.5rem;
@@ -2390,6 +2521,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: flex-start;
   align-self: center;
+  border: 1px solid #ee0000;
   padding: 0.5rem;
   margin: 0.5rem;
   color: #17265c;
@@ -2409,6 +2541,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: flex-start;
   align-self: center;
+  border: 1px solid #ee0000;
   padding: 0.5rem;
   margin: 0.5rem;
   color: inherit;
@@ -2433,6 +2566,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   padding: 0.5rem;
   margin: 0 15px;
   color: #17265c;
@@ -2459,6 +2593,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   padding: 0.5rem;
   margin: 0.5rem;
   color: #fafafa;
@@ -2489,6 +2624,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: flex-start;
   align-self: center;
+  border: 1px solid #ee0000;
   min-width: 250px;
   max-width: 275px;
   min-height: 250px;
@@ -2525,6 +2661,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: flex-start;
   align-self: center;
+  border: 1px solid #ee0000;
   color: inherit;
   background-color: transparent;
   min-width: 100px;
@@ -2595,6 +2732,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   padding: 0.5rem;
   margin: 1rem;
   min-width: 75vw;
@@ -2619,6 +2757,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   padding: 0.5rem;
   margin: 0.5rem;
   color: #17265c;
@@ -2641,6 +2780,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   min-height: 300px;
   max-height: 300px;
   border: 2px dotted #0097b2;
@@ -2654,6 +2794,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: flex-end;
   align-self: center;
+  border: 1px solid #ee0000;
   color: #fafafa;
   background-color: #0097b2;
   padding: 0.5rem;
@@ -2765,6 +2906,7 @@ header .intro-text .intro-heading {
     align-content: center;
     align-items: flex-start;
     align-self: center;
+    border: 1px solid #ee0000;
     padding: 0.5rem;
     margin: 0.5rem;
     color: #17265c;
@@ -2783,6 +2925,7 @@ header .intro-text .intro-heading {
     align-content: center;
     align-items: center;
     align-self: center;
+    border: 1px solid #ee0000;
     background-color: #ececec;
     min-width: 250px;
     max-width: 250px;
@@ -2837,6 +2980,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   padding: 0.5rem;
   margin: 0;
   color: #17265c;
@@ -2854,6 +2998,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   padding: 4rem 0.5rem 0.5rem 0.5rem;
   margin: 0;
   min-width: 95vw;
@@ -2868,6 +3013,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   padding: 0 15px;
   margin: 0;
   min-width: 90vw;
@@ -2882,6 +3028,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   padding: 0.5rem 0;
   margin: 0;
   min-width: 80vw;
@@ -2896,6 +3043,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   padding: 0.5rem;
   margin: 0.5rem;
   background-color: #17265c;
@@ -2917,6 +3065,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   padding: 0.5rem;
   margin: 0;
   padding-top: 1rem;
@@ -2934,6 +3083,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   padding: 0.5rem;
   margin: 0.5rem;
   background-color: #fafafa;
@@ -2955,6 +3105,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   padding: 0.5rem;
   margin: 0;
   padding-top: 1rem;
@@ -2963,7 +3114,7 @@ header .intro-text .intro-heading {
   min-height: 75px;
   max-height: 100px;
 }
-.main .biitModules__row .box, .main .biitModules__row .solutions .box--title, .main .solutions .biitModules__row .box--title, .main .biitModules__row .solutions .box--content, .main .solutions .biitModules__row .box--content {
+.main .biitModules__row .box, .main .biitModules__row .solutions__row .box--title, .main .solutions__row .biitModules__row .box--title, .main .biitModules__row .solutions__row--title .box--title, .main .solutions__row--title .biitModules__row .box--title, .main .biitModules__row .solutions__row--content .box--title, .main .solutions__row--content .biitModules__row .box--title, .main .biitModules__row .solutions__row .box--content, .main .solutions__row .biitModules__row .box--content, .main .biitModules__row .solutions__row--title .box--content, .main .solutions__row--title .biitModules__row .box--content, .main .biitModules__row .solutions__row--content .box--content, .main .solutions__row--content .biitModules__row .box--content {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -2972,6 +3123,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   padding: 0.5rem;
   margin: 0.5rem;
   color: #17265c;
@@ -3019,7 +3171,7 @@ header .intro-text .intro-heading {
 .main .biitModules__row .box__image {
   max-width: 50vw;
 }
-.main .biitModules__row .box ul li, .main .biitModules__row .solutions .box--title ul li, .main .solutions .biitModules__row .box--title ul li, .main .biitModules__row .solutions .box--content ul li, .main .solutions .biitModules__row .box--content ul li {
+.main .biitModules__row .box ul li, .main .biitModules__row .solutions__row .box--title ul li, .main .solutions__row .biitModules__row .box--title ul li, .main .biitModules__row .solutions__row--title .box--title ul li, .main .solutions__row--title .biitModules__row .box--title ul li, .main .biitModules__row .solutions__row--content .box--title ul li, .main .solutions__row--content .biitModules__row .box--title ul li, .main .biitModules__row .solutions__row .box--content ul li, .main .solutions__row .biitModules__row .box--content ul li, .main .biitModules__row .solutions__row--title .box--content ul li, .main .solutions__row--title .biitModules__row .box--content ul li, .main .biitModules__row .solutions__row--content .box--content ul li, .main .solutions__row--content .biitModules__row .box--content ul li {
   list-style-type: disc;
 }
 .main .biitModules__row .box__button {
@@ -3031,6 +3183,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   color: #fafafa;
   background-color: #0097b2;
   padding: 0.5rem;
@@ -3054,6 +3207,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   min-width: 80vw;
   max-width: 80vw;
   gap: 0.5rem;
@@ -3068,6 +3222,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: flex-end;
   align-self: center;
+  border: 1px solid #ee0000;
   min-width: 35vw;
   max-width: 35vw;
 }
@@ -3080,6 +3235,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: flex-start;
   align-self: center;
+  border: 1px solid #ee0000;
   min-width: 35vw;
   max-width: 35vw;
 }
@@ -3108,6 +3264,7 @@ header .intro-text .intro-heading {
     align-content: center;
     align-items: center;
     align-self: center;
+    border: 1px solid #ee0000;
     padding: 3rem 0.5rem;
     margin: 0.5rem;
     gap: 1rem;
@@ -3135,6 +3292,7 @@ header .intro-text .intro-heading {
     align-content: center;
     align-items: center;
     align-self: center;
+    border: 1px solid #ee0000;
     padding: 5rem 0.5rem;
     margin: 0.5rem;
     gap: 1.5rem;
@@ -3161,6 +3319,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 1px solid #ee0000;
   padding: 0.5rem;
   margin: auto;
   color: #17265c;

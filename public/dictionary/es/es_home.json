@@ -1,6 +1,13 @@
 {
   "homeSoluciones": "Somos tu aliado en la digitalización y automatización de tus procesos empresariales",
-  "homeServicesSubheading": "El mejor partner para tu transformación digital",
+  "homeServicesSubheadingOld": "El mejor partner para tu transformación digital",
+  "homeIntro": "En",
+  "homeIntro2": "nos enorgullece ser tu aliado en el viaje hacia la digitalización y automatización de tus procesos empresariales. Entendemos que en la era digital actual, la eficiencia y la agilidad son fundamentales para el éxito de cualquier empresa, especialmente para las pequeñas y medianas.",
+  "homeIntro3": "Con",
+  "homeIntro4": "a tu lado, no solo obtienes soluciones tecnológicas avanzadas, sino también un equipo comprometido en comprender tus necesidades específicas y diseñar soluciones a medida que se alineen perfectamente con tus objetivos empresariales.",
+  "homeIntro5": "Nuestra experiencia en el desarrollo de aplicaciones web personalizadas y soluciones de software nos permite ofrecerte herramientas que simplifican tus procesos, aumentan la productividad y mejoran la toma de decisiones. Desde la gestión de inventario hasta la automatización de tareas administrativas, estamos aquí para ayudarte a optimizar cada aspecto de tu empresa.",
+  "homeIntro6": "Confía en",
+  "homeIntro7": "como tu socio tecnológico en la transformación digital. Juntos, podemos impulsar tu negocio hacia un futuro más eficiente y competitivo.",
   "services1": "Consultoría y desarrollo de soluciones multiplataforma ( BIIT )",
   "services3": "Soporte de aplicaciones entorno SAGE",
   "services4": "Integración de soluciones hacia el ERP SAGE",
@@ -32,5 +39,7 @@
   "contactAccept2": "y los ",
   "contactUse": "términos de uso",
 
-  "contactButton": "Enviar"
+  "contactButton": "Enviar",
+
+  "pymesoft": "PYMESOFT"
 }

@@ -16,10 +16,10 @@
     &__row {
       @include flexBox(column, space-around, center);
       @include paddingMargin(0 15px);
-      @include style($primary_main);
-      text-align: center;
-
       @include boxSize(width, 90vw, null, 90vw);
+      // @include style($primary_main);
+      // text-align: center;
+
 
       min-height: 8rem;
 
@@ -39,130 +39,139 @@
         // text-align: center;
         gap: 1rem;
       }
-    }
 
-    .box {
-      @include flexBox(column, flex-start, center);
-      @include paddingMargin($padding, $margin);
-      @include style($primary_main);
-      @include boxSize(width, 80vw, null, 80vw);
-      gap: $gap;
 
-      // min-width No!
-      // flex: 5;
-      overflow: hidden;
-
-      &__image {
-        @include flexBox(column);
+      .box {
+        @include flexBox(column, flex-start, center);
         @include paddingMargin($padding, $margin);
-        @include style(null, $primary_main);
-        @include boxShadow($primary_main,
-          5px,
-          3px,
-          $secondary_main,
-          $secondary_light );
+        @include style($primary_main);
+        @include boxSize(width, 70vw, null, 70vw);
+        gap: $gap;
+        hyphens: auto;
+        font-size: 0.9em;
 
-
-        @include boxSize(width, 400px, null, 400px);
-        @include boxSize(height, 200px, null, 200px);
-
+        // min-width No!
+        // flex: 5;
         overflow: hidden;
 
-        img {
-          @include boxSize(width, 350px, null, 350px);
-          @include boxSize(height, 125px, null, 125px);
-          padding-top: 3rem;
+        &__name {
+          @include style($primary_main);
+        }
+
+        &__content {
+          @include style($secondary_main);
+        }
+
+        &__image {
+          @include flexBox(column);
+          @include paddingMargin($padding, $margin);
+          @include style(null, $primary_main);
+          @include boxShadow($primary_main,
+            5px,
+            3px,
+            $secondary_main,
+            $secondary_light );
+
+
+          @include boxSize(width, 400px, null, 400px);
+          @include boxSize(height, 200px, null, 200px);
+
+          overflow: hidden;
+
+          img {
+            @include boxSize(width, 350px, null, 350px);
+            @include boxSize(height, 125px, null, 125px);
+            padding-top: 3rem;
+          }
+        }
+
+        &--title {
+          @extend .box;
+        }
+
+        &--content {
+          @extend .box;
+
+          @include style($primary_main, $neutral_main);
+          @include boxShadow;
+          // @include boxSize(width, 24rem);
+          // @include boxSize(height, 25rem);
+          @include hover($secondary_main, inherit, $neutral_darker);
+        }
+
+        &__title {
+          @include flexBox(column, space-around, center);
+          @include paddingMargin($padding, 0 15px);
+          @include style($primary_main);
+          @include boxSize(height, 4rem);
+          // min-height: 4rem;
+          font-size: 35px;
+          line-height: 1.5;
+        }
+
+        &__content {
+          @include paddingMargin($padding, $margin);
+          @include style($secondary_main);
+
+          &--title {
+            @include flexBox(column, space-around, center);
+            @include paddingMargin($padding, 0 15px);
+            @include style($secondary_main);
+            font-size: 16px;
+            text-transform: none;
+            font-style: italic;
+            font-weight: 400;
+          }
         }
       }
 
-      &--title {
-        @extend .box;
-      }
-
-      &--content {
-        @extend .box;
-
-        @include style($primary_main, $neutral_main);
-        @include boxShadow;
-        // @include boxSize(width, 24rem);
-        // @include boxSize(height, 25rem);
-        @include hover($secondary_main, inherit, $neutral_darker);
-      }
-
-      &__title {
-        @include flexBox(column, space-around, center);
-        @include paddingMargin($padding, 0 15px);
-        @include style($primary_main);
-        @include boxSize(height, 4rem);
-        // min-height: 4rem;
-        font-size: 35px;
-        line-height: 1.5;
-      }
-
-      &__content {
+      .circle {
+        @include flexBox(column, flex-start, center);
         @include paddingMargin($padding, $margin);
-        @include style($secondary_main);
+        @include style(inherit, $neutral_main);
+        @include boxSize(width, 20rem, null, 20rem);
+        @include boxSize(height, 20rem);
+        @include boxShadow($neutral_dark);
+        border-radius: 50%;
+        padding-top: 3rem;
 
-        &--title {
+        &__icon {
+          @include flexBox(row, center, center);
+          @include style($neutral_lighter, $neutral_lighter);
+          // Falta icono
+          @include boxSize(width, 80px, null, 100px);
+          @include boxSize(height, 80px, null, 100px);
+          border-radius: 50%;
+
+          i {
+            @include flexBox(row, center, center);
+            @include paddingMargin($padding);
+            // padding: $padding;
+            // font-size: 36px;
+          }
+
+          img {
+            @include boxSize(width, null, null, 50px);
+            @include boxSize(height, null, null, 50px);
+          }
+        }
+
+        &__content {
           @include flexBox(column, space-around, center);
-          @include paddingMargin($padding, 0 15px);
-          @include style($secondary_main);
+          @include paddingMargin($padding, $margin);
+          @include style($neutral_lighter);
+          @include boxSize(width, null, null, 15rem);
+          border-bottom-left-radius: 25%;
+          border-bottom-right-radius: 25%;
           font-size: 16px;
           text-transform: none;
           font-style: italic;
           font-weight: 400;
         }
+
+        @include hover($secondary_main, inherit, $neutral_darker, $neutral_dark);
       }
     }
-
-    .circle {
-      @include flexBox(column, flex-start, center);
-      @include paddingMargin($padding, $margin);
-      @include style(inherit, $neutral_main);
-      @include boxSize(width, 20rem, null, 20rem);
-      @include boxSize(height, 20rem);
-      @include boxShadow($neutral_dark);
-      border-radius: 50%;
-      padding-top: 3rem;
-
-      &__icon {
-        @include flexBox(row, center, center);
-        @include style($neutral_lighter, $neutral_lighter);
-        // Falta icono
-        @include boxSize(width, 80px, null, 100px);
-        @include boxSize(height, 80px, null, 100px);
-        border-radius: 50%;
-
-        i {
-          @include flexBox(row, center, center);
-          @include paddingMargin($padding);
-          // padding: $padding;
-          // font-size: 36px;
-        }
-
-        img {
-          @include boxSize(width, null, null, 50px);
-          @include boxSize(height, null, null, 50px);
-        }
-      }
-
-      &__content {
-        @include flexBox(column, space-around, center);
-        @include paddingMargin($padding, $margin);
-        @include style($neutral_lighter);
-        @include boxSize(width, null, null, 15rem);
-        border-bottom-left-radius: 25%;
-        border-bottom-right-radius: 25%;
-        font-size: 16px;
-        text-transform: none;
-        font-style: italic;
-        font-weight: 400;
-      }
-
-      @include hover($secondary_main, inherit, $neutral_darker, $neutral_dark);
-    }
-
-    // }
   }
 
   .aside {
@@ -412,12 +421,12 @@
           @include flexBox(row, space-around, center);
           @include paddingMargin($padding); // row-gap: 3rem;
         }
-      }
 
-      .box {
-        @include boxSize(width, 80vw, null, 80vw);
-        //   min-width: 80vw;
-        //   max-width: 80vw;
+        .box {
+          @include boxSize(width, 70vw, null, 70vw);
+          //   min-width: 80vw;
+          //   max-width: 80vw;
+        }
       }
     }
 
