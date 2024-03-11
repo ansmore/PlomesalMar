@@ -11,9 +11,9 @@
         <section id="soluciones" class="solutions">
             <article class="solutions__row--title">
                 <article class="box">
-                    <span class="box__image">
+                    {{-- <span class="box__image">
                         <img src="{{ asset('../img/logos/pymesoft_logo_text.png') }}" alt="">
-                    </span>
+                    </span> --}}
                     <h2 class="box__title" value-text="homeSoluciones"></h2>
                     <p>
                         <span class="box__content" value-text="homeIntro"></span>
