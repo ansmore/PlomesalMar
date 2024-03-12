@@ -8,7 +8,7 @@
 
     <main class="home">
         <!-- Services Section -->
-        <section id="soluciones" class="solutions">
+        <section id="solutions" class="solutions">
             {{-- <article class="solutions__row--title"> --}}
             <article class="box">
                 <h2 class="box__title" value-text="homeSoluciones"></h2>
@@ -31,8 +31,11 @@
                     <span class="box__content" value-text="homeIntro7"></span>
                 </p>
             </article>
+        </section>
+        <section id="circles" class="circles">
             {{-- </article> --}}
-            <div class="solutions__row--content">
+            <article class="box">
+                {{-- <div class="solutions__row--content"> --}}
                 <div class="circle">
                     {{-- box--content --}}
                     <span class="circle__icon">
@@ -57,7 +60,8 @@
                         <a href="{{ route('consultancy', ['language' => $language]) }}" value-text="services3"></a>
                     </h4>
                 </div>
-            </div>
+                {{-- </div> --}}
+            </article>
         </section>
         <!-- Clients Aside -->
         {{-- <section class="aside">

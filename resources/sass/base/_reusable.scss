@@ -2,7 +2,7 @@
   @include flexBox(column, flex-start, center);
   @include paddingMargin($padding, $margin);
   @include style($primary_main);
-  @include boxSize(width, 70vw, null, 70vw);
+  @include boxSize(width, 80vw, null, 80vw);
   gap: $gap;
   hyphens: auto;
   font-size: 0.9em;
@@ -10,6 +10,9 @@
   // min-width No!
   // flex: 5;
   overflow: hidden;
+
+  // developer-mode
+  border: 0.5px solid $success_darker;
 }
 
 .title {
