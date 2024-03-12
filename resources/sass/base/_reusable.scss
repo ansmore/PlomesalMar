@@ -1,7 +1,22 @@
+.box {
+  @include flexBox(column, flex-start, center);
+  @include paddingMargin($padding, $margin);
+  @include style($primary_main);
+  @include boxSize(width, 70vw, null, 70vw);
+  gap: $gap;
+  hyphens: auto;
+  font-size: 0.9em;
+
+  // min-width No!
+  // flex: 5;
+  overflow: hidden;
+}
+
 .title {
   @include style($primary_main);
   line-height: 2;
-  font-size: 24px;
+  font-size: 2em;
+  // font-size: 24px;
   font-weight: bold;
 }
 
@@ -42,9 +57,11 @@
 
 .unorderedList {
   padding-left: 1rem;
+  line-height: 1.5;
 
   li {
     list-style-type: disc;
+    line-height: 1.5;
   }
 }
 

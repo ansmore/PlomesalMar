@@ -6,35 +6,32 @@
     @include('components.navigationHome')
     {{-- @include('components.header') --}}
 
-    <main class="main">
+    <main class="home">
         <!-- Services Section -->
         <section id="soluciones" class="solutions">
-            <article class="solutions__row--title">
-                <article class="box">
-                    {{-- <span class="box__image">
-                        <img src="{{ asset('../img/logos/pymesoft_logo_text.png') }}" alt="">
-                    </span> --}}
-                    <h2 class="box__title" value-text="homeSoluciones"></h2>
-                    <p>
-                        <span class="box__content" value-text="homeIntro"></span>
-                        <span class="box__name" value-text="pymesoft"></span>
-                        <span class="box__content" value-text="homeIntro2"></span>
-                    </p>
-                    <p>
-                        <span class="box__content" value-text="homeIntro3"></span>
-                        <span class="box__name" value-text="pymesoft"></span>
-                        <span class="box__content" value-text="homeIntro4"></span>
-                    </p>
-                    <p>
-                        <span class="box__content" value-text="homeIntro5"></span>
-                    </p>
-                    <p>
-                        <span class="box__content" value-text="homeIntro6"></span>
-                        <span class="box__name" value-text="pymesoft"></span>
-                        <span class="box__content" value-text="homeIntro7"></span>
-                    </p>
-                </article>
+            {{-- <article class="solutions__row--title"> --}}
+            <article class="box">
+                <h2 class="box__title" value-text="homeSoluciones"></h2>
+                <p>
+                    <span class="box__content" value-text="homeIntro"></span>
+                    <span class="box__name" value-text="pymesoft"></span>
+                    <span class="box__content" value-text="homeIntro2"></span>
+                </p>
+                <p>
+                    <span class="box__content" value-text="homeIntro3"></span>
+                    <span class="box__name" value-text="pymesoft"></span>
+                    <span class="box__content" value-text="homeIntro4"></span>
+                </p>
+                <p>
+                    <span class="box__content" value-text="homeIntro5"></span>
+                </p>
+                <p>
+                    <span class="box__content" value-text="homeIntro6"></span>
+                    <span class="box__name" value-text="pymesoft"></span>
+                    <span class="box__content" value-text="homeIntro7"></span>
+                </p>
             </article>
+            {{-- </article> --}}
             <div class="solutions__row--content">
                 <div class="circle">
                     {{-- box--content --}}
