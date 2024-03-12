@@ -2,9 +2,10 @@
 .nav {
   @include flexBox(row, space-between, center);
   @include style($neutral_lighter, $primary_main);
-  max-width: 100vw;
   height: $nav-height;
+  max-height: $nav-height;
   font-size: $size_small;
+  max-width: 100vw;
 
   position: fixed;
   top: 0;
@@ -15,7 +16,7 @@
   .navbar {
     @include flexBox(row, space-around, center);
     @include paddingMargin;
-    @include boxSize(width, 100vw);
+    @include boxSize(width, 99vw, null, 100vw);
     @include boxSize(height, null, null, $nav-height );
 
     &__logo {
@@ -206,7 +207,7 @@
 
 @media screen and (min-width: 1025px) {
   .nav {
-    @include boxSize(height, null, $nav-height);
+    @include boxSize(height, $nav-height, null, $nav-height);
 
     .toggle {
       display: none;

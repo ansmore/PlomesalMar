@@ -1,5 +1,6 @@
 //  Estilos página BiitModules
-.main {
+
+.biitModules {
   @include flexBox(column, space-around);
   @include paddingMargin($padding);
   @include style($primary_main, $neutral_light);
@@ -7,216 +8,92 @@
   margin-top: $nav-height;
   gap: $gap;
 
-  .biitModules {
+  // sections
+  &__row {
     @include flexBox(column, space-around, center);
     @include paddingMargin(4rem $padding $padding $padding, 0);
     @include boxSize(width, 95vw, null, 95vw);
 
-    &__row {
-      @include flexBox(column, space-around, center);
-      @include paddingMargin(0 15px);
-      @include boxSize(width, 90vw, null, 90vw);
+    // articles
+    .box {
+      @include flexBox(column, flex-start, center);
+      @include paddingMargin($padding, $margin);
+      @include style($primary_main);
+      @include boxSize(width, 80vw, null, 80vw);
+      gap: $gap;
+      hyphens: auto;
+      font-size: 0.9em;
+      line-height: 1.5;
 
-      .circle {
-        @include flexBox(row, space-around, center);
-        @include paddingMargin($padding 0);
-        @include boxSize(width, 80vw, null, 80vw);
+      // developer_mode
+      border: 1px solid $success_main;
 
-        &__pyme {
-          @include flexBox(column, center, center);
-          @include paddingMargin($padding, $margin);
-          @include style(null, $primary_main);
-          @include boxShadow($neutral_lighter,
-            50%,
-            3px,
-            $secondary_main,
-            $secondary_light );
-          @include boxSize(width, 125px, null, 150px);
-          @include boxSize(height, 125px, null, 150px);
+      &__title {
+        // @include style($primary_main);
+        // line-height: 2;
+        // font-size: 24px;
+        // font-weight: bold;
+        @extend .title;
+      }
 
-          overflow: hidden;
+      &__subtitle {
+        // @include style($secondary_main);
+        //   line-height: 1.5;
+        //   font-size: 1.5em;
+        //   font-weight: bold;
+        @extend .subtitle;
 
-
-          img {
-            @include flexBox(column, center, center);
-            @include paddingMargin($padding);
-            padding-top: 1rem;
-            @include boxSize(width, 75px, null, 100px);
-            @include boxSize(height, 75px, null, 100px);
-          }
-
-        }
-
-        &__biit {
-          @include flexBox(column, center, center);
-          @include paddingMargin($padding, $margin);
-          @include style(null, $neutral_lighter);
-          @include boxShadow($neutral_lighter,
-            50%,
-            3px,
-            $secondary_main,
-            $secondary_light );
-          @include boxSize(width, 125px, null, 150px);
-          @include boxSize(height, 125px, null, 150px);
-
-          overflow: hidden;
-
-
-          img {
-            @include flexBox(column, center, center);
-            @include paddingMargin($padding);
-            padding-top: 1rem;
-            @include boxSize(width, 75px, null, 100px);
-            @include boxSize(height, 75px, null, 100px);
-          }
-
+        &__secondary {
+          // @include style($secondary_main);
+          // margin-top: calc($margin * 2);
+          // line-height: 1.2;
+          // font-size: 1.2em;
+          // font-weight: lighter;
+          // align-self: flex-start;
+          @extend .secondary;
         }
       }
 
-      .box {
-        @include flexBox(column, flex-start, center);
-        @include paddingMargin($padding, $margin);
+
+
+      &__name {
+        @include style($secondary_main);
+      }
+
+      &__content {
         @include style($primary_main);
-        @include boxSize(width, 80vw, null, 80vw);
-        gap: $gap;
-        hyphens: auto;
-        font-size: 1em;
-
-        &__title {
-          @include style($primary_main);
-          line-height: 2;
-          font-size: 24px;
-          font-weight: bold;
-        }
-
-        &__subtitle {
-          @include style($secondary_main);
-          line-height: 1.5;
-          font-size: 1.5em;
-          font-weight: bold;
-
-          &__secondary {
-            @include style($secondary_main);
-            margin-top: calc($margin * 2);
-            line-height: 1.2;
-            font-size: 1.2em;
-            font-weight: lighter;
-          }
-        }
-
-        &__name {
-          @include style($secondary_main);
-        }
-
-        &__content {
-          @include style($primary_main);
-        }
-
-        &__company {
-          @include style($secondary_main);
-        }
-
-        &__image {
-          @include boxSize(width, null, null, 50vw);
-        }
-
-        ul li {
-          list-style-type: disc;
-        }
-
-        &__button {
-          @include flexBox(row, center, center);
-          @include button($secondary_main, $neutral_lighter);
-          @include hover($secondary_light, $neutral_lighter, $neutral_lighter);
-          @include boxSize(width, 20vw, null, 20vw);
-        }
-
       }
 
-      .info {
-        @include flexBox(row, center, center);
-        @include boxSize(width, 80vw, null, 80vw);
-        gap: $gap;
-        line-height: 1.5;
+      &__company {
+        @include style($secondary_main);
+      }
 
-        &__column__left {
-          @include flexBox(column, flex-end, flex-end);
-          @include boxSize(width, 35vw, null, 35vw);
-        }
+      &__image {
+        @include boxSize(width, null, null, 50vw);
+      }
 
-        &__column__right {
-          @include flexBox(column, flex-start, flex-start);
-          @include boxSize(width, 35vw, null, 35vw);
-        }
+      ul {
+        @extend .unorderedList;
+        // padding-left: 1rem;
+
+        // li {
+        //   list-style-type: disc;
+        // }
+      }
+
+      &__button {
+        @extend .button;
+        //   @include flexBox(row, center, center);
+        //   @include button($secondary_main, $neutral_lighter);
+        //   @include hover($secondary_light, $neutral_lighter, $neutral_lighter);
+        //   @include boxSize(width, 20vw, null, 20vw);
       }
     }
   }
 }
 
-@media screen and (min-width: 376px) and (max-width: 600px) {
-  .main {
-    .termsAndPolicy {
-      &__row {
-        .circle {
-          &__image {
-            @include boxSize(width, 150px, null, 175px);
-            @include boxSize(height, 150px, null, 175px);
+@media screen and (min-width: 376px) and (max-width: 600px) {}
 
-            img {
-              @include boxSize(width, 100px, null, 125px);
-              @include boxSize(height, 100px, null, 125px);
-            }
-          }
-        }
-      }
-    }
-  }
-}
+@media screen and (min-width: 601px) and (max-width: 1024px) {}
 
-@media screen and (min-width: 601px) and (max-width: 1024px) {
-  .main {
-    .termsAndPolicy {
-      &__row {
-        .circle {
-          @include flexBox(row, center, center);
-          @include paddingMargin(3rem $padding, $margin);
-          gap: calc($gap * 2);
-
-          &__image {
-            @include boxSize(width, 250px, null, 300px);
-            @include boxSize(height, 250px, null, 300px);
-
-            img {
-              @include boxSize(width, 150px, null, 200px);
-              @include boxSize(height, 150px, null, 200px);
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-@media screen and (min-width: 1025px) {
-  .main {
-    .termsAndPolicy {
-      &__row {
-        .circle {
-          @include flexBox(row, center, center);
-          @include paddingMargin(5rem $padding, $margin);
-          gap: calc($gap * 3);
-
-          &__image {
-            @include boxSize(width, 250px, null, 300px);
-            @include boxSize(height, 250px, null, 300px);
-
-            img {
-              @include boxSize(width, 150px, null, 200px);
-              @include boxSize(height, 150px, null, 200px);
-            }
-          }
-        }
-      }
-    }
-  }
-}
+@media screen and (min-width: 1025px) {}

@@ -7,11 +7,14 @@
 @import "mixins/mixins";
 @import "mixins/mixinsNavbar";
 
+@import "base/reusable";
+
 @import "components/header";
 @import "components/navigation";
 @import "components/footer";
 
 @import "pages/home";
+@import "pages/digitalization";
 @import "pages/biit";
 @import "pages/contact";
 @import "pages/termsAndPolicy";

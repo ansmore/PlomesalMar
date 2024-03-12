@@ -136,7 +136,6 @@ html {
 }
 
 body {
-  width: 100vw;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -168,6 +167,83 @@ button {
  * @param {string} $size - Main size (optional).
  * @param {string} $max - Maximum size (optional).
  */
+.title, .biitModules__row .box__title {
+  color: #17265c;
+  background-color: transparent;
+  line-height: 2;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.subtitle, .biitModules__row .box__subtitle {
+  color: #0097b2;
+  background-color: transparent;
+  line-height: 1.5;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.secondary, .biitModules__row .box__subtitle__secondary {
+  color: #0097b2;
+  background-color: transparent;
+  margin-top: 1rem;
+  line-height: 1.2;
+  font-size: 1.2em;
+  font-weight: lighter;
+  align-self: flex-start;
+}
+
+.name {
+  color: #0097b2;
+  background-color: transparent;
+}
+
+.content {
+  color: #17265c;
+  background-color: transparent;
+}
+
+.company {
+  color: #0097b2;
+  background-color: transparent;
+}
+
+.image {
+  max-width: 50vw;
+}
+
+.unorderedList, .biitModules__row .box ul, .biitModules__row .main .solutions__row .box--title ul, .main .solutions__row .biitModules__row .box--title ul, .biitModules__row .main .solutions__row--title .box--title ul, .main .solutions__row--title .biitModules__row .box--title ul, .biitModules__row .main .solutions__row--content .box--title ul, .main .solutions__row--content .biitModules__row .box--title ul, .biitModules__row .main .solutions__row .box--content ul, .main .solutions__row .biitModules__row .box--content ul, .biitModules__row .main .solutions__row--title .box--content ul, .main .solutions__row--title .biitModules__row .box--content ul, .biitModules__row .main .solutions__row--content .box--content ul, .main .solutions__row--content .biitModules__row .box--content ul {
+  padding-left: 1rem;
+}
+.unorderedList li, .biitModules__row .box ul li, .biitModules__row .main .solutions__row .box--title ul li, .main .solutions__row .biitModules__row .box--title ul li, .biitModules__row .main .solutions__row--title .box--title ul li, .main .solutions__row--title .biitModules__row .box--title ul li, .biitModules__row .main .solutions__row--content .box--title ul li, .main .solutions__row--content .biitModules__row .box--title ul li, .biitModules__row .main .solutions__row .box--content ul li, .main .solutions__row .biitModules__row .box--content ul li, .biitModules__row .main .solutions__row--title .box--content ul li, .main .solutions__row--title .biitModules__row .box--content ul li, .biitModules__row .main .solutions__row--content .box--content ul li, .main .solutions__row--content .biitModules__row .box--content ul li {
+  list-style-type: disc;
+}
+
+.button, .biitModules__row .box__button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  justify-items: center;
+  justify-self: center;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  border: 0.5px solid #ee0000;
+  color: #fafafa;
+  background-color: #0097b2;
+  padding: 0.5rem;
+  margin: 0;
+  border: 1px solid transparent;
+  border: 1px solid transparent;
+  min-width: 20vw;
+  max-width: 20vw;
+}
+.button:hover, .biitModules__row .box__button:hover {
+  color: #fafafa;
+  background-color: #00b4d4;
+  border: 1px solid #fafafa;
+}
+
 header {
   margin: 0;
   padding: 0;
@@ -213,11 +289,13 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 0.5px solid #ee0000;
   color: #fafafa;
   background-color: #17265c;
-  max-width: 100vw;
   height: 80px;
+  max-height: 80px;
   font-size: 1em;
+  max-width: 100vw;
   position: fixed;
   top: 0;
   left: 0;
@@ -233,9 +311,11 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 0.5px solid #ee0000;
   padding: 0;
   margin: 0;
-  min-width: 100vw;
+  min-width: 99vw;
+  max-width: 100vw;
   max-height: 80px;
 }
 .nav .navbar__logo {
@@ -247,6 +327,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 0.5px solid #ee0000;
   padding: 0.5rem;
   margin: 0.5rem;
   flex: 3;
@@ -267,6 +348,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 0.5px solid #ee0000;
   padding: 0;
   margin: -300px 0 0 0;
   position: absolute;
@@ -282,6 +364,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 0.5px solid #ee0000;
   padding: 0;
   margin: 1rem 0 0 0;
   color: #fafafa;
@@ -306,6 +389,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 0.5px solid #ee0000;
   padding: 0;
   margin: 0 0.5rem;
   color: #fafafa;
@@ -322,6 +406,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 0.5px solid #ee0000;
   min-width: 40vw;
   color: #fafafa;
   background-color: #0097b2;
@@ -338,6 +423,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 0.5px solid #ee0000;
   position: absolute;
   left: -3rem;
   display: none;
@@ -367,6 +453,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 0.5px solid #ee0000;
   padding: 0;
   margin: 0;
   margin-right: 60px;
@@ -385,6 +472,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 0.5px solid #ee0000;
   color: #17265c;
   background-color: #fafafa;
   min-width: 6rem;
@@ -406,6 +494,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 0.5px solid #ee0000;
   color: #fafafa;
   background-color: #0097b2;
   min-width: 6rem;
@@ -422,6 +511,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 0.5px solid #ee0000;
   position: absolute;
   right: -4rem;
   display: none;
@@ -473,7 +563,8 @@ header .intro-text .intro-heading {
 }
 @media screen and (min-width: 1025px) {
   .nav {
-    height: 80px;
+    min-height: 80px;
+    max-height: 80px;
   }
   .nav .toggle {
     display: none;
@@ -494,6 +585,7 @@ header .intro-text .intro-heading {
     align-content: center;
     align-items: center;
     align-self: center;
+    border: 0.5px solid #ee0000;
     margin-top: 0;
     position: sticky;
   }
@@ -506,6 +598,7 @@ header .intro-text .intro-heading {
     align-content: center;
     align-items: center;
     align-self: center;
+    border: 0.5px solid #ee0000;
     margin-top: 0;
     transform: translateY(0);
   }
@@ -546,6 +639,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 0.5px solid #ee0000;
   padding: 1rem 0 0 0;
   margin: 0;
   color: #fafafa;
@@ -560,6 +654,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 0.5px solid #ee0000;
   padding: 0.5rem;
   margin: 0;
 }
@@ -572,6 +667,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 0.5px solid #ee0000;
   padding: 0;
   margin: 0;
   max-width: 90vw;
@@ -585,6 +681,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 0.5px solid #ee0000;
   padding: 0.5rem;
   margin: 0.5rem;
   color: #fafafa;
@@ -600,6 +697,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 0.5px solid #ee0000;
   cursor: pointer;
 }
 .footer .contact .social .list__item {
@@ -617,6 +715,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 0.5px solid #ee0000;
   padding: 0.5rem;
   margin: 0 0.5rem;
   min-width: 50px;
@@ -643,6 +742,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 0.5px solid #ee0000;
   cursor: pointer;
 }
 .footer .contact .policy .list__item {
@@ -665,6 +765,7 @@ header .intro-text .intro-heading {
     align-content: center;
     align-items: center;
     align-self: center;
+    border: 0.5px solid #ee0000;
   }
   .footer .contact .policy .list {
     display: flex;
@@ -675,6 +776,7 @@ header .intro-text .intro-heading {
     align-content: center;
     align-items: center;
     align-self: center;
+    border: 0.5px solid #ee0000;
   }
 }
 @media screen and (min-width: 601px) and (max-width: 1024px) {
@@ -687,6 +789,7 @@ header .intro-text .intro-heading {
     align-content: center;
     align-items: center;
     align-self: center;
+    border: 0.5px solid #ee0000;
   }
   .footer .contact .policy .list {
     display: flex;
@@ -697,6 +800,7 @@ header .intro-text .intro-heading {
     align-content: center;
     align-items: center;
     align-self: center;
+    border: 0.5px solid #ee0000;
   }
 }
 @media screen and (min-width: 1025px) {
@@ -709,6 +813,7 @@ header .intro-text .intro-heading {
     align-content: center;
     align-items: flex-end;
     align-self: center;
+    border: 0.5px solid #ee0000;
     min-height: 255px;
   }
   .footer .contact {
@@ -720,6 +825,7 @@ header .intro-text .intro-heading {
     align-content: center;
     align-items: center;
     align-self: center;
+    border: 0.5px solid #ee0000;
   }
   .footer .contact .policy {
     padding: 0.5rem;
@@ -734,6 +840,7 @@ header .intro-text .intro-heading {
     align-content: center;
     align-items: flex-end;
     align-self: center;
+    border: 0.5px solid #ee0000;
   }
 }
 .main {
@@ -745,6 +852,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 0.5px solid #ee0000;
   padding: 0.5rem;
   margin: 0;
   color: #17265c;
@@ -762,6 +870,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 0.5px solid #ee0000;
   padding: 0.5rem;
   margin: 0;
   color: #17265c;
@@ -778,6 +887,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 0.5px solid #ee0000;
   padding: 0 15px;
   margin: 0;
   min-width: 90vw;
@@ -797,6 +907,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 0.5px solid #ee0000;
   color: #fafafa;
   background-color: transparent;
   gap: 1rem;
@@ -810,6 +921,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 0.5px solid #ee0000;
   padding: 0.5rem;
   margin: 0.5rem;
   color: #17265c;
@@ -834,6 +946,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 0.5px solid #ee0000;
   padding: 0.5rem;
   margin: 0.5rem;
   background-color: #17265c;
@@ -875,6 +988,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 0.5px solid #ee0000;
   padding: 0.5rem;
   margin: 0 15px;
   color: #17265c;
@@ -896,6 +1010,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 0.5px solid #ee0000;
   padding: 0.5rem;
   margin: 0 15px;
   color: #0097b2;
@@ -914,6 +1029,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 0.5px solid #ee0000;
   padding: 0.5rem;
   margin: 0.5rem;
   color: inherit;
@@ -937,6 +1053,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 0.5px solid #ee0000;
   color: #fafafa;
   background-color: #fafafa;
   min-width: 80px;
@@ -954,6 +1071,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 0.5px solid #ee0000;
   padding: 0.5rem;
   margin: 0;
 }
@@ -970,6 +1088,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 0.5px solid #ee0000;
   padding: 0.5rem;
   margin: 0.5rem;
   color: #fafafa;
@@ -996,6 +1115,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 0.5px solid #ee0000;
   min-width: 90vw;
   max-width: 90vw;
 }
@@ -1008,6 +1128,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 0.5px solid #ee0000;
   padding: 0.5rem;
   margin: 1rem 0;
   color: #17265c;
@@ -1024,6 +1145,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 0.5px solid #ee0000;
   padding: 0.5rem;
   margin: 0.5rem;
   min-width: 90vw;
@@ -1072,6 +1194,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 0.5px solid #ee0000;
   padding: 0.5rem;
   margin: 0.5rem;
 }
@@ -1084,6 +1207,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 0.5px solid #ee0000;
   padding: 0.5rem;
   margin: 0.5rem;
   column-gap: 2rem;
@@ -1097,6 +1221,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: flex-start;
   align-self: center;
+  border: 0.5px solid #ee0000;
   padding: 0.5rem;
   margin: 0.5rem;
   color: #17265c;
@@ -1116,6 +1241,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 0.5px solid #ee0000;
   padding: 0.5rem;
   margin: 0;
   color: #17265c;
@@ -1132,6 +1258,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 0.5px solid #ee0000;
   padding: 0 15px;
   margin: 0;
   color: #17265c;
@@ -1148,6 +1275,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 0.5px solid #ee0000;
   padding: 0.5rem;
   margin: 0;
   color: #17265c;
@@ -1165,6 +1293,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 0.5px solid #ee0000;
   padding: 0.5rem;
   margin: 0 15px;
   color: #17265c;
@@ -1194,6 +1323,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 0.5px solid #ee0000;
   padding: 0.5rem;
   margin: 0 15px;
   color: #0097b2;
@@ -1238,6 +1368,7 @@ header .intro-text .intro-heading {
     align-content: center;
     align-items: center;
     align-self: center;
+    border: 0.5px solid #ee0000;
     color: #17265c;
     background-color: transparent;
   }
@@ -1254,6 +1385,7 @@ header .intro-text .intro-heading {
     align-content: center;
     align-items: center;
     align-self: center;
+    border: 0.5px solid #ee0000;
     padding: 0.5rem;
     margin: 0.5rem;
     max-width: 80vw;
@@ -1280,6 +1412,7 @@ header .intro-text .intro-heading {
     align-content: center;
     align-items: center;
     align-self: center;
+    border: 0.5px solid #ee0000;
   }
   .main .about .box__columns__col__item {
     min-height: 410px;
@@ -1295,6 +1428,7 @@ header .intro-text .intro-heading {
     align-content: center;
     align-items: center;
     align-self: center;
+    border: 0.5px solid #ee0000;
   }
   .main .contact .box--title {
     display: flex;
@@ -1305,6 +1439,7 @@ header .intro-text .intro-heading {
     align-content: center;
     align-items: center;
     align-self: center;
+    border: 0.5px solid #ee0000;
   }
   .main .contact .box--map {
     width: 85vw;
@@ -1325,6 +1460,7 @@ header .intro-text .intro-heading {
     align-content: center;
     align-items: center;
     align-self: center;
+    border: 0.5px solid #ee0000;
     padding: 0.5rem;
     margin: 0;
   }
@@ -1349,6 +1485,7 @@ header .intro-text .intro-heading {
     align-content: center;
     align-items: flex-start;
     align-self: center;
+    border: 0.5px solid #ee0000;
   }
   .main .about .box__columns__col {
     display: flex;
@@ -1359,6 +1496,7 @@ header .intro-text .intro-heading {
     align-content: center;
     align-items: center;
     align-self: center;
+    border: 0.5px solid #ee0000;
   }
   .main .about .box__columns__col__item {
     min-height: 460px;
@@ -1375,6 +1513,7 @@ header .intro-text .intro-heading {
     align-content: center;
     align-items: center;
     align-self: center;
+    border: 0.5px solid #ee0000;
   }
   .main .contact .box--map {
     width: 85vw;
@@ -1390,6 +1529,684 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 0.5px solid #ee0000;
+  padding: 0.5rem;
+  margin: 0;
+  color: #17265c;
+  background-color: #ececec;
+  font-size: 1em;
+  margin-top: 80px;
+  gap: 0.5rem;
+}
+.main .solutions {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  justify-items: center;
+  justify-self: center;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  border: 0.5px solid #ee0000;
+  padding: 0.5rem;
+  margin: 0;
+  color: #17265c;
+  background-color: transparent;
+  min-width: 95vw;
+  max-width: 95vw;
+}
+.main .solutions__row, .main .solutions__row--title, .main .solutions__row--content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  justify-items: center;
+  justify-self: center;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  border: 0.5px solid #ee0000;
+  padding: 0 15px;
+  margin: 0;
+  min-width: 90vw;
+  max-width: 90vw;
+  min-height: 8rem;
+}
+.main .solutions__row--title {
+  color: inherit;
+  background-color: transparent;
+}
+.main .solutions__row--content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  justify-items: center;
+  justify-self: center;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  border: 0.5px solid #ee0000;
+  color: #fafafa;
+  background-color: transparent;
+  gap: 1rem;
+}
+.main .solutions__row .box, .main .solutions__row--title .box, .main .solutions__row--content .box, .main .solutions__row .box--title, .main .solutions__row--title .box--title, .main .solutions__row--content .box--title, .main .solutions__row .box--content, .main .solutions__row--title .box--content, .main .solutions__row--content .box--content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  justify-items: center;
+  justify-self: center;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  border: 0.5px solid #ee0000;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  color: #17265c;
+  background-color: transparent;
+  min-width: 70vw;
+  max-width: 70vw;
+  gap: 0.5rem;
+  hyphens: auto;
+  font-size: 0.9em;
+  overflow: hidden;
+}
+.main .solutions__row .box__name, .main .solutions__row--title .box__name, .main .solutions__row--content .box__name {
+  color: #17265c;
+  background-color: transparent;
+}
+.main .solutions__row .box__image, .main .solutions__row--title .box__image, .main .solutions__row--content .box__image {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  justify-items: center;
+  justify-self: center;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  border: 0.5px solid #ee0000;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  background-color: #17265c;
+  border-radius: 5px;
+  border: 1px solid #17265c;
+  box-shadow: 3px 3px 6px #0097b2, -3px -3px 6px #00b4d4;
+  min-width: 400px;
+  max-width: 400px;
+  min-height: 200px;
+  max-height: 200px;
+  overflow: hidden;
+}
+.main .solutions__row .box__image img, .main .solutions__row--title .box__image img, .main .solutions__row--content .box__image img {
+  min-width: 350px;
+  max-width: 350px;
+  min-height: 125px;
+  max-height: 125px;
+  padding-top: 3rem;
+}
+.main .solutions__row .box--content, .main .solutions__row--title .box--content, .main .solutions__row--content .box--content {
+  color: #17265c;
+  background-color: #c2c2c2;
+  border-radius: 0;
+  border: 1px solid transparent;
+  box-shadow: 3px 3px 6px #c2c2c2, -3px -3px 6px #ececec;
+  border: 1px solid transparent;
+}
+.main .solutions__row .box--content:hover, .main .solutions__row--title .box--content:hover, .main .solutions__row--content .box--content:hover {
+  color: inherit;
+  background-color: #0097b2;
+  border: 1px solid #1f1f1f;
+}
+.main .solutions__row .box__title, .main .solutions__row--title .box__title, .main .solutions__row--content .box__title {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  justify-items: center;
+  justify-self: center;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  border: 0.5px solid #ee0000;
+  padding: 0.5rem;
+  margin: 0 15px;
+  color: #17265c;
+  background-color: transparent;
+  min-height: 4rem;
+  font-size: 35px;
+  line-height: 1.5;
+}
+.main .solutions__row .box__content, .main .solutions__row--title .box__content, .main .solutions__row--content .box__content {
+  color: #0097b2;
+  background-color: transparent;
+}
+.main .solutions__row .box__content--title, .main .solutions__row--title .box__content--title, .main .solutions__row--content .box__content--title {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  justify-items: center;
+  justify-self: center;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  border: 0.5px solid #ee0000;
+  padding: 0.5rem;
+  margin: 0 15px;
+  color: #0097b2;
+  background-color: transparent;
+  font-size: 16px;
+  text-transform: none;
+  font-style: italic;
+  font-weight: 400;
+}
+.main .solutions__row .circle, .main .solutions__row--title .circle, .main .solutions__row--content .circle {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  justify-items: center;
+  justify-self: center;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  border: 0.5px solid #ee0000;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  color: inherit;
+  background-color: #c2c2c2;
+  min-width: 20rem;
+  max-width: 20rem;
+  min-height: 20rem;
+  border-radius: 0;
+  border: 1px solid #8f8f8f;
+  box-shadow: 3px 3px 6px #c2c2c2, -3px -3px 6px #ececec;
+  border-radius: 50%;
+  padding-top: 3rem;
+  border: 1px solid #8f8f8f;
+}
+.main .solutions__row .circle__icon, .main .solutions__row--title .circle__icon, .main .solutions__row--content .circle__icon {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  justify-items: center;
+  justify-self: center;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  border: 0.5px solid #ee0000;
+  color: #fafafa;
+  background-color: #fafafa;
+  min-width: 80px;
+  max-width: 100px;
+  min-height: 80px;
+  max-height: 100px;
+  border-radius: 50%;
+}
+.main .solutions__row .circle__icon i, .main .solutions__row--title .circle__icon i, .main .solutions__row--content .circle__icon i {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  justify-items: center;
+  justify-self: center;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  border: 0.5px solid #ee0000;
+  padding: 0.5rem;
+  margin: 0;
+}
+.main .solutions__row .circle__icon img, .main .solutions__row--title .circle__icon img, .main .solutions__row--content .circle__icon img {
+  max-width: 50px;
+  max-height: 50px;
+}
+.main .solutions__row .circle__content, .main .solutions__row--title .circle__content, .main .solutions__row--content .circle__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  justify-items: center;
+  justify-self: center;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  border: 0.5px solid #ee0000;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  color: #fafafa;
+  background-color: transparent;
+  max-width: 15rem;
+  border-bottom-left-radius: 25%;
+  border-bottom-right-radius: 25%;
+  font-size: 16px;
+  text-transform: none;
+  font-style: italic;
+  font-weight: 400;
+}
+.main .solutions__row .circle:hover, .main .solutions__row--title .circle:hover, .main .solutions__row--content .circle:hover {
+  color: inherit;
+  background-color: #0097b2;
+  border: 1px solid #1f1f1f;
+}
+.main .aside {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  justify-items: center;
+  justify-self: center;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  border: 0.5px solid #ee0000;
+  min-width: 90vw;
+  max-width: 90vw;
+}
+.main .about {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  justify-items: center;
+  justify-self: center;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  border: 0.5px solid #ee0000;
+  padding: 0.5rem;
+  margin: 1rem 0;
+  color: #17265c;
+  background-color: #17265c;
+  min-width: 100vw;
+  min-height: 30vw;
+}
+.main .about .box, .main .about .solutions__row .box--title, .main .solutions__row .about .box--title, .main .about .solutions__row--title .box--title, .main .solutions__row--title .about .box--title, .main .about .solutions__row--content .box--title, .main .solutions__row--content .about .box--title, .main .about .solutions__row .box--content, .main .solutions__row .about .box--content, .main .about .solutions__row--title .box--content, .main .solutions__row--title .about .box--content, .main .about .solutions__row--content .box--content, .main .solutions__row--content .about .box--content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  justify-items: center;
+  justify-self: center;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  border: 0.5px solid #ee0000;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  min-width: 90vw;
+  max-width: 90vw;
+  min-height: 15vh;
+  gap: 1rem;
+}
+.main .about .box__title {
+  padding: 0.5rem;
+  margin: 0.5rem;
+  color: #fafafa;
+  background-color: transparent;
+  font-size: 30px;
+  line-height: 1.5;
+  text-align: center;
+}
+.main .about .box__content {
+  padding: 0.5rem;
+  margin: 0.5rem;
+  color: #fafafa;
+  background-color: transparent;
+  font-size: 16px;
+  text-transform: none;
+  font-style: italic;
+  font-weight: 400;
+}
+.main .about .box__button {
+  color: #fafafa;
+  background-color: #0097b2;
+  padding: 0.5rem;
+  margin: 0;
+  border: 1px solid transparent;
+  border: 1px solid transparent;
+}
+.main .about .box__button:hover {
+  color: #fafafa;
+  background-color: #00b4d4;
+  border: 1px solid #fafafa;
+}
+.main .about .box__columns {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  justify-items: center;
+  justify-self: center;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  border: 0.5px solid #ee0000;
+  padding: 0.5rem;
+  margin: 0.5rem;
+}
+.main .about .box__columns__col {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  justify-items: center;
+  justify-self: center;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  border: 0.5px solid #ee0000;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  column-gap: 2rem;
+}
+.main .about .box__columns__col__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  justify-items: center;
+  justify-self: center;
+  align-content: center;
+  align-items: flex-start;
+  align-self: center;
+  border: 0.5px solid #ee0000;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  color: #17265c;
+  background-color: #ececec;
+  max-width: 70vw;
+}
+.main .about .box__columns__col__item p {
+  color: #17265c;
+  background-color: #ececec;
+}
+.main .contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  justify-items: center;
+  justify-self: center;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  border: 0.5px solid #ee0000;
+  padding: 0.5rem;
+  margin: 0;
+  color: #17265c;
+  background-color: transparent;
+  min-width: 95vw;
+  max-width: 95vw;
+}
+.main .contact__row {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  justify-items: center;
+  justify-self: center;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  border: 0.5px solid #ee0000;
+  padding: 0 15px;
+  margin: 0;
+  color: #17265c;
+  background-color: transparent;
+  min-width: 80vw;
+  text-align: center;
+}
+.main .contact .box, .main .contact .solutions__row .box--title, .main .solutions__row .contact .box--title, .main .contact .solutions__row--title .box--title, .main .solutions__row--title .contact .box--title, .main .contact .solutions__row--content .box--title, .main .solutions__row--content .contact .box--title, .main .contact .solutions__row .box--content, .main .solutions__row .contact .box--content, .main .contact .solutions__row--title .box--content, .main .solutions__row--title .contact .box--content, .main .contact .solutions__row--content .box--content, .main .solutions__row--content .contact .box--content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  justify-items: center;
+  justify-self: center;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  border: 0.5px solid #ee0000;
+  padding: 0.5rem;
+  margin: 0;
+  color: #17265c;
+  background-color: transparent;
+  min-width: 80vw;
+  max-width: 80vw;
+  overflow: hidden;
+}
+.main .contact .box__title {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  justify-items: center;
+  justify-self: center;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  border: 0.5px solid #ee0000;
+  padding: 0.5rem;
+  margin: 0 15px;
+  color: #17265c;
+  background-color: transparent;
+  min-width: 75vw;
+  min-height: 4rem;
+  font-size: 20px;
+  overflow: hidden;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+.main .contact .box__content {
+  padding: 0.5rem;
+  margin: 0.5rem;
+  color: #17265c;
+  background-color: transparent;
+  overflow: hidden;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+.main .contact .box__content--title {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  justify-items: center;
+  justify-self: center;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  border: 0.5px solid #ee0000;
+  padding: 0.5rem;
+  margin: 0 15px;
+  color: #0097b2;
+  background-color: transparent;
+  font-size: 16px;
+  text-transform: none;
+  font-style: italic;
+  font-weight: 400;
+}
+.main .contact .box__button {
+  color: #fafafa;
+  background-color: #0097b2;
+  padding: 0.5rem;
+  margin: 0;
+  border: 1px solid transparent;
+  border: 1px solid transparent;
+}
+.main .contact .box__button:hover {
+  color: #fafafa;
+  background-color: #00b4d4;
+  border: 1px solid #8f8f8f;
+}
+.main .contact .box__map {
+  padding: 0.5rem;
+  margin: 0;
+  width: 80vw;
+  height: 420px;
+}
+
+@media screen and (min-width: 376px) and (max-width: 600px) {
+  .main .solutions .box__title {
+    font-size: 40px;
+  }
+}
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+  .main .solutions__row--content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    justify-items: center;
+    justify-self: center;
+    align-content: center;
+    align-items: center;
+    align-self: center;
+    border: 0.5px solid #ee0000;
+    color: #17265c;
+    background-color: transparent;
+  }
+  .main .solutions__row--title {
+    color: #17265c;
+    background-color: transparent;
+  }
+  .main .solutions .box, .main .solutions .solutions__row .box--title, .main .solutions__row .solutions .box--title, .main .solutions .solutions__row--title .box--title, .main .solutions__row--title .solutions .box--title, .main .solutions .solutions__row--content .box--title, .main .solutions__row--content .solutions .box--title, .main .solutions .solutions__row .box--content, .main .solutions__row .solutions .box--content, .main .solutions .solutions__row--title .box--content, .main .solutions__row--title .solutions .box--content, .main .solutions .solutions__row--content .box--content, .main .solutions__row--content .solutions .box--content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    justify-items: center;
+    justify-self: center;
+    align-content: center;
+    align-items: center;
+    align-self: center;
+    border: 0.5px solid #ee0000;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    max-width: 80vw;
+    flex: 5;
+  }
+  .main .solutions .box--title {
+    min-width: 85vw;
+    max-width: 85vw;
+  }
+  .main .solutions .box--content {
+    min-height: 17rem;
+    padding-top: 2rem;
+  }
+  .main .aside__box {
+    min-width: 85vw;
+    max-width: 85vw;
+  }
+  .main .about .box__columns__col {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    justify-items: center;
+    justify-self: center;
+    align-content: center;
+    align-items: center;
+    align-self: center;
+    border: 0.5px solid #ee0000;
+  }
+  .main .about .box__columns__col__item {
+    min-height: 410px;
+    max-height: 410px;
+    max-width: 35vw;
+  }
+  .main .contact .box, .main .contact .solutions__row .box--title, .main .solutions__row .contact .box--title, .main .contact .solutions__row--title .box--title, .main .solutions__row--title .contact .box--title, .main .contact .solutions__row--content .box--title, .main .solutions__row--content .contact .box--title, .main .contact .solutions__row .box--content, .main .solutions__row .contact .box--content, .main .contact .solutions__row--title .box--content, .main .solutions__row--title .contact .box--content, .main .contact .solutions__row--content .box--content, .main .solutions__row--content .contact .box--content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    justify-items: center;
+    justify-self: center;
+    align-content: center;
+    align-items: center;
+    align-self: center;
+    border: 0.5px solid #ee0000;
+  }
+  .main .contact .box--title {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    justify-items: center;
+    justify-self: center;
+    align-content: center;
+    align-items: center;
+    align-self: center;
+    border: 0.5px solid #ee0000;
+  }
+  .main .contact .box--map {
+    width: 85vw;
+    height: 600px;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .main .solutions__row, .main .solutions__row--title, .main .solutions__row--content {
+    min-width: 90vw;
+    max-width: 90vw;
+  }
+  .main .solutions__row--content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    justify-items: center;
+    justify-self: center;
+    align-content: center;
+    align-items: center;
+    align-self: center;
+    border: 0.5px solid #ee0000;
+    padding: 0.5rem;
+    margin: 0;
+  }
+  .main .solutions__row .box, .main .solutions__row--title .box, .main .solutions__row--content .box, .main .solutions__row .box--title, .main .solutions__row--title .box--title, .main .solutions__row--content .box--title, .main .solutions__row .box--content, .main .solutions__row--title .box--content, .main .solutions__row--content .box--content {
+    min-width: 70vw;
+    max-width: 70vw;
+  }
+  .main .aside__box {
+    min-width: 80vw;
+    max-width: 80vw;
+  }
+  .main .about .box__title {
+    padding-top: 3rem;
+    font-size: 40px;
+  }
+  .main .about .box__columns {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    justify-items: center;
+    justify-self: center;
+    align-content: center;
+    align-items: flex-start;
+    align-self: center;
+    border: 0.5px solid #ee0000;
+  }
+  .main .about .box__columns__col {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    justify-items: center;
+    justify-self: center;
+    align-content: center;
+    align-items: center;
+    align-self: center;
+    border: 0.5px solid #ee0000;
+  }
+  .main .about .box__columns__col__item {
+    min-height: 460px;
+    max-height: 470px;
+    min-width: 20vw;
+    max-width: 20vw;
+  }
+  .main .contact .box, .main .contact .solutions__row .box--title, .main .solutions__row .contact .box--title, .main .contact .solutions__row--title .box--title, .main .solutions__row--title .contact .box--title, .main .contact .solutions__row--content .box--title, .main .solutions__row--content .contact .box--title, .main .contact .solutions__row .box--content, .main .solutions__row .contact .box--content, .main .contact .solutions__row--title .box--content, .main .solutions__row--title .contact .box--content, .main .contact .solutions__row--content .box--content, .main .solutions__row--content .contact .box--content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    justify-items: center;
+    justify-self: center;
+    align-content: center;
+    align-items: center;
+    align-self: center;
+    border: 0.5px solid #ee0000;
+  }
+  .main .contact .box--map {
+    width: 85vw;
+    height: 700px;
+  }
+}
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  justify-items: center;
+  justify-self: center;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  border: 0.5px solid #ee0000;
   padding: 0.5rem;
   margin: 0;
   color: #17265c;
@@ -1407,6 +2224,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 0.5px solid #ee0000;
   padding: 0.5rem;
   margin: 0;
   color: #17265c;
@@ -1423,6 +2241,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 0.5px solid #ee0000;
   padding: 0 15px;
   margin: 0;
   color: #17265c;
@@ -1440,6 +2259,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 0.5px solid #ee0000;
   padding: 0.5rem;
   margin: 0.5rem;
   color: #17265c;
@@ -1457,6 +2277,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 0.5px solid #ee0000;
   padding: 0.5rem;
   margin: 0.5rem;
   background-color: #fafafa;
@@ -1478,6 +2299,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 0.5px solid #ee0000;
   padding: 0.5rem;
   margin: 0;
   padding-top: 4rem;
@@ -1495,6 +2317,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 0.5px solid #ee0000;
   padding: 0.5rem;
   margin: 0 15px;
   color: #17265c;
@@ -1518,6 +2341,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 0.5px solid #ee0000;
   padding: 0.5rem;
   margin: 0 15px;
   color: #0097b2;
@@ -1536,6 +2360,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 0.5px solid #ee0000;
   padding: 0.5rem;
   margin: 0.5rem;
   color: #fafafa;
@@ -1563,6 +2388,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 0.5px solid #ee0000;
   padding: 0.5rem;
   margin: 0;
   color: #17265c;
@@ -1580,6 +2406,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 0.5px solid #ee0000;
   padding: 0.5rem;
   margin: 0;
   min-width: 95vw;
@@ -1594,6 +2421,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 0.5px solid #ee0000;
   padding: 0 15px;
   margin: 0;
   min-width: 90vw;
@@ -1608,6 +2436,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 0.5px solid #ee0000;
   padding: 0.5rem 0;
   margin: 0;
   min-width: 80vw;
@@ -1624,6 +2453,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 0.5px solid #ee0000;
   padding: 0.5rem;
   margin: 0.5rem;
   background-color: #17265c;
@@ -1645,6 +2475,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 0.5px solid #ee0000;
   padding: 0.5rem;
   margin: 0;
   padding-top: 1rem;
@@ -1662,6 +2493,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 0.5px solid #ee0000;
   padding: 0.5rem;
   margin: 0.5rem;
   background-color: #fafafa;
@@ -1683,6 +2515,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 0.5px solid #ee0000;
   padding: 0.5rem;
   margin: 0;
   padding-top: 1rem;
@@ -1700,6 +2533,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 0.5px solid #ee0000;
   padding: 0.5rem;
   margin: 0.5rem;
   color: #17265c;
@@ -1717,6 +2551,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 0.5px solid #ee0000;
   padding: 0.5rem;
   margin: 0 15px;
   color: #17265c;
@@ -1734,6 +2569,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 0.5px solid #ee0000;
   color: #17265c;
   background-color: transparent;
   min-width: 80vw;
@@ -1748,6 +2584,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 0.5px solid #ee0000;
   padding: 0.5rem;
   margin: 0.5rem;
 }
@@ -1781,6 +2618,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 0.5px solid #ee0000;
   padding: 0.5rem;
   margin: 0.5rem;
   color: #fafafa;
@@ -1807,6 +2645,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 0.5px solid #ee0000;
   padding: 0;
   margin: 0.5rem auto;
 }
@@ -1845,6 +2684,7 @@ header .intro-text .intro-heading {
     align-content: center;
     align-items: center;
     align-self: center;
+    border: 0.5px solid #ee0000;
     padding: 3rem 0.5rem;
     margin: 0.5rem;
     gap: 1rem;
@@ -1873,6 +2713,7 @@ header .intro-text .intro-heading {
     align-content: center;
     align-items: center;
     align-self: center;
+    border: 0.5px solid #ee0000;
     padding: 5rem 0.5rem;
     margin: 0.5rem;
     gap: 1.5rem;
@@ -1898,6 +2739,7 @@ header .intro-text .intro-heading {
     align-content: center;
     align-items: center;
     align-self: center;
+    border: 0.5px solid #ee0000;
     min-width: 75vw;
     max-width: 75vw;
   }
@@ -1914,6 +2756,7 @@ header .intro-text .intro-heading {
     align-content: center;
     align-items: center;
     align-self: center;
+    border: 0.5px solid #ee0000;
     padding: 0.5rem;
     margin: 0.5rem auto;
   }
@@ -1927,6 +2770,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 0.5px solid #ee0000;
   padding: 0.5rem;
   margin: 0;
   color: #17265c;
@@ -1945,6 +2789,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 0.5px solid #ee0000;
   padding: 4rem 0.5rem 0.5rem 0.5rem;
   margin: 0;
   min-width: 95vw;
@@ -1960,6 +2805,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 0.5px solid #ee0000;
   padding: 0 15px;
   margin: 0;
   min-width: 90vw;
@@ -1975,6 +2821,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 0.5px solid #ee0000;
   padding: 0.5rem 0;
   margin: 0;
   min-width: 80vw;
@@ -1990,6 +2837,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 0.5px solid #ee0000;
   padding: 0.5rem;
   margin: 0.5rem;
   background-color: #17265c;
@@ -2012,6 +2860,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 0.5px solid #ee0000;
   padding: 0.5rem;
   margin: 0;
   padding-top: 1rem;
@@ -2030,6 +2879,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 0.5px solid #ee0000;
   padding: 0.5rem;
   margin: 0.5rem;
   background-color: #fafafa;
@@ -2052,6 +2902,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 0.5px solid #ee0000;
   padding: 0.5rem;
   margin: 0;
   padding-top: 1rem;
@@ -2082,6 +2933,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 0.5px solid #ee0000;
   padding: 0.5rem;
   margin: 0.5rem;
   color: #17265c;
@@ -2162,6 +3014,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 0.5px solid #ee0000;
   color: #fafafa;
   background-color: #0097b2;
   padding: 0.5rem;
@@ -2187,6 +3040,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 0.5px solid #ee0000;
   min-width: 80vw;
   max-width: 80vw;
   gap: 0.5rem;
@@ -2202,6 +3056,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: flex-end;
   align-self: center;
+  border: 0.5px solid #ee0000;
   min-width: 35vw;
   max-width: 35vw;
 }
@@ -2215,6 +3070,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: flex-start;
   align-self: center;
+  border: 0.5px solid #ee0000;
   min-width: 35vw;
   max-width: 35vw;
 }
@@ -2243,6 +3099,7 @@ header .intro-text .intro-heading {
     align-content: center;
     align-items: center;
     align-self: center;
+    border: 0.5px solid #ee0000;
     padding: 3rem 0.5rem;
     margin: 0.5rem;
     gap: 1rem;
@@ -2270,6 +3127,7 @@ header .intro-text .intro-heading {
     align-content: center;
     align-items: center;
     align-self: center;
+    border: 0.5px solid #ee0000;
     padding: 5rem 0.5rem;
     margin: 0.5rem;
     gap: 1.5rem;
@@ -2296,6 +3154,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 0.5px solid #ee0000;
   padding: 0.5rem;
   margin: 0 0.5rem;
   color: #fafafa;
@@ -2318,6 +3177,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 0.5px solid #ee0000;
   color: #fafafa;
   background-color: #17265c;
   min-width: 35px;
@@ -2335,6 +3195,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: flex-start;
   align-self: center;
+  border: 0.5px solid #ee0000;
   padding: 0.5rem;
   margin: 0;
   color: #17265c;
@@ -2352,6 +3213,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: flex-start;
   align-self: center;
+  border: 0.5px solid #ee0000;
   padding: 0.5rem;
   margin: 0;
   color: #17265c;
@@ -2372,6 +3234,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: flex-start;
   align-self: center;
+  border: 0.5px solid #ee0000;
   padding: 0 15px;
   margin: 0;
   color: #17265c;
@@ -2391,6 +3254,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: flex-start;
   align-self: center;
+  border: 0.5px solid #ee0000;
   display: none;
   padding: 0.5rem;
   margin: 0.5rem;
@@ -2409,6 +3273,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: flex-start;
   align-self: center;
+  border: 0.5px solid #ee0000;
   padding: 0.5rem;
   margin: 0.5rem;
   color: #17265c;
@@ -2428,6 +3293,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: flex-start;
   align-self: center;
+  border: 0.5px solid #ee0000;
   padding: 0.5rem;
   margin: 0.5rem;
   color: inherit;
@@ -2452,6 +3318,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 0.5px solid #ee0000;
   padding: 0.5rem;
   margin: 0 15px;
   color: #17265c;
@@ -2478,6 +3345,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 0.5px solid #ee0000;
   padding: 0.5rem;
   margin: 0.5rem;
   color: #fafafa;
@@ -2508,6 +3376,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: flex-start;
   align-self: center;
+  border: 0.5px solid #ee0000;
   min-width: 250px;
   max-width: 275px;
   min-height: 250px;
@@ -2544,6 +3413,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: flex-start;
   align-self: center;
+  border: 0.5px solid #ee0000;
   color: inherit;
   background-color: transparent;
   min-width: 100px;
@@ -2614,6 +3484,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 0.5px solid #ee0000;
   padding: 0.5rem;
   margin: 1rem;
   min-width: 75vw;
@@ -2638,6 +3509,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 0.5px solid #ee0000;
   padding: 0.5rem;
   margin: 0.5rem;
   color: #17265c;
@@ -2660,6 +3532,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 0.5px solid #ee0000;
   min-height: 300px;
   max-height: 300px;
   border: 2px dotted #0097b2;
@@ -2673,6 +3546,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: flex-end;
   align-self: center;
+  border: 0.5px solid #ee0000;
   color: #fafafa;
   background-color: #0097b2;
   padding: 0.5rem;
@@ -2784,6 +3658,7 @@ header .intro-text .intro-heading {
     align-content: center;
     align-items: flex-start;
     align-self: center;
+    border: 0.5px solid #ee0000;
     padding: 0.5rem;
     margin: 0.5rem;
     color: #17265c;
@@ -2802,6 +3677,7 @@ header .intro-text .intro-heading {
     align-content: center;
     align-items: center;
     align-self: center;
+    border: 0.5px solid #ee0000;
     background-color: #ececec;
     min-width: 250px;
     max-width: 250px;
@@ -2847,7 +3723,7 @@ header .intro-text .intro-heading {
     max-width: 210px;
   }
 }
-.main {
+.biitModules {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -2856,6 +3732,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 0.5px solid #ee0000;
   padding: 0.5rem;
   margin: 0;
   color: #17265c;
@@ -2864,7 +3741,7 @@ header .intro-text .intro-heading {
   margin-top: 80px;
   gap: 0.5rem;
 }
-.main .biitModules {
+.biitModules__row {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -2873,116 +3750,13 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 0.5px solid #ee0000;
   padding: 4rem 0.5rem 0.5rem 0.5rem;
   margin: 0;
   min-width: 95vw;
   max-width: 95vw;
 }
-.main .biitModules__row {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  justify-items: center;
-  justify-self: center;
-  align-content: center;
-  align-items: center;
-  align-self: center;
-  padding: 0 15px;
-  margin: 0;
-  min-width: 90vw;
-  max-width: 90vw;
-}
-.main .biitModules__row .circle {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  justify-items: center;
-  justify-self: center;
-  align-content: center;
-  align-items: center;
-  align-self: center;
-  padding: 0.5rem 0;
-  margin: 0;
-  min-width: 80vw;
-  max-width: 80vw;
-}
-.main .biitModules__row .circle__pyme {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  justify-items: center;
-  justify-self: center;
-  align-content: center;
-  align-items: center;
-  align-self: center;
-  padding: 0.5rem;
-  margin: 0.5rem;
-  background-color: #17265c;
-  border-radius: 50%;
-  border: 1px solid #fafafa;
-  box-shadow: 3px 3px 6px #0097b2, -3px -3px 6px #00b4d4;
-  min-width: 125px;
-  max-width: 150px;
-  min-height: 125px;
-  max-height: 150px;
-  overflow: hidden;
-}
-.main .biitModules__row .circle__pyme img {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  justify-items: center;
-  justify-self: center;
-  align-content: center;
-  align-items: center;
-  align-self: center;
-  padding: 0.5rem;
-  margin: 0;
-  padding-top: 1rem;
-  min-width: 75px;
-  max-width: 100px;
-  min-height: 75px;
-  max-height: 100px;
-}
-.main .biitModules__row .circle__biit {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  justify-items: center;
-  justify-self: center;
-  align-content: center;
-  align-items: center;
-  align-self: center;
-  padding: 0.5rem;
-  margin: 0.5rem;
-  background-color: #fafafa;
-  border-radius: 50%;
-  border: 1px solid #fafafa;
-  box-shadow: 3px 3px 6px #0097b2, -3px -3px 6px #00b4d4;
-  min-width: 125px;
-  max-width: 150px;
-  min-height: 125px;
-  max-height: 150px;
-  overflow: hidden;
-}
-.main .biitModules__row .circle__biit img {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  justify-items: center;
-  justify-self: center;
-  align-content: center;
-  align-items: center;
-  align-self: center;
-  padding: 0.5rem;
-  margin: 0;
-  padding-top: 1rem;
-  min-width: 75px;
-  max-width: 100px;
-  min-height: 75px;
-  max-height: 100px;
-}
-.main .biitModules__row .box, .main .biitModules__row .solutions__row .box--title, .main .solutions__row .biitModules__row .box--title, .main .biitModules__row .solutions__row--title .box--title, .main .solutions__row--title .biitModules__row .box--title, .main .biitModules__row .solutions__row--content .box--title, .main .solutions__row--content .biitModules__row .box--title, .main .biitModules__row .solutions__row .box--content, .main .solutions__row .biitModules__row .box--content, .main .biitModules__row .solutions__row--title .box--content, .main .solutions__row--title .biitModules__row .box--content, .main .biitModules__row .solutions__row--content .box--content, .main .solutions__row--content .biitModules__row .box--content {
+.biitModules__row .box, .biitModules__row .main .solutions__row .box--title, .main .solutions__row .biitModules__row .box--title, .biitModules__row .main .solutions__row--title .box--title, .main .solutions__row--title .biitModules__row .box--title, .biitModules__row .main .solutions__row--content .box--title, .main .solutions__row--content .biitModules__row .box--title, .biitModules__row .main .solutions__row .box--content, .main .solutions__row .biitModules__row .box--content, .biitModules__row .main .solutions__row--title .box--content, .main .solutions__row--title .biitModules__row .box--content, .biitModules__row .main .solutions__row--content .box--content, .main .solutions__row--content .biitModules__row .box--content {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -2991,6 +3765,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 0.5px solid #ee0000;
   padding: 0.5rem;
   margin: 0.5rem;
   color: #17265c;
@@ -2999,177 +3774,24 @@ header .intro-text .intro-heading {
   max-width: 80vw;
   gap: 0.5rem;
   hyphens: auto;
-  font-size: 1em;
-}
-.main .biitModules__row .box__title {
-  color: #17265c;
-  background-color: transparent;
-  line-height: 2;
-  font-size: 24px;
-  font-weight: bold;
-}
-.main .biitModules__row .box__subtitle {
-  color: #0097b2;
-  background-color: transparent;
+  font-size: 0.9em;
   line-height: 1.5;
-  font-size: 1.5em;
-  font-weight: bold;
+  border: 1px solid #66cc66;
 }
-.main .biitModules__row .box__subtitle__secondary {
-  color: #0097b2;
-  background-color: transparent;
-  margin-top: 1rem;
-  line-height: 1.2;
-  font-size: 1.2em;
-  font-weight: lighter;
-}
-.main .biitModules__row .box__name {
+.biitModules__row .box__name {
   color: #0097b2;
   background-color: transparent;
 }
-.main .biitModules__row .box__content {
+.biitModules__row .box__content {
   color: #17265c;
   background-color: transparent;
 }
-.main .biitModules__row .box__company {
+.biitModules__row .box__company {
   color: #0097b2;
   background-color: transparent;
 }
-.main .biitModules__row .box__image {
+.biitModules__row .box__image {
   max-width: 50vw;
-}
-.main .biitModules__row .box ul li, .main .biitModules__row .solutions__row .box--title ul li, .main .solutions__row .biitModules__row .box--title ul li, .main .biitModules__row .solutions__row--title .box--title ul li, .main .solutions__row--title .biitModules__row .box--title ul li, .main .biitModules__row .solutions__row--content .box--title ul li, .main .solutions__row--content .biitModules__row .box--title ul li, .main .biitModules__row .solutions__row .box--content ul li, .main .solutions__row .biitModules__row .box--content ul li, .main .biitModules__row .solutions__row--title .box--content ul li, .main .solutions__row--title .biitModules__row .box--content ul li, .main .biitModules__row .solutions__row--content .box--content ul li, .main .solutions__row--content .biitModules__row .box--content ul li {
-  list-style-type: disc;
-}
-.main .biitModules__row .box__button {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  justify-items: center;
-  justify-self: center;
-  align-content: center;
-  align-items: center;
-  align-self: center;
-  color: #fafafa;
-  background-color: #0097b2;
-  padding: 0.5rem;
-  margin: 0;
-  border: 1px solid transparent;
-  border: 1px solid transparent;
-  min-width: 20vw;
-  max-width: 20vw;
-}
-.main .biitModules__row .box__button:hover {
-  color: #fafafa;
-  background-color: #00b4d4;
-  border: 1px solid #fafafa;
-}
-.main .biitModules__row .info {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  justify-items: center;
-  justify-self: center;
-  align-content: center;
-  align-items: center;
-  align-self: center;
-  min-width: 80vw;
-  max-width: 80vw;
-  gap: 0.5rem;
-  line-height: 1.5;
-}
-.main .biitModules__row .info__column__left {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  justify-items: center;
-  justify-self: center;
-  align-content: center;
-  align-items: flex-end;
-  align-self: center;
-  min-width: 35vw;
-  max-width: 35vw;
-}
-.main .biitModules__row .info__column__right {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  justify-items: center;
-  justify-self: center;
-  align-content: center;
-  align-items: flex-start;
-  align-self: center;
-  min-width: 35vw;
-  max-width: 35vw;
-}
-
-@media screen and (min-width: 376px) and (max-width: 600px) {
-  .main .termsAndPolicy__row .circle__image {
-    min-width: 150px;
-    max-width: 175px;
-    min-height: 150px;
-    max-height: 175px;
-  }
-  .main .termsAndPolicy__row .circle__image img {
-    min-width: 100px;
-    max-width: 125px;
-    min-height: 100px;
-    max-height: 125px;
-  }
-}
-@media screen and (min-width: 601px) and (max-width: 1024px) {
-  .main .termsAndPolicy__row .circle {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    justify-items: center;
-    justify-self: center;
-    align-content: center;
-    align-items: center;
-    align-self: center;
-    padding: 3rem 0.5rem;
-    margin: 0.5rem;
-    gap: 1rem;
-  }
-  .main .termsAndPolicy__row .circle__image {
-    min-width: 250px;
-    max-width: 300px;
-    min-height: 250px;
-    max-height: 300px;
-  }
-  .main .termsAndPolicy__row .circle__image img {
-    min-width: 150px;
-    max-width: 200px;
-    min-height: 150px;
-    max-height: 200px;
-  }
-}
-@media screen and (min-width: 1025px) {
-  .main .termsAndPolicy__row .circle {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    justify-items: center;
-    justify-self: center;
-    align-content: center;
-    align-items: center;
-    align-self: center;
-    padding: 5rem 0.5rem;
-    margin: 0.5rem;
-    gap: 1.5rem;
-  }
-  .main .termsAndPolicy__row .circle__image {
-    min-width: 250px;
-    max-width: 300px;
-    min-height: 250px;
-    max-height: 300px;
-  }
-  .main .termsAndPolicy__row .circle__image img {
-    min-width: 150px;
-    max-width: 200px;
-    min-height: 150px;
-    max-height: 200px;
-  }
 }
 .mail {
   display: flex;
@@ -3180,6 +3802,7 @@ header .intro-text .intro-heading {
   align-content: center;
   align-items: center;
   align-self: center;
+  border: 0.5px solid #ee0000;
   padding: 0.5rem;
   margin: auto;
   color: #17265c;
