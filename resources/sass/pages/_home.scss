@@ -9,11 +9,12 @@
   gap: $gap;
 
   .solutions {
+    @extend .section;
 
-    @include flexBox(column, space-around, center);
+    // @include flexBox(column, space-around, center);
     @include paddingMargin($padding, 0);
-    @include style($primary_main);
-    @include boxSize(width, 95vw, null, 95vw);
+    // @include style($primary_main);
+    // @include boxSize(width, 95vw, null, 95vw);
 
     .box {
       @extend .box;
@@ -25,12 +26,14 @@
       &__content {
         @extend .content;
 
+        // reverse colors
         @include style($secondary_main);
       }
 
       &__name {
         @extend .name;
 
+        // reverse colors
         @include style($primary_main);
       }
 
@@ -61,10 +64,13 @@
   }
 
   .circles {
-    @include flexBox(column, space-around, center);
+    @extend .section;
+
     @include paddingMargin($padding, 0);
     @include style($primary_main);
-    @include boxSize(width, 95vw, null, 95vw);
+
+    // @include flexBox(column, space-around, center);
+    // @include boxSize(width, 95vw, null, 95vw);
 
     .circle {
       @include flexBox(column, flex-start, center);
@@ -116,19 +122,17 @@
     // }
   }
 
-  .aside {
-    @include flexBox(column, space-around, center);
-    @include boxSize(width, 90vw, null, 90vw);
-    // min-width: 90vw;
-    // max-width: 90vw;
-  }
-
   .about {
-    @include flexBox(column, space-around, center);
+    @extend .section;
+
+    @include boxSize(width, 100vw);
+    border: 1px solid red;
+
     @include paddingMargin($padding, 1rem 0);
     @include style($primary_main, $primary_main);
-    @include boxSize(width, 100vw);
     @include boxSize(height, 30vw);
+
+    // @include flexBox(column, space-around, center);
     // min-width: 100vw;
     // min-height: 30vh;
 
@@ -264,77 +268,10 @@
   }
 }
 
-@media screen and (min-width: 376px) and (max-width: 600px) {
-  .home {
-    .solutions {
-      .box {
-        &__title {
-          font-size: 40px;
-        }
-      }
-    }
-  }
-}
+@media screen and (min-width: 376px) and (max-width: 600px) {}
 
 @media screen and (min-width: 601px) and (max-width: 1024px) {
   .home {
-    .solutions {
-      // &__row {
-      //   &--content {
-      //     @include flexBox(column, flex-start);
-      //     @include style($primary_main);
-      //     // @include boxSize(width, 90vw, null, 90vw);
-      //   }
-
-      //   &--title {
-      //     @include style($primary_main);
-      //     // @include boxSize(width, 90vw, null, 90vw);
-      //   }
-      // }
-
-      .box {
-        @include flexBox(column, flex-start, center);
-        @include paddingMargin($padding, $margin);
-
-        @include boxSize(width, null, null, 80vw);
-
-        flex: 5;
-
-        &--title {
-          @include boxSize(width, 85vw, null, 85vw);
-        }
-
-        &--content {
-          @include boxSize(height, 17rem, null, null);
-          padding-top: 2rem;
-        }
-      }
-    }
-
-
-    .aside {
-      &__box {
-        @include boxSize(width, 85vw, null, 85vw);
-        // min-width: 85vw;
-        // max-width: 85vw;
-      }
-    }
-
-    .about {
-      .box {
-        &__columns {
-          &__col {
-            @include flexBox(row, flex-start, center);
-
-            &__item {
-              @include boxSize(height, 410px, null, 410px);
-              @include boxSize(width, null, null, 35vw);
-            }
-          }
-        }
-      }
-    }
-
     .contact {
       .box {
         @include flexBox(row, center, center);
@@ -358,10 +295,6 @@
   .home {
     .solutions {
       .box {
-        // @include boxSize(width, 70vw, null, 70vw);
-
-        //   min-width: 80vw;
-        //   max-width: 80vw;
         &__title {
           font-size: 2.1em;
         }

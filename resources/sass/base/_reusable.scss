@@ -1,14 +1,18 @@
+.section {
+  @include flexBox(column, space-around, center);
+  @include boxSize(width, 95vw, null, 95vw);
+
+  // temporal developer
+  border: 1px solid blueviolet;
+}
+
 .box {
-  @include flexBox(column, flex-start, center);
+  @include flexBox(column, flex-start, flex-start);
   @include paddingMargin($padding, $margin);
-  @include style($primary_main);
   @include boxSize(width, 80vw, null, 80vw);
   gap: $gap;
-  hyphens: auto;
-  font-size: 0.9em;
 
-  // min-width No!
-  // flex: 5;
+
   overflow: hidden;
 
   // developer-mode
@@ -21,6 +25,8 @@
   font-size: 2em;
   // font-size: 24px;
   font-weight: bold;
+  // align-items: flex-end;
+  align-self: center;
 }
 
 .subtitle {
@@ -48,6 +54,7 @@
 
 .content {
   @include style($primary_main);
+  hyphens: auto;
 }
 
 .company {

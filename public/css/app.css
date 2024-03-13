@@ -8,15 +8,6 @@ select {
   font-family: "Bruno Ace", sans-serif;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: 600;
-}
-
 * {
   box-sizing: border-box;
   vertical-align: baseline;
@@ -70,10 +61,11 @@ b,
 u,
 em {
   font-size: 1em;
-  font-weight: inherit;
+  font-weight: 400;
   font-style: inherit;
   text-decoration: none;
   color: inherit;
+  hyphens: none;
 }
 
 blockquote:before,
@@ -167,6 +159,21 @@ button {
  * @param {string} $size - Main size (optional).
  * @param {string} $max - Maximum size (optional).
  */
+.section, .home .about, .home .circles, .home .solutions {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  justify-items: center;
+  justify-self: center;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  border: 0.5px solid #ee0000;
+  min-width: 95vw;
+  max-width: 95vw;
+  border: 1px solid blueviolet;
+}
+
 .box, .main .solutions__row .box--content, .main .solutions__row--title .box--content, .main .solutions__row--content .box--content, .main .solutions__row .box--title, .main .solutions__row--title .box--title, .main .solutions__row--content .box--title, .home .solutions .box {
   display: flex;
   flex-direction: column;
@@ -174,18 +181,14 @@ button {
   justify-items: center;
   justify-self: center;
   align-content: center;
-  align-items: center;
+  align-items: flex-start;
   align-self: center;
   border: 0.5px solid #ee0000;
   padding: 0.5rem;
   margin: 0.5rem;
-  color: #17265c;
-  background-color: transparent;
   min-width: 80vw;
   max-width: 80vw;
   gap: 0.5rem;
-  hyphens: auto;
-  font-size: 0.9em;
   overflow: hidden;
   border: 0.5px solid #1a4d1a;
 }
@@ -196,6 +199,7 @@ button {
   line-height: 2;
   font-size: 2em;
   font-weight: bold;
+  align-self: center;
 }
 
 .subtitle, .biitModules__row .box__subtitle {
@@ -224,6 +228,7 @@ button {
 .content, .home .solutions .box__content {
   color: #17265c;
   background-color: transparent;
+  hyphens: auto;
 }
 
 .company {
@@ -887,21 +892,8 @@ header .intro-text .intro-heading {
   gap: 0.5rem;
 }
 .home .solutions {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  justify-items: center;
-  justify-self: center;
-  align-content: center;
-  align-items: center;
-  align-self: center;
-  border: 0.5px solid #ee0000;
   padding: 0.5rem;
   margin: 0;
-  color: #17265c;
-  background-color: transparent;
-  min-width: 95vw;
-  max-width: 95vw;
 }
 .home .solutions .box__content {
   color: #0097b2;
@@ -941,21 +933,10 @@ header .intro-text .intro-heading {
   padding-top: 3rem;
 }
 .home .circles {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  justify-items: center;
-  justify-self: center;
-  align-content: center;
-  align-items: center;
-  align-self: center;
-  border: 0.5px solid #ee0000;
   padding: 0.5rem;
   margin: 0;
   color: #17265c;
   background-color: transparent;
-  min-width: 95vw;
-  max-width: 95vw;
 }
 .home .circles .circle {
   display: flex;
@@ -1043,34 +1024,13 @@ header .intro-text .intro-heading {
   background-color: #0097b2;
   border: 1px solid #1f1f1f;
 }
-.home .aside {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  justify-items: center;
-  justify-self: center;
-  align-content: center;
-  align-items: center;
-  align-self: center;
-  border: 0.5px solid #ee0000;
-  min-width: 90vw;
-  max-width: 90vw;
-}
 .home .about {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  justify-items: center;
-  justify-self: center;
-  align-content: center;
-  align-items: center;
-  align-self: center;
-  border: 0.5px solid #ee0000;
+  min-width: 100vw;
+  border: 1px solid red;
   padding: 0.5rem;
   margin: 1rem 0;
   color: #17265c;
   background-color: #17265c;
-  min-width: 100vw;
   min-height: 30vw;
 }
 .home .about .box, .home .about .main .solutions__row .box--content, .main .solutions__row .home .about .box--content, .home .about .main .solutions__row--title .box--content, .main .solutions__row--title .home .about .box--content, .home .about .main .solutions__row--content .box--content, .main .solutions__row--content .home .about .box--content, .home .solutions .main .solutions__row .about .box--content, .home .solutions .main .solutions__row--title .about .box--content, .home .solutions .main .solutions__row--content .about .box--content, .home .about .main .solutions__row .box--title, .main .solutions__row .home .about .box--title, .home .about .main .solutions__row--title .box--title, .main .solutions__row--title .home .about .box--title, .home .about .main .solutions__row--content .box--title, .main .solutions__row--content .home .about .box--title, .home .solutions .main .solutions__row .about .box--title, .home .solutions .main .solutions__row--title .about .box--title, .home .solutions .main .solutions__row--content .about .box--title {
@@ -1290,55 +1250,7 @@ header .intro-text .intro-heading {
   height: 420px;
 }
 
-@media screen and (min-width: 376px) and (max-width: 600px) {
-  .home .solutions .box__title {
-    font-size: 40px;
-  }
-}
 @media screen and (min-width: 601px) and (max-width: 1024px) {
-  .home .solutions .box, .home .solutions .main .solutions__row .box--content, .main .solutions__row .home .solutions .box--content, .home .solutions .main .solutions__row--title .box--content, .main .solutions__row--title .home .solutions .box--content, .home .solutions .main .solutions__row--content .box--content, .main .solutions__row--content .home .solutions .box--content, .home .solutions .main .solutions__row .box--title, .main .solutions__row .home .solutions .box--title, .home .solutions .main .solutions__row--title .box--title, .main .solutions__row--title .home .solutions .box--title, .home .solutions .main .solutions__row--content .box--title, .main .solutions__row--content .home .solutions .box--title {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    justify-items: center;
-    justify-self: center;
-    align-content: center;
-    align-items: center;
-    align-self: center;
-    border: 0.5px solid #ee0000;
-    padding: 0.5rem;
-    margin: 0.5rem;
-    max-width: 80vw;
-    flex: 5;
-  }
-  .home .solutions .box--title {
-    min-width: 85vw;
-    max-width: 85vw;
-  }
-  .home .solutions .box--content {
-    min-height: 17rem;
-    padding-top: 2rem;
-  }
-  .home .aside__box {
-    min-width: 85vw;
-    max-width: 85vw;
-  }
-  .home .about .box__columns__col {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    justify-items: center;
-    justify-self: center;
-    align-content: center;
-    align-items: center;
-    align-self: center;
-    border: 0.5px solid #ee0000;
-  }
-  .home .about .box__columns__col__item {
-    min-height: 410px;
-    max-height: 410px;
-    max-width: 35vw;
-  }
   .home .contact .box, .home .contact .main .solutions__row .box--content, .main .solutions__row .home .contact .box--content, .home .contact .main .solutions__row--title .box--content, .main .solutions__row--title .home .contact .box--content, .home .contact .main .solutions__row--content .box--content, .main .solutions__row--content .home .contact .box--content, .home .solutions .main .solutions__row .contact .box--content, .home .solutions .main .solutions__row--title .contact .box--content, .home .solutions .main .solutions__row--content .contact .box--content, .home .contact .main .solutions__row .box--title, .main .solutions__row .home .contact .box--title, .home .contact .main .solutions__row--title .box--title, .main .solutions__row--title .home .contact .box--title, .home .contact .main .solutions__row--content .box--title, .main .solutions__row--content .home .contact .box--title, .home .solutions .main .solutions__row .contact .box--title, .home .solutions .main .solutions__row--title .contact .box--title, .home .solutions .main .solutions__row--content .contact .box--title {
     display: flex;
     flex-direction: row;
