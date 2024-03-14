@@ -16,7 +16,7 @@
   overflow: hidden;
 
   // developer-mode
-  border: 0.5px solid $success_darker;
+  border: 0.5px solid darkgreen;
 }
 
 .title {
@@ -76,8 +76,8 @@
 }
 
 .button {
-  @include flexBox(row, center, center);
   @include button($secondary_main, $neutral_lighter);
   @include hover($secondary_light, $neutral_lighter, $neutral_lighter);
   @include boxSize(width, 20vw, null, 20vw);
+  @include paddingMargin($padding, $margin);
 }

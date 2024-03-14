@@ -26,8 +26,8 @@ export const loadDictionary = (language, page) => __awaiter(void 0, void 0, void
         throw error;
     }
 });
-// const abailableLanguages = ["en", "es", "ca"];
-export const loadAbailablesLanguages = () => __awaiter(void 0, void 0, void 0, function* () {
+// const availableLanguages = ["en", "es", "ca"];
+export const loadAvailablesLanguages = () => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const response = yield fetch(`./../dictionary/listLanguages.json`);
         if (!response.ok) {
@@ -40,7 +40,7 @@ export const loadAbailablesLanguages = () => __awaiter(void 0, void 0, void 0, f
         throw error;
     }
 });
-export const loadAbailablesFiles = () => __awaiter(void 0, void 0, void 0, function* () {
+export const loadAvailablesFiles = () => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const response = yield fetch(`./../dictionary/listPages.json`);
         if (!response.ok) {
@@ -73,7 +73,7 @@ export const getFileNameFromUrl = (url) => {
     return undefined;
 };
 export const isLanguageSupported = (language) => __awaiter(void 0, void 0, void 0, function* () {
-    const supportedLanguages = yield loadAbailablesLanguages();
+    const supportedLanguages = yield loadAvailablesLanguages();
     return !supportedLanguages.includes(language);
 });
 export const getNavigatorLanguage = () => {
@@ -90,11 +90,11 @@ export const getSelectedLanguage = () => {
 };
 export const getFinalLanguage = () => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const abailableLanguages = yield loadAbailablesLanguages();
+        const availableLanguages = yield loadAvailablesLanguages();
         const selectedLanguage = yield getSelectedLanguage();
         const navigatorLanguage = yield getNavigatorLanguage();
-        const finalSelectedLanguage = abailableLanguages.includes(selectedLanguage) ||
-            abailableLanguages.includes(navigatorLanguage)
+        const finalSelectedLanguage = availableLanguages.includes(selectedLanguage) ||
+            availableLanguages.includes(navigatorLanguage)
             ? selectedLanguage || navigatorLanguage
             : defaultLanguage;
         localStorage.setItem("selectedLanguage", finalSelectedLanguage);
@@ -125,10 +125,10 @@ export const setLanguage = (selectedLanguage) => __awaiter(void 0, void 0, void 
 export const loadText = () => __awaiter(void 0, void 0, void 0, function* () {
     try {
         // counterPage += 1;
-        const abailablePages = yield loadAbailablesFiles();
+        const availablePages = yield loadAvailablesFiles();
         const fileName = yield getCurrentFileName();
         const finalSelectedLanguage = yield getFinalLanguage();
-        const selectedPage = abailablePages.includes(fileName) ? fileName : "home";
+        const selectedPage = availablePages.includes(fileName) ? fileName : "home";
         const dictionary = yield loadDictionary(finalSelectedLanguage, selectedPage);
         const textsToChange = document.querySelectorAll("[value-text]");
         textsToChange.forEach((element) => {
@@ -139,7 +139,7 @@ export const loadText = () => __awaiter(void 0, void 0, void 0, function* () {
         });
     }
     catch (error) {
-        console.error("Error loading the text", error);
+        console.error("Error loading text", error);
     }
 });
 export const loadTextComponent = (component) => __awaiter(void 0, void 0, void 0, function* () {

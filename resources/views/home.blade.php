@@ -7,9 +7,9 @@
     {{-- @include('components.header') --}}
 
     <main class="home">
-        <!-- Services Section -->
-        <section id="solutions" class="solutions">
-            {{-- <article class="solutions__row--title"> --}}
+
+        <section id="solutions" class="row solutions">
+
             <article class="box">
                 <h2 class="box__title" value-text="homeSoluciones"></h2>
                 <p>
@@ -31,9 +31,6 @@
                     <span class="box__content" value-text="homeIntro7"></span>
                 </p>
             </article>
-        </section>
-        <section id="circles" class="circles">
-            {{-- </article> --}}
             <article class="box">
                 {{-- <div class="solutions__row--content"> --}}
                 <div class="circle">
@@ -65,20 +62,23 @@
         </section>
 
         <!-- About Section -->
-        <section id="about" class="about">
-            <div class="about__row">
-                <div class="box">
-                    <h2 class="box__title" value-text="aboutHeading"></h2>
-                    <h4 class="box__content" value-text="aboutText"></h4>
+        <section id="about" class="row about">
+            <article class="box">
+                <h2 class="box__title" value-text="aboutHeading"></h2>
+                <p>
+                    <span class="box__content" value-text="aboutText"></span>
                     <a href="{{ route('biit', ['language' => $language]) }}" class="box__button"
                         value-text="aboutButton"></a>
-                </div>
-            </div>
-            <div class="aside__box">
-                <a href="{{ route('biit', ['language' => $language]) }}">
-                    <img src="{{ asset('img/logos/banner.jpg') }}" alt="banner">
-                </a>
-            </div>
+                </p>
+            </article>
+
+            <article class="box">
+                <p>
+                    <a href="{{ route('biit', ['language' => $language]) }}">
+                        <img src="{{ asset('img/logos/banner.jpg') }}" alt="banner">
+                    </a>
+                </p>
+            </article>
         </section>
 
         <!-- Sitemap & Contact Section -->
