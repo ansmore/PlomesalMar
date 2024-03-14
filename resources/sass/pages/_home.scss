@@ -55,6 +55,19 @@
         }
       }
 
+      &__map {
+        @include paddingMargin($padding);
+        @include boxSize(width, null, 80vw);
+        @include boxSize(height, null, 420px);
+        // width: 80vw;
+        // height: 420px;
+      }
+
+      &__button {
+        @include button($secondary_main, $neutral_lighter);
+        @include hover($secondary_light, $neutral_lighter, $neutral_dark);
+      }
+
       .circle {
         @include flexBox(column, flex-start, center);
         @include paddingMargin($padding, $margin);
@@ -84,6 +97,7 @@
             @include boxSize(width, null, null, 50px);
             @include boxSize(height, null, null, 50px);
           }
+
         }
 
         &__content {
@@ -147,34 +161,40 @@
   }
 
   .contact {
-    @include flexBox(column, space-around, center);
+    // @extend .section;
+
+    // @include flexBox(column, space-around, center);
     @include paddingMargin($padding, 0);
     @include style($primary_main);
-    @include boxSize(width, 95vw, null, 95vw);
+
+    // @include boxSize(width, 95vw, null, 95vw);
     // min-width: 95vw;
     // max-width: 95vw;
 
-    &__row {
-      @include flexBox(column, space-around, center);
-      @include paddingMargin(0 15px);
-      @include style($primary_main);
-      @include boxSize(width, 80vw);
-      // min-width: 80vw;
-      text-align: center;
-    }
+    // &__row {
+    //   @include flexBox(column, space-around, center);
+    //   @include paddingMargin(0 15px);
+    //   @include style($primary_main);
+    //   @include boxSize(width, 80vw);
+    //   // min-width: 80vw;
+    //   text-align: center;
+    // }
 
     .box {
-      @include flexBox(column, flex-start);
-      @include paddingMargin($padding, 0);
+      @extend .box;
+
+      // @include flexBox(column, flex-start);
+      // @include paddingMargin($padding, 0);
       @include style($primary_main);
-      @include boxSize(width, 80vw, null, 80vw);
+      // @include boxSize(width, 80vw, null, 80vw);
       // min-width: 80vw;
       // max-width: 80vw;
 
-      overflow: hidden;
+      // overflow: hidden;
 
       &__title {
-        @include flexBox(column, space-around, center);
+        @extend .title;
+        // @include flexBox(column, space-around, center);
         @include paddingMargin($padding, 0 15px);
         @include style($primary_main);
         @include boxSize(width, 75vw);
@@ -183,7 +203,7 @@
         // min-height: 4rem;
         font-size: 20px;
 
-        overflow: hidden;
+        // overflow: hidden;
         word-wrap: break-word;
         overflow-wrap: break-word;
       }
@@ -191,6 +211,7 @@
       &__content {
         @include paddingMargin($padding, $margin);
         @include style($primary_main);
+        @include boxSize(width, 75vw);
         overflow: hidden;
         word-wrap: break-word;
         overflow-wrap: break-word;
