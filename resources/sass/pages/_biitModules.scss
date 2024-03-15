@@ -16,7 +16,7 @@
 
     // articles
     .box {
-      @extend .box;
+      @extend .article;
 
       &__title {
         @extend .title;
@@ -54,6 +54,10 @@
       &__button {
         @extend .button;
 
+      }
+
+      &__banner {
+        @include boxSize(width, 95vw, null, 95vw);
       }
     }
   }

@@ -2,7 +2,7 @@ type Dictionary = {
   [clave: string]: string;
 };
 
-// Pending import from globals
+// Here-> Pending import from globals
 const defaultLanguage = "es";
 import { navbar } from "../components/navigation.js";
 import { footer } from "../components/footer.js";

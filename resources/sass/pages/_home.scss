@@ -12,7 +12,7 @@
     @extend .section;
 
     .box {
-      @extend .box;
+      @extend .article;
 
       &__title {
         @extend .title;
@@ -74,7 +74,7 @@
 
       }
 
-      // Pending 
+      // Here-> Pending to upgrade
       .circle {
         @include flexBox(column, flex-start, center);
         @include paddingMargin($padding, $margin);

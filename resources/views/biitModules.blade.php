@@ -38,7 +38,7 @@
                 <p>
                     <span value-text="management7" class="box__content"></span>
                 </p>
-                {{-- Pending update class to photo gallery --}}
+                {{-- Here-> Pending update class to photo gallery --}}
                 <figure>
                     <img src="{{ asset('./img/biit/gestion.png') }}" class="box__image" alt="banner">
                 </figure>

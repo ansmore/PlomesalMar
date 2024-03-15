@@ -7,7 +7,7 @@
   border: 1px solid blueviolet;
 }
 
-.box {
+.article {
   @include flexBox(column, flex-start, center);
   @include paddingMargin($padding, $margin);
   @include boxSize(width, 80vw, null, 80vw);

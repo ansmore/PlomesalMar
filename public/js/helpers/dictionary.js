@@ -7,7 +7,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-// Pending import from globals
+// Here-> Pending import from globals
 const defaultLanguage = "es";
 import { navbar } from "../components/navigation.js";
 import { footer } from "../components/footer.js";

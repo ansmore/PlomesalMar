@@ -1,7 +1,8 @@
 <footer class="footer">
     <section class="row">
         <article class="box">
-            <picture>
+            {{-- Here-> Add logo Biit --}}
+            <picture class="box__logo">
                 <img class="img-responsive" src="{{ asset('../img/logos/pymesoft_logo_text.png') }}" alt="Pymesoft"
                     id="pymesoft" />
             </picture>
@@ -14,27 +15,26 @@
     </section>
     <section class="row">
         <article class="box">
-            <ul class="icon">
-                <li class="icon__item">
-                    <a class="icon__item__link" href="https://twitter.com/PymesoftValles">
+            <ul class="box__icon">
+                <li class="box__icon__item">
+                    <a class="box__icon__item__link" href="https://twitter.com/PymesoftValles">
                         <i class="fa-brands fa-x-twitter">
                         </i>
                     </a>
                 </li>
-                <li class="icon__item">
-                    <a class="icon__item__link" href="https://www.facebook.com/Pymesoft-Valles-sl-205440757738">
+                <li class="box__icon__item">
+                    <a class="box__icon__item__link" href="https://www.facebook.com/Pymesoft-Valles-sl-205440757738">
                         <i class="fab fa-facebook"></i>
                     </a>
                 </li>
-                <li class="icon__item">
-                    <a class="icon__item__link" href="https://es.linkedin.com/company/pymesoft-vall-s">
+                <li class="box__icon__item">
+                    <a class="box__icon__item__link" href="https://es.linkedin.com/company/pymesoft-vall-s">
                         <i class="fab fa-linkedin"></i>
                     </a>
                 </li>
             </ul>
         </article>
         <article class="box__row">
-
             <span class="box__content">
                 <a class="list__item__link" href="{{ route('privacyPolicy', ['language' => $language]) }}"
                     data-toggle="modal" data-target="#politica" value-text="footerPolitica"></a>

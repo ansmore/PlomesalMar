@@ -6,26 +6,26 @@
 
 
   .row {
-    // @include flexBox(column, center, center);
-    // @include paddingMargin($padding);
+    @extend .section;
+
 
     .box {
-      @extend .box;
+      @extend .article;
 
-      // @include paddingMargin($padding, $margin);
-      // @include boxSize(width, null, null, 90vw);
-      // @include style;
 
       text-align: center;
 
+      &__logo {
+        @include boxSize(width, 50vw, null, 50vw);
+      }
+
       &__row {
-        @extend .box;
+        @extend .article;
         @include flexBox(row, center, center);
       }
 
-      .icon {
-        // @include flexBox(row);
-        // cursor: pointer;
+      // Here-> Pending style with extend
+      &__icon {
 
         &__item {
           @include paddingMargin($padding);
@@ -67,48 +67,48 @@
 }
 
 @media screen and (min-width: 376px) and (max-width: 600px) {
-  .footer {
-    .row {
-      @include flexBox(column, space-around, center);
+  // .footer {
+  //   .row {
+  //     @include flexBox(column, space-around, center);
 
-      .box {
-        .list {
-          @include flexBox(row);
-        }
-      }
-    }
-  }
+  //     .box {
+  //       .list {
+  //         @include flexBox(row);
+  //       }
+  //     }
+  //   }
+  // }
 }
 
 @media screen and (min-width: 601px) and (max-width: 1024px) {
-  .footer {
-    .row {
-      @include flexBox(column, space-around, center);
+  // .footer {
+  //   .row {
+  //     @include flexBox(column, space-around, center);
 
-      .box {
-        .list {
-          @include flexBox(row);
-        }
-      }
-    }
-  }
+  //     .box {
+  //       .list {
+  //         @include flexBox(row);
+  //       }
+  //     }
+  //   }
+  // }
 }
 
 @media screen and (min-width: 1025px) {
-  .footer {
-    @include flexBox(row, space-around, flex-end);
-    min-height: 255px;
+  // .footer {
+  //   @include flexBox(row, space-around, flex-end);
+  //   min-height: 255px;
 
-    .row {
-      @include flexBox(column, space-around, center);
+  //   .row {
+  //     @include flexBox(column, space-around, center);
 
-      .box {
-        @include paddingMargin($padding);
+  //     .box {
+  //       @include paddingMargin($padding);
 
-        .list {
-          @include flexBox(row, space-around, flex-end);
-        }
-      }
-    }
-  }
+  //       .list {
+  //         @include flexBox(row, space-around, flex-end);
+  //       }
+  //     }
+  //   }
+  // }
 }
