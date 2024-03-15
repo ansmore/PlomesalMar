@@ -24,10 +24,10 @@
 
       &__subtitle {
         @extend .subtitle;
-      }
 
-      &__secondary {
-        @extend .secondary;
+        &__secondary {
+          @extend .secondary;
+        }
       }
 
       &__content {

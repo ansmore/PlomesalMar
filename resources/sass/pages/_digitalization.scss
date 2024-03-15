@@ -24,13 +24,13 @@
       min-height: 8rem;
 
       &--title {
-        @extend .solutions__row;
+        // @extend .solutions__row;
         // @include flexBox(column, space-around, center);
         @include style(inherit);
       }
 
       &--content {
-        @extend .solutions__row;
+        // @extend .solutions__row;
         @include flexBox(column, flex-start);
         @include style;
         // @include paddingMargin(0 15px);
@@ -85,12 +85,8 @@
           }
         }
 
-        &--title {
-          @extend .box;
-        }
 
         &--content {
-          @extend .box;
 
           @include style($primary_main, $neutral_main);
           @include boxShadow;

@@ -10,13 +10,11 @@
     "prod": "npm run production",
     "production": "mix --production",
     "start": "npm run watch:auto",
-    "watch:auto": "concurrently \"npm run watch:ts\" \"npm run watch:sass\"",
     "ts-w": "tsc --watch",
     "sass-w": "sass --watch resources/sass/main.scss public/css/app.css"
   },
   "devDependencies": {
     "axios": "^1.6",
-    "concurrently": "^8.2.2",
     "eslint": "^8.52.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier": "^5.0.1",

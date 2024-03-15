@@ -1,7 +1,7 @@
-<section>
-    <div class="container">
-        <div>
+<section class="row">
+    <article class="box">
+        <figure>
             <img src="{{ asset('./img/kit-digital.png') }}" class="box__image" alt="banner">
-        </div>
-    </div>
+        </figure>
+    </article>
 </section>

@@ -5,29 +5,27 @@
   @include style($neutral_lighter, $primary_main);
 
 
-  .logo {
-    @include flexBox(column, center, center);
-    @include paddingMargin($padding);
+  .row {
+    // @include flexBox(column, center, center);
+    // @include paddingMargin($padding);
 
-    &__image {
-      @include flexBox(column, center, center);
-      @include paddingMargin;
-      @include boxSize(width, null, null, 90vw);
-    }
+    .box {
+      @extend .box;
 
-    &__row {
-      @include flexBox(column);
-      @include paddingMargin($padding, $margin);
-      @include style;
+      // @include paddingMargin($padding, $margin);
+      // @include boxSize(width, null, null, 90vw);
+      // @include style;
+
       text-align: center;
-    }
-  }
 
-  .contact {
-    .social {
-      .list {
-        @include flexBox(row);
-        cursor: pointer;
+      &__row {
+        @extend .box;
+        @include flexBox(row, center, center);
+      }
+
+      .icon {
+        // @include flexBox(row);
+        // cursor: pointer;
 
         &__item {
           @include paddingMargin($padding);
@@ -48,34 +46,32 @@
           }
         }
       }
-    }
 
-    .policy {
-      .list {
-        @include flexBox(column);
-        cursor: pointer;
+      // .list {
+      //   @include flexBox(column);
+      //   cursor: pointer;
 
-        &__item {
-          // @include paddingMargin($padding);
-          list-style: none;
-          display: inline-flex;
+      //   &__item {
+      //     // @include paddingMargin($padding);
+      //     list-style: none;
+      //     display: inline-flex;
 
-          &__link {
-            @include paddingMargin($padding);
-            @include boxSize(height, 50px);
-          }
-        }
-      }
+      //     &__link {
+      //       @include paddingMargin($padding);
+      //       @include boxSize(height, 50px);
+      //     }
+      //   }
+      // }
     }
   }
 }
 
 @media screen and (min-width: 376px) and (max-width: 600px) {
   .footer {
-    .contact {
+    .row {
       @include flexBox(column, space-around, center);
 
-      .policy {
+      .box {
         .list {
           @include flexBox(row);
         }
@@ -86,10 +82,10 @@
 
 @media screen and (min-width: 601px) and (max-width: 1024px) {
   .footer {
-    .contact {
+    .row {
       @include flexBox(column, space-around, center);
 
-      .policy {
+      .box {
         .list {
           @include flexBox(row);
         }
@@ -103,10 +99,10 @@
     @include flexBox(row, space-around, flex-end);
     min-height: 255px;
 
-    .contact {
+    .row {
       @include flexBox(column, space-around, center);
 
-      .policy {
+      .box {
         @include paddingMargin($padding);
 
         .list {
