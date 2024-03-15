@@ -6,12 +6,13 @@
     @include('components.navigationBiit')
 
     <main class="biitModules">
-
         <!-- Biit Modulos Section -->
-        <section id="management" class="biitModules__row">
+        <section id="management" class="row">
             <article class="box">
-                <h3 value-text="managementHeading" class="box__subtitle"></h3>
-                <span value-text="managementSubheading" class="box__content"></span>
+                <h2 value-text="managementHeading" class="box__subtitle"></h2>
+                <p>
+                    <span value-text="managementSubheading" class="box__content"></span>
+                </p>
                 <p value-text="managementSubheadingSecondary" class="box__subtitle__secondary">
                 </p>
                 <ul>
@@ -32,47 +33,57 @@
                     </li>
                 </ul>
                 <p>
-
-                <p value-text="management6" class="box__content"></p>
-                <p value-text="management7" class="box__content"></p>
+                    <span value-text="management6" class="box__content"></span>
                 </p>
-                <figure class="box">
+                <p>
+                    <span value-text="management7" class="box__content"></span>
+                </p>
+                {{-- Pending update class to photo gallery --}}
+                <figure>
                     <img src="{{ asset('./img/biit/gestion.png') }}" class="box__image" alt="banner">
                 </figure>
             </article>
         </section>
-        <section id="trade" class="biitModules__row">
+        <section id="trade" class="row">
             <article class="box">
-                <h3 value-text="comercioHeading" class="box__subtitle"></h3>
-                <p value-text="comercioSubheading" class="box__content"></p>
-                <figure class="box">
+                <h2 value-text="comercioHeading" class="box__subtitle"></h2>
+                <p>
+                    <span value-text="comercioSubheading" class="box__content"></span>
+                </p>
+                <figure>
                     <img src="{{ asset('img/biit/ecommerce.png') }}" class="box__image" alt="banner">
                 </figure>
             </article>
         </section>
-        <section id="process" class="biitModules__row">
+        <section id="process" class="row">
             <article class="box">
-                <h3 value-text="procesosHeading" class="box__subtitle"></h3>
-                <p value-text="procesosSubheading" class="box__content"></p>
-                <figure class="box">
+                <h2 value-text="procesosHeading" class="box__subtitle"></h2>
+                <p>
+                    <span value-text="procesosSubheading" class="box__content"></span>
+                </p>
+                <figure>
                     <img src="{{ asset('img/biit/procesos.png') }}" class="box__image" alt="banner">
                 </figure>
             </article>
         </section>
-        <section id="bill" class="biitModules__row">
+        <section id="bill" class="row">
             <article class="box">
-                <h3 value-text="facturaHeading" class="box__subtitle"></h3>
-                <p value-text="facturaSubheading" class="box__content"></p>
-                <figure class="box">
+                <h2 value-text="facturaHeading" class="box__subtitle"></h2>
+                <p>
+                    <span value-text="facturaSubheading" class="box__content"></span>
+                </p>
+                <figure>
                     <img src="{{ asset('img/biit/facturacion.png') }}" class="box__image" alt="banner">
                 </figure>
             </article>
         </section>
-        <section id="business" class="biitModules__row">
+        <section id="business" class="row">
             <article class="box">
-                <h3 value-text="businessHeading" class="box__subtitle"></h3>
-                <p value-text="businessSubheading" class="box__content"></p>
-                <figure class="box">
+                <h2 value-text="businessHeading" class="box__subtitle"></h2>
+                <p>
+                    <span value-text="businessSubheading" class="box__content"></span>
+                </p>
+                <figure>
                     <img src="{{ asset('img/biit/gestion.png') }}" class="box__image" alt="banner">
                 </figure>
             </article>

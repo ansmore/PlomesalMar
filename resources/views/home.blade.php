@@ -7,28 +7,26 @@
     {{-- @include('components.header') --}}
 
     <main class="home">
-
-        <section id="solutions" class="row solutions">
-
+        <section id="solutions" class="row">
             <article class="box">
                 <h2 class="box__title" value-text="homeSoluciones"></h2>
                 <p>
-                    <span class="box__content" value-text="homeIntro"></span>
-                    <span class="box__name" value-text="pymesoft"></span>
-                    <span class="box__content" value-text="homeIntro2"></span>
+                    <span class="box__content--reverse" value-text="homeIntro"></span>
+                    <span class="box__name--reverse" value-text="pymesoft"></span>
+                    <span class="box__content--reverse" value-text="homeIntro2"></span>
                 </p>
                 <p>
-                    <span class="box__content" value-text="homeIntro3"></span>
-                    <span class="box__name" value-text="pymesoft"></span>
-                    <span class="box__content" value-text="homeIntro4"></span>
+                    <span class="box__content--reverse" value-text="homeIntro3"></span>
+                    <span class="box__name--reverse" value-text="pymesoft"></span>
+                    <span class="box__content--reverse" value-text="homeIntro4"></span>
                 </p>
                 <p>
-                    <span class="box__content" value-text="homeIntro5"></span>
+                    <span class="box__content--reverse" value-text="homeIntro5"></span>
                 </p>
                 <p>
-                    <span class="box__content" value-text="homeIntro6"></span>
-                    <span class="box__name" value-text="pymesoft"></span>
-                    <span class="box__content" value-text="homeIntro7"></span>
+                    <span class="box__content--reverse" value-text="homeIntro6"></span>
+                    <span class="box__name--reverse" value-text="pymesoft"></span>
+                    <span class="box__content--reverse" value-text="homeIntro7"></span>
                 </p>
             </article>
             <article class="box">
@@ -57,7 +55,7 @@
         </section>
 
         <!-- About Section -->
-        <section id="about" class="about">
+        <section id="about" class="row__reverse">
             <article class="box">
                 <h2 class="box__title" value-text="aboutHeading"></h2>
                 <p>
@@ -81,11 +79,12 @@
                 <h2 class="box__title" value-text="sitemapHeading"></h2>
                 <span class="box__content">
                     <i class="fa fa-map-marker"></i>
-                    <p value-text="sitemapAddress"></p>
                 </span>
+                <p class="box__content" value-text="sitemapAddress"></p>
+
             </article>
 
-            <article class="contact__row" id="overlay"> <!-- Obtener clave API -->
+            <article class="box" id="overlay"> <!-- Obtener clave API -->
                 <iframe class="box__map"
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2984.8365965213275!2d2.079309315088584!3d41.572780979247604!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a494c6bf0218b9%3A0xfb5a922369909333!2sPymesoft+Vall%C3%A9s+S.L.!5e0!3m2!1ses!2ses!4v1515689921450"
                     frameborder="0" style="border:0" allowfullscreen></iframe>

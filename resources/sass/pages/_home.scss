@@ -1,8 +1,8 @@
 // Estyle home page
 
 .home {
-  @include flexBox(column, space-around);
-  @include paddingMargin($padding);
+  @include flexBox(column, space-around, center);
+  // @include paddingMargin($padding);
   @include style($primary_main, $neutral_light);
   font-size: $size_small;
   margin-top: $nav-height;
@@ -10,8 +10,6 @@
 
   .row {
     @extend .section;
-
-    @include paddingMargin($padding, 0);
 
     .box {
       @extend .box;
@@ -23,15 +21,23 @@
       &__content {
         @extend .content;
 
-        // reverse colors
-        @include style($secondary_main);
+        &--reverse {
+
+          // reverse colors
+          @include style($secondary_main);
+        }
+
       }
 
       &__name {
         @extend .name;
 
-        // reverse colors
-        @include style($primary_main);
+        &--reverse {
+
+          // reverse colors
+          @include style($primary_main);
+        }
+
       }
 
       &__image {
@@ -56,7 +62,7 @@
       }
 
       &__map {
-        @include paddingMargin($padding);
+
         @include boxSize(width, null, 80vw);
         @include boxSize(height, null, 420px);
         // width: 80vw;
@@ -64,10 +70,11 @@
       }
 
       &__button {
-        @include button($secondary_main, $neutral_lighter);
-        @include hover($secondary_light, $neutral_lighter, $neutral_dark);
+        @extend .button;
+
       }
 
+      // Pending 
       .circle {
         @include flexBox(column, flex-start, center);
         @include paddingMargin($padding, $margin);
@@ -101,6 +108,7 @@
         }
 
         &__content {
+
           @include flexBox(column, space-around, center);
           @include paddingMargin($padding, $margin);
           @include style($neutral_lighter);
@@ -115,25 +123,20 @@
 
         @include hover($secondary_main, inherit, $neutral_darker, $neutral_dark);
       }
-
-      // }
     }
   }
 
-  .about {
-    @extend .section;
+  .row__reverse {
+    @extend .row;
 
     @include boxSize(width, 100vw);
-    @include boxSize(height, 50vh);
 
-
-    @include style($primary_main, $primary_main);
+    // Reverse color
+    @include style($neutral_lighter, $primary_main);
 
     .box {
-      @extend .box;
 
       @include flexBox(column, flex-start, center);
-
 
       &__title {
         @extend .title;
@@ -160,122 +163,36 @@
     }
   }
 
-  .contact {
-    // @extend .section;
 
-    // @include flexBox(column, space-around, center);
-    @include paddingMargin($padding, 0);
-    @include style($primary_main);
 
-    // @include boxSize(width, 95vw, null, 95vw);
-    // min-width: 95vw;
-    // max-width: 95vw;
-
-    // &__row {
-    //   @include flexBox(column, space-around, center);
-    //   @include paddingMargin(0 15px);
-    //   @include style($primary_main);
-    //   @include boxSize(width, 80vw);
-    //   // min-width: 80vw;
-    //   text-align: center;
-    // }
-
-    .box {
-      @extend .box;
-
-      // @include flexBox(column, flex-start);
-      // @include paddingMargin($padding, 0);
-      @include style($primary_main);
-      // @include boxSize(width, 80vw, null, 80vw);
-      // min-width: 80vw;
-      // max-width: 80vw;
-
-      // overflow: hidden;
-
-      &__title {
-        @extend .title;
-        // @include flexBox(column, space-around, center);
-        @include paddingMargin($padding, 0 15px);
-        @include style($primary_main);
-        @include boxSize(width, 75vw);
-        @include boxSize(height, 4rem);
-        // min-width: 75vw;
-        // min-height: 4rem;
-        font-size: 20px;
-
-        // overflow: hidden;
-        word-wrap: break-word;
-        overflow-wrap: break-word;
-      }
-
-      &__content {
-        @include paddingMargin($padding, $margin);
-        @include style($primary_main);
-        @include boxSize(width, 75vw);
-        overflow: hidden;
-        word-wrap: break-word;
-        overflow-wrap: break-word;
-
-        &--title {
-          @include flexBox(column, space-around, center);
-          @include paddingMargin($padding, 0 15px);
-          @include style($secondary_main);
-          font-size: 16px;
-          text-transform: none;
-          font-style: italic;
-          font-weight: 400;
-        }
-      }
-
-      &__button {
-        @include button($secondary_main, $neutral_lighter);
-        @include hover($secondary_light, $neutral_lighter, $neutral_dark);
-      }
-
-      &__map {
-        @include paddingMargin($padding);
-        @include boxSize(width, null, 80vw);
-        @include boxSize(height, null, 420px);
-        // width: 80vw;
-        // height: 420px;
-      }
-    }
-  }
 }
 
 @media screen and (min-width: 376px) and (max-width: 600px) {}
 
-@media screen and (min-width: 601px) and (max-width: 1024px) {
-  .home {
-    .contact {
-      .box {
-        @include flexBox(row, center, center);
-
-        &--title {
-          @include flexBox(column, flex-start, center);
-        }
-
-        &--map {
-          @include boxSize(width, null, 85vw);
-          @include boxSize(height, null, 600px);
-          // width: 85vw;
-          // height: 600px;
-        }
-      }
-    }
-  }
-}
+@media screen and (min-width: 601px) and (max-width: 1024px) {}
 
 @media screen and (min-width: 1025px) {
   .home {
-    .solutions {
+    .row {
       .box {
         &__title {
           font-size: 2.1em;
         }
-      }
 
-      // }
+        &__button {
+          @include paddingMargin(calc($padding * 4), calc($margin * 2));
+        }
+
+      }
+    }
+
+    .row__reverse {
+      .box {
+
+        &__button {
+          @include paddingMargin(calc($padding * 4), calc($margin * 2));
+        }
+      }
     }
 
     .circles {
@@ -284,48 +201,6 @@
       }
     }
 
-    .aside {
-      &__box {
-        @include boxSize(width, 80vw, null, 80vw);
-        // min-width: 80vw;
-        // max-width: 80vw;
-      }
-    }
 
-    .about {
-      .box {
-        &__title {
-          padding-top: 3rem;
-          font-size: 40px;
-        }
-
-        &__columns {
-          @include flexBox(row, flex-start, flex-start);
-
-          &__col {
-            @include flexBox(row, flex-start, center);
-
-            &__item {
-
-              @include boxSize(height, 460px, null, 470px);
-              @include boxSize(width, 20vw, null, 20vw);
-            }
-          }
-        }
-      }
-    }
-
-    .contact {
-      .box {
-        @include flexBox(row, center, center);
-
-        &--map {
-          @include boxSize(width, null, 85vw);
-          @include boxSize(height, null, 700px);
-          // width: 85vw;
-          // height: 700px;
-        }
-      }
-    }
   }
 }

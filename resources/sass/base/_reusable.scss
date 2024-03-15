@@ -1,17 +1,20 @@
 .section {
   @include flexBox(column, space-around, center);
   @include boxSize(width, 95vw, null, 95vw);
+  @include paddingMargin($padding, $margin);
 
   // temporal developer
   border: 1px solid blueviolet;
 }
 
 .box {
-  @include flexBox(column, flex-start, flex-start);
+  @include flexBox(column, flex-start, center);
   @include paddingMargin($padding, $margin);
   @include boxSize(width, 80vw, null, 80vw);
   gap: $gap;
-
+  hyphens: auto;
+  font-size: 0.9em;
+  line-height: 1.5;
 
   overflow: hidden;
 
@@ -23,10 +26,11 @@
   @include style($primary_main);
   line-height: 2;
   font-size: 2em;
-  // font-size: 24px;
+
   font-weight: bold;
-  // align-items: flex-end;
+
   align-self: center;
+  text-align: center;
 }
 
 .subtitle {
@@ -54,6 +58,8 @@
 
 .content {
   @include style($primary_main);
+  align-self: center;
+  text-align: center;
   hyphens: auto;
 }
 
@@ -79,5 +85,5 @@
   @include button($secondary_main, $neutral_lighter);
   @include hover($secondary_light, $neutral_lighter, $neutral_lighter);
   @include boxSize(width, 20vw, null, 20vw);
-  @include paddingMargin($padding, $margin);
+  @include paddingMargin(calc($padding * 3), calc($margin * 2));
 }

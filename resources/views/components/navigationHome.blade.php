@@ -1,10 +1,7 @@
 <?php
-// $language = 'kl';
-// Session::put('language', $language);
-$language = Session::get('language', 'it');
-var_dump('Navigation After get->', $language);
-// // var_dump('Navigation Before put->', $language, "\n");
-// var_dump('Navigation After put->', $language, "\n");
+
+$language = Session::get('language', 'ca');
+
 ?>
 <nav class="nav">
     <div class="toggle">
