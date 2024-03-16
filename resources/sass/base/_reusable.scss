@@ -4,16 +4,16 @@
   @include paddingMargin($padding, $margin);
 
   // temporal developer
-  border: 1px solid blueviolet;
+  // border: 1px solid blueviolet;
 }
 
 .article {
   @include mainBox(column, flex-start, center);
   @include paddingMargin($padding, $margin);
-  @include boxSize(width, 80vw, null, 80vw);
+  @include boxSize(width, 85vw, null, 85vw);
   gap: $gap;
   hyphens: auto;
-  font-size: 0.9em;
+  font-size: $size_smaller;
   line-height: 1.5;
   text-align: center;
 
@@ -24,13 +24,13 @@
   overflow: hidden;
 
   // developer-mode
-  border: 0.5px solid darkgreen;
+  // border: 1px solid darkgreen;
 }
 
 .title {
   @include style($primary_main);
   line-height: 2;
-  font-size: 2em;
+  font-size: $size_bigger;
   font-weight: bold;
 
   align-self: center;
@@ -40,7 +40,7 @@
 .subtitle {
   @include style($secondary_main);
   line-height: 1.5;
-  font-size: 1.5em;
+  font-size: $size_big;
   font-weight: bold;
 
 }
@@ -49,7 +49,7 @@
   @include style($secondary_main);
   margin-top: calc($margin * 2);
   line-height: 1.2;
-  font-size: 1.2em;
+  font-size: $size_medium;
   font-weight: lighter;
   align-self: flex-start;
 }
@@ -91,6 +91,30 @@
 .button {
   @include button($secondary_main, $neutral_lighter);
   @include hover($secondary_light, $neutral_lighter, $neutral_lighter);
-  @include boxSize(width, 20vw, null, 20vw);
   @include paddingMargin(calc($padding * 3), calc($margin * 2));
+  // Here-> Deleted in home/box--reverse
+  // @include boxSize(width, 20vw, null, 20vw);
+}
+
+.circle {
+  @include mainBox(column, flex-start, center);
+  @include paddingMargin($padding, $margin);
+  @include circleStyle($neutral_main, 50%);
+  @include boxSize(width, 80vw, null, 80vw);
+  @include boxSize(height, 80vw);
+  @include hover($secondary_main, inherit, $neutral_darker, $neutral_dark);
+
+  &__content {
+    @include mainBox(column, space-around, center);
+    @include paddingMargin($padding, $margin);
+    @include boxSize(width, null, null, 15rem);
+    @include circleStyle(transparent, 25%, transparent);
+
+    font-size: $size_smaller;
+    font-style: italic;
+  }
+
+  &__title {
+    font-size: $size_big
+  }
 }

@@ -1,7 +1,6 @@
 // Footer style
 .footer {
   @include mainBox(column, center, center);
-  @include paddingMargin(0 0 0 0);
   @include style($neutral_lighter, $primary_main);
 
 
@@ -39,7 +38,7 @@
             @include paddingMargin($padding, 0 $margin);
             @include boxSize(width, 50px);
             @include boxSize(height, 50px);
-            border: 1px solid transparent;
+            // border: 1px solid transparent;
             text-decoration: none;
             text-align: center;
 

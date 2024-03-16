@@ -81,19 +81,19 @@
         @include boxSize(width, 70vw, null, 70vw);
         gap: $gap;
         hyphens: auto;
-        font-size: 0.9em;
+        font-size: $size_smaller;
 
         &__title {
           @include style($primary_main);
           line-height: 2;
-          font-size: 2em;
+          font-size: $size_bigger;
           font-weight: bold;
         }
 
         &__subtitle {
           @include style($secondary_main);
           line-height: 1.5;
-          font-size: 1.5em;
+          font-size: $size_big;
           font-weight: bold;
 
           &__secondary {

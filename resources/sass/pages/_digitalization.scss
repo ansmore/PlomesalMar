@@ -48,7 +48,7 @@
         @include boxSize(width, 70vw, null, 70vw);
         gap: $gap;
         hyphens: auto;
-        font-size: 0.9em;
+        font-size: $size_smaller;
 
         // min-width No!
         // flex: 5;
