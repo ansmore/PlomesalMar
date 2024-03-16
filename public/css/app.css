@@ -265,6 +265,7 @@ button {
 .unorderedList li, .biitModules .row .box ul li {
   list-style-type: disc;
   line-height: 1.5;
+  text-align: left;
 }
 
 .button, .biitModules .row .box__button, .home .row--reverse .box__button, .home .row .box__button {
@@ -737,7 +738,7 @@ header .intro-text .intro-heading {
 }
 .footer .row .box__image {
   min-width: 50vw;
-  max-width: 70vw;
+  max-width: 50vw;
 }
 .footer .row .box .icon {
   display: flex;

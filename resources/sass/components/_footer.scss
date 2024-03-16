@@ -20,7 +20,7 @@
       &__image {
         @extend .image;
 
-        @include boxSize(width, 50vw, null, 70vw);
+        @include boxSize(width, 50vw, null, 50vw);
       }
 
       .icon {
