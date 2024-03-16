@@ -1,6 +1,6 @@
 //  Estilos página Biit
 .main {
-  @include flexBox(column, space-around);
+  @include mainBox(column, space-around);
   @include paddingMargin($padding);
   @include style($primary_main, $neutral_light);
   font-size: $size_small;
@@ -8,42 +8,43 @@
   gap: $gap;
 
   .header {
-    @include flexBox(column, space-around, center);
+    @include mainBox(column, space-around, center);
     @include paddingMargin($padding, 0);
     @include style($primary_main);
     @include boxSize(width, 95vw, null, 95vw);
+
     &__row {
-      @include flexBox(column, space-around, center);
+      @include mainBox(column, space-around, center);
       @include paddingMargin(0 15px);
       @include style($primary_main);
       text-align: center;
 
       @include boxSize(width, 90vw, null, 90vw);
     }
+
     .box {
-      @include flexBox(column, flex-start, center);
+      @include mainBox(column, flex-start, center);
       @include paddingMargin($padding, $margin);
       @include style($primary_main);
       @include boxSize(width, 80vw, null, 80vw);
       gap: $gap;
 
       &__image {
-        @include flexBox(column);
+        @include mainBox(column);
         @include paddingMargin($padding, $margin);
         @include style(null, $neutral_lighter);
-        @include boxShadow(
-          $neutral_lighter,
+        @include boxShadow($neutral_lighter,
           50%,
           3px,
           $secondary_main,
-          $secondary_light
-        );
+          $secondary_light );
         @include boxSize(width, 250px, null, 300px);
         @include boxSize(height, 250px, null, 300px);
 
         overflow: hidden;
+
         img {
-          @include flexBox(column, center, center);
+          @include mainBox(column, center, center);
           @include paddingMargin($padding);
           padding-top: 4rem;
           @include boxSize(width, 150px, null, 200px);
@@ -52,7 +53,7 @@
       }
 
       &__title {
-        @include flexBox(column, space-around, center);
+        @include mainBox(column, space-around, center);
         @include paddingMargin($padding, 0 15px);
         @include style($primary_main);
         @include boxSize(height, 4rem);
@@ -66,7 +67,7 @@
         @include style($secondary_main);
 
         &--title {
-          @include flexBox(column, space-around, center);
+          @include mainBox(column, space-around, center);
           @include paddingMargin($padding, 0 15px);
           @include style($secondary_main);
           font-size: 16px;
@@ -77,7 +78,7 @@
       }
 
       &__button {
-        @include flexBox(column, center, center);
+        @include mainBox(column, center, center);
         @include paddingMargin($padding, $margin);
         @include button($secondary_main, $neutral_lighter);
         @include boxSize(width, 35vw);
@@ -89,11 +90,8 @@
   }
 }
 
-@media screen and (min-width: 376px) and (max-width: 600px) {
-}
+@media screen and (min-width: 376px) and (max-width: 600px) {}
 
-@media screen and (min-width: 601px) and (max-width: 1024px) {
-}
+@media screen and (min-width: 601px) and (max-width: 1024px) {}
 
-@media screen and (min-width: 1025px) {
-}
+@media screen and (min-width: 1025px) {}

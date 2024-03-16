@@ -1,5 +1,5 @@
 .mail {
-  @include flexBox(column, space-around);
+  @include mainBox(column, space-around);
   @include paddingMargin($padding, auto);
   @include style($primary_main, transparent);
   padding-right: 15px;

@@ -1,20 +1,19 @@
 <footer class="footer">
     <section class="row">
         <article class="box">
-            <picture>
-                <img class="img-responsive" src="{{ asset('../img/logos/pymesoft_logo_text.png') }}" alt="Pymesoft"
-                    id="pymesoft" />
+            <picture class="box__image">
+                <img src="{{ asset('../img/logos/pymesoft_logo_text.png') }}" alt="Pymesoft" id="pymesoft" />
             </picture>
         </article>
         <article class="box__row">
-            <span> &copy;</span>
             <span value-text="footerCopyright"></span>
+            <span value-text="footerName"></span>
             <span>{{ date('Y') }}</span>
         </article>
     </section>
     <section class="row">
         <article class="box">
-            <ul class="icon">
+            <ul>
                 <li class="icon__item">
                     <a class="icon__item__link" href="https://twitter.com/PymesoftValles">
                         <i class="fa-brands fa-x-twitter">
@@ -43,7 +42,6 @@
                 <a class="list__item__link" href="{{ route('termsOfUse', ['language' => $language]) }}"
                     data-toggle="modal" data-target="#terminos" value-text="footerUse"></a>
             </span>
-
         </article>
     </section>
 </footer>

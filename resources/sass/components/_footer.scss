@@ -1,31 +1,33 @@
 // Footer style
 .footer {
-  @include flexBox(column, center, center);
-  @include paddingMargin(1rem 0 0 0);
+  @include mainBox(column, center, center);
+  @include paddingMargin(0 0 0 0);
   @include style($neutral_lighter, $primary_main);
 
 
   .row {
-    // @include flexBox(column, center, center);
-    // @include paddingMargin($padding);
+    @extend .section;
 
     .box {
-      @extend .box;
-
-      // @include paddingMargin($padding, $margin);
-      // @include boxSize(width, null, null, 90vw);
-      // @include style;
-
-      text-align: center;
+      @extend .article;
+      @include mainBox(column, center, center);
+      @include boxSize(height, 80px, null, 80px);
 
       &__row {
-        @extend .box;
-        @include flexBox(row, center, center);
+        @extend .article;
+        @include mainBox(column, center, center);
+      }
+
+      &__image {
+        @extend .image;
+
+        @include boxSize(width, 50vw, null, 70vw);
       }
 
       .icon {
-        // @include flexBox(row);
-        // cursor: pointer;
+        @include mainBox(row, space-around, center);
+
+        @include boxSize(width, 70vw, null, 70vw);
 
         &__item {
           @include paddingMargin($padding);
@@ -33,7 +35,7 @@
           display: inline-flex;
 
           &__link {
-            @include flexBox(row, center, center);
+            @include mainBox(row, center, center);
             @include paddingMargin($padding, 0 $margin);
             @include boxSize(width, 50px);
             @include boxSize(height, 50px);
@@ -46,22 +48,6 @@
           }
         }
       }
-
-      // .list {
-      //   @include flexBox(column);
-      //   cursor: pointer;
-
-      //   &__item {
-      //     // @include paddingMargin($padding);
-      //     list-style: none;
-      //     display: inline-flex;
-
-      //     &__link {
-      //       @include paddingMargin($padding);
-      //       @include boxSize(height, 50px);
-      //     }
-      //   }
-      // }
     }
   }
 }
@@ -69,11 +55,11 @@
 @media screen and (min-width: 376px) and (max-width: 600px) {
   .footer {
     .row {
-      @include flexBox(column, space-around, center);
+      @include mainBox(column, space-around, center);
 
       .box {
         .list {
-          @include flexBox(row);
+          @include mainBox(row);
         }
       }
     }
@@ -83,11 +69,9 @@
 @media screen and (min-width: 601px) and (max-width: 1024px) {
   .footer {
     .row {
-      @include flexBox(column, space-around, center);
-
       .box {
-        .list {
-          @include flexBox(row);
+        &__row {
+          @include mainBox(row, space-around, center);
         }
       }
     }
@@ -96,17 +80,17 @@
 
 @media screen and (min-width: 1025px) {
   .footer {
-    @include flexBox(row, space-around, flex-end);
-    min-height: 255px;
+    @include mainBox(row, space-around, flex-start);
 
     .row {
-      @include flexBox(column, space-around, center);
+      @include boxSize(width, 45vw, null, 45vw);
 
       .box {
-        @include paddingMargin($padding);
+        @include boxSize(width, 45vw, null, 45vw);
 
-        .list {
-          @include flexBox(row, space-around, flex-end);
+        &__row {
+          @include mainBox(row, space-around, center);
+          @include boxSize(width, 45vw, null, 45vw);
         }
       }
     }

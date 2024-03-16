@@ -1,5 +1,5 @@
 .section {
-  @include flexBox(column, space-around, center);
+  @include mainBox(column, space-around, center);
   @include boxSize(width, 95vw, null, 95vw);
   @include paddingMargin($padding, $margin);
 
@@ -7,14 +7,19 @@
   border: 1px solid blueviolet;
 }
 
-.box {
-  @include flexBox(column, flex-start, center);
+.article {
+  @include mainBox(column, flex-start, center);
   @include paddingMargin($padding, $margin);
   @include boxSize(width, 80vw, null, 80vw);
   gap: $gap;
   hyphens: auto;
   font-size: 0.9em;
   line-height: 1.5;
+  text-align: center;
+
+  p {
+    text-align: left;
+  }
 
   overflow: hidden;
 
@@ -67,7 +72,10 @@
 }
 
 .image {
-  @include boxSize(width, null, null, 50vw);
+  @include mainBox(column);
+  @include boxSize(width, 50vw, null, 50vw);
+
+  overflow: hidden;
 }
 
 .unorderedList {

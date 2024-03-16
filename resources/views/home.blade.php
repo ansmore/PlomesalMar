@@ -4,7 +4,6 @@
 @section('content')
 
     @include('components.navigationHome')
-    {{-- @include('components.header') --}}
 
     <main class="home">
         <section id="solutions" class="row">
@@ -63,7 +62,7 @@
                     <a href="{{ route('biit', ['language' => $language]) }}" class="box__button"
                         value-text="aboutButton"></a>
                 </p>
-                <figure>
+                <figure class="box__image">
                     <a href="{{ route('biit', ['language' => $language]) }}">
                         <img src="{{ asset('img/logos/banner.jpg') }}" alt="banner">
                     </a>

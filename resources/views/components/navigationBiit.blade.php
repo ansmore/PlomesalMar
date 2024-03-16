@@ -8,8 +8,7 @@
     <div class="navbar">
         <div class="navbar__logo">
             <a href="{{ route('biit', ['language' => $language]) }}">
-                <img class="img-responsive" src="{{ asset('./img/logos/logo_biit.png') }}" alt="Pymesoft"
-                    id="pymeso" />
+                <img src="{{ asset('./img/logos/logo_biit.png') }}" alt="Pymesoft" id="pymeso" />
             </a>
         </div>
         <div class="navbar__menu">

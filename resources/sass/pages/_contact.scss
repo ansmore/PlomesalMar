@@ -1,6 +1,6 @@
 // Style Contact page
 .main {
-  @include flexBox(column, space-around);
+  @include mainBox(column, space-around);
   @include paddingMargin($padding);
   @include style($primary_main, $neutral_light);
   font-size: $size_small;
@@ -8,17 +8,17 @@
   gap: $gap;
 
   .contact {
-    @include flexBox(column, space-around, center);
+    @include mainBox(column, space-around, center);
     @include paddingMargin($padding, 0);
     @include boxSize(width, 95vw, null, 95vw);
 
     &__row {
-      @include flexBox(column, space-around, center);
+      @include mainBox(column, space-around, center);
       @include paddingMargin(0 15px);
       @include boxSize(width, 90vw, null, 90vw);
 
       .circle {
-        @include flexBox(column, space-around, center);
+        @include mainBox(column, space-around, center);
         @include paddingMargin($padding 0);
         @include boxSize(width, 80vw, null, 80vw);
         gap: $gap;
@@ -26,7 +26,7 @@
         overflow: hidden;
 
         &__pyme {
-          @include flexBox(column, center, center);
+          @include mainBox(column, center, center);
           @include paddingMargin($padding, $margin);
           @include style(null, $primary_main);
           @include boxShadow($primary_main,
@@ -40,7 +40,7 @@
           overflow: hidden;
 
           img {
-            @include flexBox(column, center, center);
+            @include mainBox(column, center, center);
             @include paddingMargin($padding);
             padding-top: 1rem;
             @include boxSize(width, 200px, null, 200px);
@@ -49,7 +49,7 @@
         }
 
         &__biit {
-          @include flexBox(column, center, center);
+          @include mainBox(column, center, center);
           @include paddingMargin($padding, $margin);
           @include style(null, $neutral_lighter);
           @include boxShadow($neutral_lighter,
@@ -63,7 +63,7 @@
           overflow: hidden;
 
           img {
-            @include flexBox(column, center, center);
+            @include mainBox(column, center, center);
             @include paddingMargin($padding);
             padding-top: 1rem;
             @include boxSize(width, 75px, null, 100px);
@@ -73,14 +73,14 @@
       }
 
       .box {
-        @include flexBox(column, flex-start, center);
+        @include mainBox(column, flex-start, center);
         @include paddingMargin($padding, $margin);
         @include style($primary_main);
         @include boxSize(width, 80vw, null, 80vw);
         gap: $gap;
 
         &__title {
-          @include flexBox(column, space-around, center);
+          @include mainBox(column, space-around, center);
           @include paddingMargin($padding, 0 15px);
           @include style($primary_main);
           @include boxSize(height, 4rem);
@@ -91,12 +91,12 @@
       }
 
       .form {
-        @include flexBox(column, space-around, center);
+        @include mainBox(column, space-around, center);
         @include style($primary_main);
         @include boxSize(width, 80vw, null, 80vw);
 
         &__group {
-          @include flexBox(column, space-around, center);
+          @include mainBox(column, space-around, center);
           @include paddingMargin($padding, $margin);
 
           &__content {
@@ -118,7 +118,7 @@
           }
 
           &__button {
-            @include flexBox(column, center, center);
+            @include mainBox(column, center, center);
             @include paddingMargin($padding, $margin);
             @include button($secondary_main, $neutral_lighter);
             @include boxSize(width, 35vw);
@@ -130,7 +130,7 @@
           }
 
           &--consent {
-            @include flexBox(row, center, center);
+            @include mainBox(row, center, center);
             @include paddingMargin(0, $margin auto);
 
             // gap: $gap;
@@ -176,7 +176,7 @@
     .contact {
       &__row {
         .circle {
-          @include flexBox(row, center, center);
+          @include mainBox(row, center, center);
           @include paddingMargin(3rem $padding, $margin);
           gap: calc($gap * 2);
 
@@ -202,7 +202,7 @@
     .contact {
       &__row {
         .circle {
-          @include flexBox(row, center, center);
+          @include mainBox(row, center, center);
           @include paddingMargin(5rem $padding, $margin);
           gap: calc($gap * 3);
 
@@ -219,7 +219,7 @@
 
         .form {
           &__group {
-            @include flexBox(row, flex-end, center);
+            @include mainBox(row, flex-end, center);
             @include boxSize(width, 75vw, null, 75vw);
 
             &__input {
@@ -227,7 +227,7 @@
             }
 
             &__button {
-              @include flexBox(column, center, center);
+              @include mainBox(column, center, center);
               @include paddingMargin($padding, $margin auto);
             }
           }

@@ -1,7 +1,7 @@
 // Estyle home page
 
 .home {
-  @include flexBox(column, space-around, center);
+  @include mainBox(column, space-around, center);
   // @include paddingMargin($padding);
   @include style($primary_main, $neutral_light);
   font-size: $size_small;
@@ -12,7 +12,7 @@
     @extend .section;
 
     .box {
-      @extend .box;
+      @extend .article;
 
       &__title {
         @extend .title;
@@ -22,6 +22,7 @@
         @extend .content;
 
         &--reverse {
+          // @extend .content;
 
           // reverse colors
           @include style($secondary_main);
@@ -41,24 +42,27 @@
       }
 
       &__image {
-        @include flexBox(column);
-        @include paddingMargin($padding, $margin);
-        @include style(null, $primary_main);
-        @include boxShadow($primary_main,
-          5px,
-          3px,
-          $secondary_main,
-          $secondary_light );
-        @include boxSize(width, 400px, null, 400px);
-        @include boxSize(height, 200px, null, 200px);
+        @extend .image;
 
         overflow: hidden;
 
-        img {
-          @include boxSize(width, 350px, null, 350px);
-          @include boxSize(height, 125px, null, 125px);
-          padding-top: 3rem;
-        }
+        // Here-> Shadow??
+        // @include boxShadow($primary_main,
+        //   5px,
+        //   3px,
+        //   $secondary_main,
+        //   $secondary_light );
+
+
+        // @include boxSize(width, 400px, null, 400px);
+        // @include boxSize(height, 200px, null, 200px);
+
+
+        // img {
+        //   @include boxSize(width, 350px, null, 350px);
+        //   @include boxSize(height, 125px, null, 125px);
+        //   // padding-top: 3rem;
+        // }
       }
 
       &__map {
@@ -76,7 +80,7 @@
 
       // Pending 
       .circle {
-        @include flexBox(column, flex-start, center);
+        @include mainBox(column, flex-start, center);
         @include paddingMargin($padding, $margin);
         @include style(inherit, $neutral_main);
         @include boxSize(width, 20rem, null, 20rem);
@@ -86,7 +90,7 @@
         padding-top: 3rem;
 
         &__icon {
-          @include flexBox(row, center, center);
+          @include mainBox(row, center, center);
           @include style($neutral_lighter, $neutral_lighter);
           // Falta icono
           @include boxSize(width, 80px, null, 100px);
@@ -94,7 +98,7 @@
           border-radius: 50%;
 
           i {
-            @include flexBox(row, center, center);
+            @include mainBox(row, center, center);
             @include paddingMargin($padding);
             // padding: $padding;
             // font-size: 36px;
@@ -109,7 +113,7 @@
 
         &__content {
 
-          @include flexBox(column, space-around, center);
+          @include mainBox(column, space-around, center);
           @include paddingMargin($padding, $margin);
           @include style($neutral_lighter);
           @include boxSize(width, null, null, 15rem);
@@ -136,7 +140,7 @@
 
     .box {
 
-      @include flexBox(column, flex-start, center);
+      @include mainBox(column, flex-start, center);
 
       &__title {
         @extend .title;
@@ -197,7 +201,7 @@
 
     .circles {
       .box {
-        @include flexBox(row, space-around, center);
+        @include mainBox(row, space-around, center);
       }
     }
 
