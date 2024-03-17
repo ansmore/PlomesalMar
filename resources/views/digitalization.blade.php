@@ -214,7 +214,7 @@
             </div>
         </section>
 
-        <img src="{{ asset('./img/kit-digital.png') }}" class="img-responsive img-centered">
+        <img src="{{ asset('./img/kit-digital.png') }}">
     </div>
     <script type="module" src="{{ asset('js/digitalization.js') }}" defer></script>
 @endsection

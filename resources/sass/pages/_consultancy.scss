@@ -1,5 +1,5 @@
 .icon {
-  @include flexBox(row, center, center);
+  @include mainBox(row, center, center);
   @include paddingMargin($padding, 0 $margin);
   @include style($neutral_lighter, $primary_main);
   @include boxSize(width, 50px, null, 50px);
@@ -8,7 +8,7 @@
   @include boxShadow(null, 50%);
 
   .icon__image {
-    @include flexBox(row, center, center);
+    @include mainBox(row, center, center);
     @include style($neutral_lighter, $primary_main);
     @include boxSize(width, 35px, null, 35px);
     @include boxSize(height, 35px, null, 35px);

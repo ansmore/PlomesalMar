@@ -1,6 +1,6 @@
 // Navbar style
 .nav {
-  @include flexBox(row, space-between, center);
+  @include mainBox(row, space-between, center);
   @include style($neutral_lighter, $primary_main);
   height: $nav-height;
   max-height: $nav-height;
@@ -14,13 +14,13 @@
   z-index: 3;
 
   .navbar {
-    @include flexBox(row, space-around, center);
+    @include mainBox(row, space-around, center);
     @include paddingMargin;
     @include boxSize(width, 99vw, null, 100vw);
     @include boxSize(height, null, null, $nav-height );
 
     &__logo {
-      @include flexBox(row, flex-start, center);
+      @include mainBox(row, flex-start, center);
       @include paddingMargin($padding, $margin);
       flex: 3;
       @include boxSize(width, 30);
@@ -34,14 +34,14 @@
     }
 
     &__menu {
-      @include flexBox(row, center, center);
+      @include mainBox(row, center, center);
       @include paddingMargin(0, -300px 0 0 0);
       position: absolute;
       z-index: 2;
       flex: 6;
 
       .list {
-        @include flexBox(column);
+        @include mainBox(column);
         @include paddingMargin(0, calc($margin * 2) 0 0 0);
         @include style($neutral_lighter, $primary_main);
         @include boxSize(width, 40);
@@ -57,7 +57,7 @@
           display: inline-flex;
 
           &__link {
-            @include flexBox(row, center, center);
+            @include mainBox(row, center, center);
             @include paddingMargin(0, 0 $margin);
             @include style($neutral_lighter);
 
@@ -66,7 +66,7 @@
           }
 
           &:hover {
-            @include flexBox(column, center, center);
+            @include mainBox(column, center, center);
             @include boxSize(width, 40);
             @include style($neutral_lighter, $secondary_main);
           }
@@ -75,7 +75,7 @@
             position: relative;
 
             &__menu {
-              @include flexBox(column, center, center);
+              @include mainBox(column, center, center);
               position: absolute;
 
               left: -3rem;
@@ -104,7 +104,7 @@
     }
 
     &__language {
-      @include flexBox(row, center, center);
+      @include mainBox(row, center, center);
       @include paddingMargin;
       margin-right: 60px;
       flex: 1;
@@ -115,7 +115,7 @@
 
         &__item {
           &__link {
-            @include flexBox(row, center, center);
+            @include mainBox(row, center, center);
             @include style($primary_main, $neutral_lighter);
             @include boxSize(width, 6rem);
             @include boxSize(height, null, $nav-height);
@@ -124,7 +124,7 @@
           }
 
           &:hover {
-            @include flexBox(column, center, center);
+            @include mainBox(column, center, center);
             @include style($neutral_lighter, $secondary_main);
             @include boxSize(width, 6rem);
           }
@@ -133,7 +133,7 @@
             position: relative;
 
             &__menu {
-              @include flexBox(column, center, center);
+              @include mainBox(column, center, center);
               position: absolute;
               // left: -1.5rem;
               right: -4rem;
@@ -225,12 +225,12 @@
       }
 
       &__menu {
-        @include flexBox(row, flex-end, center);
+        @include mainBox(row, flex-end, center);
         margin-top: 0;
         position: sticky;
 
         .list {
-          @include flexBox(row);
+          @include mainBox(row);
           margin-top: 0;
           transform: translateY(0);
 

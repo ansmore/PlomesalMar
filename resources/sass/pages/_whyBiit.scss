@@ -1,5 +1,5 @@
 .main {
-  @include flexBox(column, space-around, flex-start);
+  @include mainBox(column, space-around, flex-start);
   @include paddingMargin($padding);
   @include style($primary_main, $neutral_light);
   font-size: $size_small;
@@ -7,7 +7,7 @@
   gap: $gap;
 
   .whyBiit {
-    @include flexBox(column, flex-start, flex-start);
+    @include mainBox(column, flex-start, flex-start);
     @include paddingMargin($padding, 0);
     @include style($primary_main);
     @include boxSize(width, 95vw, null, 95vw);
@@ -16,7 +16,7 @@
     flex: 1;
 
     &__row {
-      @include flexBox(row, center, flex-start);
+      @include mainBox(row, center, flex-start);
       @include paddingMargin(0 15px);
       @include style($primary_main);
       text-align: center;
@@ -26,7 +26,7 @@
 
       &__left,
       &__right {
-        @include flexBox(column, flex-start, flex-start);
+        @include mainBox(column, flex-start, flex-start);
         display: none;
         @include paddingMargin($padding, $margin);
         @include style($primary_main);
@@ -35,7 +35,7 @@
       }
 
       &__central {
-        @include flexBox(column, flex-start, flex-start);
+        @include mainBox(column, flex-start, flex-start);
         @include paddingMargin($padding, $margin);
         @include style($primary_main);
         @include boxSize(width, 60vw, null, 60vw);
@@ -46,7 +46,7 @@
 
 
         .circle {
-          @include flexBox(column, flex-start, flex-start);
+          @include mainBox(column, flex-start, flex-start);
           @include paddingMargin($padding, $margin);
           @include style(inherit, $neutral_main);
           @include boxSize(width, 20rem, null, 20rem);
@@ -57,7 +57,7 @@
           position: relative;
 
           &__title {
-            @include flexBox(column, space-around, center);
+            @include mainBox(column, space-around, center);
             @include paddingMargin($padding, 0 15px);
             @include style($primary_main);
             @include boxSize(height, 4rem);
@@ -71,12 +71,12 @@
           &__subtitle {
             @include style($secondary_main);
             line-height: 1.5;
-            font-size: 1.5em;
+            font-size: $size_big;
             font-weight: bold;
           }
 
           &__content {
-            @include flexBox(column, space-around, center);
+            @include mainBox(column, space-around, center);
             @include paddingMargin($padding, $margin);
             @include style($neutral_lighter);
             @include boxSize(width, null, null, 15rem);
@@ -97,7 +97,7 @@
         .fourth,
         .fifth {
           // @extend .circle;
-          @include flexBox(column, flex-start, flex-start);
+          @include mainBox(column, flex-start, flex-start);
           @include boxSize(width, 250px, null, 275px);
           @include boxSize(height, 250px, null, 275px);
           position: relative;
@@ -130,7 +130,7 @@
         }
 
         .lines {
-          @include flexBox(column, flex-start, flex-start);
+          @include mainBox(column, flex-start, flex-start);
           @include style(inherit, transparent);
           @include boxSize(width, 100px, null, 150px);
 
@@ -203,7 +203,7 @@
       border-radius: 5px;
 
       .body {
-        @include flexBox(column, flex-start, center);
+        @include mainBox(column, flex-start, center);
         @include paddingMargin($padding, 1rem);
         @include boxSize(width, 75vw, null, 75vw);
         @include boxSize(height, 75vh, null, 75vh);
@@ -211,13 +211,13 @@
         &__subtitle {
           @include style($secondary_main);
           line-height: 1.5;
-          font-size: 1.5em;
+          font-size: $size_big;
           font-weight: bold;
           text-align: center;
         }
 
         &__content {
-          @include flexBox(column, space-around, center);
+          @include mainBox(column, space-around, center);
           @include paddingMargin($padding, $margin);
           @include style($primary_main);
           // @include boxSize(width, null, null, 15rem);
@@ -232,13 +232,13 @@
         }
 
         &__photo {
-          @include flexBox(column, flex-end, center);
+          @include mainBox(column, flex-end, center);
           @include boxSize(height, 300px, null, 300px);
           border: 2px dotted $secondary_main;
         }
 
         &__button {
-          @include flexBox(row, center, flex-end);
+          @include mainBox(row, center, flex-end);
 
           @include button($secondary_main, $neutral_lighter);
           @include boxSize(width, 100px, null, 150px);
@@ -351,7 +351,7 @@
         &__left,
         &__right {
           display: block;
-          @include flexBox(column, flex-start, flex-start);
+          @include mainBox(column, flex-start, flex-start);
           @include paddingMargin($padding, $margin);
           @include style($primary_main);
           @include boxSize(width, 20vw, null, 20vw);
@@ -359,7 +359,7 @@
           align-self: start;
 
           .photo {
-            @include flexBox(column, center, center);
+            @include mainBox(column, center, center);
             @include style(null, $neutral_light);
             @include boxSize(width, 250px, null, 250px);
             @include boxSize(height, 250px, null, 250px);

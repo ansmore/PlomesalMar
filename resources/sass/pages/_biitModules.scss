@@ -1,7 +1,7 @@
 //  Estilos página BiitModules
 
 .biitModules {
-  @include flexBox(column, space-around);
+  @include mainBox(column, space-around);
   // @include paddingMargin($padding);
   @include style($primary_main, $neutral_light);
   font-size: $size_small;

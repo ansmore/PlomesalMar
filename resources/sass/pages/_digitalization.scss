@@ -1,6 +1,6 @@
 // Estilos pagina Home
 .main {
-  @include flexBox(column, space-around);
+  @include mainBox(column, space-around);
   @include paddingMargin($padding);
   @include style($primary_main, $neutral_light);
   font-size: $size_small;
@@ -8,13 +8,13 @@
   gap: $gap;
 
   .solutions {
-    @include flexBox(column, space-around, center);
+    @include mainBox(column, space-around, center);
     @include paddingMargin($padding, 0);
     @include style($primary_main);
     @include boxSize(width, 95vw, null, 95vw);
 
     &__row {
-      @include flexBox(column, space-around, center);
+      @include mainBox(column, space-around, center);
       @include paddingMargin(0 15px);
       @include boxSize(width, 90vw, null, 90vw);
       // @include style($primary_main);
@@ -25,13 +25,13 @@
 
       &--title {
         // @extend .solutions__row;
-        // @include flexBox(column, space-around, center);
+        // @include mainBox(column, space-around, center);
         @include style(inherit);
       }
 
       &--content {
         // @extend .solutions__row;
-        @include flexBox(column, flex-start);
+        @include mainBox(column, flex-start);
         @include style;
         // @include paddingMargin(0 15px);
         // @include style($primary_main);
@@ -42,13 +42,13 @@
 
 
       .box {
-        @include flexBox(column, flex-start, center);
+        @include mainBox(column, flex-start, center);
         @include paddingMargin($padding, $margin);
         @include style($primary_main);
         @include boxSize(width, 70vw, null, 70vw);
         gap: $gap;
         hyphens: auto;
-        font-size: 0.9em;
+        font-size: $size_smaller;
 
         // min-width No!
         // flex: 5;
@@ -63,7 +63,7 @@
         // }
 
         &__image {
-          @include flexBox(column);
+          @include mainBox(column);
           @include paddingMargin($padding, $margin);
           @include style(null, $primary_main);
           @include boxShadow($primary_main,
@@ -96,7 +96,7 @@
         }
 
         &__title {
-          @include flexBox(column, space-around, center);
+          @include mainBox(column, space-around, center);
           @include paddingMargin($padding, 0 15px);
           @include style($primary_main);
           @include boxSize(height, 4rem);
@@ -110,7 +110,7 @@
           @include style($secondary_main);
 
           &--title {
-            @include flexBox(column, space-around, center);
+            @include mainBox(column, space-around, center);
             @include paddingMargin($padding, 0 15px);
             @include style($secondary_main);
             font-size: 16px;
@@ -122,7 +122,7 @@
       }
 
       .circle {
-        @include flexBox(column, flex-start, center);
+        @include mainBox(column, flex-start, center);
         @include paddingMargin($padding, $margin);
         @include style(inherit, $neutral_main);
         @include boxSize(width, 20rem, null, 20rem);
@@ -132,7 +132,7 @@
         padding-top: 3rem;
 
         &__icon {
-          @include flexBox(row, center, center);
+          @include mainBox(row, center, center);
           @include style($neutral_lighter, $neutral_lighter);
           // Falta icono
           @include boxSize(width, 80px, null, 100px);
@@ -140,7 +140,7 @@
           border-radius: 50%;
 
           i {
-            @include flexBox(row, center, center);
+            @include mainBox(row, center, center);
             @include paddingMargin($padding);
             // padding: $padding;
             // font-size: 36px;
@@ -153,7 +153,7 @@
         }
 
         &__content {
-          @include flexBox(column, space-around, center);
+          @include mainBox(column, space-around, center);
           @include paddingMargin($padding, $margin);
           @include style($neutral_lighter);
           @include boxSize(width, null, null, 15rem);
@@ -171,14 +171,14 @@
   }
 
   .aside {
-    @include flexBox(column, space-around, center);
+    @include mainBox(column, space-around, center);
     @include boxSize(width, 90vw, null, 90vw);
     // min-width: 90vw;
     // max-width: 90vw;
   }
 
   .about {
-    @include flexBox(column, space-around, center);
+    @include mainBox(column, space-around, center);
     @include paddingMargin($padding, 1rem 0);
     @include style($primary_main, $primary_main);
     @include boxSize(width, 100vw);
@@ -187,7 +187,7 @@
     // min-height: 30vh;
 
     .box {
-      @include flexBox(column, flex-start);
+      @include mainBox(column, flex-start);
       @include paddingMargin($padding, $margin);
       @include boxSize(width, 90vw, null, 90vw);
       @include boxSize(height, 15vh);
@@ -218,16 +218,16 @@
       }
 
       &__columns {
-        @include flexBox(column, flex-start, center);
+        @include mainBox(column, flex-start, center);
         @include paddingMargin($padding, $margin);
 
         &__col {
-          @include flexBox(column, flex-start, center);
+          @include mainBox(column, flex-start, center);
           @include paddingMargin($padding, $margin);
           column-gap: 2rem;
 
           &__item {
-            @include flexBox(column, flex-start, flex-start);
+            @include mainBox(column, flex-start, flex-start);
             @include paddingMargin($padding, $margin);
             @include style($primary_main, $neutral_light);
             @include boxSize(width, null, null, 70vw);
@@ -243,7 +243,7 @@
   }
 
   .contact {
-    @include flexBox(column, space-around, center);
+    @include mainBox(column, space-around, center);
     @include paddingMargin($padding, 0);
     @include style($primary_main);
     @include boxSize(width, 95vw, null, 95vw);
@@ -251,7 +251,7 @@
     // max-width: 95vw;
 
     &__row {
-      @include flexBox(column, space-around, center);
+      @include mainBox(column, space-around, center);
       @include paddingMargin(0 15px);
       @include style($primary_main);
       @include boxSize(width, 80vw);
@@ -260,7 +260,7 @@
     }
 
     .box {
-      @include flexBox(column, flex-start);
+      @include mainBox(column, flex-start);
       @include paddingMargin($padding, 0);
       @include style($primary_main);
       @include boxSize(width, 80vw, null, 80vw);
@@ -270,7 +270,7 @@
       overflow: hidden;
 
       &__title {
-        @include flexBox(column, space-around, center);
+        @include mainBox(column, space-around, center);
         @include paddingMargin($padding, 0 15px);
         @include style($primary_main);
         @include boxSize(width, 75vw);
@@ -292,7 +292,7 @@
         overflow-wrap: break-word;
 
         &--title {
-          @include flexBox(column, space-around, center);
+          @include mainBox(column, space-around, center);
           @include paddingMargin($padding, 0 15px);
           @include style($secondary_main);
           font-size: 16px;
@@ -335,7 +335,7 @@
     .solutions {
       &__row {
         &--content {
-          @include flexBox(column, flex-start);
+          @include mainBox(column, flex-start);
           @include style($primary_main);
           // @include boxSize(width, 90vw, null, 90vw);
         }
@@ -347,7 +347,7 @@
       }
 
       .box {
-        @include flexBox(column, flex-start, center);
+        @include mainBox(column, flex-start, center);
         @include paddingMargin($padding, $margin);
 
         @include boxSize(width, null, null, 80vw);
@@ -377,7 +377,7 @@
       .box {
         &__columns {
           &__col {
-            @include flexBox(row, flex-start, center);
+            @include mainBox(row, flex-start, center);
 
             &__item {
               @include boxSize(height, 410px, null, 410px);
@@ -390,10 +390,10 @@
 
     .contact {
       .box {
-        @include flexBox(row, center, center);
+        @include mainBox(row, center, center);
 
         &--title {
-          @include flexBox(column, flex-start, center);
+          @include mainBox(column, flex-start, center);
         }
 
         &--map {
@@ -414,7 +414,7 @@
         @include boxSize(width, 90, null, 90vw);
 
         &--content {
-          @include flexBox(row, space-around, center);
+          @include mainBox(row, space-around, center);
           @include paddingMargin($padding); // row-gap: 3rem;
         }
 
@@ -442,10 +442,10 @@
         }
 
         &__columns {
-          @include flexBox(row, flex-start, flex-start);
+          @include mainBox(row, flex-start, flex-start);
 
           &__col {
-            @include flexBox(row, flex-start, center);
+            @include mainBox(row, flex-start, center);
 
             &__item {
 
@@ -459,7 +459,7 @@
 
     .contact {
       .box {
-        @include flexBox(row, center, center);
+        @include mainBox(row, center, center);
 
         &--map {
           @include boxSize(width, null, 85vw);
