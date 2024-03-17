@@ -16,17 +16,16 @@
             <ul>
                 <li class="icon__item">
                     <a class="icon__item__link" href="https://twitter.com/PymesoftValles">
-                        <i class="fa-brands fa-x-twitter">
-                        </i>
+                        <i class="fa-brands fa-x-twitter"></i>
                     </a>
                 </li>
-                <li class="box__icon__item">
-                    <a class="box__icon__item__link" href="https://www.facebook.com/Pymesoft-Valles-sl-205440757738">
+                <li class="icon__item">
+                    <a class="icon__item__link" href="https://www.facebook.com/Pymesoft-Valles-sl-205440757738">
                         <i class="fab fa-facebook"></i>
                     </a>
                 </li>
-                <li class="box__icon__item">
-                    <a class="box__icon__item__link" href="https://es.linkedin.com/company/pymesoft-vall-s">
+                <li class="icon__item">
+                    <a class="icon__item__link" href="https://es.linkedin.com/company/pymesoft-vall-s">
                         <i class="fab fa-linkedin"></i>
                     </a>
                 </li>
