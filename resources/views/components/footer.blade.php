@@ -2,7 +2,9 @@
     <section class="row">
         <article class="box">
             <picture class="box__image">
-                <img src="{{ asset('../img/logos/pymesoft_logo_text.png') }}" alt="Pymesoft" id="pymesoft" />
+                <a href="{{ route('home', ['language' => $language]) }}">
+                    <img src="{{ asset('../img/logos/pymesoft_logo_text.png') }}" alt="Pymesoft" id="pymesoft" />
+                </a>
             </picture>
         </article>
         <article class="box__row">

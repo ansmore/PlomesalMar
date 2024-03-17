@@ -10,7 +10,7 @@
     .box {
       @extend .article;
       @include mainBox(column, center, center);
-      @include boxSize(height, 80px, null, 80px);
+      @include boxSize(height, 6rem, null, 6rem);
 
       &__row {
         @extend .article;
@@ -20,7 +20,8 @@
       &__image {
         @extend .image;
 
-        @include boxSize(width, 50vw, null, 50vw);
+        // Here-> To delete?
+        // @include boxSize(width, 50vw, null, 50vw);
       }
 
       .icon {

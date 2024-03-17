@@ -1,8 +1,8 @@
-<?php
+{{-- <?php
 
 $language = Session::get('language', 'ca');
 
-?>
+?> --}}
 <nav class="nav">
     <div class="toggle">
         <label for="toggle-menu-checkbox">
@@ -16,7 +16,7 @@ $language = Session::get('language', 'ca');
                 <img src="{{ asset('../img/logos/pymesoft_logo_text.png') }}" alt="Pymesoft" id="pymeso" />
             </a>
         </div>
-        <div class="navbar__menu">
+        <div class="navbar__menu__home">
             <ul class="list">
                 <li class="list__item">
                     <a class="list__item__link" href="{{ route('home', ['language' => $language]) }}"
@@ -44,12 +44,9 @@ $language = Session::get('language', 'ca');
                         <a class="list__item__link" id="navModulosDropdown" role="button"
                             value-text="currentLanguage"></a>
                         <div id="setLanguages" class="dropdown__menu" aria-labelledby="navModulosDropdown">
-                            <a id="es" value-text="cas" class="dropdown__menu__item" href="#"
-                                {{-- onclick="changeLanguage('es')" --}}></a>
-                            <a id="ca" value-text="cat" class="dropdown__menu__item" href="#"
-                                {{-- onclick="changeLanguage('ca')" --}}></a>
-                            <a id="en" value-text="eng" class="dropdown__menu__item" href="#"
-                                {{-- onclick="changeLanguage('en')" --}}></a>
+                            <a id="es" value-text="cas" class="dropdown__menu__item" href="#"></a>
+                            <a id="ca" value-text="cat" class="dropdown__menu__item" href="#"></a>
+                            <a id="en" value-text="eng" class="dropdown__menu__item" href="#"></a>
                         </div>
                     </div>
                 </li>

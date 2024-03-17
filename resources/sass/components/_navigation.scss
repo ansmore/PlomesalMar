@@ -34,69 +34,92 @@
     }
 
     &__menu {
-      @include mainBox(row, center, center);
-      @include paddingMargin(0, 218px 0 0 0);
-      position: absolute;
-      z-index: 2;
-      flex: 6;
 
-      .list {
-        @include mainBox(column);
-        @include paddingMargin(0, calc($margin * 2) 0 0 0);
-        @include style($neutral_lighter, $primary_main);
-        @include boxSize(width, 40);
-        cursor: pointer;
+      &__home {
 
-        transition: transform 1.5s;
-        transform: translateY(-200%);
+        @include paddingMargin(0, 194px 0 0 0);
+      }
 
-        &__item {
-          @include paddingMargin($padding);
+      &__biit {
 
-          list-style: none;
-          display: inline-flex;
+        @include paddingMargin(0, 194px 0 0 0);
+      }
 
-          &__link {
-            @include mainBox(row, center, center);
-            @include paddingMargin(0, 0 $margin);
-            @include style($neutral_lighter);
+      &__digitalization {
 
-            text-decoration: none;
-            text-align: center;
-          }
+        @include paddingMargin(0, 255px 0 0 0);
+      }
 
-          &:hover {
+      &__home,
+      &__biit,
+      &__digitalization {
+
+        @include mainBox(row, center, center);
+        position: absolute;
+        z-index: 2;
+        flex: 6;
+
+        .list {
+          @include mainBox(column);
+          @include paddingMargin(0, calc($margin * 2) 0 0 0);
+          @include style($neutral_lighter, $primary_main);
+          @include boxSize(width, 40vw);
+          cursor: pointer;
+
+          transition: transform 1.5s;
+          transform: translateY(-200%);
+
+          &__item {
+            @include paddingMargin($padding);
             @include mainBox(column, center, center);
-            @include boxSize(width, 40);
-            @include style($neutral_lighter, $secondary_main);
-          }
+            @include boxSize(width, 40vw);
 
-          .dropdown {
-            position: relative;
+            list-style: none;
+            display: inline-flex;
 
-            &__menu {
-              @include mainBox(column, center, center);
-              position: absolute;
+            &__link {
+              @include mainBox(row, center, center);
+              @include paddingMargin(0, 0 $margin);
+              @include boxSize(width, 40vw);
+              @include style($neutral_lighter);
 
-              left: -3rem;
-              display: none;
-
-              &__item {
-                @include paddingMargin($padding calc($padding * 3));
-                @include style($neutral_lighter, $primary_main);
-                text-decoration: none;
-                @include boxSize(width, 16rem, null, 18rem);
-                // min-width: 16rem;
-                // max-width: 18rem;
-
-                &:hover {
-                  @include style($neutral_lighter, $secondary_main);
-                }
-              }
+              text-decoration: none;
+              text-align: center;
             }
 
-            &:hover .dropdown__menu {
-              display: flex;
+            &:hover {
+              @include mainBox(column, center, center);
+              @include boxSize(width, 40vw);
+              @include style($neutral_lighter, $secondary_main);
+            }
+
+
+            .dropdown {
+              position: relative;
+
+              &__menu {
+                @include mainBox(column, center, center);
+                position: absolute;
+
+                left: -0.25rem;
+                display: none;
+
+                &__item {
+                  @include paddingMargin($padding calc($padding * 3));
+                  @include style($neutral_lighter, $primary_main);
+                  text-decoration: none;
+                  @include boxSize(width, 19rem, null, 19rem);
+
+
+                  &:hover {
+                    @include style($neutral_lighter, $secondary_main);
+                  }
+                }
+              }
+
+              &:hover .dropdown__menu {
+                display: flex;
+              }
             }
           }
         }
@@ -145,9 +168,6 @@
                 @include boxSize(width, 12rem, null, 14rem);
                 text-decoration: none;
 
-                // min-width: 16rem;
-                // max-width: 18rem;
-
                 &:hover {
                   @include style($neutral_lighter, $secondary_main);
                 }
@@ -182,11 +202,14 @@
       &:checked+.navbar {
         .navbar__menu {
 
+          &__home,
+          &__biit,
+          &__digitalization {
 
-
-          .list {
-            transition: transform 0.5s;
-            transform: translateY(0);
+            .list {
+              transition: transform 0.5s;
+              transform: translateY(0);
+            }
           }
         }
       }
@@ -225,40 +248,46 @@
       }
 
       &__menu {
-        @include mainBox(row, flex-end, center);
-        margin-top: 0;
-        position: sticky;
 
-        .list {
-          @include mainBox(row);
+        &__home,
+        &__biit,
+        &__digitalization {
+
+          @include mainBox(row, flex-end, center);
           margin-top: 0;
-          transform: translateY(0);
+          position: sticky;
 
-          &__item {
-            @include paddingMargin;
-            // min-width: 120px;
-            // max-width: 150px;
-            @include boxSize(width, 7rem, null, 9rem);
-            // min-width: 7rem;
-            // max-width: 9rem;
+          .list {
+            @include mainBox(row);
+            margin-top: 0;
+            transform: translateY(0);
 
-            &__link {
-              @include boxSize(width, 120px);
-              @include boxSize(height, null, $nav-height);
-              // height: $nav-height;
+            &__item {
+              @include paddingMargin;
               // min-width: 120px;
-            }
+              // max-width: 150px;
+              @include boxSize(width, 7rem, null, 9rem);
+              // min-width: 7rem;
+              // max-width: 9rem;
 
-            &:hover {
-              @include boxSize(width, 120px);
-              @include boxSize(height, null, null, $nav-height);
-              // max-height: $nav-height;
-              // min-width: 120px;
-            }
+              &__link {
+                @include boxSize(width, 120px);
+                @include boxSize(height, null, $nav-height);
+                // height: $nav-height;
+                // min-width: 120px;
+              }
 
-            .dropdown {
-              &__menu {
-                margin-top: 0;
+              &:hover {
+                @include boxSize(width, 120px);
+                @include boxSize(height, null, null, $nav-height);
+                // max-height: $nav-height;
+                // min-width: 120px;
+              }
+
+              .dropdown {
+                &__menu {
+                  margin-top: 0;
+                }
               }
             }
           }

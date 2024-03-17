@@ -11,7 +11,7 @@
                 <img src="{{ asset('./img/logos/logo_biit.png') }}" alt="Pymesoft" id="pymeso" />
             </a>
         </div>
-        <div class="navbar__menu">
+        <div class="navbar__menu__biit">
             <ul class="list">
                 <li class="list__item">
                     <a class="list__item__link" href="{{ route('home', ['language' => $language]) }}"
@@ -20,6 +20,11 @@
                 <li class="list__item">
                     <a class="list__item__link" href="{{ route('whyBiit', ['language' => $language]) }}"
                         value-text="navBiit"></a>
+                </li>
+                <li class="list__item">
+                    <a class="list__item__link" href="{{ route('biitContact', ['language' => $language]) }}"
+                        value-text="navContacto"></a>
+                    {{-- Pendiente de hacer la pagina de contacto --}}
                 </li>
                 <li class="list__item">
                     <div class="dropdown">
@@ -44,11 +49,7 @@
                         </div>
                     </div>
                 </li>
-                <li class="list__item">
-                    <a class="list__item__link" href="{{ route('biitContact', ['language' => $language]) }}"
-                        value-text="navContacto"></a>
-                    {{-- Pendiente de hacer la pagina de contacto --}}
-                </li>
+
             </ul>
         </div>
         <div class="navbar__language">

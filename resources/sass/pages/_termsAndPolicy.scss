@@ -18,7 +18,7 @@
       @include paddingMargin(0 15px);
       @include boxSize(width, 90vw, null, 90vw);
 
-      .circle {
+      .circles {
         @include mainBox(row, space-around, center);
         @include paddingMargin($padding 0);
         @include boxSize(width, 80vw, null, 80vw);
