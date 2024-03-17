@@ -1,5 +1,5 @@
 .main {
-  @include flexBox(column, space-around, flex-start);
+  @include mainBox(column, space-around, flex-start);
   @include paddingMargin($padding);
   @include style($primary_main, $neutral_light);
   font-size: $size_small;
@@ -7,7 +7,7 @@
   gap: $gap;
 
   .whyBiit {
-    @include flexBox(column, flex-start, flex-start);
+    @include mainBox(column, flex-start, flex-start);
     @include paddingMargin($padding, 0);
     @include style($primary_main);
     @include boxSize(width, 95vw, null, 95vw);
@@ -16,7 +16,7 @@
     flex: 1;
 
     &__row {
-      @include flexBox(column, flex-start, flex-start);
+      @include mainBox(row, center, flex-start);
       @include paddingMargin(0 15px);
       @include style($primary_main);
       text-align: center;
@@ -24,144 +24,160 @@
       @include boxSize(width, 90vw, null, 90vw);
       @include boxSize(height, 110rem, null, 115rem);
 
-      // try -> border-line
-      // border: 1px solid $danger_main;
-      // border-radius: 1rem;
-    }
-
-    .circle {
-      @include flexBox(column, flex-start, flex-start);
-      @include paddingMargin($padding, $margin);
-      @include style(inherit, $neutral_main);
-      @include boxSize(width, 20rem, null, 20rem);
-      @include boxSize(height, 20rem);
-      @include boxShadow($neutral_dark);
-      border-radius: 50%;
-      padding-top: 4rem;
-      position: relative;
-
-      &__title {
-        @include flexBox(column, space-around, center);
-        @include paddingMargin($padding, 0 15px);
-        @include style($primary_main);
-        @include boxSize(height, 4rem);
-        font-size: 25px;
-        line-height: 1.5;
-        text-align: center;
-
-        border-top-left-radius: 25%;
-        border-top-right-radius: 25%;
-      }
-
-      &__subtitle {
-        @include style($secondary_main);
-        line-height: 1.5;
-        font-size: 1.5em;
-        font-weight: bold;
-      }
-
-      &__content {
-        @include flexBox(column, space-around, center);
+      &__left,
+      &__right {
+        @include mainBox(column, flex-start, flex-start);
+        display: none;
         @include paddingMargin($padding, $margin);
-        @include style($neutral_lighter);
-        @include boxSize(width, null, null, 15rem);
-        border-bottom-left-radius: 25%;
-        border-bottom-right-radius: 25%;
-        font-size: 16px;
-        text-transform: none;
-        font-style: italic;
-        font-weight: 400;
+        @include style($primary_main);
+        @include boxSize(width, 10vw, null, 10vw);
+        @include boxSize(height, 80vh);
       }
 
-      @include hover($secondary_main, inherit, $neutral_darker, $neutral_dark);
-    }
+      &__central {
+        @include mainBox(column, flex-start, flex-start);
+        @include paddingMargin($padding, $margin);
+        @include style($primary_main);
+        @include boxSize(width, 60vw, null, 60vw);
+        @include boxSize(height, 100vh, null, 100vh);
+        align-self: start;
+        // text-align: center;
+        // margin-top: 3rem;
 
-    .first,
-    .second,
-    .third,
-    .fourth,
-    .fifth {
-      // @extend .circle;
-      @include flexBox(column, flex-start, flex-start);
-      @include boxSize(width, 250px, null, 275px);
-      @include boxSize(height, 250px, null, 275px);
-      position: relative;
-      z-index: 2;
-    }
 
-    .first {
-      left: -5vw;
-      top: 5vh;
-    }
+        .circle {
+          @include mainBox(column, flex-start, flex-start);
+          @include paddingMargin($padding, $margin);
+          @include style(inherit, $neutral_main);
+          @include boxSize(width, 20rem, null, 20rem);
+          @include boxSize(height, 20rem);
+          @include boxShadow($neutral_dark);
+          border-radius: 50%;
+          padding-top: 4rem;
+          position: relative;
 
-    .second {
-      left: 5vw;
-      top: -5vh;
-    }
+          &__title {
+            @include mainBox(column, space-around, center);
+            @include paddingMargin($padding, 0 15px);
+            @include style($primary_main);
+            @include boxSize(height, 4rem);
+            font-size: 25px;
+            line-height: 1.5;
+            text-align: center;
 
-    .third {
-      left: -5vw;
-      top: -15vh;
-    }
+            border-radius: 25%;
+          }
 
-    .fourth {
-      left: 5vw;
-      top: -25vh;
-    }
+          &__subtitle {
+            @include style($secondary_main);
+            line-height: 1.5;
+            font-size: $size_big;
+            font-weight: bold;
+          }
 
-    .fifth {
-      left: -5vw;
-      top: -35vh;
-    }
+          &__content {
+            @include mainBox(column, space-around, center);
+            @include paddingMargin($padding, $margin);
+            @include style($neutral_lighter);
+            @include boxSize(width, null, null, 15rem);
+            border-bottom-left-radius: 25%;
+            border-bottom-right-radius: 25%;
+            font-size: 16px;
+            text-transform: none;
+            font-style: italic;
+            font-weight: 400;
+          }
 
-    .lines {
-      @include flexBox(column, flex-start, flex-start);
-      @include style(inherit, transparent);
-      @include boxSize(width, 100px, null, 150px);
+          @include hover($secondary_main, inherit, $neutral_darker, $neutral_dark);
+        }
 
-      position: relative;
-      z-index: 1;
+        .first,
+        .second,
+        .third,
+        .fourth,
+        .fifth {
+          // @extend .circle;
+          @include mainBox(column, flex-start, flex-start);
+          @include boxSize(width, 250px, null, 275px);
+          @include boxSize(height, 250px, null, 275px);
+          position: relative;
+          z-index: 2;
+        }
 
-      .lines-svg {
-        position: relative;
+        .first {
+          left: -5vw;
+          top: 5vh;
+        }
 
-        .dashed-line {
-          stroke: $secondary_main;
-          stroke-width: 9;
-          stroke-dasharray: 5 5;
-          animation: dash 15s linear infinite;
+        .second {
+          left: 5vw;
+          top: -5vh;
+        }
+
+        .third {
+          left: -5vw;
+          top: -15vh;
+        }
+
+        .fourth {
+          left: 5vw;
+          top: -25vh;
+        }
+
+        .fifth {
+          left: -5vw;
+          top: -35vh;
+        }
+
+        .lines {
+          @include mainBox(column, flex-start, flex-start);
+          @include style(inherit, transparent);
+          @include boxSize(width, 100px, null, 150px);
+
           position: relative;
           z-index: 1;
+
+          .lines-svg {
+            position: relative;
+
+            .dashed-line {
+              stroke: $secondary_main;
+              stroke-width: 9;
+              stroke-dasharray: 5 5;
+              animation: dash 15s linear infinite;
+              position: relative;
+              z-index: 1;
+            }
+          }
+
+          @keyframes dash {
+            to {
+              stroke-dashoffset: -500;
+            }
+          }
+        }
+
+        .first-line {
+          left: 0vw;
+          top: 0vh;
+        }
+
+        .second-line {
+          left: 0vw;
+          top: -10vh;
+        }
+
+        .third-line {
+          left: 0vw;
+          top: -20vh;
+        }
+
+        .fourth-line {
+          left: 0vw;
+          top: -30vh;
         }
       }
-
-      @keyframes dash {
-        to {
-          stroke-dashoffset: -500;
-        }
-      }
     }
-
-    .first-line {
-      left: 0vw;
-      top: 0vh;
-    }
-
-    .second-line {
-      left: 0vw;
-      top: -10vh;
-    }
-
-    .third-line {
-      left: 0vw;
-      top: -20vh;
-    }
-
-    .fourth-line {
-      left: 0vw;
-      top: -30vh;
-    }
-
   }
 
   .modal {
@@ -183,20 +199,25 @@
       left: 10vw;
       width: 80%;
       height: 80%;
-      padding: 20px;
+      // padding: 20px;
       border-radius: 5px;
 
-      .circle {
+      .body {
+        @include mainBox(column, flex-start, center);
+        @include paddingMargin($padding, 1rem);
+        @include boxSize(width, 75vw, null, 75vw);
+        @include boxSize(height, 75vh, null, 75vh);
+
         &__subtitle {
           @include style($secondary_main);
           line-height: 1.5;
-          font-size: 1.5em;
+          font-size: $size_big;
           font-weight: bold;
           text-align: center;
         }
 
         &__content {
-          @include flexBox(column, space-around, center);
+          @include mainBox(column, space-around, center);
           @include paddingMargin($padding, $margin);
           @include style($primary_main);
           // @include boxSize(width, null, null, 15rem);
@@ -209,6 +230,22 @@
           font-weight: 400;
           text-align: center;
         }
+
+        &__photo {
+          @include mainBox(column, flex-end, center);
+          @include boxSize(height, 300px, null, 300px);
+          border: 2px dotted $secondary_main;
+        }
+
+        &__button {
+          @include mainBox(row, center, flex-end);
+
+          @include button($secondary_main, $neutral_lighter);
+          @include boxSize(width, 100px, null, 150px);
+          @include hover($secondary_light, $neutral_lighter, $neutral_lighter);
+        }
+
+
       }
 
       .close {
@@ -244,31 +281,6 @@
       &__row {
         @include boxSize(height, 120rem, null, 125rem);
 
-        // .first {
-        //   left: -10vw;
-
-        // }
-
-        // .second {
-        //   left: 10vw;
-
-        // }
-
-        // .third {
-        //   left: -10vw;
-
-        // }
-
-        // .fourth {
-        //   left: 10vw;
-
-        // }
-
-        // .fifth {
-        //   left: -10vw;
-
-        // }
-
         .lines {
           @include boxSize(width, 150px, null, 175px);
         }
@@ -296,8 +308,8 @@
         .third,
         .fourth,
         .fifth {
-          @include boxSize(width, 300px, null, 325px);
-          @include boxSize(height, 300px, null, 325px);
+          @include boxSize(width, 275px, null, 300px);
+          @include boxSize(height, 275px, null, 300px);
         }
 
         .first {
@@ -321,7 +333,7 @@
         }
 
         .lines {
-          @include boxSize(width, 200px, null, 250px);
+          @include boxSize(width, 175px, null, 200px);
         }
       }
     }
@@ -331,49 +343,77 @@
 @media screen and (min-width: 1025px) {
   .main {
     .whyBiit {
-      @include boxSize(height, 155rem, null, 160rem);
+      @include boxSize(height, 122rem, null, 122rem);
 
       &__row {
-        @include flexBox(column, flex-start, center);
-        @include boxSize(height, 155rem, null, 160rem);
+        @include boxSize(height, 121rem, null, 121rem);
 
-        .circle {
-          &__title {
-            font-size: 28px;
+        &__left,
+        &__right {
+          display: block;
+          @include mainBox(column, flex-start, flex-start);
+          @include paddingMargin($padding, $margin);
+          @include style($primary_main);
+          @include boxSize(width, 20vw, null, 20vw);
+          @include boxSize(height, 225vh);
+          align-self: start;
+
+          .photo {
+            @include mainBox(column, center, center);
+            @include style(null, $neutral_light);
+            @include boxSize(width, 250px, null, 250px);
+            @include boxSize(height, 250px, null, 250px);
+            position: relative;
+            z-index: 2;
+            overflow: hidden;
+            border: 2px dotted $secondary_main;
+
+            img,
+            iframe {
+              @include boxSize(width, 175px, null, 200px);
+              @include boxSize(height, 175px, null, 200px);
+            }
+          }
+
+          .first-photo {
+            top: 3rem;
+            // top: 5vh;
+          }
+
+          .second-photo {
+            top: 28rem;
+            // top: 48vh;
+            // top: 52vh;
+          }
+
+          .third-photo {
+            top: 36.5rem;
+            // top: 62vh;
+            // top: 70vh;
+          }
+
+          .fourth-photo {
+            top: 61rem;
+            // top: 105vh;
+            // top: 115vh;
+          }
+
+          .fifth-photo {
+            top: 70rem;
+            // top: 119vh;
+            // top: 132vh;
           }
         }
 
-        .first,
-        .second,
-        .third,
-        .fourth,
-        .fifth {
-          @include boxSize(width, 300px, null, 325px);
-          @include boxSize(height, 300px, null, 325px);
-        }
+        &__central {
+          @include boxSize(width, 35vw, null, 35vw);
+          @include boxSize(height, 225vh, null, 225vh);
+          align-self: start;
 
-        .first {
-          left: -10rem;
-        }
 
-        .second {
-          left: 10rem;
-        }
-
-        .third {
-          left: -10rem;
-        }
-
-        .fourth {
-          left: 10rem;
-        }
-
-        .fifth {
-          left: -10rem;
-        }
-
-        .lines {
-          @include boxSize(width, 200px, null, 250px);
+          .lines {
+            @include boxSize(width, 200px, null, 210px);
+          }
         }
       }
     }

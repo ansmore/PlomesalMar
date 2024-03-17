@@ -1,11 +1,8 @@
-<?php
-// $language = 'kl';
-// Session::put('language', $language);
-$language = Session::get('language', 'it');
-var_dump('Navigation After get->', $language);
-// // var_dump('Navigation Before put->', $language, "\n");
-// var_dump('Navigation After put->', $language, "\n");
-?>
+{{-- <?php
+
+$language = Session::get('language', 'ca');
+
+?> --}}
 <nav class="nav">
     <div class="toggle">
         <label for="toggle-menu-checkbox">
@@ -16,11 +13,10 @@ var_dump('Navigation After get->', $language);
     <div class="navbar">
         <div class="navbar__logo">
             <a href="/">
-                <img class="img-responsive" src="{{ asset('../img/logos/pymesoft_logo_text.png') }}" alt="Pymesoft"
-                    id="pymeso" />
+                <img src="{{ asset('../img/logos/pymesoft_logo_text.png') }}" alt="Pymesoft" id="pymeso" />
             </a>
         </div>
-        <div class="navbar__menu">
+        <div class="navbar__menu__home">
             <ul class="list">
                 <li class="list__item">
                     <a class="list__item__link" href="{{ route('home', ['language' => $language]) }}"
@@ -48,12 +44,9 @@ var_dump('Navigation After get->', $language);
                         <a class="list__item__link" id="navModulosDropdown" role="button"
                             value-text="currentLanguage"></a>
                         <div id="setLanguages" class="dropdown__menu" aria-labelledby="navModulosDropdown">
-                            <a id="es" value-text="cas" class="dropdown__menu__item" href="#"
-                                {{-- onclick="changeLanguage('es')" --}}></a>
-                            <a id="ca" value-text="cat" class="dropdown__menu__item" href="#"
-                                {{-- onclick="changeLanguage('ca')" --}}></a>
-                            <a id="en" value-text="eng" class="dropdown__menu__item" href="#"
-                                {{-- onclick="changeLanguage('en')" --}}></a>
+                            <a id="es" value-text="cas" class="dropdown__menu__item" href="#"></a>
+                            <a id="ca" value-text="cat" class="dropdown__menu__item" href="#"></a>
+                            <a id="en" value-text="eng" class="dropdown__menu__item" href="#"></a>
                         </div>
                     </div>
                 </li>
@@ -61,4 +54,4 @@ var_dump('Navigation After get->', $language);
         </div>
     </div>
 </nav>
-<script type="module" src="{{ asset('js/navigation.js') }}" defer></script>
+<script type="module" src="{{ asset('js/components/navigation.js') }}" defer></script>

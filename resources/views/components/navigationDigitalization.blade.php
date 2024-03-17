@@ -8,11 +8,10 @@
     <div class="navbar">
         <div class="navbar__logo">
             <a href="{{ route('home', ['language' => $language]) }}">
-                <img class="img-responsive" src="{{ asset('../img/logos/pymesoft_logo_text.png') }}" alt="Pymesoft"
-                    id="pymeso" />
+                <img src="{{ asset('../img/logos/pymesoft_logo_text.png') }}" alt="Pymesoft" id="pymeso" />
             </a>
         </div>
-        <div class="navbar__menu">
+        <div class="navbar__menu__digitalization">
             <ul class="list">
                 <li class="list__item">
                     <a class="list__item__link" href="{{ route('home', ['language' => $language]) }}"
@@ -54,11 +53,12 @@
             <ul class="list">
                 <li class="list__item">
                     <div class="dropdown">
-                        <a class="list__item__link" id="navModulosDropdown" role="button">CAS</a>
-                        <div class="dropdown__menu" aria-labelledby="navModulosDropdown">
-                            <a class="dropdown__menu__item" href="#">CASTELLANO</a>
-                            <a class="dropdown__menu__item" href="#">CATALÀ</a>
-                            <a class="dropdown__menu__item" href="#">ENGLISH</a>
+                        <a class="list__item__link" id="navModulosDropdown" role="button"
+                            value-text="currentLanguage"></a>
+                        <div id="setLanguages" class="dropdown__menu" aria-labelledby="navModulosDropdown">
+                            <a id="es" value-text="cas" class="dropdown__menu__item" href="#"></a>
+                            <a id="ca" value-text="cat" class="dropdown__menu__item" href="#"></a>
+                            <a id="en" value-text="eng" class="dropdown__menu__item" href="#"></a>
                         </div>
                     </div>
                 </li>
@@ -66,4 +66,4 @@
         </div>
     </div>
 </nav>
-<script type="module" src="{{ asset('js/navigation.js') }}" defer></script>
+<script type="module" src="{{ asset('js/components/navigation.js') }}" defer></script>

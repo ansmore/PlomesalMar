@@ -1,33 +1,33 @@
 // Footer style
 .footer {
-  @include flexBox(column, center, center);
-  @include paddingMargin(1rem 0 0 0);
+  @include mainBox(column, center, center);
   @include style($neutral_lighter, $primary_main);
 
 
-  .logo {
-    @include flexBox(column, center, center);
-    @include paddingMargin($padding);
+  .row {
+    @extend .section;
 
-    &__image {
-      @include flexBox(column, center, center);
-      @include paddingMargin;
-      @include boxSize(width, null, null, 90vw);
-    }
+    .box {
+      @extend .article;
+      @include mainBox(column, center, center);
+      @include boxSize(height, 6rem, null, 6rem);
 
-    &__row {
-      @include flexBox(column);
-      @include paddingMargin($padding, $margin);
-      @include style;
-      text-align: center;
-    }
-  }
+      &__row {
+        @extend .article;
+        @include mainBox(column, center, center);
+      }
 
-  .contact {
-    .social {
-      .list {
-        @include flexBox(row);
-        cursor: pointer;
+      &__image {
+        @extend .image;
+
+        // Here-> To delete?
+        // @include boxSize(width, 50vw, null, 50vw);
+      }
+
+      .icon {
+        @include mainBox(row, space-around, center);
+
+        @include boxSize(width, 70vw, null, 70vw);
 
         &__item {
           @include paddingMargin($padding);
@@ -35,11 +35,11 @@
           display: inline-flex;
 
           &__link {
-            @include flexBox(row, center, center);
+            @include mainBox(row, center, center);
             @include paddingMargin($padding, 0 $margin);
             @include boxSize(width, 50px);
             @include boxSize(height, 50px);
-            border: 1px solid transparent;
+            // border: 1px solid transparent;
             text-decoration: none;
             text-align: center;
 
@@ -49,35 +49,17 @@
         }
       }
     }
-
-    .policy {
-      .list {
-        @include flexBox(column);
-        cursor: pointer;
-
-        &__item {
-          // @include paddingMargin($padding);
-          list-style: none;
-          display: inline-flex;
-
-          &__link {
-            @include paddingMargin($padding);
-            @include boxSize(height, 50px);
-          }
-        }
-      }
-    }
   }
 }
 
 @media screen and (min-width: 376px) and (max-width: 600px) {
   .footer {
-    .contact {
-      @include flexBox(column, space-around, center);
+    .row {
+      @include mainBox(column, space-around, center);
 
-      .policy {
+      .box {
         .list {
-          @include flexBox(row);
+          @include mainBox(row);
         }
       }
     }
@@ -86,12 +68,10 @@
 
 @media screen and (min-width: 601px) and (max-width: 1024px) {
   .footer {
-    .contact {
-      @include flexBox(column, space-around, center);
-
-      .policy {
-        .list {
-          @include flexBox(row);
+    .row {
+      .box {
+        &__row {
+          @include mainBox(row, space-around, center);
         }
       }
     }
@@ -100,17 +80,17 @@
 
 @media screen and (min-width: 1025px) {
   .footer {
-    @include flexBox(row, space-around, flex-end);
-    min-height: 255px;
+    @include mainBox(row, space-around, flex-start);
 
-    .contact {
-      @include flexBox(column, space-around, center);
+    .row {
+      @include boxSize(width, 45vw, null, 45vw);
 
-      .policy {
-        @include paddingMargin($padding);
+      .box {
+        @include boxSize(width, 45vw, null, 45vw);
 
-        .list {
-          @include flexBox(row, space-around, flex-end);
+        &__row {
+          @include mainBox(row, space-around, center);
+          @include boxSize(width, 45vw, null, 45vw);
         }
       }
     }

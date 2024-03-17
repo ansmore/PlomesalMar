@@ -54,10 +54,11 @@ b,
 u,
 em {
   font-size: 1em;
-  font-weight: inherit;
+  font-weight: 400;
   font-style: inherit;
   text-decoration: none;
   color: inherit;
+  hyphens: none;
 }
 
 blockquote:before,

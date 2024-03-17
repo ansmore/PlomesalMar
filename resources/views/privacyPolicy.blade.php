@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title', 'Biit')
+@section('title', 'Privacy Policy')
 @section('content')
 
     @include('components.navigationHome')
@@ -9,13 +9,13 @@
         <!-- Header  section -->
         <section id="header__biit" class="termsAndPolicy">
             <div class="termsAndPolicy__row">
-                <div class="circle">
-                    <span class="circle__pyme">
+                <div class="circles">
+                    <span class="circles__pyme">
                         <a href="{{ route('home') }}">
-                            <img src="{{ asset('img/logo.png') }}" alt="">
+                            <img src="{{ asset('../img/logos/pymesoft_logo_text.png') }}" alt="">
                         </a>
                     </span>
-                    <span class="circle__biit">
+                    <span class="circles__biit">
                         <a href="{{ route('biit') }}">
                             <img src="{{ asset('img/logos/logo_biit.png') }}" alt="">
                         </a>
@@ -29,57 +29,42 @@
             </div>
             <div class="termsAndPolicy__row">
                 <article class="box">
-                    <span value-text="politica1A" class="box__content"></span>
-                    <span value-text="politicaName" class="box__name"></span>
-                    <span value-text="politica1B" class="box__content"></span>
-                </article>
-            </div>
-            <div class="termsAndPolicy__row">
-                <article class="box">
-                    <span value-text="politicaName" class="box__name"></span>
-                    <span value-text="politica2" class="box__content"></span>
-                </article>
-            </div>
-            <div class="termsAndPolicy__row">
-                <article class="box">
-                    <span value-text="politica3A" class="box__content"></span>
-                    <span value-text="politicaName" class="box__name"></span>
-                    <span value-text="politica3B" class="box__content"></span><span value-text="politicaName"
-                        class="box__name"></span>
-                    <span value-text="politica3C" class="box__content"></span>
-                </article>
-            </div>
-            <div class="termsAndPolicy__row">
-                <article class="box">
-                    <span value-text="politica4" class="box__content"></span>
-
-                </article>
-            </div>
-            <div class="termsAndPolicy__row">
-                <article class="box">
-                    <span value-text="politica5A" class="box__content"></span>
-                    <span value-text="politicaName" class="box__name"></span>
-                    <span value-text="politica5B" class="box__content"></span>
-                </article>
-            </div>
-            <div class="termsAndPolicy__row">
-                <article class="box">
-                    <span value-text="politica6" class="box__content"></span>
-                </article>
-            </div>
-            <div class="termsAndPolicy__row">
-                <article class="box">
-                    <span value-text="politica7" class="box__content"></span>
-                </article>
-            </div>
-            <div class="termsAndPolicy__row">
-                <article class="box">
-                    <span value-text="politica8" class="box__content"></span>
-                </article>
-            </div>
-            <div class="termsAndPolicy__row">
-                <article class="box">
-                    <span value-text="politica9" class="box__content"></span>
+                    <p>
+                        <span value-text="politica1A" class="box__content"></span>
+                        <span value-text="politicaName" class="box__name"></span>
+                        <span value-text="politica1B" class="box__content"></span>
+                    </p>
+                    <p>
+                        <span value-text="politicaName" class="box__name"></span>
+                        <span value-text="politica2" class="box__content"></span>
+                    </p>
+                    <p>
+                        <span value-text="politica3A" class="box__content"></span>
+                        <span value-text="politicaName" class="box__name"></span>
+                        <span value-text="politica3B" class="box__content"></span><span value-text="politicaName"
+                            class="box__name"></span>
+                        <span value-text="politica3C" class="box__content"></span>
+                    </p>
+                    <p>
+                        <span value-text="politica4" class="box__content"></span>
+                    </p>
+                    <p>
+                        <span value-text="politica5A" class="box__content"></span>
+                        <span value-text="politicaName" class="box__name"></span>
+                        <span value-text="politica5B" class="box__content"></span>
+                    </p>
+                    <p>
+                        <span value-text="politica6" class="box__content"></span>
+                    </p>
+                    <p>
+                        <span value-text="politica7" class="box__content"></span>
+                    </p>
+                    <p>
+                        <span value-text="politica8" class="box__content"></span>
+                    </p>
+                    <p>
+                        <span value-text="politica9" class="box__content"></span>
+                    </p>
                 </article>
             </div>
             <div class="termsAndPolicy__row">
@@ -111,9 +96,11 @@
             <div class="termsAndPolicy__row">
                 <article class="box">
                     <p value-text="politicaExactitudHeader" class="box__subtitle"></p>
-                    <span value-text="politicaExactitudA" class="box__content"></span>
-                    <span value-text="politicaName" class="box__name"></span>
-                    <span value-text="politicaExactitudB" class="box__content"></span>
+                    <p>
+                        <span value-text="politicaExactitudA" class="box__content"></span>
+                        <span value-text="politicaName" class="box__name"></span>
+                        <span value-text="politicaExactitudB" class="box__content"></span>
+                    </p>
                 </article>
             </div>
             <div class="termsAndPolicy__row">
@@ -149,24 +136,30 @@
             <div class="termsAndPolicy__row">
                 <article class="box">
                     <p value-text="politicaCambiosHeader" class="box__subtitle"></p>
-                    <span value-text="politicaName" class="box__name"></span>
-                    <span value-text="politicaCambiosA" class="box__content"></span>
+                    <p>
+                        <span value-text="politicaName" class="box__name"></span>
+                        <span value-text="politicaCambiosA" class="box__content"></span>
+                    </p>
                 </article>
             </div>
             <div class="termsAndPolicy__row">
                 <article class="box">
                     <p value-text="politicaCorreosHeader" class="box__subtitle"></p>
-                    <span value-text="politicaCorreosA" class="box__content"></span>
-                    <span value-text="politicaName" class="box__name"></span>
-                    <span value-text="politicaCorreosB" class="box__content"></span>
+                    <p>
+                        <span value-text="politicaCorreosA" class="box__content"></span>
+                        <span value-text="politicaName" class="box__name"></span>
+                        <span value-text="politicaCorreosB" class="box__content"></span>
+                    </p>
                 </article>
             </div>
             <div class="termsAndPolicy__row">
                 <article class="box">
                     <p value-text="politicaLegislacionHeader" class="box__subtitle"></p>
-                    <span value-text="politicaLegislacionA" class="box__content"></span>
-                    <span value-text="politicaName" class="box__name"></span>
-                    <span value-text="politicaLegislacionB" class="box__content"></span>
+                    <p>
+                        <span value-text="politicaLegislacionA" class="box__content"></span>
+                        <span value-text="politicaName" class="box__name"></span>
+                        <span value-text="politicaLegislacionB" class="box__content"></span>
+                    </p>
                 </article>
             </div>
         </section>

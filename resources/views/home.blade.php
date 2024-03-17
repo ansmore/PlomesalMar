@@ -1,106 +1,97 @@
 @extends('layouts.main')
 
-@section('title', 'Inicio')
+@section('title', 'Home')
 @section('content')
 
     @include('components.navigationHome')
-    {{-- @include('components.header') --}}
 
-    <div class="main">
-        <!-- Services Section -->
-        <section id="soluciones" class="solutions">
-            <div class="solutions__row--title">
-                <div class="box">
-                    <span class="box__image">
-                        <img src="{{ asset('img/logo.png') }}" alt="">
-                    </span>
-                    <h2 class="box__title" value-text="homeSoluciones"></h2>
-                    <h3 class="box__content" value-text="homeServicesSubheading"></h3>
-                </div>
-            </div>
-            <div class="solutions__row--content">
-                <div class="circle">
-                    {{-- box--content --}}
+    <main class="home">
+        <section id="solutions" class="row">
+            <article class="box">
+                <h2 class="box__title" value-text="homeSoluciones"></h2>
+                <p>
+                    <span class="box__content--reverse" value-text="homeIntro"></span>
+                    <span class="box__name--reverse" value-text="pymesoft"></span>
+                    <span class="box__content--reverse" value-text="homeIntro2"></span>
+                </p>
+                <p>
+                    <span class="box__content--reverse" value-text="homeIntro3"></span>
+                    <span class="box__name--reverse" value-text="pymesoft"></span>
+                    <span class="box__content--reverse" value-text="homeIntro4"></span>
+                </p>
+                <p>
+                    <span class="box__content--reverse" value-text="homeIntro5"></span>
+                </p>
+                <p>
+                    <span class="box__content--reverse" value-text="homeIntro6"></span>
+                    <span class="box__name--reverse" value-text="pymesoft"></span>
+                    <span class="box__content--reverse" value-text="homeIntro7"></span>
+                </p>
+            </article>
+            <article class="box__circle">
+                <figure class="circle">
                     <span class="circle__icon">
-                        <span class="i">
-                            {{-- <i class="fa  fa-check-square"></i> --}}
-                            <img src="{{ asset('img/logos/logo_biit.png') }}" alt="">
-                        </span>
+                        <img src="{{ asset('img/logos/logo_biit.png') }}" alt="">
                     </span>
                     <h4 class="circle__content">
                         <a href="{{ route('biit', ['language' => $language]) }}" value-text="services1"></a>
                     </h4>
-                </div>
-                <div class="circle">
-                    {{-- box--content --}}
+                </figure>
+                <figure class="circle">
                     <span class="circle__icon">
-                        <span class="i">
-                            {{-- <i class="fa fa-list-ul"></i> --}}
-                            <img src="{{ asset('img/logos/sage.svg') }}" alt="">
-                        </span>
+                        <img src="{{ asset('img/logos/sage.svg') }}" alt="">
                     </span>
                     <h4 class="circle__content">
                         <a href="{{ route('consultancy', ['language' => $language]) }}" value-text="services3"></a>
                     </h4>
-                </div>
-            </div>
+                </figure>
+            </article>
         </section>
-        <!-- Clients Aside -->
-        <section class="aside">
-            <div class="aside__box">
-                <a href="{{ route('biit', ['language' => $language]) }}">
-                    <img src="{{ asset('img/logos/banner.jpg') }}" alt="banner">
-                </a>
-            </div>
+        <section id="about" class="row--reverse">
+            <article class="box">
+                <h2 class="box__title" value-text="aboutHeading"></h2>
+            </article>
+            <article class="box">
+                <span class="box__content" value-text="aboutText"></span>
+                <a href="{{ route('biit', ['language' => $language]) }}" class="box__button" value-text="aboutButton"></a>
+            </article>
+            <article class="box">
+                <figure class="box__image">
+                    <a href="{{ route('biit', ['language' => $language]) }}">
+                        <img src="{{ asset('img/logos/banner.jpg') }}" alt="banner">
+                    </a>
+                </figure>
+            </article>
         </section>
-        <!-- About Section -->
-        <section id="about" class="about">
-            <div class="about__row">
-                <div class="box">
-                    <h2 class="box__title" value-text="aboutHeading"></h2>
-                    <h4 class="box__content" value-text="aboutText"></h4>
-                    <a href="{{ route('biit', ['language' => $language]) }}" class="box__button"
-                        value-text="aboutButton"></a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Sitemap & Contact Section -->
-        <!-- Contact-Custom -->
-        <section id="contact" class="contact">
-            <div class="contact__row">
-                <div class="box--title">
-                    <h2 class="box__title" value-text="sitemapHeading"></h2>
-                    <h3 class="box__content">
-                        <i class="fa fa-map-marker"></i>
-                        <p value-text="sitemapAddress"></p>
-                    </h3>
-                </div>
-            </div>
-            <div class="contact_row" id="overlay"> <!-- Obtener clave API -->
+        <section id="contact" class="row">
+            <article class="box">
+                <h2 class="box__title" value-text="sitemapHeading"></h2>
+                <span class="box__content">
+                    <i class="fa fa-map-marker"></i>
+                </span>
+                <span class="box__content" value-text="sitemapAddress"></span>
+            </article>
+            <article class="box" id="overlay"> <!-- Obtener clave API -->
                 <iframe class="box__map"
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2984.8365965213275!2d2.079309315088584!3d41.572780979247604!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a494c6bf0218b9%3A0xfb5a922369909333!2sPymesoft+Vall%C3%A9s+S.L.!5e0!3m2!1ses!2ses!4v1515689921450"
                     frameborder="0" style="border:0" allowfullscreen></iframe>
-            </div>
-            <div class="contact_row">
-                <div class="box">
-                    <h2 class="box__title" value-text="contactHeading"></h2>
-                </div>
-                <div class="box">
-                    <h3 class="box__content" value-text="contactPhone">
-                    </h3>
-                    <h4 class="box__content" value-text="contactPhoneNumber">
-                    </h4>
-                    {{-- <span class="box__icon"> </span> --}}
-                </div>
-                <div class="box">
-                    <h3 class="box__content" value-text="contactAction"></h3>
-                    <a href="{{ route('biitContact', ['language' => $language]) }}" class="box__button"
+            </article>
+            <article class="box">
+                <h2 class="box__title" value-text="contactHeading"></h2>
+                <span class="box__row">
+                    <span class="box__content" value-text="contactPhone">
+                    </span>
+                    <span class="box__content" value-text="contactPhoneNumber">
+                    </span>
+                </span>
+                <span class="box__row">
+                    <span class="box__content" value-text="contactAction"></span>
+                    <a class="box__button" href="{{ route('biitContact', ['language' => $language]) }}"
                         value-text="contactActionMessage"></a>
-                </div>
-            </div>
-    </div>
-    </section>
-    </div>
+                </span>
+            </article>
+
+        </section>
+    </main>
     <script type="module" src="{{ asset('js/home.js') }}" defer></script>
 @endsection

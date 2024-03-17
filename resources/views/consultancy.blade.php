@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title', 'consultancy')
+@section('title', 'Consultancy')
 @section('content')
 
     @include('components.navigationHome')

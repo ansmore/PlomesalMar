@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title', 'Biit')
+@section('title', 'Biit Contact')
 @section('content')
 
     @include('components.navigationBiit')
@@ -9,13 +9,13 @@
         <!-- Biit Contact Section -->
         <section id="contact" class="contact">
             <div class="contact__row">
-                <div class="circle">
-                    <span class="circle__pyme">
+                <div class="circles">
+                    <span class="circles__pyme">
                         <a href="{{ route('home', ['language' => $language]) }}">
-                            <img src="{{ asset('img/logo.png') }}" alt="">
+                            <img src="{{ asset('../img/logos/pymesoft_logo_text.png') }}" alt="">
                         </a>
                     </span>
-                    <span class="circle__biit">
+                    <span class="circles__biit">
                         <a href="{{ route('biit', ['language' => $language]) }}">
                             <img src="{{ asset('img/logos/logo_biit.png') }}" alt="">
                         </a>

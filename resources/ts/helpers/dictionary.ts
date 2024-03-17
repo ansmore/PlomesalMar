@@ -2,12 +2,12 @@ type Dictionary = {
   [clave: string]: string;
 };
 
-// Pending import from globals
+// Here-> Pending import from globals
 const defaultLanguage = "es";
 import { navbar } from "../components/navigation.js";
 import { footer } from "../components/footer.js";
-export let counterComponent = 0;
-export let counterPage = 0;
+// export let counterComponent = 0;
+// export let counterPage = 0;
 
 export const loadDictionary = async (
   language: string,
@@ -27,8 +27,8 @@ export const loadDictionary = async (
   }
 };
 
-// const abailableLanguages = ["en", "es", "ca"];
-export const loadAbailablesLanguages = async (): Promise<string[]> => {
+// const availableLanguages = ["en", "es", "ca"];
+export const loadAvailablesLanguages = async (): Promise<string[]> => {
   try {
     const response = await fetch(`./../dictionary/listLanguages.json`);
     if (!response.ok) {
@@ -41,7 +41,7 @@ export const loadAbailablesLanguages = async (): Promise<string[]> => {
   }
 };
 
-export const loadAbailablesFiles = async (): Promise<string[]> => {
+export const loadAvailablesFiles = async (): Promise<string[]> => {
   try {
     const response = await fetch(`./../dictionary/listPages.json`);
     if (!response.ok) {
@@ -78,7 +78,7 @@ export const getFileNameFromUrl = (url: string): string | undefined => {
 export const isLanguageSupported = async (
   language: string,
 ): Promise<boolean> => {
-  const supportedLanguages = await loadAbailablesLanguages();
+  const supportedLanguages = await loadAvailablesLanguages();
 
   return !supportedLanguages.includes(language);
 };
@@ -101,14 +101,14 @@ export const getSelectedLanguage = (): string => {
 
 export const getFinalLanguage = async (): Promise<string> => {
   try {
-    const abailableLanguages = await loadAbailablesLanguages();
+    const availableLanguages = await loadAvailablesLanguages();
 
     const selectedLanguage = await getSelectedLanguage();
     const navigatorLanguage = await getNavigatorLanguage();
 
     const finalSelectedLanguage =
-      abailableLanguages.includes(selectedLanguage) ||
-      abailableLanguages.includes(navigatorLanguage)
+      availableLanguages.includes(selectedLanguage) ||
+      availableLanguages.includes(navigatorLanguage)
         ? selectedLanguage || navigatorLanguage
         : defaultLanguage;
 
@@ -128,8 +128,8 @@ export const setLanguage = async (selectedLanguage: string) => {
 
     // If return false, this language is not in white list!
     if (await isLanguageSupported(navigatorLanguage)) {
-      console.error(
-        `Home->Your navigator languages unsuported! ${navigatorLanguage}. Sorry!`,
+      console.log(
+        `Your navigator languages unsuported! ${navigatorLanguage}. Sorry!`,
       );
       navigatorLanguage = "";
     }
@@ -146,13 +146,13 @@ export const setLanguage = async (selectedLanguage: string) => {
 
 export const loadText = async () => {
   try {
-    counterPage += 1;
-    const abailablePages = await loadAbailablesFiles();
+    // counterPage += 1;
+    const availablePages = await loadAvailablesFiles();
 
     const fileName = await getCurrentFileName();
     const finalSelectedLanguage = await getFinalLanguage();
 
-    const selectedPage = abailablePages.includes(fileName) ? fileName : "home";
+    const selectedPage = availablePages.includes(fileName) ? fileName : "home";
 
     const dictionary = await loadDictionary(
       finalSelectedLanguage,
@@ -168,7 +168,7 @@ export const loadText = async () => {
       }
     });
   } catch (error) {
-    console.error("Error loading the text", error);
+    console.error("Error loading text", error);
   }
 };
 

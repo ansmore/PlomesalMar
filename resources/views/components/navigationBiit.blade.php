@@ -8,11 +8,10 @@
     <div class="navbar">
         <div class="navbar__logo">
             <a href="{{ route('biit', ['language' => $language]) }}">
-                <img class="img-responsive" src="{{ asset('./img/logos/logo_biit.png') }}" alt="Pymesoft"
-                    id="pymeso" />
+                <img src="{{ asset('./img/logos/logo_biit.png') }}" alt="Pymesoft" id="pymeso" />
             </a>
         </div>
-        <div class="navbar__menu">
+        <div class="navbar__menu__biit">
             <ul class="list">
                 <li class="list__item">
                     <a class="list__item__link" href="{{ route('home', ['language' => $language]) }}"
@@ -21,6 +20,11 @@
                 <li class="list__item">
                     <a class="list__item__link" href="{{ route('whyBiit', ['language' => $language]) }}"
                         value-text="navBiit"></a>
+                </li>
+                <li class="list__item">
+                    <a class="list__item__link" href="{{ route('biitContact', ['language' => $language]) }}"
+                        value-text="navContacto"></a>
+                    {{-- Pendiente de hacer la pagina de contacto --}}
                 </li>
                 <li class="list__item">
                     <div class="dropdown">
@@ -37,19 +41,15 @@
                                 href="{{ route('biitModules.section', ['section' => 'process', 'language' => $language]) }}"
                                 value-text="navProceso"></a>
                             <a class="dropdown__menu__item"
-                                href="{{ route('biitModules.section', ['section' => 'business', 'language' => $language]) }}"
-                                value-text="navBusiness"></a>
-                            <a class="dropdown__menu__item"
                                 href="{{ route('biitModules.section', ['section' => 'bill', 'language' => $language]) }}"
                                 value-text="navFactura"></a>
+                            <a class="dropdown__menu__item"
+                                href="{{ route('biitModules.section', ['section' => 'business', 'language' => $language]) }}"
+                                value-text="navBusiness"></a>
                         </div>
                     </div>
                 </li>
-                <li class="list__item">
-                    <a class="list__item__link" href="{{ route('biitContact', ['language' => $language]) }}"
-                        value-text="navContacto"></a>
-                    {{-- Pendiente de hacer la pagina de contacto --}}
-                </li>
+
             </ul>
         </div>
         <div class="navbar__language">
@@ -69,4 +69,4 @@
         </div>
     </div>
 </nav>
-<script type="module" src="{{ asset('js/navigation.js') }}" defer></script>
+<script type="module" src="{{ asset('js/components/navigation.js') }}" defer></script>

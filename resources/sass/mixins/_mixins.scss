@@ -1,4 +1,4 @@
-@mixin flexBox($direction: row, $justify: flex-start, $align: center) {
+@mixin mainBox($direction: row, $justify: flex-start, $align: center) {
   display: flex;
   flex-direction: $direction;
 
@@ -11,7 +11,7 @@
   align-self: center;
 
   // Developer mode:
-  // border: 1px solid $danger_main;
+  // border: 1px solid darkorange;
 }
 
 @mixin paddingMargin($padding: 0, $margin: 0) {
@@ -23,8 +23,6 @@
   color: $color;
   background-color: $background-color;
 
-  // Developer mode:
-  // border: 1px solid $danger_main;
 }
 
 /** 
@@ -105,10 +103,19 @@
   $axis: 3px,
   $shadowColor: $neutral_main,
   $shadowColorSecondary: $neutral_light) {
+
   border-radius: $radius;
   border: 1px solid $boderColor;
   box-shadow:
     $axis $axis (
     $axis * 2) $shadowColor,
     (-$axis) (-$axis) ($axis * 2) $shadowColorSecondary;
+}
+
+@mixin circleStyle($backgroundColor: transparent, $radius: 0, $boderColor: transparent) {
+
+  background-color: $backgroundColor;
+  border-radius: $radius;
+  border: 1px solid $boderColor;
+
 }

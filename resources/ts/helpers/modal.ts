@@ -1,63 +1,41 @@
 // helpers/modal.ts
 
-import {
-  loadTextComponent,
-  loadText,
-  getFinalLanguage,
-  loadDictionary,
-} from "./dictionary.js";
+export const openModal = (idModalToOpen: string): void => {
+  const infoModalBox = document.querySelector(idModalToOpen) as HTMLElement;
 
-export const openModal = (modalId: string): void => {
-  const modal = document.getElementById(modalId);
-  const infoModalBox = document.getElementById("infoModal");
-
-  if (modal && infoModalBox) {
-    console.log("modal -> ", modalId);
-    updateModalAttributes(modalId);
+  if (infoModalBox) {
     infoModalBox.style.display = "block";
   }
+  closeModalButton();
+  closeModalOutside();
 };
 
 export const closeModal = (modalId: string): void => {
   const modal = document.getElementById(modalId);
 
   if (modal) {
-    // console.log("close trueeee -> ", modalId);
     modal.style.display = "none";
+    resetImage();
+    // resetContend();
   }
 };
 
-export const setupModalButtons = (): void => {
-  const modalButtons = document.querySelectorAll(".modal-button");
-
-  modalButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-      const modalId = button.getAttribute("data-modal-id");
-      if (modalId) {
-        // console.log("click -> ", modalId);
-        openModal(modalId);
-      }
-    });
-  });
-};
-
-export const setupCloseModalButtons = (): void => {
+export const closeModalButton = (): void => {
   const closeModalButtons = document.querySelectorAll("#closeModalButton");
 
   closeModalButtons.forEach((button) => {
     button.addEventListener("click", () => {
-      const modal = button.closest(".modal");
+      const modal = button.closest("#infoModal");
       if (modal) {
-        // console.log("cierre modal button", modal.id);
         closeModal(modal.id);
       }
     });
   });
 };
 
-export const setupOutsideModalClick = (): void => {
+export const closeModalOutside = (): void => {
   document.addEventListener("click", (event: MouseEvent) => {
-    const modals = document.querySelectorAll(".modal");
+    const modals = document.querySelectorAll("#infoModal");
     let clickedInsideModal = false;
 
     modals.forEach((modal) => {
@@ -72,76 +50,35 @@ export const setupOutsideModalClick = (): void => {
         modalBox.contains(event.target as Node) &&
         event.target instanceof HTMLElement &&
         (event.target === closeButton ||
-          event.target.classList.contains("modal__box") ||
+          // event.target.classList.contains("modal__box") ||
+          event.target.id === "modalBox" ||
           (modalBodyContent &&
             (modalBodyContent.contains(event.target as Node) ||
               modalBodyContent.isSameNode(event.target as Node))))
       ) {
-        console.log("click detectado dentro del modal", modal.id);
         clickedInsideModal = true;
       }
     });
 
     if (!clickedInsideModal) {
-      const modalButton = (event.target as HTMLElement).closest(".modal");
+      const modalButton = (event.target as HTMLElement).closest("#infoModal");
       if (modalButton) {
-        console.log("detectado click outside", modalButton.id);
         closeModal(modalButton.id);
       }
     }
   });
 };
 
-export const updateModalAttributes = async (modalId: string): Promise<void> => {
-  const modalTitle = document.getElementById("modalTitle");
-  const modalContent = document.getElementById("modalContent");
-  const component = "whyBiit";
+// export const resetContend = (): void => {
+//   const modalBodyContent = document.querySelector("#modalBodyContent");
 
-  if (modalTitle && modalContent) {
-    try {
-      switch (modalId) {
-        case "firstModal":
-          console.log("1");
-          modalTitle.setAttribute("value-text", "modulosCliente");
-          modalContent.setAttribute("value-text", "modulosClienteText");
-          // loadTextComponent(component);
-          break;
-        case "secondModal":
-          console.log("2");
-          modalTitle.setAttribute("value-text", "modulosComercio");
-          modalContent.setAttribute("value-text", "modulosComercioText");
-          // loadTextComponent(component);
-          break;
-        case "thirdModal":
-          console.log("3");
-          modalTitle.setAttribute("value-text", "modulosProcesos");
-          modalContent.setAttribute("value-text", "modulosProcesosText");
-          // loadTextComponent(component);
-          break;
-        case "fourthModal":
-          console.log("4");
-          modalTitle.setAttribute("value-text", "modulosFactura");
-          modalContent.setAttribute("value-text", "modulosFacturaText");
-          // loadTextComponent(component);
-          break;
-        case "fifthModal":
-          console.log("5");
-          modalTitle.setAttribute("value-text", "modulosBusiness");
-          modalContent.setAttribute("value-text", "modulosBusinessText");
-          // loadTextComponent(component);
-          break;
+//   if (modalBodyContent) {
+//     modalBodyContent.innerHTML = "";
+//   }
+// };
 
-        default:
-          // Por defecto
-          modalTitle.setAttribute("value-text", "default");
-          modalContent.setAttribute("value-text", "default");
-          // loadTextComponent(component);
-          break;
-      }
+export const resetImage = (): void => {
+  const bodyPhoto = document.querySelector("#modalPhoto");
 
-      loadTextComponent(component);
-    } catch (error) {
-      console.error("Error updating modal attributes", error);
-    }
-  }
+  bodyPhoto?.setAttribute("src", "");
 };

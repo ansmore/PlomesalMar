@@ -1,9 +1,7 @@
 import { loadText } from "./helpers/dictionary.js";
-import { setupModalButtons, setupCloseModalButtons, setupOutsideModalClick, } from "./helpers/modal.js";
+import { loadModal } from "./modals/whyBiitModal.js";
 const main = () => {
     loadText();
-    setupModalButtons();
-    setupCloseModalButtons();
-    setupOutsideModalClick();
+    loadModal();
 };
 document.addEventListener("DOMContentLoaded", main);
