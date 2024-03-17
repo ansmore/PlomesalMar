@@ -35,7 +35,7 @@
 
     &__menu {
       @include mainBox(row, center, center);
-      @include paddingMargin(0, -300px 0 0 0);
+      @include paddingMargin(0, 218px 0 0 0);
       position: absolute;
       z-index: 2;
       flex: 6;
@@ -182,7 +182,7 @@
       &:checked+.navbar {
         .navbar__menu {
 
-          @include paddingMargin(0, 218px 0 0 0);
+
 
           .list {
             transition: transform 0.5s;

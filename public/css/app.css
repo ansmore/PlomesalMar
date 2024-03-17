@@ -441,7 +441,7 @@ header .intro-text .intro-heading {
   align-self: center;
   border: 1px solid darkorange;
   padding: 0;
-  margin: -300px 0 0 0;
+  margin: 218px 0 0 0;
   position: absolute;
   z-index: 2;
   flex: 6;
@@ -637,10 +637,6 @@ header .intro-text .intro-heading {
 }
 .nav .toggle__checkbox {
   display: none;
-}
-.nav .toggle__checkbox:checked + .navbar .navbar__menu {
-  padding: 0;
-  margin: 218px 0 0 0;
 }
 .nav .toggle__checkbox:checked + .navbar .navbar__menu .list {
   transition: transform 0.5s;
