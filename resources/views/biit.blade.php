@@ -5,7 +5,7 @@
 
     @include('components.navigationBiit')
 
-    <div class="main">
+    <main class="biit">
         <!-- Header  section -->
         <section id="header__biit" class="header">
             <div class="header__row">
@@ -21,6 +21,6 @@
                 </div>
             </div>
         </section>
-    </div>
+    </main>
     <script type="module" src="{{ asset('js/biit.js') }}" defer></script>
 @endsection

@@ -1,0 +1,126 @@
+// Style Contact page
+
+.biitContact {
+  @include mainBox(column, space-around, center);
+  // @include paddingMargin($padding);
+  @include style($primary_main, $neutral_light);
+  font-size: $size_small;
+  margin-top: $nav-height;
+  gap: $gap;
+  @include boxSize(height, auto);
+
+  .row {
+    @extend .section;
+
+    @include paddingMargin(4rem $padding $padding $padding, 0);
+
+    .box {
+      @extend .article;
+
+      &__logo {
+        @extend .article;
+
+        &__image {
+          @extend .logo;
+
+          a img {
+            @include boxSize(height, 3.5rem);
+          }
+        }
+      }
+
+      &__title {
+        @extend .title;
+      }
+    }
+
+    .form {
+      @extend .form;
+
+      @include mainBox(column, space-around, center);
+
+      &__group {
+        &__content {
+          @extend .content;
+        }
+
+        &__input {
+          @extend .formInput;
+        }
+
+        &__button {
+          @extend .button;
+        }
+
+        &__consent {
+          @extend .consent;
+          gap: $gap ;
+
+
+          &__check {
+            appearance: checkbox;
+            width: 1rem;
+            height: 1rem;
+          }
+
+          &__content {
+            @extend .content;
+
+            hyphens: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 376px) and (max-width: 600px) {}
+
+
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+  .biitContact {
+    .row {
+      .form {
+        &__group {
+          @include mainBox(row, flex-end, center);
+          // @include boxSize(width, 75vw, null, 75vw);
+
+          &__input {
+            @include boxSize(width, 45vw, null, 45vw);
+          }
+
+          &__button {
+            margin: $margin auto;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+@media screen and (min-width: 1025px) {
+  .biitContact {
+    .row {
+      .box__logo {
+        @include mainBox(row, center, center);
+        gap: 2rem;
+      }
+
+      .form {
+        &__group {
+          @include mainBox(row, flex-end, center);
+          // @include boxSize(width, 75vw, null, 75vw);
+
+          &__input {
+            @include boxSize(width, 25rem, null, 25rem);
+          }
+
+          &__button {
+            margin: $margin auto;
+          }
+        }
+      }
+    }
+  }
+}

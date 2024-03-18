@@ -2,7 +2,7 @@
 .footer {
   @include mainBox(column, center, center);
   @include style($neutral_lighter, $primary_main);
-
+  @include boxSize(height, 12rem);
 
   .row {
     @extend .section;
@@ -20,8 +20,7 @@
       &__image {
         @extend .image;
 
-        // Here-> To delete?
-        // @include boxSize(width, 50vw, null, 50vw);
+        @include boxSize(width, 80vw, null, 80vw);
       }
 
       .icon {
@@ -71,7 +70,8 @@
     .row {
       .box {
         &__row {
-          @include mainBox(row, space-around, center);
+          @include mainBox(row, center, center);
+          gap: 2rem;
         }
       }
     }
@@ -89,8 +89,9 @@
         @include boxSize(width, 45vw, null, 45vw);
 
         &__row {
-          @include mainBox(row, space-around, center);
+          @include mainBox(row, center, center);
           @include boxSize(width, 45vw, null, 45vw);
+          gap: 2rem;
         }
       }
     }

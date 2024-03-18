@@ -119,3 +119,42 @@
     font-size: $size_big
   }
 }
+
+.logo {
+  @include mainBox(column, center, center);
+  @include paddingMargin($padding, $margin);
+  @include boxShadow($primary_main,
+    5px,
+    2px,
+    $secondary_main,
+    $secondary_light );
+  @include style(null, $neutral_lighter);
+  @include boxSize(width, 225px, null, 225px);
+  @include boxSize(height, 125px, null, 150px);
+
+  overflow: hidden;
+
+  img {
+    @include mainBox(column, center, center);
+  }
+}
+
+.formInput {
+  @include paddingMargin(1rem, $margin);
+  @include style($secondary_main, $neutral_lighter);
+  @include boxSize(width, 75vw, null, 75vw);
+
+  @include hover($neutral_lightest,
+    inherit,
+    $secondary_main,
+    $neutral_dark );
+}
+
+.consent {
+  @include mainBox(row, center, center);
+  @include paddingMargin(0, $margin auto);
+}
+
+.form {
+  @extend .article;
+}
