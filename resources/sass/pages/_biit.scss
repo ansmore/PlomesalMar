@@ -1,11 +1,12 @@
 //  Estilos página Biit
-.main {
+.biit {
   @include mainBox(column, space-around);
   @include paddingMargin($padding);
   @include style($primary_main, $neutral_light);
   font-size: $size_small;
   margin-top: $nav-height;
   gap: $gap;
+  // @include boxSize(height, calc(100vh - ($nav-height + $footer-height)));
 
   .header {
     @include mainBox(column, space-around, center);

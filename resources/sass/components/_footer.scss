@@ -2,7 +2,7 @@
 .footer {
   @include mainBox(column, center, center);
   @include style($neutral_lighter, $primary_main);
-
+  @include boxSize(height, 12rem);
 
   .row {
     @extend .section;
