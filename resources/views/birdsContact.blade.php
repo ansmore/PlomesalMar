@@ -11,12 +11,12 @@
             <article class="box__logo">
                 <span class="box__logo__image">
                     <a href="{{ route('home', ['language' => $language]) }}">
-                        <img src="{{ asset('../img/logos/pymesoft_logo_text.png') }}" alt="">
+                        <img src="{{ asset('../img/logos/demo.png') }}" alt="">
                     </a>
                 </span>
                 <span class="box__logo__image">
                     <a href="{{ route('home', ['language' => $language]) }}">
-                        <img src="{{ asset('img/logos/logo_biit.png') }}" alt="">
+                        <img src="{{ asset('../img/logos/demo.png') }}" alt="">
                     </a>
                 </span>
             </article>

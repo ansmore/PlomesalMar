@@ -13,7 +13,7 @@ $language = Session::get('language', 'ca');
     <div class="navbar">
         <div class="navbar__logo">
             <a href="/">
-                <img src="{{ asset('../img/logos/pymesoft_logo_text.png') }}" alt="Pymesoft" id="pymeso" />
+                <img src="{{ asset('../img/logos/demo.png') }}" alt="Pymesoft" id="pymeso" />
             </a>
         </div>
         <div class="navbar__menu__home">

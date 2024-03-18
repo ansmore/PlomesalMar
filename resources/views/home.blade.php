@@ -31,7 +31,7 @@
             <article class="box__circle">
                 <figure class="circle">
                     <span class="circle__icon">
-                        <img src="{{ asset('img/logos/logo_biit.png') }}" alt="">
+                        <img src="{{ asset('img/logos/demo.png') }}" alt="">
                     </span>
                     <h4 class="circle__content">
                         <a href="{{ route('home', ['language' => $language]) }}" value-text="services1"></a>
@@ -39,7 +39,7 @@
                 </figure>
                 <figure class="circle">
                     <span class="circle__icon">
-                        <img src="{{ asset('img/logos/sage.svg') }}" alt="">
+                        <img src="{{ asset('../img/logos/demo.png') }}" alt="">
                     </span>
                     <h4 class="circle__content">
                         <a href="{{ route('home', ['language' => $language]) }}" value-text="services3"></a>
