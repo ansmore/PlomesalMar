@@ -752,6 +752,10 @@ header .intro-text .intro-heading {
   align-items: center;
   align-self: center;
 }
+.footer .row .box__image {
+  min-width: 80vw;
+  max-width: 80vw;
+}
 .footer .row .box .icon {
   display: flex;
   flex-direction: row;
@@ -822,12 +826,13 @@ header .intro-text .intro-heading {
   .footer .row .box__row {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
     justify-items: center;
     justify-self: center;
     align-content: center;
     align-items: center;
     align-self: center;
+    gap: 2rem;
   }
 }
 @media screen and (min-width: 1025px) {
@@ -852,7 +857,7 @@ header .intro-text .intro-heading {
   .footer .row .box__row {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
     justify-items: center;
     justify-self: center;
     align-content: center;
@@ -860,6 +865,7 @@ header .intro-text .intro-heading {
     align-self: center;
     min-width: 45vw;
     max-width: 45vw;
+    gap: 2rem;
   }
 }
 .home {
