@@ -2,7 +2,7 @@
 .main {
   @include mainBox(column, space-around);
   @include paddingMargin($padding);
-  @include style($primary_main, $neutral_light);
+  @include style($primary_main, $primary_lightest);
   font-size: $size_small;
   margin-top: $nav-height;
   gap: $gap;
@@ -48,7 +48,7 @@
 
         }
 
-        &__biit {
+        &__birds {
           @include mainBox(column, center, center);
           @include paddingMargin($padding, $margin);
           @include style(null, $neutral_lighter);

@@ -10,21 +10,21 @@ use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
 
-class BiitController extends Controller
+class BirdsController extends Controller
 {
-    public function biit()
+    public function birds()
     {
         $language = Session::get('language',  config('app.fallback_locale', 'es'));
 
-        return view('biit', ['language' => $language]);
+        return view('birds', ['language' => $language]);
     }
 
-    public function biitSection($section = null)
+    public function birdsSection($section = null)
     {
 
         $language = Session::get('language',  config('app.fallback_locale', 'es'));
 
-        return view('biit', ['section' => $section, 'language' => $language]);
+        return view('birds', ['section' => $section, 'language' => $language]);
     }
 
     public function whyBiit()
@@ -41,29 +41,17 @@ class BiitController extends Controller
         return view('whyBiit', ['section' => $section, 'language' => $language]);
     }
 
-    public function biitModules()
+
+
+    public function birdsContactForm()
     {
         $language = Session::get('language',  config('app.fallback_locale', 'es'));
 
-        return view('biitModules', ['language' => $language]);
-    }
-
-    public function biitModulesSection($section = null)
-    {
-        $language = Session::get('language',  config('app.fallback_locale', 'es'));
-
-        return view('biitModules', ['section' => $section, 'language' => $language]);
-    }
-
-    public function biitContactForm()
-    {
-        $language = Session::get('language',  config('app.fallback_locale', 'es'));
-
-        return view('biitContact', ['language' => $language]);
+        return view('birdsContact', ['language' => $language]);
     }
 
 
-    public function biitContactSubmit(Request $request)
+    public function birdsContactSubmit(Request $request)
     {
         //     $viewData = [
         //     'messages' => $messages,
@@ -108,10 +96,10 @@ class BiitController extends Controller
 
         // dd("contenido diccionario", $dictionary);
 
-        Mail::to(env('MAIL_FROM_ADDRESS', 'soporte@biit.es'))->send(new ContactMessage($messages, $dictionary));
+        Mail::to(env('MAIL_FROM_ADDRESS', 'avalls89@gmail.com'))->send(new ContactMessage($messages, $dictionary));
 
         Mail::to($request->input('email'))->send(new ContactConfirmation($messages, $dictionary));
 
-        return view('biitContact', ['language' => $language])->with('success', 'Mensaje enviado con exito!');
+        return view('birdsContact', ['language' => $language])->with('success', 'Mensaje enviado con exito!');
     }
 }

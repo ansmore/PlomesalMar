@@ -7,7 +7,7 @@
 
     <div class="main">
         <!-- Header  section -->
-        <section id="header__biit" class="termsAndPolicy">
+        <section id="header__birds" class="termsAndPolicy">
             <div class="termsAndPolicy__row">
                 <div class="circles">
                     <span class="circles__pyme">
@@ -15,8 +15,8 @@
                             <img src="{{ asset('../img/logos/pymesoft_logo_text.png') }}" alt="">
                         </a>
                     </span>
-                    <span class="circles__biit">
-                        <a href="{{ route('biit') }}">
+                    <span class="circles__birds">
+                        <a href="{{ route('home') }}">
                             <img src="{{ asset('img/logos/logo_biit.png') }}" alt="">
                         </a>
                     </span>

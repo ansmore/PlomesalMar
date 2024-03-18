@@ -23,16 +23,15 @@ $language = Session::get('language', 'ca');
                         value-text="navHomePage"></a>
                 </li>
                 <li class="list__item">
-                    <a class="list__item__link" href="{{ route('digitalization', ['language' => $language]) }}"
+                    <a class="list__item__link" href="{{ route('home', ['language' => $language]) }}"
                         value-text="navDigitalization"></a>
                 </li>
                 <li class="list__item">
-                    <a class="list__item__link" href="{{ route('biit', ['language' => $language]) }}"
+                    <a class="list__item__link" href="{{ route('home', ['language' => $language]) }}"
                         value-text="navPorfolio"></a>
                 </li>
                 <li class="list__item">
-                    <a class="list__item__link"
-                        href="{{ route('home.section', ['section' => 'contact', 'language' => $language]) }}"
+                    <a class="list__item__link" href="{{ route('birdsContact', ['language' => $language]) }}"
                         value-text="navContact"></a>
                 </li>
             </ul>

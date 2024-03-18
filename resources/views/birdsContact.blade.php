@@ -1,12 +1,12 @@
 @extends('layouts.main')
 
-@section('title', 'Biit Contact')
+@section('title', 'Birds Contact')
 @section('content')
 
-    @include('components.navigationBiit')
+    @include('components.navigationHome')
 
-    <main class="biitContact">
-        <!-- Biit Contact Section -->
+    <main class="birdsContact">
+        <!-- Birds Contact Section -->
         <section id="logo" class="row">
             <article class="box__logo">
                 <span class="box__logo__image">
@@ -15,7 +15,7 @@
                     </a>
                 </span>
                 <span class="box__logo__image">
-                    <a href="{{ route('biit', ['language' => $language]) }}">
+                    <a href="{{ route('home', ['language' => $language]) }}">
                         <img src="{{ asset('img/logos/logo_biit.png') }}" alt="">
                     </a>
                 </span>
@@ -26,7 +26,7 @@
                 <h2 class="box__title" value-text="formTitulo"></h2>
             </article>
             <article class="form">
-                <form action="{{ route('biitContact.submit') }}" method="POST" enctype="multipart/form-data"
+                <form action="{{ route('birdsContact.submit') }}" method="POST" enctype="multipart/form-data"
                     id="contactForm">
                     @csrf
                     <div class="form__group">
@@ -64,5 +64,5 @@
             </article>
         </section>
     </main>
-    <script type="module" src="{{ asset('js/biitContact.js') }}" defer></script>
+    <script type="module" src="{{ asset('js/birdsContact.js') }}" defer></script>
 @endsection

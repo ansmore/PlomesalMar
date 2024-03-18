@@ -13,10 +13,10 @@ class VerifyCsrfToken extends Middleware
      */
     protected $except = [
         '/sendLanguage',
-        '/es/biitContact',
-        '/en/biitContact',
-        '/ca/biitContact',
-        '/{ca,en,es}/biitContact',
+        '/es/birdsContact',
+        '/en/birdsContact',
+        '/ca/birdsContact',
+        '/{ca,en,es}/birdsContact',
 
     ];
 }

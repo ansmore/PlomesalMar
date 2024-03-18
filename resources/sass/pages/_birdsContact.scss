@@ -1,9 +1,9 @@
 // Style Contact page
 
-.biitContact {
+.birdsContact {
   @include mainBox(column, space-around, center);
   // @include paddingMargin($padding);
-  @include style($primary_main, $neutral_light);
+  @include style($primary_main, $primary_lightest);
   font-size: $size_small;
   margin-top: $nav-height;
   gap: $gap;
@@ -78,7 +78,7 @@
 
 
 @media screen and (min-width: 601px) and (max-width: 1024px) {
-  .biitContact {
+  .birdsContact {
     .row {
       .form {
         &__group {
@@ -100,7 +100,7 @@
 
 
 @media screen and (min-width: 1025px) {
-  .biitContact {
+  .birdsContact {
     .row {
       .box__logo {
         @include mainBox(row, center, center);

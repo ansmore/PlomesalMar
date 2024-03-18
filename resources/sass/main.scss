@@ -5,7 +5,6 @@
 @import "base/globals";
 
 @import "mixins/mixins";
-@import "mixins/mixinsNavbar";
 
 @import "base/reusable";
 
@@ -14,12 +13,5 @@
 @import "components/footer";
 
 @import "pages/home";
-@import "pages/digitalization";
-@import "pages/biit";
-@import "pages/biitContact";
+@import "pages/birdsContact";
 @import "pages/termsAndPolicy";
-@import "pages/consultancy";
-@import "pages/whyBiit";
-@import "pages/biitModules";
-
-@import "emails/contact";

@@ -40,7 +40,7 @@
         @include paddingMargin(0, 194px 0 0 0);
       }
 
-      &__biit {
+      &__birds {
 
         @include paddingMargin(0, 194px 0 0 0);
       }
@@ -51,7 +51,7 @@
       }
 
       &__home,
-      &__biit,
+      &__birds,
       &__digitalization {
 
         @include mainBox(row, center, center);
@@ -203,7 +203,7 @@
         .navbar__menu {
 
           &__home,
-          &__biit,
+          &__birds,
           &__digitalization {
 
             .list {
@@ -250,7 +250,7 @@
       &__menu {
 
         &__home,
-        &__biit,
+        &__birds,
         &__digitalization {
 
           @include mainBox(row, flex-end, center);

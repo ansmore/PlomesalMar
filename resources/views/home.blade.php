@@ -34,7 +34,7 @@
                         <img src="{{ asset('img/logos/logo_biit.png') }}" alt="">
                     </span>
                     <h4 class="circle__content">
-                        <a href="{{ route('biit', ['language' => $language]) }}" value-text="services1"></a>
+                        <a href="{{ route('home', ['language' => $language]) }}" value-text="services1"></a>
                     </h4>
                 </figure>
                 <figure class="circle">
@@ -42,7 +42,7 @@
                         <img src="{{ asset('img/logos/sage.svg') }}" alt="">
                     </span>
                     <h4 class="circle__content">
-                        <a href="{{ route('consultancy', ['language' => $language]) }}" value-text="services3"></a>
+                        <a href="{{ route('home', ['language' => $language]) }}" value-text="services3"></a>
                     </h4>
                 </figure>
             </article>
@@ -53,11 +53,11 @@
             </article>
             <article class="box">
                 <span class="box__content" value-text="aboutText"></span>
-                <a href="{{ route('biit', ['language' => $language]) }}" class="box__button" value-text="aboutButton"></a>
+                <a href="{{ route('home', ['language' => $language]) }}" class="box__button" value-text="aboutButton"></a>
             </article>
             <article class="box">
                 <figure class="box__image">
-                    <a href="{{ route('biit', ['language' => $language]) }}">
+                    <a href="{{ route('home', ['language' => $language]) }}">
                         <img src="{{ asset('img/logos/banner.jpg') }}" alt="banner">
                     </a>
                 </figure>
@@ -86,7 +86,7 @@
                 </span>
                 <span class="box__row">
                     <span class="box__content" value-text="contactAction"></span>
-                    <a class="box__button" href="{{ route('biitContact', ['language' => $language]) }}"
+                    <a class="box__button" href="{{ route('birdsContact', ['language' => $language]) }}"
                         value-text="contactActionMessage"></a>
                 </span>
             </article>

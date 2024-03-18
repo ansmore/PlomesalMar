@@ -2,7 +2,7 @@
 
 .home {
   @include mainBox(column, space-around, center);
-  @include style($primary_main, $neutral_light);
+  @include style($primary_main, $primary_lightest);
   margin-top: $nav-height;
   gap: $gap;
 
