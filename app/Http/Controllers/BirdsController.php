@@ -27,22 +27,6 @@ class BirdsController extends Controller
         return view('birds', ['section' => $section, 'language' => $language]);
     }
 
-    public function whyBiit()
-    {
-        $language = Session::get('language',  config('app.fallback_locale', 'es'));
-
-        return view('whyBiit', ['language' => $language]);
-    }
-
-    public function whyBiitSection($section = null)
-    {
-        $language = Session::get('language',  config('app.fallback_locale', 'es'));
-
-        return view('whyBiit', ['section' => $section, 'language' => $language]);
-    }
-
-
-
     public function birdsContactForm()
     {
         $language = Session::get('language',  config('app.fallback_locale', 'es'));

@@ -12,12 +12,12 @@
                 <div class="circles">
                     <span class="circles__pyme">
                         <a href="{{ route('home') }}">
-                            <img src="{{ asset('../img/logos/pymesoft_logo_text.png') }}" alt="">
+                            <img src="{{ asset('../img/logos/demo.png') }}" alt="">
                         </a>
                     </span>
                     <span class="circles__birds">
                         <a href="{{ route('home') }}">
-                            <img src="{{ asset('img/logos/logo_biit.png') }}" alt="">
+                            <img src="{{ asset('../img/logos/demo.png') }}" alt="">
                         </a>
                     </span>
                 </div>
@@ -257,5 +257,5 @@
             </div>
         </section>
     </div>
-    <script type="module" src="{{ asset('js/whyBiit.js') }}" defer></script>
+    <script type="module" src="{{ asset('js/termsAndPolicy.js') }}" defer></script>
 @endsection
