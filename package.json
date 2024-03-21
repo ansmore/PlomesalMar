@@ -2,22 +2,16 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "npm run development",
-    "development": "mix",
-    "watch": "mix watch",
-    "watch-poll": "mix watch -- --watch-options-poll=1000",
-    "hot": "mix watch --hot",
-    "prod": "npm run production",
-    "production": "mix --production",
-    "start": "npm run watch:auto",
     "ts-w": "tsc --watch",
-    "sass-w": "sass --watch resources/sass/main.scss public/css/app.css"
+    "sass-w": "sass --watch resources/sass/main.scss public/css/app.css",
+    "test": "jest"
   },
   "devDependencies": {
     "axios": "^1.6",
     "eslint": "^8.52.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier": "^5.0.1",
+    "jest": "^29.7.0",
     "laravel-mix": "^6.0.6",
     "lodash": "^4.17.19",
     "node-fetch": "^3.3.2",

@@ -3,7 +3,7 @@
 .birdsContact {
   @include mainBox(column, space-around, center);
   // @include paddingMargin($padding);
-  @include style($primary_main, $primary_lightest);
+  @include style($primary_main, $neutral_lighter);
   font-size: $size_small;
   margin-top: $nav-height;
   gap: $gap;
