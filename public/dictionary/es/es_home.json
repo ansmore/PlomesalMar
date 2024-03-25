@@ -1,7 +1,5 @@
 {
-  "homeSolucionesOld": "Somos tu aliado en la digitalización y automatización de tus procesos empresariales",
   "homeSoluciones": "Llevamos tus procesos al siguiente nivel",
-  "homeServicesSubheadingOld": "El mejor partner para tu transformación digital",
   "homeIntro": "En",
   "homeIntro2": "nos enorgullece ser tu aliado en el viaje hacia la digitalización y automatización de tus procesos empresariales. Entendemos que en la era digital actual, la eficiencia y la agilidad son fundamentales para el éxito de cualquier empresa, especialmente para las pequeñas y medianas.",
   "homeIntro3": "Con",
@@ -16,31 +14,23 @@
   "aboutHeading": "Si es posible, cuenta con nosotros.",
   "aboutText": "Valor a su negocio",
   "aboutButton": "Comenzar",
-
   "sitemapHeading": "¿Dónde estamos?",
   "sitemapAddress": "Avinguda de Can Deu, 6, 08207 Sabadell, Barcelona",
-
   "contactHeading": "Contacto:",
   "contactPhone": "Teléfono de contacto: ",
   "contactPhoneNumber": "937 24 25 00",
-
   "contactAction": "Envianos un mensaje:",
   "contactActionMessage": "Mensaje",
-
   "contactName": "Nombre: ",
   "contactEmail": "Email: ",
   "contactTelephone": "Teléfono: ",
   "contactMessage": "Mensaje: ",
-
   "contactoClausulaContacto": "La comunicación enviada se utilizará exclusivamente para tratar sus datos y atender su solicitud, siempre de acuerdo al Reglamento (UE) 2016/679 (RGPD), la Ley Orgánica 15/1999 (LOPD) y el Real Decreto 1720/2007 de desarrollo de la (LOPD), sobre protección de datos. Sus datos no se comunicaran a terceros, excepto por  obligación legal, en ningún caso se utilizarán para acciones de márquetin y se mantendrán mientras no solicite su cancelación.",
   "contactoClausulaContacto2": "En cualquier momento usted puede ejercer los derechos de acceso, rectificación, portabilidad y oposición, o si procede, a la limitación y/o cancelación del tratamiento, comunicándolo por escrito, indicando sus datos personales a Avda. Can Deu, 4-6 ,local 08207, Sabadell o mediante un email a info@pymesoft.es.",
-
   "contactAccept": "Acepto la ",
   "contactPolitica": "Política de privacidad",
   "contactAccept2": "y los ",
   "contactUse": "términos de uso",
-
   "contactButton": "Enviar",
-
   "pymesoft": "PYMESOFT"
 }

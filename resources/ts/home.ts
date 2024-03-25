@@ -1,7 +1,7 @@
 import { loadText } from "./helpers/dictionary.js";
 
-const main = () => {
-  loadText();
+const main = async () => {
+	await loadText();
 };
 
 document.addEventListener("DOMContentLoaded", main);

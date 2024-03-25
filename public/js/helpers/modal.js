@@ -1,4 +1,4 @@
-// helpers/modal.ts
+// Helpers/modal.ts
 export const openModal = (idModalToOpen) => {
     const infoModalBox = document.querySelector(idModalToOpen);
     if (infoModalBox) {
@@ -12,7 +12,7 @@ export const closeModal = (modalId) => {
     if (modal) {
         modal.style.display = "none";
         resetImage();
-        // resetContend();
+        // ResetContend();
     }
 };
 export const closeModalButton = () => {
@@ -40,7 +40,7 @@ export const closeModalOutside = () => {
                 modalBox.contains(event.target) &&
                 event.target instanceof HTMLElement &&
                 (event.target === closeButton ||
-                    // event.target.classList.contains("modal__box") ||
+                    // Event.target.classList.contains("modal__box") ||
                     event.target.id === "modalBox" ||
                     (modalBodyContent &&
                         (modalBodyContent.contains(event.target) ||
@@ -56,12 +56,6 @@ export const closeModalOutside = () => {
         }
     });
 };
-// export const resetContend = (): void => {
-//   const modalBodyContent = document.querySelector("#modalBodyContent");
-//   if (modalBodyContent) {
-//     modalBodyContent.innerHTML = "";
-//   }
-// };
 export const resetImage = () => {
     const bodyPhoto = document.querySelector("#modalPhoto");
     bodyPhoto === null || bodyPhoto === void 0 ? void 0 : bodyPhoto.setAttribute("src", "");

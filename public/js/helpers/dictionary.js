@@ -11,8 +11,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 const defaultLanguage = "es";
 import { navbar } from "../components/navigation.js";
 import { footer } from "../components/footer.js";
-// export let counterComponent = 0;
-// export let counterPage = 0;
+// Export let counterComponent = 0;
+// Export let counterPage = 0;
 export const loadDictionary = (language, page) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const response = yield fetch(`./../dictionary/${language}/${language}_${page}.json`);
@@ -26,10 +26,10 @@ export const loadDictionary = (language, page) => __awaiter(void 0, void 0, void
         throw error;
     }
 });
-// const availableLanguages = ["en", "es", "ca"];
+// Const availableLanguages = ["en", "es", "ca"];
 export const loadAvailablesLanguages = () => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const response = yield fetch(`./../dictionary/listLanguages.json`);
+        const response = yield fetch("./../dictionary/listLanguages.json");
         if (!response.ok) {
             throw new Error("Error loading white language list");
         }
@@ -42,7 +42,7 @@ export const loadAvailablesLanguages = () => __awaiter(void 0, void 0, void 0, f
 });
 export const loadAvailablesFiles = () => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const response = yield fetch(`./../dictionary/listPages.json`);
+        const response = yield fetch("./../dictionary/listPages.json");
         if (!response.ok) {
             throw new Error("Error loading white page list");
         }
@@ -63,9 +63,7 @@ export const getFileNameFromUrl = (url) => {
         if (fileName !== undefined) {
             return fileName;
         }
-        else {
-            console.error("fileName es undefined después de split('#').");
-        }
+        console.error("fileName es undefined después de split('#').");
     }
     else {
         console.error("La URL no tiene segmentos.");
@@ -76,18 +74,17 @@ export const isLanguageSupported = (language) => __awaiter(void 0, void 0, void 
     const supportedLanguages = yield loadAvailablesLanguages();
     return !supportedLanguages.includes(language);
 });
-export const getNavigatorLanguage = () => {
-    return navigator.language.slice(0, 2) || "";
-};
-export const getCurrentFileName = () => {
+export const getNavigatorLanguage = () => __awaiter(void 0, void 0, void 0, function* () { return navigator.language.slice(0, 2) || ""; });
+export const getCurrentFileName = () => __awaiter(void 0, void 0, void 0, function* () {
     const currentUrl = window.location.href;
     const fileName = getFileNameFromUrl(currentUrl);
     return fileName;
-};
-export const getSelectedLanguage = () => {
-    let selectedLanguage = localStorage.getItem("selectedLanguage") || "";
+});
+export const getSelectedLanguage = () => __awaiter(void 0, void 0, void 0, function* () {
+    var _a;
+    const selectedLanguage = (_a = localStorage.getItem("selectedLanguage")) !== null && _a !== void 0 ? _a : "";
     return selectedLanguage;
-};
+});
 export const getFinalLanguage = () => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const availableLanguages = yield loadAvailablesLanguages();
@@ -124,7 +121,7 @@ export const setLanguage = (selectedLanguage) => __awaiter(void 0, void 0, void 
 });
 export const loadText = () => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        // counterPage += 1;
+        // CounterPage += 1;
         const availablePages = yield loadAvailablesFiles();
         const fileName = yield getCurrentFileName();
         const finalSelectedLanguage = yield getFinalLanguage();
@@ -146,7 +143,7 @@ export const loadTextComponent = (component) => __awaiter(void 0, void 0, void 0
     try {
         const finalSelectedLanguage = yield getFinalLanguage();
         // From components parameter
-        let selectedPage = component;
+        const selectedPage = component;
         const dictionary = yield loadDictionary(finalSelectedLanguage, selectedPage);
         const textsToChange = document.querySelectorAll("[value-text]");
         textsToChange.forEach((element) => {

@@ -19,7 +19,7 @@ const loadImage = (url) => __awaiter(void 0, void 0, void 0, function* () {
     if (modalPhoto && modalPhoto.tagName.toLowerCase() === "lottie-player") {
         // Modifica el atributo src de la imagen
         modalPhoto.load(url);
-        // modalPhoto?.setAttribute("src", url);
+        // ModalPhoto?.setAttribute("src", url);
     }
     else {
         console.error("Error: Elemento body__photo no es una etiqueta de imagen válida.");
@@ -84,7 +84,7 @@ export const selectContend = (modalId) => __awaiter(void 0, void 0, void 0, func
                     modalContent.setAttribute("value-text", " ");
                     break;
             }
-            loadTextComponent(component);
+            void loadTextComponent(component);
             yield loadImage(imageUrl);
         }
         catch (error) {

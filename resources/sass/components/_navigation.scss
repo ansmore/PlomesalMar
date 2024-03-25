@@ -27,6 +27,8 @@
       // min-height: 10vh;
       @include boxSize(height, null, null, $nav-height );
 
+      overflow: hidden;
+
       img {
         @include paddingMargin($padding 1rem);
         @include style(null, $neutral_lighter);

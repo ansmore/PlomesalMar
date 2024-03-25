@@ -10,6 +10,6 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 import { loadTextComponent } from "../helpers/dictionary.js";
 export const footer = "footer";
 const main = () => __awaiter(void 0, void 0, void 0, function* () {
-    loadTextComponent(footer);
+    yield loadTextComponent(footer);
 });
 document.addEventListener("DOMContentLoaded", main);

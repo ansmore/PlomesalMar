@@ -11,15 +11,15 @@ import { getFinalLanguage, loadTextComponent, setLanguage, getCurrentFileName, }
 export const navbar = "navigation";
 let selectedOption = null;
 const main = () => __awaiter(void 0, void 0, void 0, function* () {
-    loadTextComponent(navbar);
+    void loadTextComponent(navbar);
     const finalSelectedLanguage = yield getFinalLanguage();
-    changeLanguage(finalSelectedLanguage);
+    void changeLanguage(finalSelectedLanguage);
 });
 const handleClick = (event) => {
     event.preventDefault();
     selectedOption = event.target.id;
-    setLanguage(selectedOption);
-    changeLanguage(selectedOption);
+    void setLanguage(selectedOption);
+    void changeLanguage(selectedOption);
     const toggleCheckbox = document.getElementById("toggle-menu-checkbox");
     toggleCheckbox.checked = false;
 };
@@ -53,18 +53,18 @@ const changeLanguage = (language) => __awaiter(void 0, void 0, void 0, function*
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
-                "X-CSRF-TOKEN": csrfToken || "",
+                "X-CSRF-TOKEN": csrfToken !== null && csrfToken !== void 0 ? csrfToken : "",
             },
             body: JSON.stringify({ language, fileName }),
         });
         if (!response.ok) {
-            console.error("response.ok->", language);
+            console.error("! response.ok->", language);
             throw new Error(`-> Error en la solicitud: ${response.status}`);
         }
         if (response.ok) {
             const responseData = yield response.json();
-            const newUrl = responseData.newUrl;
-            // history.pushState({}, "", newUrl);
+            const { newUrl } = responseData;
+            // History.pushState({}, "", newUrl);
             history.replaceState({ url: newUrl }, "", newUrl);
         }
     }
