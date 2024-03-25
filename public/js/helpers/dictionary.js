@@ -19,7 +19,7 @@ export const loadDictionary = (language, page) => __awaiter(void 0, void 0, void
         if (!response.ok) {
             throw new Error(`Error loading the language ${language}.`);
         }
-        return yield response.json();
+        return (yield response.json());
     }
     catch (error) {
         console.error("Error loading json", error);
@@ -33,7 +33,7 @@ export const loadAvailablesLanguages = () => __awaiter(void 0, void 0, void 0, f
         if (!response.ok) {
             throw new Error("Error loading white language list");
         }
-        return yield response.json();
+        return (yield response.json());
     }
     catch (error) {
         console.error("Error loading white language list", error);
@@ -46,7 +46,7 @@ export const loadAvailablesFiles = () => __awaiter(void 0, void 0, void 0, funct
         if (!response.ok) {
             throw new Error("Error loading white page list");
         }
-        return yield response.json();
+        return (yield response.json());
     }
     catch (error) {
         console.error("Error loading white page list", error);

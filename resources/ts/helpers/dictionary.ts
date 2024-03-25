@@ -22,7 +22,7 @@ export const loadDictionary = async (
 			throw new Error(`Error loading the language ${language}.`);
 		}
 
-		return await response.json();
+		return (await response.json()) as Dictionary;
 	} catch (error) {
 		console.error("Error loading json", error);
 		throw error;
@@ -37,7 +37,7 @@ export const loadAvailablesLanguages = async (): Promise<string[]> => {
 			throw new Error("Error loading white language list");
 		}
 
-		return await response.json();
+		return (await response.json()) as string[];
 	} catch (error) {
 		console.error("Error loading white language list", error);
 		throw error;
@@ -51,7 +51,7 @@ export const loadAvailablesFiles = async (): Promise<string[]> => {
 			throw new Error("Error loading white page list");
 		}
 
-		return await response.json();
+		return (await response.json()) as string[];
 	} catch (error) {
 		console.error("Error loading white page list", error);
 		throw error;

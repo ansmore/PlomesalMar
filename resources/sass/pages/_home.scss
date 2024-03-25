@@ -68,6 +68,7 @@
 
           &__icon {
             @include mainBox(row, center, center);
+            margin: 0 auto;
             @include circleStyle($neutral_lighter, 50%);
             @include boxSize(width, 5rem, null, 5rem);
             @include boxSize(height, 5rem, null, 5rem);
