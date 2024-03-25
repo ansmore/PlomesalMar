@@ -1,14 +1,22 @@
+.main {
+  @include mainBox(column, space-around, flex-start);
+  @include style($primary_main, $neutral_light);
+  font-size: $size_small;
+  margin-top: $nav-height;
+  gap: $gap;
+}
+
 .section {
   @include mainBox(column, space-around, center);
   @include boxSize(width, 95vw, null, 95vw);
   @include paddingMargin($padding, $margin);
 
-  // temporal developer
-  // border: 1px solid blueviolet;
+  // DeveloperMode
+  // border: 1  px solid blueviolet;
 }
 
 .article {
-  @include mainBox(column, flex-start, center);
+  @include mainBox(column, flex-start, flex-start);
   @include paddingMargin($padding, $margin);
   @include boxSize(width, 85vw, null, 85vw);
   gap: $gap;
@@ -19,11 +27,16 @@
 
   p {
     text-align: left;
+
+    span {
+
+      text-align: left;
+    }
   }
 
   overflow: hidden;
 
-  // developer-mode
+  // DeveloperMode
   // border: 1px solid darkgreen;
 }
 
@@ -42,6 +55,7 @@
   line-height: 1.5;
   font-size: $size_big;
   font-weight: bold;
+  align-self: center;
 
 }
 
@@ -54,16 +68,16 @@
   align-self: flex-start;
 }
 
-
-
 .name {
   @include style($secondary_main);
 }
 
 .content {
   @include style($primary_main);
-  align-self: center;
+
   text-align: center;
+  align-self: center;
+
   hyphens: auto;
 }
 
@@ -92,7 +106,7 @@
 .button {
   @include button($secondary_main, $neutral_lighter);
   @include hover($secondary_light, $neutral_lighter, $neutral_lighter);
-  @include paddingMargin(calc($padding * 3), calc($margin * 2));
+  @include paddingMargin(calc($padding * 3), calc($margin * 2) auto);
   // Here-> Deleted in home/box--reverse
   // @include boxSize(width, 20vw, null, 20vw);
 }
@@ -101,8 +115,6 @@
   @include mainBox(column, flex-start, center);
   @include paddingMargin($padding, $margin);
   @include circleStyle($neutral_main, 50%);
-  @include boxSize(width, 80vw, null, 80vw);
-  @include boxSize(height, 80vw);
   @include hover($secondary_main, inherit, $neutral_darker, $neutral_dark);
 
   &__content {
@@ -122,7 +134,7 @@
 
 .logo {
   @include mainBox(column, center, center);
-  @include paddingMargin($padding, $margin);
+  @include paddingMargin($padding, 1rem $margin);
   @include boxShadow($primary_main,
     5px,
     2px,
@@ -140,7 +152,7 @@
 }
 
 .formInput {
-  @include paddingMargin(1rem, $margin);
+  @include paddingMargin(1rem, $margin auto);
   @include style($secondary_main, $neutral_lighter);
   @include boxSize(width, 75vw, null, 75vw);
 
@@ -157,4 +169,17 @@
 
 .form {
   @extend .article;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba($neutral_main, 0.5);
+  justify-content: center;
+  align-items: center;
 }

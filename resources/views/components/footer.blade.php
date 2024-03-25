@@ -45,4 +45,4 @@
         </article>
     </section>
 </footer>
-<script type="module" src="{{ asset('js/footer.js') }}" defer></script>
+<script type="module" src="{{ asset('js/components/footer.js') }}" defer></script>

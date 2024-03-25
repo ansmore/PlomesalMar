@@ -101,21 +101,8 @@ svg {
 
 body {
   height: auto;
-  // min-height: auto;
   font-size: 100%;
-  font-family: $font-family-base;
-  color: $neutral_darkest;
-  background-color: $neutral_lighter;
-  // optional
   line-height: 1.4em;
-  // Tallar paraules amb - i salt de línea
-  // hyphens: auto;
-  font-smooth: always;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-::selection {
-  background-color: $secondary_main;
-  color: $primary_main;
 }

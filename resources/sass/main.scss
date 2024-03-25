@@ -1,17 +1,23 @@
+@import "reset/reset";
+
 @import "base/colors";
-@import "base/sizes";
 @import "base/typography";
-@import "base/reset";
+@import "base/sizes";
 @import "base/globals";
 
 @import "mixins/mixins";
 
-@import "base/reusable";
+// Reusables
+@import "reusable/reusable";
 
-@import "components/header";
+// Modals
+@import "modals/modal";
+
+// Components
 @import "components/navigation";
 @import "components/footer";
 
+// Pages
 @import "pages/home";
 @import "pages/birdsContact";
 @import "pages/termsAndPolicy";

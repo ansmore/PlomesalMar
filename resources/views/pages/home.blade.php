@@ -93,5 +93,5 @@
 
         </section>
     </main>
-    <script type="module" src="{{ asset('js/home.js') }}" defer></script>
+    <script type="module" src="{{ asset('js/pages/home.js') }}" defer></script>
 @endsection

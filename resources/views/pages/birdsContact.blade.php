@@ -64,5 +64,5 @@
             </article>
         </section>
     </main>
-    <script type="module" src="{{ asset('js/birdsContact.js') }}" defer></script>
+    <script type="module" src="{{ asset('js/pages/birdsContact.js') }}" defer></script>
 @endsection

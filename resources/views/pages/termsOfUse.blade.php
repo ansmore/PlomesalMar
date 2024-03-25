@@ -257,5 +257,5 @@
             </div>
         </section>
     </div>
-    <script type="module" src="{{ asset('js/termsAndPolicy.js') }}" defer></script>
+    <script type="module" src="{{ asset('js/pages/termsAndPolicy.js') }}" defer></script>
 @endsection

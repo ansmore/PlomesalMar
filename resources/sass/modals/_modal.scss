@@ -1,0 +1,79 @@
+.modal {
+  @extend .modal;
+
+  &__box {
+    position: relative;
+    background: $neutral_lighter;
+    top: 10vh;
+    left: 10vw;
+    @include mainBox(column, center, center);
+    @include boxSize(width, 80vw, null, 80vw);
+    @include boxSize(height, 80vh, null, 80vh);
+    border-radius: 5px;
+    @include hover($neutral_lighter,
+      inherit,
+      $secondary_main,
+      transparent);
+
+    .body {
+      @extend .article;
+
+      @include mainBox(column, space-around, flex-start);
+      @include boxSize(width, 75vw, null, 75vw);
+      @include boxSize(height, 75vh, null, 75vh);
+
+      &__subtitle {
+        @extend .subtitle;
+      }
+
+      &__content {
+        @extend .content;
+      }
+
+      &__photo {
+        @include mainBox(column, flex-end, center);
+        @include boxSize(width, 255px, null, 255px);
+        @include boxSize(height, 255px, null, 255px);
+        border: 2px dotted $secondary_main;
+      }
+
+      &__button {
+        @extend .button;
+      }
+    }
+
+    .close {
+      @include mainBox(column, center);
+      @include style($danger_main, $danger_lighter);
+      @include hover($danger_light, $danger_lighter, $danger_dark, $danger_main);
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 50px;
+      height: 50px;
+      text-align: center;
+      font-size: 50px;
+      cursor: pointer;
+    }
+  }
+}
+
+@media screen and (min-width: 376px) and (max-width: 600px) {}
+
+@media screen and (min-width: 601px) and (max-width: 1024px) {}
+
+@media screen and (min-width: 1025px) {
+  .modal {
+    &__box {
+      .body {
+        &__subtitle {
+          font-size: $size_bigger;
+        }
+
+        &__content {
+          font-size: $size_small;
+        }
+      }
+    }
+  }
+}

@@ -21,23 +21,9 @@ class HomeController extends Controller
     public function home($language = null)
     {
 
-        // // Obtener la dirección IP del cliente
-        // $ipAddress = $_SERVER['REMOTE_ADDR'];
-
-        // // Determinar la ubicación geográfica
-        // $reader = new Reader('/path/to/geoip/database.mmdb');
-        // $record = $reader->city($ipAddress);
-
-        // $city = $record->city->name;
-        // $country = $record->country->name;
-
-        // // Guardar la información en el log
-        // Log::info('Usuario con IP ' . $ipAddress . ' desde ' . $city . ', ' . $country . ' visitó la página de inicio');
-
-
         $language = Session::get('language',  config('app.fallback_locale', 'es'));
 
-        return view('home', ['language' => $language]);
+        return view('pages.home', ['language' => $language]);
     }
 
     public function indexSection($language = null, $section = null)
@@ -45,7 +31,7 @@ class HomeController extends Controller
 
         $language = Session::get('language',  config('app.fallback_locale', 'es'));
 
-        return view('home', ['section' => $section,'language' => $language ]);
+        return view('pages.home', ['section' => $section,'language' => $language ]);
     }
 
     public function homeSection($language = null, $section = null)
@@ -53,14 +39,14 @@ class HomeController extends Controller
 
         $language = Session::get('language',  config('app.fallback_locale', 'es'));
 
-        return view('home', ['section' => $section,'language' => $language ]);
+        return view('pages.home', ['section' => $section,'language' => $language ]);
     }
 
     public function privacyPolicy($language = null)
     {
         $language = Session::get('language',  config('app.fallback_locale', 'es'));
 
-        return view('privacyPolicy',['language' => $language]);
+        return view('pages.privacyPolicy',['language' => $language]);
     }
 
     public function termsOfUse()
@@ -68,6 +54,6 @@ class HomeController extends Controller
 
         $language = Session::get('language',  config('app.fallback_locale', 'es'));
 
-        return view('termsOfUse',['language' => $language]);
+        return view('pages.termsOfUse',['language' => $language]);
     }
 }

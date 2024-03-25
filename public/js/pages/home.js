@@ -7,7 +7,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import { loadText } from "./helpers/dictionary.js";
+import { loadText } from "../helpers/dictionary.js";
 const main = () => __awaiter(void 0, void 0, void 0, function* () {
     yield loadText();
 });

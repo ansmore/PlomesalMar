@@ -16,7 +16,7 @@ class BirdsController extends Controller
     {
         $language = Session::get('language',  config('app.fallback_locale', 'es'));
 
-        return view('birds', ['language' => $language]);
+        return view('pages.birds', ['language' => $language]);
     }
 
     public function birdsSection($section = null)
@@ -24,30 +24,19 @@ class BirdsController extends Controller
 
         $language = Session::get('language',  config('app.fallback_locale', 'es'));
 
-        return view('birds', ['section' => $section, 'language' => $language]);
+        return view('pages.birds', ['section' => $section, 'language' => $language]);
     }
 
     public function birdsContactForm()
     {
         $language = Session::get('language',  config('app.fallback_locale', 'es'));
 
-        return view('birdsContact', ['language' => $language]);
+        return view('pages.birdsContact', ['language' => $language]);
     }
 
 
     public function birdsContactSubmit(Request $request)
     {
-        //     $viewData = [
-        //     'messages' => $messages,
-        //     'dictionary' => $dictionary,
-        // ];
-
-        // $emailPreview = view('emails.contactConfirmation', $viewData)->render();
-
-        // Aquí puedes imprimir o hacer lo que necesites con $emailPreview
-        // por ejemplo: dd($emailPreview);
-
-
         $language = Session::get('language',  config('app.fallback_locale', 'es'));
 
         // Validar el formulario si es necesario

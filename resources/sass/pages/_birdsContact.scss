@@ -1,18 +1,12 @@
 // Style Contact page
 
 .birdsContact {
-  @include mainBox(column, space-around, center);
-  // @include paddingMargin($padding);
-  @include style($primary_main, $neutral_lighter);
-  font-size: $size_small;
-  margin-top: $nav-height;
-  gap: $gap;
-  @include boxSize(height, auto);
+  @extend .main;
 
   .row {
     @extend .section;
 
-    @include paddingMargin(4rem $padding $padding $padding, 0);
+    @include paddingMargin(5rem $padding 2rem $padding, $margin);
 
     .box {
       @extend .article;
@@ -111,6 +105,11 @@
         &__group {
           @include mainBox(row, flex-end, center);
           // @include boxSize(width, 75vw, null, 75vw);
+
+          &__content {
+            @include boxSize(width, 20vw, null, 20vw);
+            text-align: right;
+          }
 
           &__input {
             @include boxSize(width, 25rem, null, 25rem);
