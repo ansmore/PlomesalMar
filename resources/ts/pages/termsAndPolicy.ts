@@ -1,6 +1,6 @@
 import { loadText } from "../helpers/dictionary.js";
 
-const main = async () => {
+const main = async (): Promise<void> => {
 	await loadText();
 };
 

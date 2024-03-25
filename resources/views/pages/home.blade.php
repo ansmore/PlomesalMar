@@ -30,20 +30,22 @@
             </article>
             <article class="box__circle">
                 <figure class="circle">
-                    <span class="circle__icon">
-                        <img src="{{ asset('img/logos/demo.png') }}" alt="">
-                    </span>
-                    <h4 class="circle__content">
-                        <a href="{{ route('home', ['language' => $language]) }}" value-text="services1"></a>
-                    </h4>
+                    <a href="{{ route('home', ['language' => $language]) }}">
+                        <span class="circle__icon">
+                            <img src="{{ asset('img/logos/demo.png') }}" alt="">
+                        </span>
+                        <h4 class="circle__content" value-text="services1">
+                        </h4>
+                    </a>
                 </figure>
                 <figure class="circle">
-                    <span class="circle__icon">
-                        <img src="{{ asset('../img/logos/demo.png') }}" alt="">
-                    </span>
-                    <h4 class="circle__content">
-                        <a href="{{ route('home', ['language' => $language]) }}" value-text="services3"></a>
-                    </h4>
+                    <a href="{{ route('home', ['language' => $language]) }}">
+                        <span class="circle__icon">
+                            <img src="{{ asset('../img/logos/demo.png') }}" alt="">
+                        </span>
+                        <h4 class="circle__content" value-text="services3">
+                        </h4>
+                    </a>
                 </figure>
             </article>
         </section>

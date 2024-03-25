@@ -12,7 +12,7 @@ class LanguageController extends Controller
     {
         try{
         // Set language fron Request of file JSON
-        $putLanguage = $request->input('language', config('app.fallback_locale', 'es'));
+        $putLanguage = $request->input('language', config('app.fallback_locale', 'ca'));
         $putPage = $request->input('fileName', 'home');
 
         Session::put('language', $putLanguage);

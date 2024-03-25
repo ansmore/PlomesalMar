@@ -43,9 +43,9 @@ $language = Session::get('language', 'ca');
                         <a class="list__item__link" id="navModulosDropdown" role="button"
                             value-text="currentLanguage"></a>
                         <div id="setLanguages" class="dropdown__menu" aria-labelledby="navModulosDropdown">
-                            <a id="es" value-text="cas" class="dropdown__menu__item" href="#"></a>
                             <a id="ca" value-text="cat" class="dropdown__menu__item" href="#"></a>
                             <a id="en" value-text="eng" class="dropdown__menu__item" href="#"></a>
+                            <a id="es" value-text="cas" class="dropdown__menu__item" href="#"></a>
                         </div>
                     </div>
                 </li>

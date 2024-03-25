@@ -1046,6 +1046,10 @@ button {
     gap: 2rem;
   }
 }
+.home .row {
+  padding: 5rem 0.25rem 2rem 0.25rem;
+  margin: 0.25rem;
+}
 .home .row .box__content--reverse {
   color: #0097b2;
   background-color: transparent;

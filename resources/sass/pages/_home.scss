@@ -6,6 +6,9 @@
   .row {
     @extend .section;
 
+    // Here->
+    @include paddingMargin(5rem $padding 2rem $padding, $margin);
+
     .box {
       @extend .article;
 
