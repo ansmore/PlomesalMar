@@ -13,26 +13,34 @@ $language = Session::get('language', 'ca');
     <div class="navbar">
         <div class="navbar__logo">
             <a href="/">
-                <img src="{{ asset('../img/logos/demo.png') }}" alt="Pymesoft" id="pymeso" />
+                <img src="{{ asset('../img/logos/demo.png') }}" alt="Pymesoft" id="pymeso">
             </a>
         </div>
         <div class="navbar__menu__home">
             <ul class="list">
                 <li class="list__item">
-                    <a class="list__item__link" href="{{ route('home', ['language' => $language]) }}"
-                        value-text="navHomePage"></a>
+                    <a href="{{ route('home', ['language' => $language]) }}">
+                        <span class="list__item__link" data-text="navHomePage">
+                        </span>
+                    </a>
                 </li>
                 <li class="list__item">
-                    <a class="list__item__link" href="{{ route('home', ['language' => $language]) }}"
-                        value-text="navDigitalization"></a>
+                    <a href="{{ route('home', ['language' => $language]) }}">
+                        <span class="list__item__link" data-text="navDigitalization">
+                        </span>
+                    </a>
                 </li>
                 <li class="list__item">
-                    <a class="list__item__link" href="{{ route('home', ['language' => $language]) }}"
-                        value-text="navPorfolio"></a>
+                    <a href="{{ route('home', ['language' => $language]) }}">
+                        <span class="list__item__link" data-text="navPorfolio">
+                        </span>
+                    </a>
                 </li>
                 <li class="list__item">
-                    <a class="list__item__link" href="{{ route('birdsContact', ['language' => $language]) }}"
-                        value-text="navContact"></a>
+                    <a href="{{ route('birdsContact', ['language' => $language]) }}">
+                        <span class="list__item__link" data-text="navContact">
+                        </span>
+                    </a>
                 </li>
             </ul>
         </div>
@@ -41,11 +49,20 @@ $language = Session::get('language', 'ca');
                 <li class="list__item">
                     <div class="dropdown">
                         <a class="list__item__link" id="navModulosDropdown" role="button"
-                            value-text="currentLanguage"></a>
+                            data-text="currentLanguage"></a>
                         <div id="setLanguages" class="dropdown__menu" aria-labelledby="navModulosDropdown">
-                            <a id="ca" value-text="cat" class="dropdown__menu__item" href="#"></a>
-                            <a id="en" value-text="eng" class="dropdown__menu__item" href="#"></a>
-                            <a id="es" value-text="cas" class="dropdown__menu__item" href="#"></a>
+                            <a id="ca" class="dropdown__menu__item" href="#">
+                                <span data-text="cat">
+                                </span>
+                            </a>
+                            <a id="en" class="dropdown__menu__item" href="#">
+                                <span data-text="eng">
+                                </span>
+                            </a>
+                            <a id="es" class="dropdown__menu__item" href="#">
+                                <span data-text="cas">
+                                </span>
+                            </a>
                         </div>
                     </div>
                 </li>

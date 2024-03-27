@@ -162,10 +162,10 @@ export const loadText = async () => {
 			selectedPage,
 		);
 
-		const textsToChange = document.querySelectorAll("[value-text]");
+		const textsToChange = document.querySelectorAll("[data-text]");
 
 		textsToChange.forEach((element) => {
-			const dataValue = element.getAttribute("value-text");
+			const dataValue = element.getAttribute("data-text");
 			if (dataValue && dictionary[dataValue]) {
 				element.textContent = dictionary[dataValue];
 			}
@@ -187,10 +187,10 @@ export const loadTextComponent = async (component: string) => {
 			selectedPage,
 		);
 
-		const textsToChange = document.querySelectorAll("[value-text]");
+		const textsToChange = document.querySelectorAll("[data-text]");
 
 		textsToChange.forEach((element) => {
-			const dataValue = element.getAttribute("value-text");
+			const dataValue = element.getAttribute("data-text");
 			if (dataValue && dictionary[dataValue]) {
 				element.textContent = dictionary[dataValue];
 			}

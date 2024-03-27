@@ -127,9 +127,9 @@ export const loadText = () => __awaiter(void 0, void 0, void 0, function* () {
         const finalSelectedLanguage = yield getFinalLanguage();
         const selectedPage = availablePages.includes(fileName) ? fileName : "home";
         const dictionary = yield loadDictionary(finalSelectedLanguage, selectedPage);
-        const textsToChange = document.querySelectorAll("[value-text]");
+        const textsToChange = document.querySelectorAll("[data-text]");
         textsToChange.forEach((element) => {
-            const dataValue = element.getAttribute("value-text");
+            const dataValue = element.getAttribute("data-text");
             if (dataValue && dictionary[dataValue]) {
                 element.textContent = dictionary[dataValue];
             }
@@ -145,9 +145,9 @@ export const loadTextComponent = (component) => __awaiter(void 0, void 0, void 0
         // From components parameter
         const selectedPage = component;
         const dictionary = yield loadDictionary(finalSelectedLanguage, selectedPage);
-        const textsToChange = document.querySelectorAll("[value-text]");
+        const textsToChange = document.querySelectorAll("[data-text]");
         textsToChange.forEach((element) => {
-            const dataValue = element.getAttribute("value-text");
+            const dataValue = element.getAttribute("data-text");
             if (dataValue && dictionary[dataValue]) {
                 element.textContent = dictionary[dataValue];
             }

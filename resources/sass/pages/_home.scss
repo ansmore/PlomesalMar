@@ -44,7 +44,6 @@
       }
 
       &__map {
-
         @include boxSize(width, null, 85vw);
         @include boxSize(height, null, 420px);
       }
