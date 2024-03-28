@@ -31,40 +31,40 @@ const loadImage = async (url: string): Promise<void> => {
 
 const firstModal = () => {
 	console.log("1");
-	modalTitle?.setAttribute("value-text", "modulosCliente");
-	modalContent?.setAttribute("value-text", "modulosClienteText");
+	modalTitle?.setAttribute("data-text", "modulosCliente");
+	modalContent?.setAttribute("data-text", "modulosClienteText");
 	imageUrl =
 		"https://lottie.host/9addabc8-898b-4ee6-962e-34f3df25d702/q2VBNhlQ5Y.json";
 };
 
 const secondModal = () => {
 	console.log("2");
-	modalTitle?.setAttribute("value-text", "modulosComercio");
-	modalContent?.setAttribute("value-text", "modulosComercioText");
+	modalTitle?.setAttribute("data-text", "modulosComercio");
+	modalContent?.setAttribute("data-text", "modulosComercioText");
 	imageUrl =
 		"https://lottie.host/a5e8a5f8-6431-471c-bff3-69cdda4020bb/UiDRnszEKS.json";
 };
 
 const thirdModal = () => {
 	console.log("3");
-	modalTitle?.setAttribute("value-text", "modulosProcesos");
-	modalContent?.setAttribute("value-text", "modulosProcesosText");
+	modalTitle?.setAttribute("data-text", "modulosProcesos");
+	modalContent?.setAttribute("data-text", "modulosProcesosText");
 	imageUrl =
 		"https://lottie.host/00a7d5c0-3302-4c36-8e6f-08a6c3d85be7/xwvdrMnD4u.json";
 };
 
 const fourthModal = () => {
 	console.log("4");
-	modalTitle?.setAttribute("value-text", "modulosFactura");
-	modalContent?.setAttribute("value-text", "modulosFacturaText");
+	modalTitle?.setAttribute("data-text", "modulosFactura");
+	modalContent?.setAttribute("data-text", "modulosFacturaText");
 	imageUrl =
 		"https://lottie.host/928097fb-7738-4e2d-9eb4-6e4fb4641d89/wivNW9NuVC.json";
 };
 
 const fiveModal = () => {
 	console.log("5");
-	modalTitle?.setAttribute("value-text", "modulosBusiness");
-	modalContent?.setAttribute("value-text", "modulosBusinessText");
+	modalTitle?.setAttribute("data-text", "modulosBusiness");
+	modalContent?.setAttribute("data-text", "modulosBusinessText");
 	imageUrl =
 		"https://lottie.host/4988d73d-0d49-4562-8729-c12a9add5725/6HwavVnFbt.json";
 };
@@ -89,8 +89,8 @@ export const selectContend = async (modalId: string): Promise<void> => {
 					fiveModal();
 					break;
 				default:
-					modalTitle.setAttribute("value-text", "");
-					modalContent.setAttribute("value-text", " ");
+					modalTitle.setAttribute("data-text", "");
+					modalContent.setAttribute("data-text", " ");
 					break;
 			}
 

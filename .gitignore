@@ -16,4 +16,4 @@ npm-debug.log*
 *.vbox-tmp
 .idea/
 .vscode/
-
+coverage/

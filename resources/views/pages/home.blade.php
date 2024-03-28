@@ -8,24 +8,24 @@
     <main class="home">
         <section id="solutions" class="row">
             <article class="box">
-                <h2 class="box__title" value-text="homeSoluciones"></h2>
+                <h2 class="box__title" data-text="homeSoluciones"></h2>
                 <p>
-                    <span class="box__content--reverse" value-text="homeIntro"></span>
-                    <span class="box__name--reverse" value-text="pymesoft"></span>
-                    <span class="box__content--reverse" value-text="homeIntro2"></span>
+                    <span class="box__content--reverse" data-text="homeIntro"></span>
+                    <span class="box__name--reverse" data-text="pymesoft"></span>
+                    <span class="box__content--reverse" data-text="homeIntro2"></span>
                 </p>
                 <p>
-                    <span class="box__content--reverse" value-text="homeIntro3"></span>
-                    <span class="box__name--reverse" value-text="pymesoft"></span>
-                    <span class="box__content--reverse" value-text="homeIntro4"></span>
+                    <span class="box__content--reverse" data-text="homeIntro3"></span>
+                    <span class="box__name--reverse" data-text="pymesoft"></span>
+                    <span class="box__content--reverse" data-text="homeIntro4"></span>
                 </p>
                 <p>
-                    <span class="box__content--reverse" value-text="homeIntro5"></span>
+                    <span class="box__content--reverse" data-text="homeIntro5"></span>
                 </p>
                 <p>
-                    <span class="box__content--reverse" value-text="homeIntro6"></span>
-                    <span class="box__name--reverse" value-text="pymesoft"></span>
-                    <span class="box__content--reverse" value-text="homeIntro7"></span>
+                    <span class="box__content--reverse" data-text="homeIntro6"></span>
+                    <span class="box__name--reverse" data-text="pymesoft"></span>
+                    <span class="box__content--reverse" data-text="homeIntro7"></span>
                 </p>
             </article>
             <article class="box__circle">
@@ -34,7 +34,7 @@
                         <span class="circle__icon">
                             <img src="{{ asset('img/logos/demo.png') }}" alt="">
                         </span>
-                        <h4 class="circle__content" value-text="services1">
+                        <h4 class="circle__content" data-text="services1">
                         </h4>
                     </a>
                 </figure>
@@ -43,7 +43,7 @@
                         <span class="circle__icon">
                             <img src="{{ asset('../img/logos/demo.png') }}" alt="">
                         </span>
-                        <h4 class="circle__content" value-text="services3">
+                        <h4 class="circle__content" data-text="services3">
                         </h4>
                     </a>
                 </figure>
@@ -51,11 +51,11 @@
         </section>
         <section id="about" class="row--reverse">
             <article class="box">
-                <h2 class="box__title" value-text="aboutHeading"></h2>
+                <h2 class="box__title" data-text="aboutHeading"></h2>
             </article>
             <article class="box">
-                <span class="box__content" value-text="aboutText"></span>
-                <a href="{{ route('home', ['language' => $language]) }}" class="box__button" value-text="aboutButton"></a>
+                <span class="box__content" data-text="aboutText"></span>
+                <a href="{{ route('home', ['language' => $language]) }}" class="box__button" data-text="aboutButton"></a>
             </article>
             <article class="box">
                 <figure class="box__image">
@@ -67,11 +67,11 @@
         </section>
         <section id="contact" class="row">
             <article class="box">
-                <h2 class="box__title" value-text="sitemapHeading"></h2>
+                <h2 class="box__title" data-text="sitemapHeading"></h2>
                 <span class="box__content">
                     <i class="fa fa-map-marker"></i>
                 </span>
-                <span class="box__content" value-text="sitemapAddress"></span>
+                <span class="box__content" data-text="sitemapAddress"></span>
             </article>
             <article class="box" id="overlay"> <!-- Obtener clave API -->
                 <iframe class="box__map"
@@ -79,17 +79,17 @@
                     frameborder="0" style="border:0" allowfullscreen></iframe>
             </article>
             <article class="box">
-                <h2 class="box__title" value-text="contactHeading"></h2>
+                <h2 class="box__title" data-text="contactHeading"></h2>
                 <span class="box__row">
-                    <span class="box__content" value-text="contactPhone">
+                    <span class="box__content" data-text="contactPhone">
                     </span>
-                    <span class="box__content" value-text="contactPhoneNumber">
+                    <span class="box__content" data-text="contactPhoneNumber">
                     </span>
                 </span>
                 <span class="box__row">
-                    <span class="box__content" value-text="contactAction"></span>
+                    <span class="box__content" data-text="contactAction"></span>
                     <a class="box__button" href="{{ route('birdsContact', ['language' => $language]) }}"
-                        value-text="contactActionMessage"></a>
+                        data-text="contactActionMessage"></a>
                 </span>
             </article>
 
