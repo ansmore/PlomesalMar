@@ -29,23 +29,23 @@
                 </p>
             </article>
             <article class="box__circle">
-                <figure class="circle">
-                    <a href="{{ route('home', ['language' => $language]) }}">
-                        <span class="circle__icon">
-                            <img src="{{ asset('img/logos/demo.png') }}" alt="">
-                        </span>
-                        <h4 class="circle__content" data-text="services1">
-                        </h4>
-                    </a>
+                <figure class="circle modal-button" data-modal-id="secondModal"">
+                    {{-- <a href="{{ route('home', ['language' => $language]) }}"> --}}
+                    <span class="circle__icon">
+                        <img src="{{ asset('img/logos/demo.png') }}" alt="">
+                    </span>
+                    <h4 class="circle__content" data-text="services1">
+                    </h4>
+                    {{-- </a> --}}
                 </figure>
-                <figure class="circle">
-                    <a href="{{ route('home', ['language' => $language]) }}">
-                        <span class="circle__icon">
-                            <img src="{{ asset('../img/logos/demo.png') }}" alt="">
-                        </span>
-                        <h4 class="circle__content" data-text="services3">
-                        </h4>
-                    </a>
+                <figure class="circle modal-button" data-modal-id="thirdModal">
+                    {{-- <a href="{{ route('home', ['language' => $language]) }}"> --}}
+                    <span class="circle__icon">
+                        <img src="{{ asset('../img/logos/demo.png') }}" alt="">
+                    </span>
+                    <h4 class="circle__content" data-text="services3">
+                    </h4>
+                    {{-- </a> --}}
                 </figure>
             </article>
         </section>
@@ -73,11 +73,11 @@
                 </span>
                 <span class="box__content" data-text="sitemapAddress"></span>
             </article>
-            <article class="box" id="overlay"> <!-- Obtener clave API -->
+            {{-- <article class="box" id="overlay"> <!-- Obtener clave API -->
                 <iframe class="box__map"
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2984.8365965213275!2d2.079309315088584!3d41.572780979247604!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a494c6bf0218b9%3A0xfb5a922369909333!2sPymesoft+Vall%C3%A9s+S.L.!5e0!3m2!1ses!2ses!4v1515689921450"
                     frameborder="0" style="border:0" allowfullscreen></iframe>
-            </article>
+            </article> --}}
             <article class="box">
                 <h2 class="box__title" data-text="contactHeading"></h2>
                 <span class="box__row">
@@ -92,8 +92,9 @@
                         data-text="contactActionMessage"></a>
                 </span>
             </article>
-
         </section>
+        @include('modals.modalLogin')
+        @include('modals.modalTeam')
     </main>
     <script type="module" src="{{ asset('js/pages/home.js') }}" defer></script>
 @endsection
