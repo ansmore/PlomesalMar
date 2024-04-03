@@ -10,8 +10,8 @@
   align-items: $align;
   align-self: center;
 
-  // Developer mode:
-  border: 1px solid darkorange;
+  // DeveloperMode
+  // border: 1px solid darkorange;
 }
 
 @mixin paddingMargin($padding: 0, $margin: 0) {

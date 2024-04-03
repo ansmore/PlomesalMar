@@ -18,20 +18,20 @@ class HomeController extends Controller
         return Redirect::to("/$language/home");
     }
 
+	public function indexSection($language = null, $section = null)
+	{
+
+		$language = Session::get('language',  config('app.fallback_locale', 'ca'));
+
+		return view('pages.home', ['section' => $section,'language' => $language ]);
+	}
+
     public function home($language = null)
     {
 
         $language = Session::get('language',  config('app.fallback_locale', 'ca'));
 
         return view('pages.home', ['language' => $language]);
-    }
-
-    public function indexSection($language = null, $section = null)
-    {
-
-        $language = Session::get('language',  config('app.fallback_locale', 'ca'));
-
-        return view('pages.home', ['section' => $section,'language' => $language ]);
     }
 
     public function homeSection($language = null, $section = null)
@@ -41,6 +41,14 @@ class HomeController extends Controller
 
         return view('pages.home', ['section' => $section,'language' => $language ]);
     }
+
+	public function login($language = null)
+    {
+        $language = Session::get('language',  config('app.fallback_locale', 'ca'));
+
+        return view('pages.login',['language' => $language]);
+    }
+
 
     public function privacyPolicy($language = null)
     {

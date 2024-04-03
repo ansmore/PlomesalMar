@@ -163,7 +163,6 @@ button {
   align-content: center;
   align-items: flex-start;
   align-self: center;
-  border: 1px solid darkorange;
   color: #004aad;
   background-color: #ececec;
   font-size: 1em;
@@ -180,7 +179,6 @@ button {
   align-content: center;
   align-items: center;
   align-self: center;
-  border: 1px solid darkorange;
   min-width: 95vw;
   max-width: 95vw;
   padding: 0.25rem;
@@ -196,7 +194,6 @@ button {
   align-content: center;
   align-items: flex-start;
   align-self: center;
-  border: 1px solid darkorange;
   padding: 0.25rem;
   margin: 0.25rem;
   min-width: 85vw;
@@ -271,7 +268,6 @@ button {
   align-content: center;
   align-items: center;
   align-self: center;
-  border: 1px solid darkorange;
   min-width: 50vw;
   max-width: 50vw;
   overflow: hidden;
@@ -312,7 +308,6 @@ button {
   align-content: center;
   align-items: center;
   align-self: center;
-  border: 1px solid darkorange;
   padding: 0.25rem;
   margin: 0.25rem;
   background-color: #c2c2c2;
@@ -334,7 +329,6 @@ button {
   align-content: center;
   align-items: center;
   align-self: center;
-  border: 1px solid darkorange;
   padding: 0.25rem;
   margin: 0.25rem;
   max-width: 15rem;
@@ -357,7 +351,6 @@ button {
   align-content: center;
   align-items: center;
   align-self: center;
-  border: 1px solid darkorange;
   padding: 0.25rem;
   margin: 1rem 0.25rem;
   border-radius: 5px;
@@ -379,7 +372,6 @@ button {
   align-content: center;
   align-items: center;
   align-self: center;
-  border: 1px solid darkorange;
 }
 
 .formInput, .birdsContact .row .form__group__input {
@@ -406,7 +398,6 @@ button {
   align-content: center;
   align-items: center;
   align-self: center;
-  border: 1px solid darkorange;
   padding: 0;
   margin: 0.25rem auto;
 }
@@ -437,7 +428,6 @@ button {
   align-content: center;
   align-items: center;
   align-self: center;
-  border: 1px solid darkorange;
   min-width: 80vw;
   max-width: 80vw;
   min-height: 80vh;
@@ -459,7 +449,6 @@ button {
   align-content: center;
   align-items: flex-start;
   align-self: center;
-  border: 1px solid darkorange;
   min-width: 75vw;
   max-width: 75vw;
   min-height: 75vh;
@@ -474,7 +463,6 @@ button {
   align-content: center;
   align-items: center;
   align-self: center;
-  border: 1px solid darkorange;
   min-width: 255px;
   max-width: 255px;
   min-height: 255px;
@@ -490,7 +478,6 @@ button {
   align-content: center;
   align-items: center;
   align-self: center;
-  border: 1px solid darkorange;
   color: #ee0000;
   background-color: #ffeded;
   border: 1px solid #ee0000;
@@ -526,7 +513,6 @@ button {
   align-content: center;
   align-items: center;
   align-self: center;
-  border: 1px solid darkorange;
   color: #fafafa;
   background-color: #004aad;
   height: 5rem;
@@ -548,7 +534,6 @@ button {
   align-content: center;
   align-items: center;
   align-self: center;
-  border: 1px solid darkorange;
   padding: 0;
   margin: 0;
   min-width: 99vw;
@@ -564,7 +549,6 @@ button {
   align-content: center;
   align-items: center;
   align-self: center;
-  border: 1px solid darkorange;
   padding: 0.25rem;
   margin: 0.25rem;
   flex: 3;
@@ -598,7 +582,6 @@ button {
   align-content: center;
   align-items: center;
   align-self: center;
-  border: 1px solid darkorange;
   position: absolute;
   z-index: 2;
   flex: 6;
@@ -612,7 +595,6 @@ button {
   align-content: center;
   align-items: center;
   align-self: center;
-  border: 1px solid darkorange;
   padding: 0;
   margin: 0.5rem 0 0 0;
   color: #fafafa;
@@ -633,7 +615,6 @@ button {
   align-content: center;
   align-items: center;
   align-self: center;
-  border: 1px solid darkorange;
   min-width: 40vw;
   list-style: none;
   display: inline-flex;
@@ -647,7 +628,6 @@ button {
   align-content: center;
   align-items: center;
   align-self: center;
-  border: 1px solid darkorange;
   padding: 0;
   margin: 0 0.25rem;
   min-width: 40vw;
@@ -665,7 +645,6 @@ button {
   align-content: center;
   align-items: center;
   align-self: center;
-  border: 1px solid darkorange;
   min-width: 40vw;
   color: #fafafa;
   background-color: #0097b2;
@@ -682,7 +661,6 @@ button {
   align-content: center;
   align-items: center;
   align-self: center;
-  border: 1px solid darkorange;
   position: absolute;
   left: -0.25rem;
   display: none;
@@ -712,7 +690,6 @@ button {
   align-content: center;
   align-items: center;
   align-self: center;
-  border: 1px solid darkorange;
   padding: 0;
   margin: 0;
   margin-right: 60px;
@@ -731,7 +708,6 @@ button {
   align-content: center;
   align-items: center;
   align-self: center;
-  border: 1px solid darkorange;
   color: #004aad;
   background-color: #fafafa;
   min-width: 6rem;
@@ -753,7 +729,6 @@ button {
   align-content: center;
   align-items: center;
   align-self: center;
-  border: 1px solid darkorange;
   color: #fafafa;
   background-color: #0097b2;
   min-width: 6rem;
@@ -770,7 +745,6 @@ button {
   align-content: center;
   align-items: center;
   align-self: center;
-  border: 1px solid darkorange;
   position: absolute;
   right: -4rem;
   display: none;
@@ -840,7 +814,6 @@ button {
     align-content: center;
     align-items: center;
     align-self: center;
-    border: 1px solid darkorange;
     margin-top: 0;
     position: sticky;
   }
@@ -853,7 +826,6 @@ button {
     align-content: center;
     align-items: center;
     align-self: center;
-    border: 1px solid darkorange;
     margin-top: 0;
     transform: translateY(0);
   }
@@ -894,7 +866,6 @@ button {
   align-content: center;
   align-items: center;
   align-self: center;
-  border: 1px solid darkorange;
   color: #fafafa;
   background-color: #004aad;
   min-height: 12rem;
@@ -908,7 +879,6 @@ button {
   align-content: center;
   align-items: center;
   align-self: center;
-  border: 1px solid darkorange;
   min-height: 6rem;
   max-height: 6rem;
 }
@@ -921,7 +891,6 @@ button {
   align-content: center;
   align-items: center;
   align-self: center;
-  border: 1px solid darkorange;
 }
 .footer .row .box__image {
   min-width: 80vw;
@@ -936,7 +905,6 @@ button {
   align-content: center;
   align-items: center;
   align-self: center;
-  border: 1px solid darkorange;
   min-width: 70vw;
   max-width: 70vw;
 }
@@ -955,7 +923,6 @@ button {
   align-content: center;
   align-items: center;
   align-self: center;
-  border: 1px solid darkorange;
   padding: 0.25rem;
   margin: 0 0.25rem;
   min-width: 50px;
@@ -983,7 +950,6 @@ button {
     align-content: center;
     align-items: center;
     align-self: center;
-    border: 1px solid darkorange;
   }
   .footer .row .box .list {
     display: flex;
@@ -994,7 +960,6 @@ button {
     align-content: center;
     align-items: center;
     align-self: center;
-    border: 1px solid darkorange;
   }
 }
 @media screen and (min-width: 601px) and (max-width: 1024px) {
@@ -1007,7 +972,6 @@ button {
     align-content: center;
     align-items: center;
     align-self: center;
-    border: 1px solid darkorange;
     gap: 2rem;
   }
 }
@@ -1021,7 +985,6 @@ button {
     align-content: center;
     align-items: flex-start;
     align-self: center;
-    border: 1px solid darkorange;
   }
   .footer .row {
     min-width: 45vw;
@@ -1040,7 +1003,6 @@ button {
     align-content: center;
     align-items: center;
     align-self: center;
-    border: 1px solid darkorange;
     min-width: 45vw;
     max-width: 45vw;
     gap: 2rem;
@@ -1074,7 +1036,6 @@ button {
   align-content: center;
   align-items: center;
   align-self: center;
-  border: 1px solid darkorange;
 }
 .home .row .box__circle .circle {
   padding-top: 2rem;
@@ -1088,7 +1049,6 @@ button {
   align-content: center;
   align-items: center;
   align-self: center;
-  border: 1px solid darkorange;
   margin: 0 auto;
   background-color: #fafafa;
   border-radius: 50%;
@@ -1116,7 +1076,6 @@ button {
   align-content: center;
   align-items: center;
   align-self: center;
-  border: 1px solid darkorange;
 }
 .home .row--reverse .box__title {
   color: #fafafa;
@@ -1154,7 +1113,6 @@ button {
     align-content: center;
     align-items: center;
     align-self: center;
-    border: 1px solid darkorange;
   }
   .home .row .box__circle .circle {
     min-width: 20rem;
@@ -1174,7 +1132,6 @@ button {
     align-content: center;
     align-items: center;
     align-self: center;
-    border: 1px solid darkorange;
   }
 }
 @media screen and (min-width: 1025px) {
@@ -1194,7 +1151,6 @@ button {
     align-content: center;
     align-items: center;
     align-self: center;
-    border: 1px solid darkorange;
   }
   .home .row .box__circle {
     display: flex;
@@ -1205,7 +1161,6 @@ button {
     align-content: center;
     align-items: center;
     align-self: center;
-    border: 1px solid darkorange;
     gap: 5rem;
   }
   .home .row .box__circle .circle {
@@ -1226,7 +1181,6 @@ button {
     align-content: center;
     align-items: center;
     align-self: center;
-    border: 1px solid darkorange;
   }
   .home .row--reverse .box__button {
     padding: 1rem;
@@ -1249,7 +1203,6 @@ button {
   align-content: center;
   align-items: center;
   align-self: center;
-  border: 1px solid darkorange;
 }
 .birdsContact .row .form__group__consent {
   gap: 0.5rem;
@@ -1273,7 +1226,6 @@ button {
     align-content: center;
     align-items: center;
     align-self: center;
-    border: 1px solid darkorange;
   }
   .birdsContact .row .form__group__input {
     min-width: 45vw;
@@ -1293,7 +1245,6 @@ button {
     align-content: center;
     align-items: center;
     align-self: center;
-    border: 1px solid darkorange;
     gap: 2rem;
   }
   .birdsContact .row .form__group {
@@ -1305,7 +1256,6 @@ button {
     align-content: center;
     align-items: center;
     align-self: center;
-    border: 1px solid darkorange;
   }
   .birdsContact .row .form__group__content {
     min-width: 20vw;
@@ -1340,7 +1290,6 @@ button {
   align-content: center;
   align-items: center;
   align-self: center;
-  border: 1px solid darkorange;
   min-width: 80vw;
   max-width: 80vw;
   gap: 0.5rem;
@@ -1368,7 +1317,6 @@ button {
     align-content: center;
     align-items: center;
     align-self: center;
-    border: 1px solid darkorange;
   }
   .termsAndPolicy .row .info__column__left {
     display: flex;
@@ -1379,7 +1327,6 @@ button {
     align-content: center;
     align-items: flex-end;
     align-self: center;
-    border: 1px solid darkorange;
     min-width: 35vw;
     max-width: 35vw;
     text-align: right;
@@ -1393,7 +1340,6 @@ button {
     align-content: center;
     align-items: flex-start;
     align-self: center;
-    border: 1px solid darkorange;
     min-width: 35vw;
     max-width: 35vw;
     text-align: left;
@@ -1409,7 +1355,6 @@ button {
     align-content: center;
     align-items: center;
     align-self: center;
-    border: 1px solid darkorange;
     gap: 2rem;
   }
   .termsAndPolicy .row .info {
@@ -1421,7 +1366,6 @@ button {
     align-content: center;
     align-items: center;
     align-self: center;
-    border: 1px solid darkorange;
   }
   .termsAndPolicy .row .info__column__left {
     display: flex;
@@ -1432,7 +1376,6 @@ button {
     align-content: center;
     align-items: flex-end;
     align-self: center;
-    border: 1px solid darkorange;
     min-width: 35vw;
     max-width: 35vw;
     text-align: right;
@@ -1446,7 +1389,6 @@ button {
     align-content: center;
     align-items: flex-start;
     align-self: center;
-    border: 1px solid darkorange;
     min-width: 35vw;
     max-width: 35vw;
     text-align: left;

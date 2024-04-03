@@ -1,14 +1,15 @@
-// Helpers/modal.ts
-
 export const openModal = (idModalToOpen: string): void => {
-	const infoModalBox = document.querySelector(idModalToOpen) as HTMLElement;
+	// const infoModalBox = document.querySelector(idModalToOpen) as HTMLElement;
+	const infoModalBox = document.querySelector(
+		`[data-type="${idModalToOpen}"]`,
+	) as HTMLElement;
 
 	if (infoModalBox) {
 		infoModalBox.style.display = "block";
-	}
 
-	closeModalButton();
-	closeModalOutside();
+		closeModalButton();
+		closeModalOutside();
+	}
 };
 
 export const closeModal = (modalId: string): void => {
@@ -22,12 +23,13 @@ export const closeModal = (modalId: string): void => {
 };
 
 export const closeModalButton = (): void => {
-	const closeModalButtons = document.querySelectorAll("#closeModalButton");
+	const closeModalButtons = document.querySelectorAll(".close");
 
 	closeModalButtons.forEach((button) => {
 		button.addEventListener("click", () => {
-			const modal = button.closest("#infoModal");
+			const modal = button.closest(".modal");
 			if (modal) {
+				console.log("close", modal.id);
 				closeModal(modal.id);
 			}
 		});
@@ -36,13 +38,13 @@ export const closeModalButton = (): void => {
 
 export const closeModalOutside = (): void => {
 	document.addEventListener("click", (event: MouseEvent) => {
-		const modals = document.querySelectorAll("#infoModal");
+		const modals = document.querySelectorAll(".modal");
 		let clickedInsideModal = false;
 
 		modals.forEach((modal) => {
-			const modalBox = modal.querySelector("#modalBox");
-			const closeButton = modal.querySelector("#closeModalButton");
-			const modalBodyContent = modal.querySelector("#modalBodyContent");
+			const modalBox = modal.querySelectorAll(".modal__box");
+			const closeButton = modal.querySelector(".close");
+			const modalBodyContent = modal.querySelector(".body");
 
 			if (
 				modal instanceof HTMLElement &&
@@ -52,7 +54,7 @@ export const closeModalOutside = (): void => {
 				event.target instanceof HTMLElement &&
 				(event.target === closeButton ||
 					// Event.target.classList.contains("modal__box") ||
-					event.target.id === "modalBox" ||
+					event.target.id === "modal__box" ||
 					(modalBodyContent &&
 						(modalBodyContent.contains(event.target as Node) ||
 							modalBodyContent.isSameNode(event.target as Node))))
@@ -62,7 +64,7 @@ export const closeModalOutside = (): void => {
 		});
 
 		if (!clickedInsideModal) {
-			const modalButton = (event.target as HTMLElement).closest("#infoModal");
+			const modalButton = (event.target as HTMLElement).closest(".modal");
 			if (modalButton) {
 				closeModal(modalButton.id);
 			}

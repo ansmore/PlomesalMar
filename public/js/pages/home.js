@@ -8,7 +8,9 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 import { loadText } from "../helpers/dictionary.js";
+import { loadModal } from "../modals/loginModal.js";
 const main = () => __awaiter(void 0, void 0, void 0, function* () {
     yield loadText();
+    yield loadModal();
 });
 document.addEventListener("DOMContentLoaded", main);
