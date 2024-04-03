@@ -1,3 +1,8 @@
+<?php
+
+$language = Session::get('language', 'ca1');
+// echo "Footer -> $language";
+?>
 <footer class="footer">
     <section class="row">
         <article class="box">

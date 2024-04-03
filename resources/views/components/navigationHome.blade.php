@@ -1,8 +1,8 @@
-{{-- <?php
+<?php
 
 $language = Session::get('language', 'ca');
-
-?> --}}
+// echo $language;
+?>
 <nav class="nav">
     <div class="toggle">
         <label for="toggle-menu-checkbox">

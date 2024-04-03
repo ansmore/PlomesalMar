@@ -1,6 +1,14 @@
-@extends('layouts.app')
+{{-- <?php
 
+$language = Session::get('language', 'ca');
+// echo $language;
+?> --}}
+@extends('layouts.main')
+
+@section('title', 'Login')
 @section('content')
+
+    @include('components.navigationHome')
     <div class="home">
         <div class="box">
             <div class="col-md-8">

@@ -21,11 +21,12 @@ class HomeController extends Controller
         $this->middleware('auth');
     }
 
-    public function index()
+    public function index($language = null, $section = null)
     {
         $language = Session::get('language',  config('app.fallback_locale', 'ca'));
 
-        return Redirect::to("/$language/home");
+        // return Redirect::to("/$language/home");
+		return view('pages.home', ['section' => $section,'language' => $language ]);
     }
 
 	public function indexSection($language = null, $section = null)
