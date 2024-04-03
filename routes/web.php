@@ -30,7 +30,7 @@ Route::prefix('/{language?}')->group(function () {
     Route::get('/#{section?}', [HomeController::class, 'indexSection'])->name('index.section');
     Route::get('/home#{section?}', [HomeController::class, 'homeSection'])->name('home.section');
 
-       Route::get('/birdsContact', [BirdsController::class, 'birdsContactForm'])->name('birdsContact');
+    Route::get('/birdsContact', [BirdsController::class, 'birdsContactForm'])->name('birdsContact');
     // Route::post('/birdsContact', [BirdsController::class, 'birdsContactSubmit'])->name('birdsContact.submit');
 
     Route::get('/privacyPolicy', [HomeController::class, 'privacyPolicy'])->name('privacyPolicy');
