@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Session;
@@ -20,6 +21,10 @@ use App\Http\Controllers\LanguageController;
 |
 */
 
+Auth::routes();
+
+Route::get('/{language?}/home', [App\Http\Controllers\homeController::class, 'index'])->name('homeLanguage');
+Route::get('/home', [App\Http\Controllers\homeController::class, 'index'])->name('homeMain');
 
 Route::post('/sendLanguage', [LanguageController::class, 'sendLanguage']);
 Route::post('/birdsContact', [BirdsController::class, 'birdsContactSubmit'])->name('birdsContact.submit');

@@ -5,6 +5,12 @@
 
     @include('components.navigationHome')
 
+    @if (session('status'))
+        <div class="alert alert-success" role="alert">
+            {{ session('status') }}
+        </div>
+    @endif
+
     <main class="home">
         <section id="solutions" class="row">
             <article class="box">
