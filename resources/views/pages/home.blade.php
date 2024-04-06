@@ -17,12 +17,12 @@
                 <h2 class="box__title" data-text="homeSoluciones"></h2>
                 <p>
                     <span class="box__content--reverse" data-text="homeIntro"></span>
-                    <span class="box__name--reverse" data-text="pymesoft"></span>
+                    <span class="box__name--reverse" data-text="plomesalamar"></span>
                     <span class="box__content--reverse" data-text="homeIntro2"></span>
                 </p>
                 <p>
                     <span class="box__content--reverse" data-text="homeIntro3"></span>
-                    <span class="box__name--reverse" data-text="pymesoft"></span>
+                    <span class="box__name--reverse" data-text="plomesalamar"></span>
                     <span class="box__content--reverse" data-text="homeIntro4"></span>
                 </p>
                 <p>
@@ -30,7 +30,7 @@
                 </p>
                 <p>
                     <span class="box__content--reverse" data-text="homeIntro6"></span>
-                    <span class="box__name--reverse" data-text="pymesoft"></span>
+                    <span class="box__name--reverse" data-text="plomesalamar"></span>
                     <span class="box__content--reverse" data-text="homeIntro7"></span>
                 </p>
             </article>
