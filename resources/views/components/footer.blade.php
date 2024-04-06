@@ -8,7 +8,7 @@ $language = Session::get('language', 'ca1');
         <article class="box">
             <picture class="box__image">
                 <a href="{{ route('home', ['language' => $language]) }}">
-                    <img src="{{ asset('../img/logos/demo.png') }}" alt="Pymesoft" id="pymesoft">
+                    <img src="{{ asset('../img/logos/demo.png') }}" alt="plomesalamar" id="plomesalamar">
                 </a>
             </picture>
         </article>
@@ -22,17 +22,17 @@ $language = Session::get('language', 'ca1');
         <article class="box">
             <ul>
                 <li class="icon__item">
-                    <a class="icon__item__link" href="https://twitter.com/PymesoftValles">
+                    <a class="icon__item__link" href="https://twitter.com/plomesalamarValles">
                         <i class="fa-brands fa-x-twitter"></i>
                     </a>
                 </li>
                 <li class="icon__item">
-                    <a class="icon__item__link" href="https://www.facebook.com/Pymesoft-Valles-sl-205440757738">
+                    <a class="icon__item__link" href="https://www.facebook.com/plomesalamar-Valles-sl-205440757738">
                         <i class="fab fa-facebook"></i>
                     </a>
                 </li>
                 <li class="icon__item">
-                    <a class="icon__item__link" href="https://es.linkedin.com/company/pymesoft-vall-s">
+                    <a class="icon__item__link" href="https://es.linkedin.com/company/plomesalamar-vall-s">
                         <i class="fab fa-linkedin"></i>
                     </a>
                 </li>

@@ -9,11 +9,11 @@
 
 Trello:
 
--
+- https://trello.com/b/I583KZFx/plomes-a-la-mar
 
 Guia d'estils:
 
-- https://www.figma.com/file/czdxEzwwIUWNcKAmMUDwJz/Gu%C3%ADa-de-estilos-Marketplace?node-id=0%3A1&t=bxxvJUFoXKdw84HO-1
+- https://www.figma.com/files/team/1358082351806873506
 
 Repositori:
 
