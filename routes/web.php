@@ -24,7 +24,8 @@ use App\Http\Controllers\LanguageController;
 Auth::routes();
 
 Route::get('/{language?}/home', [App\Http\Controllers\homeController::class, 'index'])->name('homeLanguage');
-Route::get('/home', [App\Http\Controllers\homeController::class, 'index'])->name('homeMain');
+Route::get('/home', [App\Http\Controllers\homeController::class, 'homeMain'])->name('homeMain');
+Route::get('/', [App\Http\Controllers\homeController::class, 'slashMain'])->name('slashMain');
 
 Route::post('/sendLanguage', [LanguageController::class, 'sendLanguage']);
 Route::post('/birdsContact', [BirdsController::class, 'birdsContactSubmit'])->name('birdsContact.submit');
@@ -38,8 +39,6 @@ Route::prefix('/{language?}')->group(function () {
 
 	Route::get('/birdsContact', [BirdsController::class, 'birdsContactForm'])->name('birdsContact');
     // Route::post('/birdsContact', [BirdsController::class, 'birdsContactSubmit'])->name('birdsContact.submit');
-
-	// Route::get('/login', [HomeController::class, 'login'])->name('login');
 
     Route::get('/privacyPolicy', [HomeController::class, 'privacyPolicy'])->name('privacyPolicy');
 

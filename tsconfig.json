@@ -1,14 +1,22 @@
 {
-  "compilerOptions": {
-    "target": "es2016",
-    "outDir": "./public/js",
-    "moduleResolution": "Node",
-    "module": "ES6",
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "strict": true,
-    "skipLibCheck": true,
-    "noImplicitAny": true,
-  },
-  "include": ["resources/**/*.ts"],
+	"compilerOptions": {
+		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true,
+		"isolatedModules": true,
+		// "module": "ES6",
+		// "module": "AMD",
+		"module": "ESNext",
+		"moduleResolution": "Node",
+		// "noEmit": false,
+		"noImplicitAny": true,
+		"outDir": "./public/js",
+		"skipLibCheck": true,
+		"strict": true,
+		// "target": "ES2016",
+		"target": "ESNext"
+		// "useDefineForClassFields": true,
+		// "jsx": "preserve",
+		// "types": ["vite/client"]
+	},
+	"include": ["resources/**/*.ts"]
 }
