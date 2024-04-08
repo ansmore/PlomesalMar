@@ -17,6 +17,7 @@
 		// "useDefineForClassFields": true,
 		// "jsx": "preserve",
 		// "types": ["vite/client"]
+		// patata
 	},
 	"include": ["resources/**/*.ts"]
 }

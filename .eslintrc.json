@@ -25,5 +25,5 @@
 		"ecmaVersion": "latest",
 		"sourceType": "module"
 	},
-	"ignorePatterns": ["public/js"]
+	"ignorePatterns": ["public/js", "vite.config.ts"]
 }
