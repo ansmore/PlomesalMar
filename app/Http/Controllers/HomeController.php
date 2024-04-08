@@ -37,6 +37,14 @@ class HomeController extends Controller
 		return view('pages.home', ['section' => $section,'language' => $language ]);
 	}
 
+	public function slashMain($language = null, $section = null)
+    {
+        $language = Session::get('language',  config('app.fallback_locale', 'ca'));
+
+        // return Redirect::to("/$language/home");
+		return view('pages.home', ['section' => $section,'language' => $language ]);
+    }
+
 	public function homeMain($language = null, $section = null)
     {
         $language = Session::get('language',  config('app.fallback_locale', 'ca'));

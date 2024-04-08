@@ -1,21 +1,12 @@
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
 import { getFinalLanguage, loadTextComponent, setLanguage, getCurrentFileName, } from "../helpers/dictionary.js";
 export const navbar = "navigation";
 let selectedOption = null;
-console.log("Aqui! pastanaga!");
-const main = () => __awaiter(void 0, void 0, void 0, function* () {
+console.log("Aqui! Padel!!!!");
+const main = async () => {
     void loadTextComponent(navbar);
-    const finalSelectedLanguage = yield getFinalLanguage();
+    const finalSelectedLanguage = await getFinalLanguage();
     void changeLanguage(finalSelectedLanguage);
-});
+};
 const handleClick = (event) => {
     event.preventDefault();
     selectedOption = event.target.id;
@@ -44,22 +35,22 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
-const changeLanguage = (language) => __awaiter(void 0, void 0, void 0, function* () {
-    var _a;
+const changeLanguage = async (language) => {
     try {
-        const fileName = yield getCurrentFileName();
-        const csrfToken = (_a = document
-            .querySelector("meta[name=csrf-token]")) === null || _a === void 0 ? void 0 : _a.getAttribute("content");
-        const response = yield fetch(`/sendLanguage`, {
+        const fileName = await getCurrentFileName();
+        const csrfToken = document
+            .querySelector("meta[name=csrf-token]")
+            ?.getAttribute("content");
+        const response = await fetch(`/sendLanguage`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
-                "X-CSRF-TOKEN": csrfToken !== null && csrfToken !== void 0 ? csrfToken : "",
+                "X-CSRF-TOKEN": csrfToken ?? "",
             },
             body: JSON.stringify({ language, fileName }),
         });
         if (response.ok) {
-            const responseData = yield response.json();
+            const responseData = await response.json();
             // const responseData = (await response.json()) as string[];
             const { newUrl } = responseData;
             if (typeof newUrl === "string") {
@@ -74,5 +65,5 @@ const changeLanguage = (language) => __awaiter(void 0, void 0, void 0, function*
     catch (error) {
         console.error("Error al cambiar el idioma:", error);
     }
-});
+};
 document.addEventListener("DOMContentLoaded", main);

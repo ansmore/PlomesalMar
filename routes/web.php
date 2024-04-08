@@ -25,6 +25,7 @@ Auth::routes();
 
 Route::get('/{language?}/home', [App\Http\Controllers\homeController::class, 'index'])->name('homeLanguage');
 Route::get('/home', [App\Http\Controllers\homeController::class, 'homeMain'])->name('homeMain');
+Route::get('/', [App\Http\Controllers\homeController::class, 'slashMain'])->name('slashMain');
 
 Route::post('/sendLanguage', [LanguageController::class, 'sendLanguage']);
 Route::post('/birdsContact', [BirdsController::class, 'birdsContactSubmit'])->name('birdsContact.submit');
