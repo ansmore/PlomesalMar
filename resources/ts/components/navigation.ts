@@ -8,6 +8,8 @@ import {
 export const navbar = "navigation";
 let selectedOption = null;
 
+console.log("Aqui! pastanaga!");
+
 const main = async () => {
 	void loadTextComponent(navbar);
 	const finalSelectedLanguage = await getFinalLanguage();

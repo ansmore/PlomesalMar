@@ -66,7 +66,7 @@
             <article class="box">
                 <figure class="box__image">
                     <a href="{{ route('home', ['language' => $language]) }}">
-                        <img src="{{ asset('img/logos/banner.jpg') }}" alt="banner">
+                        {{-- <img src="{{ asset('img/logos/banner.jpg') }}" alt="banner"> --}}
                     </a>
                 </figure>
             </article>
