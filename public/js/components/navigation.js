@@ -10,6 +10,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 import { getFinalLanguage, loadTextComponent, setLanguage, getCurrentFileName, } from "../helpers/dictionary.js";
 export const navbar = "navigation";
 let selectedOption = null;
+console.log("Aqui! pastanaga!");
 const main = () => __awaiter(void 0, void 0, void 0, function* () {
     void loadTextComponent(navbar);
     const finalSelectedLanguage = yield getFinalLanguage();
