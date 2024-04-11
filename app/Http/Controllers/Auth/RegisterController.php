@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
 use App\Models\User;
-use Illuminate\Foundation\Auth\RegistersUsers;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Foundation\Auth\RegistersUsers;
 
 class RegisterController extends Controller
 {
@@ -28,7 +30,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/$language/home';
 
     /**
      * Create a new controller instance.
@@ -69,4 +71,12 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
         ]);
     }
+
+	// public function indexRegister($language = null, $section = null)
+    // {
+    //     $language = Session::get('language',  config('app.fallback_locale', 'ca'));
+
+    //     return Redirect::to("/$language/register");
+	// 	// return view('auth.register', ['section' => $section,'language' => $language ]);
+    // }
 }

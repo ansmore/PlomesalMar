@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
 
 class ForgotPasswordController extends Controller
@@ -19,4 +20,12 @@ class ForgotPasswordController extends Controller
     */
 
     use SendsPasswordResetEmails;
+
+	public function indexForgotPassword($language = null, $section = null)
+    {
+        $language = Session::get('language',  config('app.fallback_locale', 'ca'));
+
+        // return Redirect::to("/$language/login");
+		return view('auth.passwords.reset', ['section' => $section,'language' => $language ]);
+    }
 }

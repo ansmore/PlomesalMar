@@ -16,14 +16,17 @@ class HomeController extends Controller
      *
      * @return void
      */
+	// private $language;
+
     public function __construct()
     {
         $this->middleware('auth');
+
+		// $this->language = Session::get('language',  config('app.fallback_locale', 'ca'));
     }
 
     public function index($language = null, $section = null)
     {
-        $language = Session::get('language',  config('app.fallback_locale', 'ca'));
 
         // return Redirect::to("/$language/home");
 		return view('pages.home', ['section' => $section,'language' => $language ]);
