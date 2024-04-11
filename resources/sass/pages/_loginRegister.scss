@@ -1,0 +1,60 @@
+.loginRegister {
+  @extend .main;
+
+  .row {
+    @extend .section;
+
+    @include paddingMargin(5rem $padding 2rem $padding, $margin);
+
+    .box {
+      @extend .article;
+
+      &__title {
+        @extend .title;
+      }
+
+    }
+
+    .form {
+      @extend .form;
+
+      @include mainBox(column, space-around, center);
+
+      &__group {
+
+        // DeveloperMode
+        border: 1px solid darkgoldenrod;
+
+        &__content {
+          @extend .content;
+        }
+
+        &__input {
+          @extend .formInput;
+        }
+
+        &__button {
+          @extend .button;
+        }
+
+        &__consent {
+          @extend .consent;
+          gap: $gap ;
+
+
+          &__check {
+            appearance: checkbox;
+            width: 1rem;
+            height: 1rem;
+          }
+
+          &__content {
+            @extend .content;
+
+            hyphens: none;
+          }
+        }
+      }
+    }
+  }
+}
