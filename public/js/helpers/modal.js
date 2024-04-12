@@ -59,5 +59,5 @@ export const closeModalOutside = () => {
 };
 export const resetImage = () => {
     const bodyPhoto = document.querySelector("#modalPhoto");
-    bodyPhoto === null || bodyPhoto === void 0 ? void 0 : bodyPhoto.setAttribute("src", "");
+    bodyPhoto?.setAttribute("src", "");
 };

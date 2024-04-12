@@ -3,7 +3,7 @@
 ## Integrants del grup
 
 - Albert Valls: https://github.com/albertvallsbe
-- Alfred Perez: ""
+- Alfred Perez: https://github.com/ansmore
 
 ## Enllaços
 

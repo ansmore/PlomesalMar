@@ -15,6 +15,10 @@ class LanguageController extends Controller
         $putLanguage = $request->input('language', config('app.fallback_locale', 'ca'));
         $putPage = $request->input('fileName', 'home');
 
+		if ($putPage == "" || $putPage == "/") {
+			$putPage = "home";
+		}
+
         Session::put('language', $putLanguage);
         $getLanguage = session('language');
 
