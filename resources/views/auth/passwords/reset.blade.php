@@ -1,3 +1,8 @@
+<?php
+
+$language = Session::get('language', 'ca');
+// echo $language;
+?>
 @extends('layouts.main')
 
 @section('content')
@@ -8,7 +13,7 @@
                     <div class="card-header">{{ __('Reset Password') }}</div>
 
                     <div class="card-body">
-                        <form method="POST" action="{{ route('password.update') }}">
+                        <form method="POST" action="{{ route('password.update', ['language' => $language]) }}">
                             @csrf
 
                             <input type="hidden" name="token" value="{{ $token }}">

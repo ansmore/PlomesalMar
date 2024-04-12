@@ -26,8 +26,8 @@
                 <h2 class="box__title" data-text="formTitulo"></h2>
             </article>
             <article class="form">
-                <form action="{{ route('birdsContact.submit') }}" method="POST" enctype="multipart/form-data"
-                    id="contactForm">
+                <form action="{{ route('birdsContact.submit', ['language' => $language]) }}" method="POST"
+                    enctype="multipart/form-data" id="contactForm">
                     @csrf
                     <div class="form__group">
                         <label class="form__group__content" for="name" data-text="formNombre"></label>

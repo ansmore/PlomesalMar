@@ -1,9 +1,8 @@
 [
-  "header",
-  "navigationHome",
-  "footer",
-  "home",
-  "birdsContact",
-  "termsOfUse",
-  "privacyPolicy"
+	"navigationHome",
+	"footer",
+	"home",
+	"birdsContact",
+	"termsOfUse",
+	"privacyPolicy"
 ]
