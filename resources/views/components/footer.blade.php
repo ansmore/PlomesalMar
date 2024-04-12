@@ -8,7 +8,7 @@ $language = Session::get('language', 'ca1');
         <article class="box">
             <picture class="box__image">
                 <a href="{{ route('home', ['language' => $language]) }}">
-                    <img src="{{ asset('../img/logos/demo.png') }}" alt="plomesalamar" id="plomesalamar">
+                    <img src="{{ asset('../img/logos/logo_navbar.jpeg') }}" alt="plomesalamar" id="plomesalamar">
                 </a>
             </picture>
         </article>

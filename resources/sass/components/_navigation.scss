@@ -1,4 +1,3 @@
-// Navbar style
 .nav {
   @include mainBox(row, space-between, center);
   @include style($neutral_lighter, $primary_main);
@@ -24,16 +23,18 @@
     &__logo {
       @include mainBox(row, flex-start, center);
       @include paddingMargin($padding, $margin);
-      flex: 3;
-      @include boxSize(width, 30);
-      // min-height: 10vh;
-      @include boxSize(height, null, null, $nav-height );
+      @include boxSize(width, 35vw, null, 35vw);
+      @include boxSize(height, $nav-height, null, $nav-height );
 
-      overflow: hidden;
+      flex: 3;
 
       img {
-        @include paddingMargin($padding 1rem);
+        @include mainBox(column, center, center);
+        @include paddingMargin(0.25rem, 0);
         @include style(null, $neutral_lighter);
+        @include boxSize(width, 40vw, null, 40vw);
+        @include boxSize(height, 10vh, null, 10vh);
+        overflow: hidden;
       }
     }
 
@@ -224,10 +225,15 @@
 @media screen and (min-width: 376px) and (max-width: 600px) {}
 
 @media screen and (min-width: 601px) and (max-width: 1024px) {
-  .navbar {
-    &__logo {
-      @include boxSize(width, 30vw);
-      // min-width: 30vw;
+  .nav {
+    .navbar {
+      &__logo {
+        @include boxSize(width, 35vw);
+
+        img {
+          @include boxSize(width, 15rem, null, 15rem);
+        }
+      }
     }
   }
 }
@@ -243,12 +249,12 @@
     .navbar {
       @include boxSize(height, null, null, $nav-height);
 
-      // max-height: $nav-height;
       &__logo {
-        // prova absolute
         @include boxSize(width, 20vw, null, 20vw);
-        // min-width: 20vw;
-        // max-width: 20vw;
+
+        img {
+          @include boxSize(width, 15rem, null, 15rem);
+        }
       }
 
       &__menu {
