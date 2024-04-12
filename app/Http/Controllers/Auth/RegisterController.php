@@ -71,12 +71,4 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
         ]);
     }
-
-	// public function indexRegister($language = null, $section = null)
-    // {
-    //     $language = Session::get('language',  config('app.fallback_locale', 'ca'));
-
-    //     return Redirect::to("/$language/register");
-	// 	// return view('auth.register', ['section' => $section,'language' => $language ]);
-    // }
 }

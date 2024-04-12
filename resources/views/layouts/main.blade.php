@@ -1,8 +1,3 @@
-<?php
-
-$language = Session::get('language', 'ca');
-// echo $language;
-?>
 <!DOCTYPE html>
 <html lang="{{ session('language', 'en') }}">
 

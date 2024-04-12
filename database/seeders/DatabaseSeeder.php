@@ -20,8 +20,8 @@ class DatabaseSeeder extends Seeder
 		$this->call(BoatSeeder::class);
 		$this->call(TransectSeeder::class);
 		$this->call(SpecieSeeder::class);
-    $this->call(DepartureSeeder::class);
-    $this->call(ObservationSeeder::class);
-    $this->call(DepartureUserObservationSeeder::class);
+    	$this->call(DepartureSeeder::class);
+    	$this->call(ObservationSeeder::class);
+    	$this->call(DepartureUserObservationSeeder::class);
     }
 }
