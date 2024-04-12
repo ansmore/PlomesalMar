@@ -21,10 +21,6 @@
       @include mainBox(column, space-around, center);
 
       &__group {
-
-        // DeveloperMode
-        border: 1px solid darkgoldenrod;
-
         &__content {
           @extend .content;
         }

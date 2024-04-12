@@ -21,46 +21,62 @@ use App\Http\Controllers\LanguageController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-// $language = Session::get('language',  config('app.fallback_locale', 'ca'));
-
-// Auth::routes();
-
-
-// Routes intent 1
-// Route::get('/login', [App\Http\Controllers\Auth\LoginController::class, 'indexLogin'])->name('indexLogin');
-// Route::get('/register', [App\Http\Controllers\Auth\RegisterController::class, 'indexRegister'])->name('indexRegister');
-// Route::get('/password/reset', [App\Http\Controllers\Auth\ForgotPasswordController::class, 'indexForgotPassword'])->name('indexForgotPassword');
-
-
 // Route::get('/register', 'Auth\RegisterController@showRegistrationForm')->name('indexRegister');
-Route::get('/register', function () {
-    $language = session('language', config('app.fallback_locale', 'ca'));
-    return Redirect::to("/$language/register");
-});
 // Route::post('/register', 'Auth\RegisterController@register');
-Route::post('/register', function () {
-    $language = session('language', config('app.fallback_locale', 'ca'));
-    return Redirect::to("/$language/register");
-})->name('indexRegister');
-
 // Route::get('/login', 'Auth\LoginController@showLoginForm');
-Route::get('/login', function () {
-    $language = session('language', config('app.fallback_locale', 'ca'));
-    return Redirect::to("/$language/login");
-});
 // Route::post('/login', 'Auth\LoginController@login');
-Route::post('/login', function () {
-    $language = session('language', config('app.fallback_locale', 'ca'));
-    return Redirect::to("/$language/login");
-})->name('indexLogin');
-Route::post('/logout', 'Auth\LoginController@logout');
+// Old version ->
+// Route::get('/register', function () {
+// 	$language = session('language', config('app.fallback_locale', 'ca'));
+//     return Redirect::to("/$language/register");
+// });
+// Route::post('/register', function () {
+//     $language = session('language', config('app.fallback_locale', 'ca'));
+//     return Redirect::to("/$language/register");
+// })->name('indexRegister');
+
+// Route::get('/login', function () {
+//     $language = session('language', config('app.fallback_locale', 'ca'));
+//     return Redirect::to("/$language/login");
+// });
+// Route::post('/login', function () {
+//     $language = session('language', config('app.fallback_locale', 'ca'));
+//     return Redirect::to("/$language/login");
+// })->name('indexLogin');
+
+// // Route::post('/logout', 'Auth\LoginController@logout');
 // Route::post('/logout', function () {
 //     $language = session('language', config('app.fallback_locale', 'ca'));
 //     return Redirect::to("/$language/logout");
-// });
+// })->name('indexLogout');
 
-// Route::get('/password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
+
+Route::get('/register', function () {
+    return Redirect::to("/" . app()->getLocale() . "/register");
+});
+
+Route::post('/register', function () {
+    return Redirect::to("/" . app()->getLocale() . "/register");
+})->name('indexRegister');
+
+Route::get('/login', function () {
+    return Redirect::to("/" . app()->getLocale() . "/login");
+});
+
+Route::post('/login', function () {
+    return Redirect::to("/" . app()->getLocale() . "/login");
+})->name('indexLogin');
+
+Route::post('/logout', function () {
+    return Redirect::to("/" . app()->getLocale() . "/logout");
+})->name('indexLogout');
+
+Route::get('/password/reset', function () {
+	return Redirect::to("/" . app()->getLocale() . "/password/reset");
+})->name('indexPasswordRequest');
+
+
+// Aqui faltar continuar->
 // Route::post('/password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
 // Route::get('/password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
 // Route::post('/password/reset', 'Auth\ResetPasswordController@reset');

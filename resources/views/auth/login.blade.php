@@ -55,12 +55,14 @@ $language = Session::get('language', 'ca');
                     </div>
                     <div class="form__group">
                         @if (Route::has('password.request'))
-                            <a class="form__group__content" href="{{ route('password.request') }}">
+                            <a class="form__group__content"
+                                href="{{ route('password.request', ['language' => $language]) }}">
                                 {{ __('Forgot Your Password?') }}
                             </a>
                         @endif
                         @if (Route::has('register'))
-                            <a class="form__group__content" href="{{ route('register') }}">{{ __('Register') }}</a>
+                            <a class="form__group__content"
+                                href="{{ route('register', ['language' => $language]) }}">{{ __('Register') }}</a>
                         @endif
                     </div>
                 </form>

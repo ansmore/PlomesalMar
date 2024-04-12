@@ -11,12 +11,12 @@
             <div class="termsAndPolicy__row">
                 <div class="circles">
                     <span class="circles__pyme">
-                        <a href="{{ route('home') }}">
+                        <a href="{{ route('home', ['language' => $language]) }}">
                             <img src="{{ asset('../img/logos/demo.png') }}" alt="">
                         </a>
                     </span>
                     <span class="circles__birds">
-                        <a href="{{ route('home') }}">
+                        <a href="{{ route('home', ['language' => $language]) }}">
                             <img src="{{ asset('../img/logos/demo.png') }}" alt="">
                         </a>
                     </span>

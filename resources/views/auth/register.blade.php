@@ -1,4 +1,8 @@
+<?php
+
 $language = Session::get('language', 'ca');
+// echo $language;
+?>
 @extends('layouts.main')
 
 @section('title', 'Register')
@@ -11,7 +15,7 @@ $language = Session::get('language', 'ca');
                 <div class="box__title">{{ __('Register') }}</div>
             </article>
             <article class="form">
-                <form method="POST" action="{{ route('indexRegister') }}" id="registerForm">
+                <form method="POST" action="{{ route('register', ['language' => $language]) }}" id="registerForm">
                     @csrf
 
                     <div class="form__group">
