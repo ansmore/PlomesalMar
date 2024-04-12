@@ -11,11 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('transects', function (Blueprint $table) {
+        Schema::create('observations', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('waypoint');
+            $table->integer('number_of_individuals');
+            $table->boolean('in_flight')->default(false);
+            $table->boolean('distance_under_300m')->default(false);
+            $table->text('notes')->nullable();
             $table->timestamps();
         });
+        
     }
 
     /**
@@ -23,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('transects');
+        Schema::dropIfExists('observations');
     }
 };

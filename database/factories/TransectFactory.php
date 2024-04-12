@@ -2,12 +2,12 @@
 
 namespace Database\Factories;
 
-use App\Models\Transecte;
+use App\Models\Transect;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class TransecteFactory extends Factory
+class TransectFactory extends Factory
 {
-    protected $model = Transecte::class;
+    protected $model = Transect::class;
 
     public function definition(): array
     {

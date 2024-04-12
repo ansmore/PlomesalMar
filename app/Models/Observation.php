@@ -5,11 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Transecte extends Model
+class Observation extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'name',
+        'waypoint',
+        'number_of_individuals',
+        'in_flight',
+        'distance_under_300m',
+        'notes',
     ];
 }
