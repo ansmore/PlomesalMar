@@ -21,5 +21,6 @@ class DatabaseSeeder extends Seeder
 		$this->call(TransectSeeder::class);
 		$this->call(SpecieSeeder::class);
     $this->call(DepartureSeeder::class);
+    $this->call(ObservationSeeder::class);
     }
 }
