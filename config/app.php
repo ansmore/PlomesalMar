@@ -29,7 +29,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Plomes a la mar'),
+    'name' => env('APP_NAME', 'Plomes al mar'),
 
     /*
     |--------------------------------------------------------------------------

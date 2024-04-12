@@ -38,7 +38,7 @@
                 <figure class="circle modal-button" data-modal-id="secondModal"">
                     {{-- <a href="{{ route('home', ['language' => $language]) }}"> --}}
                     <span class="circle__icon">
-                        <img src="{{ asset('img/logos/demo.png') }}" alt="">
+                        <img src="{{ asset('img/logos/logo_blue.jpeg') }}" alt="">
                     </span>
                     <h4 class="circle__content" data-text="services1">
                     </h4>
@@ -47,7 +47,7 @@
                 <figure class="circle modal-button" data-modal-id="thirdModal">
                     {{-- <a href="{{ route('home', ['language' => $language]) }}"> --}}
                     <span class="circle__icon">
-                        <img src="{{ asset('../img/logos/demo.png') }}" alt="">
+                        <img src="{{ asset('../img/logos/logo_blue.jpeg') }}" alt="">
                     </span>
                     <h4 class="circle__content" data-text="services3">
                     </h4>

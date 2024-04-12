@@ -1,4 +1,3 @@
-// Footer style
 .footer {
   @include mainBox(column, center, center);
   @include style($neutral_lighter, $primary_main);
@@ -20,7 +19,15 @@
       &__image {
         @extend .image;
 
-        @include boxSize(width, 80vw, null, 80vw);
+        @include mainBox(column, center, center);
+        @include style(null, $neutral_lighter);
+        @include boxSize(width, 70vw, null, 70vw);
+        @include boxSize(height, 15rem, null, 15rem);
+
+        img {
+          @include boxSize(width, 50vw, null, 50vw);
+          @include boxSize(height, 5rem, null, 5rem);
+        }
       }
 
       .icon {
@@ -73,6 +80,14 @@
           @include mainBox(row, center, center);
           gap: 2rem;
         }
+
+        &__image {
+          @include boxSize(width, 70vw, null, 70vw);
+
+          img {
+            @include boxSize(width, 15rem, null, 15rem);
+          }
+        }
       }
     }
   }
@@ -92,6 +107,12 @@
           @include mainBox(row, center, center);
           @include boxSize(width, 45vw, null, 45vw);
           gap: 2rem;
+        }
+
+        &__image {
+          img {
+            @include boxSize(width, 15rem, null, 15rem);
+          }
         }
       }
     }

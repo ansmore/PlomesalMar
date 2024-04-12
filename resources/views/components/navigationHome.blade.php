@@ -13,7 +13,7 @@ $language = Session::get('language', 'ca');
     <div class="navbar">
         <div class="navbar__logo">
             <a href="/">
-                <img src="{{ asset('../img/logos/demo.png') }}" alt="plomesalamar" id="pymeso">
+                <img src="{{ asset('../img/logos/logo_navbar.jpeg') }}" alt="plomesalamar" id="pymeso">
             </a>
         </div>
         <div class="navbar__menu__home">
@@ -52,9 +52,9 @@ $language = Session::get('language', 'ca');
                         <a class="list__item__link" id="navModulosDropdown" role="button"
                             data-text="currentLanguage"></a>
                         <div id="setLanguages" class="dropdown__menu" aria-labelledby="navModulosDropdown">
-                            <a id="es" data-text="cas" class="dropdown__menu__item" href="#"></a>
                             <a id="ca" data-text="cat" class="dropdown__menu__item" href="#"></a>
                             <a id="en" data-text="eng" class="dropdown__menu__item" href="#"></a>
+                            <a id="es" data-text="cas" class="dropdown__menu__item" href="#"></a>
                         </div>
                     </div>
                 </li>
