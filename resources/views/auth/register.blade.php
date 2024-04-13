@@ -1,8 +1,3 @@
-<?php
-
-$language = Session::get('language', 'ca');
-// echo $language;
-?>
 @extends('layouts.main')
 
 @section('title', 'Register')

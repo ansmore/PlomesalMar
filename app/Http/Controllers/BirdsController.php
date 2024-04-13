@@ -73,6 +73,6 @@ class BirdsController extends Controller
 
         Mail::to($request->input('email'))->send(new ContactConfirmation($messages, $dictionary));
 
-        return view('birdsContact', ['language' => $language])->with('success', 'Mensaje enviado con exito!');
+        return view('pages.birdsContact', ['language' => $language])->with('success', 'Mensaje enviado con exito!');
     }
 }

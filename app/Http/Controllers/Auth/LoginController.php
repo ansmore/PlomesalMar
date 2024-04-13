@@ -26,8 +26,6 @@ class LoginController extends Controller
      *
      * @var string
      */
-
-	//    return Redirect::to("/$language/home");
     protected $redirectTo = '/$language/home';
 
     /**
@@ -39,12 +37,4 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
-
-	// public function indexLogin($language = null, $section = null)
-    // {
-    //     $language = Session::get('language',  config('app.fallback_locale', 'ca'));
-
-    //     // return Redirect::to("/$language/login");
-	// 	return view('auth.login', ['section' => $section,'language' => $language ]);
-    // }
 }
