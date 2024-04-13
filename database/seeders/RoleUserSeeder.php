@@ -55,6 +55,6 @@ class RoleUserSeeder extends Seeder
         /**
          * Creació de 5 rols aleatoris d'ususari
          */
-        // RoleUser::factory()->count(5)->create();
+        RoleUser::factory()->count(5)->create();
     }
 }

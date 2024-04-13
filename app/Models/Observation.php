@@ -16,4 +16,8 @@ class Observation extends Model
         'distance_under_300m',
         'notes',
     ];
+
+	public function images(){
+        return $this->belongsToMany(Image::class);
+    }
 }
