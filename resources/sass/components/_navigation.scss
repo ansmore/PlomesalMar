@@ -22,11 +22,14 @@
 
     &__logo {
       @include mainBox(row, flex-start, center);
-      @include paddingMargin($padding, $margin);
+      // Fix 001 -> Revisar margin i padding
+      // @include paddingMargin($padding, $margin);
       @include boxSize(width, 35vw, null, 35vw);
       @include boxSize(height, $nav-height, null, $nav-height );
 
       flex: 3;
+      // Fix 001 -> Revisar margin i padding
+      overflow: hidden;
 
       img {
         @include mainBox(column, center, center);

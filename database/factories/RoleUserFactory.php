@@ -31,17 +31,6 @@ class RoleUserFactory extends Factory
             $existingUsers = User::factory()->create();
         }
 
-
-		// $usersWithRoles = RoleUser::pluck('user_id')->unique()->toArray();
-        // $rolesAssigned = RoleUser::pluck('role_id')->unique()->toArray();
-
-		// $availableUsers = $existingUsers->whereNotIn('id', $usersWithRoles);
-        // $availableRoles = $existingRoles->whereNotIn('id', $rolesAssigned);
-
-		// if ($availableUsers->isEmpty() || $availableRoles->isEmpty()) {
-        //     return [];
-        // }
-
         $selectedUser = $existingUsers->random();
         $selectedRole = $existingRoles->random();
 

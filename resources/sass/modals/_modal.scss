@@ -9,7 +9,7 @@
     @include mainBox(column, center, center);
     @include boxSize(width, 80vw, null, 80vw);
     @include boxSize(height, 80vh, null, 80vh);
-    border-radius: 5px;
+    border-radius: 4px;
     @include hover($neutral_lighter,
       inherit,
       $secondary_main,

@@ -25,7 +25,7 @@ class RoleUserSeeder extends Seeder
             'role_id' => $role->id,
             'user_id' => $user->id,
         ]);
-		 /**
+		/**
          * Crear usuari administrador Albert
          */
         $user = User::find(2);
@@ -34,7 +34,7 @@ class RoleUserSeeder extends Seeder
             'role_id' => $role->id,
             'user_id' => $user->id,
         ]);
-		 /**
+		/**
          * Crear usuari administrador Alferd
          */
         $user = User::find(3);
