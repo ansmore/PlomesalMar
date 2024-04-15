@@ -27,7 +27,7 @@ $language = Session::get('language', 'ca');
                 </li>
                 <li class="list__item">
                     <a href="{{ route('home', ['language' => $language]) }}">
-                        <span class="list__item__link" data-text="navDigitalization">
+                        <span class="list__item__link" data-text="navManagement">
                         </span>
                     </a>
                 </li>
@@ -53,8 +53,8 @@ $language = Session::get('language', 'ca');
                             data-text="currentLanguage"></a>
                         <div id="setLanguages" class="dropdown__menu" aria-labelledby="navModulosDropdown">
                             <a id="ca" data-text="cat" class="dropdown__menu__item" href="#"></a>
-                            <a id="en" data-text="eng" class="dropdown__menu__item" href="#"></a>
                             <a id="es" data-text="cas" class="dropdown__menu__item" href="#"></a>
+                            <a id="en" data-text="eng" class="dropdown__menu__item" href="#"></a>
                         </div>
                     </div>
                 </li>
