@@ -11,12 +11,18 @@ class Observation extends Model
 
     protected $fillable = [
         'waypoint',
+        'specie_id',
         'number_of_individuals',
         'in_flight',
         'distance_under_300m',
         'notes',
     ];
 
+    public function species()
+    {
+        return $this->belongsTo(Species::class);
+    }
+    
 	public function images(){
         return $this->belongsToMany(Image::class);
     }

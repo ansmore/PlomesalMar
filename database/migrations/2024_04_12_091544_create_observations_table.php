@@ -13,11 +13,13 @@ return new class extends Migration
     {
         Schema::create('observations', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('species_id')->after('id');
             $table->string('waypoint');
             $table->integer('number_of_individuals');
             $table->boolean('in_flight')->default(false);
             $table->boolean('distance_under_300m')->default(false);
             $table->text('notes')->nullable();
+            $table->foreign('species_id')->references('id')->on('species');
             $table->timestamps();
         });
         
