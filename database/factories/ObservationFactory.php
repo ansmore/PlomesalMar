@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Specie;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -18,6 +19,7 @@ class ObservationFactory extends Factory
     {
         return [
             'waypoint' => $this->faker->word,
+            'species_id' => Specie::inRandomOrder()->first()->id,
             'number_of_individuals' => $this->faker->numberBetween(1, 100),
             'in_flight' => $this->faker->boolean,
             'distance_under_300m' => $this->faker->boolean,
