@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers\V1;
 
-use App\Http\Controllers\Controller;
+use App\Models\Image;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class ImagesController extends Controller
 {
@@ -12,7 +13,8 @@ class ImagesController extends Controller
      */
     public function index()
     {
-        //
+        $images = Image::all();
+        return response()->json($images);
     }
 
     /**
@@ -28,7 +30,8 @@ class ImagesController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $image = Image::findorFail($id);
+        return response()->json($image);
     }
 
     /**

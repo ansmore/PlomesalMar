@@ -35,12 +35,7 @@ class SpecieController extends Controller
      */
     public function show(string $id)
     {
-        $specie = Specie::find($id);
-    
-        if (!$specie) {
-            return response()->json(['message' => 'Species not found'], 404);
-        }
-    
+        $specie = Specie::findorFail($id);
         return response()->json($specie);
     }
 
