@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\V1\BoatController;
 use App\Http\Controllers\V1\RolsController;
 use App\Http\Controllers\V1\UsersController;
+use App\Http\Controllers\V1\ImagesController;
 use App\Http\Controllers\V1\SpecieController;
 use App\Http\Controllers\V1\TransectController;
 use App\Http\Controllers\V1\DepartureController;
@@ -60,6 +61,7 @@ Route::prefix('V1')->group(function () {
     Route::get('/observations/{id}', [ObservationController::class, 'show']);
 
     // Rutas para Images
-    
+    Route::get('/images', [ImagesController::class, 'index']);
+    Route::get('/images/{id}', [ImagesController::class, 'show']);
 });
 
