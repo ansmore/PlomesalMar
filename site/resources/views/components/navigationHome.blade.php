@@ -41,7 +41,7 @@ $language = Session::get('language', 'ca');
                         </a>
                     </li>
                     <li class="list__item">
-                        <a href="{{ route('birdsContact', ['language' => $language]) }}">
+                        <a href="{{ route('plomesalmarContact', ['language' => $language]) }}">
                             <span class="list__item__link" data-text="navContact">
                             </span>
                         </a>

@@ -20,7 +20,7 @@
         @extend .image;
 
         @include mainBox(column, center, center);
-        @include style(null, $neutral_lighter);
+        @include style(null, $neutral_lightest);
         @include boxSize(width, 70vw, null, 70vw);
         @include boxSize(height, 15rem, null, 15rem);
 

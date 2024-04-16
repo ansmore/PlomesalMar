@@ -10,32 +10,32 @@ use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
 
-class BirdsController extends Controller
+class PlomesalmarController extends Controller
 {
-    public function birds()
+    public function plomesalmar()
     {
         $language = Session::get('language',  config('app.fallback_locale', 'ca'));
 
-        return view('pages.birds', ['language' => $language]);
+        return view('pages.plomesalmar', ['language' => $language]);
     }
 
-    public function birdsSection($section = null)
+    public function plomesalmarSection($section = null)
     {
 
         $language = Session::get('language',  config('app.fallback_locale', 'ca'));
 
-        return view('pages.birds', ['section' => $section, 'language' => $language]);
+        return view('pages.plomesalmar', ['section' => $section, 'language' => $language]);
     }
 
-    public function birdsContactForm()
+    public function plomesalmarContactForm()
     {
         $language = Session::get('language',  config('app.fallback_locale', 'ca'));
 
-        return view('pages.birdsContact', ['language' => $language]);
+        return view('pages.plomesalmarContact', ['language' => $language]);
     }
 
 
-    public function birdsContactSubmit(Request $request)
+    public function plomesalmarContactSubmit(Request $request)
     {
         $language = Session::get('language',  config('app.fallback_locale', 'ca'));
 
@@ -73,6 +73,6 @@ class BirdsController extends Controller
 
         Mail::to($request->input('email'))->send(new ContactConfirmation($messages, $dictionary));
 
-        return view('pages.birdsContact', ['language' => $language])->with('success', 'Mensaje enviado con exito!');
+        return view('pages.plomesalmarContact', ['language' => $language])->with('success', 'Mensaje enviado con exito!');
     }
 }

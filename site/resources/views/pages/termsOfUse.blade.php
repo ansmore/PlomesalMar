@@ -7,7 +7,7 @@
 
     <div class="main">
         <!-- Header  section -->
-        <section id="header__birds" class="termsAndPolicy">
+        <section id="header__plomesalmar" class="termsAndPolicy">
             <div class="termsAndPolicy__row">
                 <div class="circles">
                     <span class="circles__pyme">
@@ -15,7 +15,7 @@
                             <img src="{{ asset('../img/logos/logo_blue.jpeg') }}" alt="">
                         </a>
                     </span>
-                    <span class="circles__birds">
+                    <span class="circles__plomesalmar">
                         <a href="{{ route('home', ['language' => $language]) }}">
                             <img src="{{ asset('../img/logos/logo_blue.jpeg') }}" alt="">
                         </a>

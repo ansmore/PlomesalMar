@@ -19,5 +19,5 @@
 		// "types": ["vite/client"]
 		// patata
 	},
-	"include": ["resources/**/*.ts"]
+	"include": ["./resources/**/*.ts"]
 }

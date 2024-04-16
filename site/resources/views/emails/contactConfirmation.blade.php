@@ -84,7 +84,7 @@
             <td colspan="1" style="width: 9%;"></td>
             <td colspan="3" class="center" style="width: 40%; ">
                 <img class="center" src="https://i.pinimg.com/736x/9d/1f/43/9d1f434700aea18dfd4b993cc8db7f40.jpg"
-                    alt="birds" style="max-width: 50%;">
+                    alt="plomesalmar" style="max-width: 50%;">
             </td>
             <td colspan="1" style="width:2%;"></td>
             <td colspan="3" class="center" style="width: 40%;  ">
