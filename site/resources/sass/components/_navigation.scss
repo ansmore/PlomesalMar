@@ -18,7 +18,7 @@
     @include mainBox(row, space-around, center);
     @include paddingMargin;
     @include boxSize(width, 99vw, null, 100vw);
-    @include boxSize(height, null, null, $nav-height );
+    @include boxSize(height, $nav-height, null, $nav-height );
 
     &__logo {
       @include mainBox(row, center, center);
@@ -33,11 +33,11 @@
       overflow: hidden;
 
       img {
-        @include mainBox(column, flex-start, flex-start);
+        @include mainBox(column, center, center);
         // @include paddingMargin(0.25rem, 0);
         @include style(null, $neutral_lighter);
-        @include boxSize(width, 40vw, null, 40vw);
-        @include boxSize(height, 12vh, null, 12vh);
+        @include boxSize(width, 35vw, null, 35vw);
+        @include boxSize(height, $nav-height, null, $nav-height);
         overflow: hidden;
       }
     }
