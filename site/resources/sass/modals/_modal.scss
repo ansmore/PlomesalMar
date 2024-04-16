@@ -2,18 +2,20 @@
   @extend .modal;
 
   &__box {
-    position: relative;
-    background: $neutral_lighter;
-    top: 10vh;
-    left: 10vw;
-    @include mainBox(column, center, center);
-    @include boxSize(width, 80vw, null, 80vw);
-    @include boxSize(height, 80vh, null, 80vh);
-    border-radius: 4px;
-    @include hover($neutral_lighter,
-      inherit,
-      $secondary_main,
-      transparent);
+    @extend .modalBox;
+
+    // position: relative;
+    // background: $neutral_lighter;
+    // top: 10vh;
+    // left: 10vw;
+    // @include mainBox(column, center, center);
+    // @include boxSize(width, 80vw, null, 80vw);
+    // @include boxSize(height, 80vh, null, 80vh);
+    // border-radius: 4px;
+    // @include hover($neutral_lighter,
+    //   inherit,
+    //   $secondary_main,
+    //   transparent);
 
     .body {
       @extend .article;
