@@ -48,6 +48,8 @@
     </ul>
     @yield('content')
     @include('components.footer')
+    <script type="module" src="{{ asset('js/components/navigation.js') }}" defer></script>
+    <script type="module" src="{{ asset('js/components/footer.js') }}" defer></script>
 </body>
 
 </html>

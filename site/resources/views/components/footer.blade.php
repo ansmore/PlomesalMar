@@ -1,6 +1,5 @@
 <?php
-
-$language = Session::get('language', 'ca1');
+$language = Session::get('language', 'ca');
 // echo "Footer -> $language";
 ?>
 <footer class="footer">
@@ -50,4 +49,3 @@ $language = Session::get('language', 'ca1');
         </article>
     </section>
 </footer>
-<script type="module" src="{{ asset('js/components/footer.js') }}" defer></script>
