@@ -86,7 +86,7 @@
                 </span>
                 <span class="box__row">
                     <span class="box__content" data-text="contactAction"></span>
-                    <a class="box__button" href="{{ route('birdsContact', ['language' => $language]) }}"
+                    <a class="box__button" href="{{ route('plomesalmarContact', ['language' => $language]) }}"
                         data-text="contactActionMessage"></a>
                 </span>
             </article>

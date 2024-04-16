@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('observations', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('species_id')->after('id');
+            $table->unsignedBigInteger('species_id');
             $table->string('waypoint');
             $table->integer('number_of_individuals');
             $table->boolean('in_flight')->default(false);
@@ -22,7 +22,6 @@ return new class extends Migration
             $table->foreign('species_id')->references('id')->on('species');
             $table->timestamps();
         });
-        
     }
 
     /**

@@ -1,4 +1,4 @@
-.birdsContact {
+.plomesalmarContact {
   @extend .main;
 
   .row {
@@ -70,7 +70,7 @@
 
 
 @media screen and (min-width: 601px) and (max-width: 1024px) {
-  .birdsContact {
+  .plomesalmarContact {
     .row {
       .form {
         &__group {
@@ -100,7 +100,7 @@
 
 
 @media screen and (min-width: 1025px) {
-  .birdsContact {
+  .plomesalmarContact {
     .row {
       .box__logo {
         @include mainBox(row, center, center);

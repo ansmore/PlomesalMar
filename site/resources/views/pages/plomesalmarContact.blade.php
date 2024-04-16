@@ -1,12 +1,12 @@
 @extends('layouts.main')
 
-@section('title', 'Birds Contact')
+@section('title', 'Plomes al mar Contact')
 @section('content')
 
     @include('components.navigationHome')
 
-    <main class="birdsContact">
-        <!-- Birds Contact Section -->
+    <main class="plomesalmarContact">
+        <!-- Plomes al mar Contact Section -->
         <section id="logo" class="row">
             <article class="box__logo">
                 <span class="box__logo__image">
@@ -26,7 +26,7 @@
                 <h2 class="box__title" data-text="formTitulo"></h2>
             </article>
             <article class="form">
-                <form action="{{ route('birdsContact.submit', ['language' => $language]) }}" method="POST"
+                <form action="{{ route('plomesalmarContact.submit', ['language' => $language]) }}" method="POST"
                     enctype="multipart/form-data" id="contactForm">
                     @csrf
                     <div class="form__group">
@@ -64,5 +64,5 @@
             </article>
         </section>
     </main>
-    <script type="module" src="{{ asset('js/pages/birdsContact.js') }}" defer></script>
+    <script type="module" src="{{ asset('js/pages/plomesalmarContact.js') }}" defer></script>
 @endsection

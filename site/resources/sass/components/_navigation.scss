@@ -21,7 +21,8 @@
     @include boxSize(height, null, null, $nav-height );
 
     &__logo {
-      @include mainBox(row, flex-start, center);
+      @include mainBox(row, center, center);
+      @include style(null, $neutral_lightest);
       // Fix 001 -> Revisar margin i padding
       // @include paddingMargin($padding, $margin);
       @include boxSize(width, 35vw, null, 35vw);
@@ -32,11 +33,11 @@
       overflow: hidden;
 
       img {
-        @include mainBox(column, center, center);
-        @include paddingMargin(0.25rem, 0);
+        @include mainBox(column, flex-start, flex-start);
+        // @include paddingMargin(0.25rem, 0);
         @include style(null, $neutral_lighter);
         @include boxSize(width, 40vw, null, 40vw);
-        @include boxSize(height, 10vh, null, 10vh);
+        @include boxSize(height, 12vh, null, 12vh);
         overflow: hidden;
       }
     }
@@ -48,7 +49,7 @@
         @include paddingMargin(0, 194px 0 0 0);
       }
 
-      &__birds {
+      &__plomesalmar {
 
         @include paddingMargin(0, 194px 0 0 0);
       }
@@ -59,7 +60,7 @@
       }
 
       &__home,
-      &__birds,
+      &__plomesalmar,
       &__digitalization {
 
         @include mainBox(row, center, center);
@@ -211,7 +212,7 @@
         .navbar__menu {
 
           &__home,
-          &__birds,
+          &__plomesalmar,
           &__digitalization {
 
             .list {
@@ -263,7 +264,7 @@
       &__menu {
 
         &__home,
-        &__birds,
+        &__plomesalmar,
         &__digitalization {
 
           @include mainBox(row, flex-end, center);

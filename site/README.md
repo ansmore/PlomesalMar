@@ -17,7 +17,7 @@ Guia d'estils:
 
 Repositori:
 
-- https://git.copernic.cat/valls.berengueras.albert/2024_birds.git
+- https://git.copernic.cat/valls.berengueras.albert/2024_plomes_al_mar.git
 
 Conexió base de dades des de Android:
 
