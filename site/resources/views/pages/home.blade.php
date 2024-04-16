@@ -14,24 +14,16 @@
     <main class="home">
         <section id="solutions" class="row">
             <article class="box">
-                <h2 class="box__title" data-text="homeSoluciones"></h2>
+                <h2 class="box__title" data-text="homeTitle"></h2>
                 <p>
                     <span class="box__content--reverse" data-text="homeIntro"></span>
-                    <span class="box__name--reverse" data-text="plomesalamar"></span>
+                    <span class="box__name--reverse" data-text="assCetacea"></span>
                     <span class="box__content--reverse" data-text="homeIntro2"></span>
                 </p>
                 <p>
                     <span class="box__content--reverse" data-text="homeIntro3"></span>
                     <span class="box__name--reverse" data-text="plomesalamar"></span>
                     <span class="box__content--reverse" data-text="homeIntro4"></span>
-                </p>
-                <p>
-                    <span class="box__content--reverse" data-text="homeIntro5"></span>
-                </p>
-                <p>
-                    <span class="box__content--reverse" data-text="homeIntro6"></span>
-                    <span class="box__name--reverse" data-text="plomesalamar"></span>
-                    <span class="box__content--reverse" data-text="homeIntro7"></span>
                 </p>
             </article>
             <article class="box__circle">
@@ -40,7 +32,7 @@
                     <span class="circle__icon">
                         <img src="{{ asset('img/logos/logo_blue.jpeg') }}" alt="">
                     </span>
-                    <h4 class="circle__content" data-text="services1">
+                    <h4 class="circle__content" data-text="assCetacea">
                     </h4>
                     {{-- </a> --}}
                 </figure>
@@ -49,7 +41,7 @@
                     <span class="circle__icon">
                         <img src="{{ asset('../img/logos/logo_blue.jpeg') }}" alt="">
                     </span>
-                    <h4 class="circle__content" data-text="services3">
+                    <h4 class="circle__content" data-text="homeTitle">
                     </h4>
                     {{-- </a> --}}
                 </figure>
