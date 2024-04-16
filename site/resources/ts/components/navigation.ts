@@ -1,6 +1,5 @@
 import {
 	getFinalLanguage,
-	getNavigatorLanguage,
 	loadTextComponent,
 	setLanguage,
 	getCurrentFileName,
@@ -8,8 +7,6 @@ import {
 export const navbar = "navigation";
 
 let selectedOption = null;
-
-console.log("Aqui! Padel!!!!");
 
 const main = async () => {
 	void loadTextComponent(navbar);

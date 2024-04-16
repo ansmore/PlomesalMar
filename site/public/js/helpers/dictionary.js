@@ -1,3 +1,4 @@
+// Type Dictionary = Record<string, string>;
 // Here-> Pending import from globals
 const defaultLanguage = "es";
 import { navbar } from "../components/navigation.js";

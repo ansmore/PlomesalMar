@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <ul class="navbar-nav-main">
+    {{-- <ul class="navbar-nav-main">
         <!-- Authentication Links -->
         @guest
             @if (Route::has('login'))
@@ -45,11 +45,8 @@
                 </div>
             </li>
         @endguest
-    </ul>
+    </ul> --}}
     @yield('content')
-    @include('components.footer')
-    <script type="module" src="{{ asset('js/components/navigation.js') }}" defer></script>
-    <script type="module" src="{{ asset('js/components/footer.js') }}" defer></script>
 </body>
 
 </html>

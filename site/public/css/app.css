@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Bruno+Ace&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap");
 * {
   box-sizing: border-box;
   vertical-align: baseline;
@@ -109,7 +109,7 @@ html,
 form,
 input,
 select {
-  font-family: "Bruno Ace", sans-serif;
+  font-family: "Roboto Slab", sans-serif;
 }
 
 html {
@@ -129,8 +129,8 @@ button {
 }
 
 ::selection {
-  background-color: #0097b2;
-  color: #004aad;
+  background-color: #9d9d9c;
+  color: #0065AE;
 }
 
 .navbar-nav-main {
@@ -167,8 +167,7 @@ button {
   align-content: center;
   align-items: flex-start;
   align-self: center;
-  border: 1px solid darkorange;
-  color: #004aad;
+  color: #0065AE;
   background-color: #ececec;
   font-size: 1em;
   margin-top: 5rem;
@@ -184,14 +183,13 @@ button {
   align-content: center;
   align-items: center;
   align-self: center;
-  border: 1px solid darkorange;
   min-width: 95vw;
   max-width: 95vw;
   padding: 0.25rem;
   margin: 0.25rem;
 }
 
-.article, .termsAndPolicy .row .box__logo, .termsAndPolicy .row .box, .birdsContact .row .box__logo, .birdsContact .row .box, .home .row--reverse .box, .home .row .box__circle, .home .row .box__row, .home .row .box, .footer .row .box__row, .footer .row .box, .modal__box .body, .form, .birdsContact .row .form {
+.article, .termsAndPolicy .row .box__logo, .termsAndPolicy .row .box, .birdsContact .row .box__logo, .birdsContact .row .box, .home .row--reverse .box, .home .row .box__circle, .home .row .box__row, .home .row .box, .footer .row .box__row, .footer .row .box, .modal__box .body, .form, .auth .row .form, .birdsContact .row .form {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -200,7 +198,6 @@ button {
   align-content: center;
   align-items: flex-start;
   align-self: center;
-  border: 1px solid darkorange;
   padding: 0.25rem;
   margin: 0.25rem;
   min-width: 85vw;
@@ -212,15 +209,15 @@ button {
   text-align: center;
   overflow: hidden;
 }
-.article p, .termsAndPolicy .row .box__logo p, .termsAndPolicy .row .box p, .birdsContact .row .box__logo p, .birdsContact .row .box p, .home .row--reverse .box p, .home .row .box__circle p, .home .row .box__row p, .home .row .box p, .footer .row .box__row p, .footer .row .box p, .modal__box .body p, .form p, .birdsContact .row .form p {
+.article p, .termsAndPolicy .row .box__logo p, .termsAndPolicy .row .box p, .birdsContact .row .box__logo p, .birdsContact .row .box p, .home .row--reverse .box p, .home .row .box__circle p, .home .row .box__row p, .home .row .box p, .footer .row .box__row p, .footer .row .box p, .modal__box .body p, .form p, .auth .row .form p, .birdsContact .row .form p {
   text-align: left;
 }
-.article p span, .termsAndPolicy .row .box__logo p span, .termsAndPolicy .row .box p span, .birdsContact .row .box__logo p span, .birdsContact .row .box p span, .home .row--reverse .box p span, .home .row .box__circle p span, .home .row .box__row p span, .home .row .box p span, .footer .row .box__row p span, .footer .row .box p span, .modal__box .body p span, .form p span, .birdsContact .row .form p span {
+.article p span, .termsAndPolicy .row .box__logo p span, .termsAndPolicy .row .box p span, .birdsContact .row .box__logo p span, .birdsContact .row .box p span, .home .row--reverse .box p span, .home .row .box__circle p span, .home .row .box__row p span, .home .row .box p span, .footer .row .box__row p span, .footer .row .box p span, .modal__box .body p span, .form p span, .auth .row .form p span, .birdsContact .row .form p span {
   text-align: left;
 }
 
-.title, .termsAndPolicy .row .box__title, .birdsContact .row .box__title, .home .row--reverse .box__title, .home .row .box__title {
-  color: #004aad;
+.title, .termsAndPolicy .row .box__title, .auth .row .box__title, .birdsContact .row .box__title, .home .row--reverse .box__title, .home .row .box__title {
+  color: #0065AE;
   background-color: transparent;
   line-height: 2;
   font-size: 2em;
@@ -230,7 +227,7 @@ button {
 }
 
 .subtitle, .termsAndPolicy .row .box__subtitle, .modal__box .body__subtitle {
-  color: #0097b2;
+  color: #9d9d9c;
   background-color: transparent;
   line-height: 1.5;
   font-size: 1.5em;
@@ -239,7 +236,7 @@ button {
 }
 
 .secondary, .termsAndPolicy .row .box__subtitle__secondary {
-  color: #0097b2;
+  color: #9d9d9c;
   background-color: transparent;
   margin-top: 0.5rem;
   line-height: 1.2;
@@ -249,12 +246,12 @@ button {
 }
 
 .name, .termsAndPolicy .row .box__name, .home .row .box__name {
-  color: #0097b2;
+  color: #9d9d9c;
   background-color: transparent;
 }
 
-.content, .termsAndPolicy .row .box__content, .birdsContact .row .form__group__consent__content, .birdsContact .row .form__group__content, .home .row--reverse .box__content, .home .row .box__content, .modal__box .body__content {
-  color: #004aad;
+.content, .termsAndPolicy .row .box__content, .auth .row .form__group__consent__content, .auth .row .form__group__content, .birdsContact .row .form__group__consent__content, .birdsContact .row .form__group__content, .home .row--reverse .box__content, .home .row .box__content, .modal__box .body__content {
+  color: #0065AE;
   background-color: transparent;
   text-align: center;
   align-self: center;
@@ -262,7 +259,7 @@ button {
 }
 
 .company {
-  color: #0097b2;
+  color: #9d9d9c;
   background-color: transparent;
 }
 
@@ -275,7 +272,6 @@ button {
   align-content: center;
   align-items: center;
   align-self: center;
-  border: 1px solid darkorange;
   min-width: 50vw;
   max-width: 50vw;
   overflow: hidden;
@@ -291,9 +287,9 @@ button {
   text-align: left;
 }
 
-.button, .termsAndPolicy .row .box__button, .birdsContact .row .form__group__button, .home .row--reverse .box__button, .home .row .box__button, .modal__box .body__button {
+.button, .termsAndPolicy .row .box__button, .auth .row .form__group__button, .birdsContact .row .form__group__button, .home .row--reverse .box__button, .home .row .box__button, .modal__box .body__button {
   color: #fafafa;
-  background-color: #0097b2;
+  background-color: #0065AE;
   padding: 0.25rem;
   margin: 0;
   border: 1px solid transparent;
@@ -301,9 +297,9 @@ button {
   padding: 0.75rem;
   margin: 0.5rem auto;
 }
-.button:hover, .termsAndPolicy .row .box__button:hover, .birdsContact .row .form__group__button:hover, .home .row--reverse .box__button:hover, .home .row .box__button:hover, .modal__box .body__button:hover {
+.button:hover, .termsAndPolicy .row .box__button:hover, .auth .row .form__group__button:hover, .birdsContact .row .form__group__button:hover, .home .row--reverse .box__button:hover, .home .row .box__button:hover, .modal__box .body__button:hover {
   color: #fafafa;
-  background-color: #00b4d4;
+  background-color: #0079D0;
   border: 1px solid #fafafa;
 }
 
@@ -316,7 +312,6 @@ button {
   align-content: center;
   align-items: center;
   align-self: center;
-  border: 1px solid darkorange;
   padding: 0.25rem;
   margin: 0.25rem;
   background-color: #c2c2c2;
@@ -326,7 +321,7 @@ button {
 }
 .circle:hover, .home .row .box__circle .circle:hover {
   color: inherit;
-  background-color: #0097b2;
+  background-color: #9d9d9c;
   border: 1px solid #1f1f1f;
 }
 .circle__content {
@@ -338,7 +333,6 @@ button {
   align-content: center;
   align-items: center;
   align-self: center;
-  border: 1px solid darkorange;
   padding: 0.25rem;
   margin: 0.25rem;
   max-width: 15rem;
@@ -361,12 +355,11 @@ button {
   align-content: center;
   align-items: center;
   align-self: center;
-  border: 1px solid darkorange;
   padding: 0.25rem;
   margin: 1rem 0.25rem;
   border-radius: 5px;
-  border: 1px solid #004aad;
-  box-shadow: 2px 2px 4px #0097b2, -2px -2px 4px #00b4d4;
+  border: 1px solid #0065AE;
+  box-shadow: 2px 2px 4px #9d9d9c, -2px -2px 4px #aeaead;
   background-color: #fafafa;
   min-width: 225px;
   max-width: 225px;
@@ -383,25 +376,24 @@ button {
   align-content: center;
   align-items: center;
   align-self: center;
-  border: 1px solid darkorange;
 }
 
-.formInput, .birdsContact .row .form__group__input {
+.formInput, .auth .row .form__group__input, .birdsContact .row .form__group__input {
   padding: 1rem;
   margin: 0.25rem auto;
-  color: #0097b2;
+  color: #9d9d9c;
   background-color: #fafafa;
   min-width: 75vw;
   max-width: 75vw;
   border: 1px solid #8f8f8f;
 }
-.formInput:hover, .birdsContact .row .form__group__input:hover {
+.formInput:hover, .auth .row .form__group__input:hover, .birdsContact .row .form__group__input:hover {
   color: inherit;
   background-color: #ffffff;
-  border: 1px solid #0097b2;
+  border: 1px solid #9d9d9c;
 }
 
-.consent, .birdsContact .row .form__group__consent {
+.consent, .auth .row .form__group__consent, .birdsContact .row .form__group__consent {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -410,12 +402,11 @@ button {
   align-content: center;
   align-items: center;
   align-self: center;
-  border: 1px solid darkorange;
   padding: 0;
   margin: 0.25rem auto;
 }
 
-.modal {
+.modal, .auth {
   display: none;
   position: fixed;
   z-index: 3;
@@ -428,7 +419,7 @@ button {
   align-items: center;
 }
 
-.modal__box {
+.modalBox, .auth .row, .modal__box {
   position: relative;
   background: #fafafa;
   top: 10vh;
@@ -441,19 +432,19 @@ button {
   align-content: center;
   align-items: center;
   align-self: center;
-  border: 1px solid darkorange;
   min-width: 80vw;
   max-width: 80vw;
   min-height: 80vh;
   max-height: 80vh;
-  border-radius: 5px;
+  border-radius: 4px;
   border: 1px solid transparent;
 }
-.modal__box:hover {
+.modalBox:hover, .auth .row:hover, .modal__box:hover {
   color: inherit;
   background-color: #fafafa;
-  border: 1px solid #0097b2;
+  border: 1px solid #9d9d9c;
 }
+
 .modal__box .body {
   display: flex;
   flex-direction: column;
@@ -463,7 +454,6 @@ button {
   align-content: center;
   align-items: flex-start;
   align-self: center;
-  border: 1px solid darkorange;
   min-width: 75vw;
   max-width: 75vw;
   min-height: 75vh;
@@ -478,12 +468,11 @@ button {
   align-content: center;
   align-items: center;
   align-self: center;
-  border: 1px solid darkorange;
   min-width: 255px;
   max-width: 255px;
   min-height: 255px;
   max-height: 255px;
-  border: 2px dotted #0097b2;
+  border: 2px dotted #9d9d9c;
 }
 .modal__box .close {
   display: flex;
@@ -494,7 +483,6 @@ button {
   align-content: center;
   align-items: center;
   align-self: center;
-  border: 1px solid darkorange;
   color: #ee0000;
   background-color: #ffeded;
   border: 1px solid #ee0000;
@@ -530,9 +518,8 @@ button {
   align-content: center;
   align-items: center;
   align-self: center;
-  border: 1px solid darkorange;
   color: #fafafa;
-  background-color: #004aad;
+  background-color: #0065AE;
   height: 5rem;
   max-height: 5rem;
   font-size: 1em;
@@ -552,7 +539,6 @@ button {
   align-content: center;
   align-items: center;
   align-self: center;
-  border: 1px solid darkorange;
   padding: 0;
   margin: 0;
   min-width: 99vw;
@@ -568,18 +554,30 @@ button {
   align-content: center;
   align-items: center;
   align-self: center;
-  border: 1px solid darkorange;
-  padding: 0.25rem;
-  margin: 0.25rem;
-  flex: 3;
-  min-width: 30vw;
+  min-width: 35vw;
+  max-width: 35vw;
+  min-height: 5rem;
   max-height: 5rem;
+  flex: 3;
   overflow: hidden;
 }
 .nav .navbar__logo img {
-  padding: 0.25rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+  justify-self: center;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  padding: 0.25rem;
   margin: 0;
   background-color: #fafafa;
+  min-width: 40vw;
+  max-width: 40vw;
+  min-height: 10vh;
+  max-height: 10vh;
+  overflow: hidden;
 }
 .nav .navbar__menu__home {
   padding: 0;
@@ -602,7 +600,6 @@ button {
   align-content: center;
   align-items: center;
   align-self: center;
-  border: 1px solid darkorange;
   position: absolute;
   z-index: 2;
   flex: 6;
@@ -616,15 +613,14 @@ button {
   align-content: center;
   align-items: center;
   align-self: center;
-  border: 1px solid darkorange;
   padding: 0;
   margin: 0.5rem 0 0 0;
   color: #fafafa;
-  background-color: #004aad;
+  background-color: #0065AE;
   min-width: 40vw;
   cursor: pointer;
   transition: transform 1.5s;
-  transform: translateY(-200%);
+  transform: translateY(-250%);
 }
 .nav .navbar__menu__home .list__item, .nav .navbar__menu__birds .list__item, .nav .navbar__menu__digitalization .list__item {
   padding: 0.25rem;
@@ -637,7 +633,6 @@ button {
   align-content: center;
   align-items: center;
   align-self: center;
-  border: 1px solid darkorange;
   min-width: 40vw;
   list-style: none;
   display: inline-flex;
@@ -651,7 +646,6 @@ button {
   align-content: center;
   align-items: center;
   align-self: center;
-  border: 1px solid darkorange;
   padding: 0;
   margin: 0 0.25rem;
   min-width: 40vw;
@@ -669,10 +663,9 @@ button {
   align-content: center;
   align-items: center;
   align-self: center;
-  border: 1px solid darkorange;
   min-width: 40vw;
   color: #fafafa;
-  background-color: #0097b2;
+  background-color: #9d9d9c;
 }
 .nav .navbar__menu__home .list__item .dropdown, .nav .navbar__menu__birds .list__item .dropdown, .nav .navbar__menu__digitalization .list__item .dropdown {
   position: relative;
@@ -686,7 +679,6 @@ button {
   align-content: center;
   align-items: center;
   align-self: center;
-  border: 1px solid darkorange;
   position: absolute;
   left: -0.25rem;
   display: none;
@@ -695,14 +687,14 @@ button {
   padding: 0.25rem 0.75rem;
   margin: 0;
   color: #fafafa;
-  background-color: #004aad;
+  background-color: #0065AE;
   text-decoration: none;
   min-width: 19rem;
   max-width: 19rem;
 }
 .nav .navbar__menu__home .list__item .dropdown__menu__item:hover, .nav .navbar__menu__birds .list__item .dropdown__menu__item:hover, .nav .navbar__menu__digitalization .list__item .dropdown__menu__item:hover {
   color: #fafafa;
-  background-color: #0097b2;
+  background-color: #9d9d9c;
 }
 .nav .navbar__menu__home .list__item .dropdown:hover .dropdown__menu, .nav .navbar__menu__birds .list__item .dropdown:hover .dropdown__menu, .nav .navbar__menu__digitalization .list__item .dropdown:hover .dropdown__menu {
   display: flex;
@@ -716,7 +708,6 @@ button {
   align-content: center;
   align-items: center;
   align-self: center;
-  border: 1px solid darkorange;
   padding: 0;
   margin: 0;
   margin-right: 60px;
@@ -735,8 +726,7 @@ button {
   align-content: center;
   align-items: center;
   align-self: center;
-  border: 1px solid darkorange;
-  color: #004aad;
+  color: #0065AE;
   background-color: #fafafa;
   min-width: 6rem;
   height: 5rem;
@@ -745,7 +735,7 @@ button {
 }
 .nav .navbar__language .list__item__link:hover {
   color: #fafafa;
-  background-color: #0097b2;
+  background-color: #9d9d9c;
   border: 1px solid transparent;
 }
 .nav .navbar__language .list__item:hover {
@@ -757,9 +747,8 @@ button {
   align-content: center;
   align-items: center;
   align-self: center;
-  border: 1px solid darkorange;
   color: #fafafa;
-  background-color: #0097b2;
+  background-color: #9d9d9c;
   min-width: 6rem;
 }
 .nav .navbar__language .list__item .dropdown {
@@ -774,7 +763,6 @@ button {
   align-content: center;
   align-items: center;
   align-self: center;
-  border: 1px solid darkorange;
   position: absolute;
   right: -4rem;
   display: none;
@@ -783,21 +771,21 @@ button {
   padding: 0.25rem 0.75rem;
   margin: 0;
   color: #fafafa;
-  background-color: #004aad;
+  background-color: #0065AE;
   min-width: 12rem;
   max-width: 14rem;
   text-decoration: none;
 }
 .nav .navbar__language .list__item .dropdown__menu__item:hover {
   color: #fafafa;
-  background-color: #0097b2;
+  background-color: #9d9d9c;
 }
 .nav .navbar__language .list__item .dropdown:hover .dropdown__menu {
   display: flex;
 }
 .nav .navbar__language .list:hover {
   color: #fafafa;
-  background-color: #0097b2;
+  background-color: #9d9d9c;
 }
 .nav .toggle {
   width: 50px;
@@ -816,8 +804,12 @@ button {
 }
 
 @media screen and (min-width: 601px) and (max-width: 1024px) {
-  .navbar__logo {
-    min-width: 30vw;
+  .nav .navbar__logo {
+    min-width: 35vw;
+  }
+  .nav .navbar__logo img {
+    min-width: 15rem;
+    max-width: 15rem;
   }
 }
 @media screen and (min-width: 1025px) {
@@ -835,6 +827,10 @@ button {
     min-width: 20vw;
     max-width: 20vw;
   }
+  .nav .navbar__logo img {
+    min-width: 15rem;
+    max-width: 15rem;
+  }
   .nav .navbar__menu__home, .nav .navbar__menu__birds, .nav .navbar__menu__digitalization {
     display: flex;
     flex-direction: row;
@@ -844,7 +840,6 @@ button {
     align-content: center;
     align-items: center;
     align-self: center;
-    border: 1px solid darkorange;
     margin-top: 0;
     position: sticky;
   }
@@ -857,7 +852,6 @@ button {
     align-content: center;
     align-items: center;
     align-self: center;
-    border: 1px solid darkorange;
     margin-top: 0;
     transform: translateY(0);
   }
@@ -898,9 +892,8 @@ button {
   align-content: center;
   align-items: center;
   align-self: center;
-  border: 1px solid darkorange;
   color: #fafafa;
-  background-color: #004aad;
+  background-color: #0065AE;
   min-height: 12rem;
 }
 .footer .row .box {
@@ -912,7 +905,6 @@ button {
   align-content: center;
   align-items: center;
   align-self: center;
-  border: 1px solid darkorange;
   min-height: 6rem;
   max-height: 6rem;
 }
@@ -925,11 +917,27 @@ button {
   align-content: center;
   align-items: center;
   align-self: center;
-  border: 1px solid darkorange;
 }
 .footer .row .box__image {
-  min-width: 80vw;
-  max-width: 80vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+  justify-self: center;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  background-color: #fafafa;
+  min-width: 70vw;
+  max-width: 70vw;
+  min-height: 15rem;
+  max-height: 15rem;
+}
+.footer .row .box__image img {
+  min-width: 50vw;
+  max-width: 50vw;
+  min-height: 5rem;
+  max-height: 5rem;
 }
 .footer .row .box .icon {
   display: flex;
@@ -940,7 +948,6 @@ button {
   align-content: center;
   align-items: center;
   align-self: center;
-  border: 1px solid darkorange;
   min-width: 70vw;
   max-width: 70vw;
 }
@@ -959,7 +966,6 @@ button {
   align-content: center;
   align-items: center;
   align-self: center;
-  border: 1px solid darkorange;
   padding: 0.25rem;
   margin: 0 0.25rem;
   min-width: 50px;
@@ -973,7 +979,7 @@ button {
 }
 .footer .row .box .icon__item__link:hover {
   color: inherit;
-  background-color: #0097b2;
+  background-color: #9d9d9c;
   border: 1px solid #fafafa;
 }
 
@@ -987,7 +993,6 @@ button {
     align-content: center;
     align-items: center;
     align-self: center;
-    border: 1px solid darkorange;
   }
   .footer .row .box .list {
     display: flex;
@@ -998,7 +1003,6 @@ button {
     align-content: center;
     align-items: center;
     align-self: center;
-    border: 1px solid darkorange;
   }
 }
 @media screen and (min-width: 601px) and (max-width: 1024px) {
@@ -1011,8 +1015,15 @@ button {
     align-content: center;
     align-items: center;
     align-self: center;
-    border: 1px solid darkorange;
     gap: 2rem;
+  }
+  .footer .row .box__image {
+    min-width: 70vw;
+    max-width: 70vw;
+  }
+  .footer .row .box__image img {
+    min-width: 15rem;
+    max-width: 15rem;
   }
 }
 @media screen and (min-width: 1025px) {
@@ -1025,7 +1036,6 @@ button {
     align-content: center;
     align-items: flex-start;
     align-self: center;
-    border: 1px solid darkorange;
   }
   .footer .row {
     min-width: 45vw;
@@ -1044,10 +1054,13 @@ button {
     align-content: center;
     align-items: center;
     align-self: center;
-    border: 1px solid darkorange;
     min-width: 45vw;
     max-width: 45vw;
     gap: 2rem;
+  }
+  .footer .row .box__image img {
+    min-width: 15rem;
+    max-width: 15rem;
   }
 }
 .home .row {
@@ -1055,11 +1068,11 @@ button {
   margin: 0.25rem;
 }
 .home .row .box__content--reverse {
-  color: #0097b2;
+  color: #9d9d9c;
   background-color: transparent;
 }
 .home .row .box__name--reverse {
-  color: #004aad;
+  color: #0065AE;
   background-color: transparent;
 }
 .home .row .box__image {
@@ -1078,7 +1091,6 @@ button {
   align-content: center;
   align-items: center;
   align-self: center;
-  border: 1px solid darkorange;
 }
 .home .row .box__circle .circle {
   padding-top: 2rem;
@@ -1092,7 +1104,6 @@ button {
   align-content: center;
   align-items: center;
   align-self: center;
-  border: 1px solid darkorange;
   margin: 0 auto;
   background-color: #fafafa;
   border-radius: 50%;
@@ -1109,7 +1120,7 @@ button {
 .home .row--reverse {
   min-width: 100vw;
   color: #fafafa;
-  background-color: #004aad;
+  background-color: #9d9d9c;
 }
 .home .row--reverse .box {
   display: flex;
@@ -1120,7 +1131,6 @@ button {
   align-content: center;
   align-items: center;
   align-self: center;
-  border: 1px solid darkorange;
 }
 .home .row--reverse .box__title {
   color: #fafafa;
@@ -1158,7 +1168,10 @@ button {
     align-content: center;
     align-items: center;
     align-self: center;
-    border: 1px solid darkorange;
+  }
+  .home .row .box__button {
+    padding: 0.75rem;
+    margin: 0.5rem;
   }
   .home .row .box__circle .circle {
     min-width: 20rem;
@@ -1178,7 +1191,10 @@ button {
     align-content: center;
     align-items: center;
     align-self: center;
-    border: 1px solid darkorange;
+  }
+  .home .row--reverse .box__button {
+    padding: 0.75rem;
+    margin: 0.5rem;
   }
 }
 @media screen and (min-width: 1025px) {
@@ -1186,7 +1202,7 @@ button {
     font-size: 2.2em;
   }
   .home .row .box__button {
-    padding: 1rem;
+    padding: 0.75rem;
     margin: 0.5rem;
   }
   .home .row .box__row {
@@ -1198,7 +1214,6 @@ button {
     align-content: center;
     align-items: center;
     align-self: center;
-    border: 1px solid darkorange;
   }
   .home .row .box__circle {
     display: flex;
@@ -1209,7 +1224,6 @@ button {
     align-content: center;
     align-items: center;
     align-self: center;
-    border: 1px solid darkorange;
     gap: 5rem;
   }
   .home .row .box__circle .circle {
@@ -1230,10 +1244,9 @@ button {
     align-content: center;
     align-items: center;
     align-self: center;
-    border: 1px solid darkorange;
   }
   .home .row--reverse .box__button {
-    padding: 1rem;
+    padding: 0.75rem;
     margin: 0.5rem;
   }
 }
@@ -1253,7 +1266,6 @@ button {
   align-content: center;
   align-items: center;
   align-self: center;
-  border: 1px solid darkorange;
 }
 .birdsContact .row .form__group__consent {
   gap: 0.5rem;
@@ -1271,17 +1283,24 @@ button {
   .birdsContact .row .form__group {
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
+    justify-content: center;
     justify-items: center;
     justify-self: center;
     align-content: center;
     align-items: center;
     align-self: center;
-    border: 1px solid darkorange;
+    gap: 0.5rem;
+  }
+  .birdsContact .row .form__group__content {
+    min-width: 20vw;
+    max-width: 20vw;
+    text-align: right;
   }
   .birdsContact .row .form__group__input {
-    min-width: 45vw;
-    max-width: 45vw;
+    padding: 1rem;
+    margin: 0.25rem;
+    min-width: 30vw;
+    max-width: 30vw;
   }
   .birdsContact .row .form__group__button {
     margin: 0.25rem auto;
@@ -1297,8 +1316,7 @@ button {
     align-content: center;
     align-items: center;
     align-self: center;
-    border: 1px solid darkorange;
-    gap: 2rem;
+    gap: 1rem;
   }
   .birdsContact .row .form__group {
     display: flex;
@@ -1309,7 +1327,15 @@ button {
     align-content: center;
     align-items: center;
     align-self: center;
-    border: 1px solid darkorange;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    justify-items: center;
+    justify-self: center;
+    align-content: center;
+    align-items: center;
+    align-self: center;
+    gap: 1rem;
   }
   .birdsContact .row .form__group__content {
     min-width: 20vw;
@@ -1317,6 +1343,8 @@ button {
     text-align: right;
   }
   .birdsContact .row .form__group__input {
+    padding: 1rem;
+    margin: 0.25rem;
     min-width: 25rem;
     max-width: 25rem;
   }
@@ -1324,12 +1352,48 @@ button {
     margin: 0.25rem auto;
   }
 }
+.auth {
+  display: block;
+}
+.auth .row .box__title {
+  margin-bottom: 2rem;
+}
+.auth .row .form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  justify-items: center;
+  justify-self: center;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  min-width: 75vw;
+  max-width: 75vw;
+  min-height: 75vh;
+  max-height: 75vh;
+}
+.auth .row .form__group__input {
+  min-width: 50vw;
+  max-width: 50vw;
+}
+.auth .row .form__group__consent {
+  gap: 0.5rem;
+}
+.auth .row .form__group__consent__check {
+  appearance: checkbox;
+  width: 1rem;
+  height: 1rem;
+}
+.auth .row .form__group__consent__content {
+  hyphens: none;
+}
+
 .termsAndPolicy .row {
   padding: 5rem 0.25rem 2rem 0.25rem;
   margin: 0.25rem;
 }
 .termsAndPolicy .row .box__company {
-  color: #0097b2;
+  color: #9d9d9c;
   background-color: transparent;
 }
 .termsAndPolicy .row .box__logo__image a img {
@@ -1344,7 +1408,6 @@ button {
   align-content: center;
   align-items: center;
   align-self: center;
-  border: 1px solid darkorange;
   min-width: 80vw;
   max-width: 80vw;
   gap: 0.5rem;
@@ -1354,7 +1417,7 @@ button {
   max-width: 50vw;
 }
 .termsAndPolicy .row .info__column__left .box__name {
-  color: #004aad;
+  color: #0065AE;
   background-color: transparent;
 }
 .termsAndPolicy .row .info__column__right {
@@ -1372,7 +1435,6 @@ button {
     align-content: center;
     align-items: center;
     align-self: center;
-    border: 1px solid darkorange;
   }
   .termsAndPolicy .row .info__column__left {
     display: flex;
@@ -1383,7 +1445,6 @@ button {
     align-content: center;
     align-items: flex-end;
     align-self: center;
-    border: 1px solid darkorange;
     min-width: 35vw;
     max-width: 35vw;
     text-align: right;
@@ -1397,7 +1458,6 @@ button {
     align-content: center;
     align-items: flex-start;
     align-self: center;
-    border: 1px solid darkorange;
     min-width: 35vw;
     max-width: 35vw;
     text-align: left;
@@ -1413,7 +1473,6 @@ button {
     align-content: center;
     align-items: center;
     align-self: center;
-    border: 1px solid darkorange;
     gap: 2rem;
   }
   .termsAndPolicy .row .info {
@@ -1425,7 +1484,6 @@ button {
     align-content: center;
     align-items: center;
     align-self: center;
-    border: 1px solid darkorange;
   }
   .termsAndPolicy .row .info__column__left {
     display: flex;
@@ -1436,7 +1494,6 @@ button {
     align-content: center;
     align-items: flex-end;
     align-self: center;
-    border: 1px solid darkorange;
     min-width: 35vw;
     max-width: 35vw;
     text-align: right;
@@ -1450,7 +1507,6 @@ button {
     align-content: center;
     align-items: flex-start;
     align-self: center;
-    border: 1px solid darkorange;
     min-width: 35vw;
     max-width: 35vw;
     text-align: left;

@@ -1,7 +1,7 @@
-// Type Dictionary = Record<string, string>;
 type Dictionary = {
 	[clave: string]: string;
 };
+// Type Dictionary = Record<string, string>;
 
 // Here-> Pending import from globals
 const defaultLanguage = "es";

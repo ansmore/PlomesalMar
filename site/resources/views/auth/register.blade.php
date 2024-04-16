@@ -1,15 +1,12 @@
-@extends('layouts.main')
+@extends('layouts.auth')
 
 @section('title', 'Register')
 @section('content')
 
-    @include('components.navigationHome')
-    <main class="loginRegister">
+    <main class="auth">
         <section id="contact" class="row">
-            <article class="box">
-                <div class="box__title">{{ __('Register') }}</div>
-            </article>
             <article class="form">
+                <span class="box__title">{{ __('Register') }}</span>
                 <form method="POST" action="{{ route('register', ['language' => $language]) }}" id="registerForm">
                     @csrf
 
@@ -46,7 +43,7 @@
                         @enderror
                     </div>
                     <div class="form__group">
-                        <label for="password-confirm" class=form__group__content">{{ __('Confirm Password') }}</label>
+                        <label for="password-confirm" class="form__group__content">{{ __('Confirm Password') }}</label>
                         <input id="password-confirm" type="password" class="form__group__input" name="password_confirmation"
                             required autocomplete="new-password">
                     </div>
@@ -54,6 +51,12 @@
                         <button type="submit" class="form__group__button">
                             {{ __('Register') }}
                         </button>
+                    </div>
+                    <div class="form__group">
+                        @if (Route::has('login'))
+                            <a class="form__group__content"
+                                href="{{ route('login', ['language' => $language]) }}">{{ __('Login') }}</a>
+                        @endif
                     </div>
                 </form>
             </article>
