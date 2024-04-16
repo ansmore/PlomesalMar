@@ -1,15 +1,13 @@
-@extends('layouts.main')
+@extends('layouts.auth')
 
 @section('title', 'Login')
 @section('content')
 
-    @include('components.navigationHome')
-    <main class="loginRegister">
+    {{-- @include('components.navigationHome') --}}
+    <main class="auth">
         <section id="contact" class="row">
-            <article class="box">
-                <div class="box__title">{{ __('Login') }}</div>
-            </article>
             <article class="form">
+                <span class="box__title">{{ __('Login') }}</span>
                 <form action="{{ route('login', ['language' => $language]) }}" method="POST" id="loginForm">
                     @csrf
 

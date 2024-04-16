@@ -1,24 +1,23 @@
-.loginRegister {
-  @extend .main;
+.auth {
+  @extend .modal;
+  display: block;
 
   .row {
-    @extend .section;
+    @extend .modalBox;
 
-    @include paddingMargin(5rem $padding 2rem $padding, $margin);
+    // @include paddingMargin(5rem $padding 2rem $padding, $margin);
 
-    .box {
-      @extend .article;
-
-      &__title {
-        @extend .title;
-      }
-
+    .box__title {
+      @extend .title;
+      margin-bottom: 2rem;
     }
 
     .form {
       @extend .form;
 
-      @include mainBox(column, space-around, center);
+      @include mainBox(column, flex-start, center);
+      @include boxSize(width, 75vw, null, 75vw);
+      @include boxSize(height, 75vh, null, 75vh);
 
       &__group {
         &__content {
@@ -27,6 +26,7 @@
 
         &__input {
           @extend .formInput;
+          @include boxSize(width, 50vw, null, 50vw);
         }
 
         &__button {
