@@ -54,7 +54,6 @@ use App\Http\Controllers\LanguageController;
 Route::get('/register', function () {
     return Redirect::to("/" . app()->getLocale() . "/register");
 });
-
 Route::post('/register', function () {
     return Redirect::to("/" . app()->getLocale() . "/register");
 })->name('indexRegister');
@@ -62,7 +61,6 @@ Route::post('/register', function () {
 Route::get('/login', function () {
     return Redirect::to("/" . app()->getLocale() . "/login");
 });
-
 Route::post('/login', function () {
     return Redirect::to("/" . app()->getLocale() . "/login");
 })->name('indexLogin');
@@ -74,24 +72,21 @@ Route::post('/logout', function () {
 Route::get('/password/reset', function () {
 	return Redirect::to("/" . app()->getLocale() . "/password/reset");
 })->name('indexPasswordRequest');
-
-
-// Aqui faltar continuar->
-// Route::post('/password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
-// Route::get('/password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
-// Route::post('/password/reset', 'Auth\ResetPasswordController@reset');
-
-// Route::get('/password/confirm', 'Auth\ConfirmPasswordController@showConfirmForm')->name('password.confirm');
-// Route::post('/password/confirm', 'Auth\ConfirmPasswordController@confirm');
-
-
-// Route::redirect('/patata', '/$language/login');
-// Route::get('/patata', function () {
-//     $language = session('language', config('app.fallback_locale', 'ca'));
-//     return Redirect::to("/$language/register");
-// });
-
-// Route::view('/pilota', 'auth.login');
+Route::post('/password/email', function () {
+	return Redirect::to("/" . app()->getLocale() . "/password/email");
+})->name('indexPasswordEmail');
+Route::get('/password/reset/{token}', function () {
+	return Redirect::to("/" . app()->getLocale() . "/password/reset/{token}");
+})->name('indexPasswordRequestToken');
+Route::post('/password/reset', function () {
+	return Redirect::to("/" . app()->getLocale() . "/password/reset");
+})->name('indexPasswordRequestPost');
+Route::get('/password/confirm', function () {
+	return Redirect::to("/" . app()->getLocale() . "/password/confirm");
+})->name('indexShowConfirmForm');
+Route::post('/password/confirm', function () {
+	return Redirect::to("/" . app()->getLocale() . "/password/confirm");
+})->name('indexPasswordConfim');
 
 
 Route::get('/{language?}/home', [App\Http\Controllers\homeController::class, 'index'])->name('homeLanguage');
