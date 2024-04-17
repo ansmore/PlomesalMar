@@ -27,5 +27,7 @@
 	"cat": "Català",
 	"eng": "English",
 
-	"currentLanguage": "CAS"
+	"currentLanguage": "CAS",
+
+	"hello": "Hello, "
 }
