@@ -7,6 +7,16 @@
 
     // @include paddingMargin(5rem $padding 2rem $padding, $margin);
 
+    // To change size of box vh and vw must always add up to 100!
+    top: 15vh;
+    left: 15vw;
+    @include boxSize(width, 70vw, null, 70vw);
+    @include boxSize(height, 70vh, null, 70vh);
+    @include hover($neutral_lighter,
+      inherit,
+      $primary_main,
+      transparent);
+
     .box__title {
       @extend .title;
       margin-bottom: 2rem;
@@ -16,8 +26,8 @@
       @extend .form;
 
       @include mainBox(column, flex-start, center);
-      @include boxSize(width, 75vw, null, 75vw);
-      @include boxSize(height, 75vh, null, 75vh);
+      // @include boxSize(width, 75vw, null, 75vw);
+      // @include boxSize(height, 75vh, null, 75vh);
 
       &__group {
         &__content {
@@ -27,6 +37,10 @@
         &__input {
           @extend .formInput;
           @include boxSize(width, 50vw, null, 50vw);
+
+          @include hover($neutral_lighter,
+            $primary_light, $primary_main,
+            $neutral_dark);
         }
 
         &__button {

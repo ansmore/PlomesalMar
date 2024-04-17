@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <ul class="navbar-nav-main">
+    {{-- <ul class="navbar-nav-main">
         <!-- Authentication Links -->
         @guest
             @if (Route::has('login'))
@@ -30,13 +30,13 @@
             <li class="nav-item dropdown">
                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
                     data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                    {{ Auth::user()->name }}
+                    {{ Auth::user()->name }} aqui
                 </a>
                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="{{ route('logout', ['language' => $language]) }}"
                         onclick="event.preventDefault();
                         document.getElementById('logout-form').submit();">
-                        {{ __('Logout') }}
+                        {{ __('Logout') }} aqui 2
                     </a>
                     <form id="logout-form" action="{{ route('logout', ['language' => $language]) }}" method="POST"
                         class="d-none">
@@ -45,7 +45,7 @@
                 </div>
             </li>
         @endguest
-    </ul>
+    </ul> --}}
     @yield('content')
     @include('components.footer')
     <script type="module" src="{{ asset('js/components/navigation.js') }}" defer></script>
