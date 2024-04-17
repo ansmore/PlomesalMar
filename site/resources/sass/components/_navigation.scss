@@ -1,5 +1,6 @@
 .nav {
   @include mainBox(row, space-between, center);
+
   @include style($neutral_lighter, $primary_main);
   height: $nav-height;
   max-height: $nav-height;
@@ -15,7 +16,10 @@
   // margin-top: 7rem;
 
   .navbar {
-    @include mainBox(row, space-around, center);
+    // @include mainBox(row, space-around, center);
+    display: grid;
+    grid-auto-flow: column;
+    gap: 10px;
     @include paddingMargin;
     @include boxSize(width, 99vw, null, 100vw);
     @include boxSize(height, $nav-height, null, $nav-height );
@@ -42,28 +46,37 @@
       }
     }
 
+    &__toggle {
+      @include boxSize(width, null, 50px);
+      // width: 50px;
+      position: absolute;
+      z-index: 2;
+      top: 0.8rem;
+      right: 0.8rem;
+      cursor: pointer;
+
+      &__checkbox {
+        display: none;
+
+        &:checked+.navbar__menu {
+
+          &__home {
+
+            .list {
+              transition: transform 0.5s;
+              transform: translateY(0);
+            }
+          }
+        }
+      }
+    }
+
     &__menu {
 
       &__home {
 
-        @include paddingMargin(0, 194px 0 0 0);
-      }
-
-      &__plomesalmar {
-
-        @include paddingMargin(0, 194px 0 0 0);
-      }
-
-      &__digitalization {
-
-        @include paddingMargin(0, 255px 0 0 0);
-      }
-
-      &__home,
-      &__plomesalmar,
-      &__digitalization {
-
         @include mainBox(row, center, center);
+        @include paddingMargin(0, 194px 0 0 0);
         position: absolute;
         z-index: 2;
         flex: 6;
@@ -100,6 +113,9 @@
               @include mainBox(column, center, center);
               @include boxSize(width, 40vw);
               @include style($neutral_lighter, $secondary_main);
+
+              // Fix 002 -> Border-radius?
+              // border-radius: 4px;
             }
 
 
@@ -254,37 +270,11 @@
         }
       }
     }
-  }
 
-  .toggle {
-    @include boxSize(width, null, 50px);
-    // width: 50px;
-    position: absolute;
-    z-index: 2;
-    top: 0.5rem;
-    right: 0.5rem;
-    cursor: pointer;
 
-    &__checkbox {
-      display: none;
-
-      &:checked+.navbar {
-        .navbar__menu {
-
-          &__home,
-          &__plomesalmar,
-          &__digitalization {
-
-            .list {
-              transition: transform 0.5s;
-              transform: translateY(0);
-            }
-          }
-        }
-      }
-    }
   }
 }
+
 
 @media screen and (min-width: 376px) and (max-width: 600px) {}
 
@@ -306,10 +296,6 @@
   .nav {
     @include boxSize(height, $nav-height, null, $nav-height);
 
-    .toggle {
-      display: none;
-    }
-
     .navbar {
       @include boxSize(height, null, null, $nav-height);
 
@@ -321,11 +307,13 @@
         }
       }
 
+      &__toggle {
+        display: none;
+      }
+
       &__menu {
 
-        &__home,
-        &__plomesalmar,
-        &__digitalization {
+        &__home {
 
           @include mainBox(row, flex-end, center);
           margin-top: 0;
@@ -367,6 +355,65 @@
           }
         }
       }
+
+      &__auth {
+        @include mainBox(row, center, center);
+        margin-right: 1rem;
+        // flex: 1;
+        z-index: 3;
+
+        .list {
+          &__item {
+            &__link {
+              @include mainBox(row, center, center);
+              @include style($neutral_lighter, $primary_main);
+              @include boxSize(width, 3rem);
+              @include boxSize(height, null, $nav-height);
+              letter-spacing: 0.25em;
+              @include hover($secondary_main, $neutral_lighter);
+            }
+
+            &:hover {
+              @include mainBox(column, center, center);
+              @include style($neutral_lighter, $secondary_main);
+              @include boxSize(width, 3rem);
+            }
+
+            .dropdown {
+              position: relative;
+
+              &__menu {
+                @include mainBox(column, center, center);
+                position: absolute;
+                // left: -1.5rem;
+                right: -4rem;
+                display: none;
+
+                &__item {
+                  @include paddingMargin($padding calc($padding * 3));
+                  @include style($neutral_lighter, $primary_main);
+                  @include boxSize(width, 12rem, null, 14rem);
+                  text-decoration: none;
+
+                  &:hover {
+                    @include style($neutral_lighter, $secondary_main);
+                  }
+                }
+              }
+
+              &:hover .dropdown__menu {
+                display: flex;
+              }
+            }
+          }
+
+          &:hover {
+            @include style($neutral_lighter, $secondary_main);
+          }
+        }
+
+      }
+
 
       &__language {
         margin-right: 0;
