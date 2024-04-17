@@ -27,5 +27,7 @@
 	"cat": "Català",
 	"eng": "English",
 
-	"currentLanguage": "ENG"
+	"currentLanguage": "ENG",
+
+	"hello": "Hello, "
 }
