@@ -1,8 +1,3 @@
-<?php
-
-$language = Session::get('language', 'ca');
-// echo $language;
-?>
 <nav class="nav">
     <div class="navbar">
         <div class="navbar__logo">

@@ -10,9 +10,9 @@
             {{ session('status') }}
         </div>
     @endif
-
-    <main class="home">
-        <section id="solutions" class="row">
+    @include('components.aside')
+    <main class="species">
+        <section id="head" class="row">
             <article class="box">
                 <h2>Aqui species</h2>
             </article>

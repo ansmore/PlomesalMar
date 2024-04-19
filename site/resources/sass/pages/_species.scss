@@ -1,0 +1,11 @@
+.species {
+  @extend .main;
+
+  @include style($primary_main, $neutral_dark);
+  @include boxSize(width, 67vw, null, 69vw);
+  @include boxSize(height, 100rem);
+
+  .row {
+    @extend .section
+  }
+}

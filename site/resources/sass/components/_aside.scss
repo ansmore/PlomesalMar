@@ -1,0 +1,12 @@
+.aside {
+  @include mainBox(column, space-between, center);
+  @include style($primary_main, $neutral_lighter);
+  @include boxSize(width, 30vw, null, 30vw);
+  @include boxSize(height, 100rem);
+
+  .leftBar {
+
+    margin-top: $nav-height;
+    @include style($primary_main, $neutral_light);
+  }
+}
