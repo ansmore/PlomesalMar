@@ -7,12 +7,27 @@ use Illuminate\Http\Request;
 
 class SpecieController extends Controller
 {
+	public function __construct()
+    {
+        $this->middleware('auth');
+
+		// $this->language = Session::get('language',  config('app.fallback_locale', 'ca'));
+    }
+
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index($language = null, $section = null)
     {
-        //
+        return view('pages.species', ['section' => $section,'language' => $language ]);
+    }
+
+	 /**
+     * Display a listing of the resource.
+     */
+    public function indexSection($language = null, $section = null)
+    {
+        return view('pages.species', ['section' => $section,'language' => $language ]);
     }
 
     /**
