@@ -7,8 +7,9 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Session;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Redirect;
-use App\Http\Controllers\PlomesalmarController;
+use App\Http\Controllers\SpecieController;
 use App\Http\Controllers\LanguageController;
+use App\Http\Controllers\PlomesalmarController;
 
 
 /*
@@ -107,6 +108,9 @@ Route::prefix('/{language?}')->group(function () {
 
 	Route::get('/plomesalmarContact', [PlomesalmarController::class, 'plomesalmarContactForm'])->name('plomesalmarContact');
     // Route::post('/plomesalmarContact', [PlomesalmarController::class, 'plomesalmarContactSubmit'])->name('plomesalmarContact.submit');
+
+	Route::get('/species', [SpecieController::class, 'index'])->name('species');
+    Route::get('/species#{section?}', [SpecieController::class, 'speciesSection'])->name('species.section');
 
     Route::get('/privacyPolicy', [HomeController::class, 'privacyPolicy'])->name('privacyPolicy');
 

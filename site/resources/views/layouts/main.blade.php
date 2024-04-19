@@ -46,6 +46,7 @@
             </li>
         @endguest
     </ul> --}}
+    @include('components.navigationHome')
     @yield('content')
     @include('components.footer')
     <script type="module" src="{{ asset('js/components/navigation.js') }}" defer></script>
