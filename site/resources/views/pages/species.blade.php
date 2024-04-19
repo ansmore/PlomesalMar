@@ -14,11 +14,14 @@
     <main class="home">
         <section id="solutions" class="row">
             <article class="box">
-                <h2>Aqui species</h2>
+                @include('partials.species_table', ['species' => $species])
             </article>
         </section>
         @include('modals.modalLogin')
         @include('modals.modalTeam')
     </main>
-    <script type="module" src="{{ asset('js/pages/home.js') }}" defer></script>
 @endsection
+
+@push('script')
+    <script type="module" src="{{ asset('js/partials/table.js') }}" defer></script>
+@endpush
