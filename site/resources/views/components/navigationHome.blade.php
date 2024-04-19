@@ -108,3 +108,7 @@
         </div>
     </div>
 </nav>
+
+@push('scripts')
+    <script type="module" src="{{ asset('js/components/navigation.js') }}" defer></script>
+@endpush

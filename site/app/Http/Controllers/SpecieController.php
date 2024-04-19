@@ -17,18 +17,23 @@ class SpecieController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index($language = null, $section = null)
+    public function index($language = null, Request $request)
     {
-        return view('pages.species', ['section' => $section,'language' => $language ]);
+        $species = Specie::getSpeciesBasedOnRequest($request);
+
+        if ($request->ajax()) {
+            return view('partials.species_table', compact('species'))->render();
+        }
+        return view('pages.species', ['language' => $language, 'species' => $species ]);
     }
 
 	 /**
      * Display a listing of the resource.
      */
-    public function indexSection($language = null, $section = null)
-    {
-        return view('pages.species', ['section' => $section,'language' => $language ]);
-    }
+    // public function indexSection($language = null, $section = null)
+    // {
+    //     return view('pages.species', ['section' => $section,'language' => $language ]);
+    // }
 
     /**
      * Show the form for creating a new resource.

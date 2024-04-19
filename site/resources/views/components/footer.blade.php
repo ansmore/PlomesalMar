@@ -49,3 +49,7 @@ $language = Session::get('language', 'ca');
         </article>
     </section>
 </footer>
+
+@push('scripts')
+    <script type="module" src="{{ asset('js/components/footer.js') }}" defer></script>
+@endpush
