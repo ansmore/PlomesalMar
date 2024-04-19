@@ -164,5 +164,7 @@
             </div>
         </section>
     </div>
-    <script type="module" src="{{ asset('js/pages/termsAndPolicy.js') }}" defer></script>
+
 @endsection
+<script type="module" src="{{ asset('js/pages/termsAndPolicy.js') }}" defer></script>
+@push('script')

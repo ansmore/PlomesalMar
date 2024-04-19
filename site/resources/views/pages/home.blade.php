@@ -94,5 +94,8 @@
         @include('modals.modalLogin')
         @include('modals.modalTeam')
     </main>
-    <script type="module" src="{{ asset('js/pages/home.js') }}" defer></script>
 @endsection
+
+@push('scripts')
+    <script type="module" src="{{ asset('js/pages/home.js') }}" defer></script>
+@endpush

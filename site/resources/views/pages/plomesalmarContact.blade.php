@@ -64,5 +64,9 @@
             </article>
         </section>
     </main>
-    <script type="module" src="{{ asset('js/pages/plomesalmarContact.js') }}" defer></script>
+
 @endsection
+
+@push('scripts')
+    <script type="module" src="{{ asset('js/pages/plomesalmarContact.js') }}" defer></script>
+@endpush
