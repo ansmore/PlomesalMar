@@ -3,6 +3,7 @@
 const defaultLanguage = "es";
 import { navbar } from "../components/navigation.js";
 import { footer } from "../components/footer.js";
+import { table } from "../partials/table.js";
 // Export let counterComponent = 0;
 // Export let counterPage = 0;
 export const loadDictionary = async (language, page) => {
@@ -105,6 +106,7 @@ export const setLanguage = async (selectedLanguage) => {
         await loadText();
         await loadTextComponent(navbar);
         await loadTextComponent(footer);
+        await loadTextComponent(table);
     }
     catch (error) {
         console.error("Error handling language click", error);

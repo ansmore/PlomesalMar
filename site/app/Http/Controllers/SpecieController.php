@@ -27,15 +27,7 @@ class SpecieController extends Controller
         return view('pages.species', ['language' => $language, 'species' => $species ]);
     }
 
-	 /**
-     * Display a listing of the resource.
-     */
-    // public function indexSection($language = null, $section = null)
-    // {
-    //     return view('pages.species', ['section' => $section,'language' => $language ]);
-    // }
-
-    /**
+	/**
      * Show the form for creating a new resource.
      */
     public function create()
