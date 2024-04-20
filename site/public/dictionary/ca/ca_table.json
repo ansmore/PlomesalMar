@@ -1,11 +1,8 @@
 {
 	"commonName": "Nom Comú",
-
 	"scientificName": "Nom Científic",
+	"actions": "Accions",
 
-    "actions": "Accions",
-
-    "back": "Anterior",
-
-    "Next": "Seguent"
+	"back": "Anterior",
+	"next": "Següent"
 }

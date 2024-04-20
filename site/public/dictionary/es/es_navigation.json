@@ -6,28 +6,11 @@
 	"navPorfolio": "Plomes al mar",
 	"navManagement": "Gestión",
 	"navContact": "Contacto",
-
-	"navInicio": "Inicio",
-	"navBiit": "¿Por qué Plomes al mar?",
-	"navModulos": "Módulos",
-	"navContacto": "Contacto",
-	"navGestion": "Gestión cliente",
-	"navComercio": "Comercio electrónico",
-	"navProceso": "Gestión de procesos",
-	"navBusiness": "Busines Intelligence y análitica",
-	"navFactura": "Factura electrónica",
-
-	"navService": "¿Que es?",
-	"navAgente": "Agente Digitalizador",
-	"navRequisitos": "Requisitos",
-	"navBono": "Bono digital",
-	"navFaq": "Preguntas frequentes",
+	"navSpecies": "Especies",
 
 	"cas": "Castellano",
 	"cat": "Català",
 	"eng": "English",
 
-	"currentLanguage": "CAS",
-
-	"hello": "Hello, "
+	"currentLanguage": "CAS"
 }

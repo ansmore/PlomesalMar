@@ -6,28 +6,11 @@
 	"navPorfolio": "Plomes al mar",
 	"navManagement": "Management",
 	"navContact": "Contact",
-
-	"navInicio": "Home",
-	"navBiit": "Why Plomes al mar?",
-	"navModulos": "Modules",
-	"navContacto": "Contact",
-	"navGestion": "Client Management",
-	"navComercio": "E-commerce",
-	"navProceso": "Process Management",
-	"navBusiness": "Business Intelligence and Analytics",
-	"navFactura": "Electronic Invoice",
-
-	"navService": "What is it?",
-	"navAgente": "Digitalization Agent",
-	"navRequisitos": "Requirements",
-	"navBono": "Digital Bonus",
-	"navFaq": "FAQ",
+	"navSpecies": "Species",
 
 	"cas": "Castellano",
 	"cat": "Català",
 	"eng": "English",
 
-	"currentLanguage": "ENG",
-
-	"hello": "Hello, "
+	"currentLanguage": "ENG"
 }

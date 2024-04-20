@@ -6,8 +6,8 @@
                 </a>
             </li>
             <li class="list__item">
-                <a href="{{ route('home', ['language' => $language]) }}" class="list__item__link"
-                    data-text="navManagement">
+                <a href="{{ route('species', ['language' => $language]) }}" class="list__item__link"
+                    data-text="navSpecies">
                 </a>
             </li>
             <li class="list__item">

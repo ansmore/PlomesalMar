@@ -13,7 +13,7 @@
         @include('components.aside')
         <section id="head" class="row">
             <article class="box">
-                @include('partials.species_table', ['species' => $species])
+                @include('partials.speciesTable', ['species' => $species])
             </article>
         </section>
         @include('modals.modalLogin')
