@@ -3,29 +3,23 @@
         <ul class="list">
             <li class="list__item">
                 <a href="{{ route('home', ['language' => $language]) }}" class="list__item__link" data-text="navHomePage">
-                    {{-- <span >
-                        </span> --}}
                 </a>
             </li>
             <li class="list__item">
-                <a href="{{ route('home', ['language' => $language]) }}">
-                    <span class="list__item__link" data-text="navManagement">
-                    </span>
+                <a href="{{ route('home', ['language' => $language]) }}" class="list__item__link"
+                    data-text="navManagement">
                 </a>
             </li>
             <li class="list__item">
-                <a href="{{ route('home', ['language' => $language]) }}">
-                    <span class="list__item__link" data-text="navPorfolio">
-                    </span>
+                <a href="{{ route('home', ['language' => $language]) }}" class="list__item__link"
+                    data-text="navPorfolio">
                 </a>
             </li>
             <li class="list__item">
-                <a href="{{ route('plomesalmarContact', ['language' => $language]) }}">
-                    <span class="list__item__link" data-text="navContact">
-                    </span>
+                <a href="{{ route('plomesalmarContact', ['language' => $language]) }}" class="list__item__link"
+                    data-text="navContact">
                 </a>
             </li>
         </ul>
-
     </article>
 </aside>

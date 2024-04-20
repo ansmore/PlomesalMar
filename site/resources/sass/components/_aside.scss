@@ -4,12 +4,37 @@
   .leftBar {
     @include mainBox(column, flex-start, flex-start);
     @include style($primary_main, $secondary_lighter);
-    @include paddingMargin($padding, 0);
+    @include paddingMargin(0, 0);
     @include boxSize(width, 15vw, null, 15vw);
     @include boxSize(height, 655px, null, 100vh);
-    @include paddingMargin(5rem 0 0 0, 0);
+    @include paddingMargin(0 0 0 0, 0);
 
+    overflow: hidden;
     // DeveloperMode
     // @include style($primary_main, lightblue);
+
+    .list {
+      @include mainBox(column, flex-start, flex-start);
+      @include paddingMargin(0, 0);
+      @include boxSize(height, 40vh);
+      align-self: flex-start;
+      cursor: pointer;
+
+      &__item {
+        @include paddingMargin(0, 0);
+
+        &__link {
+          @include mainBox(column, center, flex-start);
+          @include boxSize(height, 6vh);
+          @include boxSize(width, 15vw);
+          @include paddingMargin(0 0 0 $padding, 0);
+          text-decoration: none;
+
+          &:hover {
+            @include style($neutral_main, $primary_main);
+          }
+        }
+      }
+    }
   }
 }
