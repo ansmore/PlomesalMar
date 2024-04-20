@@ -23,7 +23,7 @@
                                     <i class="bi bi-arrow-down"></i>
                                 </a>
                             </th>
-                            <th scope="col">Acciones</th>
+                            <th scope="col" data-text="commonName"></th>
                         </tr>
                     </thead>
                     <tbody>

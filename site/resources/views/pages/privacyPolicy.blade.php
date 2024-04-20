@@ -167,4 +167,4 @@
 
 @endsection
 <script type="module" src="{{ asset('js/pages/termsAndPolicy.js') }}" defer></script>
-@push('script')
+@push('scripts')

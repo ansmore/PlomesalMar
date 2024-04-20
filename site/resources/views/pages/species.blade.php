@@ -10,8 +10,9 @@
             {{ session('status') }}
         </div>
     @endif
-    @include('components.aside')
+
     <main class="species">
+        @include('components.aside')
         <section id="head" class="row">
             <article class="box">
                 @include('partials.species_table', ['species' => $species])
@@ -22,6 +23,6 @@
     </main>
 @endsection
 
-@push('script')
+@push('scripts')
     <script type="module" src="{{ asset('js/partials/table.js') }}" defer></script>
 @endpush
