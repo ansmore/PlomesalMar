@@ -1,11 +1,23 @@
 .species {
   @extend .main;
 
-  @include style($primary_main, $neutral_dark);
-  @include boxSize(width, 67vw, null, 69vw);
-  @include boxSize(height, 100rem);
+  @include mainBox(row, flex-start, flex-start);
+  @include style($primary_main, $neutral_light);
+
 
   .row {
-    @extend .section
+    @extend .section;
+
+    @include mainBox(column, space-around, center);
+    @include boxSize(width, 79vw, null, 79vw);
+    @include paddingMargin(0, 0);
+    @include style($primary_main, $neutral_lighter);
+
+    .box {
+      @extend .article;
+
+      @include boxSize(width, 75vw, null, 75vw);
+
+    }
   }
 }

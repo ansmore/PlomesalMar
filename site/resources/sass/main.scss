@@ -13,6 +13,9 @@
 // Modals
 @import "modals/modal";
 
+// Partials
+@import "partials/table";
+
 // Components
 @import "components/navigation";
 @import "components/footer";
@@ -24,6 +27,3 @@
 @import "pages/plomesalmarContact";
 @import "pages/auth";
 @import "pages/termsAndPolicy";
-
-// Partials
-@import "partials/table";
