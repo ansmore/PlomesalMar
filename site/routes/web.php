@@ -22,35 +22,6 @@ use App\Http\Controllers\PlomesalmarController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-// Route::get('/register', 'Auth\RegisterController@showRegistrationForm')->name('indexRegister');
-// Route::post('/register', 'Auth\RegisterController@register');
-// Route::get('/login', 'Auth\LoginController@showLoginForm');
-// Route::post('/login', 'Auth\LoginController@login');
-// Old version ->
-// Route::get('/register', function () {
-// 	$language = session('language', config('app.fallback_locale', 'ca'));
-//     return Redirect::to("/$language/register");
-// });
-// Route::post('/register', function () {
-//     $language = session('language', config('app.fallback_locale', 'ca'));
-//     return Redirect::to("/$language/register");
-// })->name('indexRegister');
-
-// Route::get('/login', function () {
-//     $language = session('language', config('app.fallback_locale', 'ca'));
-//     return Redirect::to("/$language/login");
-// });
-// Route::post('/login', function () {
-//     $language = session('language', config('app.fallback_locale', 'ca'));
-//     return Redirect::to("/$language/login");
-// })->name('indexLogin');
-
-// // Route::post('/logout', 'Auth\LoginController@logout');
-// Route::post('/logout', function () {
-//     $language = session('language', config('app.fallback_locale', 'ca'));
-//     return Redirect::to("/$language/logout");
-// })->name('indexLogout');
-
 
 Route::get('/register', function () {
     return Redirect::to("/" . app()->getLocale() . "/register");
