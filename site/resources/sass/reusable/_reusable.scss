@@ -106,6 +106,7 @@
   @include button($primary_main, $neutral_lighter);
   @include hover($primary_light, $neutral_lighter, $neutral_lighter);
   @include paddingMargin(calc($padding * 3), calc($margin * 2) auto);
+  border-radius: $radius;
   // Here-> Deleted in home/box--reverse
   // @include boxSize(width, 20vw, null, 20vw);
 }
@@ -159,7 +160,7 @@
     inherit,
     $primary_main,
     $neutral_dark );
-  border-radius: 4px;
+  border-radius: $radius;
 }
 
 .consent {
@@ -192,7 +193,7 @@
   @include mainBox(column, center, center);
   @include boxSize(width, 80vw, null, 80vw);
   @include boxSize(height, 80vh, null, 80vh);
-  border-radius: 4px;
+  border-radius: $radius;
   @include hover($neutral_lighter,
     inherit,
     $secondary_main,

@@ -1,16 +1,15 @@
 .aside {
-  @include mainBox(column, flex-start, flex-start);
-  @include boxSize(width, 20vw, null, 20vw);
-  @include style($primary_main, lightblue);
   @include paddingMargin(0, 0);
-
 
   .leftBar {
     @include mainBox(column, flex-start, flex-start);
     @include style($primary_main, $secondary_lighter);
     @include paddingMargin($padding, 0);
-    @include boxSize(width, 20vw, null, 20vw);
-    @include boxSize(height, 565px, null, 565px);
+    @include boxSize(width, 15vw, null, 15vw);
+    @include boxSize(height, 655px, null, 100vh);
+    @include paddingMargin(5rem 0 0 0, 0);
 
+    // DeveloperMode
+    // @include style($primary_main, lightblue);
   }
 }

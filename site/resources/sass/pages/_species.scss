@@ -2,21 +2,25 @@
   @extend .main;
 
   @include mainBox(row, flex-start, flex-start);
-  @include style($primary_main, $neutral_light);
-
+  @include paddingMargin($nav-height 0 0 0, 0);
+  gap: 0;
 
   .row {
     @extend .section;
 
-    @include mainBox(column, space-around, center);
-    @include boxSize(width, 79vw, null, 79vw);
-    @include paddingMargin(0, 0);
-    @include style($primary_main, $neutral_lighter);
+
+    @include mainBox(column, space-around, flex-start);
+    @include boxSize(width, 85vw, null, 85vw);
+    @include style($primary_main, $neutral_light);
+    @include paddingMargin(5rem 0 2rem 0, 0);
+
+    // DeveloperMode
+    // background-color: beige;
 
     .box {
       @extend .article;
 
-      @include boxSize(width, 75vw, null, 75vw);
+      @include boxSize(width, 80vw, null, 80vw);
 
     }
   }
