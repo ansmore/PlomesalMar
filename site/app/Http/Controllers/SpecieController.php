@@ -21,9 +21,10 @@ class SpecieController extends Controller
     {
         $species = Specie::getSpeciesBasedOnRequest($request);
 
-        if ($request->ajax()) {
-            return view('partials.species_table', compact('species'))->render();
+        if ($request->has('search')) {
+            return view('partials.speciesTable', ['species' => $species])->render();
         }
+        
         return view('pages.species', ['language' => $language, 'species' => $species ]);
     }
 

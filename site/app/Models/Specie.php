@@ -2,10 +2,10 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Specie extends Model
 {
@@ -37,7 +37,7 @@ class Specie extends Model
      * Obtiene las especies basadas en los parámetros de la solicitud (consulta de búsqueda, campo y dirección de ordenación).
      *
      * @param \Illuminate\Http\Request $request
-     * @return \Illuminate\Contracts\Pagination\LengthAwarePaginator
+     * @return LengthAwarePaginator
      */
     public static function getSpeciesBasedOnRequest(Request $request)
     {
