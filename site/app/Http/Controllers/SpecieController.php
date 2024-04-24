@@ -17,7 +17,7 @@ class SpecieController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index($language = null, Request $request)
+    public function index(Request $request, $language = null)
     {
         $species = Specie::getSpeciesBasedOnRequest($request);
 
