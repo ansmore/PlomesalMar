@@ -27,7 +27,7 @@
           @include mainBox(column, center, flex-start);
           @include boxSize(height, 6vh);
           @include boxSize(width, 15vw);
-          @include paddingMargin(0 0 0 $padding, 0);
+          @include paddingMargin(0 0 0 calc($padding * 4), 0);
           text-decoration: none;
 
           &:hover {
