@@ -61,9 +61,9 @@ Route::post('/password/confirm', function () {
 })->name('indexPasswordConfim');
 
 
-Route::get('/{language?}/home', [App\Http\Controllers\homeController::class, 'index'])->name('homeLanguage');
-Route::get('/home', [App\Http\Controllers\homeController::class, 'homeMain'])->name('homeMain');
-Route::get('/', [App\Http\Controllers\homeController::class, 'slashMain'])->name('slashMain');
+Route::get('/{language?}/home', [App\Http\Controllers\HomeController::class, 'index'])->name('homeLanguage');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'homeMain'])->name('homeMain');
+Route::get('/', [App\Http\Controllers\HomeController::class, 'slashMain'])->name('slashMain');
 
 Route::post('/sendLanguage', [LanguageController::class, 'sendLanguage']);
 Route::post('/plomesalmarContact', [PlomesalmarController::class, 'plomesalmarContactSubmit'])->name('plomesalmarContact.submit');
