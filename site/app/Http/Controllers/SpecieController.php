@@ -17,13 +17,14 @@ class SpecieController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index($language = null, Request $request)
+    public function index(Request $request, $language = null)
     {
         $species = Specie::getSpeciesBasedOnRequest($request);
 
-        if ($request->ajax()) {
-            return view('partials.species_table', compact('species'))->render();
+        if ($request->has('search')) {
+            return view('partials.speciesTable', ['species' => $species])->render();
         }
+        
         return view('pages.species', ['language' => $language, 'species' => $species ]);
     }
 
