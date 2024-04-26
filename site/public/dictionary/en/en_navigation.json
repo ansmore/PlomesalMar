@@ -6,7 +6,14 @@
 	"navPorfolio": "Plomes al mar",
 	"navManagement": "Management",
 	"navContact": "Contact",
-	"navSpecies": "Species",
+
+	"asideManagement": "Management",
+	"asideDeparture": "Departure",
+	"asideObservation": "Observation",
+	"asideSpecie": "Specie",
+	"asideBoat": "Boat",
+	"asideTransect": "Transect",
+	"asideImage": "Image",
 
 	"cas": "Castellano",
 	"cat": "Català",
