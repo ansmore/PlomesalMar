@@ -26,6 +26,8 @@ class UsersController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:255',
+            'surname' => 'required|string|max:255',
+            'surnameSecond' => 'string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:8',
             'role_ids' => 'required|array',
@@ -38,6 +40,8 @@ class UsersController extends Controller
 
         $user = User::create([
             'name' => $request->name,
+            'surname' => $request->surname,
+            'surnameSecond' => $request->surnameSecond,
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
