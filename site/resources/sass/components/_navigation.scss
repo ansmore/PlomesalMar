@@ -2,8 +2,8 @@
   @include mainBox(row, space-between, center);
 
   @include style($neutral_lighter, $primary_main);
-  height: $nav-height;
-  max-height: $nav-height;
+  height: $nav_height;
+  max-height: $nav_height;
   font-size: $size_small;
   max-width: 100vw;
   position: fixed;
@@ -21,7 +21,7 @@
     gap: 10px;
     @include paddingMargin;
     @include boxSize(width, 99vw, null, 100vw);
-    @include boxSize(height, $nav-height, null, $nav-height );
+    @include boxSize(height, $nav_height, null, $nav_height );
 
     &__logo {
       @include mainBox(row, center, center);
@@ -29,7 +29,7 @@
       // Fix 001 -> Revisar margin i padding
       // @include paddingMargin($padding, $margin);
       @include boxSize(width, 35vw, null, 35vw);
-      @include boxSize(height, $nav-height, null, $nav-height );
+      @include boxSize(height, $nav_height, null, $nav_height );
 
       flex: 3;
       // Fix 001 -> Revisar margin i padding
@@ -40,7 +40,7 @@
         // @include paddingMargin(0.25rem, 0);
         @include style(null, $neutral_lighter);
         @include boxSize(width, 35vw, null, 35vw);
-        @include boxSize(height, $nav-height, null, $nav-height);
+        @include boxSize(height, $nav_height, null, $nav_height);
         overflow: hidden;
       }
     }
@@ -163,7 +163,7 @@
             @include mainBox(row, center, center);
             @include style($neutral_lighter, $primary_main);
             @include boxSize(width, 3rem);
-            @include boxSize(height, null, $nav-height);
+            @include boxSize(height, null, $nav_height);
             letter-spacing: 0.25em;
             @include hover($secondary_main, $neutral_lighter);
           }
@@ -222,7 +222,7 @@
             @include mainBox(row, center, center);
             @include style($primary_main, $neutral_lighter);
             @include boxSize(width, 4.5rem);
-            @include boxSize(height, null, $nav-height);
+            @include boxSize(height, null, $nav_height);
             letter-spacing: 0.25em;
             @include hover($secondary_main, $neutral_lighter);
           }
@@ -290,10 +290,10 @@
 
 @media screen and (min-width: 1025px) {
   .nav {
-    @include boxSize(height, $nav-height, null, $nav-height);
+    @include boxSize(height, $nav_height, null, $nav_height);
 
     .navbar {
-      @include boxSize(height, null, null, $nav-height);
+      @include boxSize(height, null, null, $nav_height);
 
       &__logo {
         @include boxSize(width, 20vw, null, 20vw);
@@ -330,15 +330,15 @@
 
               &__link {
                 @include boxSize(width, 120px);
-                @include boxSize(height, null, $nav-height);
-                // height: $nav-height;
+                @include boxSize(height, null, $nav_height);
+                // height: $nav_height;
                 // min-width: 120px;
               }
 
               &:hover {
                 @include boxSize(width, 120px);
-                @include boxSize(height, null, null, $nav-height);
-                // max-height: $nav-height;
+                @include boxSize(height, null, null, $nav_height);
+                // max-height: $nav_height;
                 // min-width: 120px;
               }
 
@@ -363,7 +363,7 @@
               @include mainBox(row, center, center);
               @include style($neutral_lighter, $primary_main);
               @include boxSize(width, 3rem);
-              @include boxSize(height, null, $nav-height);
+              @include boxSize(height, null, $nav_height);
               letter-spacing: 0.25em;
               @include hover($secondary_main, $neutral_lighter);
             }
