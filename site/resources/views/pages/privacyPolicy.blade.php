@@ -164,7 +164,7 @@
             </div>
         </section>
     </div>
-
+    @include('components.footer')
 @endsection
 <script type="module" src="{{ asset('js/pages/termsAndPolicy.js') }}" defer></script>
 @push('scripts')

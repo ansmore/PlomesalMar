@@ -21,7 +21,7 @@
                     </a>
                 </li>
                 <li class="list__item">
-                    <a href="{{ route('home', ['language' => $language]) }}">
+                    <a href="{{ route('management', ['language' => $language]) }}">
                         <span class="list__item__link" data-text="navManagement">
                         </span>
                     </a>

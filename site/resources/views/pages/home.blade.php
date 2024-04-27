@@ -94,6 +94,7 @@
         @include('modals.modalLogin')
         @include('modals.modalTeam')
     </main>
+    @include('components.footer')
 @endsection
 
 @push('scripts')

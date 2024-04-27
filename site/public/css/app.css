@@ -208,7 +208,6 @@ button {
   line-height: 1.5;
   text-align: center;
   overflow: hidden;
-  border: 1px solid darkgreen;
 }
 .article p, .termsAndPolicy .row .box__logo p, .termsAndPolicy .row .box p, .plomesalmarContact .row .box__logo p, .plomesalmarContact .row .box p, .species .row .box p, .home .row--reverse .box p, .home .row .box__circle p, .home .row .box__row p, .home .row .box p, .footer .row .box__row p, .footer .row .box p, .modal__box .body p, .form p, .auth .row .form p, .plomesalmarContact .row .form p {
   text-align: left;
@@ -1365,7 +1364,7 @@ button {
   margin: 0;
   min-width: 12rem;
   max-width: 12rem;
-  min-height: 655px;
+  min-height: 90vh;
   max-height: 100vh;
   padding: 0 0 0 0;
   margin: 0;

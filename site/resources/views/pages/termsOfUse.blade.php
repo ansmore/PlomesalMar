@@ -257,6 +257,7 @@
             </div>
         </section>
     </div>
+    @include('components.footer')
 @endsection
 
 @push('scripts')

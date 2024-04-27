@@ -10,15 +10,13 @@
     @endif
 
     <main class="species">
-        @include('components.aside')
+        @include('components.asideManagement')
         <section id="head" class="row">
             @include('components.search')
             <article class="box">
                 @include('partials.speciesTable', ['species' => $species])
             </article>
         </section>
-        @include('modals.modalLogin')
-        @include('modals.modalTeam')
     </main>
 @endsection
 

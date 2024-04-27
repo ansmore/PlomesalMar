@@ -14,7 +14,6 @@
 <body>
     @include('components.navigationHome')
     @yield('content')
-    @include('components.footer')
 
     @stack('scripts')
 </body>
