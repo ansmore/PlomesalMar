@@ -29,11 +29,11 @@
                     <td>{{ $specie->common_name }}</td>
                     <td>{{ $specie->scientific_name }}</td>
                     <td class="icon-center">
-                        <button type="button" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal"
+                        <button type="button" class="buttonTable__success" data-bs-toggle="modal"
                             data-bs-target="#edit{{ $specie->id }}" title="Editar">
                             <i class="fas fa-pencil"></i>
                         </button>
-                        <button type="button" class="btn btn-outline-danger btn-sm" data-bs-toggle="modal"
+                        <button type="button" class="buttonTable__danger" data-bs-toggle="modal"
                             data-bs-target="#delete{{ $specie->id }}" title="Eliminar">
                             <i class="fas fa-trash-can"></i>
                         </button>

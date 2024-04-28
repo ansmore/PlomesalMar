@@ -18,39 +18,24 @@
       @include paddingMargin(0, 0);
       @include boxSize(height, 40vh);
       align-self: flex-start;
-      cursor: pointer;
+      // cursor: pointer;
 
       &__title {
-        @extend .secondary;
-
-        align-self: flex-start;
-        @include style($primary_main);
-        width: calc($aside_width - 0.5rem);
-        font-weight: normal;
-        margin: 0.25rem;
-        border-bottom: 1px solid $neutral_darker;
-        text-transform: uppercase;
-        cursor: default;
+        @extend .asideListTitle;
       }
 
       &__item {
-        // @include paddingMargin(0, 0);
         @include mainBox(row, flex-start, center);
-        align-self: flex-start;
         @include paddingMargin(0 0 0 calc($padding * 4), 0);
+        align-self: flex-start;
+        @include hover($primary_main, $neutral_main);
 
-        &__link {
-          @extend .tertiary;
-
-          @include mainBox(column, center, flex-start);
-          @include boxSize(height, 2rem);
-          @include boxSize(width, calc($aside_width - 2rem), null, $aside_width);
-          @include paddingMargin(0 0 0 calc($padding * 2), 0);
-          text-decoration: none;
+        &__icon {
+          @include boxSize(width, 1rem, null, 1rem);
         }
 
-        &:hover {
-          @include style($neutral_main, $primary_main);
+        &__link {
+          @extend .asideListItem;
         }
       }
     }

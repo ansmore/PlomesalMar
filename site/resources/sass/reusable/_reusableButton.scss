@@ -1,0 +1,46 @@
+.button {
+  @include button($primary_main, $neutral_lighter);
+  @include paddingMargin(calc($padding * 3), calc($margin * 2) auto);
+  border-radius: $radius;
+
+  @include hover($primary_light, $neutral_lighter, $neutral_lighter);
+}
+
+.buttonTable {
+  border: 1px solid transparent;
+  padding: 0.25rem 0.5rem;
+  font-size: $size_small;
+  line-height: 1.5;
+  border-radius: $radius;
+
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  cursor: pointer;
+
+  background-color: transparent;
+}
+
+.buttonTable__danger {
+  @extend .buttonTable;
+
+  color: $danger_main;
+  border-color: $danger_main;
+
+  &:hover {
+    color: $neutral_lightest;
+    background-color: $danger_main;
+    border-color: $danger_main;
+  }
+}
+
+.buttonTable__success {
+  @extend .buttonTable;
+
+  color: $primary_main;
+  border-color: $primary_main;
+
+  &:hover {
+    color: $neutral_lightest;
+    background-color: $primary_main;
+    border-color: $primary_main;
+  }
+}

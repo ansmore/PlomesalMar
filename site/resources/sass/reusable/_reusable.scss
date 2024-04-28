@@ -111,15 +111,6 @@
   }
 }
 
-.button {
-  @include button($primary_main, $neutral_lighter);
-  @include hover($primary_light, $neutral_lighter, $neutral_lighter);
-  @include paddingMargin(calc($padding * 3), calc($margin * 2) auto);
-  border-radius: $radius;
-  // Here-> Deleted in home/box--reverse
-  // @include boxSize(width, 20vw, null, 20vw);
-}
-
 .circle {
   @include mainBox(column, flex-start, center);
   @include paddingMargin($padding, $margin);

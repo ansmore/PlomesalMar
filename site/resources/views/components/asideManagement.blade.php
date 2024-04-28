@@ -6,42 +6,55 @@
                 </span>
             </li>
             <li class="list__item">
-                <i class="fas fa-globe">
-                </i>
-                <a href="{{ route('home', ['language' => $language]) }}" class="list__item__link"
+                <span class="list__item__icon">
+                    <i class="fas fa-globe">
+                    </i>
+                </span>
+                <a href="{{ route('species', ['language' => $language]) }}" class="list__item__link"
                     data-text="asideDeparture">
                 </a>
             </li>
             <li class="list__item">
-                <i class="fas fa-binoculars">
-                </i>
-                <a href="{{ route('home', ['language' => $language]) }}" class="list__item__link"
+                <span class="list__item__icon">
+                    <i class="fas fa-binoculars">
+                    </i>
+                </span>
+                <a href="{{ route('species', ['language' => $language]) }}" class="list__item__link"
                     data-text="asideObservation"></a>
             </li>
             <li class="list__item">
-                <i class="fas fa-crow">
-                </i>
+                <span class="list__item__icon">
+                    <i class="fas fa-crow">
+                    </i>
+                </span>
                 <a href="{{ route('species', ['language' => $language]) }}" class="list__item__link"
                     data-text="asideSpecie">
                 </a>
             </li>
             <li class="list__item">
-                <i class="fas fa-ship">
-                </i>
-                <a href="{{ route('home', ['language' => $language]) }}" class="list__item__link" data-text="asideBoat">
+                <span class="list__item__icon">
+                    <i class="fas fa-ship">
+                    </i>
+                </span>
+                <a href="{{ route('species', ['language' => $language]) }}" class="list__item__link"
+                    data-text="asideBoat">
                 </a>
             </li>
             <li class="list__item">
-                <i class="fas fa-location">
-                </i>
-                <a href="{{ route('plomesalmarContact', ['language' => $language]) }}" class="list__item__link"
+                <span class="list__item__icon">
+                    <i class="fas fa-location">
+                    </i>
+                </span>
+                <a href="{{ route('species', ['language' => $language]) }}" class="list__item__link"
                     data-text="asideTransect">
                 </a>
             </li>
             <li class="list__item">
-                <i class="fas fa-camera">
-                </i>
-                <a href="{{ route('home', ['language' => $language]) }}" class="list__item__link"
+                <span class="list__item__icon">
+                    <i class="fas fa-camera">
+                    </i>
+                </span>
+                <a href="{{ route('species', ['language' => $language]) }}" class="list__item__link"
                     data-text="asideImage">
                 </a>
             </li>
