@@ -2,7 +2,7 @@
   @include mainBox(column, space-around, flex-start);
   @include style($primary_main, $neutral_light);
   font-size: $size_small;
-  margin-top: $nav-height;
+  margin-top: $nav_height;
   gap: $gap;
 }
 
@@ -12,7 +12,7 @@
   @include paddingMargin($padding, $margin);
 
   // DeveloperMode
-  // border: 1 px solid blueviolet;
+  // border: 1px solid blueviolet;
 }
 
 .article {
@@ -36,7 +36,7 @@
   }
 
   // DeveloperMode
-  // border: 1px solid darkgreen;
+  border: 1px solid darkgreen;
 }
 
 .title {
@@ -64,6 +64,15 @@
   line-height: 1.2;
   font-size: $size_medium;
   font-weight: lighter;
+  align-self: flex-start;
+}
+
+.tertiary {
+  // @include style($primary_main);
+  margin-top: $margin;
+  line-height: 1.2;
+  font-size: $size_smaller;
+  font-weight: light;
   align-self: flex-start;
 }
 

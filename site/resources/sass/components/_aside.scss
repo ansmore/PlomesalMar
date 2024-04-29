@@ -5,7 +5,7 @@
     @include mainBox(column, flex-start, flex-start);
     @include style($primary_main, $secondary_lighter);
     @include paddingMargin(0, 0);
-    @include boxSize(width, 15vw, null, 15vw);
+    @include boxSize(width, $aside_width, null, $aside_width);
     @include boxSize(height, 655px, null, 100vh);
     @include paddingMargin(0 0 0 0, 0);
 
@@ -20,19 +20,37 @@
       align-self: flex-start;
       cursor: pointer;
 
+      &__title {
+        @extend .secondary;
+
+        align-self: flex-start;
+        @include style($primary_main);
+        width: calc($aside_width - 0.5rem);
+        font-weight: normal;
+        margin: 0.25rem;
+        border-bottom: 1px solid $neutral_darker;
+        text-transform: uppercase;
+        cursor: default;
+      }
+
       &__item {
-        @include paddingMargin(0, 0);
+        // @include paddingMargin(0, 0);
+        @include mainBox(row, flex-start, center);
+        align-self: flex-start;
+        @include paddingMargin(0 0 0 calc($padding * 4), 0);
 
         &__link {
-          @include mainBox(column, center, flex-start);
-          @include boxSize(height, 6vh);
-          @include boxSize(width, 15vw);
-          @include paddingMargin(0 0 0 calc($padding * 4), 0);
-          text-decoration: none;
+          @extend .tertiary;
 
-          &:hover {
-            @include style($neutral_main, $primary_main);
-          }
+          @include mainBox(column, center, flex-start);
+          @include boxSize(height, 2rem);
+          @include boxSize(width, calc($aside_width - 2rem), null, $aside_width);
+          @include paddingMargin(0 0 0 calc($padding * 2), 0);
+          text-decoration: none;
+        }
+
+        &:hover {
+          @include style($neutral_main, $primary_main);
         }
       }
     }
