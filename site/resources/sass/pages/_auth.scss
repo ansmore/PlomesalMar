@@ -26,7 +26,7 @@
       @extend .form;
 
       @include mainBox(column, flex-start, center);
-      // @include boxSize(width, 75vw, null, 75vw);
+      @include boxSize(width, 65vw, null, 65vw);
       // @include boxSize(height, 75vh, null, 75vh);
 
       &__group {
@@ -36,7 +36,7 @@
 
         &__input {
           @extend .formInput;
-          @include boxSize(width, 50vw, null, 50vw);
+          @include boxSize(width, 35vw, null, 35vw);
 
           @include hover($neutral_lighter,
             $primary_light, $primary_main,
