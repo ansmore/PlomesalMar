@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Specie extends Model
@@ -57,12 +58,20 @@ class Specie extends Model
      * @return Specie
      */
     public static function createFromRequest(Request $request): Specie
-    {
-        return self::create([
-            'common_name' => $request->input('nombre_comun'),
-            'scientific_name' => $request->input('nombre_cientifico'),
-        ]);
-    }
+{
+    $newSpecie = self::create([
+        'common_name' => $request->input('nombre_comun'),
+        'scientific_name' => $request->input('nombre_cientifico'),
+    ]);
+
+    Log::info('Specie created from request:', [
+        'common_name' => $newSpecie->common_name,
+        'scientific_name' => $newSpecie->scientific_name
+    ]);
+
+    return $newSpecie;
+}
+
 
     /**
      * Actualiza una especie existente con los datos proporcionados en la solicitud.

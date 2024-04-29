@@ -80,6 +80,7 @@ Route::prefix('/{language?}')->group(function () {
 	Route::get('/plomesalmarContact', [PlomesalmarController::class, 'plomesalmarContactForm'])->name('plomesalmarContact');
     // Route::post('/plomesalmarContact', [PlomesalmarController::class, 'plomesalmarContactSubmit'])->name('plomesalmarContact.submit');
 
+    Route::resource('species', SpecieController::class)->except(['index']);
 	Route::get('/species', [SpecieController::class, 'index'])->name('species');
     Route::get('/species#{section?}', [SpecieController::class, 'speciesSection'])->name('species.section');
 

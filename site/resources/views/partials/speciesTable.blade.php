@@ -30,17 +30,17 @@
                     <td>{{ $specie->scientific_name }}</td>
                     <td class="icon-center">
                         <button type="button" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal"
-                            data-bs-target="#edit{{ $specie->id }}" title="Editar">
+                            data-bs-target="#editSpecies{{ $specie->id }}" title="Editar">
                             <i class="fas fa-pencil"></i>
                         </button>
                         <button type="button" class="btn btn-outline-danger btn-sm" data-bs-toggle="modal"
-                            data-bs-target="#delete{{ $specie->id }}" title="Eliminar">
+                            data-bs-target="#deleteSpecies{{ $specie->id }}" title="Eliminar">
                             <i class="fas fa-trash-can"></i>
                         </button>
                     </td>
                 </tr>
-                {{-- @include('species.info')
-                            @include('species.delete') --}}
+                @include('modals/species.edit')
+                @include('modals/species.delete')
             @endforeach
         </tbody>
     </table>
@@ -48,36 +48,34 @@
 </div>
 <nav aria-label="Page navigation example" class="pagination__box">
     <ul class="pagination">
-        <li class="page-item {{ $species->onFirstPage() ? 'disabled' : '' }}">
-            <a class="page-link" href="{{ $species->previousPageUrl() }}" data-text="back"></a>
-        </li>
-
-        <li class="page-item {{ $species->currentPage() == 1 ? 'active' : '' }}">
-            <a class="page-link" href="{{ $species->url(1) }}">1</a>
-        </li>
-
-        @if ($species->currentPage() > 3)
-            <li class="page-item disabled"><span class="page-link">...</span></li>
-        @endif
-
-        @for ($i = max(2, $species->currentPage() - 1); $i <= min($species->lastPage() - 1, $species->currentPage() + 1); $i++)
-            <li class="page-item {{ $species->currentPage() == $i ? 'active' : '' }}">
-                <a class="page-link" href="{{ $species->url($i) }}">{{ $i }}</a>
+        <!-- Botón Anterior -->
+        @if ($species->onFirstPage())
+            <li class="page-item disabled">
+                <span class="page-link">Anterior</span>
             </li>
-        @endfor
-
-        @if ($species->currentPage() < $species->lastPage() - 2)
-            <li class="page-item disabled"><span class="page-link">...</span></li>
-        @endif
-
-        @if ($species->lastPage() > 1)
-            <li class="page-item {{ $species->currentPage() == $species->lastPage() ? 'active' : '' }}">
-                <a class="page-link" href="{{ $species->url($species->lastPage()) }}">{{ $species->lastPage() }}</a>
+        @else
+            <li class="page-item">
+                <a class="page-link" href="{{ $species->previousPageUrl() }}" data-text="back"
+                    rel="prev">Anterior</a>
             </li>
         @endif
 
-        <li class="page-item {{ $species->currentPage() == $species->lastPage() ? 'disabled' : '' }}">
-            <a class="page-link" href="{{ $species->nextPageUrl() }}" data-text="next"></a>
-        </li>
+        <!-- Números de Página -->
+        @foreach ($species->getUrlRange(1, $species->lastPage()) as $page => $url)
+            <li class="page-item {{ $species->currentPage() == $page ? 'active' : '' }}">
+                <a class="page-link" href="{{ $url }}">{{ $page }}</a>
+            </li>
+        @endforeach
+
+        <!-- Botón Siguiente -->
+        @if ($species->hasMorePages())
+            <li class="page-item">
+                <a class="page-link" href="{{ $species->nextPageUrl() }}" data-text="next" rel="next">Siguiente</a>
+            </li>
+        @else
+            <li class="page-item disabled">
+                <span class="page-link">Siguiente</span>
+            </li>
+        @endif
     </ul>
 </nav>
