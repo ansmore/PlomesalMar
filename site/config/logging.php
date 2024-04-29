@@ -53,6 +53,11 @@ return [
             'channels' => ['single'],
             'ignore_exceptions' => false,
         ],
+        'local' => [
+            'driver' => 'single',
+            'path' => storage_path('logs/laravel.log'),
+            'level' => 'debug',
+        ],
 
         'single' => [
             'driver' => 'single',
@@ -114,6 +119,10 @@ return [
         'emergency' => [
             'path' => storage_path('logs/laravel.log'),
         ],
+        'language_middleware' => [
+            'driver' => 'single',
+            'path' => storage_path('logs/language_middleware.log'),
+            'level' => 'debug',
+        ],
     ],
-
 ];

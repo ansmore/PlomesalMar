@@ -4,5 +4,7 @@
 	"actions": "Accions",
 
 	"back": "Anterior",
-	"next": "Següent"
+	"next": "Següent",
+
+	"speciesList": "Llista d'Espècies"
 }

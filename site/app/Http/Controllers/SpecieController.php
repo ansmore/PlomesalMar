@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Specie;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Session;
 
 class SpecieController extends Controller
 {
@@ -39,9 +41,27 @@ class SpecieController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request, $language = null)
     {
-        //
+        $validated = $request->validate([
+            'nombre_comun' => 'required|string|max:255',
+            'nombre_cientifico' => 'required|string|max:255'
+        ]);
+        
+        Log::info('Validated data:', $validated);
+
+        $specie = Specie::createFromRequest($request);
+        
+        Log::info('New specie created:', [
+            'id' => $specie->id,
+            'common_name' => $specie->common_name,
+            'scientific_name' => $specie->scientific_name
+        ]);
+
+        $language = Session::get('language', config('app.fallback_locale', 'ca'));
+        Session::flash('toast_message', trans('messages.species_saved', [], $language));
+        
+        return redirect()->back()->with('language', $language);
     }
 
     /**
@@ -63,16 +83,18 @@ class SpecieController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Specie $specie)
+    public function update(Request $request, $id)
     {
-        //
+        Specie::updateFromRequest($request, $id);
+        return redirect()->back();
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Specie $specie)
+    public function destroy($id)
     {
-        //
+        Specie::deleteById($id);
+        return redirect()->back();
     }
 }
