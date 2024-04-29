@@ -1,24 +1,22 @@
 .aside {
   @include paddingMargin(0, 0);
+  height: calc(100% - #{$nav_height});
 
   .leftBar {
     @include mainBox(column, flex-start, flex-start);
     @include style($primary_main, $secondary_lighter);
     @include paddingMargin(0, 0);
     @include boxSize(width, $aside_width, null, $aside_width);
-    @include boxSize(height, 90vh, null, 100vh);
-    @include paddingMargin(0 0 0 0, 0);
+    // @include boxSize(height, 90vh, null, 100vh);
 
     overflow: hidden;
-    // DeveloperMode
-    // @include style($primary_main, lightblue);
 
     .list {
       @include mainBox(column, flex-start, flex-start);
       @include paddingMargin(0, 0);
-      @include boxSize(height, 40vh);
+      height: calc(100vh - #{$nav_height});
       align-self: flex-start;
-      // cursor: pointer;
+
 
       &__title {
         @extend .asideListTitle;

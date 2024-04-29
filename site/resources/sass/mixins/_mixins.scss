@@ -1,13 +1,18 @@
-@mixin mainBox($direction: row, $justify: flex-start, $align: center) {
+@mixin mainBox($direction: row,
+  $justify: flex-start,
+  $align: center) {
+
   display: flex;
   flex-direction: $direction;
 
   justify-content: $justify;
   justify-items: center;
+  // To delete
   justify-self: center;
 
   align-content: center;
   align-items: $align;
+  // To delete
   align-self: center;
 }
 
@@ -64,7 +69,8 @@
     $value: $value + "";
   }
 
-  @return type-of($value)=="string" and str-slice($value, -1)=="%" or str-slice($value, -2)=="px" or str-slice($value, -2)=="em" or str-slice($value, -2)=="vw" or str-slice($value, -2)=="vh" or str-slice($value, -3)=="rem";
+  @return type-of($value)=="string" and (str-slice($value, -1)=="%" or str-slice($value, -2)=="px" or str-slice($value, -2)=="em" or str-slice($value, -2)=="vw" or str-slice($value, -2)=="vh" or str-slice($value, -3)=="rem"
+  );
 }
 
 /**

@@ -158,7 +158,7 @@ button {
  * @param {string} $size - Main size (optional).
  * @param {string} $max - Maximum size (optional).
  */
-.main, .termsAndPolicy, .plomesalmarContact, .species, .home {
+.main, .termsAndPolicy, .species, .management, .plomesalmarContact, .home {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -174,7 +174,7 @@ button {
   gap: 0.5rem;
 }
 
-.section, .termsAndPolicy .row, .plomesalmarContact .row, .species .row, .home .row--reverse, .home .row, .footer .row {
+.section, .termsAndPolicy .row, .plomesalmarContact .row, .home .row--reverse, .home .row, .footer .row {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -189,7 +189,7 @@ button {
   margin: 0.25rem;
 }
 
-.article, .termsAndPolicy .row .box__logo, .termsAndPolicy .row .box, .plomesalmarContact .row .box__logo, .plomesalmarContact .row .box, .species .row .box, .home .row--reverse .box, .home .row .box__circle, .home .row .box__row, .home .row .box, .footer .row .box__row, .footer .row .box, .modal__box .body, .form, .auth .row .form, .plomesalmarContact .row .form {
+.article, .termsAndPolicy .row .box__logo, .termsAndPolicy .row .box, .species .row .box, .plomesalmarContact .row .box__logo, .plomesalmarContact .row .box, .home .row--reverse .box, .home .row .box__circle, .home .row .box__row, .home .row .box, .footer .row .box__row, .footer .row .box, .modal__box .body, .form, .plomesalmarContact .row .form, .auth .row .form {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -209,14 +209,14 @@ button {
   text-align: center;
   overflow: hidden;
 }
-.article p, .termsAndPolicy .row .box__logo p, .termsAndPolicy .row .box p, .plomesalmarContact .row .box__logo p, .plomesalmarContact .row .box p, .species .row .box p, .home .row--reverse .box p, .home .row .box__circle p, .home .row .box__row p, .home .row .box p, .footer .row .box__row p, .footer .row .box p, .modal__box .body p, .form p, .auth .row .form p, .plomesalmarContact .row .form p {
+.article p, .termsAndPolicy .row .box__logo p, .termsAndPolicy .row .box p, .species .row .box p, .plomesalmarContact .row .box__logo p, .plomesalmarContact .row .box p, .home .row--reverse .box p, .home .row .box__circle p, .home .row .box__row p, .home .row .box p, .footer .row .box__row p, .footer .row .box p, .modal__box .body p, .form p, .plomesalmarContact .row .form p, .auth .row .form p {
   text-align: left;
 }
-.article p span, .termsAndPolicy .row .box__logo p span, .termsAndPolicy .row .box p span, .plomesalmarContact .row .box__logo p span, .plomesalmarContact .row .box p span, .species .row .box p span, .home .row--reverse .box p span, .home .row .box__circle p span, .home .row .box__row p span, .home .row .box p span, .footer .row .box__row p span, .footer .row .box p span, .modal__box .body p span, .form p span, .auth .row .form p span, .plomesalmarContact .row .form p span {
+.article p span, .termsAndPolicy .row .box__logo p span, .termsAndPolicy .row .box p span, .species .row .box p span, .plomesalmarContact .row .box__logo p span, .plomesalmarContact .row .box p span, .home .row--reverse .box p span, .home .row .box__circle p span, .home .row .box__row p span, .home .row .box p span, .footer .row .box__row p span, .footer .row .box p span, .modal__box .body p span, .form p span, .plomesalmarContact .row .form p span, .auth .row .form p span {
   text-align: left;
 }
 
-.title, .termsAndPolicy .row .box__title, .auth .row .box__title, .plomesalmarContact .row .box__title, .home .row--reverse .box__title, .home .row .box__title {
+.title, .termsAndPolicy .row .box__title, .plomesalmarContact .row .box__title, .home .row--reverse .box__title, .home .row .box__title, .auth .row .box__title {
   color: #0065AE;
   background-color: transparent;
   line-height: 2;
@@ -258,7 +258,7 @@ button {
   background-color: transparent;
 }
 
-.content, .termsAndPolicy .row .box__content, .auth .row .form__group__consent__content, .auth .row .form__group__content, .plomesalmarContact .row .form__group__consent__content, .plomesalmarContact .row .form__group__content, .home .row--reverse .box__content, .home .row .box__content, .modal__box .body__content {
+.content, .termsAndPolicy .row .box__content, .plomesalmarContact .row .form__group__consent__content, .plomesalmarContact .row .form__group__content, .home .row--reverse .box__content, .home .row .box__content, .auth .row .form__group__consent__content, .auth .row .form__group__content, .modal__box .body__content {
   color: #0065AE;
   background-color: transparent;
   text-align: center;
@@ -338,39 +338,7 @@ button {
   font-size: 1.5em;
 }
 
-.logo, .termsAndPolicy .row .box__logo__image, .plomesalmarContact .row .box__logo__image {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  justify-items: center;
-  justify-self: center;
-  align-content: center;
-  align-items: center;
-  align-self: center;
-  padding: 0.25rem;
-  margin: 1rem 0.25rem;
-  border-radius: 5px;
-  border: 1px solid #0065AE;
-  box-shadow: 2px 2px 4px #9d9d9c, -2px -2px 4px #aeaead;
-  background-color: #fafafa;
-  min-width: 225px;
-  max-width: 225px;
-  min-height: 125px;
-  max-height: 150px;
-  overflow: hidden;
-}
-.logo img, .termsAndPolicy .row .box__logo__image img, .plomesalmarContact .row .box__logo__image img {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  justify-items: center;
-  justify-self: center;
-  align-content: center;
-  align-items: center;
-  align-self: center;
-}
-
-.formInput, .auth .row .form__group__input, .plomesalmarContact .row .form__group__input {
+.formInput, .plomesalmarContact .row .form__group__input, .auth .row .form__group__input {
   padding: 1rem;
   margin: 0.25rem auto;
   color: #9d9d9c;
@@ -380,13 +348,13 @@ button {
   border: 1px solid #8f8f8f;
   border-radius: 0.25rem;
 }
-.formInput:hover, .auth .row .form__group__input:hover, .plomesalmarContact .row .form__group__input:hover {
+.formInput:hover, .plomesalmarContact .row .form__group__input:hover, .auth .row .form__group__input:hover {
   color: inherit;
   background-color: #ffffff;
   border: 1px solid #0065AE;
 }
 
-.consent, .auth .row .form__group__consent, .plomesalmarContact .row .form__group__consent {
+.consent, .plomesalmarContact .row .form__group__consent, .auth .row .form__group__consent {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -438,7 +406,7 @@ button {
   border: 1px solid #9d9d9c;
 }
 
-.button, .termsAndPolicy .row .box__button, .auth .row .form__group__button, .plomesalmarContact .row .form__group__button, .home .row--reverse .box__button, .home .row .box__button, .modal__box .body__button {
+.button, .termsAndPolicy .row .box__button, .plomesalmarContact .row .form__group__button, .home .row--reverse .box__button, .home .row .box__button, .auth .row .form__group__button, .modal__box .body__button {
   color: #fafafa;
   background-color: #0065AE;
   padding: 0.25rem;
@@ -449,7 +417,7 @@ button {
   border-radius: 0.25rem;
   border: 1px solid transparent;
 }
-.button:hover, .termsAndPolicy .row .box__button:hover, .auth .row .form__group__button:hover, .plomesalmarContact .row .form__group__button:hover, .home .row--reverse .box__button:hover, .home .row .box__button:hover, .modal__box .body__button:hover {
+.button:hover, .termsAndPolicy .row .box__button:hover, .plomesalmarContact .row .form__group__button:hover, .home .row--reverse .box__button:hover, .home .row .box__button:hover, .auth .row .form__group__button:hover, .modal__box .body__button:hover {
   color: #fafafa;
   background-color: #0079D0;
   border: 1px solid #fafafa;
@@ -521,6 +489,28 @@ button {
   font-weight: light;
   text-decoration: none;
   cursor: pointer;
+}
+
+.logo, .termsAndPolicy .row .box__logo__image, .management .row .box__logo__image, .plomesalmarContact .row .box__logo__image {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+  justify-self: center;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  padding: 0.25rem;
+  margin: 1rem 0.25rem;
+  border-radius: 5px;
+  border: 1px solid #0065AE;
+  box-shadow: 2px 2px 4px #9d9d9c, -2px -2px 4px #aeaead;
+  background-color: #fafafa;
+  min-width: 225px;
+  max-width: 225px;
+  min-height: 125px;
+  max-height: 150px;
+  overflow: hidden;
 }
 
 .modal__box .body {
@@ -1381,6 +1371,7 @@ button {
 .aside {
   padding: 0;
   margin: 0;
+  height: calc(100% - 3.5rem);
 }
 .aside .leftBar {
   display: flex;
@@ -1397,10 +1388,6 @@ button {
   margin: 0;
   min-width: 12rem;
   max-width: 12rem;
-  min-height: 90vh;
-  max-height: 100vh;
-  padding: 0 0 0 0;
-  margin: 0;
   overflow: hidden;
 }
 .aside .leftBar .list {
@@ -1414,7 +1401,7 @@ button {
   align-self: center;
   padding: 0;
   margin: 0;
-  min-height: 40vh;
+  height: calc(100vh - 3.5rem);
   align-self: flex-start;
 }
 .aside .leftBar .list__item {
@@ -1459,6 +1446,60 @@ button {
   padding: 0.2rem 0.75rem;
   border: 1px solid #26A4FF;
   border-radius: 0.25rem;
+}
+
+.auth {
+  display: block;
+}
+.auth .row {
+  top: 15vh;
+  left: 15vw;
+  min-width: 70vw;
+  max-width: 70vw;
+  min-height: 70vh;
+  max-height: 70vh;
+  border: 1px solid transparent;
+}
+.auth .row:hover {
+  color: inherit;
+  background-color: #fafafa;
+  border: 1px solid #0065AE;
+}
+.auth .row .box__title {
+  margin-bottom: 2rem;
+}
+.auth .row .form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  justify-items: center;
+  justify-self: center;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  min-width: 65vw;
+  max-width: 65vw;
+}
+.auth .row .form__group__input {
+  min-width: 35vw;
+  max-width: 35vw;
+  border: 1px solid #8f8f8f;
+}
+.auth .row .form__group__input:hover {
+  color: #0079D0;
+  background-color: #fafafa;
+  border: 1px solid #0065AE;
+}
+.auth .row .form__group__consent {
+  gap: 0.5rem;
+}
+.auth .row .form__group__consent__check {
+  appearance: checkbox;
+  width: 1rem;
+  height: 1rem;
+}
+.auth .row .form__group__consent__content {
+  hyphens: none;
 }
 
 .home .row {
@@ -1648,40 +1689,6 @@ button {
     margin: 0.5rem;
   }
 }
-.species {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  justify-items: center;
-  justify-self: center;
-  align-content: center;
-  align-items: flex-start;
-  align-self: center;
-  padding: 3.5rem 0 0 0;
-  margin: 0;
-  gap: 0;
-}
-.species .row {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  justify-items: center;
-  justify-self: center;
-  align-content: center;
-  align-items: flex-start;
-  align-self: center;
-  min-width: 85vw;
-  max-width: 85vw;
-  color: #0065AE;
-  background-color: #ececec;
-  padding: 5rem 0 2rem 0;
-  margin: 0;
-}
-.species .row .box {
-  min-width: 80vw;
-  max-width: 80vw;
-}
-
 .plomesalmarContact .row {
   padding: 5rem 0.25rem 2rem 0.25rem;
   margin: 0.25rem;
@@ -1784,56 +1791,82 @@ button {
     margin: 0.25rem auto;
   }
 }
-.auth {
-  display: block;
+.management {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  justify-items: center;
+  justify-self: center;
+  align-content: center;
+  align-items: flex-start;
+  align-self: center;
+  padding: 3.5rem 0 0 0;
+  margin: 0;
+  gap: 0;
 }
-.auth .row {
-  top: 15vh;
-  left: 15vw;
-  min-width: 70vw;
-  max-width: 70vw;
-  min-height: 70vh;
-  max-height: 70vh;
-  border: 1px solid transparent;
+.management .row {
+  display: flex;
+  flex: 1;
+  padding: 2rem 0;
+  margin: 0 auto;
+  flex-direction: column;
+  margin: 0 auto;
 }
-.auth .row:hover {
-  color: inherit;
-  background-color: #fafafa;
-  border: 1px solid #0065AE;
+.management .row .box__logo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 0.5rem;
 }
-.auth .row .box__title {
-  margin-bottom: 2rem;
-}
-.auth .row .form {
+.management .row .box__logo__image a {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: space-around;
   justify-items: center;
   justify-self: center;
   align-content: center;
   align-items: center;
   align-self: center;
-}
-.auth .row .form__group__input {
-  min-width: 50vw;
-  max-width: 50vw;
-  border: 1px solid #8f8f8f;
-}
-.auth .row .form__group__input:hover {
-  color: #0079D0;
-  background-color: #fafafa;
-  border: 1px solid #0065AE;
-}
-.auth .row .form__group__consent {
   gap: 0.5rem;
 }
-.auth .row .form__group__consent__check {
-  appearance: checkbox;
-  width: 1rem;
-  height: 1rem;
+.management .row .box__logo__image a img {
+  min-height: 3.5rem;
 }
-.auth .row .form__group__consent__content {
-  hyphens: none;
+.management .row .box__logo__image a i {
+  font-size: xx-large;
+}
+.management .row .box__logo__image:hover {
+  border: 1px solid transparent;
+}
+.management .row .box__logo__image:hover:hover {
+  color: #c2c2c2;
+  background-color: #0065AE;
+  border: 1px solid #c2c2c2;
+}
+
+.species {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  justify-items: center;
+  justify-self: center;
+  align-content: center;
+  align-items: flex-start;
+  align-self: center;
+  padding: 3.5rem 0 0 0;
+  margin: 0;
+  gap: 0;
+}
+.species .row {
+  display: flex;
+  flex: 1;
+  padding: 2rem 0;
+  margin: 0 auto;
+  flex-direction: column;
+  margin: 0 auto;
+}
+.species .row .box {
+  min-width: 95%;
+  max-width: 95%;
 }
 
 .termsAndPolicy .row {

@@ -6,21 +6,16 @@
   gap: 0;
 
   .row {
-    @extend .section;
-
-
-    @include mainBox(column, space-around, flex-start);
-    @include boxSize(width, 85vw, null, 85vw);
-    @include style($primary_main, $neutral_light);
-    @include paddingMargin(5rem 0 2rem 0, 0);
-
-    // DeveloperMode
-    // background-color: beige;
+    display: flex;
+    flex: 1;
+    @include paddingMargin(2rem 0, 0 auto);
+    flex-direction: column;
+    margin: 0 auto;
 
     .box {
       @extend .article;
 
-      @include boxSize(width, 80vw, null, 80vw);
+      @include boxSize(width, 95%, null, 95%);
 
     }
   }

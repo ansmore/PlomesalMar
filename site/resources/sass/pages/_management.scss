@@ -1,0 +1,42 @@
+.management {
+  @extend .main;
+
+  @include mainBox(row, flex-start, flex-start);
+  @include paddingMargin($nav_height 0 0 0, 0);
+  gap: 0;
+
+  .row {
+    display: flex;
+    flex: 1;
+    @include paddingMargin(2rem 0, 0 auto);
+    flex-direction: column;
+    margin: 0 auto;
+
+    .box__logo {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+      gap: $gap;
+
+      &__image {
+        @extend .logo;
+
+        a {
+          @include mainBox(column, space-around, center);
+          gap: $gap;
+        }
+
+        a img {
+          @include boxSize(height, 3.5rem);
+        }
+
+        a i {
+          font-size: xx-large;
+        }
+
+        &:hover {
+          @include hover($primary_main, $neutral_main, $neutral_main );
+        }
+      }
+    }
+  }
+}

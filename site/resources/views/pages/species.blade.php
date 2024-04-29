@@ -12,7 +12,9 @@
     <main class="species">
         @include('components.asideManagement')
         <section id="head" class="row">
-            @include('components.search')
+            <article class="box">
+                @include('components.search')
+            </article>
             <article class="box">
                 @include('partials.speciesTable', ['species' => $species])
             </article>
