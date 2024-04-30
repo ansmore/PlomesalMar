@@ -3,8 +3,6 @@
 @section('title', 'Terms of Use')
 @section('content')
 
-    @include('components.navigationHome')
-
     <div class="main">
         <!-- Header  section -->
         <section id="header__plomesalmar" class="termsAndPolicy">
