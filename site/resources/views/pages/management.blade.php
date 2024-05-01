@@ -17,48 +17,48 @@
                 <h1 class="box__title" data-text="listTables">Lista de taules</h1>
             </article>
             <article class="box__logo">
-                <span class="box__logo__image">
-                    <a href="{{ route('home', ['language' => $language]) }}">
+                <a href="{{ route('home', ['language' => $language]) }}">
+                    <figure class="box__logo__image">
                         <i class="fas fa-globe">
                         </i>
                         <span data-text="asideDeparture"></span>
-                    </a>
-                </span>
-                <span class="box__logo__image">
-                    <a href="{{ route('home', ['language' => $language]) }}">
+                    </figure>
+                </a>
+                <a href="{{ route('home', ['language' => $language]) }}">
+                    <figure class="box__logo__image">
                         <i class="fas fa-binoculars">
                         </i>
                         <span data-text="asideObservation"></span>
-                    </a>
-                </span>
-                <span class="box__logo__image">
-                    <a href="{{ route('species', ['language' => $language]) }}">
+                    </figure>
+                </a>
+                <a href="{{ route('species', ['language' => $language]) }}">
+                    <figure class="box__logo__image">
                         <i class="fas fa-crow">
                         </i>
                         <span data-text="asideSpecie"></span>
-                    </a>
-                </span>
-                <span class="box__logo__image">
-                    <a href="{{ route('home', ['language' => $language]) }}">
+                    </figure>
+                </a>
+                <a href="{{ route('home', ['language' => $language]) }}">
+                    <figure class="box__logo__image">
                         <i class="fas fa-ship">
                         </i>
                         <span data-text="asideBoat"></span>
-                    </a>
-                </span>
-                <span class="box__logo__image">
-                    <a href="{{ route('home', ['language' => $language]) }}">
+                    </figure>
+                </a>
+                <a href="{{ route('home', ['language' => $language]) }}">
+                    <figure class="box__logo__image">
                         <i class="fas fa-location">
                         </i>
                         <span data-text="asideTransect"></span>
-                    </a>
-                </span>
-                <span class="box__logo__image">
-                    <a href="{{ route('home', ['language' => $language]) }}">
+                    </figure>
+                </a>
+                <a href="{{ route('home', ['language' => $language]) }}">
+                    <figure class="box__logo__image">
                         <i class="fas fa-camera">
                         </i>
                         <span data-text="asideImage"></span>
-                    </a>
-                </span>
+                    </figure>
+                </a>
             </article>
         </section>
     </main>

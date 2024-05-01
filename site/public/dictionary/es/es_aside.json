@@ -13,5 +13,8 @@
 	"specieList": "Lista de Especies",
 	"boatList": "Lista de Barcos",
 	"transectList": "Lista de Transectos",
-	"imageList": "Lista de Imagenes"
+	"imageList": "Lista de Imagenes",
+
+	"back": "Anterior",
+	"next": "Siguiente"
 }

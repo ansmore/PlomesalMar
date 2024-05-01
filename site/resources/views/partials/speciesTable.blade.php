@@ -1,3 +1,5 @@
+{{-- Id-> table-container Can't be deleted --}}
+
 <div class="card" id="table-container">
     <table class="table">
         <thead class="text-white">
@@ -46,12 +48,11 @@
         <!-- Botón Anterior -->
         @if ($species->onFirstPage())
             <li class="page-item disabled">
-                <span class="page-link">Anterior</span>
+                <span class="page-link" data-text="back"></span>
             </li>
         @else
             <li class="page-item">
-                <a class="page-link" href="{{ $species->previousPageUrl() }}" data-text="back"
-                    rel="prev">Anterior</a>
+                <a class="page-link" href="{{ $species->previousPageUrl() }}" data-text="back" rel="prev"></a>
             </li>
         @endif
 
@@ -65,12 +66,17 @@
         <!-- Botón Siguiente -->
         @if ($species->hasMorePages())
             <li class="page-item">
-                <a class="page-link" href="{{ $species->nextPageUrl() }}" data-text="next" rel="next">Siguiente</a>
+                <a class="page-link" href="{{ $species->nextPageUrl() }}" data-text="next" rel="next"></a>
             </li>
         @else
             <li class="page-item disabled">
-                <span class="page-link">Siguiente</span>
+                <span class="page-link" data-text="next"></span>
             </li>
         @endif
     </ul>
 </nav>
+
+{{--
+@push('scripts')
+    <script type="module" src="{{ asset('js/partials/table.js') }}" defer></script>
+@endpush --}}

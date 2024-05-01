@@ -13,5 +13,8 @@
 	"specieList": "Llista de  Espècies",
 	"boatList": "Llista de  Vaixells",
 	"transectList": "Llista de  Transectes",
-	"imageList": "Llista de  Imatges"
+	"imageList": "Llista de  Imatges",
+
+	"back": "Anterior",
+	"next": "Següent"
 }

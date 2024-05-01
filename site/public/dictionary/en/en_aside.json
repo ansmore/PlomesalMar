@@ -13,5 +13,8 @@
 	"specieList": "List of Species",
 	"boatList": "List of Boats",
 	"transectList": "List of Transects",
-	"imageList": "List of Images"
+	"imageList": "List of Images",
+
+	"back": "Back",
+	"next": "Next"
 }

@@ -6,5 +6,6 @@
 	"back": "Anterior",
 	"next": "Siguiente",
 
-	"speciesList": "Lista de Especies"
+	"speciesList": "Lista de Especies",
+	"addButton": "Añadir"
 }
