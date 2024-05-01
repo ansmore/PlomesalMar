@@ -1,7 +1,7 @@
 <nav class="nav">
     <div class="toggle">
         <label for="toggle-menu-checkbox">
-            <img src="{{ asset('img/hamburger-menu.png') }}" alt="Menu hamburger">
+            <i class="fa-solid fa-bars"></i>
         </label>
     </div>
     <input type="checkbox" class="toggle__checkbox" id="toggle-menu-checkbox">

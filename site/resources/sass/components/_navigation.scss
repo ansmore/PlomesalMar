@@ -40,21 +40,22 @@
 
     &__menu {
       &__home {
-        @include paddingMargin(0, 194px 0 0 0);
+        @include paddingMargin(0, 178px 0 0 0);
 
         @include mainBox(row, center, center);
         position: absolute;
         flex: 6;
+        transition: transform 1.5s;
+        transform: translateY(-250%);
 
         .list {
           @include mainBox(column);
-          @include paddingMargin(0, calc($margin * 2) 0 0 0);
+          // @include paddingMargin(0, calc($margin * 2) 0 0 0);
+          @include paddingMargin(0, 0 0 0 0);
           @include style($neutral_lighter, $primary_main);
           @include boxSize(width, 40vw);
           cursor: pointer;
 
-          transition: transform 1.5s;
-          transform: translateY(-250%);
 
           &__item {
             @include paddingMargin($padding);
@@ -78,11 +79,7 @@
               @include mainBox(column, center, center);
               @include boxSize(width, 40vw);
               @include style($neutral_lighter, $secondary_main);
-
-              // Fix 002 -> Border-radius?
-              // border-radius: 4px;
             }
-
 
             .dropdown {
               position: relative;
@@ -235,14 +232,16 @@
   }
 
   .toggle {
-    @include boxSize(width, null, 50px);
-    // width: 50px;
-    position: absolute;
 
-    top: 0.8rem;
-    right: 0.8rem;
-    cursor: pointer;
-
+    label i {
+      @include boxSize(width, null, 30px);
+      // background-color: antiquewhite;
+      position: absolute;
+      right: 1rem;
+      top: 0.8rem;
+      font-size: xx-large;
+      cursor: pointer;
+    }
 
     &__checkbox {
       display: none;
@@ -250,11 +249,8 @@
       &:checked+.navbar {
         .navbar__menu {
           &__home {
-
-            .list {
-              transition: transform 0.5s;
-              transform: translateY(0);
-            }
+            transition: transform 0.5s;
+            transform: translateY(0);
           }
         }
       }
@@ -303,11 +299,11 @@
           @include mainBox(row, flex-end, center);
           margin-top: 0;
           position: sticky;
+          margin-top: 0;
+          transform: translateY(0);
 
           .list {
             @include mainBox(row);
-            margin-top: 0;
-            transform: translateY(0);
 
             &__item {
               @include paddingMargin;
