@@ -1,8 +1,9 @@
 .aside {
   @include paddingMargin(0, 0);
-  @include boxLateralShadow(right, $primary_main);
+  @include boxLateralShadow(right, $primary_main, 3px, $neutral_dark);
   height: calc(100% - #{$nav_height});
 
+  overflow: hidden;
 
   .leftBar {
     @include mainBox(column, flex-start, flex-start);

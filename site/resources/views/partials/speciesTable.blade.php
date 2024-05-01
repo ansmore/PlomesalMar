@@ -1,47 +1,44 @@
 <div class="card" id="table-container">
     <table class="table">
         <thead class="text-white">
-            <tr>
-                <th scope="col">
-                    <span data-text="commonName" class="table__title"></span>
-                    <a href="?orderByField=common_name&orderByDirection=asc" class="decoration">
-                        <i class="fas fa-arrow-up"></i>
-                    </a>
-                    <a href="?orderByField=common_name&orderByDirection=desc" class="decoration">
-                        <i class="fas fa-arrow-down"></i>
-                    </a>
-                </th>
-                <th scope="col">
-                    <span data-text="scientificName" class="table__title"></span>
-                    <a href="?orderByField=scientific_name&orderByDirection=asc" class="decoration">
-                        <i class="fas fa-arrow-up"></i>
-                    </a>
-                    <a href="?orderByField=scientific_name&orderByDirection=desc" class="decoration">
-                        <i class="fas fa-arrow-down"></i>
-                    </a>
-                </th>
-                <th scope="col" data-text="actions" class="table__title"></th>
-            </tr>
+            <th scope="col">
+                <span data-text="commonName" class="table__title"></span>
+                <a href="?orderByField=common_name&orderByDirection=asc" class="decoration">
+                    <i class="fas fa-arrow-up"></i>
+                </a>
+                <a href="?orderByField=common_name&orderByDirection=desc" class="decoration">
+                    <i class="fas fa-arrow-down"></i>
+                </a>
+            </th>
+            <th scope="col">
+                <span data-text="scientificName" class="table__title"></span>
+                <a href="?orderByField=scientific_name&orderByDirection=asc" class="decoration">
+                    <i class="fas fa-arrow-up"></i>
+                </a>
+                <a href="?orderByField=scientific_name&orderByDirection=desc" class="decoration">
+                    <i class="fas fa-arrow-down"></i>
+                </a>
+            </th>
+            <th scope="col" data-text="actions" class="table__title"></th>
         </thead>
-        <tbody>
-            @foreach ($species as $specie)
-                <tr>
-                    <td>{{ $specie->common_name }}</td>
-                    <td>{{ $specie->scientific_name }}</td>
-                    <td class="icon-center">
-                        <button type="button" class="buttonTable__success" data-bs-toggle="modal"
-                            data-bs-target="#editSpecies{{ $specie->id }}" title="Editar">
-                            <i class="fas fa-pencil"></i>
-                        </button>
-                        <button type="button" class="buttonTable__danger" data-bs-toggle="modal"
-                            data-bs-target="#deleteSpecies{{ $specie->id }}" title="Eliminar">
-                            <i class="fas fa-trash-can"></i>
-                        </button>
-                </tr>
+        @foreach ($species as $specie)
+            <tbody>
+                <td>{{ $specie->common_name }}</td>
+                <td>{{ $specie->scientific_name }}</td>
+                <td class="icon-center">
+                    <button type="button" class="buttonTable__success" data-bs-toggle="modal"
+                        data-bs-target="#editSpecies{{ $specie->id }}" title="Editar">
+                        <i class="fas fa-pencil"></i>
+                    </button>
+                    <button type="button" class="buttonTable__danger" data-bs-toggle="modal"
+                        data-bs-target="#deleteSpecies{{ $specie->id }}" title="Eliminar">
+                        <i class="fas fa-trash-can"></i>
+                    </button>
+                </td>
                 @include('modals/species.edit')
                 @include('modals/species.delete')
-            @endforeach
-        </tbody>
+            </tbody>
+        @endforeach
     </table>
 </div>
 <nav aria-label="Page navigation example" class="pagination__box">

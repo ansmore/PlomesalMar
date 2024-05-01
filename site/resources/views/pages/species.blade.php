@@ -12,14 +12,14 @@
     <main class="species">
         @include('components.asideManagement')
         <section id="head" class="row">
-            <div class="title-and-button">
-                <h1 class="display-5" style="color: #004F71; flex-grow: 1;">Lista de Especies</h1>
-                <button type="button" class="button-add" data-bs-toggle="modal" data-bs-target="#createSpecies">
+            <article class="box">
+                <h1 class="box__title">Lista de Especies</h1>
+            </article>
+            <article class="box__search">
+                @include('components.search')
+                <button type="button" class="button" data-bs-toggle="modal" data-bs-target="#createSpecies">
                     <i class="fas fa-plus-circle"></i> Añadir
                 </button>
-            </div>
-            <article class="box">
-                @include('components.search')
             </article>
             <article class="box">
                 @include('partials.speciesTable', ['species' => $species])
