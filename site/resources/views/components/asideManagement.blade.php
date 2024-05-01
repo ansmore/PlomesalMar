@@ -61,3 +61,8 @@
         </ul>
     </article>
 </aside>
+
+
+@push('scripts')
+    <script type="module" src="{{ asset('js/components/aside.js') }}" defer></script>
+@endpush

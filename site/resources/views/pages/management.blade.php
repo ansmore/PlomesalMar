@@ -14,7 +14,7 @@
         <!-- Plomes al mar Contact Section -->
         <section id="logo" class="row">
             <article class="box">
-                <h1 class="box__title">Lista de taules</h1>
+                <h1 class="box__title" data-text="listTables">Lista de taules</h1>
             </article>
             <article class="box__logo">
                 <span class="box__logo__image">
@@ -64,6 +64,6 @@
     </main>
 @endsection
 
-{{-- @push('scripts')
-    <script type="module" src="{{ asset('js/pages/plomesalmarContact.js') }}" defer></script>
-@endpush --}}
+@push('scripts')
+    <script type="module" src="{{ asset('js/pages/management.js') }}" defer></script>
+@endpush

@@ -1,0 +1,17 @@
+{
+	"asideManagement": "Management",
+
+	"asideDeparture": "Departure",
+	"asideObservation": "Observation",
+	"asideSpecie": "Specie",
+	"asideBoat": "Boat",
+	"asideTransect": "Transect",
+	"asideImage": "Image",
+
+	"departureList": "List of Departures",
+	"observationList": "List of Observations",
+	"specieList": "List of Species",
+	"boatList": "List of Boats",
+	"transectList": "List of Transects",
+	"imageList": "List of Images"
+}

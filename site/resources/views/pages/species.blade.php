@@ -13,7 +13,7 @@
         @include('components.asideManagement')
         <section id="head" class="row">
             <article class="box">
-                <h1 class="box__title">Lista de Especies</h1>
+                <h1 class="box__title" data-text="specieList"></h1>
             </article>
             <article class="box__search">
                 @include('components.search')

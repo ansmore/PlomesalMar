@@ -7,13 +7,7 @@
 	"navManagement": "Management",
 	"navContact": "Contact",
 
-	"asideManagement": "Management",
-	"asideDeparture": "Departure",
-	"asideObservation": "Observation",
-	"asideSpecie": "Specie",
-	"asideBoat": "Boat",
-	"asideTransect": "Transect",
-	"asideImage": "Image",
+	"listTables": "List of tables",
 
 	"cas": "Castellano",
 	"cat": "Català",
