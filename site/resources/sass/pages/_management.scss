@@ -12,31 +12,96 @@
     flex-direction: column;
     margin: 0 auto;
 
-    .box__logo {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-      gap: $gap;
+    .box {
+      @extend .article;
+      @include boxSize(width, 90%, null, 90%);
 
-      &__image {
-        @extend .logo;
+      &__title {
+        @extend .title;
+      }
 
-        a {
-          @include mainBox(column, space-around, center);
-          gap: $gap;
-        }
+      &__search {
+        @extend .article;
 
-        a img {
-          @include boxSize(height, 3.5rem);
-        }
 
-        a i {
-          font-size: xx-large;
-        }
+        @include mainBox(row, space-between, center);
+        @include boxSize(width, 90%, null, 90%);
+      }
 
-        &:hover {
-          @include hover($primary_main, $neutral_main, $neutral_main );
+      &__table {
+        @extend .article;
+
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        @include boxSize(width, 90%, null, 90%);
+      }
+
+      &__logo {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+        gap: $gap;
+
+        &__image {
+          @extend .logo;
+          margin: $gap auto;
+
+          a {
+            @include mainBox(column, space-around, center);
+            gap: $gap;
+          }
+
+          a img {
+            @include boxSize(height, 3.5rem);
+          }
+
+          i {
+            font-size: xx-large;
+          }
+
+          &:hover {
+            @include hover($primary_main, $neutral_main, $neutral_main );
+          }
         }
       }
     }
+  }
+}
+
+.button-add {
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  color: $neutral_lightest;
+  background-color: $primary_light;
+  border: none;
+
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  user-select: none;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+
+  &:hover {
+    background-color: $primary_dark;
+    text-decoration: none;
+  }
+
+  &:focus,
+  &.focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba($primary_darker, .5);
+  }
+
+  &:disabled,
+  &[disabled] {
+    cursor: not-allowed;
+    opacity: .65;
+  }
+
+  i {
+    margin-right: .5rem;
   }
 }

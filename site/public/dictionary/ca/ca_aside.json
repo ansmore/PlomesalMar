@@ -1,0 +1,20 @@
+{
+	"asideManagement": "Gestió",
+
+	"asideDeparture": "Sortida",
+	"asideObservation": "Observació",
+	"asideSpecie": "Espècies",
+	"asideBoat": "Vaixell",
+	"asideTransect": "Transecte",
+	"asideImage": "Imatge",
+
+	"departureList": "Llista de  Sortides",
+	"observationList": "Llista de  Observacions",
+	"specieList": "Llista de  Espècies",
+	"boatList": "Llista de  Vaixells",
+	"transectList": "Llista de  Transectes",
+	"imageList": "Llista de  Imatges",
+
+	"back": "Anterior",
+	"next": "Següent"
+}

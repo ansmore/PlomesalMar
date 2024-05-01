@@ -7,13 +7,7 @@
 	"navManagement": "Gestió",
 	"navContact": "Contacte",
 
-	"asideManagement": "Gestió",
-	"asideDeparture": "Sortida",
-	"asideObservation": "Observació",
-	"asideSpecie": "Espècies",
-	"asideBoat": "Vaixell",
-	"asideTransect": "Transecte",
-	"asideImage": "Imatge",
+	"listTables": "Llista de taules",
 
 	"cas": "Castellano",
 	"cat": "Català",

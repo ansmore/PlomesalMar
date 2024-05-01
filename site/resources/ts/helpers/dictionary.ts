@@ -6,6 +6,7 @@ type Dictionary = {
 // Here-> Pending import from globals
 const defaultLanguage = "es";
 import { navbar } from "../components/navigation.js";
+import { aside } from "../components/aside.js";
 import { footer } from "../components/footer.js";
 import { table } from "../partials/table.js";
 // Export let counterComponent = 0;
@@ -143,6 +144,7 @@ export const setLanguage = async (selectedLanguage: string) => {
 		await loadText();
 		await loadTextComponent(navbar);
 		await loadTextComponent(footer);
+		await loadTextComponent(aside);
 		await loadTextComponent(table);
 	} catch (error) {
 		console.error("Error handling language click", error);

@@ -1,18 +1,16 @@
 .aside {
   @include paddingMargin(0, 0);
+
   @include boxLateralShadow(right, $primary_main, 3px, $neutral_dark);
   height: calc(100% - #{$nav_height});
-
-  overflow: hidden;
 
   .leftBar {
     @include mainBox(column, flex-start, flex-start);
     @include style($primary_main, $secondary_lighter);
     @include paddingMargin(0, 0);
     @include boxSize(width, $aside_width, null, $aside_width);
-    // @include boxSize(height, 90vh, null, 100vh);
 
-    overflow: hidden;
+    // overflow: hidden;
 
     .list {
       @include mainBox(column, flex-start, flex-start);

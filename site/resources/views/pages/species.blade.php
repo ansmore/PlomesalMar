@@ -9,19 +9,20 @@
         </div>
     @endif
 
-    <main class="species">
+    <main class="management">
         @include('components.asideManagement')
         <section id="head" class="row">
             <article class="box">
-                <h1 class="box__title">Lista de Especies</h1>
+                <h1 class="box__title" data-text="specieList"></h1>
             </article>
             <article class="box__search">
                 @include('components.search')
                 <button type="button" class="button" data-bs-toggle="modal" data-bs-target="#createSpecies">
-                    <i class="fas fa-plus-circle"></i> Añadir
+                    <i class="fas fa-plus-circle"></i>
+                    <span data-text="addButton"></span>
                 </button>
             </article>
-            <article class="box">
+            <article class="box__table">
                 @include('partials.speciesTable', ['species' => $species])
             </article>
         </section>
