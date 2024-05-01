@@ -4,5 +4,7 @@
 	"actions": "Actions",
 
 	"back": "Back",
-	"next": "Next"
+	"next": "Next",
+
+	"speciesList": "Species List"
 }

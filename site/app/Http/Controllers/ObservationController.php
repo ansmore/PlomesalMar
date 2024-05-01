@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Observations;
+use App\Models\Observation;
 use Illuminate\Http\Request;
 
-class ObservationsController extends Controller
+class ObservationController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -34,7 +34,7 @@ class ObservationsController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Observations $observations)
+    public function show(Observation $observations)
     {
         //
     }
@@ -42,7 +42,7 @@ class ObservationsController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Observations $observations)
+    public function edit(Observation $observations)
     {
         //
     }
@@ -50,7 +50,7 @@ class ObservationsController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Observations $observations)
+    public function update(Request $request, Observation $observations)
     {
         //
     }
@@ -58,7 +58,7 @@ class ObservationsController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Observations $observations)
+    public function destroy(Observation $observations)
     {
         //
     }
