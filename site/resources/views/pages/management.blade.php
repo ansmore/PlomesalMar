@@ -13,6 +13,9 @@
         @include('components.asideManagement')
         <!-- Plomes al mar Contact Section -->
         <section id="logo" class="row">
+            <article class="box">
+                <h1 class="box__title">Lista de taules</h1>
+            </article>
             <article class="box__logo">
                 <span class="box__logo__image">
                     <a href="{{ route('home', ['language' => $language]) }}">

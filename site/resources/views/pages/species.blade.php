@@ -9,7 +9,7 @@
         </div>
     @endif
 
-    <main class="species">
+    <main class="management">
         @include('components.asideManagement')
         <section id="head" class="row">
             <article class="box">
@@ -21,7 +21,7 @@
                     <i class="fas fa-plus-circle"></i> Añadir
                 </button>
             </article>
-            <article class="box">
+            <article class="box__table">
                 @include('partials.speciesTable', ['species' => $species])
             </article>
         </section>

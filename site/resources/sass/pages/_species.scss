@@ -1,3 +1,5 @@
+// To delete... ¿?
+
 .species {
   @extend .main;
 
@@ -15,12 +17,13 @@
     .box {
       @extend .article;
 
-      display: flex;
-      flex: 1;
+      // @include boxSize(width, null, null, 70vw);
+
+      // display: flex;
+      // flex: 1;
 
       &__title {
         @extend .title;
-
       }
 
       &__search {
