@@ -3,8 +3,6 @@
 @section('title', 'Home')
 @section('content')
 
-    @include('components.navigationHome')
-
     @if (session('status'))
         <div class="alert alert-success" role="alert">
             {{ session('status') }}
@@ -94,6 +92,7 @@
         @include('modals.modalLogin')
         @include('modals.modalTeam')
     </main>
+    @include('components.footer')
 @endsection
 
 @push('scripts')

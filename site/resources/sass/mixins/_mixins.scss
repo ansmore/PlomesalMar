@@ -1,13 +1,18 @@
-@mixin mainBox($direction: row, $justify: flex-start, $align: center) {
+@mixin mainBox($direction: row,
+  $justify: flex-start,
+  $align: center) {
+
   display: flex;
   flex-direction: $direction;
 
   justify-content: $justify;
   justify-items: center;
+  // To delete
   justify-self: center;
 
   align-content: center;
   align-items: $align;
+  // To delete
   align-self: center;
 }
 
@@ -64,7 +69,8 @@
     $value: $value + "";
   }
 
-  @return type-of($value)=="string" and str-slice($value, -1)=="%" or str-slice($value, -2)=="px" or str-slice($value, -2)=="em" or str-slice($value, -2)=="vw" or str-slice($value, -2)=="vh" or str-slice($value, -3)=="rem";
+  @return type-of($value)=="string" and (str-slice($value, -1)=="%" or str-slice($value, -2)=="px" or str-slice($value, -2)=="em" or str-slice($value, -2)=="vw" or str-slice($value, -2)=="vh" or str-slice($value, -3)=="rem"
+  );
 }
 
 /**
@@ -95,24 +101,51 @@
   }
 }
 
-@mixin boxShadow($boderColor: transparent,
+@mixin boxShadow($borderColor: transparent,
   $radius: 0,
   $axis: 3px,
   $shadowColor: $neutral_main,
   $shadowColorSecondary: $neutral_light) {
 
   border-radius: $radius;
-  border: 1px solid $boderColor;
+  border: 1px solid $borderColor;
   box-shadow:
     $axis $axis (
     $axis * 2) $shadowColor,
     (-$axis) (-$axis) ($axis * 2) $shadowColorSecondary;
 }
 
-@mixin circleStyle($backgroundColor: transparent, $radius: 0, $boderColor: transparent) {
+@mixin boxLateralShadow($side: bottom,
+  $borderColor: transparent,
+  $axis: 3px,
+  $shadowColor: $neutral_main) {
+
+  @if $side =='top' {
+    border-top: 1px solid $borderColor;
+    box-shadow: 0px ($axis * -1) ($axis * 2) 0px $shadowColor;
+  }
+
+  @else if $side =='bottom' {
+    border-bottom: 1px solid $borderColor;
+    box-shadow: 0px $axis (
+      $axis * 2) 0px $shadowColor;
+  }
+
+  @else if $side =='left' {
+    border-left: 1px solid $borderColor;
+    box-shadow: -$axis 0px ($axis * 2) 0px $shadowColor;
+  }
+
+  @else if $side =='right' {
+    border-right: 1px solid $borderColor;
+    box-shadow: $axis 0px ($axis * 2) 0px $shadowColor;
+  }
+}
+
+@mixin circleStyle($backgroundColor: transparent, $radius: 0, $borderColor: transparent) {
 
   background-color: $backgroundColor;
   border-radius: $radius;
-  border: 1px solid $boderColor;
+  border: 1px solid $borderColor;
 
 }

@@ -6,17 +6,16 @@
   gap: 0;
 
   .row {
-    @extend .section;
-
-    @include mainBox(column, space-around, flex-start);
-    @include boxSize(width, 85vw, null, 85vw);
-    @include style($primary_main, $neutral_light);
-    @include paddingMargin(5rem 0 2rem 0, 0);
+    display: flex;
+    flex: 1;
+    @include paddingMargin(2rem 0, 0 auto);
+    flex-direction: column;
+    margin: 0 auto;
 
     .box {
       @extend .article;
 
-      @include boxSize(width, 80vw, null, 80vw);
+      @include boxSize(width, 95%, null, 95%);
     }
 
     .title-and-button {
@@ -55,18 +54,18 @@
           text-decoration: none;
         }
 
-        &:focus, 
+        &:focus,
         &.focus {
           outline: 0;
           box-shadow: 0 0 0 0.2rem rgba($primary_darker, .5);
         }
 
-        &:disabled, 
+        &:disabled,
         &[disabled] {
           cursor: not-allowed;
           opacity: .65;
         }
-        
+
         i {
           margin-right: .5rem;
         }

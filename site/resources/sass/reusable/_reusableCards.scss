@@ -1,0 +1,19 @@
+.logo {
+  @include mainBox(column, center, center);
+  @include boxSize(width, 225px, null, 225px);
+  @include boxSize(height, 125px, null, 150px);
+  @include style(null, $neutral_lighter);
+  @include paddingMargin($padding, 1rem $margin);
+  @include boxShadow($primary_main,
+    $radius,
+    2px,
+    $secondary_main,
+    $secondary_light );
+
+  overflow: hidden;
+
+  img {
+    @include mainBox(column, center, center);
+    margin-top: 1rem;
+  }
+}

@@ -3,8 +3,6 @@
 @section('title', 'Privacy Policy')
 @section('content')
 
-    @include('components.navigationHome')
-
     <div class="main">
         <!-- Header  section -->
         <section id="header__plomesalmar" class="termsAndPolicy">
@@ -164,7 +162,7 @@
             </div>
         </section>
     </div>
-
+    @include('components.footer')
 @endsection
 <script type="module" src="{{ asset('js/pages/termsAndPolicy.js') }}" defer></script>
 @push('scripts')

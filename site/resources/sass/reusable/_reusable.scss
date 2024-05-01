@@ -36,7 +36,7 @@
   }
 
   // DeveloperMode
-  border: 1px solid darkgreen;
+  // border: 1px solid darkgreen;
 }
 
 .title {
@@ -111,15 +111,6 @@
   }
 }
 
-.button {
-  @include button($primary_main, $neutral_lighter);
-  @include hover($primary_light, $neutral_lighter, $neutral_lighter);
-  @include paddingMargin(calc($padding * 3), calc($margin * 2) auto);
-  border-radius: $radius;
-  // Here-> Deleted in home/box--reverse
-  // @include boxSize(width, 20vw, null, 20vw);
-}
-
 .circle {
   @include mainBox(column, flex-start, center);
   @include paddingMargin($padding, $margin);
@@ -138,25 +129,6 @@
 
   &__title {
     font-size: $size_big
-  }
-}
-
-.logo {
-  @include mainBox(column, center, center);
-  @include paddingMargin($padding, 1rem $margin);
-  @include boxShadow($primary_main,
-    5px,
-    2px,
-    $secondary_main,
-    $secondary_light );
-  @include style(null, $neutral_lighter);
-  @include boxSize(width, 225px, null, 225px);
-  @include boxSize(height, 125px, null, 150px);
-
-  overflow: hidden;
-
-  img {
-    @include mainBox(column, center, center);
   }
 }
 

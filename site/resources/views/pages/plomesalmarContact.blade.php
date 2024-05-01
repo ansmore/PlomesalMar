@@ -3,8 +3,6 @@
 @section('title', 'Plomes al mar Contact')
 @section('content')
 
-    @include('components.navigationHome')
-
     <main class="plomesalmarContact">
         <!-- Plomes al mar Contact Section -->
         <section id="logo" class="row">
@@ -64,7 +62,7 @@
             </article>
         </section>
     </main>
-
+    @include('components.footer')
 @endsection
 
 @push('scripts')
