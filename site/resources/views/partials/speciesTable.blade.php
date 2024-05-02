@@ -33,62 +33,27 @@
                     <td>{{ $specie->scientific_name }}</td>
                     <td class="icon-center">
                         <button type="button" class="buttonTable__success" data-bs-toggle="modal"
-                            data-bs-target="#editSpecies{{ $specie->id }}" title="Editar">
+                            data-bs-target="editSpeciesModal" title="Editar" data-id="{{ $specie->id }}"
+                            data-common-name="{{ $specie->common_name }}"
+                            data-scientific-name="{{ $specie->scientific_name }}">
                             <i class="fas fa-pencil"></i>
                         </button>
                         <button type="button" class="buttonTable__danger" data-bs-toggle="modal"
-                            data-bs-target="#deleteSpecies{{ $specie->id }}" title="Eliminar">
+                            data-bs-target="deleteSpeciesModal" title="Eliminar" data-id="{{ $specie->id }}"
+                            data-common-name="{{ $specie->common_name }}"
+                            data-scientific-name="{{ $specie->scientific_name }}">
                             <i class="fas fa-trash-can"></i>
                         </button>
                     </td>
                 </tr>
-                @include('modals/species.edit')
-                @include('modals/species.delete')
             @endforeach
         </tbody>
+        @include('modals/species.edit')
+        @include('modals/species.delete')
     </table>
 </div>
+
 <nav aria-label="Page navigation example" class="pagination__box">
-    {{-- Aquest canvi?  --}}
-    {{-- <ul class="pagination">
-        <!-- Botón Anterior -->
-        @if ($species->onFirstPage())
-            <li class="page-item disabled">
-                <span class="page-link">
-                    <i class="fa-solid fa-arrow-left"></i>
-                </span>
-            </li>
-        @else
-            <li class="page-item">
-                <a class="page-link" href="{{ $species->previousPageUrl() }}" rel="prev">
-                    <i class="fa-solid fa-arrow-left"></i>
-                </a>
-            </li>
-        @endif
-
-        <!-- Números de Página -->
-        @foreach ($species->getUrlRange(1, $species->lastPage()) as $page => $url)
-            <li class="page-item {{ $species->currentPage() == $page ? 'active' : '' }}">
-                <a class="page-link" href="{{ $url }}">{{ $page }}</a>
-            </li>
-        @endforeach
-
-        <!-- Botón Siguiente -->
-        @if ($species->hasMorePages())
-            <li class="page-item">
-                <a class="page-link" href="{{ $species->nextPageUrl() }}" rel="next">
-                    <i class="fa-solid fa-arrow-right"></i>
-                </a>
-            </li>
-        @else
-            <li class="page-item disabled">
-                <span class="page-link">
-                    <i class="fa-solid fa-arrow-right"></i>
-                </span>
-            </li>
-        @endif
-    </ul> --}}
-
     <ul class="pagination">
         <li class="page-item {{ $species->onFirstPage() ? 'disabled' : '' }}">
             <a class="page-link" href="{{ $species->previousPageUrl() }}">Back</a>
@@ -123,8 +88,3 @@
         </li>
     </ul>
 </nav>
-
-{{--
-@push('scripts')
-    <script type="module" src="{{ asset('js/partials/table.js') }}" defer></script>
-@endpush --}}
