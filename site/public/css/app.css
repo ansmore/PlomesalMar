@@ -216,61 +216,6 @@ button {
   text-align: left;
 }
 
-.title, .termsAndPolicy .row .box__title, .management .row .box__title, .plomesalmarContact .row .box__title, .home .row--reverse .box__title, .home .row .box__title, .auth .row .box__title {
-  color: #0065AE;
-  background-color: transparent;
-  line-height: 2;
-  font-size: 2em;
-  font-weight: bold;
-  align-self: center;
-  text-align: center;
-}
-
-.subtitle, .termsAndPolicy .row .box__subtitle, .modal__box .body__subtitle {
-  color: #9d9d9c;
-  background-color: transparent;
-  line-height: 1.5;
-  font-size: 1.5em;
-  font-weight: bold;
-  align-self: center;
-}
-
-.secondary, .termsAndPolicy .row .box__subtitle__secondary, .card .table__title {
-  color: #9d9d9c;
-  background-color: transparent;
-  margin-top: 0.5rem;
-  line-height: 1.2;
-  font-size: 1.2em;
-  font-weight: lighter;
-  align-self: flex-start;
-}
-
-.tertiary {
-  margin-top: 0.25rem;
-  line-height: 1.2;
-  font-size: 0.9em;
-  font-weight: light;
-  align-self: flex-start;
-}
-
-.name, .termsAndPolicy .row .box__name, .home .row .box__name {
-  color: #9d9d9c;
-  background-color: transparent;
-}
-
-.content, .termsAndPolicy .row .box__content, .plomesalmarContact .row .form__group__consent__content, .plomesalmarContact .row .form__group__content, .home .row--reverse .box__content, .home .row .box__content, .auth .row .form__group__consent__content, .auth .row .form__group__content, .modal__box .body__content {
-  color: #0065AE;
-  background-color: transparent;
-  text-align: center;
-  align-self: center;
-  hyphens: auto;
-}
-
-.company {
-  color: #9d9d9c;
-  background-color: transparent;
-}
-
 .image, .termsAndPolicy .row .box__image, .home .row--reverse .box__image, .home .row .box__image, .footer .row .box__image {
   display: flex;
   flex-direction: column;
@@ -365,6 +310,61 @@ button {
   align-self: center;
   padding: 0;
   margin: 0.25rem auto;
+}
+
+.title, .termsAndPolicy .row .box__title, .management .row .box__title, .plomesalmarContact .row .box__title, .home .row--reverse .box__title, .home .row .box__title, .auth .row .box__title {
+  color: #0065AE;
+  background-color: transparent;
+  line-height: 2;
+  font-size: 2em;
+  font-weight: bold;
+  align-self: center;
+  text-align: center;
+}
+
+.subtitle, .termsAndPolicy .row .box__subtitle, .modal__box .body__subtitle {
+  color: #9d9d9c;
+  background-color: transparent;
+  line-height: 1.5;
+  font-size: 1.5em;
+  font-weight: bold;
+  align-self: center;
+}
+
+.secondary, .termsAndPolicy .row .box__subtitle__secondary, .card .table__title {
+  color: #9d9d9c;
+  background-color: transparent;
+  margin-top: 0.5rem;
+  line-height: 1.2;
+  font-size: 1.2em;
+  font-weight: lighter;
+  align-self: flex-start;
+}
+
+.tertiary {
+  margin-top: 0.25rem;
+  line-height: 1.2;
+  font-size: 0.9em;
+  font-weight: light;
+  align-self: flex-start;
+}
+
+.name, .termsAndPolicy .row .box__name, .home .row .box__name {
+  color: #9d9d9c;
+  background-color: transparent;
+}
+
+.content, .termsAndPolicy .row .box__content, .plomesalmarContact .row .form__group__consent__content, .plomesalmarContact .row .form__group__content, .home .row--reverse .box__content, .home .row .box__content, .auth .row .form__group__consent__content, .auth .row .form__group__content, .modal__box .body__content {
+  color: #0065AE;
+  background-color: transparent;
+  text-align: center;
+  align-self: center;
+  hyphens: auto;
+}
+
+.company {
+  color: #9d9d9c;
+  background-color: transparent;
 }
 
 .modal, .auth {
@@ -619,7 +619,7 @@ button {
   justify-content: flex-end;
 }
 
-.modal-wrapper {
+.modal-delete {
   display: none;
   position: fixed;
   top: 0;
@@ -631,10 +631,10 @@ button {
   z-index: 1050;
   background-color: rgba(0, 0, 0, 0.5);
 }
-.modal-wrapper.fade {
+.modal-delete.fade {
   transition: opacity 0.3s linear;
 }
-.modal-wrapper .modal-center {
+.modal-delete .modal-center {
   position: relative;
   top: 50%;
   transform: translateY(-50%);
@@ -642,7 +642,7 @@ button {
   margin: 0.5rem;
   pointer-events: none;
 }
-.modal-wrapper .modal-center .modal-box {
+.modal-delete .modal-center .modal-box {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -654,7 +654,7 @@ button {
   border-radius: 0.3rem;
   outline: 0;
 }
-.modal-wrapper .modal-center .modal-top {
+.modal-delete .modal-center .modal-top {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -663,7 +663,7 @@ button {
   background-color: #dc3545;
   color: #fff;
 }
-.modal-wrapper .modal-center .modal-top .button-close {
+.modal-delete .modal-center .modal-top .button-close {
   padding: 1rem;
   margin: -1rem -1rem -1rem auto;
   background: none;
@@ -674,22 +674,22 @@ button {
   opacity: 0.5;
   cursor: pointer;
 }
-.modal-wrapper .modal-center .modal-top .button-close:hover {
+.modal-delete .modal-center .modal-top .button-close:hover {
   opacity: 0.75;
 }
-.modal-wrapper .modal-center .modal-body {
+.modal-delete .modal-center .modal-body {
   position: relative;
   flex: 1 1 auto;
   padding: 1rem;
 }
-.modal-wrapper .modal-center .modal-bottom {
+.modal-delete .modal-center .modal-bottom {
   display: flex;
   align-items: center;
   justify-content: flex-end;
   padding: 1rem;
   border-top: 1px solid #dee2e6;
 }
-.modal-wrapper .modal-center .modal-bottom .button-secondary, .modal-wrapper .modal-center .modal-bottom .button-danger {
+.modal-delete .modal-center .modal-bottom .button-secondary, .modal-delete .modal-center .modal-bottom .button-danger {
   padding: 0.375rem 0.75rem;
   font-size: 1rem;
   line-height: 1.5;
@@ -700,12 +700,12 @@ button {
   user-select: none;
   border: 1px solid transparent;
 }
-.modal-wrapper .modal-center .modal-bottom .button-secondary {
+.modal-delete .modal-center .modal-bottom .button-secondary {
   color: #6c757d;
   background-color: #fff;
   border-color: #6c757d;
 }
-.modal-wrapper .modal-center .modal-bottom .button-danger {
+.modal-delete .modal-center .modal-bottom .button-danger {
   color: #fff;
   background-color: #dc3545;
   border-color: #dc3545;

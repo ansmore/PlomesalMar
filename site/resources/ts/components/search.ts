@@ -1,3 +1,6 @@
+import { setupModalEventListeners } from '../modals/species/editDeleteModal';
+
+
 document.addEventListener("DOMContentLoaded", () => {
   const filtro: HTMLInputElement | null = document.getElementById('filtro') as HTMLInputElement;
   let debounceTimeout: number;
@@ -19,12 +22,14 @@ document.addEventListener("DOMContentLoaded", () => {
           const currentTbody = document.querySelector('#table-container table tbody');
           if (newTbody && currentTbody) {
               currentTbody.innerHTML = newTbody.innerHTML;
+              setupModalEventListeners();
           }
 
           const newPagination = tempDiv.querySelector('.pagination__box');
           const currentPagination = document.querySelector('.pagination__box');
           if (newPagination && currentPagination) {
               currentPagination.innerHTML = newPagination.innerHTML;
+              setupModalEventListeners();
           }
 
           bindPaginationLinks();

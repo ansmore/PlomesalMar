@@ -17,7 +17,7 @@
             </article>
             <article class="box__search">
                 @include('components.search')
-                <button type="button" class="button" data-bs-toggle="modal" data-bs-target="#createSpecies">
+                <button type="button" class="button" data-bs-toggle="modal" data-bs-target="createSpecies">
                     <i class="fas fa-plus-circle"></i>
                     <span data-text="addButton"></span>
                 </button>
@@ -39,5 +39,5 @@
 @push('scripts')
     <script type="module" src="{{ asset('js/pages/management.js') }}" defer></script>
     <script type="module" src="{{ asset('js/partials/table.js') }}" defer></script>
-    <script type="module" src="{{ asset('js/helpers/pagination.js') }}" defer></script>
+    <script type="module" src="{{ asset('js/modals/species/editDeleteModal.js') }}" defer></script>
 @endpush

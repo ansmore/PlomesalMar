@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Facade;
 
 return [
 
+    'per_page' => env('SPECIES_PER_PAGE', 6),
+
     /*
     |--------------------------------------------------------------------------
     | Available Locales
