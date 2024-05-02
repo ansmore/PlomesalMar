@@ -1,7 +1,7 @@
 import { openModal } from "../helpers/modal.js";
 import { loadTextComponent } from "../helpers/dictionary.js";
 
-const component = "home";
+const component = "aside";
 const modalTitle = document.getElementById("modalTitle");
 const teamTitle = document.getElementById("teamTitle");
 const modalTitle2 = document.getElementById("modalTitle2");
@@ -23,11 +23,11 @@ const loadImage = async (url: string): Promise<void> => {
 
 const firstModal = () => {
 	console.log("1");
-	modalTitle?.setAttribute("data-text", "team1");
-	modalPosition?.setAttribute("data-text", "team1position");
-	modalContent?.setAttribute("data-text", "12");
-	// team1description
-	imageUrl = "../../img/logos/logo_biit.png";
+	// modalTitle?.setAttribute("data-text", "team1");
+	// modalPosition?.setAttribute("data-text", "team1position");
+	// modalContent?.setAttribute("data-text", "12");
+	// // team1description
+	// imageUrl = "../../img/logos/logo_biit.png";
 };
 
 const secondModal = () => {
