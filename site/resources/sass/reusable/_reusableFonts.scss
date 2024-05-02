@@ -1,0 +1,52 @@
+.title {
+  @include style($primary_main);
+  line-height: 2;
+  font-size: $size_bigger;
+  font-weight: bold;
+
+  align-self: center;
+  text-align: center;
+}
+
+.subtitle {
+  @include style($secondary_main);
+  line-height: 1.5;
+  font-size: $size_big;
+  font-weight: bold;
+  align-self: center;
+
+}
+
+.secondary {
+  @include style($secondary_main);
+  margin-top: calc($margin * 2);
+  line-height: 1.2;
+  font-size: $size_medium;
+  font-weight: lighter;
+  align-self: flex-start;
+}
+
+.tertiary {
+  margin-top: $margin;
+  line-height: 1.2;
+  font-size: $size_smaller;
+  font-weight: light;
+  align-self: flex-start;
+}
+
+.name {
+  @include style($secondary_main);
+}
+
+.content {
+  @include style($primary_main);
+
+  text-align: center;
+  align-self: center;
+
+  hyphens: auto;
+}
+
+.company {
+  @include style($secondary_main);
+}
