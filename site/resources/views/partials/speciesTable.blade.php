@@ -48,11 +48,17 @@
         <!-- Botón Anterior -->
         @if ($species->onFirstPage())
             <li class="page-item disabled">
-                <span class="page-link" data-text="back"></span>
+                <span class="page-link">
+                    <i class="fa-solid fa-arrow-left" rel="prev"></i>
+                    <span data-text="back" rel="prev"></span>
+                </span>
             </li>
         @else
             <li class="page-item">
-                <a class="page-link" href="{{ $species->previousPageUrl() }}" data-text="back" rel="prev"></a>
+                <a class="page-link" href="{{ $species->previousPageUrl() }}">
+                    <span data-text="back" rel="prev"></span>
+                    <i class="fa-solid fa-arrow-left" rel="prev"></i>
+                </a>
             </li>
         @endif
 
@@ -66,11 +72,15 @@
         <!-- Botón Siguiente -->
         @if ($species->hasMorePages())
             <li class="page-item">
-                <a class="page-link" href="{{ $species->nextPageUrl() }}" data-text="next" rel="next"></a>
+                <a class="page-link" href="{{ $species->nextPageUrl() }}">
+                    <span data-text="next" rel="next"></span>
+                    <i class=" fa-solid fa-arrow-right" rel="next"></i>
+                </a>
             </li>
         @else
             <li class="page-item disabled">
                 <span class="page-link" data-text="next"></span>
+                <i class="fa-solid fa-arrow-right"></i>
             </li>
         @endif
     </ul>

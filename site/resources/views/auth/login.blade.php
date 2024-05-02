@@ -3,7 +3,6 @@
 @section('title', 'Login')
 @section('content')
 
-    {{-- @include('components.navigationHome') --}}
     <main class="auth">
         <section id="contact" class="row">
             <article class="form">
