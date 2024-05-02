@@ -4,10 +4,9 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-
 use App\Models\ImageObservation;
-use App\Models\Image;
 use App\Models\Observation;
+use App\Models\User;
 
 class ImageObservationSeeder extends Seeder
 {
@@ -16,24 +15,24 @@ class ImageObservationSeeder extends Seeder
      */
     public function run(): void
     {
-		/**
-         *
-         */
-        $image = Image::find(1);
-        $observation = Observation::find(5);
+        // Crear registros específicos si necesitas datos iniciales específicos
+        $observation1 = Observation::find(5) ?? Observation::factory()->create();
+        $user1 = User::find(1) ?? User::factory()->create();
         ImageObservation::factory()->create([
-            'observation_id' => $observation->id,
-            'image_id' => $image->id,
+            'observation_id' => $observation1->id,
+            'user_id' => $user1->id,
+            'photography_number' => 1010
         ]);
-		/**
-         *
-         */
-        $image = Image::find(2);
-        $observation = Observation::find(3);
+
+        $observation2 = Observation::find(3) ?? Observation::factory()->create();
+        $user2 = User::find(2) ?? User::factory()->create();
         ImageObservation::factory()->create([
-            'observation_id' => $observation->id,
-            'image_id' => $image->id,
+            'observation_id' => $observation2->id,
+            'user_id' => $user2->id,
+            'photography_number' => 1020
         ]);
+
+        // Crear registros adicionales de forma aleatoria
         ImageObservation::factory()->count(5)->create();
     }
 }

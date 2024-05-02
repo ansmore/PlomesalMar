@@ -23,7 +23,6 @@ class DatabaseSeeder extends Seeder
     	$this->call(DepartureSeeder::class);
     	$this->call(ObservationSeeder::class);
     	$this->call(DepartureUserObservationSeeder::class);
-		$this->call(ImageSeeder::class);
 		$this->call(ImageObservationSeeder::class);
     }
 }

@@ -2,18 +2,18 @@
 
 namespace App\Http\Controllers\V1;
 
-use App\Models\Image;
 use Illuminate\Http\Request;
+use App\Models\ImageObservation;
 use App\Http\Controllers\Controller;
 
-class ImagesController extends Controller
+class ImageObservationController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $images = Image::all();
+        $images = ImageObservation::all();
         return response()->json($images);
     }
 
@@ -30,7 +30,7 @@ class ImagesController extends Controller
      */
     public function show(string $id)
     {
-        $image = Image::findorFail($id);
+        $image = ImageObservation::findOrFail($id);
         return response()->json($image);
     }
 

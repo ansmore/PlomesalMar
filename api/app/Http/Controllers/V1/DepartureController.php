@@ -5,6 +5,7 @@ namespace App\Http\Controllers\V1;
 use App\Models\Departure;
 use App\Models\Observation;
 use Illuminate\Http\Request;
+use App\Models\ImageObservation;
 use App\Http\Controllers\Controller;
 use App\Models\DepartureUserObservation;
 
@@ -42,6 +43,7 @@ class DepartureController extends Controller
             'observations.*.notes' => 'nullable|string',
             'observations.*.images' => 'nullable|array',
             'observations.*.images.*.photography_number' => 'required|integer',
+            'observations.*.images.*.user_id' => 'required|exists:users,id'
         ]);
 
         DB::beginTransaction();
@@ -53,31 +55,22 @@ class DepartureController extends Controller
                 $imagesData = $observationData['images'] ?? [];
                 unset($observationData['images']);
 
-                $observation = Observation::create($observationData);
+                $observation = Observation::create($observationData + ['departure_id' => $departure->id]);
                 $observation->save();
 
                 foreach ($imagesData as $imageData) {
-                    $image = new Image($imageData);
-                    $image->save();
-                    $observation->images()->attach($image->id);
-                }
-
-                foreach ($request->users as $userId) {
-                    $isObserver = in_array($userId, $request->observers);
-                    DepartureUserObservation::create([
-                        'departure_id' => $departure->id,
-                        'user_id' => $userId,
+                    ImageObservation::create([
                         'observation_id' => $observation->id,
-                        'is_observer' => $isObserver
+                        'photography_number' => $imageData['photography_number'],
+                        'user_id' => $imageData['user_id']
                     ]);
                 }
             }
 
             DB::commit();
+            return response()->json($departure, 201);
 
-            return response()->json($departure->load('observations.images'), 201);
-
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             DB::rollBack();
             return response()->json(['error' => $e->getMessage()], 500);
         }

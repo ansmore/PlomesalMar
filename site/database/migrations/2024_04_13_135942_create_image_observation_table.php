@@ -11,25 +11,20 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('image_observation', function (Blueprint $table) {
-           	$table->unsignedBigInteger('image_id');
+        Schema::create('observation_image', function (Blueprint $table) {
+            $table->id();
             $table->unsignedBigInteger('observation_id');
+            $table->unsignedBigInteger('user_id');
+            $table->integer('photography_number');
 
             $table->timestamps();
 
-			$table->foreign('image_id')
-				->references('id')
-				->on('images')
-				->onUpdate('cascade')
-				->onDelete('cascade');
+            $table->foreign('observation_id')->references('id')->on('observations')
+                  ->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')
+                  ->onUpdate('cascade')->onDelete('cascade');
 
-			$table->foreign('observation_id')
-				->references('id')
-				->on('observations')
-				->onUpdate('cascade')
-				->onDelete('cascade');
-
-			$table->primary(['image_id', 'observation_id']);
+                  $table->unique(['photography_number', 'observation_id', 'user_id'], 'obs_img_unique');
         });
     }
 
@@ -38,10 +33,11 @@ return new class extends Migration
      */
     public function down(): void
     {
-		Schema::table('image_observation', function(Blueprint $table){
-            $table->dropForeign('image_observation_image_id_foreign');
-            $table->dropForeign('image_observation_observation_id_foreign');
+		Schema::table('observation_image', function(Blueprint $table){
+            $table->dropForeign(['observation_id']);
+            $table->dropForeign(['user_id']);
+            $table->dropUnique('obs_img_unique');
         });
-        Schema::dropIfExists('image_observation');
+        Schema::dropIfExists('observation_image');
     }
 };

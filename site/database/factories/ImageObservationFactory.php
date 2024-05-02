@@ -3,12 +3,11 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-
-use App\Models\Image;
 use App\Models\Observation;
+use App\Models\User;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\ImageObservation>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\ObservationImage>
  */
 class ImageObservationFactory extends Factory
 {
@@ -19,23 +18,15 @@ class ImageObservationFactory extends Factory
      */
     public function definition(): array
     {
-		$existingImages = Image::all();
-		$existingObservations = Observation::all();
-
-		if ( $existingImages->isEmpty()) {
-            $existingImages = Image::factory()->create();
-        }
-
-        if ($existingObservations->isEmpty() ) {
-            $existingObservations = Observation::factory()->create();
-        }
-
-		$selectedImage = $existingImages->random();
-		$selectedObservation = $existingObservations->random();
+        $observation = Observation::query()->inRandomOrder()->first() ?? Observation::factory()->create();
+        $user = User::query()->inRandomOrder()->first() ?? User::factory()->create();
+        
+        $photography_number = $this->faker->unique()->numberBetween(1000, 9999);
 
         return [
-            'image_id' => $selectedImage->id,
-			'observation_id' => $selectedObservation->id,
+            'observation_id' => $observation->id,
+            'user_id' => $user->id,
+            'photography_number' => $photography_number
         ];
     }
 }

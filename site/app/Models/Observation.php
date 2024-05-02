@@ -23,7 +23,7 @@ class Observation extends Model
         return $this->belongsTo(Species::class);
     }
     
-	public function images(){
-        return $this->belongsToMany(Image::class);
+    public function observationImages(){
+        return $this->hasMany(ObservationImage::class);
     }
 }
