@@ -8,12 +8,12 @@
 	"asideTransect": "Transecto",
 	"asideImage": "Imagen",
 
-	"departureList": "Lista de Salidas",
-	"observationList": "Lista de Observaciones",
-	"specieList": "Lista de Especies",
-	"boatList": "Lista de Barcos",
-	"transectList": "Lista de Transectos",
-	"imageList": "Lista de Imagenes",
+	"departureList": "Lista de salidas",
+	"observationList": "Lista de observaciones",
+	"specieList": "Lista de especies",
+	"boatList": "Lista de barcos",
+	"transectList": "Lista de transectos",
+	"imageList": "Lista de imagenes",
 
 	"back": "Anterior",
 	"next": "Siguiente"

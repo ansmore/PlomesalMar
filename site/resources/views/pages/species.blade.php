@@ -21,16 +21,23 @@
                     <i class="fas fa-plus-circle"></i>
                     <span data-text="addButton"></span>
                 </button>
+                <button type="button" class="button modal-button" data-modal-id="firstModal">
+                    <i class="fas fa-plus-circle"></i>
+                </button>
             </article>
             <article class="box__table">
                 @include('partials.speciesTable', ['species' => $species])
             </article>
         </section>
         @include('modals.species.create')
+        {{-- @include('modals.modalLogin')
+        @include('modals.modalTeam') --}}
+        @include('modals.modalSpecieCreate')
     </main>
 @endsection
 
 @push('scripts')
+    <script type="module" src="{{ asset('js/pages/management.js') }}" defer></script>
     <script type="module" src="{{ asset('js/partials/table.js') }}" defer></script>
     <script type="module" src="{{ asset('js/helpers/pagination.js') }}" defer></script>
 @endpush

@@ -39,60 +39,6 @@
   // border: 1px solid darkgreen;
 }
 
-.title {
-  @include style($primary_main);
-  line-height: 2;
-  font-size: $size_bigger;
-  font-weight: bold;
-
-  align-self: center;
-  text-align: center;
-}
-
-.subtitle {
-  @include style($secondary_main);
-  line-height: 1.5;
-  font-size: $size_big;
-  font-weight: bold;
-  align-self: center;
-
-}
-
-.secondary {
-  @include style($secondary_main);
-  margin-top: calc($margin * 2);
-  line-height: 1.2;
-  font-size: $size_medium;
-  font-weight: lighter;
-  align-self: flex-start;
-}
-
-.tertiary {
-  // @include style($primary_main);
-  margin-top: $margin;
-  line-height: 1.2;
-  font-size: $size_smaller;
-  font-weight: light;
-  align-self: flex-start;
-}
-
-.name {
-  @include style($secondary_main);
-}
-
-.content {
-  @include style($primary_main);
-
-  text-align: center;
-  align-self: center;
-
-  hyphens: auto;
-}
-
-.company {
-  @include style($secondary_main);
-}
-
 .image {
   @include mainBox(column);
   @include boxSize(width, 50vw, null, 50vw);
@@ -151,32 +97,4 @@
 
 .form {
   @extend .article;
-}
-
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 3;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba($neutral_main, 0.5);
-  justify-content: center;
-  align-items: center;
-}
-
-.modalBox {
-  position: relative;
-  background: $neutral_lighter;
-  top: 10vh;
-  left: 10vw;
-  @include mainBox(column, center, center);
-  @include boxSize(width, 80vw, null, 80vw);
-  @include boxSize(height, 80vh, null, 80vh);
-  border-radius: $radius;
-  @include hover($neutral_lighter,
-    inherit,
-    $secondary_main,
-    transparent);
 }

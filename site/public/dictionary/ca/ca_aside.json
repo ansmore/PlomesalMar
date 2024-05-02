@@ -8,12 +8,12 @@
 	"asideTransect": "Transecte",
 	"asideImage": "Imatge",
 
-	"departureList": "Llista de  Sortides",
-	"observationList": "Llista de  Observacions",
-	"specieList": "Llista de  Espècies",
-	"boatList": "Llista de  Vaixells",
-	"transectList": "Llista de  Transectes",
-	"imageList": "Llista de  Imatges",
+	"departureList": "Llista de sortides",
+	"observationList": "Llista d'observacions",
+	"specieList": "Llista d'espècies",
+	"boatList": "Llista de vaixells",
+	"transectList": "Llista de transectes",
+	"imageList": "Llista d'imatges",
 
 	"back": "Anterior",
 	"next": "Següent"
