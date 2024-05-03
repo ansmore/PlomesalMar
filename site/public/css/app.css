@@ -189,7 +189,7 @@ button {
   margin: 0.25rem;
 }
 
-.article, .termsAndPolicy .row .box__logo, .termsAndPolicy .row .box, .management .row .box__table, .management .row .box__search, .management .row .box, .plomesalmarContact .row .box__logo, .plomesalmarContact .row .box, .home .row--reverse .box, .home .row .box__circle, .home .row .box__row, .home .row .box, .footer .row .box__row, .footer .row .box, .modal__box .body, .form, .plomesalmarContact .row .form, .auth .row .form {
+.article, .termsAndPolicy .row .box__logo, .termsAndPolicy .row .box, .management .row .box__table, .management .row .box__search, .management .row .box, .plomesalmarContact .row .box__logo, .plomesalmarContact .row .box, .home .row--reverse .box, .home .row .box__circle, .home .row .box__row, .home .row .box, .footer .row .box__row, .footer .row .box, .form, .plomesalmarContact .row .form, .auth .row .form {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -209,10 +209,10 @@ button {
   text-align: center;
   overflow: hidden;
 }
-.article p, .termsAndPolicy .row .box__logo p, .termsAndPolicy .row .box p, .management .row .box__table p, .management .row .box__search p, .management .row .box p, .plomesalmarContact .row .box__logo p, .plomesalmarContact .row .box p, .home .row--reverse .box p, .home .row .box__circle p, .home .row .box__row p, .home .row .box p, .footer .row .box__row p, .footer .row .box p, .modal__box .body p, .form p, .plomesalmarContact .row .form p, .auth .row .form p {
+.article p, .termsAndPolicy .row .box__logo p, .termsAndPolicy .row .box p, .management .row .box__table p, .management .row .box__search p, .management .row .box p, .plomesalmarContact .row .box__logo p, .plomesalmarContact .row .box p, .home .row--reverse .box p, .home .row .box__circle p, .home .row .box__row p, .home .row .box p, .footer .row .box__row p, .footer .row .box p, .form p, .plomesalmarContact .row .form p, .auth .row .form p {
   text-align: left;
 }
-.article p span, .termsAndPolicy .row .box__logo p span, .termsAndPolicy .row .box p span, .management .row .box__table p span, .management .row .box__search p span, .management .row .box p span, .plomesalmarContact .row .box__logo p span, .plomesalmarContact .row .box p span, .home .row--reverse .box p span, .home .row .box__circle p span, .home .row .box__row p span, .home .row .box p span, .footer .row .box__row p span, .footer .row .box p span, .modal__box .body p span, .form p span, .plomesalmarContact .row .form p span, .auth .row .form p span {
+.article p span, .termsAndPolicy .row .box__logo p span, .termsAndPolicy .row .box p span, .management .row .box__table p span, .management .row .box__search p span, .management .row .box p span, .plomesalmarContact .row .box__logo p span, .plomesalmarContact .row .box p span, .home .row--reverse .box p span, .home .row .box__circle p span, .home .row .box__row p span, .home .row .box p span, .footer .row .box__row p span, .footer .row .box p span, .form p span, .plomesalmarContact .row .form p span, .auth .row .form p span {
   text-align: left;
 }
 
@@ -322,7 +322,7 @@ button {
   text-align: center;
 }
 
-.subtitle, .termsAndPolicy .row .box__subtitle, .modal__box .body__subtitle {
+.subtitle, .termsAndPolicy .row .box__subtitle {
   color: #9d9d9c;
   background-color: transparent;
   line-height: 1.5;
@@ -354,7 +354,7 @@ button {
   background-color: transparent;
 }
 
-.content, .termsAndPolicy .row .box__content, .plomesalmarContact .row .form__group__consent__content, .plomesalmarContact .row .form__group__content, .home .row--reverse .box__content, .home .row .box__content, .auth .row .form__group__consent__content, .auth .row .form__group__content, .modal__box .body__content {
+.content, .termsAndPolicy .row .box__content, .plomesalmarContact .row .form__group__consent__content, .plomesalmarContact .row .form__group__content, .home .row--reverse .box__content, .home .row .box__content, .auth .row .form__group__consent__content, .auth .row .form__group__content {
   color: #0065AE;
   background-color: transparent;
   text-align: center;
@@ -380,7 +380,7 @@ button {
   align-items: center;
 }
 
-.modalBox, .auth .row, .modal__box {
+.modalBox, .auth .row {
   position: relative;
   background: #fafafa;
   top: 10vh;
@@ -400,13 +400,13 @@ button {
   border-radius: 0.25rem;
   border: 1px solid transparent;
 }
-.modalBox:hover, .auth .row:hover, .modal__box:hover {
+.modalBox:hover, .auth .row:hover {
   color: inherit;
   background-color: #fafafa;
   border: 1px solid #9d9d9c;
 }
 
-.button, .termsAndPolicy .row .box__button, .plomesalmarContact .row .form__group__button, .home .row--reverse .box__button, .home .row .box__button, .auth .row .form__group__button, .modal__box .body__button {
+.button, .termsAndPolicy .row .box__button, .plomesalmarContact .row .form__group__button, .home .row--reverse .box__button, .home .row .box__button, .auth .row .form__group__button {
   color: #fafafa;
   background-color: #0065AE;
   padding: 0.25rem;
@@ -417,7 +417,7 @@ button {
   border-radius: 0.25rem;
   border: 1px solid transparent;
 }
-.button:hover, .termsAndPolicy .row .box__button:hover, .plomesalmarContact .row .form__group__button:hover, .home .row--reverse .box__button:hover, .home .row .box__button:hover, .auth .row .form__group__button:hover, .modal__box .body__button:hover {
+.button:hover, .termsAndPolicy .row .box__button:hover, .plomesalmarContact .row .form__group__button:hover, .home .row--reverse .box__button:hover, .home .row .box__button:hover, .auth .row .form__group__button:hover {
   color: #fafafa;
   background-color: #0079D0;
   border: 1px solid #fafafa;
@@ -524,191 +524,51 @@ button {
   margin-top: 1rem;
 }
 
-.modal__box .body {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  justify-items: center;
-  justify-self: center;
-  align-content: center;
-  align-items: flex-start;
-  align-self: center;
-  min-width: 75vw;
-  max-width: 75vw;
-  min-height: 75vh;
-  max-height: 75vh;
-}
-.modal__box .body__photo {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  justify-items: center;
-  justify-self: center;
-  align-content: center;
-  align-items: center;
-  align-self: center;
-  min-width: 255px;
-  max-width: 255px;
-  min-height: 255px;
-  max-height: 255px;
-  border: 2px dotted #9d9d9c;
-}
-.modal__box .close {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  justify-items: center;
-  justify-self: center;
-  align-content: center;
-  align-items: center;
-  align-self: center;
-  color: #ee0000;
-  background-color: #ffeded;
-  border: 1px solid #ee0000;
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 50px;
-  height: 50px;
-  text-align: center;
-  font-size: 50px;
-  cursor: pointer;
-}
-.modal__box .close:hover {
-  color: #ffeded;
-  background-color: #ff6666;
-  border: 1px solid #990000;
-}
-
-@media screen and (min-width: 1025px) {
-  .modal__box .body__subtitle {
-    font-size: 2em;
-  }
-  .modal__box .body__content {
-    font-size: 1em;
-  }
-}
-.modalcreate {
-  display: none;
-  position: fixed;
-  z-index: 1050;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  align-items: center;
-  justify-content: center;
-}
-.modalcreate .modal-content {
-  background: white;
-  border-radius: 5px;
-  width: 50%;
-  padding: 20px;
-  margin: auto;
-}
-.modalcreate .modal-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  color: white;
-  background-color: #004F71;
-}
-.modalcreate .modal-footer {
-  display: flex;
-  justify-content: flex-end;
-}
-
-.modal-delete {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  outline: 0;
-  z-index: 1050;
-  background-color: rgba(0, 0, 0, 0.5);
-}
-.modal-delete.fade {
-  transition: opacity 0.3s linear;
-}
-.modal-delete .modal-center {
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
-  width: auto;
-  margin: 0.5rem;
-  pointer-events: none;
-}
-.modal-delete .modal-center .modal-box {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  pointer-events: auto;
-  background-color: #fff;
-  background-clip: padding-box;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  border-radius: 0.3rem;
-  outline: 0;
-}
-.modal-delete .modal-center .modal-top {
+.modal-common .modal-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem;
+  padding: 1rem 1rem;
   border-bottom: 1px solid #dee2e6;
-  background-color: #dc3545;
-  color: #fff;
+  background-color: inherit;
+  border-top-left-radius: calc(0.3rem - 1px);
+  border-top-right-radius: calc(0.3rem - 1px);
 }
-.modal-delete .modal-center .modal-top .button-close {
-  padding: 1rem;
+.modal-common .modal-header .modal-title {
+  margin-bottom: 0;
+  line-height: 1.5;
+}
+.modal-common .modal-header .btn-close {
+  padding: 0.25rem 0.5rem;
   margin: -1rem -1rem -1rem auto;
-  background: none;
-  border: none;
-  color: inherit;
-  font-size: 1.5rem;
-  font-weight: 700;
-  opacity: 0.5;
-  cursor: pointer;
 }
-.modal-delete .modal-center .modal-top .button-close:hover {
-  opacity: 0.75;
-}
-.modal-delete .modal-center .modal-body {
+.modal-common .modal-body {
   position: relative;
   flex: 1 1 auto;
   padding: 1rem;
 }
-.modal-delete .modal-center .modal-bottom {
+.modal-common .modal-footer {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: flex-end;
-  padding: 1rem;
+  padding: 0.75rem;
   border-top: 1px solid #dee2e6;
 }
-.modal-delete .modal-center .modal-bottom .button-secondary, .modal-delete .modal-center .modal-bottom .button-danger {
-  padding: 0.375rem 0.75rem;
-  font-size: 1rem;
-  line-height: 1.5;
-  border-radius: 0.25rem;
-  cursor: pointer;
-  text-align: center;
-  vertical-align: middle;
-  user-select: none;
-  border: 1px solid transparent;
+.modal-common .modal-footer .btn {
+  margin-left: 0.25rem;
 }
-.modal-delete .modal-center .modal-bottom .button-secondary {
-  color: #6c757d;
-  background-color: #fff;
-  border-color: #6c757d;
+.modal-common.modal-create .modal-header {
+  background-color: #0d6efd;
+  color: white;
 }
-.modal-delete .modal-center .modal-bottom .button-danger {
-  color: #fff;
+.modal-common.modal-delete .modal-header {
   background-color: #dc3545;
-  border-color: #dc3545;
+  color: white;
+}
+.modal-common.modal-edit .modal-header {
+  background-color: #17a2b8;
+  color: white;
 }
 
 .card {
