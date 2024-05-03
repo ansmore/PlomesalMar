@@ -83,18 +83,24 @@ class SpecieController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $language, $id)
     {
         Specie::updateFromRequest($request, $id);
-        return redirect()->back();
+        return redirect()->back()->with('language', $language);
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy($id)
+    public function destroy($language, $id)
     {
+        Log::info('ID y lenguaje recibidos en el controlador:', ['id' => $id, 'language' => $language]);
+
+        Session::put('language', $language);
+
         Specie::deleteById($id);
-        return redirect()->back();
+
+        return redirect()->back()->with('language', $language);
     }
+
 }

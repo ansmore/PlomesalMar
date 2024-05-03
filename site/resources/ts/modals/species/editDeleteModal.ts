@@ -75,6 +75,7 @@ const openModal = (modal: HTMLDivElement) => {
 };
 
 const handleEditSpeciesModal = (modal: HTMLDivElement, specieId: string, commonName: string, scientificName: string) => {
+    console.log("Specie ID recibido:", specieId);
     const editForm = modal.querySelector<HTMLFormElement>('form');
     const inputCommonName = modal.querySelector<HTMLInputElement>('#nombreComun');
     const inputScientificName = modal.querySelector<HTMLInputElement>('#nombreCientifico');
@@ -84,13 +85,22 @@ const handleEditSpeciesModal = (modal: HTMLDivElement, specieId: string, commonN
         return;
     }
 
-    editForm.action = `/species/${specieId}?_method=PUT`;
+    const editUrlTemplate = editForm.dataset.editUrlTemplate;
+    if (editUrlTemplate) {
+        editForm.action = editUrlTemplate.replace(':id', specieId.toString());
+    } else {
+        console.error('Falta la plantilla de URL de eliminación en el formulario');
+        return;
+    }
+
+    console.log("URL de eliminación configurada:", editForm.action);
     inputCommonName.value = commonName;
     inputScientificName.value = scientificName;
     openModal(modal);
 };
 
 const handleDeleteSpeciesModal = (modal: HTMLDivElement, specieId: string, commonName: string, scientificName: string) => {
+    console.log("Specie ID recibido:", specieId);
     const deleteForm = modal.querySelector<HTMLFormElement>('form');
     const textCommonName = modal.querySelector<HTMLElement>('#deleteCommonName');
     const textScientificName = modal.querySelector<HTMLElement>('#deleteScientificName');
@@ -100,8 +110,19 @@ const handleDeleteSpeciesModal = (modal: HTMLDivElement, specieId: string, commo
         return;
     }
 
-    deleteForm.action = `/species/${specieId}?_method=DELETE`;
+    const deleteUrlTemplate = deleteForm.dataset.deleteUrlTemplate;
+    if (deleteUrlTemplate) {
+        deleteForm.action = deleteUrlTemplate.replace(':id', specieId.toString());
+    } else {
+        console.error('Falta la plantilla de URL de eliminación en el formulario');
+        return;
+    }
+
+    console.log("URL de eliminación configurada:", deleteForm.action);
+
     textCommonName.textContent = commonName;
     textScientificName.textContent = scientificName;
     openModal(modal);
 };
+
+
