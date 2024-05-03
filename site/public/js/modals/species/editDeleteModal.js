@@ -63,6 +63,7 @@ const openModal = (modal) => {
     }
 };
 const handleEditSpeciesModal = (modal, specieId, commonName, scientificName) => {
+    console.log("Specie ID recibido:", specieId);
     const editForm = modal.querySelector('form');
     const inputCommonName = modal.querySelector('#nombreComun');
     const inputScientificName = modal.querySelector('#nombreCientifico');
@@ -70,12 +71,21 @@ const handleEditSpeciesModal = (modal, specieId, commonName, scientificName) => 
         console.error('Faltan el formulario o campos de entrada en el modal de edición');
         return;
     }
-    editForm.action = `/species/${specieId}?_method=PUT`;
+    const editUrlTemplate = editForm.dataset.editUrlTemplate;
+    if (editUrlTemplate) {
+        editForm.action = editUrlTemplate.replace(':id', specieId.toString());
+    }
+    else {
+        console.error('Falta la plantilla de URL de eliminación en el formulario');
+        return;
+    }
+    console.log("URL de eliminación configurada:", editForm.action);
     inputCommonName.value = commonName;
     inputScientificName.value = scientificName;
     openModal(modal);
 };
 const handleDeleteSpeciesModal = (modal, specieId, commonName, scientificName) => {
+    console.log("Specie ID recibido:", specieId);
     const deleteForm = modal.querySelector('form');
     const textCommonName = modal.querySelector('#deleteCommonName');
     const textScientificName = modal.querySelector('#deleteScientificName');
@@ -83,7 +93,15 @@ const handleDeleteSpeciesModal = (modal, specieId, commonName, scientificName) =
         console.error('Faltan el formulario o campos de texto en el modal de eliminación');
         return;
     }
-    deleteForm.action = `/species/${specieId}?_method=DELETE`;
+    const deleteUrlTemplate = deleteForm.dataset.deleteUrlTemplate;
+    if (deleteUrlTemplate) {
+        deleteForm.action = deleteUrlTemplate.replace(':id', specieId.toString());
+    }
+    else {
+        console.error('Falta la plantilla de URL de eliminación en el formulario');
+        return;
+    }
+    console.log("URL de eliminación configurada:", deleteForm.action);
     textCommonName.textContent = commonName;
     textScientificName.textContent = scientificName;
     openModal(modal);

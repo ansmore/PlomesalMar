@@ -58,19 +58,19 @@ class Specie extends Model
      * @return Specie
      */
     public static function createFromRequest(Request $request): Specie
-{
-    $newSpecie = self::create([
-        'common_name' => $request->input('nombre_comun'),
-        'scientific_name' => $request->input('nombre_cientifico'),
-    ]);
+    {
+        $newSpecie = self::create([
+            'common_name' => $request->input('nombre_comun'),
+            'scientific_name' => $request->input('nombre_cientifico'),
+        ]);
 
-    Log::info('Specie created from request:', [
-        'common_name' => $newSpecie->common_name,
-        'scientific_name' => $newSpecie->scientific_name
-    ]);
+        Log::info('Specie created from request:', [
+            'common_name' => $newSpecie->common_name,
+            'scientific_name' => $newSpecie->scientific_name
+        ]);
 
-    return $newSpecie;
-}
+        return $newSpecie;
+    }
 
 
     /**
@@ -100,9 +100,15 @@ class Specie extends Model
      */
     public static function deleteById($id)
     {
+        Log::info('ID recibido en el modelo para eliminación:', ['id' => $id]);
+
         $species = self::find($id);
+
         if ($species) {
+            Log::info('Especie encontrada y eliminada:', ['id' => $id]);
             $species->delete();
+        } else {
+            Log::info('Especie no encontrada para eliminar:', ['id' => $id]);
         }
     }
 }

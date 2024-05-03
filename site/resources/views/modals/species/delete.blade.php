@@ -7,7 +7,8 @@
                 <button type="button" class="button-close button-close-white" data-bs-dismiss="modal"
                     aria-label="Cerrar"></button>
             </div>
-            <form id="deleteSpeciesForm" action="" method="POST" enctype="multipart/form-data">
+            <form id="deleteSpeciesForm" action="" method="POST"
+                data-delete-url-template="{{ route('species.destroy', [':id', 'language' => app()->getLocale()]) }}">
                 @csrf
                 @method('DELETE')
                 <div class="modal-body">

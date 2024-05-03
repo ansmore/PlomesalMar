@@ -6,7 +6,8 @@
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
                     aria-label="Cerrar"></button>
             </div>
-            <form id="editSpeciesForm" action="" method="POST" enctype="multipart/form-data">
+            <form id="editSpeciesForm" action="" method="POST"
+                data-edit-url-template="{{ route('species.update', [':id', 'language' => app()->getLocale()]) }}">>
                 @csrf
                 @method('PUT')
                 <div class="modal-body">
