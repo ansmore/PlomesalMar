@@ -1,10 +1,10 @@
-<div class="modal modal-delete fade" id="deleteSpeciesModal" tabindex="-1" aria-labelledby="deleteModalLabel"
+<div class="modal fade modal-common" id="deleteSpeciesModal" tabindex="-1" aria-labelledby="deleteModalLabel"
     aria-hidden="true">
-    <div class="modal-center">
-        <div class="modal-box">
-            <div class="modal-top bg-danger text-white">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-danger text-white">
                 <h5 class="modal-title" id="deleteModalLabel">Confirmación de Eliminación</h5>
-                <button type="button" class="button-close button-close-white" data-bs-dismiss="modal"
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
                     aria-label="Cerrar"></button>
             </div>
             <form id="deleteSpeciesForm" action="" method="POST"
@@ -19,9 +19,9 @@
                     </ul>
                     <p>Esta acción también eliminará todas las observaciones relacionadas. ¿Deseas proceder?</p>
                 </div>
-                <div class="modal-bottom">
-                    <button type="button" class="button-secondary" data-bs-dismiss="modal">Cancelar</button>
-                    <button type="submit" class="button-danger">Eliminar</button>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-danger">Eliminar</button>
                 </div>
             </form>
         </div>

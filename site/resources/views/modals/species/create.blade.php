@@ -1,5 +1,5 @@
-<div class="modalcreate" id="createSpecies" tabindex="-1" aria-labelledby="modalLabelNuevo" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
+<div class="modal fade modal-common" id="createSpecies" tabindex="-1" aria-labelledby="modalLabelNuevo" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header bg-primary text-white">
                 <h5 class="modal-title" id="modalLabelNuevo">Agregar Nueva Especie</h5>

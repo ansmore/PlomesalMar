@@ -1,5 +1,6 @@
-<div class="modal fade" id="editSpeciesModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
+<div class="modal fade modal-common" id="editSpeciesModal" tabindex="-1" aria-labelledby="editModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header bg-info text-white">
                 <h5 class="modal-title" id="editModalLabel">Editar Especie</h5>
@@ -7,7 +8,7 @@
                     aria-label="Cerrar"></button>
             </div>
             <form id="editSpeciesForm" action="" method="POST"
-                data-edit-url-template="{{ route('species.update', [':id', 'language' => app()->getLocale()]) }}">>
+                data-edit-url-template="{{ route('species.update', [':id', 'language' => app()->getLocale()]) }}">
                 @csrf
                 @method('PUT')
                 <div class="modal-body">
