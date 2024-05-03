@@ -1,17 +1,17 @@
-import { setupModalEventListeners } from '../modals/species/editDeleteModal';
+import { setupModalEventListeners } from "../modals/species/editDeleteModal.js";
 document.addEventListener("DOMContentLoaded", () => {
     const filtro = document.getElementById('filtro');
     let debounceTimeout;
-    function loadData(url) {
-        fetch(url, {
-            method: 'GET',
-            headers: {
-                'X-Requested-With': 'XMLHttpRequest',
-                'Accept': 'text/html',
-            },
-        })
-            .then(response => response.text())
-            .then(html => {
+    async function loadData(url) {
+        try {
+            const response = await fetch(url, {
+                method: 'GET',
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest',
+                    'Accept': 'text/html',
+                },
+            });
+            const html = await response.text();
             const tempDiv = document.createElement('div');
             tempDiv.innerHTML = html;
             const newTbody = tempDiv.querySelector('table tbody');
@@ -27,10 +27,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 setupModalEventListeners();
             }
             bindPaginationLinks();
-        })
-            .catch(error => {
+        }
+        catch (error) {
             console.error('Fetch error:', error.message);
-        });
+        }
     }
     function bindPaginationLinks() {
         document.querySelectorAll('.pagination__box a').forEach(link => {
