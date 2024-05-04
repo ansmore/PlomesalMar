@@ -24,20 +24,14 @@
       }
 
       &__search {
-        @extend .article;
-
-
         @include mainBox(row, space-between, center);
-        @include boxSize(width, 90%, null, 90%);
       }
 
       &__table {
-        @extend .article;
-
-        display: flex;
-        flex: 1;
-        flex-direction: column;
-        @include boxSize(width, 90%, null, 90%);
+        display: grid;
+        row-gap: 0;
+        width: 95%;
+        margin: 0 auto;
       }
 
       &__logo {
