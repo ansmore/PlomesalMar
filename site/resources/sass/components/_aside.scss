@@ -1,23 +1,21 @@
 .aside {
+  grid-column: 1;
   @include paddingMargin(0, 0);
 
   @include boxLateralShadow(right, $primary_main, 3px, $neutral_dark);
-  height: calc(100% - #{$nav_height});
+  height: calc(100vh - #{$nav_height});
+  @include style($primary_main, $neutral_light);
 
   .leftBar {
     @include mainBox(column, flex-start, flex-start);
-    @include style($primary_main, $secondary_lighter);
-    @include paddingMargin(0, 0);
-    @include boxSize(width, $aside_width, null, $aside_width);
 
     // overflow: hidden;
 
     .list {
       @include mainBox(column, flex-start, flex-start);
       @include paddingMargin(0, 0);
-      height: calc(100vh - #{$nav_height});
-      align-self: flex-start;
 
+      align-self: flex-start;
 
       &__title {
         @extend .asideListTitle;
@@ -27,7 +25,7 @@
         @include mainBox(row, flex-start, center);
         @include paddingMargin(0 0 0 calc($padding * 4), 0);
         align-self: flex-start;
-        @include hover($primary_main, $neutral_main);
+        @include hover($primary_main, $neutral_light);
 
         &__icon {
           @include boxSize(width, 1rem, null, 1rem);
