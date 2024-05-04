@@ -14,7 +14,7 @@
     grid-column: 2;
     display: grid;
     grid-template-rows: auto 1fr;
-    gap: $gap;
+    gap: 0;
     width: 95%;
     margin: 0 auto;
 
@@ -24,27 +24,26 @@
       }
 
       &__search {
-        @extend .article;
-
-
         @include mainBox(row, space-between, center);
-        @include boxSize(width, 90%, null, 90%);
+
+        .button {
+          margin: 0;
+        }
       }
 
       &__table {
-        @extend .article;
-
-        display: flex;
-        flex: 1;
-        flex-direction: column;
-        @include boxSize(width, 90%, null, 90%);
+        display: grid;
+        row-gap: 0;
+        width: 95%;
+        margin: 0 auto;
       }
 
       &__logo {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-        row-gap: 0;
+        row-gap: 10px;
         max-height: 50%;
+        // margin: 10px auto;
 
         &__image {
           @extend .logo;

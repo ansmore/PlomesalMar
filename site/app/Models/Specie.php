@@ -47,8 +47,8 @@ class Specie extends Model
         $orderByDirection = $request->input('orderByDirection', 'asc');
 
         return static::search($search)
-                     ->orderBy($orderByField, $orderByDirection)
-                     ->paginate(6);
+            ->orderBy($orderByField, $orderByDirection)
+            ->paginate(8);
     }
 
     /**

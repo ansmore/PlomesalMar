@@ -2,7 +2,7 @@
     <span class="input-group-text" id="basic-addon1">
         <i class="fas fa-magnifying-glass"></i>
     </span>
-    <input type="text" id="filtro" class="form-control" placeholder="Buscar especies..." aria-label="Buscar"
+    <input type="text" id="filtro" class="form-control" placeholder="Search..." aria-label="Buscar"
         aria-describedby="basic-addon1">
 </div>
 

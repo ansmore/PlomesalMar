@@ -28,7 +28,6 @@
         <tbody>
             @foreach ($species as $specie)
                 <tr>
-
                     <td>{{ $specie->common_name }}</td>
                     <td>{{ $specie->scientific_name }}</td>
                     <td class="icon-center">
@@ -48,9 +47,9 @@
                 </tr>
             @endforeach
         </tbody>
-        @include('modals/species.edit')
-        @include('modals/species.delete')
     </table>
+    @include('modals/species.edit')
+    @include('modals/species.delete')
 </div>
 
 <nav aria-label="Page navigation example" class="pagination__box">
