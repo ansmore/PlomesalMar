@@ -6,6 +6,10 @@
   @include hover($primary_light, $neutral_lighter, $primary_dark);
 }
 
+.form__button {
+  @extend .button;
+}
+
 .form__button__close {
   @extend .button;
 
@@ -13,9 +17,6 @@
   @include hover($danger_light, $neutral_lighter, $danger_dark);
 }
 
-.form__button {
-  @extend .button;
-}
 
 .buttonTable {
   border: 1px solid transparent;

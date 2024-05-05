@@ -186,110 +186,110 @@ button {
 }
 
 .article, .termsAndPolicy .row .box__logo, .termsAndPolicy .row .box, .plomesalmarContact .row .box__logo, .plomesalmarContact .row .box, .home .row--reverse .box, .home .row .box__circle, .home .row .box__row, .home .row .box, .footer .row .box__row, .footer .row .box, .modal__box .body,
-.modal__create__box .body, .form, .plomesalmarContact .row .form, .modal__box .body .plomesalmarContact .row .form, .plomesalmarContact .row .modal__box .body .form,
-.modal__create__box .body .plomesalmarContact .row .form,
-.plomesalmarContact .row .modal__create__box .body .form,
-.modal__box .modal__create__box .body .plomesalmarContact .row .form,
-.plomesalmarContact .row .modal__box .modal__create__box .body .form,
-.modal__create__box .modal__box .body .plomesalmarContact .row .form,
-.plomesalmarContact .row .modal__create__box .modal__box .body .form, .auth .plomesalmarContact .row .form, .plomesalmarContact .auth .row .form, .modal__box .body .auth .plomesalmarContact .row .form, .plomesalmarContact .modal__box .body .auth .row .form, .auth .plomesalmarContact .row .modal__box .body .form, .plomesalmarContact .auth .row .modal__box .body .form,
-.modal__create__box .body .auth .plomesalmarContact .row .form,
-.plomesalmarContact .modal__create__box .body .auth .row .form,
-.auth .plomesalmarContact .row .modal__create__box .body .form,
-.plomesalmarContact .auth .row .modal__create__box .body .form,
-.modal__box .modal__create__box .body .auth .plomesalmarContact .row .form,
-.plomesalmarContact .modal__box .modal__create__box .body .auth .row .form,
-.auth .plomesalmarContact .row .modal__box .modal__create__box .body .form,
-.plomesalmarContact .auth .row .modal__box .modal__create__box .body .form,
-.modal__create__box .modal__box .body .auth .plomesalmarContact .row .form,
-.plomesalmarContact .modal__create__box .modal__box .body .auth .row .form,
-.auth .plomesalmarContact .row .modal__create__box .modal__box .body .form,
-.plomesalmarContact .auth .row .modal__create__box .modal__box .body .form, .auth .row .form, .auth .plomesalmarContact .row .form, .plomesalmarContact .auth .row .form, .auth .modal__box .body .plomesalmarContact .row .form, .modal__box .body .plomesalmarContact .auth .row .form, .auth .plomesalmarContact .row .modal__box .body .form, .plomesalmarContact .auth .row .modal__box .body .form,
-.auth .modal__create__box .body .plomesalmarContact .row .form,
-.modal__create__box .body .plomesalmarContact .auth .row .form,
-.auth .plomesalmarContact .row .modal__create__box .body .form,
-.plomesalmarContact .auth .row .modal__create__box .body .form,
-.auth .modal__box .modal__create__box .body .plomesalmarContact .row .form,
-.modal__box .modal__create__box .body .plomesalmarContact .auth .row .form,
-.auth .plomesalmarContact .row .modal__box .modal__create__box .body .form,
-.plomesalmarContact .auth .row .modal__box .modal__create__box .body .form,
-.auth .modal__create__box .modal__box .body .plomesalmarContact .row .form,
-.modal__create__box .modal__box .body .plomesalmarContact .auth .row .form,
-.auth .plomesalmarContact .row .modal__create__box .modal__box .body .form,
-.plomesalmarContact .auth .row .modal__create__box .modal__box .body .form, .auth .plomesalmarContact .row .form, .plomesalmarContact .auth .row .form, .modal__box .body .auth .plomesalmarContact .row .form, .plomesalmarContact .modal__box .body .auth .row .form, .auth .plomesalmarContact .row .modal__box .body .form, .plomesalmarContact .auth .row .modal__box .body .form,
-.modal__create__box .body .auth .plomesalmarContact .row .form,
-.plomesalmarContact .modal__create__box .body .auth .row .form,
-.auth .plomesalmarContact .row .modal__create__box .body .form,
-.plomesalmarContact .auth .row .modal__create__box .body .form,
-.modal__box .modal__create__box .body .auth .plomesalmarContact .row .form,
-.plomesalmarContact .modal__box .modal__create__box .body .auth .row .form,
-.auth .plomesalmarContact .row .modal__box .modal__create__box .body .form,
-.plomesalmarContact .auth .row .modal__box .modal__create__box .body .form,
-.modal__create__box .modal__box .body .auth .plomesalmarContact .row .form,
-.plomesalmarContact .modal__create__box .modal__box .body .auth .row .form,
-.auth .plomesalmarContact .row .modal__create__box .modal__box .body .form,
-.plomesalmarContact .auth .row .modal__create__box .modal__box .body .form, .modal__box .body .form, .modal__box .body .plomesalmarContact .row .form, .plomesalmarContact .row .modal__box .body .form, .modal__box .body .plomesalmarContact .row .form, .plomesalmarContact .row .modal__box .body .form,
-.modal__box .modal__create__box .body .plomesalmarContact .row .form,
-.modal__create__box .modal__box .body .plomesalmarContact .row .form,
-.modal__box .plomesalmarContact .row .modal__create__box .body .form,
-.plomesalmarContact .row .modal__create__box .modal__box .body .form,
-.modal__box .modal__create__box .body .plomesalmarContact .row .form,
-.plomesalmarContact .row .modal__box .modal__create__box .body .form,
-.modal__create__box .modal__box .body .plomesalmarContact .row .form,
-.plomesalmarContact .row .modal__create__box .modal__box .body .form, .modal__box .body .auth .plomesalmarContact .row .form, .auth .plomesalmarContact .row .modal__box .body .form, .modal__box .body .plomesalmarContact .auth .row .form, .plomesalmarContact .auth .row .modal__box .body .form, .modal__box .body .auth .plomesalmarContact .row .form, .plomesalmarContact .modal__box .body .auth .row .form, .auth .plomesalmarContact .row .modal__box .body .form, .plomesalmarContact .auth .row .modal__box .body .form,
-.modal__box .modal__create__box .body .auth .plomesalmarContact .row .form,
-.modal__create__box .modal__box .body .auth .plomesalmarContact .row .form,
-.modal__box .plomesalmarContact .modal__create__box .body .auth .row .form,
-.plomesalmarContact .modal__create__box .modal__box .body .auth .row .form,
-.modal__box .auth .plomesalmarContact .row .modal__create__box .body .form,
-.auth .plomesalmarContact .row .modal__create__box .modal__box .body .form,
-.modal__box .plomesalmarContact .auth .row .modal__create__box .body .form,
-.plomesalmarContact .auth .row .modal__create__box .modal__box .body .form,
-.modal__box .modal__create__box .body .auth .plomesalmarContact .row .form,
-.plomesalmarContact .modal__box .modal__create__box .body .auth .row .form,
-.auth .plomesalmarContact .row .modal__box .modal__create__box .body .form,
-.plomesalmarContact .auth .row .modal__box .modal__create__box .body .form,
-.modal__create__box .modal__box .body .auth .plomesalmarContact .row .form,
-.plomesalmarContact .modal__create__box .modal__box .body .auth .row .form,
-.auth .plomesalmarContact .row .modal__create__box .modal__box .body .form,
-.plomesalmarContact .auth .row .modal__create__box .modal__box .body .form,
-.modal__create__box .body .form,
-.modal__create__box .body .plomesalmarContact .row .form,
-.plomesalmarContact .row .modal__create__box .body .form,
-.modal__create__box .modal__box .body .plomesalmarContact .row .form,
-.modal__box .modal__create__box .body .plomesalmarContact .row .form,
-.modal__create__box .plomesalmarContact .row .modal__box .body .form,
-.plomesalmarContact .row .modal__box .modal__create__box .body .form,
-.modal__create__box .body .plomesalmarContact .row .form,
-.plomesalmarContact .row .modal__create__box .body .form,
-.modal__box .modal__create__box .body .plomesalmarContact .row .form,
-.plomesalmarContact .row .modal__box .modal__create__box .body .form,
-.modal__create__box .modal__box .body .plomesalmarContact .row .form,
-.plomesalmarContact .row .modal__create__box .modal__box .body .form,
-.modal__create__box .body .auth .plomesalmarContact .row .form,
-.auth .plomesalmarContact .row .modal__create__box .body .form,
-.modal__create__box .body .plomesalmarContact .auth .row .form,
-.plomesalmarContact .auth .row .modal__create__box .body .form,
-.modal__create__box .modal__box .body .auth .plomesalmarContact .row .form,
-.modal__box .modal__create__box .body .auth .plomesalmarContact .row .form,
-.modal__create__box .plomesalmarContact .modal__box .body .auth .row .form,
-.plomesalmarContact .modal__box .modal__create__box .body .auth .row .form,
-.modal__create__box .auth .plomesalmarContact .row .modal__box .body .form,
-.auth .plomesalmarContact .row .modal__box .modal__create__box .body .form,
-.modal__create__box .plomesalmarContact .auth .row .modal__box .body .form,
-.plomesalmarContact .auth .row .modal__box .modal__create__box .body .form,
-.modal__create__box .body .auth .plomesalmarContact .row .form,
-.plomesalmarContact .modal__create__box .body .auth .row .form,
-.auth .plomesalmarContact .row .modal__create__box .body .form,
-.plomesalmarContact .auth .row .modal__create__box .body .form,
-.modal__box .modal__create__box .body .auth .plomesalmarContact .row .form,
-.plomesalmarContact .modal__box .modal__create__box .body .auth .row .form,
-.auth .plomesalmarContact .row .modal__box .modal__create__box .body .form,
-.plomesalmarContact .auth .row .modal__box .modal__create__box .body .form,
-.modal__create__box .modal__box .body .auth .plomesalmarContact .row .form,
-.plomesalmarContact .modal__create__box .modal__box .body .auth .row .form,
-.auth .plomesalmarContact .row .modal__create__box .modal__box .body .form,
-.plomesalmarContact .auth .row .modal__create__box .modal__box .body .form {
+.modal__management__box .body, .form, .plomesalmarContact .row .form, .modal__box .body .plomesalmarContact .row .form, .plomesalmarContact .row .modal__box .body .form,
+.modal__management__box .body .plomesalmarContact .row .form,
+.plomesalmarContact .row .modal__management__box .body .form,
+.modal__box .modal__management__box .body .plomesalmarContact .row .form,
+.plomesalmarContact .row .modal__box .modal__management__box .body .form,
+.modal__management__box .modal__box .body .plomesalmarContact .row .form,
+.plomesalmarContact .row .modal__management__box .modal__box .body .form, .auth .plomesalmarContact .row .form, .plomesalmarContact .auth .row .form, .modal__box .body .auth .plomesalmarContact .row .form, .plomesalmarContact .modal__box .body .auth .row .form, .auth .plomesalmarContact .row .modal__box .body .form, .plomesalmarContact .auth .row .modal__box .body .form,
+.modal__management__box .body .auth .plomesalmarContact .row .form,
+.plomesalmarContact .modal__management__box .body .auth .row .form,
+.auth .plomesalmarContact .row .modal__management__box .body .form,
+.plomesalmarContact .auth .row .modal__management__box .body .form,
+.modal__box .modal__management__box .body .auth .plomesalmarContact .row .form,
+.plomesalmarContact .modal__box .modal__management__box .body .auth .row .form,
+.auth .plomesalmarContact .row .modal__box .modal__management__box .body .form,
+.plomesalmarContact .auth .row .modal__box .modal__management__box .body .form,
+.modal__management__box .modal__box .body .auth .plomesalmarContact .row .form,
+.plomesalmarContact .modal__management__box .modal__box .body .auth .row .form,
+.auth .plomesalmarContact .row .modal__management__box .modal__box .body .form,
+.plomesalmarContact .auth .row .modal__management__box .modal__box .body .form, .auth .row .form, .auth .plomesalmarContact .row .form, .plomesalmarContact .auth .row .form, .auth .modal__box .body .plomesalmarContact .row .form, .modal__box .body .plomesalmarContact .auth .row .form, .auth .plomesalmarContact .row .modal__box .body .form, .plomesalmarContact .auth .row .modal__box .body .form,
+.auth .modal__management__box .body .plomesalmarContact .row .form,
+.modal__management__box .body .plomesalmarContact .auth .row .form,
+.auth .plomesalmarContact .row .modal__management__box .body .form,
+.plomesalmarContact .auth .row .modal__management__box .body .form,
+.auth .modal__box .modal__management__box .body .plomesalmarContact .row .form,
+.modal__box .modal__management__box .body .plomesalmarContact .auth .row .form,
+.auth .plomesalmarContact .row .modal__box .modal__management__box .body .form,
+.plomesalmarContact .auth .row .modal__box .modal__management__box .body .form,
+.auth .modal__management__box .modal__box .body .plomesalmarContact .row .form,
+.modal__management__box .modal__box .body .plomesalmarContact .auth .row .form,
+.auth .plomesalmarContact .row .modal__management__box .modal__box .body .form,
+.plomesalmarContact .auth .row .modal__management__box .modal__box .body .form, .auth .plomesalmarContact .row .form, .plomesalmarContact .auth .row .form, .modal__box .body .auth .plomesalmarContact .row .form, .plomesalmarContact .modal__box .body .auth .row .form, .auth .plomesalmarContact .row .modal__box .body .form, .plomesalmarContact .auth .row .modal__box .body .form,
+.modal__management__box .body .auth .plomesalmarContact .row .form,
+.plomesalmarContact .modal__management__box .body .auth .row .form,
+.auth .plomesalmarContact .row .modal__management__box .body .form,
+.plomesalmarContact .auth .row .modal__management__box .body .form,
+.modal__box .modal__management__box .body .auth .plomesalmarContact .row .form,
+.plomesalmarContact .modal__box .modal__management__box .body .auth .row .form,
+.auth .plomesalmarContact .row .modal__box .modal__management__box .body .form,
+.plomesalmarContact .auth .row .modal__box .modal__management__box .body .form,
+.modal__management__box .modal__box .body .auth .plomesalmarContact .row .form,
+.plomesalmarContact .modal__management__box .modal__box .body .auth .row .form,
+.auth .plomesalmarContact .row .modal__management__box .modal__box .body .form,
+.plomesalmarContact .auth .row .modal__management__box .modal__box .body .form, .modal__box .body .form, .modal__box .body .plomesalmarContact .row .form, .plomesalmarContact .row .modal__box .body .form, .modal__box .body .plomesalmarContact .row .form, .plomesalmarContact .row .modal__box .body .form,
+.modal__box .modal__management__box .body .plomesalmarContact .row .form,
+.modal__management__box .modal__box .body .plomesalmarContact .row .form,
+.modal__box .plomesalmarContact .row .modal__management__box .body .form,
+.plomesalmarContact .row .modal__management__box .modal__box .body .form,
+.modal__box .modal__management__box .body .plomesalmarContact .row .form,
+.plomesalmarContact .row .modal__box .modal__management__box .body .form,
+.modal__management__box .modal__box .body .plomesalmarContact .row .form,
+.plomesalmarContact .row .modal__management__box .modal__box .body .form, .modal__box .body .auth .plomesalmarContact .row .form, .auth .plomesalmarContact .row .modal__box .body .form, .modal__box .body .plomesalmarContact .auth .row .form, .plomesalmarContact .auth .row .modal__box .body .form, .modal__box .body .auth .plomesalmarContact .row .form, .plomesalmarContact .modal__box .body .auth .row .form, .auth .plomesalmarContact .row .modal__box .body .form, .plomesalmarContact .auth .row .modal__box .body .form,
+.modal__box .modal__management__box .body .auth .plomesalmarContact .row .form,
+.modal__management__box .modal__box .body .auth .plomesalmarContact .row .form,
+.modal__box .plomesalmarContact .modal__management__box .body .auth .row .form,
+.plomesalmarContact .modal__management__box .modal__box .body .auth .row .form,
+.modal__box .auth .plomesalmarContact .row .modal__management__box .body .form,
+.auth .plomesalmarContact .row .modal__management__box .modal__box .body .form,
+.modal__box .plomesalmarContact .auth .row .modal__management__box .body .form,
+.plomesalmarContact .auth .row .modal__management__box .modal__box .body .form,
+.modal__box .modal__management__box .body .auth .plomesalmarContact .row .form,
+.plomesalmarContact .modal__box .modal__management__box .body .auth .row .form,
+.auth .plomesalmarContact .row .modal__box .modal__management__box .body .form,
+.plomesalmarContact .auth .row .modal__box .modal__management__box .body .form,
+.modal__management__box .modal__box .body .auth .plomesalmarContact .row .form,
+.plomesalmarContact .modal__management__box .modal__box .body .auth .row .form,
+.auth .plomesalmarContact .row .modal__management__box .modal__box .body .form,
+.plomesalmarContact .auth .row .modal__management__box .modal__box .body .form,
+.modal__management__box .body .form,
+.modal__management__box .body .plomesalmarContact .row .form,
+.plomesalmarContact .row .modal__management__box .body .form,
+.modal__management__box .modal__box .body .plomesalmarContact .row .form,
+.modal__box .modal__management__box .body .plomesalmarContact .row .form,
+.modal__management__box .plomesalmarContact .row .modal__box .body .form,
+.plomesalmarContact .row .modal__box .modal__management__box .body .form,
+.modal__management__box .body .plomesalmarContact .row .form,
+.plomesalmarContact .row .modal__management__box .body .form,
+.modal__box .modal__management__box .body .plomesalmarContact .row .form,
+.plomesalmarContact .row .modal__box .modal__management__box .body .form,
+.modal__management__box .modal__box .body .plomesalmarContact .row .form,
+.plomesalmarContact .row .modal__management__box .modal__box .body .form,
+.modal__management__box .body .auth .plomesalmarContact .row .form,
+.auth .plomesalmarContact .row .modal__management__box .body .form,
+.modal__management__box .body .plomesalmarContact .auth .row .form,
+.plomesalmarContact .auth .row .modal__management__box .body .form,
+.modal__management__box .modal__box .body .auth .plomesalmarContact .row .form,
+.modal__box .modal__management__box .body .auth .plomesalmarContact .row .form,
+.modal__management__box .plomesalmarContact .modal__box .body .auth .row .form,
+.plomesalmarContact .modal__box .modal__management__box .body .auth .row .form,
+.modal__management__box .auth .plomesalmarContact .row .modal__box .body .form,
+.auth .plomesalmarContact .row .modal__box .modal__management__box .body .form,
+.modal__management__box .plomesalmarContact .auth .row .modal__box .body .form,
+.plomesalmarContact .auth .row .modal__box .modal__management__box .body .form,
+.modal__management__box .body .auth .plomesalmarContact .row .form,
+.plomesalmarContact .modal__management__box .body .auth .row .form,
+.auth .plomesalmarContact .row .modal__management__box .body .form,
+.plomesalmarContact .auth .row .modal__management__box .body .form,
+.modal__box .modal__management__box .body .auth .plomesalmarContact .row .form,
+.plomesalmarContact .modal__box .modal__management__box .body .auth .row .form,
+.auth .plomesalmarContact .row .modal__box .modal__management__box .body .form,
+.plomesalmarContact .auth .row .modal__box .modal__management__box .body .form,
+.modal__management__box .modal__box .body .auth .plomesalmarContact .row .form,
+.plomesalmarContact .modal__management__box .modal__box .body .auth .row .form,
+.auth .plomesalmarContact .row .modal__management__box .modal__box .body .form,
+.plomesalmarContact .auth .row .modal__management__box .modal__box .body .form {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -308,217 +308,217 @@ button {
   overflow: hidden;
 }
 .article p, .termsAndPolicy .row .box__logo p, .termsAndPolicy .row .box p, .plomesalmarContact .row .box__logo p, .plomesalmarContact .row .box p, .home .row--reverse .box p, .home .row .box__circle p, .home .row .box__row p, .home .row .box p, .footer .row .box__row p, .footer .row .box p, .modal__box .body p,
-.modal__create__box .body p, .form p, .plomesalmarContact .row .form p, .modal__box .body .plomesalmarContact .row .form p, .plomesalmarContact .row .modal__box .body .form p,
-.modal__create__box .body .plomesalmarContact .row .form p,
-.plomesalmarContact .row .modal__create__box .body .form p,
-.modal__box .modal__create__box .body .plomesalmarContact .row .form p,
-.plomesalmarContact .row .modal__box .modal__create__box .body .form p,
-.modal__create__box .modal__box .body .plomesalmarContact .row .form p,
-.plomesalmarContact .row .modal__create__box .modal__box .body .form p, .auth .plomesalmarContact .row .form p, .plomesalmarContact .auth .row .form p, .modal__box .body .auth .plomesalmarContact .row .form p, .plomesalmarContact .modal__box .body .auth .row .form p, .auth .plomesalmarContact .row .modal__box .body .form p, .plomesalmarContact .auth .row .modal__box .body .form p,
-.modal__create__box .body .auth .plomesalmarContact .row .form p,
-.plomesalmarContact .modal__create__box .body .auth .row .form p,
-.auth .plomesalmarContact .row .modal__create__box .body .form p,
-.plomesalmarContact .auth .row .modal__create__box .body .form p,
-.modal__box .modal__create__box .body .auth .plomesalmarContact .row .form p,
-.plomesalmarContact .modal__box .modal__create__box .body .auth .row .form p,
-.auth .plomesalmarContact .row .modal__box .modal__create__box .body .form p,
-.plomesalmarContact .auth .row .modal__box .modal__create__box .body .form p,
-.modal__create__box .modal__box .body .auth .plomesalmarContact .row .form p,
-.plomesalmarContact .modal__create__box .modal__box .body .auth .row .form p,
-.auth .plomesalmarContact .row .modal__create__box .modal__box .body .form p,
-.plomesalmarContact .auth .row .modal__create__box .modal__box .body .form p, .auth .row .form p, .auth .plomesalmarContact .row .form p, .plomesalmarContact .auth .row .form p, .auth .modal__box .body .plomesalmarContact .row .form p, .modal__box .body .plomesalmarContact .auth .row .form p, .auth .plomesalmarContact .row .modal__box .body .form p, .plomesalmarContact .auth .row .modal__box .body .form p,
-.auth .modal__create__box .body .plomesalmarContact .row .form p,
-.modal__create__box .body .plomesalmarContact .auth .row .form p,
-.auth .plomesalmarContact .row .modal__create__box .body .form p,
-.plomesalmarContact .auth .row .modal__create__box .body .form p,
-.auth .modal__box .modal__create__box .body .plomesalmarContact .row .form p,
-.modal__box .modal__create__box .body .plomesalmarContact .auth .row .form p,
-.auth .plomesalmarContact .row .modal__box .modal__create__box .body .form p,
-.plomesalmarContact .auth .row .modal__box .modal__create__box .body .form p,
-.auth .modal__create__box .modal__box .body .plomesalmarContact .row .form p,
-.modal__create__box .modal__box .body .plomesalmarContact .auth .row .form p,
-.auth .plomesalmarContact .row .modal__create__box .modal__box .body .form p,
-.plomesalmarContact .auth .row .modal__create__box .modal__box .body .form p, .auth .plomesalmarContact .row .form p, .plomesalmarContact .auth .row .form p, .modal__box .body .auth .plomesalmarContact .row .form p, .plomesalmarContact .modal__box .body .auth .row .form p, .auth .plomesalmarContact .row .modal__box .body .form p, .plomesalmarContact .auth .row .modal__box .body .form p,
-.modal__create__box .body .auth .plomesalmarContact .row .form p,
-.plomesalmarContact .modal__create__box .body .auth .row .form p,
-.auth .plomesalmarContact .row .modal__create__box .body .form p,
-.plomesalmarContact .auth .row .modal__create__box .body .form p,
-.modal__box .modal__create__box .body .auth .plomesalmarContact .row .form p,
-.plomesalmarContact .modal__box .modal__create__box .body .auth .row .form p,
-.auth .plomesalmarContact .row .modal__box .modal__create__box .body .form p,
-.plomesalmarContact .auth .row .modal__box .modal__create__box .body .form p,
-.modal__create__box .modal__box .body .auth .plomesalmarContact .row .form p,
-.plomesalmarContact .modal__create__box .modal__box .body .auth .row .form p,
-.auth .plomesalmarContact .row .modal__create__box .modal__box .body .form p,
-.plomesalmarContact .auth .row .modal__create__box .modal__box .body .form p, .modal__box .body .form p, .modal__box .body .plomesalmarContact .row .form p, .plomesalmarContact .row .modal__box .body .form p, .modal__box .body .plomesalmarContact .row .form p, .plomesalmarContact .row .modal__box .body .form p,
-.modal__box .modal__create__box .body .plomesalmarContact .row .form p,
-.modal__create__box .modal__box .body .plomesalmarContact .row .form p,
-.modal__box .plomesalmarContact .row .modal__create__box .body .form p,
-.plomesalmarContact .row .modal__create__box .modal__box .body .form p,
-.modal__box .modal__create__box .body .plomesalmarContact .row .form p,
-.plomesalmarContact .row .modal__box .modal__create__box .body .form p,
-.modal__create__box .modal__box .body .plomesalmarContact .row .form p,
-.plomesalmarContact .row .modal__create__box .modal__box .body .form p, .modal__box .body .auth .plomesalmarContact .row .form p, .auth .plomesalmarContact .row .modal__box .body .form p, .modal__box .body .plomesalmarContact .auth .row .form p, .plomesalmarContact .auth .row .modal__box .body .form p, .modal__box .body .auth .plomesalmarContact .row .form p, .plomesalmarContact .modal__box .body .auth .row .form p, .auth .plomesalmarContact .row .modal__box .body .form p, .plomesalmarContact .auth .row .modal__box .body .form p,
-.modal__box .modal__create__box .body .auth .plomesalmarContact .row .form p,
-.modal__create__box .modal__box .body .auth .plomesalmarContact .row .form p,
-.modal__box .plomesalmarContact .modal__create__box .body .auth .row .form p,
-.plomesalmarContact .modal__create__box .modal__box .body .auth .row .form p,
-.modal__box .auth .plomesalmarContact .row .modal__create__box .body .form p,
-.auth .plomesalmarContact .row .modal__create__box .modal__box .body .form p,
-.modal__box .plomesalmarContact .auth .row .modal__create__box .body .form p,
-.plomesalmarContact .auth .row .modal__create__box .modal__box .body .form p,
-.modal__box .modal__create__box .body .auth .plomesalmarContact .row .form p,
-.plomesalmarContact .modal__box .modal__create__box .body .auth .row .form p,
-.auth .plomesalmarContact .row .modal__box .modal__create__box .body .form p,
-.plomesalmarContact .auth .row .modal__box .modal__create__box .body .form p,
-.modal__create__box .modal__box .body .auth .plomesalmarContact .row .form p,
-.plomesalmarContact .modal__create__box .modal__box .body .auth .row .form p,
-.auth .plomesalmarContact .row .modal__create__box .modal__box .body .form p,
-.plomesalmarContact .auth .row .modal__create__box .modal__box .body .form p,
-.modal__create__box .body .form p,
-.modal__create__box .body .plomesalmarContact .row .form p,
-.plomesalmarContact .row .modal__create__box .body .form p,
-.modal__create__box .modal__box .body .plomesalmarContact .row .form p,
-.modal__box .modal__create__box .body .plomesalmarContact .row .form p,
-.modal__create__box .plomesalmarContact .row .modal__box .body .form p,
-.plomesalmarContact .row .modal__box .modal__create__box .body .form p,
-.modal__create__box .body .plomesalmarContact .row .form p,
-.plomesalmarContact .row .modal__create__box .body .form p,
-.modal__box .modal__create__box .body .plomesalmarContact .row .form p,
-.plomesalmarContact .row .modal__box .modal__create__box .body .form p,
-.modal__create__box .modal__box .body .plomesalmarContact .row .form p,
-.plomesalmarContact .row .modal__create__box .modal__box .body .form p,
-.modal__create__box .body .auth .plomesalmarContact .row .form p,
-.auth .plomesalmarContact .row .modal__create__box .body .form p,
-.modal__create__box .body .plomesalmarContact .auth .row .form p,
-.plomesalmarContact .auth .row .modal__create__box .body .form p,
-.modal__create__box .modal__box .body .auth .plomesalmarContact .row .form p,
-.modal__box .modal__create__box .body .auth .plomesalmarContact .row .form p,
-.modal__create__box .plomesalmarContact .modal__box .body .auth .row .form p,
-.plomesalmarContact .modal__box .modal__create__box .body .auth .row .form p,
-.modal__create__box .auth .plomesalmarContact .row .modal__box .body .form p,
-.auth .plomesalmarContact .row .modal__box .modal__create__box .body .form p,
-.modal__create__box .plomesalmarContact .auth .row .modal__box .body .form p,
-.plomesalmarContact .auth .row .modal__box .modal__create__box .body .form p,
-.modal__create__box .body .auth .plomesalmarContact .row .form p,
-.plomesalmarContact .modal__create__box .body .auth .row .form p,
-.auth .plomesalmarContact .row .modal__create__box .body .form p,
-.plomesalmarContact .auth .row .modal__create__box .body .form p,
-.modal__box .modal__create__box .body .auth .plomesalmarContact .row .form p,
-.plomesalmarContact .modal__box .modal__create__box .body .auth .row .form p,
-.auth .plomesalmarContact .row .modal__box .modal__create__box .body .form p,
-.plomesalmarContact .auth .row .modal__box .modal__create__box .body .form p,
-.modal__create__box .modal__box .body .auth .plomesalmarContact .row .form p,
-.plomesalmarContact .modal__create__box .modal__box .body .auth .row .form p,
-.auth .plomesalmarContact .row .modal__create__box .modal__box .body .form p,
-.plomesalmarContact .auth .row .modal__create__box .modal__box .body .form p {
+.modal__management__box .body p, .form p, .plomesalmarContact .row .form p, .modal__box .body .plomesalmarContact .row .form p, .plomesalmarContact .row .modal__box .body .form p,
+.modal__management__box .body .plomesalmarContact .row .form p,
+.plomesalmarContact .row .modal__management__box .body .form p,
+.modal__box .modal__management__box .body .plomesalmarContact .row .form p,
+.plomesalmarContact .row .modal__box .modal__management__box .body .form p,
+.modal__management__box .modal__box .body .plomesalmarContact .row .form p,
+.plomesalmarContact .row .modal__management__box .modal__box .body .form p, .auth .plomesalmarContact .row .form p, .plomesalmarContact .auth .row .form p, .modal__box .body .auth .plomesalmarContact .row .form p, .plomesalmarContact .modal__box .body .auth .row .form p, .auth .plomesalmarContact .row .modal__box .body .form p, .plomesalmarContact .auth .row .modal__box .body .form p,
+.modal__management__box .body .auth .plomesalmarContact .row .form p,
+.plomesalmarContact .modal__management__box .body .auth .row .form p,
+.auth .plomesalmarContact .row .modal__management__box .body .form p,
+.plomesalmarContact .auth .row .modal__management__box .body .form p,
+.modal__box .modal__management__box .body .auth .plomesalmarContact .row .form p,
+.plomesalmarContact .modal__box .modal__management__box .body .auth .row .form p,
+.auth .plomesalmarContact .row .modal__box .modal__management__box .body .form p,
+.plomesalmarContact .auth .row .modal__box .modal__management__box .body .form p,
+.modal__management__box .modal__box .body .auth .plomesalmarContact .row .form p,
+.plomesalmarContact .modal__management__box .modal__box .body .auth .row .form p,
+.auth .plomesalmarContact .row .modal__management__box .modal__box .body .form p,
+.plomesalmarContact .auth .row .modal__management__box .modal__box .body .form p, .auth .row .form p, .auth .plomesalmarContact .row .form p, .plomesalmarContact .auth .row .form p, .auth .modal__box .body .plomesalmarContact .row .form p, .modal__box .body .plomesalmarContact .auth .row .form p, .auth .plomesalmarContact .row .modal__box .body .form p, .plomesalmarContact .auth .row .modal__box .body .form p,
+.auth .modal__management__box .body .plomesalmarContact .row .form p,
+.modal__management__box .body .plomesalmarContact .auth .row .form p,
+.auth .plomesalmarContact .row .modal__management__box .body .form p,
+.plomesalmarContact .auth .row .modal__management__box .body .form p,
+.auth .modal__box .modal__management__box .body .plomesalmarContact .row .form p,
+.modal__box .modal__management__box .body .plomesalmarContact .auth .row .form p,
+.auth .plomesalmarContact .row .modal__box .modal__management__box .body .form p,
+.plomesalmarContact .auth .row .modal__box .modal__management__box .body .form p,
+.auth .modal__management__box .modal__box .body .plomesalmarContact .row .form p,
+.modal__management__box .modal__box .body .plomesalmarContact .auth .row .form p,
+.auth .plomesalmarContact .row .modal__management__box .modal__box .body .form p,
+.plomesalmarContact .auth .row .modal__management__box .modal__box .body .form p, .auth .plomesalmarContact .row .form p, .plomesalmarContact .auth .row .form p, .modal__box .body .auth .plomesalmarContact .row .form p, .plomesalmarContact .modal__box .body .auth .row .form p, .auth .plomesalmarContact .row .modal__box .body .form p, .plomesalmarContact .auth .row .modal__box .body .form p,
+.modal__management__box .body .auth .plomesalmarContact .row .form p,
+.plomesalmarContact .modal__management__box .body .auth .row .form p,
+.auth .plomesalmarContact .row .modal__management__box .body .form p,
+.plomesalmarContact .auth .row .modal__management__box .body .form p,
+.modal__box .modal__management__box .body .auth .plomesalmarContact .row .form p,
+.plomesalmarContact .modal__box .modal__management__box .body .auth .row .form p,
+.auth .plomesalmarContact .row .modal__box .modal__management__box .body .form p,
+.plomesalmarContact .auth .row .modal__box .modal__management__box .body .form p,
+.modal__management__box .modal__box .body .auth .plomesalmarContact .row .form p,
+.plomesalmarContact .modal__management__box .modal__box .body .auth .row .form p,
+.auth .plomesalmarContact .row .modal__management__box .modal__box .body .form p,
+.plomesalmarContact .auth .row .modal__management__box .modal__box .body .form p, .modal__box .body .form p, .modal__box .body .plomesalmarContact .row .form p, .plomesalmarContact .row .modal__box .body .form p, .modal__box .body .plomesalmarContact .row .form p, .plomesalmarContact .row .modal__box .body .form p,
+.modal__box .modal__management__box .body .plomesalmarContact .row .form p,
+.modal__management__box .modal__box .body .plomesalmarContact .row .form p,
+.modal__box .plomesalmarContact .row .modal__management__box .body .form p,
+.plomesalmarContact .row .modal__management__box .modal__box .body .form p,
+.modal__box .modal__management__box .body .plomesalmarContact .row .form p,
+.plomesalmarContact .row .modal__box .modal__management__box .body .form p,
+.modal__management__box .modal__box .body .plomesalmarContact .row .form p,
+.plomesalmarContact .row .modal__management__box .modal__box .body .form p, .modal__box .body .auth .plomesalmarContact .row .form p, .auth .plomesalmarContact .row .modal__box .body .form p, .modal__box .body .plomesalmarContact .auth .row .form p, .plomesalmarContact .auth .row .modal__box .body .form p, .modal__box .body .auth .plomesalmarContact .row .form p, .plomesalmarContact .modal__box .body .auth .row .form p, .auth .plomesalmarContact .row .modal__box .body .form p, .plomesalmarContact .auth .row .modal__box .body .form p,
+.modal__box .modal__management__box .body .auth .plomesalmarContact .row .form p,
+.modal__management__box .modal__box .body .auth .plomesalmarContact .row .form p,
+.modal__box .plomesalmarContact .modal__management__box .body .auth .row .form p,
+.plomesalmarContact .modal__management__box .modal__box .body .auth .row .form p,
+.modal__box .auth .plomesalmarContact .row .modal__management__box .body .form p,
+.auth .plomesalmarContact .row .modal__management__box .modal__box .body .form p,
+.modal__box .plomesalmarContact .auth .row .modal__management__box .body .form p,
+.plomesalmarContact .auth .row .modal__management__box .modal__box .body .form p,
+.modal__box .modal__management__box .body .auth .plomesalmarContact .row .form p,
+.plomesalmarContact .modal__box .modal__management__box .body .auth .row .form p,
+.auth .plomesalmarContact .row .modal__box .modal__management__box .body .form p,
+.plomesalmarContact .auth .row .modal__box .modal__management__box .body .form p,
+.modal__management__box .modal__box .body .auth .plomesalmarContact .row .form p,
+.plomesalmarContact .modal__management__box .modal__box .body .auth .row .form p,
+.auth .plomesalmarContact .row .modal__management__box .modal__box .body .form p,
+.plomesalmarContact .auth .row .modal__management__box .modal__box .body .form p,
+.modal__management__box .body .form p,
+.modal__management__box .body .plomesalmarContact .row .form p,
+.plomesalmarContact .row .modal__management__box .body .form p,
+.modal__management__box .modal__box .body .plomesalmarContact .row .form p,
+.modal__box .modal__management__box .body .plomesalmarContact .row .form p,
+.modal__management__box .plomesalmarContact .row .modal__box .body .form p,
+.plomesalmarContact .row .modal__box .modal__management__box .body .form p,
+.modal__management__box .body .plomesalmarContact .row .form p,
+.plomesalmarContact .row .modal__management__box .body .form p,
+.modal__box .modal__management__box .body .plomesalmarContact .row .form p,
+.plomesalmarContact .row .modal__box .modal__management__box .body .form p,
+.modal__management__box .modal__box .body .plomesalmarContact .row .form p,
+.plomesalmarContact .row .modal__management__box .modal__box .body .form p,
+.modal__management__box .body .auth .plomesalmarContact .row .form p,
+.auth .plomesalmarContact .row .modal__management__box .body .form p,
+.modal__management__box .body .plomesalmarContact .auth .row .form p,
+.plomesalmarContact .auth .row .modal__management__box .body .form p,
+.modal__management__box .modal__box .body .auth .plomesalmarContact .row .form p,
+.modal__box .modal__management__box .body .auth .plomesalmarContact .row .form p,
+.modal__management__box .plomesalmarContact .modal__box .body .auth .row .form p,
+.plomesalmarContact .modal__box .modal__management__box .body .auth .row .form p,
+.modal__management__box .auth .plomesalmarContact .row .modal__box .body .form p,
+.auth .plomesalmarContact .row .modal__box .modal__management__box .body .form p,
+.modal__management__box .plomesalmarContact .auth .row .modal__box .body .form p,
+.plomesalmarContact .auth .row .modal__box .modal__management__box .body .form p,
+.modal__management__box .body .auth .plomesalmarContact .row .form p,
+.plomesalmarContact .modal__management__box .body .auth .row .form p,
+.auth .plomesalmarContact .row .modal__management__box .body .form p,
+.plomesalmarContact .auth .row .modal__management__box .body .form p,
+.modal__box .modal__management__box .body .auth .plomesalmarContact .row .form p,
+.plomesalmarContact .modal__box .modal__management__box .body .auth .row .form p,
+.auth .plomesalmarContact .row .modal__box .modal__management__box .body .form p,
+.plomesalmarContact .auth .row .modal__box .modal__management__box .body .form p,
+.modal__management__box .modal__box .body .auth .plomesalmarContact .row .form p,
+.plomesalmarContact .modal__management__box .modal__box .body .auth .row .form p,
+.auth .plomesalmarContact .row .modal__management__box .modal__box .body .form p,
+.plomesalmarContact .auth .row .modal__management__box .modal__box .body .form p {
   text-align: left;
 }
 .article p span, .termsAndPolicy .row .box__logo p span, .termsAndPolicy .row .box p span, .plomesalmarContact .row .box__logo p span, .plomesalmarContact .row .box p span, .home .row--reverse .box p span, .home .row .box__circle p span, .home .row .box__row p span, .home .row .box p span, .footer .row .box__row p span, .footer .row .box p span, .modal__box .body p span,
-.modal__create__box .body p span, .form p span, .plomesalmarContact .row .form p span, .modal__box .body .plomesalmarContact .row .form p span, .plomesalmarContact .row .modal__box .body .form p span,
-.modal__create__box .body .plomesalmarContact .row .form p span,
-.plomesalmarContact .row .modal__create__box .body .form p span,
-.modal__box .modal__create__box .body .plomesalmarContact .row .form p span,
-.plomesalmarContact .row .modal__box .modal__create__box .body .form p span,
-.modal__create__box .modal__box .body .plomesalmarContact .row .form p span,
-.plomesalmarContact .row .modal__create__box .modal__box .body .form p span, .auth .plomesalmarContact .row .form p span, .plomesalmarContact .auth .row .form p span, .modal__box .body .auth .plomesalmarContact .row .form p span, .plomesalmarContact .modal__box .body .auth .row .form p span, .auth .plomesalmarContact .row .modal__box .body .form p span, .plomesalmarContact .auth .row .modal__box .body .form p span,
-.modal__create__box .body .auth .plomesalmarContact .row .form p span,
-.plomesalmarContact .modal__create__box .body .auth .row .form p span,
-.auth .plomesalmarContact .row .modal__create__box .body .form p span,
-.plomesalmarContact .auth .row .modal__create__box .body .form p span,
-.modal__box .modal__create__box .body .auth .plomesalmarContact .row .form p span,
-.plomesalmarContact .modal__box .modal__create__box .body .auth .row .form p span,
-.auth .plomesalmarContact .row .modal__box .modal__create__box .body .form p span,
-.plomesalmarContact .auth .row .modal__box .modal__create__box .body .form p span,
-.modal__create__box .modal__box .body .auth .plomesalmarContact .row .form p span,
-.plomesalmarContact .modal__create__box .modal__box .body .auth .row .form p span,
-.auth .plomesalmarContact .row .modal__create__box .modal__box .body .form p span,
-.plomesalmarContact .auth .row .modal__create__box .modal__box .body .form p span, .auth .row .form p span, .auth .plomesalmarContact .row .form p span, .plomesalmarContact .auth .row .form p span, .auth .modal__box .body .plomesalmarContact .row .form p span, .modal__box .body .plomesalmarContact .auth .row .form p span, .auth .plomesalmarContact .row .modal__box .body .form p span, .plomesalmarContact .auth .row .modal__box .body .form p span,
-.auth .modal__create__box .body .plomesalmarContact .row .form p span,
-.modal__create__box .body .plomesalmarContact .auth .row .form p span,
-.auth .plomesalmarContact .row .modal__create__box .body .form p span,
-.plomesalmarContact .auth .row .modal__create__box .body .form p span,
-.auth .modal__box .modal__create__box .body .plomesalmarContact .row .form p span,
-.modal__box .modal__create__box .body .plomesalmarContact .auth .row .form p span,
-.auth .plomesalmarContact .row .modal__box .modal__create__box .body .form p span,
-.plomesalmarContact .auth .row .modal__box .modal__create__box .body .form p span,
-.auth .modal__create__box .modal__box .body .plomesalmarContact .row .form p span,
-.modal__create__box .modal__box .body .plomesalmarContact .auth .row .form p span,
-.auth .plomesalmarContact .row .modal__create__box .modal__box .body .form p span,
-.plomesalmarContact .auth .row .modal__create__box .modal__box .body .form p span, .auth .plomesalmarContact .row .form p span, .plomesalmarContact .auth .row .form p span, .modal__box .body .auth .plomesalmarContact .row .form p span, .plomesalmarContact .modal__box .body .auth .row .form p span, .auth .plomesalmarContact .row .modal__box .body .form p span, .plomesalmarContact .auth .row .modal__box .body .form p span,
-.modal__create__box .body .auth .plomesalmarContact .row .form p span,
-.plomesalmarContact .modal__create__box .body .auth .row .form p span,
-.auth .plomesalmarContact .row .modal__create__box .body .form p span,
-.plomesalmarContact .auth .row .modal__create__box .body .form p span,
-.modal__box .modal__create__box .body .auth .plomesalmarContact .row .form p span,
-.plomesalmarContact .modal__box .modal__create__box .body .auth .row .form p span,
-.auth .plomesalmarContact .row .modal__box .modal__create__box .body .form p span,
-.plomesalmarContact .auth .row .modal__box .modal__create__box .body .form p span,
-.modal__create__box .modal__box .body .auth .plomesalmarContact .row .form p span,
-.plomesalmarContact .modal__create__box .modal__box .body .auth .row .form p span,
-.auth .plomesalmarContact .row .modal__create__box .modal__box .body .form p span,
-.plomesalmarContact .auth .row .modal__create__box .modal__box .body .form p span, .modal__box .body .form p span, .modal__box .body .plomesalmarContact .row .form p span, .plomesalmarContact .row .modal__box .body .form p span, .modal__box .body .plomesalmarContact .row .form p span, .plomesalmarContact .row .modal__box .body .form p span,
-.modal__box .modal__create__box .body .plomesalmarContact .row .form p span,
-.modal__create__box .modal__box .body .plomesalmarContact .row .form p span,
-.modal__box .plomesalmarContact .row .modal__create__box .body .form p span,
-.plomesalmarContact .row .modal__create__box .modal__box .body .form p span,
-.modal__box .modal__create__box .body .plomesalmarContact .row .form p span,
-.plomesalmarContact .row .modal__box .modal__create__box .body .form p span,
-.modal__create__box .modal__box .body .plomesalmarContact .row .form p span,
-.plomesalmarContact .row .modal__create__box .modal__box .body .form p span, .modal__box .body .auth .plomesalmarContact .row .form p span, .auth .plomesalmarContact .row .modal__box .body .form p span, .modal__box .body .plomesalmarContact .auth .row .form p span, .plomesalmarContact .auth .row .modal__box .body .form p span, .modal__box .body .auth .plomesalmarContact .row .form p span, .plomesalmarContact .modal__box .body .auth .row .form p span, .auth .plomesalmarContact .row .modal__box .body .form p span, .plomesalmarContact .auth .row .modal__box .body .form p span,
-.modal__box .modal__create__box .body .auth .plomesalmarContact .row .form p span,
-.modal__create__box .modal__box .body .auth .plomesalmarContact .row .form p span,
-.modal__box .plomesalmarContact .modal__create__box .body .auth .row .form p span,
-.plomesalmarContact .modal__create__box .modal__box .body .auth .row .form p span,
-.modal__box .auth .plomesalmarContact .row .modal__create__box .body .form p span,
-.auth .plomesalmarContact .row .modal__create__box .modal__box .body .form p span,
-.modal__box .plomesalmarContact .auth .row .modal__create__box .body .form p span,
-.plomesalmarContact .auth .row .modal__create__box .modal__box .body .form p span,
-.modal__box .modal__create__box .body .auth .plomesalmarContact .row .form p span,
-.plomesalmarContact .modal__box .modal__create__box .body .auth .row .form p span,
-.auth .plomesalmarContact .row .modal__box .modal__create__box .body .form p span,
-.plomesalmarContact .auth .row .modal__box .modal__create__box .body .form p span,
-.modal__create__box .modal__box .body .auth .plomesalmarContact .row .form p span,
-.plomesalmarContact .modal__create__box .modal__box .body .auth .row .form p span,
-.auth .plomesalmarContact .row .modal__create__box .modal__box .body .form p span,
-.plomesalmarContact .auth .row .modal__create__box .modal__box .body .form p span,
-.modal__create__box .body .form p span,
-.modal__create__box .body .plomesalmarContact .row .form p span,
-.plomesalmarContact .row .modal__create__box .body .form p span,
-.modal__create__box .modal__box .body .plomesalmarContact .row .form p span,
-.modal__box .modal__create__box .body .plomesalmarContact .row .form p span,
-.modal__create__box .plomesalmarContact .row .modal__box .body .form p span,
-.plomesalmarContact .row .modal__box .modal__create__box .body .form p span,
-.modal__create__box .body .plomesalmarContact .row .form p span,
-.plomesalmarContact .row .modal__create__box .body .form p span,
-.modal__box .modal__create__box .body .plomesalmarContact .row .form p span,
-.plomesalmarContact .row .modal__box .modal__create__box .body .form p span,
-.modal__create__box .modal__box .body .plomesalmarContact .row .form p span,
-.plomesalmarContact .row .modal__create__box .modal__box .body .form p span,
-.modal__create__box .body .auth .plomesalmarContact .row .form p span,
-.auth .plomesalmarContact .row .modal__create__box .body .form p span,
-.modal__create__box .body .plomesalmarContact .auth .row .form p span,
-.plomesalmarContact .auth .row .modal__create__box .body .form p span,
-.modal__create__box .modal__box .body .auth .plomesalmarContact .row .form p span,
-.modal__box .modal__create__box .body .auth .plomesalmarContact .row .form p span,
-.modal__create__box .plomesalmarContact .modal__box .body .auth .row .form p span,
-.plomesalmarContact .modal__box .modal__create__box .body .auth .row .form p span,
-.modal__create__box .auth .plomesalmarContact .row .modal__box .body .form p span,
-.auth .plomesalmarContact .row .modal__box .modal__create__box .body .form p span,
-.modal__create__box .plomesalmarContact .auth .row .modal__box .body .form p span,
-.plomesalmarContact .auth .row .modal__box .modal__create__box .body .form p span,
-.modal__create__box .body .auth .plomesalmarContact .row .form p span,
-.plomesalmarContact .modal__create__box .body .auth .row .form p span,
-.auth .plomesalmarContact .row .modal__create__box .body .form p span,
-.plomesalmarContact .auth .row .modal__create__box .body .form p span,
-.modal__box .modal__create__box .body .auth .plomesalmarContact .row .form p span,
-.plomesalmarContact .modal__box .modal__create__box .body .auth .row .form p span,
-.auth .plomesalmarContact .row .modal__box .modal__create__box .body .form p span,
-.plomesalmarContact .auth .row .modal__box .modal__create__box .body .form p span,
-.modal__create__box .modal__box .body .auth .plomesalmarContact .row .form p span,
-.plomesalmarContact .modal__create__box .modal__box .body .auth .row .form p span,
-.auth .plomesalmarContact .row .modal__create__box .modal__box .body .form p span,
-.plomesalmarContact .auth .row .modal__create__box .modal__box .body .form p span {
+.modal__management__box .body p span, .form p span, .plomesalmarContact .row .form p span, .modal__box .body .plomesalmarContact .row .form p span, .plomesalmarContact .row .modal__box .body .form p span,
+.modal__management__box .body .plomesalmarContact .row .form p span,
+.plomesalmarContact .row .modal__management__box .body .form p span,
+.modal__box .modal__management__box .body .plomesalmarContact .row .form p span,
+.plomesalmarContact .row .modal__box .modal__management__box .body .form p span,
+.modal__management__box .modal__box .body .plomesalmarContact .row .form p span,
+.plomesalmarContact .row .modal__management__box .modal__box .body .form p span, .auth .plomesalmarContact .row .form p span, .plomesalmarContact .auth .row .form p span, .modal__box .body .auth .plomesalmarContact .row .form p span, .plomesalmarContact .modal__box .body .auth .row .form p span, .auth .plomesalmarContact .row .modal__box .body .form p span, .plomesalmarContact .auth .row .modal__box .body .form p span,
+.modal__management__box .body .auth .plomesalmarContact .row .form p span,
+.plomesalmarContact .modal__management__box .body .auth .row .form p span,
+.auth .plomesalmarContact .row .modal__management__box .body .form p span,
+.plomesalmarContact .auth .row .modal__management__box .body .form p span,
+.modal__box .modal__management__box .body .auth .plomesalmarContact .row .form p span,
+.plomesalmarContact .modal__box .modal__management__box .body .auth .row .form p span,
+.auth .plomesalmarContact .row .modal__box .modal__management__box .body .form p span,
+.plomesalmarContact .auth .row .modal__box .modal__management__box .body .form p span,
+.modal__management__box .modal__box .body .auth .plomesalmarContact .row .form p span,
+.plomesalmarContact .modal__management__box .modal__box .body .auth .row .form p span,
+.auth .plomesalmarContact .row .modal__management__box .modal__box .body .form p span,
+.plomesalmarContact .auth .row .modal__management__box .modal__box .body .form p span, .auth .row .form p span, .auth .plomesalmarContact .row .form p span, .plomesalmarContact .auth .row .form p span, .auth .modal__box .body .plomesalmarContact .row .form p span, .modal__box .body .plomesalmarContact .auth .row .form p span, .auth .plomesalmarContact .row .modal__box .body .form p span, .plomesalmarContact .auth .row .modal__box .body .form p span,
+.auth .modal__management__box .body .plomesalmarContact .row .form p span,
+.modal__management__box .body .plomesalmarContact .auth .row .form p span,
+.auth .plomesalmarContact .row .modal__management__box .body .form p span,
+.plomesalmarContact .auth .row .modal__management__box .body .form p span,
+.auth .modal__box .modal__management__box .body .plomesalmarContact .row .form p span,
+.modal__box .modal__management__box .body .plomesalmarContact .auth .row .form p span,
+.auth .plomesalmarContact .row .modal__box .modal__management__box .body .form p span,
+.plomesalmarContact .auth .row .modal__box .modal__management__box .body .form p span,
+.auth .modal__management__box .modal__box .body .plomesalmarContact .row .form p span,
+.modal__management__box .modal__box .body .plomesalmarContact .auth .row .form p span,
+.auth .plomesalmarContact .row .modal__management__box .modal__box .body .form p span,
+.plomesalmarContact .auth .row .modal__management__box .modal__box .body .form p span, .auth .plomesalmarContact .row .form p span, .plomesalmarContact .auth .row .form p span, .modal__box .body .auth .plomesalmarContact .row .form p span, .plomesalmarContact .modal__box .body .auth .row .form p span, .auth .plomesalmarContact .row .modal__box .body .form p span, .plomesalmarContact .auth .row .modal__box .body .form p span,
+.modal__management__box .body .auth .plomesalmarContact .row .form p span,
+.plomesalmarContact .modal__management__box .body .auth .row .form p span,
+.auth .plomesalmarContact .row .modal__management__box .body .form p span,
+.plomesalmarContact .auth .row .modal__management__box .body .form p span,
+.modal__box .modal__management__box .body .auth .plomesalmarContact .row .form p span,
+.plomesalmarContact .modal__box .modal__management__box .body .auth .row .form p span,
+.auth .plomesalmarContact .row .modal__box .modal__management__box .body .form p span,
+.plomesalmarContact .auth .row .modal__box .modal__management__box .body .form p span,
+.modal__management__box .modal__box .body .auth .plomesalmarContact .row .form p span,
+.plomesalmarContact .modal__management__box .modal__box .body .auth .row .form p span,
+.auth .plomesalmarContact .row .modal__management__box .modal__box .body .form p span,
+.plomesalmarContact .auth .row .modal__management__box .modal__box .body .form p span, .modal__box .body .form p span, .modal__box .body .plomesalmarContact .row .form p span, .plomesalmarContact .row .modal__box .body .form p span, .modal__box .body .plomesalmarContact .row .form p span, .plomesalmarContact .row .modal__box .body .form p span,
+.modal__box .modal__management__box .body .plomesalmarContact .row .form p span,
+.modal__management__box .modal__box .body .plomesalmarContact .row .form p span,
+.modal__box .plomesalmarContact .row .modal__management__box .body .form p span,
+.plomesalmarContact .row .modal__management__box .modal__box .body .form p span,
+.modal__box .modal__management__box .body .plomesalmarContact .row .form p span,
+.plomesalmarContact .row .modal__box .modal__management__box .body .form p span,
+.modal__management__box .modal__box .body .plomesalmarContact .row .form p span,
+.plomesalmarContact .row .modal__management__box .modal__box .body .form p span, .modal__box .body .auth .plomesalmarContact .row .form p span, .auth .plomesalmarContact .row .modal__box .body .form p span, .modal__box .body .plomesalmarContact .auth .row .form p span, .plomesalmarContact .auth .row .modal__box .body .form p span, .modal__box .body .auth .plomesalmarContact .row .form p span, .plomesalmarContact .modal__box .body .auth .row .form p span, .auth .plomesalmarContact .row .modal__box .body .form p span, .plomesalmarContact .auth .row .modal__box .body .form p span,
+.modal__box .modal__management__box .body .auth .plomesalmarContact .row .form p span,
+.modal__management__box .modal__box .body .auth .plomesalmarContact .row .form p span,
+.modal__box .plomesalmarContact .modal__management__box .body .auth .row .form p span,
+.plomesalmarContact .modal__management__box .modal__box .body .auth .row .form p span,
+.modal__box .auth .plomesalmarContact .row .modal__management__box .body .form p span,
+.auth .plomesalmarContact .row .modal__management__box .modal__box .body .form p span,
+.modal__box .plomesalmarContact .auth .row .modal__management__box .body .form p span,
+.plomesalmarContact .auth .row .modal__management__box .modal__box .body .form p span,
+.modal__box .modal__management__box .body .auth .plomesalmarContact .row .form p span,
+.plomesalmarContact .modal__box .modal__management__box .body .auth .row .form p span,
+.auth .plomesalmarContact .row .modal__box .modal__management__box .body .form p span,
+.plomesalmarContact .auth .row .modal__box .modal__management__box .body .form p span,
+.modal__management__box .modal__box .body .auth .plomesalmarContact .row .form p span,
+.plomesalmarContact .modal__management__box .modal__box .body .auth .row .form p span,
+.auth .plomesalmarContact .row .modal__management__box .modal__box .body .form p span,
+.plomesalmarContact .auth .row .modal__management__box .modal__box .body .form p span,
+.modal__management__box .body .form p span,
+.modal__management__box .body .plomesalmarContact .row .form p span,
+.plomesalmarContact .row .modal__management__box .body .form p span,
+.modal__management__box .modal__box .body .plomesalmarContact .row .form p span,
+.modal__box .modal__management__box .body .plomesalmarContact .row .form p span,
+.modal__management__box .plomesalmarContact .row .modal__box .body .form p span,
+.plomesalmarContact .row .modal__box .modal__management__box .body .form p span,
+.modal__management__box .body .plomesalmarContact .row .form p span,
+.plomesalmarContact .row .modal__management__box .body .form p span,
+.modal__box .modal__management__box .body .plomesalmarContact .row .form p span,
+.plomesalmarContact .row .modal__box .modal__management__box .body .form p span,
+.modal__management__box .modal__box .body .plomesalmarContact .row .form p span,
+.plomesalmarContact .row .modal__management__box .modal__box .body .form p span,
+.modal__management__box .body .auth .plomesalmarContact .row .form p span,
+.auth .plomesalmarContact .row .modal__management__box .body .form p span,
+.modal__management__box .body .plomesalmarContact .auth .row .form p span,
+.plomesalmarContact .auth .row .modal__management__box .body .form p span,
+.modal__management__box .modal__box .body .auth .plomesalmarContact .row .form p span,
+.modal__box .modal__management__box .body .auth .plomesalmarContact .row .form p span,
+.modal__management__box .plomesalmarContact .modal__box .body .auth .row .form p span,
+.plomesalmarContact .modal__box .modal__management__box .body .auth .row .form p span,
+.modal__management__box .auth .plomesalmarContact .row .modal__box .body .form p span,
+.auth .plomesalmarContact .row .modal__box .modal__management__box .body .form p span,
+.modal__management__box .plomesalmarContact .auth .row .modal__box .body .form p span,
+.plomesalmarContact .auth .row .modal__box .modal__management__box .body .form p span,
+.modal__management__box .body .auth .plomesalmarContact .row .form p span,
+.plomesalmarContact .modal__management__box .body .auth .row .form p span,
+.auth .plomesalmarContact .row .modal__management__box .body .form p span,
+.plomesalmarContact .auth .row .modal__management__box .body .form p span,
+.modal__box .modal__management__box .body .auth .plomesalmarContact .row .form p span,
+.plomesalmarContact .modal__box .modal__management__box .body .auth .row .form p span,
+.auth .plomesalmarContact .row .modal__box .modal__management__box .body .form p span,
+.plomesalmarContact .auth .row .modal__box .modal__management__box .body .form p span,
+.modal__management__box .modal__box .body .auth .plomesalmarContact .row .form p span,
+.plomesalmarContact .modal__management__box .modal__box .body .auth .row .form p span,
+.auth .plomesalmarContact .row .modal__management__box .modal__box .body .form p span,
+.plomesalmarContact .auth .row .modal__management__box .modal__box .body .form p span {
   text-align: left;
 }
 
@@ -584,7 +584,7 @@ button {
 }
 
 .formInput, .plomesalmarContact .row .form__group__input, .auth .row .form__group__input, .modal__box .body .form__group__input,
-.modal__create__box .body .form__group__input {
+.modal__management__box .body .form__group__input {
   padding: 1rem;
   margin: 0.25rem auto;
   color: #9d9d9c;
@@ -595,7 +595,7 @@ button {
   border-radius: 0.25rem;
 }
 .formInput:hover, .plomesalmarContact .row .form__group__input:hover, .auth .row .form__group__input:hover, .modal__box .body .form__group__input:hover,
-.modal__create__box .body .form__group__input:hover {
+.modal__management__box .body .form__group__input:hover {
   color: inherit;
   background-color: #ffffff;
   border: 1px solid #0065AE;
@@ -613,7 +613,7 @@ button {
 }
 
 .title, .termsAndPolicy .row .box__title, .management .row .box__title, .plomesalmarContact .row .box__title, .home .row--reverse .box__title, .home .row .box__title, .auth .row .box__title, .modal__box .body__title,
-.modal__create__box .body__title {
+.modal__management__box .body__title {
   color: #0065AE;
   background-color: transparent;
   line-height: 1.8;
@@ -624,7 +624,7 @@ button {
 }
 
 .subtitle, .termsAndPolicy .row .box__subtitle, .modal__box .body .form__group__content,
-.modal__create__box .body .form__group__content {
+.modal__management__box .body .form__group__content {
   color: #0065AE;
   background-color: transparent;
   line-height: 1.5;
@@ -670,7 +670,7 @@ button {
 }
 
 .modalShadow, .auth, .modal,
-.modal__create {
+.modal__management {
   display: none;
   position: fixed;
   z-index: 3;
@@ -684,7 +684,7 @@ button {
 }
 
 .modalBox, .auth .row, .modal__box,
-.modal__create__box {
+.modal__management__box {
   position: relative;
   background: #fafafa;
   top: 10vh;
@@ -703,13 +703,13 @@ button {
   border: 1px solid transparent;
 }
 .modalBox:hover, .auth .row:hover, .modal__box:hover,
-.modal__create__box:hover {
+.modal__management__box:hover {
   color: inherit;
   background-color: #fafafa;
   border: 1px solid #9d9d9c;
 }
 
-.button, .termsAndPolicy .row .box__button, .plomesalmarContact .row .form__group__button, .home .row--reverse .box__button, .home .row .box__button, .auth .row .form__group__button, .form__button, .form__button__close {
+.button, .termsAndPolicy .row .box__button, .plomesalmarContact .row .form__group__button, .home .row--reverse .box__button, .home .row .box__button, .auth .row .form__group__button, .form__button__close, .form__button {
   color: #fafafa;
   background-color: #0065AE;
   padding: 0.25rem;
@@ -720,7 +720,7 @@ button {
   border-radius: 0.25rem;
   border: 1px solid transparent;
 }
-.button:hover, .termsAndPolicy .row .box__button:hover, .plomesalmarContact .row .form__group__button:hover, .home .row--reverse .box__button:hover, .home .row .box__button:hover, .auth .row .form__group__button:hover, .form__button:hover, .form__button__close:hover {
+.button:hover, .termsAndPolicy .row .box__button:hover, .plomesalmarContact .row .form__group__button:hover, .home .row--reverse .box__button:hover, .home .row .box__button:hover, .auth .row .form__group__button:hover, .form__button__close:hover, .form__button:hover {
   color: #fafafa;
   background-color: #0079D0;
   border: 1px solid #00518C;
@@ -833,7 +833,7 @@ button {
 }
 
 .modal__box,
-.modal__create__box {
+.modal__management__box {
   top: 20vh;
   left: 20vw;
   min-width: 60vw;
@@ -843,7 +843,7 @@ button {
   border: 1px solid #0065AE;
 }
 .modal__box .body,
-.modal__create__box .body {
+.modal__management__box .body {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -856,7 +856,7 @@ button {
   max-height: 50vh;
 }
 .modal__box .body .form,
-.modal__create__box .body .form {
+.modal__management__box .body .form {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -867,19 +867,19 @@ button {
   max-width: 65vw;
 }
 .modal__box .body .form__group__input,
-.modal__create__box .body .form__group__input {
+.modal__management__box .body .form__group__input {
   min-width: 35vw;
   max-width: 35vw;
   border: 1px solid #8f8f8f;
 }
 .modal__box .body .form__group__input:hover,
-.modal__create__box .body .form__group__input:hover {
+.modal__management__box .body .form__group__input:hover {
   color: #0079D0;
   background-color: #fafafa;
   border: 1px solid #0065AE;
 }
 .modal__box .body .form__group__buttons,
-.modal__create__box .body .form__group__buttons {
+.modal__management__box .body .form__group__buttons {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -888,7 +888,7 @@ button {
   align-self: center;
 }
 .modal__box .close,
-.modal__create__box .close {
+.modal__management__box .close {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -908,20 +908,12 @@ button {
   cursor: pointer;
 }
 .modal__box .close:hover,
-.modal__create__box .close:hover {
+.modal__management__box .close:hover {
   color: #ffeded;
   background-color: #ff6666;
   border: 1px solid #990000;
 }
 
-@media screen and (min-width: 1025px) {
-  .modal__box .body__subtitle {
-    font-size: 2em;
-  }
-  .modal__box .body__content {
-    font-size: 1em;
-  }
-}
 .card {
   min-width: 100%;
   max-width: 100%;
@@ -2086,7 +2078,7 @@ button {
   align-items: center;
   align-self: center;
 }
-.management .row .box__search .button, .management .termsAndPolicy .row .box__search .box__button, .termsAndPolicy .management .row .box__search .box__button, .management .row .box__search .form__button__close, .management .row .box__search .form__button, .management .auth .row .box__search .form__group__button, .auth .management .row .box__search .form__group__button, .management .home .row .box__search .box__button, .home .management .row .box__search .box__button, .management .row .box__search .home .row--reverse .box__button, .management .plomesalmarContact .row .box__search .form__group__button, .plomesalmarContact .management .row .box__search .form__group__button {
+.management .row .box__search .button, .management .termsAndPolicy .row .box__search .box__button, .termsAndPolicy .management .row .box__search .box__button, .management .row .box__search .form__button, .management .row .box__search .form__button__close, .management .auth .row .box__search .form__group__button, .auth .management .row .box__search .form__group__button, .management .home .row .box__search .box__button, .home .management .row .box__search .box__button, .management .row .box__search .home .row--reverse .box__button, .management .plomesalmarContact .row .box__search .form__group__button, .plomesalmarContact .management .row .box__search .form__group__button {
   margin: 0;
 }
 .management .row .box__table {
