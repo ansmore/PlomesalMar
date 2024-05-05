@@ -1351,6 +1351,24 @@ button {
   background-color: #fafafa;
 }
 
+.custom-alert {
+  position: fixed;
+  bottom: 3rem;
+  right: 0rem;
+  padding: 15px;
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: opacity 0.5s ease-in-out;
+  opacity: 1;
+}
+.custom-alert.alert-success {
+  background-color: #4CAF50;
+}
+.custom-alert.alert-danger {
+  background-color: #f44336;
+}
+
 .auth {
   display: block;
 }

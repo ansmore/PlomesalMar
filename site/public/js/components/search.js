@@ -38,8 +38,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 e.preventDefault();
                 const pageUrl = e.target.href;
                 const searchValue = filtro ? filtro.value : '';
+                const orderByField = new URLSearchParams(window.location.search).get('orderByField');
+                const orderByDirection = new URLSearchParams(window.location.search).get('orderByDirection');
                 const baseUrl = window.location.href.split('?')[0];
-                const newUrl = `${baseUrl}?search=${encodeURIComponent(searchValue)}&${pageUrl.split('?')[1]}`;
+                const newUrl = `${baseUrl}?search=${encodeURIComponent(searchValue)}&orderByField=${orderByField}&orderByDirection=${orderByDirection}&${pageUrl.split('?')[1]}`;
                 loadData(newUrl);
             });
         });
