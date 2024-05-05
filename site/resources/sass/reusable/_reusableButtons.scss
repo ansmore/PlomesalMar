@@ -3,7 +3,7 @@
   @include paddingMargin(calc($padding * 2), calc($margin * 2) auto);
   border-radius: $radius;
 
-  @include hover($primary_light, $neutral_lighter, $neutral_lighter);
+  @include hover($primary_light, $neutral_lighter, $primary_dark);
 }
 
 .buttonTable {
