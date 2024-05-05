@@ -1,46 +1,49 @@
 .management {
-  @extend .main;
+  display: grid;
+  grid-template-columns: $aside_width 1fr;
+  justify-content: start;
+  justify-items: start;
+  align-content: center;
+  align-items: stretch;
 
-  @include mainBox(row, flex-start, flex-start);
+  @include style($primary_main, $neutral_light);
   @include paddingMargin($nav_height 0 0 0, 0);
   gap: 0;
 
   .row {
-    display: flex;
-    flex: 1;
-    @include paddingMargin(2rem 0, 0 auto);
-    flex-direction: column;
+    grid-column: 2;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    gap: 0;
+    width: 95%;
     margin: 0 auto;
 
     .box {
-      @extend .article;
-      @include boxSize(width, 90%, null, 90%);
-
       &__title {
         @extend .title;
       }
 
       &__search {
-        @extend .article;
-
-
         @include mainBox(row, space-between, center);
-        @include boxSize(width, 90%, null, 90%);
+
+        .button {
+          margin: 0;
+        }
       }
 
       &__table {
-        @extend .article;
-
-        display: flex;
-        flex: 1;
-        flex-direction: column;
-        @include boxSize(width, 90%, null, 90%);
+        display: grid;
+        row-gap: 0;
+        width: 95%;
+        margin: 0 auto;
       }
 
       &__logo {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-        gap: $gap;
+        row-gap: 10px;
+        max-height: 50%;
+        // margin: 10px auto;
 
         &__image {
           @extend .logo;
@@ -67,6 +70,8 @@
     }
   }
 }
+
+// Pending to delete¿?
 
 .button-add {
   padding: 0.375rem 0.75rem;

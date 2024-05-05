@@ -15,17 +15,14 @@
             <article class="box">
                 <h1 class="box__title" data-text="specieList"></h1>
             </article>
-            <article class="box__search">
-                @include('components.search')
-                <button type="button" class="button" data-bs-toggle="modal" data-bs-target="createSpecies">
-                    <i class="fas fa-plus-circle"></i>
-                    <span data-text="addButton"></span>
-                </button>
-                <button type="button" class="button modal-button" data-modal-id="firstModal">
-                    <i class="fas fa-plus-circle"></i>
-                </button>
-            </article>
             <article class="box__table">
+                <figure class="box__search">
+                    @include('components.search')
+                    <button type="button" class="button" data-bs-toggle="modal" data-bs-target="createSpecies">
+                        <i class="fas fa-plus-circle"></i>
+                        <span data-text="addButton"></span>
+                    </button>
+                </figure>
                 @include('partials.speciesTable', ['species' => $species])
             </article>
         </section>

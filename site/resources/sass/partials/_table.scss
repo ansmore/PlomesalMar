@@ -1,30 +1,29 @@
 .card {
-  margin: 0 auto;
-  // padding: 15px;
   @include boxSize(width, 100%, null, 100%);
+  @include style(inherit, $neutral_lighter);
+  @include boxShadow($primary_main, $radius, 2px, $secondary_main, $secondary_light);
 
-  box-shadow: 0 4px 8px 0 rgba($neutral_darkest, 0.2);
   transition: 0.3s;
-  border-radius: $radius;
-  border: 1px solid rgba($neutral_darkest, 0.175);
-  background-color: $neutral_lightest;
-  padding: 16px;
-
-  // .table-responsive
-  display: block;
-  // width: 100%;
-  overflow-x: auto;
-
+  margin: auto 0;
+  padding: calc($gap * 2);
 
   .table {
     width: 100%;
     border-collapse: collapse;
+    // margin: auto;
 
     th,
     td {
-      padding: 15px;
+      border-bottom: 1px solid $neutral_main;
       text-align: left;
-      border-bottom: 1px solid $border_lighter;
+    }
+
+    th {
+      padding: calc($gap * 1.5) calc($gap * 1);
+    }
+
+    td {
+      padding: calc($gap * 1);
     }
 
     .decoration {
@@ -42,12 +41,6 @@
   }
 }
 
-.thead {
-  background-color: $primary_dark;
-  color: $neutral_lightest;
-  gap: $gap;
-}
-
 .icon-center {
   display: flex;
   gap: 5px;
@@ -62,49 +55,41 @@
 }
 
 .pagination__box {
-  margin: 0 auto;
+  margin: 10px auto;
 
   .pagination {
     display: flex;
     padding-left: 0;
     list-style: none;
-    border-radius: 0.25rem;
+    border-radius: $radius;
     justify-content: center;
 
     .page-item {
-      margin: 0 2px;
+      margin: 0 4px;
+
+      .page-link {
+        @include hover($primary_main, $neutral_lighter, $neutral_lighter, $primary_main);
+        @include style($primary_main, $neutral_lighter);
+        position: relative;
+        display: block;
+        padding: 0.5rem 0.75rem;
+        margin-left: -1px;
+        line-height: 1.25;
+        border-radius: $radius;
+        text-decoration: none;
+      }
 
       &.disabled .page-link {
-        color: $neutral_dark;
+        @include style($neutral_darker, $neutral_lighter);
+        border: 1px solid $neutral_dark;
         pointer-events: none;
         cursor: auto;
-        background-color: $neutral_lightest;
-        border-color: $border_color;
+        opacity: .65;
       }
 
       &.active .page-link {
-        z-index: 3;
-        color: $neutral_lightest;
-        background-color: $primary_main;
-        border-color: $primary_main;
-      }
-    }
-
-    .page-link {
-      position: relative;
-      display: block;
-      padding: 0.5rem 0.75rem;
-      margin-left: -1px;
-      line-height: 1.25;
-      color: $primary_main;
-      background-color: $neutral_lightest;
-      border: 1px solid $border_color;
-      text-decoration: none;
-
-      &:hover {
-        color: $primary_dark;
-        background-color: $secondary_lighter;
-        border-color: $border_color;
+        @include style($neutral_lighter, $primary_main);
+        border: 1px solid $primary_main;
       }
     }
   }
