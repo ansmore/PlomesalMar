@@ -1,11 +1,12 @@
-<div class="modal fade modal-common" id="deleteSpeciesModal" tabindex="-1" aria-labelledby="deleteModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog modal-lg">
+<section class="modal fade modal-common modal__delete" id="deleteSpeciesModal" tabindex="-1"
+    aria-labelledby="deleteModalLabel" aria-hidden="true">
+
+    <div class="modal-dialog modal-lg modal__delete__box">
+        <button type="button" class="btn-close close" data-bs-dismiss="modal" aria-label="Cerrar"><i
+                class="fa-solid fa-xmark"></i></button>
         <div class="modal-content">
             <div class="modal-header bg-danger text-white">
                 <h5 class="modal-title" id="deleteModalLabel">Confirmación de Eliminación</h5>
-                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
-                    aria-label="Cerrar"></button>
             </div>
             <form id="deleteSpeciesForm" action="" method="POST"
                 data-delete-url-template="{{ route('species.destroy', [':id', 'language' => app()->getLocale()]) }}">
@@ -26,4 +27,4 @@
             </form>
         </div>
     </div>
-</div>
+</section>

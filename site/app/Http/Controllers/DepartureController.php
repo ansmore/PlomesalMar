@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Departures;
+use App\Models\Departure;
 use Illuminate\Http\Request;
 
-class DeparturesController extends Controller
+class DepartureController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -34,7 +34,7 @@ class DeparturesController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Departures $departures)
+    public function show(Departure $departures)
     {
         //
     }
@@ -42,7 +42,7 @@ class DeparturesController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Departures $departures)
+    public function edit(Departure $departures)
     {
         //
     }
@@ -50,7 +50,7 @@ class DeparturesController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Departures $departures)
+    public function update(Request $request, Departure $departures)
     {
         //
     }
@@ -58,7 +58,7 @@ class DeparturesController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Departures $departures)
+    public function destroy(Departure $departures)
     {
         //
     }

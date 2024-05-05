@@ -48,8 +48,8 @@
             @endforeach
         </tbody>
     </table>
-    @include('modals/species.edit')
-    @include('modals/species.delete')
+    {{-- @include('modals/species.edit') --}}
+    {{-- @include('modals/species.delete') --}}
 </div>
 
 <nav aria-label="Page navigation example" class="pagination__box">
