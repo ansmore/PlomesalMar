@@ -15,28 +15,19 @@
             <ul class="list">
                 <li class="list__item">
                     <a href="{{ route('home', ['language' => $language]) }}" class="list__item__link"
-                        data-text="navHomePage">
-                        {{-- <span >
-                        </span> --}}
-                    </a>
+                        data-text="navHomePage"></a>
                 </li>
                 <li class="list__item">
-                    <a href="{{ route('management', ['language' => $language]) }}">
-                        <span class="list__item__link" data-text="navManagement">
-                        </span>
-                    </a>
+                    <a href="{{ route('management', ['language' => $language]) }}" class="list__item__link"
+                        data-text="navManagement"></a>
                 </li>
                 <li class="list__item">
-                    <a href="{{ route('home', ['language' => $language]) }}">
-                        <span class="list__item__link" data-text="navPorfolio">
-                        </span>
-                    </a>
+                    <a href="{{ route('home', ['language' => $language]) }}" class="list__item__link"
+                        data-text="navPorfolio"></a>
                 </li>
                 <li class="list__item">
-                    <a href="{{ route('plomesalmarContact', ['language' => $language]) }}">
-                        <span class="list__item__link" data-text="navContact">
-                        </span>
-                    </a>
+                    <a href="{{ route('plomesalmarContact', ['language' => $language]) }}" class="list__item__link"
+                        data-text="navContact"></a>
                 </li>
             </ul>
         </div>

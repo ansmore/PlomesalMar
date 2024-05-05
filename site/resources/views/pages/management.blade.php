@@ -19,8 +19,7 @@
             <article class="box__logo">
                 <a href="{{ route('home', ['language' => $language]) }}">
                     <figure class="box__logo__image">
-                        <i class="fas fa-globe">
-                        </i>
+                        <i class="fas fa-globe"></i>
                         <span data-text="asideDeparture"></span>
                     </figure>
                 </a>

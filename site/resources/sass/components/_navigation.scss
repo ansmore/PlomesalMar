@@ -50,8 +50,7 @@
 
         .list {
           @include mainBox(column);
-          // @include paddingMargin(0, calc($margin * 2) 0 0 0);
-          @include paddingMargin(0, 0 0 0 0);
+          @include paddingMargin(0, 0);
           @include style($neutral_lighter, $primary_main);
           @include boxSize(width, 40vw);
           cursor: pointer;
@@ -235,7 +234,6 @@
 
     label i {
       @include boxSize(width, null, 30px);
-      // background-color: antiquewhite;
       position: absolute;
       right: 1rem;
       top: 0.8rem;
@@ -299,7 +297,7 @@
           @include mainBox(row, flex-end, center);
           margin-top: 0;
           position: sticky;
-          margin-top: 0;
+
           transform: translateY(0);
 
           .list {
