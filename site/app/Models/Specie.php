@@ -83,14 +83,12 @@ class Specie extends Model
     public static function updateFromRequest(Request $request, $id): bool
     {
         $species = self::find($id);
-
-        if (!$species) {
+        if ($species) {
+            $species->update($request->all());
+            return true;
+        } else {
             return false;
         }
-
-        $species->common_name = $request->input('nombre_comun');
-        $species->scientific_name = $request->input('nombre_cientifico');
-        return $species->save();
     }
 
     /**
@@ -100,15 +98,12 @@ class Specie extends Model
      */
     public static function deleteById($id)
     {
-        Log::info('ID recibido en el modelo para eliminación:', ['id' => $id]);
-
         $species = self::find($id);
-
         if ($species) {
-            Log::info('Especie encontrada y eliminada:', ['id' => $id]);
             $species->delete();
+            return true;
         } else {
-            Log::info('Especie no encontrada para eliminar:', ['id' => $id]);
+            return false;
         }
     }
 }

@@ -3,12 +3,6 @@
 @section('title', 'Species')
 @section('content')
 
-    @if (session('status'))
-        <div class="alert alert-success" role="alert">
-            {{ session('status') }}
-        </div>
-    @endif
-
     <main class="management">
         @include('components.asideManagement')
         <section id="head" class="row">
@@ -30,6 +24,7 @@
         {{-- @include('modals.modalLogin')
         @include('modals.modalTeam') --}}
         @include('modals.modalSpecieCreate')
+        @include('components.mesage')
     </main>
 @endsection
 
@@ -37,4 +32,5 @@
     <script type="module" src="{{ asset('js/pages/management.js') }}" defer></script>
     <script type="module" src="{{ asset('js/partials/table.js') }}" defer></script>
     <script type="module" src="{{ asset('js/modals/species/editDeleteModal.js') }}" defer></script>
+    <script type="module" src="{{ asset('js/components/mesage.js') }}" defer></script>
 @endpush

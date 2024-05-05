@@ -30,14 +30,6 @@ class SpecieController extends Controller
         return view('pages.species', ['language' => $language, 'species' => $species ]);
     }
 
-	/**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
     /**
      * Store a newly created resource in storage.
      */
@@ -47,37 +39,14 @@ class SpecieController extends Controller
             'nombre_comun' => 'required|string|max:255',
             'nombre_cientifico' => 'required|string|max:255'
         ]);
-        
-        Log::info('Validated data:', $validated);
 
-        $specie = Specie::createFromRequest($request);
-        
-        Log::info('New specie created:', [
-            'id' => $specie->id,
-            'common_name' => $specie->common_name,
-            'scientific_name' => $specie->scientific_name
-        ]);
-
-        $language = Session::get('language', config('app.fallback_locale', 'ca'));
-        Session::flash('toast_message', trans('messages.species_saved', [], $language));
-        
-        return redirect()->back()->with('language', $language);
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(Specie $specie)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Specie $specie)
-    {
-        //
+        try {
+            $specie = Specie::createFromRequest($request);
+            return redirect()->back()->with('status', 'La especie ha sido creada exitosamente en la base de datos.');
+        } catch (\Exception $e) {
+            Log::error('Error al intentar crear una nueva especie en la base de datos: ' . $e->getMessage());
+            return redirect()->back()->with('error', 'No se pudo registrar la especie en la base de datos. Por favor, revise los detalles e intente de nuevo.');
+        }
     }
 
     /**
@@ -85,8 +54,22 @@ class SpecieController extends Controller
      */
     public function update(Request $request, $language, $id)
     {
-        Specie::updateFromRequest($request, $id);
-        return redirect()->back()->with('language', $language);
+        $validated = $request->validate([
+            'nombre_comun' => 'required|string|max:255',
+            'nombre_cientifico' => 'required|string|max:255'
+        ]);
+
+        try {
+            $success = Specie::updateFromRequest($request, $id);
+            if ($success) {
+                return redirect()->back()->with('status', 'La especie ha sido actualizada exitosamente en la base de datos.');
+            } else {
+                return redirect()->back()->with('error', 'La actualización de la especie falló. No se encontraron cambios o la especie no existe.');
+            }
+        } catch (\Exception $e) {
+            Log::error('Error al actualizar la especie en la base de datos: ' . $e->getMessage());
+            return redirect()->back()->with('error', 'Ocurrió un error al intentar actualizar la especie. Por favor, intente de nuevo.');
+        }
     }
 
     /**
@@ -94,13 +77,17 @@ class SpecieController extends Controller
      */
     public function destroy($language, $id)
     {
-        Log::info('ID y lenguaje recibidos en el controlador:', ['id' => $id, 'language' => $language]);
-
-        Session::put('language', $language);
-
-        Specie::deleteById($id);
-
-        return redirect()->back()->with('language', $language);
+        try {
+            $success = Specie::deleteById($id);
+            if ($success) {
+                return redirect()->back()->with('status', 'La especie ha sido eliminada exitosamente de la base de datos.');
+            } else {
+                return redirect()->back()->with('error', 'No se pudo eliminar la especie de la base de datos. Puede que ya no exista o esté relacionada con otras observaciones.');
+            }
+        } catch (\Exception $e) {
+            Log::error('Error al eliminar la especie de la base de datos: ' . $e->getMessage());
+            return redirect()->back()->with('error', 'Ocurrió un error al intentar eliminar la especie. Por favor, asegúrese de que no está vinculada a observaciones importantes.');
+        }
     }
 
 }
