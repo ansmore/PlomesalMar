@@ -21,9 +21,6 @@
             </article>
         </section>
         @include('modals.species.create')
-        {{-- @include('modals.modalLogin')
-        @include('modals.modalTeam') --}}
-        @include('modals.modalSpecieCreate')
         @include('components.mesage')
     </main>
 @endsection

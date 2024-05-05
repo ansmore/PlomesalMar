@@ -1,46 +1,55 @@
-.modal {
-  @extend .modal;
+.modal,
+.modal__management {
+  @extend .modalShadow;
+  // To delete deleloperMode
+  // display: block;
 
   &__box {
     @extend .modalBox;
 
-    // position: relative;
-    // background: $neutral_lighter;
-    // top: 10vh;
-    // left: 10vw;
-    // @include mainBox(column, center, center);
-    // @include boxSize(width, 80vw, null, 80vw);
-    // @include boxSize(height, 80vh, null, 80vh);
-    // border-radius: 4px;
-    // @include hover($neutral_lighter,
-    //   inherit,
-    //   $secondary_main,
-    //   transparent);
+    top: 20vh;
+    left: 20vw;
+    @include boxSize(width, 60vw, null, 60vw);
+    @include boxSize(height, 60vh, null, 60vh);
+
+    border: 1px solid $primary_main;
 
     .body {
       @extend .article;
 
       @include mainBox(column, space-around, flex-start);
-      @include boxSize(width, 75vw, null, 75vw);
-      @include boxSize(height, 75vh, null, 75vh);
+      @include boxSize(width, 50vw, null, 50vw);
+      @include boxSize(height, 50vh, null, 50vh);
 
-      &__subtitle {
-        @extend .subtitle;
+      &__title {
+        @extend .title;
       }
 
-      &__content {
-        @extend .content;
-      }
+      .form {
+        @extend .form;
 
-      &__photo {
-        @include mainBox(column, flex-end, center);
-        @include boxSize(width, 255px, null, 255px);
-        @include boxSize(height, 255px, null, 255px);
-        border: 2px dotted $secondary_main;
-      }
+        @include mainBox(column, flex-start, center);
+        @include boxSize(width, 65vw, null, 65vw);
+        // @include boxSize(height, 75vh, null, 75vh);
 
-      &__button {
-        @extend .button;
+        &__group {
+          &__content {
+            @extend .subtitle;
+          }
+
+          &__input {
+            @extend .formInput;
+            @include boxSize(width, 35vw, null, 35vw);
+
+            @include hover($neutral_lighter,
+              $primary_light, $primary_main,
+              $neutral_dark);
+          }
+
+          &__buttons {
+            @include mainBox(row, space-between, center);
+          }
+        }
       }
     }
 
@@ -64,18 +73,4 @@
 
 @media screen and (min-width: 601px) and (max-width: 1024px) {}
 
-@media screen and (min-width: 1025px) {
-  .modal {
-    &__box {
-      .body {
-        &__subtitle {
-          font-size: $size_bigger;
-        }
-
-        &__content {
-          font-size: $size_small;
-        }
-      }
-    }
-  }
-}
+@media screen and (min-width: 1025px) {}

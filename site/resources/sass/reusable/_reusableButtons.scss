@@ -6,6 +6,18 @@
   @include hover($primary_light, $neutral_lighter, $primary_dark);
 }
 
+.form__button {
+  @extend .button;
+}
+
+.form__button__close {
+  @extend .button;
+
+  @include style($neutral_lighter, $danger_main);
+  @include hover($danger_light, $neutral_lighter, $danger_dark);
+}
+
+
 .buttonTable {
   border: 1px solid transparent;
   padding: 0.25rem 0.5rem;

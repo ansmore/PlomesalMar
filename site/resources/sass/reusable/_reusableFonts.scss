@@ -9,7 +9,7 @@
 }
 
 .subtitle {
-  @include style($secondary_main);
+  @include style($primary_main);
   line-height: 1.5;
   font-size: $size_big;
   font-weight: bold;

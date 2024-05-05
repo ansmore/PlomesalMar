@@ -1,11 +1,9 @@
 .auth {
-  @extend .modal;
+  @extend .modalShadow;
   display: block;
 
   .row {
     @extend .modalBox;
-
-    // @include paddingMargin(5rem $padding 2rem $padding, $margin);
 
     // To change size of box vh and vw must always add up to 100!
     top: 15vh;
