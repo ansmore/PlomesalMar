@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Facade;
 
 return [
 
-    'per_page' => env('SPECIES_PER_PAGE', 6),
+    'per_page' => env('PER_PAGE', 8),
 
     /*
     |--------------------------------------------------------------------------
