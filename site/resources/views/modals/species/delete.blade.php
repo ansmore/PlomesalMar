@@ -5,26 +5,24 @@
         <button type="button" class="btn-close close" data-bs-dismiss="modal" aria-label="Cerrar"><i
                 class="fa-solid fa-xmark"></i></button>
         <div class="modal-header body">
-            <h2 class="modal-title body__title" id="deleteModalLabel">Confirmación de Eliminación</h2>
+            <h2 class="modal-title body__title" id="deleteModalLabel" data-text="confirmDelete"></h2>
             <article class="form">
                 <form id="deleteSpeciesForm" action="" method="POST"
                     data-delete-url-template="{{ route('species.destroy', [':id', 'language' => app()->getLocale()]) }}">
                     @csrf
                     @method('DELETE')
                     <div class="form__group">
-                        <p class="form__group__content">Estás a punto de eliminar permanentemente la especie:</p>
                         <ul class="form__group">
                             <li class="form__group__content">
-                                <span>Nombre Común: </span>
+                                <span data-text="commonName"></span>
                                 <span id="deleteCommonName"></span>
                             </li>
                             <li class="form__group__content">
-                                <span>Nombre Científico: </span>
+                                <span data-text="scientificName"></span>
                                 <span id="deleteScientificName"></span>
                             </li>
                         </ul>
-                        <p class="form__group__content">Esta acción también eliminará todas las observaciones
-                            relacionadas. ¿Deseas proceder?</p>
+                        <p class="form__group__content" data-text="messageDelete"></p>
                     </div>
                     <div class="form__group__buttons">
                         <button type="button" class="btn btn-secondary form__button__back"

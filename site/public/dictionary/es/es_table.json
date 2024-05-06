@@ -1,11 +1,10 @@
 {
-	"commonName": "Nombre Común",
-	"scientificName": "Nombre Científico",
 	"actions": "Acciones",
-
 	"back": "Anterior",
 	"next": "Siguiente",
 
-	"speciesList": "Lista de Especies",
-	"addButton": "Añadir"
+	"addButton": "Añadir",
+	"cancelButton": "Cancelar",
+	"deleteButton": "Borrar",
+	"saveButton": "Guardar"
 }
