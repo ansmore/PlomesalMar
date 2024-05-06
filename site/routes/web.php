@@ -86,6 +86,9 @@ Route::prefix('/{language?}')->group(function () {
 	Route::get('/species', [SpecieController::class, 'index'])->name('species');
     Route::get('/species#{section?}', [SpecieController::class, 'speciesSection'])->name('species.section');
 
+    Route::resource('boats', BoatController::class)->except(['index']);
+	Route::get('/boats', [BoatController::class, 'index'])->name('boats');
+
     Route::get('/privacyPolicy', [HomeController::class, 'privacyPolicy'])->name('privacyPolicy');
     Route::get('/termsOfUse', [HomeController::class, 'termsOfUse'])->name('termsOfUse');
 });
