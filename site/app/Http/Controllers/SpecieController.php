@@ -21,13 +21,8 @@ class SpecieController extends Controller
      */
     public function index(Request $request, $language = null)
     {
-        $species = Specie::getSpeciesBasedOnRequest($request);
-
-        if ($request->has('search')) {
-            return view('partials.speciesTable', ['species' => $species])->render();
-        }
-        
-        return view('pages.species', ['language' => $language, 'species' => $species ]);
+        $species = Specie::getFilteredSpecies($request);
+        return view('pages.species', ['language' => $language, 'species' => $species]);
     }
 
     /**

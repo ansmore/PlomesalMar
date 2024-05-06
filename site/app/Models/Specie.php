@@ -2,59 +2,56 @@
 
 namespace App\Models;
 
-use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Support\Facades\Log;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class Specie extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'scientific_name',
-        'common_name',
-    ];
+    protected $fillable = ['scientific_name', 'common_name'];
 
     /**
-     * Define el ámbito de la consulta para incluir solo especies que coincidan con el término de búsqueda.
-     *
-     * @param  \Illuminate\Database\Eloquent\Builder  $query
-     * @param  string|null  $search Término de búsqueda
-     * @return \Illuminate\Database\Eloquent\Builder
+     * Busca especies basadas en el término de búsqueda proporcionado.
+     * 
+     * @param Builder $query
+     * @param string|null $search Término de búsqueda
+     * @return Builder
      */
-    public function scopeSearch($query, $search): Builder
+    public function scopeSearch(Builder $query, $search): Builder
     {
-        if (empty($search)) {
-            return $query;
+        if (!empty($search)) {
+            return $query->where('common_name', 'like', '%' . $search . '%')
+                         ->orWhere('scientific_name', 'like', '%' . $search . '%');
         }
-
-        return $query->where('common_name', 'like', '%' . $search . '%')
-                     ->orWhere('scientific_name', 'like', '%' . $search . '%');
+        return $query;
     }
 
     /**
-     * Obtiene las especies basadas en los parámetros de la solicitud (consulta de búsqueda, campo y dirección de ordenación).
-     *
-     * @param \Illuminate\Http\Request $request
-     * @return LengthAwarePaginator
+     * Recupera especies filtradas según los criterios de búsqueda y ordenación almacenados en la sesión.
+     * 
+     * @param Request $request
+     * @return \Illuminate\Contracts\Pagination\LengthAwarePaginator
      */
-    public static function getSpeciesBasedOnRequest(Request $request)
+    public static function getFilteredSpecies(Request $request)
     {
-        $search = $request->search;
         $orderByField = $request->input('orderByField', 'id');
         $orderByDirection = $request->input('orderByDirection', 'asc');
 
-        return static::search($search)
-            ->orderBy($orderByField, $orderByDirection)
-            ->paginate(8);
+        $perPage = config('app.per_page');
+
+        return static::search($request->search)
+                    ->orderBy($orderByField, $orderByDirection)
+                    ->paginate($perPage);
     }
 
     /**
      * Crea una nueva especie a partir de los datos proporcionados en la solicitud.
-     *
-     * @param Illuminate\Http\Request $request
+     * 
+     * @param Request $request
      * @return Specie
      */
     public static function createFromRequest(Request $request): Specie
@@ -72,11 +69,10 @@ class Specie extends Model
         return $newSpecie;
     }
 
-
     /**
      * Actualiza una especie existente con los datos proporcionados en la solicitud.
-     *
-     * @param Illuminate\Http\Request $request
+     * 
+     * @param Request $request
      * @param int $id Identificador de la especie a actualizar.
      * @return bool
      */
@@ -86,24 +82,23 @@ class Specie extends Model
         if ($species) {
             $species->update($request->all());
             return true;
-        } else {
-            return false;
         }
+        return false;
     }
 
     /**
      * Elimina una especie basada en el ID proporcionado.
-     *
+     * 
      * @param int $id El ID de la especie a eliminar.
+     * @return bool
      */
-    public static function deleteById($id)
+    public static function deleteById($id): bool
     {
         $species = self::find($id);
         if ($species) {
             $species->delete();
             return true;
-        } else {
-            return false;
         }
+        return false;
     }
 }

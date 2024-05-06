@@ -41,7 +41,14 @@ document.addEventListener("DOMContentLoaded", () => {
                 const orderByField = new URLSearchParams(window.location.search).get('orderByField');
                 const orderByDirection = new URLSearchParams(window.location.search).get('orderByDirection');
                 const baseUrl = window.location.href.split('?')[0];
-                const newUrl = `${baseUrl}?search=${encodeURIComponent(searchValue)}&orderByField=${orderByField}&orderByDirection=${orderByDirection}&${pageUrl.split('?')[1]}`;
+                let newUrl = `${baseUrl}?`;
+                if (searchValue) {
+                    newUrl += `search=${encodeURIComponent(searchValue)}&`;
+                }
+                if (orderByField && orderByDirection) {
+                    newUrl += `orderByField=${orderByField}&orderByDirection=${orderByDirection}&`;
+                }
+                newUrl += pageUrl.split('?')[1];
                 loadData(newUrl);
             });
         });
