@@ -69,6 +69,18 @@
   }
 }
 
+.danger {
+  .modal__management__box {
+    border: 1px solid $danger_main;
+
+    .body {
+      &__title {
+        color: $danger_main;
+      }
+    }
+  }
+}
+
 @media screen and (min-width: 376px) and (max-width: 600px) {}
 
 @media screen and (min-width: 601px) and (max-width: 1024px) {}
