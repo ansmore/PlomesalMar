@@ -12,7 +12,11 @@
     @include boxSize(width, 60vw, null, 60vw);
     @include boxSize(height, 60vh, null, 60vh);
 
-    border: 1px solid $primary_main;
+    // border: 1px solid $primary_main;
+    @include hover($neutral_lighter,
+      inherit,
+      $primary_main,
+      $primary_main);
 
     .body {
       @extend .article;
@@ -54,9 +58,11 @@
     }
 
     .close {
+      @extend .buttonTable__close;
+
       @include mainBox(column, center);
       @include style($danger_main, $danger_lighter);
-      @include hover($danger_light, $danger_lighter, $danger_dark, $danger_main);
+      @include hover($danger_main, $danger_lighter, $danger_dark, $danger_main);
       position: absolute;
       top: 0;
       right: 0;
@@ -71,7 +77,12 @@
 
 .danger {
   .modal__management__box {
-    border: 1px solid $danger_main;
+    // border: 1px solid $danger_main;
+    @include hover($neutral_lighter,
+      inherit,
+      $danger_main,
+      $danger_main);
+
 
     .body {
       &__title {

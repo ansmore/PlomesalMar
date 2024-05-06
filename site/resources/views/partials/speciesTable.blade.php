@@ -37,7 +37,7 @@
                             data-scientific-name="{{ $specie->scientific_name }}">
                             <i class="fas fa-pencil"></i>
                         </button>
-                        <button type="button" class="buttonTable__danger" data-bs-toggle="modal"
+                        <button type="button" class="buttonTable__close" data-bs-toggle="modal"
                             data-bs-target="deleteSpeciesModal" title="Eliminar" data-id="{{ $specie->id }}"
                             data-common-name="{{ $specie->common_name }}"
                             data-scientific-name="{{ $specie->scientific_name }}">

@@ -6,24 +6,24 @@
             <i class="fa-solid fa-xmark"></i>
         </button>
         <div class="modal-header body">
-            <h2 class="modal-title body__title" id="modalLabelNuevo">Agregar Nueva Especie</h2>
+            <h2 class="modal-title body__title" id="modalLabelNuevo" data-text="newSpecie"></h2>
             <article class="form">
                 <form method="POST" action="{{ route('species.store', ['language' => app()->getLocale()]) }}">
                     @csrf
                     <div class="form__group">
-                        <label for="nombreComun" class="form__group__content">Nombre Común</label>
+                        <label for="nombreComun" class="form__group__content" data-text="commonName"></label>
                         <input type="text" class="form__group__input" id="nombreComun" name="nombre_comun"
-                            placeholder="Ejemplo: Colibrí Esmeralda">
+                            placeholder="Example: Colibrí Esmeralda">
                     </div>
                     <div class="form__group">
-                        <label for="nombreCientifico" class="form__group__content">Nombre Científico</label>
+                        <label for="nombreCientifico" class="form__group__content" data-text="scientificName"></label>
                         <input type="text" class="form__group__input" id="nombreCientifico" name="nombre_cientifico"
-                            placeholder="Ejemplo: Chlorostilbon maugaeus">
+                            placeholder="Example: Chlorostilbon maugaeus">
                     </div>
                     <div class="form__group__buttons">
-                        <button type="button" class="btn-close form__button__back"
-                            data-bs-dismiss="modal">Cancelar</button>
-                        <button type="submit" class="btn btn-primary form__button">Guardar Especie</button>
+                        <button type="button" class="btn-close form__button__back" data-bs-dismiss="modal"
+                            data-text="cancelButton"></button>
+                        <button type="submit" class="btn btn-primary form__button" data-text="saveButton"></button>
                     </div>
                 </form>
             </article>

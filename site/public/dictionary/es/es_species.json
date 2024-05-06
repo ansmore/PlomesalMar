@@ -1,0 +1,10 @@
+{
+	"speciesList": "Lista de Especies",
+
+	"commonName": "Nombre Común",
+	"scientificName": "Nombre Científico",
+
+	"newSpecie": "Agregar nueva especie",
+	"confirmDelete": "Confirmación de eliminación",
+	"messageDelete": "Eliminar los datos, ¿quieres continuar?"
+}
