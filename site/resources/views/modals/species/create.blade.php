@@ -21,8 +21,8 @@
                             placeholder="Ejemplo: Chlorostilbon maugaeus">
                     </div>
                     <div class="form__group__buttons">
-                        <button type="button" class="btn-close form__button__close"
-                            data-bs-dismiss="modal">Cerrar</button>
+                        <button type="button" class="btn-close form__button__back"
+                            data-bs-dismiss="modal">Cancelar</button>
                         <button type="submit" class="btn btn-primary form__button">Guardar Especie</button>
                     </div>
                 </form>

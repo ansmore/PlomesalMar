@@ -1,4 +1,4 @@
-<section class="modal fade modal-common modal__management" id="deleteSpeciesModal" tabindex="-1"
+<section class="modal fade modal-common modal__management danger" id="deleteSpeciesModal" tabindex="-1"
     aria-labelledby="deleteModalLabel" aria-hidden="true">
 
     <div class="modal-dialog modal-lg modal__management__box">
@@ -27,7 +27,7 @@
                             relacionadas. ¿Deseas proceder?</p>
                     </div>
                     <div class="form__group__buttons">
-                        <button type="button" class="btn btn-secondary form__button__close"
+                        <button type="button" class="btn btn-secondary form__button__back"
                             data-bs-dismiss="modal">Cancelar</button>
                         <button type="submit" class="btn btn-danger form__button__close">Eliminar</button>
                     </div>

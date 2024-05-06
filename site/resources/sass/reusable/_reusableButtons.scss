@@ -17,6 +17,13 @@
   @include hover($danger_light, $neutral_lighter, $danger_dark);
 }
 
+.form__button__back {
+  @extend .button;
+
+  @include style($neutral_lighter, $neutral_dark);
+  @include hover($neutral_main, $neutral_darker, $neutral_dark);
+}
+
 
 .buttonTable {
   border: 1px solid transparent;
