@@ -3,7 +3,7 @@
 @section('title', 'Boats')
 @section('content')
 
-    <main class="management">
+    <main class="management" data-view="boats">
         @include('components.asideManagement')
         <section id="head" class="row">
             <article class="box">
@@ -12,7 +12,7 @@
             <article class="box__table">
                 <figure class="box__search">
                     @include('components.search')
-                    <button type="button" class="button" data-bs-toggle="modal" data-bs-target="createBoats">
+                    <button type="button" class="button" data-bs-toggle="modal" data-bs-target="createBoat">
                         <i class="fas fa-plus-circle"></i>
                         <span data-text="addButton"></span>
                     </button>
@@ -28,6 +28,5 @@
 @push('scripts')
     <script type="module" src="{{ asset('js/pages/management.js') }}" defer></script>
     <script type="module" src="{{ asset('js/partials/table.js') }}" defer></script>
-    <script type="module" src="{{ asset('js/modals/species/editDeleteModal.js') }}" defer></script>
     <script type="module" src="{{ asset('js/components/mesage.js') }}" defer></script>
 @endpush

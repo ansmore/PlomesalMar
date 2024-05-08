@@ -3,7 +3,7 @@
 @section('title', 'Species')
 @section('content')
 
-    <main class="management">
+    <main class="management" data-view="species">
         @include('components.asideManagement')
         <section id="head" class="row">
             <article class="box">
@@ -28,6 +28,5 @@
 @push('scripts')
     <script type="module" src="{{ asset('js/pages/management.js') }}" defer></script>
     <script type="module" src="{{ asset('js/partials/table.js') }}" defer></script>
-    <script type="module" src="{{ asset('js/modals/species/editDeleteModal.js') }}" defer></script>
     <script type="module" src="{{ asset('js/components/mesage.js') }}" defer></script>
 @endpush

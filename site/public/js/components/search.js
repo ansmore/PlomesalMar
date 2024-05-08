@@ -1,5 +1,8 @@
-import { setupModalEventListeners } from "../modals/species/editDeleteModal.js";
+import { setupModalEventListenersSpecies } from "../modals/species/modals.js";
+import { setupModalEventListenersBoats } from "../modals/boats/modals.js";
 document.addEventListener("DOMContentLoaded", () => {
+    const body = document.querySelector('main');
+    const view = body ? body.getAttribute('data-view') : null;
     const filtro = document.getElementById('filtro');
     let debounceTimeout;
     async function loadData(url) {
@@ -18,18 +21,26 @@ document.addEventListener("DOMContentLoaded", () => {
             const currentTbody = document.querySelector('#table-container table tbody');
             if (newTbody && currentTbody) {
                 currentTbody.innerHTML = newTbody.innerHTML;
-                setupModalEventListeners();
+                setupModals(view);
             }
             const newPagination = tempDiv.querySelector('.pagination__box');
             const currentPagination = document.querySelector('.pagination__box');
             if (newPagination && currentPagination) {
                 currentPagination.innerHTML = newPagination.innerHTML;
-                setupModalEventListeners();
+                setupModals(view);
             }
             bindPaginationLinks();
         }
         catch (error) {
             console.error('Fetch error:', error.message);
+        }
+    }
+    function setupModals(view) {
+        if (view === 'species') {
+            setupModalEventListenersSpecies();
+        }
+        else if (view === 'boats') {
+            setupModalEventListenersBoats();
         }
     }
     function bindPaginationLinks() {

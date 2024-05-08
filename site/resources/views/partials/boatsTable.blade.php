@@ -32,13 +32,13 @@
                     <td>{{ $boat->registration_number }}</td>
                     <td class="icon-center">
                         <button type="button" class="buttonTable__success" data-bs-toggle="modal"
-                            data-bs-target="#editBoatModal" title="Editar" data-id="{{ $boat->id }}"
-                            data-name="{{ $boat->name }}">
+                            data-bs-target="editBoatModal" title="Editar" data-id="{{ $boat->id }}"
+                            data-name="{{ $boat->name }}" data-registration-number="{{ $boat->registration_number }}">
                             <i class="fas fa-pencil-alt"></i>
                         </button>
                         <button type="button" class="buttonTable__close" data-bs-toggle="modal"
-                            data-bs-target="#deleteBoatModal" title="Eliminar" data-id="{{ $boat->id }}"
-                            data-name="{{ $boat->name }}">
+                            data-bs-target="deleteBoatModal" title="Eliminar" data-id="{{ $boat->id }}"
+                            data-name="{{ $boat->name }}" data-registration-number="{{ $boat->registration_number }}">
                             <i class="fas fa-trash"></i>
                         </button>
                     </td>
@@ -47,8 +47,8 @@
         </tbody>
     </table>
     {{-- Include modals for boat actions --}}
-    {{-- @include('modals/boats.edit') --}}
-    {{-- @include('modals/boats.delete') --}}
+    @include('modals/boats.edit')
+    @include('modals/boats.delete')
 </div>
 
 <nav aria-label="Page navigation example" class="pagination__box">

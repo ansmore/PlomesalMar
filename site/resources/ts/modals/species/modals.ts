@@ -1,8 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
-    setupModalEventListeners();
-});
-
-export const setupModalEventListeners = () => {
+export const setupModalEventListenersSpecies = () => {
     const buttons = document.querySelectorAll<HTMLButtonElement>('[data-bs-toggle="modal"]');
     buttons.forEach(button => {
         button.removeEventListener('click', handleModalButtonClick);
@@ -12,6 +8,17 @@ export const setupModalEventListeners = () => {
     document.querySelectorAll<HTMLElement>('[data-bs-dismiss="modal"]').forEach(button => {
         button.removeEventListener('click', closeModalButtonClick);
         button.addEventListener('click', closeModalButtonClick);
+    });
+};
+
+export const cleanupSpecies = () => {
+    const buttons = document.querySelectorAll<HTMLButtonElement>('[data-bs-toggle="modal"]');
+    buttons.forEach(button => {
+        button.removeEventListener('click', handleModalButtonClick);
+    });
+
+    document.querySelectorAll<HTMLElement>('[data-bs-dismiss="modal"]').forEach(button => {
+        button.removeEventListener('click', closeModalButtonClick);
     });
 };
 
@@ -56,7 +63,6 @@ const handleModalButtonClick = (event: Event) => {
             break;
     }
 };
-
 
 const closeModalButtonClick = (event: Event) => {
     const button = event.currentTarget as HTMLElement;
@@ -124,5 +130,3 @@ const handleDeleteSpeciesModal = (modal: HTMLDivElement, specieId: string, commo
     textScientificName.textContent = scientificName;
     openModal(modal);
 };
-
-
