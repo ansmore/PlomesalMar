@@ -13,6 +13,7 @@ class BoatFactory extends Factory
     {
         return [
             'name' => $this->faker->word,
+            'registration_number' => $this->faker->regexify('[A-Z0-9]{5}')
         ];
     }
 }

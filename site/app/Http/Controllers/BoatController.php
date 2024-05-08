@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Session;
 
-class SpecieController extends Controller
+class BoatController extends Controller
 {
 	public function __construct()
     {
@@ -15,4 +15,14 @@ class SpecieController extends Controller
 
 		// $this->language = Session::get('language',  config('app.fallback_locale', 'ca'));
     }
+
+    /**
+     * Display a listing of the resource.
+     */
+    public function index(Request $request, $language = null)
+    {
+        $boats = Boat::getFilteredBoats($request);
+        return view('pages.boats', ['language' => $language, 'boats' => $boats]);
+    }
+
 }
