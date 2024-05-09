@@ -21,7 +21,7 @@
             </article>
         </section>
         @include('modals.species.create')
-        @include('components.mesage')
+        @include('components.message')
     </main>
 @endsection
 

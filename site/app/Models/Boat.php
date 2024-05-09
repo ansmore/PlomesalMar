@@ -38,8 +38,10 @@ class Boat extends Model
     public function scopeSearch(Builder $query, $search): Builder
     {
         if (!empty($search)) {
-            return $query->where('name', 'like', '%' . $search . '%')
-                         ->orWhere('registration_number', 'like', '%' . $search . '%');  // Incluir búsqueda por número de registro.
+            return $query->where(function($query) use ($search) {
+                $query->where('name', 'like', '%' . $search . '%')
+                    ->orWhere('registration_number', 'like', '%' . $search . '%');
+            });
         }
         return $query;
     }
@@ -108,11 +110,15 @@ class Boat extends Model
      */
     public static function deleteById($id): bool
     {
-        $boat = self::find($id);
+        $boat = self::with('departures')->find($id);
         if ($boat) {
+            if ($boat->departures->isNotEmpty()) {
+                return false;
+            }
             $boat->delete();
             return true;
         }
         return false;
     }
+
 }
