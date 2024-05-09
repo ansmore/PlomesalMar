@@ -2,7 +2,10 @@ import {
 	getFinalLanguage,
 	loadTextComponent,
 	setLanguage,
-	getCurrentFileName,
+	getFirstSegment,
+	getSecondSegment,
+	getIdSegment,
+	getOthersSegments,
 } from "../helpers/dictionary.js";
 export const navbar = "navigation";
 
@@ -58,7 +61,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const changeLanguage = async (language: string) => {
 	try {
-		const fileName = await getCurrentFileName();
+		const currentUrl = window.location.href;
+		const firstSegment = await getFirstSegment(currentUrl)!;
+		const secondSegment = await getSecondSegment(currentUrl)!;
+		const idSegment = await getIdSegment(currentUrl)!;
+		const othersSegments = await getOthersSegments(currentUrl)!;
+
+		// DeveloperMode
+		console.log("current", currentUrl);
+		console.log("first", firstSegment);
+		console.log("second", secondSegment);
+		console.log("id", idSegment);
+		console.log("others", othersSegments);
+
 		const csrfToken = document
 			.querySelector("meta[name=csrf-token]")
 			?.getAttribute("content");
@@ -69,12 +84,17 @@ const changeLanguage = async (language: string) => {
 				"Content-Type": "application/json",
 				"X-CSRF-TOKEN": csrfToken ?? "",
 			},
-			body: JSON.stringify({ language, fileName }),
+			body: JSON.stringify({
+				language,
+				firstSegment,
+				secondSegment,
+				idSegment,
+				othersSegments,
+			}),
 		});
 
 		if (response.ok) {
 			const responseData = await response.json();
-			// const responseData = (await response.json()) as string[];
 
 			const { newUrl } = responseData;
 

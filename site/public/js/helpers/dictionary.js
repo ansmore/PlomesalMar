@@ -5,11 +5,9 @@ import { navbar } from "../components/navigation.js";
 import { aside } from "../components/aside.js";
 import { footer } from "../components/footer.js";
 import { table } from "../partials/table.js";
-// Export let counterComponent = 0;
-// Export let counterPage = 0;
 export const loadDictionary = async (language, page) => {
     try {
-        const response = await fetch(`./../dictionary/${language}/${language}_${page}.json`);
+        const response = await fetch(`/dictionary/${language}/${language}_${page}.json`);
         if (!response.ok) {
             throw new Error(`Error loading the language ${language}.`);
         }
@@ -23,7 +21,7 @@ export const loadDictionary = async (language, page) => {
 // Const availableLanguages = ["en", "es", "ca"];
 export const loadAvailablesLanguages = async () => {
     try {
-        const response = await fetch("./../dictionary/listLanguages.json");
+        const response = await fetch("/dictionary/listLanguages.json");
         if (!response.ok) {
             throw new Error("Error loading white language list");
         }
@@ -34,9 +32,10 @@ export const loadAvailablesLanguages = async () => {
         throw error;
     }
 };
+// Const availablePages = ["home", "management", "species" ...];
 export const loadAvailablesFiles = async () => {
     try {
-        const response = await fetch("./../dictionary/listPages.json");
+        const response = await fetch("/dictionary/listPages.json");
         if (!response.ok) {
             throw new Error("Error loading white page list");
         }
@@ -47,33 +46,98 @@ export const loadAvailablesFiles = async () => {
         throw error;
     }
 };
-export const getFileNameFromUrl = (url) => {
-    const segments = url.split("/");
-    const lastSegment = segments.pop();
-    // Verifica si hay al menos un segmento en la URL
-    if (lastSegment !== undefined) {
-        const fileName = lastSegment.split("#")[0];
-        // Verifica si fileName no es undefined
-        if (fileName !== undefined) {
-            return fileName;
-        }
-        console.error("fileName es undefined después de split('#').");
-    }
-    else {
-        console.error("La URL no tiene segmentos.");
-    }
-    return undefined;
-};
 export const isLanguageSupported = async (language) => {
     const supportedLanguages = await loadAvailablesLanguages();
     return !supportedLanguages.includes(language);
 };
-export const getNavigatorLanguage = async () => navigator.language.slice(0, 2) || "";
-export const getCurrentFileName = async () => {
-    const currentUrl = window.location.href;
-    const fileName = getFileNameFromUrl(currentUrl);
-    return fileName;
+export const getNavigatorLanguage = async () => {
+    const language = navigator.language.slice(0, 2) || "";
+    return language;
 };
+export const getFirstSegment = (url) => {
+    try {
+        const segments = url.split("/");
+        console.log("current", segments);
+        const languageIndex = segments.findIndex((segment) => /^[a-z]{2}$/i.test(segment));
+        if (languageIndex !== -1 && segments.length > languageIndex + 1) {
+            const nextPageSegment = segments[languageIndex + 1];
+            if (nextPageSegment) {
+                // Comprovació addicional per seguretat
+                return nextPageSegment.split("#")[0];
+            }
+        }
+        throw new Error("No es pot determinar el fitxer des de la URL proporcionada.");
+    }
+    catch (error) {
+        console.error("Error en processar la URL:", error);
+        return undefined;
+    }
+};
+export const getSecondSegment = (url) => {
+    try {
+        const segments = url.split("/");
+        const languageIndex = segments.findIndex((segment) => /^[a-z]{2}$/i.test(segment));
+        if (languageIndex !== -1 && segments.length > languageIndex + 1) {
+            const nextPageSegment = segments[languageIndex + 2];
+            if (nextPageSegment) {
+                // Comprovació addicional per seguretat
+                return nextPageSegment.split("#")[0];
+            }
+            else {
+                return undefined;
+            }
+        }
+        throw new Error("No es pot determinar el sub-fitxer des de la URL proporcionada.");
+    }
+    catch (error) {
+        console.error("Error en processar la URL:", error);
+        return undefined;
+    }
+};
+export const getIdSegment = (url) => {
+    try {
+        const segments = url.split("/");
+        const languageIndex = segments.findIndex((segment) => /^[a-z]{2}$/i.test(segment));
+        if (languageIndex !== -1 && segments.length > languageIndex + 1) {
+            const nextPageSegment = segments[languageIndex + 3];
+            if (nextPageSegment) {
+                // Comprovació addicional per seguretat
+                return nextPageSegment.split("#")[0];
+            }
+            else {
+                return undefined;
+            }
+        }
+        throw new Error("No es pot determinar la id des de la URL proporcionada.");
+    }
+    catch (error) {
+        console.error("Error en processar la URL:", error);
+        return undefined;
+    }
+};
+export const getOthersSegments = async (url) => {
+    const segments = url.split("/");
+    // Mostrar segments per a depuració
+    console.log("Aqui-> segments-> ", segments);
+    // Començar des del sisè element (índex 5)
+    const relevantSegments = segments.slice(5).join("/");
+    // Mostrar segments per a depuració
+    console.log("Aqui-> resultat-> ", relevantSegments);
+    // Retorna els segments rellevants com a cadena
+    return relevantSegments;
+};
+// export const getCurrentFileName = async (): Promise<string> => {
+// 	const currentUrl = window.location.href;
+// 	const firstSegment = getFirstSegment(currentUrl)!;
+// 	const secondSegment = getSecondSegment(currentUrl)!;
+// 	const othersSegments = getOthersSegments(currentUrl)!;
+// 	// DeveloperMode
+// 	console.log("first", currentUrl);
+// 	console.log("first", firstSegment);
+// 	console.log("second", secondSegment);
+// 	console.log("others", othersSegments);
+// 	return firstSegment;
+// };
 export const getSelectedLanguage = async () => {
     const selectedLanguage = localStorage.getItem("selectedLanguage") ?? "";
     return selectedLanguage;
@@ -116,11 +180,13 @@ export const setLanguage = async (selectedLanguage) => {
 };
 export const loadText = async () => {
     try {
-        // CounterPage += 1;
+        const currentUrl = window.location.href;
         const availablePages = await loadAvailablesFiles();
-        const fileName = await getCurrentFileName();
+        const firstSegment = await getFirstSegment(currentUrl);
         const finalSelectedLanguage = await getFinalLanguage();
-        const selectedPage = availablePages.includes(fileName) ? fileName : "home";
+        const selectedPage = availablePages.includes(firstSegment)
+            ? firstSegment
+            : "home";
         const dictionary = await loadDictionary(finalSelectedLanguage, selectedPage);
         const textsToChange = document.querySelectorAll("[data-text]");
         textsToChange.forEach((element) => {

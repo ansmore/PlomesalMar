@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Session;
 use App\Http\Controllers\BoatController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Redirect;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\SpecieController;
 use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\PlomesalmarController;
@@ -23,6 +24,8 @@ use App\Http\Controllers\PlomesalmarController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+// Route::get('/dictionary/{language}/{page}.json', [LanguageController::class, 'load'])->middleware('auth');
 
 Route::get('/register', function () {
     return Redirect::to("/" . app()->getLocale() . "/register");
@@ -73,6 +76,14 @@ Route::post('/plomesalmarContact', [PlomesalmarController::class, 'plomesalmarCo
 Route::prefix('/{language?}')->group(function () {
 	Auth::routes();
 
+	// A la ruta admin? ->middleware('auth')
+	Route::prefix('admin')->group(function () {
+		Route::get('users', [AdminController::class, 'userList'])->name('admin.users');
+		Route::get('user/{user}/details', [AdminController::class, 'userShow'])->name('admin.user.details');
+		Route::post('role', [AdminController::class, 'setRole'])->name('admin.user.setRole');
+		Route::delete('role', [AdminController::class, 'removeRole'])->name('admin.user.removeRole');
+	});
+
 	Route::get('/', [HomeController::class, 'index'])->name('index');
     Route::get('/home', [HomeController::class, 'home'])->name('home');
     Route::get('/#{section?}', [HomeController::class, 'indexSection'])->name('index.section');
@@ -86,8 +97,8 @@ Route::prefix('/{language?}')->group(function () {
     Route::resource('species', SpecieController::class)->except(['index']);
 	Route::get('/species', [SpecieController::class, 'index'])->name('species');
 
-    Route::resource('boats', BoatController::class)->except(['index']);
-	Route::get('/boats', [BoatController::class, 'index'])->name('boats');
+    // Route::resource('boats', BoatController::class)->except(['index']);
+	// Route::get('/boats', [BoatController::class, 'index'])->name('boats');
 
     Route::get('/privacyPolicy', [HomeController::class, 'privacyPolicy'])->name('privacyPolicy');
     Route::get('/termsOfUse', [HomeController::class, 'termsOfUse'])->name('termsOfUse');
