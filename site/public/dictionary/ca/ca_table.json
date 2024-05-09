@@ -1,7 +1,8 @@
 {
+	"actions": "Accions",
+
 	"back": "Anterior",
 	"next": "Següent",
-	"actions": "Actions",
 
 	"addButton": "Afegir",
 	"cancelButton": "Cancel·lar",
