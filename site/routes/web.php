@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Session;
+use App\Http\Controllers\BoatController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Redirect;
 use App\Http\Controllers\SpecieController;
@@ -84,7 +85,6 @@ Route::prefix('/{language?}')->group(function () {
 
     Route::resource('species', SpecieController::class)->except(['index']);
 	Route::get('/species', [SpecieController::class, 'index'])->name('species');
-    Route::get('/species#{section?}', [SpecieController::class, 'speciesSection'])->name('species.section');
 
     Route::resource('boats', BoatController::class)->except(['index']);
 	Route::get('/boats', [BoatController::class, 'index'])->name('boats');

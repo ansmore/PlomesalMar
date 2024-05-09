@@ -15,6 +15,7 @@
     @include('components.navigationHome')
     @yield('content')
 
+    <script type="module" src="{{ asset('js/helpers/jsChange.js') }}" defer></script>
     @stack('scripts')
 </body>
 

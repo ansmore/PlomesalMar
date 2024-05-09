@@ -36,7 +36,7 @@
                     <i class="fas fa-ship">
                     </i>
                 </span>
-                <a href="{{ route('species', ['language' => $language]) }}" class="list__item__link"
+                <a href="{{ route('boats', ['language' => $language]) }}" class="list__item__link"
                     data-text="asideBoat">
                 </a>
             </li>
