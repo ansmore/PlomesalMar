@@ -20,9 +20,9 @@ return new class extends Migration
 
             $table->primary(['departure_id', 'user_id', 'observation_id']);
 
-            $table->foreign('departure_id')->references('id')->on('departures')->onDelete('cascade');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('observation_id')->references('id')->on('observations')->onDelete('cascade');
+            $table->foreign('departure_id')->references('id')->on('departures');
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('observation_id')->references('id')->on('observations');
 
             $table->unique(['departure_id', 'user_id', 'observation_id'], 'departure_user_observation_unique');
         });

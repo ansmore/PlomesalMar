@@ -20,9 +20,9 @@ return new class extends Migration
             $table->timestamps();
 
             $table->foreign('observation_id')->references('id')->on('observations')
-                  ->onUpdate('cascade')->onDelete('cascade');
+                  ->onUpdate('cascade');
             $table->foreign('user_id')->references('id')->on('users')
-                  ->onUpdate('cascade')->onDelete('cascade');
+                  ->onUpdate('cascade');
 
                   $table->unique(['photography_number', 'observation_id', 'user_id'], 'obs_img_unique');
         });
