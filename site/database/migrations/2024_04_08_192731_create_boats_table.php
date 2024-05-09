@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('boats', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('registration_number',5);
             $table->timestamps();
         });        
     }

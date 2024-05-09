@@ -1,7 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
-    setupModalEventListeners();
-});
-export const setupModalEventListeners = () => {
+export const setupModalEventListenersSpecies = () => {
     const buttons = document.querySelectorAll('[data-bs-toggle="modal"]');
     buttons.forEach(button => {
         button.removeEventListener('click', handleModalButtonClick);
@@ -10,6 +7,15 @@ export const setupModalEventListeners = () => {
     document.querySelectorAll('[data-bs-dismiss="modal"]').forEach(button => {
         button.removeEventListener('click', closeModalButtonClick);
         button.addEventListener('click', closeModalButtonClick);
+    });
+};
+export const cleanupSpecies = () => {
+    const buttons = document.querySelectorAll('[data-bs-toggle="modal"]');
+    buttons.forEach(button => {
+        button.removeEventListener('click', handleModalButtonClick);
+    });
+    document.querySelectorAll('[data-bs-dismiss="modal"]').forEach(button => {
+        button.removeEventListener('click', closeModalButtonClick);
     });
 };
 const handleModalButtonClick = (event) => {
