@@ -74,7 +74,7 @@ class Boat extends Model
     {
         $newBoat = self::create([
             'name' => $request->input('name'),
-            'registration_number' => $request->input('registration_number'),  // Asumiendo que esta información se captura.
+            'registration_number' => $request->input('registration_number'),
         ]);
 
         Log::info('Boat created from request:', [

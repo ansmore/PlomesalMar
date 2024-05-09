@@ -19,8 +19,8 @@ return new class extends Migration
             $table->time('time');
             $table->timestamps();
 
-            $table->foreign('boat_id')->references('id')->on('boats')->onDelete('cascade');
-            $table->foreign('transect_id')->references('id')->on('transects')->onDelete('cascade');
+            $table->foreign('boat_id')->references('id')->on('boats');
+            $table->foreign('transect_id')->references('id')->on('transects');
         });
     }
 
