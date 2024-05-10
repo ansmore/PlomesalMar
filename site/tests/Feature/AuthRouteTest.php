@@ -34,7 +34,7 @@ class AuthRouteTest extends TestCase
      */
     public function test_home_redirects_non_authenticated_user_to_login()
     {
-        $language = 'ca'; // Idioma d'exemple
+        $language = 'ca';
 		$response = $this->get("/$language/home");
 		$response->assertRedirect('/login');
 		$response = $this->get('/login');
