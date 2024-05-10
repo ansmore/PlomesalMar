@@ -27,14 +27,11 @@ class HomeController extends Controller
 
     public function index($language = null, $section = null)
     {
-
-        // return Redirect::to("/$language/home");
 		return view('pages.home', ['section' => $section,'language' => $language ]);
     }
 
 	public function indexSection($language = null, $section = null)
 	{
-
 		$language = Session::get('language',  config('app.fallback_locale', 'ca'));
 
 		return view('pages.home', ['section' => $section,'language' => $language ]);
@@ -58,8 +55,7 @@ class HomeController extends Controller
 
     public function home($language = null)
     {
-
-        $language = Session::get('language',  config('app.fallback_locale', 'ca'));
+        // $language = Session::get('language',  config('app.fallback_locale', 'ca'));
 
         return view('pages.home', ['language' => $language]);
     }

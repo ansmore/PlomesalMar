@@ -46,7 +46,7 @@ class AdminController extends Controller
         $users = User::orderBy('name', 'ASC')
             ->where('name', 'like', "%$name%")
             ->where('email', 'like', "%$email%")
-            ->paginate(config('pagination.users', 20))
+            ->paginate(config('pagination.users', 8))
             ->appends([
                 'name' => $name,
                 'email' => $email
