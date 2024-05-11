@@ -7,5 +7,7 @@
 	"addButton": "Add",
 	"cancelButton": "Cancel",
 	"deleteButton": "Delete",
-	"saveButton": "Save"
+	"saveButton": "Save",
+
+	"id": "Id"
 }

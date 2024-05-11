@@ -5,7 +5,7 @@
         <thead class="text-white">
             <tr>
                 <th scope="col">
-                    <span data-text="commonName" class="table__title"></span>
+                    <span data-text="name" class="table__title"></span>
                     <a href="?orderByField=common_name&orderByDirection=asc" class="decoration">
                         <i class="fas fa-arrow-up"></i>
                     </a>
@@ -14,7 +14,7 @@
                     </a>
                 </th>
                 <th scope="col">
-                    <span data-text="scientificName" class="table__title"></span>
+                    <span data-text="email" class="table__title"></span>
                     <a href="?orderByField=scientific_name&orderByDirection=asc" class="decoration">
                         <i class="fas fa-arrow-up"></i>
                     </a>
@@ -22,7 +22,9 @@
                         <i class="fas fa-arrow-down"></i>
                     </a>
                 </th>
-                <th scope="col" data-text="actions" class="table__title"></th>
+                {{-- <th scope="col" data-text="registrationDate" class="table__title"></th> --}}
+                <th scope="col" data-text="rolesUserHave" class="table__title"></th>
+                <th scope="col" data-text="moreInfo" class="table__title"></th>
             </tr>
         </thead>
         <tbody>
@@ -30,19 +32,19 @@
                 <tr>
                     <td>{{ $user->name }}</td>
                     <td>{{ $user->email }}</td>
-                    <td>{{ $user->created_at }}</td>
-                    <td class="small text-start">
+                    {{-- <td>{{ $user->created_at }}</td> --}}
+                    <td>
                         @foreach ($user->roles as $rol)
-                            - {{ $rol->role }}<br>
+                            -{{ $rol->role }}<br>
                         @endforeach
                     </td>
-                    <td class="text-center">
-                        <a
-                            href="{{ route('admin.user.details', [
-                                'user' => $user->id,
-                                'language' => $language,
-                            ]) }}">Veure
-                            detalls</a>
+                    <td>
+                        <a href="{{ route('admin.user.details', [
+                            'user' => $user->id,
+                            'language' => $language,
+                        ]) }}"
+                            data-text="showDetails" class="form__button__success">
+                        </a>
                     </td>
                 </tr>
             @endforeach

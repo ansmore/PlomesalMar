@@ -30,7 +30,7 @@
                 <tr>
                     <td>{{ $boat->name }}</td>
                     <td>{{ $boat->registration_number }}</td>
-                    <td class="icon-center">
+                    <td class="icons">
                         <button type="button" class="buttonTable__success" data-bs-toggle="modal"
                             data-bs-target="editBoatModal" title="Editar" data-id="{{ $boat->id }}"
                             data-name="{{ $boat->name }}" data-registration-number="{{ $boat->registration_number }}">

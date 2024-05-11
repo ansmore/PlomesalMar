@@ -171,16 +171,6 @@
         }
       }
     }
-
-    .row--reverse {
-      .box {
-        @include mainBox(row, center, center);
-
-        &__button {
-          @include paddingMargin(calc($padding * 3), calc($margin * 2));
-        }
-      }
-    }
   }
 }
 
@@ -215,16 +205,6 @@
               font-size: $size_medium;
             }
           }
-        }
-      }
-    }
-
-    .row--reverse {
-      .box {
-        @include mainBox(row, center, center);
-
-        &__button {
-          @include paddingMargin(calc($padding *3), calc($margin * 2));
         }
       }
     }

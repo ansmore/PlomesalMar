@@ -6,7 +6,7 @@
   @include hover($primary_light, $neutral_lighter, $primary_dark);
 }
 
-.form__button {
+.form__button__success {
   @extend .button;
 }
 

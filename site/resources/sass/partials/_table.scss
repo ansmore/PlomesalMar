@@ -24,6 +24,22 @@
 
     td {
       padding: calc($gap * 1);
+
+      .row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        justify-items: space-between;
+
+        @media (max-width: 768px) {
+          grid-template-columns: 1fr;
+          gap: 10px;
+        }
+
+        .select {
+          @extend .selectList;
+        }
+      }
     }
 
     .decoration {
@@ -41,10 +57,12 @@
   }
 }
 
-.icon-center {
+.icons {
   display: flex;
   gap: 5px;
 }
+
+
 
 .button__danger {
   @extend .buttonTable__close;

@@ -2,7 +2,7 @@
 
 <div class="card" id="table-container">
     <table class="table">
-        <thead class="text-white">
+        <thead>
             <tr>
                 <th scope="col">
                     <span data-text="commonName" class="table__title"></span>
@@ -14,60 +14,69 @@
         </thead>
         <tbody>
             <tr>
-                <td>ID</td>
+                <th data-text="id"></th>
                 <td>{{ $user->id }}</td>
             </tr>
             <tr>
-                <th>Name</th>
+                <th data-text="name"></th>
                 <td>{{ $user->name }}</td>
             </tr>
             <tr>
-                <th>Email</th>
-                <td><a href="mailto:{{ $user->email }}">
-                        {{ $user->email }}
-                    </a></td>
+                <th data-text="email"></th>
+                <td>{{ $user->email }}</td>
             </tr>
             <tr>
-                <th>Data d'alta</th>
+                <th data-text="registrationDate"></th>
                 <td>{{ $user->created_at ? $user->created_at : 'Desconegut' }}</td>
             </tr>
             <tr>
-                <th>Data de verificació </th>
+                <th data-text="verificationDate"></th>
                 <td>{{ $user->email_verified_at ? $user->email_verified_at : 'Sense verificar' }}
                 </td>
             </tr>
             <tr>
-                <th>Rols</th>
+                <th data-text="roles"></th>
                 <td>
                     @foreach ($user->roles as $rol)
-                        <span class="d-inline-block w-50">
-                            - {{ $rol->role }}
+                        <span class="row">
+                            <span>
+                                - {{ $rol->role }}
+                            </span>
+                            <form method="POST"
+                                action="{{ route('admin.user.removeRole', ['language' => $language]) }}">
+                                @csrf
+                                @method('DELETE')
+                                <input type="hidden" name="user_id" value="{{ $user->id }}">
+                                <input type="hidden" name="role_id" value="{{ $rol->id }}">
+                                <button type="submit" class="form__button__close" value="Eliminar">
+                                    <i class="fas fa-circle-minus"></i>
+                                    <span data-text="deleteButton"></span>
+                                    {{-- <input type="submit" class="btn btn-danger form__button__close" value="Eliminar"> --}}
+                                </button>
+                            </form>
                         </span>
-                        <form class="d-inline-block p-1" method="POST"
-                            action="{{ route('admin.user.removeRole', ['language' => $language]) }}">
-                            @csrf
-                            @method('DELETE')
-                            <input type="hidden" name="user_id" value="{{ $user->id }}">
-                            <input type="hidden" name="role_id" value="{{ $rol->id }}">
-                            <input type="submit" class="btn btn-danger form__button__close" value="Eliminar">
-                        </form>
-                        <br>
                     @endforeach
                 </td>
             </tr>
             <tr>
-                <td>Add Role</td>
+                <th data-text="addRole"></th>
                 <td>
                     <form action="{{ route('admin.user.setRole', ['language' => $language]) }}" method="POST">
                         @csrf
                         @method('POST')
                         <input type="hidden" name="user_id" value="{{ $user->id }}">
-                        <select class="form-control w-50 d-inline" name="role_id">
-                            @foreach ($user->remainingRoles() as $rol)
-                                <option value="{{ $rol->id }}">{{ $rol->role }}</option>
-                            @endforeach
-                        </select>
-                        <input type="submit" class="btn btn-success px-3 ml-1" value="Add">
+                        <span class="row">
+                            <select class="select" name="role_id">
+                                @foreach ($user->remainingRoles() as $rol)
+                                    <option value="{{ $rol->id }}">{{ $rol->role }}</option>
+                                @endforeach
+                            </select>
+                            <button type="submit" class="form__button__success">
+                                <i class="fas fa-plus-circle"></i>
+                                <span data-text="addButton"></span>
+                                {{-- <input type="submit" class="btn btn-success" value="Add"> --}}
+                            </button>
+                        </span>
                     </form>
                 </td>
             </tr>

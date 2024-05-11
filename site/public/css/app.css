@@ -99,6 +99,7 @@ body {
   height: auto;
   font-size: 100%;
   line-height: 1.4em;
+  appearance: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -708,7 +709,7 @@ button {
   border: 1px solid #9d9d9c;
 }
 
-.button, .termsAndPolicy .row .box__button, .plomesalmarContact .row .form__group__button, .home .row--reverse .box__button, .home .row .box__button, .auth .row .form__group__button, .form__button__back, .form__button__close, .form__button {
+.button, .termsAndPolicy .row .box__button, .plomesalmarContact .row .form__group__button, .home .row--reverse .box__button, .home .row .box__button, .auth .row .form__group__button, .form__button__back, .form__button__close, .form__button__success {
   color: #fafafa;
   background-color: #0065AE;
   padding: 0.25rem;
@@ -719,7 +720,7 @@ button {
   border-radius: 0.25rem;
   border: 1px solid transparent;
 }
-.button:hover, .termsAndPolicy .row .box__button:hover, .plomesalmarContact .row .form__group__button:hover, .home .row--reverse .box__button:hover, .home .row .box__button:hover, .auth .row .form__group__button:hover, .form__button__back:hover, .form__button__close:hover, .form__button:hover {
+.button:hover, .termsAndPolicy .row .box__button:hover, .plomesalmarContact .row .form__group__button:hover, .home .row--reverse .box__button:hover, .home .row .box__button:hover, .auth .row .form__group__button:hover, .form__button__back:hover, .form__button__close:hover, .form__button__success:hover {
   color: #fafafa;
   background-color: #0079D0;
   border: 1px solid #00518C;
@@ -843,6 +844,24 @@ button {
   align-items: center;
   align-self: center;
   margin-top: 1rem;
+}
+
+.selectList, .card .table td .row .select {
+  background-color: inherit;
+  color: inherit;
+  border-radius: 0.25rem;
+  padding: 8px;
+  border: 1px solid #0065AE;
+}
+.selectList:focus, .card .table td .row .select:focus {
+  outline: none;
+  color: #0065AE;
+  background-color: #fafafa;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+}
+.selectList option, .card .table td .row .select option {
+  color: #0065AE;
+  background-color: #fafafa;
 }
 
 .modal__box,
@@ -972,6 +991,18 @@ button {
 .card .table td {
   padding: 0.5rem;
 }
+.card .table td .row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-items: space-between;
+}
+@media (max-width: 768px) {
+  .card .table td .row {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+}
 .card .table .decoration {
   text-decoration: none;
   display: inline-block;
@@ -983,7 +1014,7 @@ button {
   font-weight: bold;
 }
 
-.icon-center {
+.icons {
   display: flex;
   gap: 5px;
 }
@@ -1979,18 +2010,6 @@ button {
     padding-top: 2rem;
     font-size: 1.2em;
   }
-  .home .row--reverse .box {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-    align-self: center;
-  }
-  .home .row--reverse .box__button {
-    padding: 0.75rem;
-    margin: 0.5rem;
-  }
 }
 @media screen and (min-width: 1025px) {
   .home .row .box__title {
@@ -2025,18 +2044,6 @@ button {
   .home .row .box__circle .circle__content {
     padding-top: 2rem;
     font-size: 1.2em;
-  }
-  .home .row--reverse .box {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-    align-self: center;
-  }
-  .home .row--reverse .box__button {
-    padding: 0.75rem;
-    margin: 0.5rem;
   }
 }
 .plomesalmarContact .row {
@@ -2160,7 +2167,18 @@ button {
   align-items: center;
   align-self: center;
 }
-.management .row .box__search .button, .management .termsAndPolicy .row .box__search .box__button, .termsAndPolicy .management .row .box__search .box__button, .management .row .box__search .form__button, .management .row .box__search .form__button__close, .management .row .box__search .form__button__back, .management .auth .row .box__search .form__group__button, .auth .management .row .box__search .form__group__button, .management .home .row .box__search .box__button, .home .management .row .box__search .box__button, .management .row .box__search .home .row--reverse .box__button, .management .plomesalmarContact .row .box__search .form__group__button, .plomesalmarContact .management .row .box__search .form__group__button {
+.management .row .box__search .form__button__success {
+  margin: 0;
+}
+.management .row .box__back {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+}
+.management .row .box__back .form__button__back {
   margin: 0;
 }
 .management .row .box__table {

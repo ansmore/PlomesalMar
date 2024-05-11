@@ -7,10 +7,9 @@
 	"name": "Nom",
 	"email": "Email",
 	"registrationDate": "Data d'alta",
+	"verificationDate": "Data de verificació",
 	"rolesUserHave": "Rols",
 	"moreInfo": "Més info",
 	"showDetails": "Veure detalls",
-	"id": "Id",
-	"verificationDate": "Data de verificació",
-	"addRole": "Afegir rol"
+	"addRole": " Afegeix rol"
 }

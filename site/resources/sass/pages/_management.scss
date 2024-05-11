@@ -26,7 +26,15 @@
       &__search {
         @include mainBox(row, space-between, center);
 
-        .button {
+        .form__button__success {
+          margin: 0;
+        }
+      }
+
+      &__back {
+        @include mainBox(row, flex-start, center);
+
+        .form__button__back {
           margin: 0;
         }
       }

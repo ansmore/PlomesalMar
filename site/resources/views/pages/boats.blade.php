@@ -10,13 +10,13 @@
                 <h1 class="box__title" data-text="boatsList"></h1>
             </article>
             <article class="box__table">
-                <figure class="box__search">
+                <div class="box__search">
                     @include('components.search')
-                    <button type="button" class="button" data-bs-toggle="modal" data-bs-target="createBoat">
+                    <button type="button" class="form__button__success" data-bs-toggle="modal" data-bs-target="createBoat">
                         <i class="fas fa-plus-circle"></i>
                         <span data-text="addButton"></span>
                     </button>
-                </figure>
+                </div>
                 @include('partials.boatsTable', ['boats' => $boats])
             </article>
         </section>
