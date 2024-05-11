@@ -9,15 +9,17 @@
             <article class="box">
                 <h1 class="box__title" data-text="userDetails"></h1>
             </article>
-            <article class="box__table">
-                {{-- <div class="box__search">
-                    @include('components.search')
-                    <button type="button" class="button" data-bs-toggle="modal" data-bs-target="createSpecies">
-                        <i class="fas fa-plus-circle"></i>
-                        <span data-text="addButton"></span>
-                    </button>
-                </div> --}}
-                @include('partials.usersDetailsTable', ['user' => $user])
+            <article class="box">
+                <div class="box__back">
+                    <a href="{{ route('admin.users', [
+                        'language' => $language,
+                    ]) }}"
+                        class="form__button__back">
+                        <i class="fas fa-arrow-left"></i>
+                        <span data-text="back"></span>
+                    </a>
+                </div>
+                @include('partials.admin.userDetailsTable', ['user' => $user])
             </article>
         </section>
         {{-- @include('modals.species.create') --}}

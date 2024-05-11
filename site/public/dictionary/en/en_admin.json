@@ -1,4 +1,15 @@
 {
 	"usersList": "List of users",
-	"userDetails": "Details of user"
+	"userDetails": "Details of user",
+	"users": "Users",
+	"roles": "Roles",
+
+	"name": "Name",
+	"email": "Email",
+	"registrationDate": "Registration date",
+	"verificationDate": "Verification date",
+	"rolesUserHave": "Roles",
+	"moreInfo": "More Info",
+	"showDetails": "Show details",
+	"addRole": " Add role"
 }

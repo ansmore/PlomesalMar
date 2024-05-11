@@ -30,7 +30,7 @@
                 <tr>
                     <td>{{ $specie->common_name }}</td>
                     <td>{{ $specie->scientific_name }}</td>
-                    <td class="icon-center">
+                    <td class="icons">
                         <button type="button" class="buttonTable__success" data-bs-toggle="modal"
                             data-bs-target="editSpeciesModal" title="Editar" data-id="{{ $specie->id }}"
                             data-common-name="{{ $specie->common_name }}"

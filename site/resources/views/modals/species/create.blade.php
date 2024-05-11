@@ -23,7 +23,8 @@
                     <div class="form__group__buttons">
                         <button type="button" class="btn-close form__button__back" data-bs-dismiss="modal"
                             data-text="cancelButton"></button>
-                        <button type="submit" class="btn btn-primary form__button" data-text="saveButton"></button>
+                        <button type="submit" class="btn btn-primary form__button__success"
+                            data-text="saveButton"></button>
                     </div>
                 </form>
             </article>

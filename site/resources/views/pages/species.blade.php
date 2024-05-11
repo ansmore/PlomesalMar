@@ -12,7 +12,8 @@
             <article class="box__table">
                 <div class="box__search">
                     @include('components.search')
-                    <button type="button" class="button" data-bs-toggle="modal" data-bs-target="createSpecies">
+                    <button type="button" class="form__button__success" data-bs-toggle="modal"
+                        data-bs-target="createSpecies">
                         <i class="fas fa-plus-circle"></i>
                         <span data-text="addButton"></span>
                     </button>

@@ -12,8 +12,12 @@ class AdminController extends Controller
 	public function __construct()
     {
         $this->middleware('auth');
+    }
 
-		// $this->language = Session::get('language',  config('app.fallback_locale', 'ca'));
+	public function index($language = null){
+        return view('admin.management', [
+			'language' => $language,
+		]);
     }
 
     public function userList($language = null){
@@ -67,10 +71,10 @@ class AdminController extends Controller
         $role = Role::find($request->input('role_id'));
         $user = User::find($request->input('user_id'));
 
-    /* if($this->authorize('preventSelfBlock', $user) && $role->name === 'bloquejat')
-        {
-            abort(403, "No pots afegir el rol de 'bloquejat' si ets 'admin' ");
-        }*/
+		// if($this->authorize('preventSelfBlock', $user) && $role->name === 'bloquejat')
+        // {
+        //     abort(403, "No pots afegir el rol de 'bloquejat' si ets 'admin' ");
+        // }
 
         try{
             $user->roles()->attach($role->id, [
@@ -89,10 +93,10 @@ class AdminController extends Controller
         $role = Role::find($request->input('role_id'));
         $user = User::find($request->input('user_id'));
 
-    /* if ($this->authorize('lastUserAdmin', [$user, $role])){
-            // return response("No puedes quitarte el rol de 'admin' eres el único 'admin' ", 418);
-            abort(403, "No puedes treure el rol de 'admin' ets l'únic 'admin' ");
-        }*/
+		// if ($this->authorize('lastUserAdmin', [$user, $role])){
+        //     return response("No puedes quitarte el rol de 'admin' eres el único 'admin' ", 418);
+        //     abort(403, "No puedes treure el rol de 'admin' ets l'únic 'admin' ");
+        // }
 
         try{
             $user->roles()->detach($role->id);

@@ -7,5 +7,7 @@
 	"addButton": "Afegir",
 	"cancelButton": "Cancel·lar",
 	"deleteButton": "Borrar",
-	"saveButton": "Guardar"
+	"saveButton": "Guardar",
+
+	"id": "Id"
 }

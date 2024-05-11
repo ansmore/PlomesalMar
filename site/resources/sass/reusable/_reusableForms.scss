@@ -1,0 +1,18 @@
+.selectList {
+  background-color: inherit;
+  color: inherit;
+  border-radius: $radius;
+  padding: 8px;
+  border: 1px solid $primary_main;
+
+
+  &:focus {
+    outline: none;
+    @include style($primary_main, $neutral_lighter);
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+  }
+
+  option {
+    @include style($primary_main, $neutral_lighter);
+  }
+}

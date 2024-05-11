@@ -1,4 +1,15 @@
 {
 	"usersList": "Llista d'usuaris",
-	"userDetails": "Detalls de l'usuari"
+	"userDetails": "Detalls de l'usuari",
+	"users": "Usuaris",
+	"roles": "Rols",
+
+	"name": "Nom",
+	"email": "Email",
+	"registrationDate": "Data d'alta",
+	"verificationDate": "Data de verificació",
+	"rolesUserHave": "Rols",
+	"moreInfo": "Més info",
+	"showDetails": "Veure detalls",
+	"addRole": " Afegeix rol"
 }

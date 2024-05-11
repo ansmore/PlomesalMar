@@ -17,7 +17,7 @@
                         <span data-text="addButton"></span>
                     </button>
                 </div> --}}
-                @include('partials.usersTable', ['users' => $users])
+                @include('partials.admin.usersTable', ['users' => $users])
             </article>
         </section>
         {{-- @include('modals.species.create') --}}
