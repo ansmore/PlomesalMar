@@ -78,6 +78,7 @@ Route::prefix('/{language?}')->group(function () {
 
 	// A la ruta admin? ->middleware('auth')
 	Route::prefix('admin')->group(function () {
+		Route::get('management', [AdminController::class, 'index'])->name('admin.index');
 		Route::get('users', [AdminController::class, 'userList'])->name('admin.users');
 		Route::get('user/{user}/details', [AdminController::class, 'userShow'])->name('admin.user.details');
 		Route::post('role', [AdminController::class, 'setRole'])->name('admin.user.setRole');

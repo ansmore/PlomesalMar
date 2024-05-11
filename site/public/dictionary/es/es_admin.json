@@ -1,4 +1,13 @@
 {
 	"usersList": "Lista de usuarios",
-	"userDetails": "Detalles del usuario"
+	"userDetails": "Detalles del usuario",
+	"users": "Usuarios",
+	"roles": "Roles",
+
+	"name": "Nombre",
+	"email": "Correo electrónico",
+	"registrationDate": "Fecha de registro",
+	"rolesUserHave": "Roles",
+	"moreInfo": "Más información",
+	"showDetails": "Ver detalles"
 }

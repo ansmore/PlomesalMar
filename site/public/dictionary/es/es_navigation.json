@@ -13,5 +13,9 @@
 	"cat": "Català",
 	"eng": "English",
 
-	"currentLanguage": "CAS"
+	"currentLanguage": "CAS",
+
+	"administration": "Administración",
+	"logout": "Logout",
+	"hello": "Hola, "
 }
