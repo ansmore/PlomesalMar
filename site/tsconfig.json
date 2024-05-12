@@ -12,12 +12,8 @@
 		"outDir": "./public/js",
 		"skipLibCheck": true,
 		"strict": true,
-		// "target": "ES2016",
+		// "target": "ES2016"
 		"target": "ESNext"
-		// "useDefineForClassFields": true,
-		// "jsx": "preserve",
-		// "types": ["vite/client"]
-		// patata
 	},
 	"include": ["./resources/**/*.ts"]
 }

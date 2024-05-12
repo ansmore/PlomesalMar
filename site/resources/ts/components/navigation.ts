@@ -65,7 +65,7 @@ const changeLanguage = async (language: string) => {
 		const firstSegment = await getFirstSegment(currentUrl)!;
 		const secondSegment = await getSecondSegment(currentUrl)!;
 		const idSegment = await getIdSegment(currentUrl)!;
-		const othersSegments = await getOthersSegments(currentUrl)!;
+		const othersSegments = await getOthersSegments(currentUrl);
 
 		// DeveloperMode
 		console.log("current", currentUrl);
