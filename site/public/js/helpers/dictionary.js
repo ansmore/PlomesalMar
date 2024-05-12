@@ -126,18 +126,6 @@ export const getOthersSegments = async (url) => {
     // Retorna els segments rellevants com a cadena
     return relevantSegments;
 };
-// export const getCurrentFileName = async (): Promise<string> => {
-// 	const currentUrl = window.location.href;
-// 	const firstSegment = getFirstSegment(currentUrl)!;
-// 	const secondSegment = getSecondSegment(currentUrl)!;
-// 	const othersSegments = getOthersSegments(currentUrl)!;
-// 	// DeveloperMode
-// 	console.log("first", currentUrl);
-// 	console.log("first", firstSegment);
-// 	console.log("second", secondSegment);
-// 	console.log("others", othersSegments);
-// 	return firstSegment;
-// };
 export const getSelectedLanguage = async () => {
     const selectedLanguage = localStorage.getItem("selectedLanguage") ?? "";
     return selectedLanguage;

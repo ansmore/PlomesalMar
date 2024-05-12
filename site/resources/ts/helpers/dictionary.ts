@@ -89,6 +89,7 @@ export const getFirstSegment = (url: string): string | undefined => {
 				return nextPageSegment.split("#")[0];
 			}
 		}
+
 		throw new Error(
 			"No es pot determinar el fitxer des de la URL proporcionada.",
 		);
@@ -114,6 +115,7 @@ export const getSecondSegment = (url: string): string | undefined => {
 				return undefined;
 			}
 		}
+
 		throw new Error(
 			"No es pot determinar el sub-fitxer des de la URL proporcionada.",
 		);
@@ -161,20 +163,6 @@ export const getOthersSegments = async (url: string): Promise<string> => {
 	// Retorna els segments rellevants com a cadena
 	return relevantSegments;
 };
-
-// export const getCurrentFileName = async (): Promise<string> => {
-// 	const currentUrl = window.location.href;
-// 	const firstSegment = getFirstSegment(currentUrl)!;
-// 	const secondSegment = getSecondSegment(currentUrl)!;
-// 	const othersSegments = getOthersSegments(currentUrl)!;
-
-// 	// DeveloperMode
-// 	console.log("first", currentUrl);
-// 	console.log("first", firstSegment);
-// 	console.log("second", secondSegment);
-// 	console.log("others", othersSegments);
-// 	return firstSegment;
-// };
 
 export const getSelectedLanguage = async (): Promise<string> => {
 	const selectedLanguage = localStorage.getItem("selectedLanguage") ?? "";

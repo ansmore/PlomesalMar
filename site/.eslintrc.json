@@ -17,7 +17,8 @@
 				"@typescript-eslint/non-nullable-type-assertion-style": "off",
 				"@typescript-eslint/consistent-indexed-object-style": "off",
 				"no-negated-condition": "off",
-				"capitalized-comments": "off"
+				"capitalized-comments": "off",
+				"no-else-return": "off"
 			}
 		}
 	],
