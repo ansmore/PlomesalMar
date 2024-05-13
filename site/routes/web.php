@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Redirect;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\SpecieController;
 use App\Http\Controllers\LanguageController;
+use App\Http\Controllers\DepartureController;
 use App\Http\Controllers\PlomesalmarController;
 
 
@@ -95,11 +96,17 @@ Route::prefix('/{language?}')->group(function () {
 
 	Route::get('/management', [HomeController::class, 'management'])->name('management');
 
+    // Rutas Espécies
     Route::resource('species', SpecieController::class)->except(['index']);
 	Route::get('/species', [SpecieController::class, 'index'])->name('species');
 
+    //Rutas Barcos
     Route::resource('boats', BoatController::class)->except(['index']);
 	Route::get('/boats', [BoatController::class, 'index'])->name('boats');
+
+    //Rutas Salidas
+    Route::resource('departures', DepartureController::class)->except(['index']);
+	Route::get('/departures', [DepartureController::class, 'index'])->name('departures');
 
     Route::get('/privacyPolicy', [HomeController::class, 'privacyPolicy'])->name('privacyPolicy');
     Route::get('/termsOfUse', [HomeController::class, 'termsOfUse'])->name('termsOfUse');

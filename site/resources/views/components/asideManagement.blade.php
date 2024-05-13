@@ -10,7 +10,7 @@
                     <i class="fas fa-globe">
                     </i>
                 </span>
-                <a href="{{ route('species', ['language' => $language]) }}" class="list__item__link"
+                <a href="{{ route('departures', ['language' => $language]) }}" class="list__item__link"
                     data-text="asideDeparture">
                 </a>
             </li>

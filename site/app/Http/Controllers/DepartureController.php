@@ -7,12 +7,19 @@ use Illuminate\Http\Request;
 
 class DepartureController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
+    public function __construct()
     {
-        //
+        $this->middleware('auth');
+        // $this->language = Session::get('language', config('app.fallback_locale', 'ca'));
+    }
+
+    /**
+     * Display a listing of departures.
+     */
+    public function index(Request $request, $language = null)
+    {
+        $departures = Departure::getFilteredDepartures($request);
+        return view('pages.departures', ['language' => $language, 'departures' => $departures]);
     }
 
     /**
