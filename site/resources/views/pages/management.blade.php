@@ -14,10 +14,10 @@
         <!-- Plomes al mar Contact Section -->
         <section id="logo" class="row">
             <article class="box">
-                <h1 class="box__title" data-text="listTables">Lista de taules</h1>
+                <h1 class="box__title" data-text="listTables"></h1>
             </article>
             <article class="box__logo">
-                <a href="{{ route('home', ['language' => $language]) }}">
+                <a href="{{ route('departures', ['language' => $language]) }}">
                     <figure class="box__logo__image">
                         <i class="fas fa-globe"></i>
                         <span data-text="asideDeparture"></span>
