@@ -95,6 +95,7 @@ Route::prefix('/{language?}')->group(function () {
     // Route::post('/plomesalmarContact', [PlomesalmarController::class, 'plomesalmarContactSubmit'])->name('plomesalmarContact.submit');
 
 	Route::get('/management', [HomeController::class, 'management'])->name('management');
+	Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
 
     // Rutas Espécies
     Route::resource('species', SpecieController::class)->except(['index']);

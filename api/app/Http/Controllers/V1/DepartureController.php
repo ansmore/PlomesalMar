@@ -6,6 +6,7 @@ use App\Models\Departure;
 use App\Models\Observation;
 use Illuminate\Http\Request;
 use App\Models\ImageObservation;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use App\Models\DepartureUserObservation;
 
