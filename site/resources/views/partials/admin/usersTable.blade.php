@@ -43,7 +43,9 @@
                             'user' => $user->id,
                             'language' => $language,
                         ]) }}"
-                            data-text="showDetails" class="form__button__success">
+                            class="form__button__success">
+                            <i class="fa-solid fa-circle-info"></i>
+                            <span data-text="showDetails"></span>
                         </a>
                     </td>
                 </tr>

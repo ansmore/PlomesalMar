@@ -58,6 +58,19 @@
                     data-text="asideImage">
                 </a>
             </li>
+            <li class="list__title">
+                <span data-text="asideDashboard">
+                </span>
+            </li>
+            <li class="list__item">
+                <span class="list__item__icon">
+                    <i class="fas fa-globe">
+                    </i>
+                </span>
+                <a href="{{ route('dashboard', ['language' => $language]) }}" class="list__item__link"
+                    data-text="asideDashboard">
+                </a>
+            </li>
         </ul>
     </article>
 </aside>

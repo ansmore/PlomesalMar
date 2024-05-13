@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title', 'Management')
+@section('title', 'Dashboard')
 @section('content')
 
     @if (session('status'))
@@ -11,7 +11,7 @@
 
     <main class="management">
         @include('components.asideManagement')
-        <!-- Plomes al mar Contact Section -->
+
         <section id="logo" class="row">
             <article class="box">
                 <h1 class="box__title" data-text="listTables"></h1>

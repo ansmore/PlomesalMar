@@ -24,7 +24,7 @@
                         </h4>
                     </figure>
                 </a>
-                <a href="{{ route('species', ['language' => $language]) }}">
+                <a href="{{ route('dashboard', ['language' => $language]) }}">
                     <figure class="circle modal-button">
                         <span class="circle__icon">
                             <i class="fa-solid fa-chart-line"></i>

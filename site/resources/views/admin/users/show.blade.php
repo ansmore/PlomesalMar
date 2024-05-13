@@ -23,12 +23,12 @@
             </article>
         </section>
         {{-- @include('modals.species.create') --}}
-        {{-- @include('components.mesage') --}}
+        {{-- @include('components.message') --}}
     </main>
 @endsection
 
 @push('scripts')
     <script type="module" src="{{ asset('js/pages/admin.js') }}" defer></script>
     <script type="module" src="{{ asset('js/partials/table.js') }}" defer></script>
-    <script type="module" src="{{ asset('js/components/mesage.js') }}" defer></script>
+    <script type="module" src="{{ asset('js/components/message.js') }}" defer></script>
 @endpush
