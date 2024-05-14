@@ -13,6 +13,7 @@ use App\Http\Controllers\SpecieController;
 use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\DepartureController;
 use App\Http\Controllers\PlomesalmarController;
+use App\Http\Controllers\GraphController; 
 
 
 /*
@@ -65,6 +66,10 @@ Route::post('/password/confirm', function () {
 	return Redirect::to("/" . app()->getLocale() . "/password/confirm");
 })->name('indexPasswordConfim');
 
+Route::get('/test', function () {
+    return 'GraphController is working';
+})->name('testGraph');
+
 
 Route::get('/{language?}/home', [App\Http\Controllers\HomeController::class, 'index'])->name('homeLanguage');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'homeMain'])->name('homeMain');
@@ -95,7 +100,7 @@ Route::prefix('/{language?}')->group(function () {
     // Route::post('/plomesalmarContact', [PlomesalmarController::class, 'plomesalmarContactSubmit'])->name('plomesalmarContact.submit');
 
 	Route::get('/management', [HomeController::class, 'management'])->name('management');
-	Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
+	Route::get('/dashboard', [GraphController::class, 'index'])->name('dashboard');
 
     // Rutas Espécies
     Route::resource('species', SpecieController::class)->except(['index']);

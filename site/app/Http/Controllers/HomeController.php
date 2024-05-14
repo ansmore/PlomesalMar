@@ -82,13 +82,6 @@ class HomeController extends Controller
         return view('pages.management',['language' => $language]);
     }
 
-	public function dashboard($language = null)
-    {
-        $language = Session::get('language',  config('app.fallback_locale', 'ca'));
-
-        return view('pages.dashboard',['language' => $language]);
-    }
-
     public function privacyPolicy($language = null)
     {
         $language = Session::get('language',  config('app.fallback_locale', 'ca'));
