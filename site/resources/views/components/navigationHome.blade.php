@@ -16,7 +16,7 @@
                 <ul class="list">
                     <li class="list__item">
                         <a href="{{ route('home', ['language' => $language]) }}" class="list__item__link"
-                            data-text="navHomePage"></a>
+                            data-text="navHome"></a>
                     </li>
                     <li class="list__item">
                         <a href="{{ route('management', ['language' => $language]) }}" class="list__item__link"

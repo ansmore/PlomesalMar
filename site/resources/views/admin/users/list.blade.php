@@ -4,7 +4,7 @@
 @section('content')
 
     <main class="management">
-        @include('components.asideManagement')
+        @include('components.asideMenu')
         <section id="head" class="row">
             <article class="box">
                 <h1 class="box__title" data-text="usersList"></h1>
