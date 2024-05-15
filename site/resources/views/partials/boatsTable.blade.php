@@ -14,7 +14,7 @@
                     </a>
                 </th>
                 <th scope="col">
-                    <span data-text="boatRegistrationNumber" class="table__title"></span>
+                    <span data-text="boatsRegistrationPlate" class="table__title"></span>
                     <a href="?orderByField=name&orderByDirection=asc" class="decoration">
                         <i class="fas fa-arrow-up"></i>
                     </a>

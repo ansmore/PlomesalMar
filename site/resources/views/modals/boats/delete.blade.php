@@ -14,11 +14,11 @@
                     <div class="form__group">
                         <ul class="form__group">
                             <li class="form__group__content">
-                                <span data-text="boatName"></span>
+                                <span data-text="boatsNameModal"></span>
                                 <span id="deleteBoatName"></span>
                             </li>
                             <li class="form__group__content">
-                                <span data-text="registrationNumber"></span>
+                                <span data-text="boatsRegistrationPlateModal"></span>
                                 <span id="deleteRegistrationNumber"></span>
                             </li>
                         </ul>

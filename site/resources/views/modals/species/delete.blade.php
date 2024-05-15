@@ -14,11 +14,11 @@
                     <div class="form__group">
                         <ul class="form__group">
                             <li class="form__group__content">
-                                <span data-text="commonName"></span>
+                                <span data-text="commonNameModal"></span>
                                 <span id="deleteCommonName"></span>
                             </li>
                             <li class="form__group__content">
-                                <span data-text="scientificName"></span>
+                                <span data-text="scientificNameModal"></span>
                                 <span id="deleteScientificName"></span>
                             </li>
                         </ul>

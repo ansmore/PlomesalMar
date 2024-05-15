@@ -1,33 +1,38 @@
-<div class="modal fade modal-common" id="editSpeciesModal" tabindex="-1" aria-labelledby="editModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header bg-info text-white">
-                <h5 class="modal-title" id="editModalLabel">Editar Especie</h5>
-                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
-                    aria-label="Cerrar"></button>
-            </div>
-            <form id="editSpeciesForm" action="" method="POST"
-                data-edit-url-template="{{ route('species.update', [':id', 'language' => app()->getLocale()]) }}">
-                @csrf
-                @method('PUT')
-                <div class="modal-body">
-                    <div class="mb-3">
-                        <label for="nombreComun" class="form-label">Nombre Común</label>
-                        <input type="text" class="form-control" id="nombreComun" name="nombre_comun"
-                            value="" />
+<section class="modal fade modal-common modal__management" id="editSpeciesModal" tabindex="-1"
+    aria-labelledby="editModalLabel" aria-hidden="true">
+
+    <div class="modal-dialog modal-lg modal__management__box">
+        <button type="button" class="btn-close close" data-bs-dismiss="modal" aria-label="Cerrar">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <div class="modal-content body">
+            <h2 class="modal-title body__title" id="editModalLabel" data-text="editSpecie"></h2>
+
+            <article class="form">
+                <form id="editSpeciesForm" action="" method="POST"
+                    data-edit-url-template="{{ route('species.update', [':id', 'language' => app()->getLocale()]) }}">
+                    @csrf
+                    @method('PUT')
+                    <div class="modal-body form__group">
+                        <label for="nombreComun" class="form__group__content" data-text="commonNameModal"></label>
+                        <input type="text" class="form-control form__group__input" id="nombreComun"
+                            name="nombre_comun" value="" />
                     </div>
-                    <div class="mb-3">
-                        <label for="nombreCientifico" class="form-label">Nombre Científico</label>
-                        <input type="text" class="form-control" id="nombreCientifico" name="nombre_cientifico"
-                            value="" />
+                    <div class="form__group">
+                        <label for="nombreCientifico" class="form__group__content"
+                            data-text="scientificNameModal"></label>
+                        <input type="text" class="form-control form__group__input" id="nombreCientifico"
+                            name="nombre_cientifico" value="" />
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                    <button type="submit" class="btn btn-primary">Actualizar</button>
-                </div>
-            </form>
+                    <div class="form__group__buttons">
+                        <button type="button" class="btn btn-secondary form__button__back" data-bs-dismiss="modal"
+                            data-text="cancelButton"></button>
+                        <button type="submit" class="btn btn-primary form__button__success"
+                            data-text="saveButton"></button>
+                    </div>
+                </form>
+            </article>
         </div>
     </div>
-</div>
+</section>

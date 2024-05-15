@@ -9,5 +9,7 @@
 	"deleteButton": "Borrar",
 	"saveButton": "Guardar",
 
-	"id": "Id"
+	"id": "Id",
+	"confirmDelete": "Confirmació d'eliminació",
+	"messageDelete": "Eliminar les dades, Vols continuar?"
 }

@@ -48,7 +48,7 @@
             @endforeach
         </tbody>
     </table>
-    {{-- @include('modals/species.edit') --}}
+    @include('modals/species.edit')
     @include('modals/species.delete')
 </div>
 
