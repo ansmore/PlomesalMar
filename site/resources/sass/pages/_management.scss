@@ -21,6 +21,7 @@
     .box {
       &__title {
         @extend .title;
+        margin-bottom: calc($margin * 2);
       }
 
       &__search {
@@ -29,6 +30,8 @@
         .form__button__success {
           margin: 0;
         }
+
+        margin-bottom: calc($margin * 2);
       }
 
       &__back {
@@ -37,6 +40,18 @@
         .form__button__back {
           margin: 0;
         }
+
+        margin-bottom: calc($margin * 2);
+      }
+
+      &__next {
+        @include mainBox(row, flex-end, center);
+
+        .form__button__success {
+          margin: 0;
+        }
+
+        margin-bottom: calc($margin * 2);
       }
 
       &__table {
