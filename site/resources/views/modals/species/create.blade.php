@@ -7,16 +7,18 @@
         </button>
         <div class="modal-header body">
             <h2 class="modal-title body__title" id="modalLabelNuevo" data-text="newSpecie"></h2>
+
             <article class="form">
                 <form method="POST" action="{{ route('species.store', ['language' => app()->getLocale()]) }}">
                     @csrf
                     <div class="form__group">
-                        <label for="nombreComun" class="form__group__content" data-text="commonName"></label>
+                        <label for="nombreComun" class="form__group__content" data-text="commonNameModal"></label>
                         <input type="text" class="form__group__input" id="nombreComun" name="nombre_comun"
                             placeholder="Example: Colibrí Esmeralda">
                     </div>
                     <div class="form__group">
-                        <label for="nombreCientifico" class="form__group__content" data-text="scientificName"></label>
+                        <label for="nombreCientifico" class="form__group__content"
+                            data-text="scientificNameModal"></label>
                         <input type="text" class="form__group__input" id="nombreCientifico" name="nombre_cientifico"
                             placeholder="Example: Chlorostilbon maugaeus">
                     </div>

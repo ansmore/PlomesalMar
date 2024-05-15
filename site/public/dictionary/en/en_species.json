@@ -5,6 +5,8 @@
 	"scientificName": "Scientific Name",
 
 	"newSpecie": "Add new especie",
-	"confirmDelete": "Delete Confirmation",
-	"messageDelete": "Delete data, do you want to continue?"
+	"editSpecie": "Edit especie",
+
+	"commonNameModal": "Common Name: ",
+	"scientificNameModal": "Scientific Name: "
 }
