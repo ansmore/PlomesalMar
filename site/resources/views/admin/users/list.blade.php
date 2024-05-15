@@ -10,7 +10,7 @@
                 <h1 class="box__title" data-text="usersList"></h1>
             </article>
             <article class="box">
-                <div class="box__back">
+                <div class="box__next">
                     <a href="{{ route('admin.users', [
                         'language' => $language,
                     ]) }}"
@@ -20,14 +20,16 @@
                     </a>
                 </div>
             </article>
-            <article class="box__table">
-                {{-- <div class="box__search">
+            {{-- <article class="box__table">
+                <div class="box__search">
                     @include('components.search')
                     <button type="button" class="button" data-bs-toggle="modal" data-bs-target="createSpecies">
                         <i class="fas fa-plus-circle"></i>
                         <span data-text="addButton"></span>
                     </button>
-                </div> --}}
+                </div>
+            </article> --}}
+            <article class="box">
                 @include('partials.admin.usersTable', ['users' => $users])
             </article>
         </section>
