@@ -13,7 +13,7 @@ use App\Http\Controllers\SpecieController;
 use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\DepartureController;
 use App\Http\Controllers\PlomesalmarController;
-use App\Http\Controllers\GraphController; 
+use App\Http\Controllers\GraphController;
 
 
 /*
@@ -100,7 +100,13 @@ Route::prefix('/{language?}')->group(function () {
     // Route::post('/plomesalmarContact', [PlomesalmarController::class, 'plomesalmarContactSubmit'])->name('plomesalmarContact.submit');
 
 	Route::get('/management', [HomeController::class, 'management'])->name('management');
-	Route::get('/dashboard', [GraphController::class, 'index'])->name('dashboard');
+
+	Route::prefix('dashboard')->group(function () {
+		Route::get('management', [GraphController::class, 'index'])->name('dashboard.index');
+		Route::get('/graph1', [GraphController::class, 'graph1'])->name('dashboard.graph1');
+		Route::get('/graph2', [GraphController::class, 'graph2'])->name('dashboard.graph2');
+		Route::get('/graph3', [GraphController::class, 'graph3'])->name('dashboard.graph3');
+	});
 
     // Rutas Espécies
     Route::resource('species', SpecieController::class)->except(['index']);

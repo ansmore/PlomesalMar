@@ -1,8 +1,8 @@
 <aside class="aside">
-    <article class="leftBar">
+    <nav class="leftBar">
         <ul class="list">
             <li class="list__title">
-                <span data-text="asideManagement">
+                <span data-text="asideMenu">
                 </span>
             </li>
             <li class="list__item">
@@ -49,7 +49,7 @@
                     data-text="asideTransect">
                 </a>
             </li>
-            <li class="list__item">
+            {{-- <li class="list__item">
                 <span class="list__item__icon">
                     <i class="fas fa-camera">
                     </i>
@@ -57,7 +57,7 @@
                 <a href="{{ route('species', ['language' => $language]) }}" class="list__item__link"
                     data-text="asideImage">
                 </a>
-            </li>
+            </li> --}}
             <li class="list__title">
                 <span data-text="asideDashboard">
                 </span>
@@ -67,12 +67,12 @@
                     <i class="fas fa-globe">
                     </i>
                 </span>
-                <a href="{{ route('dashboard', ['language' => $language]) }}" class="list__item__link"
-                    data-text="asideDashboard">
+                <a href="{{ route('dashboard.graph1', ['language' => $language]) }}" class="list__item__link"
+                    data-text="graph1">
                 </a>
             </li>
         </ul>
-    </article>
+    </nav>
 </aside>
 
 

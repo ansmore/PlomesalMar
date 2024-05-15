@@ -1,5 +1,6 @@
 {
-	"asideManagement": "Management",
+	"asideMenu": "Management",
+	"asideDashboard": "Dashboard",
 
 	"asideDeparture": "Departure",
 	"asideObservation": "Observation",
@@ -16,5 +17,7 @@
 	"back": "Back",
 	"next": "Next",
 
-	"asideDashboard": "Dashboard"
+	"graph1": "Graph 1",
+	"graph2": "Graph 2",
+	"graph3": "Graph 3"
 }

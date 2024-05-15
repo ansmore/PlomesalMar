@@ -15,7 +15,7 @@ class AdminController extends Controller
     }
 
 	public function index($language = null){
-        return view('admin.management', [
+        return view('admin.managementUsers', [
 			'language' => $language,
 		]);
     }

@@ -10,7 +10,7 @@
     @endif
 
     <main class="management">
-        @include('components.asideManagement')
+        @include('components.asideMenu')
         <!-- Plomes al mar Contact Section -->
         <section id="logo" class="row">
             <article class="box">
@@ -51,13 +51,13 @@
                         <span data-text="asideTransect"></span>
                     </figure>
                 </a>
-                <a href="{{ route('home', ['language' => $language]) }}">
+                {{-- <a href="{{ route('home', ['language' => $language]) }}">
                     <figure class="box__logo__image">
                         <i class="fas fa-camera">
                         </i>
                         <span data-text="asideImage"></span>
                     </figure>
-                </a>
+                </a> --}}
             </article>
         </section>
     </main>

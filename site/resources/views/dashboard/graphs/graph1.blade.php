@@ -10,7 +10,7 @@
     @endif
 
     <main class="management">
-        @include('components.asideManagement')
+        @include('components.asideMenu')
 
         <section id="logo" class="row">
             <select name="species" id="speciesDropdown" class="form-control">
@@ -20,7 +20,7 @@
             </select>
 
             <article class="box__logo">
-                @include('partials.speciesGraph', [
+                @include('partials.speciesGraph1', [
                     'data' => $speciesData[$species->first()->id ?? 0] ?? [],
                 ])
             </article>

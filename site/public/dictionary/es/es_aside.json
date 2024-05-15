@@ -1,5 +1,6 @@
 {
-	"asideManagement": "Gestión",
+	"asideMenu": "Gestión",
+	"asideDashboard": "Tablero de control",
 
 	"asideDeparture": "Salida",
 	"asideObservation": "Observación",
@@ -16,5 +17,7 @@
 	"back": "Anterior",
 	"next": "Siguiente",
 
-	"asideDashboard": "Tablero de control"
+	"graph1": "Grafico 1",
+	"graph2": "Grafico 2",
+	"graph3": "Grafico 3"
 }
