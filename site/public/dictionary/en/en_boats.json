@@ -1,5 +1,12 @@
 {
-    "boatsList": "List of boats",
+	"boatsList": "List of boats",
 
-    "boatsName": "Name"
+	"boatsName": "Name",
+	"boatsRegistrationPlate": "Number plate",
+
+	"newBoat": "Add new boat",
+	"editBoat": "Edit boat",
+
+	"boatsNameModal": "Name: ",
+	"boatsRegistrationPlateModal": "Number plate: "
 }

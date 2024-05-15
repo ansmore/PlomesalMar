@@ -1,5 +1,12 @@
 {
-    "boatsList": "Lista de barcos",
+	"boatsList": "Lista de barcos",
 
-    "boatsName": "Nombre"
+	"boatsName": "Nombre",
+	"boatsRegistrationPlate": "Matricula",
+
+	"newBoat": "Agregar nuevo barco",
+	"editBoat": "Editar barco",
+
+	"boatsNameModal": "Nombre: ",
+	"boatsRegistrationPlateModal": "Matricula: "
 }

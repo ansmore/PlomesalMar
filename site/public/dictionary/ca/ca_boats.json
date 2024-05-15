@@ -1,5 +1,12 @@
 {
-    "boatsList": "Llista de Vaixells",
+	"boatsList": "Llista de Vaixells",
 
-    "boatsName": "Nom"
+	"boatsName": "Nom",
+	"boatsRegistrationPlate": "Matrícula",
+
+	"newBoat": "Agregar nou vaixell",
+	"editBoat": "Editar vaixell",
+
+	"boatsNameModal": "Nom: ",
+	"boatsRegistrationPlateModal": "Matrícula: "
 }
