@@ -2,39 +2,9 @@ import { setupModalEventListenersSpecies } from "../modals/species/modals.js";
 import { setupModalEventListenersBoats } from "../modals/boats/modals.js";
 document.addEventListener("DOMContentLoaded", () => {
     const body = document.querySelector("main");
-    const view = body ? body.getAttribute("data-view") : null;
+    const view = body ? body.getAttribute("data-view") ?? undefined : undefined;
     const filtro = document.getElementById("filtro");
     let debounceTimeout;
-    const loadData = async (url) => {
-        try {
-            const response = await fetch(url, {
-                method: "GET",
-                headers: {
-                    "X-Requested-With": "XMLHttpRequest",
-                    Accept: "text/html",
-                },
-            });
-            const html = await response.text();
-            const tempDiv = document.createElement("div");
-            tempDiv.innerHTML = html;
-            const newTbody = tempDiv.querySelector("table tbody");
-            const currentTbody = document.querySelector("#table-container table tbody");
-            if (newTbody && currentTbody) {
-                currentTbody.innerHTML = newTbody.innerHTML;
-                setupModals(view);
-            }
-            const newPagination = tempDiv.querySelector(".pagination__box");
-            const currentPagination = document.querySelector(".pagination__box");
-            if (newPagination && currentPagination) {
-                currentPagination.innerHTML = newPagination.innerHTML;
-                setupModals(view);
-            }
-            bindPaginationLinks();
-        }
-        catch (error) {
-            console.error("Fetch error:", error.message);
-        }
-    };
     const setupModals = (view) => {
         if (view === "species") {
             setupModalEventListenersSpecies();
@@ -60,19 +30,49 @@ document.addEventListener("DOMContentLoaded", () => {
                     newUrl += `orderByField=${orderByField}&orderByDirection=${orderByDirection}&`;
                 }
                 newUrl += pageUrl.split("?")[1];
-                loadData(newUrl);
+                void loadData(newUrl);
             });
         });
     };
+    const loadData = async (url) => {
+        try {
+            const response = await fetch(url, {
+                method: "GET",
+                headers: {
+                    "X-Requested-With": "XMLHttpRequest",
+                    accept: "text/html",
+                },
+            });
+            const html = await response.text();
+            const tempDiv = document.createElement("div");
+            tempDiv.innerHTML = html;
+            const newTbody = tempDiv.querySelector("table tbody");
+            const currentTbody = document.querySelector("#table-container table tbody");
+            if (newTbody && currentTbody) {
+                currentTbody.innerHTML = newTbody.innerHTML;
+                setupModals(view);
+            }
+            const newPagination = tempDiv.querySelector(".pagination__box");
+            const currentPagination = document.querySelector(".pagination__box");
+            if (newPagination && currentPagination) {
+                currentPagination.innerHTML = newPagination.innerHTML;
+                setupModals(view);
+            }
+            bindPaginationLinks();
+        }
+        catch (error) {
+            console.error("Fetch error:", error.message);
+        }
+    };
     bindPaginationLinks();
-    if (filtro !== null) {
+    if (filtro !== undefined) {
         filtro.addEventListener("input", () => {
             clearTimeout(debounceTimeout);
             debounceTimeout = window.setTimeout(() => {
                 const searchValue = filtro.value;
                 const baseUrl = window.location.href.split("?")[0];
                 const newUrl = `${baseUrl}?search=${encodeURIComponent(searchValue)}`;
-                loadData(newUrl);
+                void loadData(newUrl);
             }, 300);
         });
     }
