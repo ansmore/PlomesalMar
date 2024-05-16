@@ -28,11 +28,23 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
     if (observationDataElement) {
-        const observations = JSON.parse(observationDataElement.getAttribute('data-observations') ?? '[]');
-        const data = observations.map(observation => ({
-            label: observation.species,
-            data: observation.total,
-        }));
-        renderChart(data);
+        const observationsJson = observationDataElement.getAttribute('data-observations') ?? '[]';
+        try {
+            const observations = JSON.parse(observationsJson);
+            // Asegúrate de que cada elemento tiene las propiedades necesarias.
+            if (observations.every(obs => typeof obs.species === 'string' && typeof obs.total === 'number')) {
+                const data = observations.map(observation => ({
+                    label: observation.species,
+                    data: observation.total,
+                }));
+                renderChart(data);
+            }
+            else {
+                console.error('Data is not in the expected format');
+            }
+        }
+        catch (error) {
+            console.error('Failed to parse observations data:', error);
+        }
     }
 });
