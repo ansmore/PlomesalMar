@@ -15,8 +15,8 @@ document.addEventListener('DOMContentLoaded', () => {
         console.error('Chart data element not found');
         return;
     }
-    const labels = JSON.parse(chartDataElement.getAttribute('data-labels') || '[]');
-    const seriesData = JSON.parse(chartDataElement.getAttribute('data-series') || '[]');
+    const labels = JSON.parse(chartDataElement.getAttribute('data-labels') ?? '[]');
+    const seriesData = JSON.parse(chartDataElement.getAttribute('data-series') ?? '[]');
     const speciesDropdown = document.getElementById('speciesDropdown');
     if (!speciesDropdown) {
         console.error('Species dropdown not found');
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const chartConfig = {
         type: 'bar',
         data: {
-            labels: labels,
+            labels,
             datasets: [{
                     label: 'Número de Individuos',
                     data: seriesData,
@@ -39,20 +39,18 @@ document.addEventListener('DOMContentLoaded', () => {
     speciesDropdown.addEventListener('change', (event) => {
         const target = event.target;
         if (!target) {
-            console.error('Event target is null');
+            console.error('Event target is undefined');
             return;
         }
         const selectedSpeciesId = target.value;
-        const speciesData = JSON.parse(localStorage.getItem('speciesData') || '{}');
-        const newData = speciesData[selectedSpeciesId] || [];
-        if (myChart && myChart.data.datasets) {
-            if (myChart.data.datasets[0]) {
-                myChart.data.datasets[0].data = newData;
-                myChart.update();
-            }
-            else {
-                console.error('No datasets found in myChart');
-            }
+        const speciesData = JSON.parse(localStorage.getItem('speciesData') ?? '{}');
+        const newData = speciesData[selectedSpeciesId] ?? [];
+        if (myChart?.data?.datasets?.[0]) {
+            myChart.data.datasets[0].data = newData;
+            myChart.update();
+        }
+        else {
+            console.error('No datasets found in myChart');
         }
     });
 });

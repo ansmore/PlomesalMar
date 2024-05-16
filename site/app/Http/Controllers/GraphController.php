@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Specie;
+use App\Models\Departure;
+use App\Models\Observation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
@@ -55,71 +57,104 @@ class GraphController extends Controller
         ]);
     }
 
-	public function graph2($language = null)
+    public function multiYearSpeciesGraph(Request $request, $language = null)
     {
         $language = Session::get('language', config('app.fallback_locale', 'ca'));
-        $species = Specie::all();
+        $selectedYear1 = $request->input('year1', date('Y'));
+        $selectedYear2 = $request->input('year2', date('Y'));
 
-        $speciesData = [];
-        foreach ($species as $specie) {
-            $observations = DB::table('observations')
-            ->join('departure_user_observations', 'observations.id', '=', 'departure_user_observations.observation_id')
-            ->join('departures', 'departure_user_observations.departure_id', '=', 'departures.id')
-            ->select(DB::raw('MONTH(departures.date) as month'), DB::raw('SUM(observations.number_of_individuals) as total'))
-            ->where('observations.species_id', $specie->id)
-            ->groupBy('month')
-            ->orderBy('month')
-            ->get();
+        $selectedSpeciesIds = [
+            $request->input('species_id1', null),
+            $request->input('species_id2', null),
+            $request->input('species_id3', null),
+            $request->input('species_id4', null),
+            $request->input('species_id5', null)
+        ];
 
-            $months = [1 => 'Enero', 2 => 'Febrero', 3 => 'Marzo', 4 => 'Abril', 5 => 'Mayo', 6 => 'Junio', 7 => 'Julio', 8 => 'Agosto', 9 => 'Septiembre', 10 => 'Octubre', 11 => 'Noviembre', 12 => 'Diciembre'];
-            $data = array_fill_keys(array_keys($months), 0);
-            foreach ($observations as $observation) {
-                $data[$observation->month] = $observation->total;
+        $selectedSpeciesIds = array_filter($selectedSpeciesIds, fn($id) => !is_null($id));
+
+        $years = Observation::getYears();
+
+        $speciesData1 = [];
+        $speciesData2 = [];
+        $speciesNames = [];
+
+        $months = [
+            1 => 'Enero', 2 => 'Febrero', 3 => 'Marzo', 4 => 'Abril', 5 => 'Mayo',
+            6 => 'Junio', 7 => 'Julio', 8 => 'Agosto', 9 => 'Septiembre', 10 => 'Octubre',
+            11 => 'Noviembre', 12 => 'Diciembre'
+        ];
+
+        foreach ($selectedSpeciesIds as $speciesId) {
+            $species = Specie::find($speciesId);
+            if (!$species) {
+                continue;
             }
-            $speciesData[$specie->id] = array_values($data);
+
+            $speciesNames[$speciesId] = $species->name;
+
+            $data1 = array_fill_keys(array_keys($months), 0);
+            $data2 = array_fill_keys(array_keys($months), 0);
+
+            $observations1 = Observation::getSpeciesDataByYear($speciesId, $selectedYear1);
+            $observations2 = Observation::getSpeciesDataByYear($speciesId, $selectedYear2);
+
+            foreach ($observations1 as $month => $observation) {
+                $data1[$month] = $observation->total;
+            }
+
+            foreach ($observations2 as $month => $observation) {
+                $data2[$month] = $observation->total;
+            }
+
+            $speciesData1[$speciesId] = array_values($data1);
+            $speciesData2[$speciesId] = array_values($data2);
         }
 
         $labels = array_values($months);
-        return view('dashboard.graphs.graph1', [
-            'language' => $language,
-            'speciesData' => $speciesData,
-            'labels' => $labels,
-            'species' => $species,
-            'selectedSpecieId' => $species->first()->id ?? null
-        ]);
-    }
 
-	public function graph3($language = null)
-    {
-        $language = Session::get('language', config('app.fallback_locale', 'ca'));
-        $species = Specie::all();
-
-        $speciesData = [];
-        foreach ($species as $specie) {
-            $observations = DB::table('observations')
-            ->join('departure_user_observations', 'observations.id', '=', 'departure_user_observations.observation_id')
-            ->join('departures', 'departure_user_observations.departure_id', '=', 'departures.id')
-            ->select(DB::raw('MONTH(departures.date) as month'), DB::raw('SUM(observations.number_of_individuals) as total'))
-            ->where('observations.species_id', $specie->id)
-            ->groupBy('month')
-            ->orderBy('month')
-            ->get();
-
-            $months = [1 => 'Enero', 2 => 'Febrero', 3 => 'Marzo', 4 => 'Abril', 5 => 'Mayo', 6 => 'Junio', 7 => 'Julio', 8 => 'Agosto', 9 => 'Septiembre', 10 => 'Octubre', 11 => 'Noviembre', 12 => 'Diciembre'];
-            $data = array_fill_keys(array_keys($months), 0);
-            foreach ($observations as $observation) {
-                $data[$observation->month] = $observation->total;
-            }
-            $speciesData[$specie->id] = array_values($data);
+        if ($request->isMethod('post')) {
+            return response()->json([
+                'labels' => $labels,
+                'speciesData1' => $speciesData1,
+                'speciesData2' => $speciesData2,
+                'speciesNames' => $speciesNames,
+            ]);
         }
 
-        $labels = array_values($months);
-        return view('dashboard.graphs.graph1', [
+        return view('dashboard.graphs.multiGraph', [
             'language' => $language,
-            'speciesData' => $speciesData,
+            'speciesData1' => $speciesData1,
+            'speciesData2' => $speciesData2,
             'labels' => $labels,
-            'species' => $species,
-            'selectedSpecieId' => $species->first()->id ?? null
+            'speciesNames' => $speciesNames,
+            'species' => Specie::all(),
+            'selectedYear1' => $selectedYear1,
+            'selectedYear2' => $selectedYear2,
+            'selectedSpeciesIds' => $selectedSpeciesIds,
+            'years' => $years,
+            'months' => $months
         ]);
     }
+
+
+    public function donutGraph(Request $request)
+    {
+        $departures = Departure::all();
+        $observations = [];
+
+        if ($request->has('departure_id')) {
+            $departureId = $request->input('departure_id');
+            $observations = DB::table('observations')
+                ->join('departure_user_observations', 'observations.id', '=', 'departure_user_observations.observation_id')
+                ->join('species', 'observations.species_id', '=', 'species.id')
+                ->where('departure_user_observations.departure_id', $departureId)
+                ->select('species.common_name as species', DB::raw('SUM(observations.number_of_individuals) as total'))
+                ->groupBy('species.common_name')
+                ->get();
+        }
+
+        return view('dashboard.graphs.donutGraph', compact('departures', 'observations'));
+    }
+
 }
