@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const canvas1 = document.getElementById('multiYearSpeciesChart1') as HTMLCanvasElement | undefined;
     const canvas2 = document.getElementById('multiYearSpeciesChart2') as HTMLCanvasElement | undefined;
     const csrfTokenMetaTag = document.querySelector('meta[name="csrf-token"]') as HTMLMetaElement | undefined;
-    const csrfToken = csrfTokenMetaTag?.getAttribute('content') ?? '';
+    const csrfToken = csrfTokenMetaTag ? csrfTokenMetaTag.getAttribute('content') : '';
 
     if (!form1 || !form2 || !updateButton1 || !updateButton2 || !canvas1 || !canvas2 || !csrfToken) {
         console.error('Form, button, canvas, or CSRF token not found');
@@ -55,47 +55,69 @@ document.addEventListener('DOMContentLoaded', () => {
         return color;
     }
 
-    type SpeciesData = { [key: string]: number[] };
-    type SpeciesNames = { [key: string]: string };
+    type SpeciesData = {
+        [speciesId: string]: number[];
+    }
 
-    function updateChart(chart: Chart, labels: string[], speciesData: SpeciesData, speciesNames: SpeciesNames) {
+    type ChartData = {
+        labels: string[];
+        speciesData1: SpeciesData;
+        speciesData2: SpeciesData;
+    }
+
+    function updateChart(chart: Chart, labels: string[], speciesData: SpeciesData) {
         chart.data.labels = labels;
-        chart.data.datasets = Object.keys(speciesData).map(speciesId => ({
-            label: speciesNames[speciesId],
-            data: speciesData[speciesId],
-            fill: false,
-            borderColor: getRandomColor(),
-            tension: 0.1
-        }));
+
+        const datasets = Object.keys(speciesData).map(speciesId => {
+            const data = speciesData[speciesId];
+
+            return {
+                label: `Species ${speciesId}`,
+                data,
+                fill: false,
+                borderColor: getRandomColor(),
+                tension: 0.1
+            };
+        });
+
+        chart.data.datasets = datasets;
         chart.update();
     }
 
     async function updateGraphs() {
+        if (!form1 || !form2) {
+            console.error('Forms not found');
+            return;
+        }
+
         const formData1 = new FormData(form1);
         const formData2 = new FormData(form2);
 
-        formData1.forEach((value, key) => formData1.append(key, value));
-        formData2.forEach((value, key) => formData2.append(key, value));
+        const formData = new FormData();
+        formData1.forEach((value, key) => {
+            formData.append(key, value);
+        });
+        formData2.forEach((value, key) => {
+            formData.append(key, value);
+        });
 
         try {
             const response = await fetch(form1.action, {
                 method: 'POST',
                 body: formData,
-                headers: { 'X-CSRF-TOKEN': csrfToken }
+                headers: {
+                    'X-CSRF-TOKEN': csrfToken ?? ''
+                }
             });
 
-            if (!response.ok) throw new Error('Network response was not ok');
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
 
-            const data = await response.json() as {
-                labels: string[],
-                speciesData1: SpeciesData,
-                speciesData2: SpeciesData,
-                speciesNames: SpeciesNames
-            };
-
-            if (data?.labels && data?.speciesData1 && data?.speciesData2 && data?.speciesNames) {
-                updateChart(multiYearSpeciesChart1, data.labels, data.speciesData1, data.speciesNames);
-                updateChart(multiYearSpeciesChart2, data.labels, data.speciesData2, data.speciesNames);
+            const data: ChartData = await response.json();
+            if (data?.labels && data?.speciesData1 && data?.speciesData2) {
+                updateChart(multiYearSpeciesChart1, data.labels, data.speciesData1);
+                updateChart(multiYearSpeciesChart2, data.labels, data.speciesData2);
             } else {
                 console.error('Invalid data format received:', data);
             }

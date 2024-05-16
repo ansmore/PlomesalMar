@@ -2,99 +2,91 @@ import { setupModalEventListenersSpecies } from "../modals/species/modals.js";
 import { setupModalEventListenersBoats } from "../modals/boats/modals.js";
 
 document.addEventListener("DOMContentLoaded", () => {
-	const body = document.querySelector("main");
-	const view = body ? body.getAttribute("data-view") : null;
+    const body = document.querySelector("main");
+    const view: string | undefined = body ? body.getAttribute("data-view") ?? undefined : undefined;
 
-	const filtro: HTMLInputElement | null = document.getElementById(
-		"filtro",
-	) as HTMLInputElement;
-	let debounceTimeout: number;
+    const filtro: HTMLInputElement | undefined = document.getElementById("filtro") as HTMLInputElement;
+    let debounceTimeout: number;
 
-	const loadData = async (url: string) => {
-		try {
-			const response = await fetch(url, {
-				method: "GET",
-				headers: {
-					"X-Requested-With": "XMLHttpRequest",
-					Accept: "text/html",
-				},
-			});
-			const html = await response.text();
-			const tempDiv = document.createElement("div");
-			tempDiv.innerHTML = html;
+    const setupModals = (view: string | undefined) => {
+        if (view === "species") {
+            setupModalEventListenersSpecies();
+        } else if (view === "boats") {
+            setupModalEventListenersBoats();
+        }
+    };
 
-			const newTbody = tempDiv.querySelector("table tbody");
-			const currentTbody = document.querySelector(
-				"#table-container table tbody",
-			);
-			if (newTbody && currentTbody) {
-				currentTbody.innerHTML = newTbody.innerHTML;
-				setupModals(view);
-			}
+    const bindPaginationLinks = () => {
+        document.querySelectorAll(".pagination__box a").forEach((link) => {
+            link.addEventListener("click", (e) => {
+                e.preventDefault();
+                const pageUrl = (e.target as HTMLAnchorElement).href;
+                const searchValue = filtro ? filtro.value : "";
+                const orderByField = new URLSearchParams(window.location.search).get("orderByField");
+                const orderByDirection = new URLSearchParams(window.location.search).get("orderByDirection");
+                const baseUrl = window.location.href.split("?")[0];
+                let newUrl = `${baseUrl}?`;
 
-			const newPagination = tempDiv.querySelector(".pagination__box");
-			const currentPagination = document.querySelector(".pagination__box");
-			if (newPagination && currentPagination) {
-				currentPagination.innerHTML = newPagination.innerHTML;
-				setupModals(view);
-			}
+                if (searchValue) {
+                    newUrl += `search=${encodeURIComponent(searchValue)}&`;
+                }
 
-			bindPaginationLinks();
-		} catch (error) {
-			console.error("Fetch error:", (error as Error).message);
-		}
-	};
+                if (orderByField && orderByDirection) {
+                    newUrl += `orderByField=${orderByField}&orderByDirection=${orderByDirection}&`;
+                }
 
-	const setupModals = (view: string | null) => {
-		if (view === "species") {
-			setupModalEventListenersSpecies();
-		} else if (view === "boats") {
-			setupModalEventListenersBoats();
-		}
-	};
+                newUrl += pageUrl.split("?")[1];
 
-	const bindPaginationLinks = () => {
-		document.querySelectorAll(".pagination__box a").forEach((link) => {
-			link.addEventListener("click", (e) => {
-				e.preventDefault();
-				const pageUrl = (e.target as HTMLAnchorElement).href;
-				const searchValue = filtro ? filtro.value : "";
-				const orderByField = new URLSearchParams(window.location.search).get(
-					"orderByField",
-				);
-				const orderByDirection = new URLSearchParams(
-					window.location.search,
-				).get("orderByDirection");
-				const baseUrl = window.location.href.split("?")[0];
-				let newUrl = `${baseUrl}?`;
+                void loadData(newUrl);
+            });
+        });
+    };
 
-				if (searchValue) {
-					newUrl += `search=${encodeURIComponent(searchValue)}&`;
-				}
+    const loadData = async (url: string) => {
+        try {
+            const response = await fetch(url, {
+                method: "GET",
+                headers: {
+                    "X-Requested-With": "XMLHttpRequest",
+                    accept: "text/html",
+                },
+            });
+            const html = await response.text();
+            const tempDiv = document.createElement("div");
+            tempDiv.innerHTML = html;
 
-				if (orderByField && orderByDirection) {
-					newUrl += `orderByField=${orderByField}&orderByDirection=${orderByDirection}&`;
-				}
+            const newTbody = tempDiv.querySelector("table tbody");
+            const currentTbody = document.querySelector("#table-container table tbody");
+            if (newTbody && currentTbody) {
+                currentTbody.innerHTML = newTbody.innerHTML;
+                setupModals(view);
+            }
 
-				newUrl += pageUrl.split("?")[1];
+            const newPagination = tempDiv.querySelector(".pagination__box");
+            const currentPagination = document.querySelector(".pagination__box");
+            if (newPagination && currentPagination) {
+                currentPagination.innerHTML = newPagination.innerHTML;
+                setupModals(view);
+            }
 
-				loadData(newUrl);
-			});
-		});
-	};
+            bindPaginationLinks();
+        } catch (error) {
+            console.error("Fetch error:", (error as Error).message);
+        }
+    };
 
-	bindPaginationLinks();
+    bindPaginationLinks();
 
-	if (filtro !== null) {
-		filtro.addEventListener("input", () => {
-			clearTimeout(debounceTimeout);
-			debounceTimeout = window.setTimeout(() => {
-				const searchValue: string = filtro.value;
-				const baseUrl: string = window.location.href.split("?")[0];
-				const newUrl: string = `${baseUrl}?search=${encodeURIComponent(searchValue)}`;
+    if (filtro !== undefined) {
+        filtro.addEventListener("input", () => {
+            clearTimeout(debounceTimeout);
+            debounceTimeout = window.setTimeout(() => {
+                const searchValue = filtro.value;
+                const baseUrl = window.location.href.split("?")[0];
+                const newUrl = `${baseUrl}?search=${encodeURIComponent(searchValue)}`;
 
-				loadData(newUrl);
-			}, 300);
-		});
-	}
+                void loadData(newUrl);
+            }, 300);
+        });
+    }
 });
