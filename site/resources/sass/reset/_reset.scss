@@ -112,6 +112,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-i {
-  padding-right: 0.5rem;
+i.fas+span {
+  padding-left: 0.5rem;
 }

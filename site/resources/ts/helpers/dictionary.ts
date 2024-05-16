@@ -141,6 +141,7 @@ export const getIdSegment = (url: string): string | undefined => {
 				return undefined;
 			}
 		}
+
 		throw new Error("No es pot determinar la id des de la URL proporcionada.");
 	} catch (error) {
 		console.error("Error en processar la URL:", error);

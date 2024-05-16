@@ -12,6 +12,7 @@ class BoatController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+
         // $this->language = Session::get('language', config('app.fallback_locale', 'ca'));
     }
 
@@ -65,23 +66,4 @@ class BoatController extends Controller
             return redirect()->back()->with('error', 'Ocurrió un error al intentar actualizar el barco. Por favor, intente de nuevo.');
         }
     }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy($language, $id)
-    {
-        try {
-            $success = Boat::deleteById($id);
-            if ($success) {
-                return redirect()->back()->with('status', 'El barco ha sido eliminado exitosamente de la base de datos.');
-            } else {
-                return redirect()->back()->with('error', 'No se pudo eliminar el barco de la base de datos porque tiene salidas asociadas.');
-            }
-        } catch (\Exception $e) {
-            Log::error('Error al eliminar el barco de la base de datos: ' . $e->getMessage());
-            return redirect()->back()->with('error', 'Ocurrió un error al intentar eliminar el barco. Por favor, asegúrese de que no está vinculado a salidas importantes.');
-        }
-    }
-
 }
