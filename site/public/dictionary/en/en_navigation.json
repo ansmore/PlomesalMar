@@ -1,10 +1,8 @@
 {
-	"navHomePage": "Home",
-
 	"navHome": "Home",
-	"navSolutions": "Solutions",
-	"navPorfolio": "Plomes al mar",
+
 	"navManagement": "Management",
+	"navDashboard": "Dashboard",
 	"navContact": "Contact",
 
 	"listTables": "List of tables",

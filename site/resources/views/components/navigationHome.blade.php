@@ -23,8 +23,8 @@
                             data-text="navManagement"></a>
                     </li>
                     <li class="list__item">
-                        <a href="{{ route('home', ['language' => $language]) }}" class="list__item__link"
-                            data-text="navPorfolio"></a>
+                        <a href="{{ route('dashboard.index', ['language' => $language]) }}" class="list__item__link"
+                            data-text="navDashboard"></a>
                     </li>
                     <li class="list__item">
                         <a href="{{ route('plomesalmarContact', ['language' => $language]) }}" class="list__item__link"

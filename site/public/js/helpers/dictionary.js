@@ -3,7 +3,6 @@
 const defaultLanguage = "es";
 import { navbar } from "../components/navigation.js";
 import { aside } from "../components/aside.js";
-import { footer } from "../components/footer.js";
 import { table } from "../partials/table.js";
 export const loadDictionary = async (language, page) => {
     try {
@@ -158,7 +157,6 @@ export const setLanguage = async (selectedLanguage) => {
         localStorage.setItem("selectedLanguage", selectedLanguage);
         await loadText();
         await loadTextComponent(navbar);
-        await loadTextComponent(footer);
         await loadTextComponent(aside);
         await loadTextComponent(table);
         await loadTextComponent(table);
