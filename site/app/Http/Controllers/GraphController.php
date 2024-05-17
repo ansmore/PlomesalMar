@@ -23,26 +23,23 @@ class GraphController extends Controller
         ]);
     }
 
-    public function graph1($language = null)
+    public function graph1(Request $request, $language = null)
     {
         $language = Session::get('language', config('app.fallback_locale', 'ca'));
         $species = Specie::all();
-
+        $years = Observation::getYears();
+        
+        $selectedYear = $request->input('year', $years->first());
+        $selectedSpecieId = $request->input('species', $species->first()->id ?? null);
+        
         $speciesData = [];
         foreach ($species as $specie) {
-            $observations = DB::table('observations')
-            ->join('departure_user_observations', 'observations.id', '=', 'departure_user_observations.observation_id')
-            ->join('departures', 'departure_user_observations.departure_id', '=', 'departures.id')
-            ->select(DB::raw('MONTH(departures.date) as month'), DB::raw('SUM(observations.number_of_individuals) as total'))
-            ->where('observations.species_id', $specie->id)
-            ->groupBy('month')
-            ->orderBy('month')
-            ->get();
-
+            $observations = Observation::getSpeciesDataByYear($specie->id, $selectedYear);
+            
             $months = [1 => 'Enero', 2 => 'Febrero', 3 => 'Marzo', 4 => 'Abril', 5 => 'Mayo', 6 => 'Junio', 7 => 'Julio', 8 => 'Agosto', 9 => 'Septiembre', 10 => 'Octubre', 11 => 'Noviembre', 12 => 'Diciembre'];
             $data = array_fill_keys(array_keys($months), 0);
-            foreach ($observations as $observation) {
-                $data[$observation->month] = $observation->total;
+            foreach ($observations as $month => $observation) {
+                $data[$month] = $observation->total;
             }
             $speciesData[$specie->id] = array_values($data);
         }
@@ -53,7 +50,9 @@ class GraphController extends Controller
             'speciesData' => $speciesData,
             'labels' => $labels,
             'species' => $species,
-            'selectedSpecieId' => $species->first()->id ?? null
+            'selectedSpecieId' => $selectedSpecieId,
+            'years' => $years,
+            'selectedYear' => $selectedYear
         ]);
     }
 

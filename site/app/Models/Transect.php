@@ -45,7 +45,7 @@ class Transect extends Model
      */
     public static function getFilteredTransects(Request $request)
     {
-        $orderByField = $request->input('orderByField', 'id');
+        $orderByField = $request->input('orderByField', 'name');
         $orderByDirection = $request->input('orderByDirection', 'asc');
 
         $perPage = config('app.per_page');
