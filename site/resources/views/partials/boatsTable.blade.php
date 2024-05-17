@@ -1,5 +1,3 @@
-{{-- Id-> table-container Can't be deleted --}}
-
 <div class="card" id="table-container">
     <table class="table">
         <thead class="text-white">
@@ -15,10 +13,10 @@
                 </th>
                 <th scope="col">
                     <span data-text="boatsRegistrationPlate" class="table__title"></span>
-                    <a href="?orderByField=name&orderByDirection=asc" class="decoration">
+                    <a href="?orderByField=registration_number&orderByDirection=asc" class="decoration">
                         <i class="fas fa-arrow-up"></i>
                     </a>
-                    <a href="?orderByField=name&orderByDirection=desc" class="decoration">
+                    <a href="?orderByField=registration_number&orderByDirection=desc" class="decoration">
                         <i class="fas fa-arrow-down"></i>
                     </a>
                 </th>
