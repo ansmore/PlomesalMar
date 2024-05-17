@@ -57,4 +57,41 @@ class Transect extends Model
 					->paginate($perPage);
 	}
 
+	/**
+	 * Crea un nuevo barco a partir de los datos proporcionados en la solicitud.
+	 *
+	 * @param Request $request
+	 * @return Transect
+	 */
+	public static function createFromRequest(Request $request): Transect
+	{
+		$newTransect = self::create([
+			'name' => $request->input('name'),
+
+		]);
+
+		Log::info('Transect created from request:', [
+			'name' => $newTransect->name,
+
+		]);
+
+		return $newTransect;
+	}
+
+	/**
+	 * Actualiza un barco existente con los datos proporcionados en la solicitud.
+	 *
+	 * @param Request $request
+	 * @param int $id Identificador del barco a actualizar.
+	 * @return bool
+	 */
+	public static function updateFromRequest(Request $request, $id): bool
+	{
+		$transect = self::find($id);
+		if ($transect) {
+			$transect->update($request->all());
+			return true;
+		}
+		return false;
+	}
 }

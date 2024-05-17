@@ -12,7 +12,8 @@
             <article class="box__table">
                 <div class="box__search">
                     @include('components.search')
-                    <button type="button" class="form__button__success" data-bs-toggle="modal" data-bs-target="createBoat">
+                    <button type="button" class="form__button__success" data-bs-toggle="modal"
+                        data-bs-target="createTransect">
                         <i class="fas fa-plus-circle"></i>
                         <span data-text="addButton"></span>
                     </button>
@@ -20,7 +21,7 @@
                 @include('partials.transectsTable', ['transects' => $transects])
             </article>
         </section>
-        {{-- @include('modals.transects.create') --}}
+        @include('modals.transects.create')
         @include('components.message')
     </main>
 @endsection
