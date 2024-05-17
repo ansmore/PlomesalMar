@@ -2,38 +2,36 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Boat;
+use App\Models\Transect;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 
-class BoatController extends Controller
+class TransectController extends Controller
 {
-    public function __construct()
+	public function __construct()
     {
         $this->middleware('auth');
     }
 
-    /**
-     * Display a listing of boats.
+	/**
+     * Display a listing of the resource.
      */
     public function index(Request $request, $language = null)
     {
-        $boats = Boat::getFilteredBoats($request);
-        return view('pages.boats', ['language' => $language, 'boats' => $boats]);
+        $transects = Transect::getFilteredTransects($request);
+        return view('pages.transects', ['language' => $language, 'transects' => $transects]);
     }
-
-    /**
-     * Store a newly created boat in storage.
+/**
+     * Store a newly created transect in storage.
      */
     public function store(Request $request, $language = null)
     {
         $validated = $request->validate([
             'name' => 'required|string|max:255',
-            'registration_number' => 'required|string|max:5'
         ]);
 
         try {
-            $boat = Boat::createFromRequest($request);
+            $transect = Transect::createFromRequest($request);
             return redirect()->back()->with('status', 'El barco ha sido creado exitosamente en la base de datos.');
         } catch (\Exception $e) {
             Log::error('Error al intentar crear un nuevo barco en la base de datos: ' . $e->getMessage());
@@ -48,11 +46,10 @@ class BoatController extends Controller
     {
         $validated = $request->validate([
             'name' => 'required|string|max:255',
-            'registration_number' => 'required|string|max:5'
         ]);
 
         try {
-            $success = Boat::updateFromRequest($request, $id);
+            $success = Transect::updateFromRequest($request, $id);
             if ($success) {
                 return redirect()->back()->with('status', 'El barco ha sido actualizado exitosamente en la base de datos.');
             } else {

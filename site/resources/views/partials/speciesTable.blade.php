@@ -37,19 +37,12 @@
                             data-scientific-name="{{ $specie->scientific_name }}">
                             <i class="fas fa-pencil"></i>
                         </button>
-                        <button type="button" class="buttonTable__close" data-bs-toggle="modal"
-                            data-bs-target="deleteSpeciesModal" title="Eliminar" data-id="{{ $specie->id }}"
-                            data-common-name="{{ $specie->common_name }}"
-                            data-scientific-name="{{ $specie->scientific_name }}">
-                            <i class="fas fa-trash-can"></i>
-                        </button>
                     </td>
                 </tr>
             @endforeach
         </tbody>
     </table>
     @include('modals/species.edit')
-    @include('modals/species.delete')
 </div>
 
 <nav aria-label="Page navigation example" class="pagination__box">

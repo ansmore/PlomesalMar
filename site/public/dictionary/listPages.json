@@ -3,12 +3,18 @@
 	"footer",
 	"home",
 	"plomesalmarContact",
-	"termsOfUse",
 	"admin",
-	"privacyPolicy",
 	"table",
-	"species",
 	"users",
+
+	"departures",
+	"observations",
+	"species",
 	"boats",
-	"dashboard"
+	"transects",
+
+	"dashboard",
+
+	"termsOfUse",
+	"privacyPolicy"
 ]

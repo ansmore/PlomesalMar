@@ -36,8 +36,7 @@
                     <td>{{ $departure->transect?->name }}</td>
                     <td>{{ $departure->date }}</td>
                     <td>{{ $departure->time }}</td>
-                    <td class="icon-center">
-                        <!-- Update these button actions according to the functionalities you want to support for departures -->
+                    <td class="icons">
                         <button type="button" class="buttonTable__success" data-bs-toggle="modal"
                             data-bs-target="editDepartureModal" title="Editar" data-id="{{ $departure->id }}">
                             <i class="fas fa-pencil-alt"></i>

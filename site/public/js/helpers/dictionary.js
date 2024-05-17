@@ -161,6 +161,7 @@ export const setLanguage = async (selectedLanguage) => {
         await loadTextComponent(footer);
         await loadTextComponent(aside);
         await loadTextComponent(table);
+        await loadTextComponent(table);
     }
     catch (error) {
         console.error("Error handling language click", error);

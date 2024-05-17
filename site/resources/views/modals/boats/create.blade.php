@@ -11,13 +11,14 @@
                 <form method="POST" action="{{ route('boats.store', ['language' => app()->getLocale()]) }}">
                     @csrf
                     <div class="form__group">
-                        <label for="boatName" class="form__group__content" data-text="boatsNameModal"></label>
+                        <label for="boatName" class="form__group__content" data-text="boatsNameModal">
+                        </label>
                         <input type="text" class="form__group__input" id="boatName" name="name"
                             placeholder="Example: Sea Explorer">
                     </div>
                     <div class="form__group">
-                        <label for="registrationNumberModal" class="form__group__content"
-                            data-text="boatsRegistrationPlate"></label>
+                        <label for="registrationNumber" class="form__group__content"
+                            data-text="boatsRegistrationPlateModal"></label>
                         <input type="text" class="form__group__input" id="registrationNumber"
                             name="registration_number" placeholder="Example: ABC123">
                     </div>

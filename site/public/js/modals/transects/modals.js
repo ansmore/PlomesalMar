@@ -1,4 +1,4 @@
-export const setupModalEventListenersBoats = () => {
+export const setupModalEventListenersTransects = () => {
     const buttons = document.querySelectorAll('[data-bs-toggle="modal"]');
     buttons.forEach((button) => {
         button.removeEventListener("click", handleModalButtonClick);
@@ -11,7 +11,7 @@ export const setupModalEventListenersBoats = () => {
         button.addEventListener("click", closeModalButtonClick);
     });
 };
-export const cleanupBoats = () => {
+export const cleanupTransects = () => {
     const buttons = document.querySelectorAll('[data-bs-toggle="modal"]');
     buttons.forEach((button) => {
         button.removeEventListener("click", handleModalButtonClick);
@@ -34,26 +34,25 @@ const handleModalButtonClick = (event) => {
         console.error("No se encontró el elemento modal para el objetivo:", modalId);
         return;
     }
-    const boatId = button.getAttribute("data-id");
-    const boatName = button.getAttribute("data-name");
-    const registrationNumber = button.getAttribute("data-registration-number");
+    const transectId = button.getAttribute("data-id");
+    const transectName = button.getAttribute("data-name");
     switch (modalId) {
-        case "createBoat":
+        case "createTransect":
             openModal(modal);
             break;
-        case "editBoatModal":
-            if (!boatId || !boatName || !registrationNumber) {
+        case "editTransectModal":
+            if (!transectId || !transectName) {
                 console.error("Faltan atributos de datos");
                 return;
             }
-            handleEditBoatModal(modal, boatId, boatName, registrationNumber);
+            handleEditTransectModal(modal, transectId, transectName);
             break;
-        case "deleteBoatModal":
-            if (!boatId || !boatName || !registrationNumber) {
+        case "deleteTransectModal":
+            if (!transectId || !transectName) {
                 console.error("Faltan atributos de datos");
                 return;
             }
-            handleDeleteBoatModal(modal, boatId, boatName, registrationNumber);
+            handleDeleteTransectModal(modal, transectId, transectName);
             break;
         default:
             console.error("Objetivo del modal desconocido:", modalId);
@@ -70,43 +69,39 @@ const closeModalButtonClick = (event) => {
 const openModal = (modal) => {
     modal.style.display = "block";
 };
-const handleEditBoatModal = (modal, boatId, boatName, registrationNumber) => {
+const handleEditTransectModal = (modal, transectId, transectName) => {
     const editForm = modal.querySelector("form");
-    const inputBoatName = modal.querySelector("#boatName");
-    const inputRegistrationNumber = modal.querySelector("#registrationNumber");
-    if (!editForm || !inputBoatName || !inputRegistrationNumber) {
+    const inputTransectName = modal.querySelector("#transectName");
+    if (!editForm || !inputTransectName) {
         console.error("Faltan el formulario o campos de entrada en el modal de edición");
         return;
     }
     const editUrlTemplate = editForm.dataset.editUrlTemplate;
     if (editUrlTemplate) {
-        editForm.action = editUrlTemplate.replace(":id", boatId.toString());
-    }
-    else {
-        console.error("Falta la plantilla de URL de edición en el formulario");
-        return;
-    }
-    inputBoatName.value = boatName;
-    inputRegistrationNumber.value = registrationNumber;
-    openModal(modal);
-};
-const handleDeleteBoatModal = (modal, boatId, boatName, registrationNumber) => {
-    const deleteForm = modal.querySelector("form");
-    const textBoatName = modal.querySelector("#deleteBoatName");
-    const textRegistrationNumber = modal.querySelector("#deleteRegistrationNumber");
-    if (!deleteForm || !textBoatName || !textRegistrationNumber) {
-        console.error("Faltan el formulario o campos de texto en el modal de eliminación");
-        return;
-    }
-    const deleteUrlTemplate = deleteForm.dataset.deleteUrlTemplate;
-    if (deleteUrlTemplate) {
-        deleteForm.action = deleteUrlTemplate.replace(":id", boatId.toString());
+        editForm.action = editUrlTemplate.replace(":id", transectId.toString());
     }
     else {
         console.error("Falta la plantilla de URL de eliminación en el formulario");
         return;
     }
-    textBoatName.textContent = boatName;
-    textRegistrationNumber.textContent = registrationNumber;
+    inputTransectName.value = transectName;
+    openModal(modal);
+};
+const handleDeleteTransectModal = (modal, transectId, transectName) => {
+    const deleteForm = modal.querySelector("form");
+    const textTransectName = modal.querySelector("#deleteTransectName");
+    if (!deleteForm || !textTransectName) {
+        console.error("Faltan el formulario o campos de texto en el modal de eliminación");
+        return;
+    }
+    const deleteUrlTemplate = deleteForm.dataset.deleteUrlTemplate;
+    if (deleteUrlTemplate) {
+        deleteForm.action = deleteUrlTemplate.replace(":id", transectId.toString());
+    }
+    else {
+        console.error("Falta la plantilla de URL de eliminación en el formulario");
+        return;
+    }
+    textTransectName.textContent = transectName;
     openModal(modal);
 };

@@ -141,6 +141,7 @@ export const getIdSegment = (url: string): string | undefined => {
 				return undefined;
 			}
 		}
+
 		throw new Error("No es pot determinar la id des de la URL proporcionada.");
 	} catch (error) {
 		console.error("Error en processar la URL:", error);
@@ -211,6 +212,7 @@ export const setLanguage = async (selectedLanguage: string) => {
 		await loadTextComponent(navbar);
 		await loadTextComponent(footer);
 		await loadTextComponent(aside);
+		await loadTextComponent(table);
 		await loadTextComponent(table);
 	} catch (error) {
 		console.error("Error handling language click", error);

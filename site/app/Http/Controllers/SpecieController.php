@@ -5,15 +5,12 @@ namespace App\Http\Controllers;
 use App\Models\Specie;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Facades\Session;
 
 class SpecieController extends Controller
 {
 	public function __construct()
     {
         $this->middleware('auth');
-
-		// $this->language = Session::get('language',  config('app.fallback_locale', 'ca'));
     }
 
     /**
@@ -31,8 +28,8 @@ class SpecieController extends Controller
     public function store(Request $request, $language = null)
     {
         $validated = $request->validate([
-            'nombre_comun' => 'required|string|max:255',
-            'nombre_cientifico' => 'required|string|max:255'
+            'common_name' => 'required|string|max:255',
+            'scientific_name' => 'required|string|max:255'
         ]);
 
         try {
@@ -50,8 +47,8 @@ class SpecieController extends Controller
     public function update(Request $request, $language, $id)
     {
         $validated = $request->validate([
-            'nombre_comun' => 'required|string|max:255',
-            'nombre_cientifico' => 'required|string|max:255'
+            'common_name' => 'required|string|max:255',
+            'scientific_name' => 'required|string|max:255'
         ]);
 
         try {
@@ -66,23 +63,4 @@ class SpecieController extends Controller
             return redirect()->back()->with('error', 'Ocurrió un error al intentar actualizar la especie. Por favor, intente de nuevo.');
         }
     }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy($language, $id)
-    {
-        try {
-            $success = Specie::deleteById($id);
-            if ($success) {
-                return redirect()->back()->with('status', 'La especie ha sido eliminada exitosamente de la base de datos.');
-            } else {
-                return redirect()->back()->with('error', 'No se pudo eliminar la especie de la base de datos. Puede que ya no exista o esté relacionada con otras observaciones.');
-            }
-        } catch (\Exception $e) {
-            Log::error('Error al eliminar la especie de la base de datos: ' . $e->getMessage());
-            return redirect()->back()->with('error', 'Ocurrió un error al intentar eliminar la especie. Por favor, asegúrese de que no está vinculada a observaciones importantes.');
-        }
-    }
-
 }

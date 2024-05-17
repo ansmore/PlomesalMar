@@ -16,7 +16,7 @@ class Specie extends Model
 
     /**
      * Busca especies basadas en el término de búsqueda proporcionado.
-     * 
+     *
      * @param Builder $query
      * @param string|null $search Término de búsqueda
      * @return Builder
@@ -25,14 +25,14 @@ class Specie extends Model
     {
         if (!empty($search)) {
             return $query->where('common_name', 'like', '%' . $search . '%')
-                         ->orWhere('scientific_name', 'like', '%' . $search . '%');
+				->orWhere('scientific_name', 'like', '%' . $search . '%');
         }
         return $query;
     }
 
     /**
      * Recupera especies filtradas según los criterios de búsqueda y ordenación almacenados en la sesión.
-     * 
+     *
      * @param Request $request
      * @return \Illuminate\Contracts\Pagination\LengthAwarePaginator
      */
@@ -50,15 +50,15 @@ class Specie extends Model
 
     /**
      * Crea una nueva especie a partir de los datos proporcionados en la solicitud.
-     * 
+     *
      * @param Request $request
      * @return Specie
      */
     public static function createFromRequest(Request $request): Specie
     {
         $newSpecie = self::create([
-            'common_name' => $request->input('nombre_comun'),
-            'scientific_name' => $request->input('nombre_cientifico'),
+            'common_name' => $request->input('common_name'),
+            'scientific_name' => $request->input('scientific_name'),
         ]);
 
         Log::info('Specie created from request:', [
@@ -71,7 +71,7 @@ class Specie extends Model
 
     /**
      * Actualiza una especie existente con los datos proporcionados en la solicitud.
-     * 
+     *
      * @param Request $request
      * @param int $id Identificador de la especie a actualizar.
      * @return bool
@@ -81,22 +81,6 @@ class Specie extends Model
         $species = self::find($id);
         if ($species) {
             $species->update($request->all());
-            return true;
-        }
-        return false;
-    }
-
-    /**
-     * Elimina una especie basada en el ID proporcionado.
-     * 
-     * @param int $id El ID de la especie a eliminar.
-     * @return bool
-     */
-    public static function deleteById($id): bool
-    {
-        $species = self::find($id);
-        if ($species) {
-            $species->delete();
             return true;
         }
         return false;

@@ -9,21 +9,22 @@
         <div class="modal-content body">
             <h2 class="modal-title body__title" id="editModalLabel" data-text="editSpecie"></h2>
 
-            <article class="form">
+            <article class="modal-header bg-info text-white form">
                 <form id="editSpeciesForm" action="" method="POST"
                     data-edit-url-template="{{ route('species.update', [':id', 'language' => app()->getLocale()]) }}">
                     @csrf
                     @method('PUT')
                     <div class="modal-body form__group">
-                        <label for="nombreComun" class="form__group__content" data-text="commonNameModal"></label>
+                        <label for="nombreComun" class="form-label  form__group__content"
+                            data-text="commonNameModal"></label>
                         <input type="text" class="form-control form__group__input" id="nombreComun"
-                            name="nombre_comun" value="" />
+                            name="common_name" value="" />
                     </div>
                     <div class="form__group">
-                        <label for="nombreCientifico" class="form__group__content"
+                        <label for="nombreCientifico" class="form-label form__group__content"
                             data-text="scientificNameModal"></label>
                         <input type="text" class="form-control form__group__input" id="nombreCientifico"
-                            name="nombre_cientifico" value="" />
+                            name="scientific_name" value="" />
                     </div>
                     <div class="form__group__buttons">
                         <button type="button" class="btn btn-secondary form__button__back" data-bs-dismiss="modal"

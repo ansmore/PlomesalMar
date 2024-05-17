@@ -9,11 +9,12 @@ use App\Http\Controllers\BoatController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Redirect;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\GraphController;
 use App\Http\Controllers\SpecieController;
 use App\Http\Controllers\LanguageController;
+use App\Http\Controllers\TransectController;
 use App\Http\Controllers\DepartureController;
 use App\Http\Controllers\PlomesalmarController;
-use App\Http\Controllers\GraphController;
 
 
 /*
@@ -108,13 +109,17 @@ Route::prefix('/{language?}')->group(function () {
 		Route::get('/graph3', [GraphController::class, 'donutGraph'])->name('donutGraph');
 	});
 
-    // Rutas Espécies
+    // Species routes
     Route::resource('species', SpecieController::class)->except(['index']);
 	Route::get('/species', [SpecieController::class, 'index'])->name('species');
 
-    //Rutas Barcos
+    // Boats routes
     Route::resource('boats', BoatController::class)->except(['index']);
 	Route::get('/boats', [BoatController::class, 'index'])->name('boats');
+
+	// Transects routes
+    Route::resource('transects', TransectController::class)->except(['index']);
+	Route::get('/transects', [TransectController::class, 'index'])->name('transects');
 
     //Rutas Salidas
     Route::resource('departures', DepartureController::class)->except(['index']);

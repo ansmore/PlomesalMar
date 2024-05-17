@@ -45,7 +45,7 @@
                     <i class="fas fa-location">
                     </i>
                 </span>
-                <a href="{{ route('species', ['language' => $language]) }}" class="list__item__link"
+                <a href="{{ route('transects', ['language' => $language]) }}" class="list__item__link"
                     data-text="asideTransect">
                 </a>
             </li>
