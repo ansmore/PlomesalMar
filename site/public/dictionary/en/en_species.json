@@ -1,9 +1,6 @@
 {
 	"speciesList": "Species List",
 
-	"commonName": "Common Name",
-	"scientificName": "Scientific Name",
-
 	"newSpecie": "Add new especie",
 	"editSpecie": "Edit especie",
 

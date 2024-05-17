@@ -1,9 +1,6 @@
 {
 	"speciesList": "Lista de Especies",
 
-	"commonName": "Nombre Común",
-	"scientificName": "Nombre Científico",
-
 	"newSpecie": "Agregar nueva espècie",
 	"editSpecie": "Editar espècie",
 

@@ -96,7 +96,21 @@ const changeLanguage = async (language: string) => {
 		if (response.ok) {
 			const responseData = await response.json();
 
-			const { newUrl } = responseData;
+			let { newUrl, ordenationString, ordenationAdmin } = responseData;
+
+			if (ordenationString !== "") {
+				console.log("newUrl String ->", newUrl);
+				console.log("ordenation string->", ordenationString);
+				newUrl += `?${ordenationString}`;
+
+				console.log("Aqui newURL string->", newUrl);
+			} else if (ordenationAdmin !== "") {
+				console.log("newUrl admin->", newUrl);
+				console.log("ordenation admin->", ordenationAdmin);
+				newUrl += `?${ordenationAdmin}`;
+
+				console.log("Aqui newURL admin->", newUrl);
+			}
 
 			if (typeof newUrl === "string") {
 				history.replaceState({ url: newUrl }, "", newUrl);
