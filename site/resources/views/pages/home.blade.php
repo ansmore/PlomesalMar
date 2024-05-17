@@ -37,7 +37,6 @@
         </section>
         @include('modals.modalLogin')
     </main>
-    @include('components.footer')
 @endsection
 
 @push('scripts')

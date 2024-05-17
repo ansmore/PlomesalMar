@@ -98,13 +98,12 @@ Route::prefix('/{language?}')->group(function () {
     Route::get('/home#{section?}', [HomeController::class, 'homeSection'])->name('home.section');
 
 	Route::get('/plomesalmarContact', [PlomesalmarController::class, 'plomesalmarContactForm'])->name('plomesalmarContact');
-    // Route::post('/plomesalmarContact', [PlomesalmarController::class, 'plomesalmarContactSubmit'])->name('plomesalmarContact.submit');
 
 	Route::get('/management', [HomeController::class, 'management'])->name('management');
 
 	Route::prefix('dashboard')->group(function () {
 		Route::get('management', [GraphController::class, 'index'])->name('dashboard.index');
-		Route::get('/graph1', [GraphController::class, 'graph1'])->name('dashboard.graph1');
+		Route::get('/graph1', [GraphController::class, 'graph1'])->name('graph1');
 		Route::match(['get', 'post'], '/graph/multi', [GraphController::class, 'multiYearSpeciesGraph'])->name('multiGraph');
 		Route::get('/graph3', [GraphController::class, 'donutGraph'])->name('donutGraph');
 	});
@@ -121,12 +120,9 @@ Route::prefix('/{language?}')->group(function () {
     Route::resource('transects', TransectController::class)->except(['index']);
 	Route::get('/transects', [TransectController::class, 'index'])->name('transects');
 
-    //Rutas Salidas
+    // Departures routes
     Route::resource('departures', DepartureController::class)->except(['index']);
 	Route::get('/departures', [DepartureController::class, 'index'])->name('departures');
-
-    Route::get('/privacyPolicy', [HomeController::class, 'privacyPolicy'])->name('privacyPolicy');
-    Route::get('/termsOfUse', [HomeController::class, 'termsOfUse'])->name('termsOfUse');
 });
 
 // Route::fallback([HomeController::class, 'index']);

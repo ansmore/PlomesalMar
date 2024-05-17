@@ -62,7 +62,6 @@
             </article>
         </section>
     </main>
-    @include('components.footer')
 @endsection
 
 @push('scripts')

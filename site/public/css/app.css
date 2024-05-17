@@ -176,7 +176,7 @@ button {
   gap: 0.5rem;
 }
 
-.section, .termsAndPolicy .row, .plomesalmarContact .row, .home .row--reverse, .home .row, .footer .row {
+.section, .termsAndPolicy .row, .plomesalmarContact .row, .home .row--reverse, .home .row {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -189,7 +189,7 @@ button {
   margin: 0.25rem;
 }
 
-.article, .termsAndPolicy .row .box__logo, .termsAndPolicy .row .box, .plomesalmarContact .row .box__logo, .plomesalmarContact .row .box, .home .row--reverse .box, .home .row .box__circle, .home .row .box__row, .home .row .box, .footer .row .box__row, .footer .row .box, .modal__box .body,
+.article, .termsAndPolicy .row .box__logo, .termsAndPolicy .row .box, .plomesalmarContact .row .box__logo, .plomesalmarContact .row .box, .home .row--reverse .box, .home .row .box__circle, .home .row .box__row, .home .row .box, .modal__box .body,
 .modal__management__box .body, .form, .plomesalmarContact .row .form, .modal__box .body .plomesalmarContact .row .form, .plomesalmarContact .row .modal__box .body .form,
 .modal__management__box .body .plomesalmarContact .row .form,
 .plomesalmarContact .row .modal__management__box .body .form,
@@ -311,7 +311,7 @@ button {
   text-align: center;
   overflow: hidden;
 }
-.article p, .termsAndPolicy .row .box__logo p, .termsAndPolicy .row .box p, .plomesalmarContact .row .box__logo p, .plomesalmarContact .row .box p, .home .row--reverse .box p, .home .row .box__circle p, .home .row .box__row p, .home .row .box p, .footer .row .box__row p, .footer .row .box p, .modal__box .body p,
+.article p, .termsAndPolicy .row .box__logo p, .termsAndPolicy .row .box p, .plomesalmarContact .row .box__logo p, .plomesalmarContact .row .box p, .home .row--reverse .box p, .home .row .box__circle p, .home .row .box__row p, .home .row .box p, .modal__box .body p,
 .modal__management__box .body p, .form p, .plomesalmarContact .row .form p, .modal__box .body .plomesalmarContact .row .form p, .plomesalmarContact .row .modal__box .body .form p,
 .modal__management__box .body .plomesalmarContact .row .form p,
 .plomesalmarContact .row .modal__management__box .body .form p,
@@ -418,7 +418,7 @@ button {
 .plomesalmarContact .auth .row .modal__management__box .modal__box .body .form p {
   text-align: left;
 }
-.article p span, .termsAndPolicy .row .box__logo p span, .termsAndPolicy .row .box p span, .plomesalmarContact .row .box__logo p span, .plomesalmarContact .row .box p span, .home .row--reverse .box p span, .home .row .box__circle p span, .home .row .box__row p span, .home .row .box p span, .footer .row .box__row p span, .footer .row .box p span, .modal__box .body p span,
+.article p span, .termsAndPolicy .row .box__logo p span, .termsAndPolicy .row .box p span, .plomesalmarContact .row .box__logo p span, .plomesalmarContact .row .box p span, .home .row--reverse .box p span, .home .row .box__circle p span, .home .row .box__row p span, .home .row .box p span, .modal__box .body p span,
 .modal__management__box .body p span, .form p span, .plomesalmarContact .row .form p span, .modal__box .body .plomesalmarContact .row .form p span, .plomesalmarContact .row .modal__box .body .form p span,
 .modal__management__box .body .plomesalmarContact .row .form p span,
 .plomesalmarContact .row .modal__management__box .body .form p span,
@@ -526,7 +526,7 @@ button {
   text-align: left;
 }
 
-.image, .termsAndPolicy .row .box__image, .home .row--reverse .box__image, .home .row .box__image, .footer .row .box__image {
+.image, .termsAndPolicy .row .box__image, .home .row--reverse .box__image, .home .row .box__image {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -1543,164 +1543,6 @@ button {
   .nav .navbar__language .list__item .dropdown__menu__item {
     min-width: 12rem;
     max-width: 14rem;
-  }
-}
-.footer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
-  align-self: center;
-  color: #fafafa;
-  background-color: #0065AE;
-  min-height: 12rem;
-}
-.footer .row .box {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
-  align-self: center;
-  min-height: 6rem;
-  max-height: 6rem;
-}
-.footer .row .box__row {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
-  align-self: center;
-}
-.footer .row .box__image {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
-  align-self: center;
-  background-color: #ffffff;
-  min-width: 70vw;
-  max-width: 70vw;
-  min-height: 15rem;
-  max-height: 15rem;
-}
-.footer .row .box__image img {
-  min-width: 50vw;
-  max-width: 50vw;
-  min-height: 5rem;
-  max-height: 5rem;
-}
-.footer .row .box .icon {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-content: center;
-  align-items: center;
-  align-self: center;
-  min-width: 70vw;
-  max-width: 70vw;
-}
-.footer .row .box .icon__item {
-  padding: 0.25rem;
-  margin: 0;
-  list-style: none;
-  display: inline-flex;
-}
-.footer .row .box .icon__item__link {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
-  align-self: center;
-  padding: 0.25rem;
-  margin: 0 0.25rem;
-  min-width: 50px;
-  min-height: 50px;
-  text-decoration: none;
-  text-align: center;
-  border-radius: 50%;
-  border: 1px solid;
-  box-shadow: 3px 3px 6px #c2c2c2, -3px -3px 6px #ececec;
-  border: 1px solid transparent;
-}
-.footer .row .box .icon__item__link:hover {
-  color: inherit;
-  background-color: #9d9d9c;
-  border: 1px solid #fafafa;
-}
-
-@media screen and (min-width: 376px) and (max-width: 600px) {
-  .footer .row {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-content: center;
-    align-items: center;
-    align-self: center;
-  }
-  .footer .row .box .list {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-content: center;
-    align-items: center;
-    align-self: center;
-  }
-}
-@media screen and (min-width: 601px) and (max-width: 1024px) {
-  .footer .row .box__row {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-    align-self: center;
-    gap: 2rem;
-  }
-  .footer .row .box__image {
-    min-width: 70vw;
-    max-width: 70vw;
-  }
-  .footer .row .box__image img {
-    min-width: 15rem;
-    max-width: 15rem;
-  }
-}
-@media screen and (min-width: 1025px) {
-  .footer {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-content: center;
-    align-items: flex-start;
-    align-self: center;
-  }
-  .footer .row {
-    min-width: 45vw;
-    max-width: 45vw;
-  }
-  .footer .row .box {
-    min-width: 45vw;
-    max-width: 45vw;
-  }
-  .footer .row .box__row {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-    align-self: center;
-    min-width: 45vw;
-    max-width: 45vw;
-    gap: 2rem;
-  }
-  .footer .row .box__image img {
-    min-width: 15rem;
-    max-width: 15rem;
   }
 }
 .aside {
