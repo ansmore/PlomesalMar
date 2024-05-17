@@ -67,7 +67,8 @@
                     <i class="fas fa-globe">
                     </i>
                 </span>
-                <a href="{{ route('graph1', ['language' => $language]) }}" class="list__item__link" data-text="graph1">
+                <a href="{{ route('dashboard.graph1', ['language' => $language]) }}" class="list__item__link"
+                    data-text="graph1">
                 </a>
             </li>
             <li class="list__item">
@@ -75,7 +76,7 @@
                     <i class="fas fa-globe">
                     </i>
                 </span>
-                <a href="{{ route('multiGraph', ['language' => $language]) }}" class="list__item__link"
+                <a href="{{ route('dashboard.multiGraph', ['language' => $language]) }}" class="list__item__link"
                     data-text="graph2">
                 </a>
             </li>
@@ -84,7 +85,7 @@
                     <i class="fas fa-globe">
                     </i>
                 </span>
-                <a href="{{ route('donutGraph', ['language' => $language]) }}" class="list__item__link"
+                <a href="{{ route('dashboard.donutGraph', ['language' => $language]) }}" class="list__item__link"
                     data-text="graph3">
                 </a>
             </li>

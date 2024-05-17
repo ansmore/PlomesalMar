@@ -13,7 +13,7 @@
         @include('components.asideMenu')
 
         <section id="logo" class="row">
-            <form id="multiGraphForm1" action="{{ route('multiGraph', app()->getLocale()) }}" method="POST">
+            <form id="multiGraphForm1" action="{{ route('dashboard.multiGraph', app()->getLocale()) }}" method="POST">
                 @csrf
                 <div class="form-group">
                     <label for="year1">Seleccione el Año 1:</label>
@@ -94,7 +94,7 @@
                 <button type="button" id="updateGraphButton1" class="btn btn-primary">Actualizar Gráfico 1</button>
             </form>
 
-            <form id="multiGraphForm2" action="{{ route('multiGraph', app()->getLocale()) }}" method="POST">
+            <form id="multiGraphForm2" action="{{ route('dashboard.multiGraph', app()->getLocale()) }}" method="POST">
                 @csrf
                 <div class="form-group">
                     <label for="year2">Seleccione el Año 2:</label>
