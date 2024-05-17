@@ -85,7 +85,7 @@ Route::prefix('/{language?}')->group(function () {
 
 	// A la ruta admin? ->middleware('auth')
 	Route::prefix('admin')->group(function () {
-		Route::get('management', [AdminController::class, 'index'])->name('admin.index');
+		Route::get('management', [AdminController::class, 'index'])->name('admin.management');
 		Route::get('users', [AdminController::class, 'userList'])->name('admin.users');
 		Route::get('user/{user}/details', [AdminController::class, 'userShow'])->name('admin.user.details');
 		Route::post('role', [AdminController::class, 'setRole'])->name('admin.user.setRole');
@@ -102,7 +102,7 @@ Route::prefix('/{language?}')->group(function () {
 	Route::get('/management', [HomeController::class, 'management'])->name('management');
 
 	Route::prefix('dashboard')->group(function () {
-		Route::get('management', [GraphController::class, 'index'])->name('dashboard.index');
+		Route::get('management', [GraphController::class, 'index'])->name('dashboard.management');
 		Route::get('/graph1', [GraphController::class, 'graph1'])->name('dashboard.graph1');
 		Route::match(['get', 'post'], '/multiGraph', [GraphController::class, 'multiYearSpeciesGraph'])->name('dashboard.multiGraph');
 		Route::get('/donutGraph', [GraphController::class, 'donutGraph'])->name('dashboard.donutGraph');

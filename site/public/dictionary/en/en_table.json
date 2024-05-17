@@ -1,4 +1,14 @@
 {
+	"boatsName": "Name",
+	"boatsRegistrationPlate": "Number plate",
+
+	"commonName": "Common Name",
+	"scientificName": "Scientific Name",
+
+	"boatName": "Boat name",
+	"transectName": "Transect name",
+	"date": "Date",
+
 	"actions": "Actions",
 
 	"back": "Back",

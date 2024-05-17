@@ -23,8 +23,8 @@
                             data-text="navManagement"></a>
                     </li>
                     <li class="list__item">
-                        <a href="{{ route('dashboard.index', ['language' => $language]) }}" class="list__item__link"
-                            data-text="navDashboard"></a>
+                        <a href="{{ route('dashboard.management', ['language' => $language]) }}"
+                            class="list__item__link" data-text="navDashboard"></a>
                     </li>
                     <li class="list__item">
                         <a href="{{ route('plomesalmarContact', ['language' => $language]) }}" class="list__item__link"
@@ -65,7 +65,7 @@
                                         </a>
                                     </span>
                                     <span>
-                                        <a href="{{ route('admin.index', ['language' => $language]) }}"
+                                        <a href="{{ route('admin.management', ['language' => $language]) }}"
                                             class="dropdown__menu__item">
                                             <span data-text="administration"></span>
                                         </a>

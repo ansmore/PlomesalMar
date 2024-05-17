@@ -22,34 +22,54 @@ class LanguageController extends Controller
 			$setIdSegment = $request->input('idSegment', '');
 			$setOthersSegments = $request->input('othersSegments', '');
 
-			Log::channel('language_middleware')->info('Setting language', [
-				'language' => $setLanguage,
-				'firstSegment' => $setFirstSegment,
-				'secondSegment' => $setSecondSegment,
-				'idSegment' => $setIdSegment,
-				'othersSegments' => $setOthersSegments
-			]);
-
 			if ($setFirstSegment == "" || $setFirstSegment == "/") {
 				$setFirstSegment = "home";
 			}
 
+			// Initialize ordenationString as empty
+            $ordenationString = '';
+			$ordenationAdmin= '';
+
+            // Check if first segment contains '?'
+            if (strpos($setFirstSegment, '?') !== false) {
+                list($setFirstSegment, $ordenationString) = explode('?', $setFirstSegment, 2);
+            }
+
+			// Check if second segment contains '?'
+            if (strpos($setSecondSegment, '?') !== false) {
+                list($setSecondSegment, $ordenationAdmin) = explode('?', $setSecondSegment, 2);
+            }
+
 			Session::put('language', $setLanguage);
 			$getLanguage = session('language');
+
+
 
 			if ($setSecondSegment === "") {
 
 				// Construye la nueva URL con el idioma actual
 				$newUrl = route($setFirstSegment, ['language' => $getLanguage]);
 
+			} else if($ordenationAdmin !== "") {
+
+				$segments2 = $setFirstSegment.".".$setSecondSegment;
+
+				// Utilitza $newUrl per a construir la ruta final amb el llenguatge
+				$newUrl = route($segments2, [
+					'language' => $getLanguage
+				]);
+
+				Log::channel('language_middleware')->info('concat_admin', [
+					'segments2' => $segments2,
+					'secondSegment' =>  $setSecondSegment,
+					'ordenationAdmin' => $ordenationAdmin,
+					'newUrl' => $newUrl,
+					'user' => $setIdSegment
+				]);
+
 			} else if ($setSecondSegment !== $setOthersSegments) {
 
 				$segments = $setFirstSegment.".".$setSecondSegment.".details";
-
-				Log::channel('language_middleware')->info('concat_diferent', [
-					'url' => $segments,
-					'user' => $setIdSegment
-				]);
 
 				// Utilitza $newUrl per a construir la ruta final amb el llenguatge
 				$newUrl = route($segments, [
@@ -57,19 +77,34 @@ class LanguageController extends Controller
 					'user' => $setIdSegment
 				]);
 
-			} else {
+				Log::channel('language_middleware')->info('concat_diferent', [
+					'secondSegment' =>  $setSecondSegment,
+					'ordenationAdmin' => $ordenationAdmin,
+					'newUrl' => $newUrl,
+					'segments' => $segments,
+					'user' => $setIdSegment
+				]);
 
+			}else {
 				$segments = $setFirstSegment.".".$setSecondSegment;
 
 				Log::channel('language_middleware')->info('concat_else', [
 					'url' => $segments
 				]);
 
-				// Utilitza $newUrl per a construir la ruta final amb el llenguatge
 				$newUrl = route($segments, [ 'language' => $getLanguage ]);
-
-
 			}
+
+			Log::channel('language_middleware')->info('Setting language', [
+				'language' => $setLanguage,
+				'firstSegment' => $setFirstSegment,
+				'secondSegment' => $setSecondSegment,
+				'idSegment' => $setIdSegment,
+				'othersSegments' => $setOthersSegments,
+				'ordenationString' => $ordenationString,
+				'ordenationAdmin' => $ordenationAdmin,
+				'url' => $newUrl
+			]);
 
 			return response()->json([
 				'success' => true,
@@ -78,6 +113,8 @@ class LanguageController extends Controller
 				'secondSegment' => $setSecondSegment,
 				'othersSegments' => $setOthersSegments,
 				'newUrl' => $newUrl,
+				'ordenationString' => $ordenationString,
+				'ordenationAdmin' => $ordenationAdmin,
 			]);
 
         }catch(\Exception $e){

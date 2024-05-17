@@ -34,7 +34,7 @@
             </article>
         </section>
         {{-- @include('modals.species.create') --}}
-        {{-- @include('components.message') --}}
+        @include('components.message')
     </main>
 @endsection
 
