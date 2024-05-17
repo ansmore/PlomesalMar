@@ -1,0 +1,10 @@
+{
+	"departuresList": "Llista de sortides",
+
+	"newDeparture": "Agregar nova sortida",
+	"editDeparture": "Editar sortida",
+
+	"boatName": "Nom del vaixell",
+	"transectName": "Nom del transecte",
+	"date": "Data"
+}
