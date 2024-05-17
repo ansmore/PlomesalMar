@@ -1,4 +1,4 @@
-<form method="GET" action="{{ route('donutGraph', app()->getLocale()) }}">
+<form method="GET" action="{{ route('dashboard.donutGraph', app()->getLocale()) }}">
     <label for="departure_id">Select a Departure Date:</label>
     <select name="departure_id" id="departure_id" onchange="this.form.submit()">
         <option value="">--Select--</option>
