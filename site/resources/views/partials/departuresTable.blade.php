@@ -1,9 +1,11 @@
+{{-- Id-> table-container Can't be deleted --}}
+
 <div class="card" id="table-container">
     <table class="table">
         <thead class="text-white">
             <tr>
                 <th scope="col">
-                    <span data-text="boatId" class="table__title"></span>
+                    <span data-text="boatName" class="table__title"></span>
                     <a href="?orderByField=boat_id&orderByDirection=asc" class="decoration">
                         <i class="fas fa-arrow-up"></i>
                     </a>
@@ -12,7 +14,7 @@
                     </a>
                 </th>
                 <th scope="col">
-                    <span data-text="transectId" class="table__title"></span>
+                    <span data-text="transectName" class="table__title"></span>
                     <a href="?orderByField=transect_id&orderByDirection=asc" class="decoration">
                         <i class="fas fa-arrow-up"></i>
                     </a>
@@ -23,9 +25,6 @@
                 <th scope="col">
                     <span data-text="date" class="table__title"></span>
                 </th>
-                <th scope="col">
-                    <span data-text="time" class="table__title"></span>
-                </th>
                 <th scope="col" data-text="actions" class="table__title"></th>
             </tr>
         </thead>
@@ -35,7 +34,6 @@
                     <td>{{ $departure->boat?->name }}</td>
                     <td>{{ $departure->transect?->name }}</td>
                     <td>{{ $departure->date }}</td>
-                    <td>{{ $departure->time }}</td>
                     <td class="icons">
                         <button type="button" class="buttonTable__success" data-bs-toggle="modal"
                             data-bs-target="editDepartureModal" title="Editar" data-id="{{ $departure->id }}">

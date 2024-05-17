@@ -1,0 +1,10 @@
+{
+	"departuresList": "Lista de salidas",
+
+	"newDeparture": "Agregar nueva salida",
+	"editDeparture": "Editar salida",
+
+	"boatName": "Nombre del barco",
+	"transectName": "Nombre del transecto",
+	"date": "Fecha"
+}

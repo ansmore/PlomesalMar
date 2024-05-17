@@ -31,7 +31,7 @@
             @endforeach
         </tbody>
     </table>
-    {{-- @include('modals/transects.edit') --}}
+    @include('modals/transects.edit')
 </div>
 
 <nav aria-label="Page navigation example" class="pagination__box">
