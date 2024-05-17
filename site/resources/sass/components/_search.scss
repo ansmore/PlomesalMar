@@ -14,13 +14,13 @@
     align-items: center;
     justify-content: center;
   }
-}
 
-.form-control {
-  flex: 1;
-  padding: 0.2rem 0.75rem;
-  border: 1px solid $primary_main;
-  color: $primary_main;
-  border-radius: $radius;
-  background-color: $neutral_lighter;
+  .form-control {
+    flex: 1;
+    padding: 0.2rem 0.75rem;
+    border: 1px solid $primary_main;
+    color: $primary_main;
+    border-radius: $radius;
+    background-color: $neutral_lighter;
+  }
 }
