@@ -34,6 +34,7 @@
             @endforeach
         </tbody>
     </table>
+    @include('modals/transects.edit')
     @include('modals/transects.show')
 </div>
 

@@ -2,18 +2,18 @@
 	"navigationHome",
 	"home",
 	"plomesalmarContact",
+
 	"admin",
 	"table",
 	"users",
 
 	"departures",
 	"observations",
+
 	"species",
 	"boats",
 	"transects",
 
-	"dashboard",
-
-	"termsOfUse",
-	"privacyPolicy"
+	"management",
+	"dashboard"
 ]

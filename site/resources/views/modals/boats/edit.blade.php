@@ -2,7 +2,7 @@
     aria-hidden="true">
 
     <div class="modal-dialog modal-lg modal__management__box">
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar">
+        <button type="button" class="btn-close btn-close-white close" data-bs-dismiss="modal" aria-label="Cerrar">
             <i class="fa-solid fa-xmark"></i>
         </button>
 
