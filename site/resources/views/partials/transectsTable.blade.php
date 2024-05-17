@@ -1,5 +1,3 @@
-{{-- Id-> table-container Can't be deleted --}}
-
 <div class="card" id="table-container">
     <table class="table">
         <thead class="text-white">
@@ -22,9 +20,14 @@
                     <td>{{ $transect->name }}</td>
                     <td class="icons">
                         <button type="button" class="buttonTable__success" data-bs-toggle="modal"
-                            data-bs-target="editTransectModal" title="Editar" data-id="{{ $transect->id }}"
+                            data-bs-target="#editTransectModal" title="Editar" data-id="{{ $transect->id }}"
                             data-name="{{ $transect->name }}">
                             <i class="fas fa-pencil-alt"></i>
+                        </button>
+                        <button type="button" class="buttonTable__info" data-bs-toggle="modal"
+                            data-bs-target="#detailsTransectModal" title="Detalles" data-id="{{ $transect->id }}"
+                            data-name="{{ $transect->name }}">
+                            <i class="fas fa-info-circle"></i>
                         </button>
                     </td>
                 </tr>
@@ -32,6 +35,7 @@
         </tbody>
     </table>
     @include('modals/transects.edit')
+    @include('modals/transects.show')
 </div>
 
 <nav aria-label="Page navigation example" class="pagination__box">

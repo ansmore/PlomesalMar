@@ -8,12 +8,12 @@ use Illuminate\Support\Facades\Log;
 
 class TransectController extends Controller
 {
-	public function __construct()
+    public function __construct()
     {
         $this->middleware('auth');
     }
 
-	/**
+    /**
      * Display a listing of the resource.
      */
     public function index(Request $request, $language = null)
@@ -21,7 +21,8 @@ class TransectController extends Controller
         $transects = Transect::getFilteredTransects($request);
         return view('pages.transects', ['language' => $language, 'transects' => $transects]);
     }
-/**
+
+    /**
      * Store a newly created transect in storage.
      */
     public function store(Request $request, $language = null)
@@ -32,10 +33,10 @@ class TransectController extends Controller
 
         try {
             $transect = Transect::createFromRequest($request);
-            return redirect()->back()->with('status', 'El barco ha sido creado exitosamente en la base de datos.');
+            return redirect()->back()->with('status', 'El transecto ha sido creado exitosamente en la base de datos.');
         } catch (\Exception $e) {
-            Log::error('Error al intentar crear un nuevo barco en la base de datos: ' . $e->getMessage());
-            return redirect()->back()->with('error', 'No se pudo registrar el barco en la base de datos. Por favor, revise los detalles e intente de nuevo.');
+            Log::error('Error al intentar crear un nuevo transecto en la base de datos: ' . $e->getMessage());
+            return redirect()->back()->with('error', 'No se pudo registrar el transecto en la base de datos. Por favor, revise los detalles e intente de nuevo.');
         }
     }
 
@@ -51,13 +52,13 @@ class TransectController extends Controller
         try {
             $success = Transect::updateFromRequest($request, $id);
             if ($success) {
-                return redirect()->back()->with('status', 'El barco ha sido actualizado exitosamente en la base de datos.');
+                return redirect()->back()->with('status', 'El transecto ha sido actualizado exitosamente en la base de datos.');
             } else {
-                return redirect()->back()->with('error', 'La actualización del barco falló. No se encontraron cambios o el barco no existe.');
+                return redirect()->back()->with('error', 'La actualización del transecto falló. No se encontraron cambios o el transecto no existe.');
             }
         } catch (\Exception $e) {
-            Log::error('Error al actualizar el barco en la base de datos: ' . $e->getMessage());
-            return redirect()->back()->with('error', 'Ocurrió un error al intentar actualizar el barco. Por favor, intente de nuevo.');
+            Log::error('Error al actualizar el transecto en la base de datos: ' . $e->getMessage());
+            return redirect()->back()->with('error', 'Ocurrió un error al intentar actualizar el transecto. Por favor, intente de nuevo.');
         }
     }
 }
