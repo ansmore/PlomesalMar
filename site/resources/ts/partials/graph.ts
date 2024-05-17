@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const canvas = document.getElementById('myChart') as HTMLCanvasElement;
+    const canvas = document.getElementById('myChart') as HTMLCanvasElement | undefined;
     if (!canvas) {
         console.error('Canvas element not found');
         return;
@@ -17,10 +17,10 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
     }
 
-    const labels = JSON.parse(chartDataElement.getAttribute('data-labels') || '[]');
-    const seriesData = JSON.parse(chartDataElement.getAttribute('data-series') || '[]');
+    const labels = JSON.parse(chartDataElement.getAttribute('data-labels') ?? '[]');
+    const seriesData = JSON.parse(chartDataElement.getAttribute('data-series') ?? '[]');
 
-    const speciesDropdown = document.getElementById('speciesDropdown') as HTMLSelectElement;
+    const speciesDropdown = document.getElementById('speciesDropdown') as HTMLSelectElement | undefined;
     if (!speciesDropdown) {
         console.error('Species dropdown not found');
         return;
@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const chartConfig = {
         type: 'bar',
         data: {
-            labels: labels,
+            labels,
             datasets: [{
                 label: 'Número de Individuos',
                 data: seriesData,
@@ -43,23 +43,21 @@ document.addEventListener('DOMContentLoaded', () => {
     const myChart = new Chart(ctx, chartConfig);
 
     speciesDropdown.addEventListener('change', (event) => {
-        const target = event.target as HTMLSelectElement;
+        const target = event.target as HTMLSelectElement | undefined;
         if (!target) {
-            console.error('Event target is null');
+            console.error('Event target is undefined');
             return;
         }
 
         const selectedSpeciesId = target.value;
-        const speciesData = JSON.parse(localStorage.getItem('speciesData') || '{}');
-        const newData = speciesData[selectedSpeciesId] || [];
+        const speciesData = JSON.parse(localStorage.getItem('speciesData') ?? '{}');
+        const newData = speciesData[selectedSpeciesId] ?? [];
 
-        if (myChart && myChart.data.datasets) {
-            if (myChart.data.datasets[0]) {
-                myChart.data.datasets[0].data = newData;
-                myChart.update();
-            } else {
-                console.error('No datasets found in myChart');
-            }
+        if (myChart?.data?.datasets?.[0]) {
+            myChart.data.datasets[0].data = newData;
+            myChart.update();
+        } else {
+            console.error('No datasets found in myChart');
         }
     });
 });

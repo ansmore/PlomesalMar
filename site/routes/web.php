@@ -105,8 +105,8 @@ Route::prefix('/{language?}')->group(function () {
 	Route::prefix('dashboard')->group(function () {
 		Route::get('management', [GraphController::class, 'index'])->name('dashboard.index');
 		Route::get('/graph1', [GraphController::class, 'graph1'])->name('dashboard.graph1');
-		Route::get('/graph2', [GraphController::class, 'graph2'])->name('dashboard.graph2');
-		Route::get('/graph3', [GraphController::class, 'graph3'])->name('dashboard.graph3');
+		Route::match(['get', 'post'], '/graph/multi', [GraphController::class, 'multiYearSpeciesGraph'])->name('multiGraph');
+		Route::get('/graph3', [GraphController::class, 'donutGraph'])->name('donutGraph');
 	});
 
     // Species routes
