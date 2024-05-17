@@ -1,5 +1,6 @@
 import { setupModalEventListenersSpecies } from "../modals/species/modals.js";
 import { setupModalEventListenersBoats } from "../modals/boats/modals.js";
+import { setupModalEventListenersTransects } from "../modals/transects/modals.js";
 document.addEventListener("DOMContentLoaded", () => {
     const body = document.querySelector("main");
     const view = body ? body.getAttribute("data-view") ?? undefined : undefined;
@@ -11,6 +12,9 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         else if (view === "boats") {
             setupModalEventListenersBoats();
+        }
+        else if (view === "transects") {
+            setupModalEventListenersTransects();
         }
     };
     const bindPaginationLinks = () => {
