@@ -12,7 +12,6 @@ class DepartureSeeder extends Seeder
 {
     public function run(): void
     {
-        // Leer mapeo de transectos
         $transectMap = [];
         $transectCsv = Reader::createFromPath(database_path('data/map_transects.csv'), 'r');
         $transectCsv->setHeaderOffset(0);
@@ -20,7 +19,6 @@ class DepartureSeeder extends Seeder
             $transectMap[$record['name']] = $record['id'];
         }
 
-        // Leer archivo de observaciones
         $csv = Reader::createFromPath(database_path('data/Observacions.csv'), 'r');
         $csv->setHeaderOffset(0);
         $records = $csv->getRecords();
@@ -29,27 +27,22 @@ class DepartureSeeder extends Seeder
         try {
             foreach ($records as $record) {
                 if (isset($record['ID Sortida'])) {
-                    // Eliminar guiones bajos de ID Sortida
                     $departureId = str_replace('_', '', $record['ID Sortida']);
                     $transectId = isset($transectMap[$record['Transsecte']]) ? $transectMap[$record['Transsecte']] : null;
 
-                    // Verificar formato de tiempo
-                    $time = $record['Hora'];
-                    if ($time == '-' || !$this->isValidTime($time)) {
-                        $time = $this->getRandomTime();
-                    }
+                    $date = $record['Any'] . '-' . str_pad($record['Mes'], 2, '0', STR_PAD_LEFT) . '-' . str_pad($record['Dia'], 2, '0', STR_PAD_LEFT);
 
-                    // Solo crear registro si el transect_id es válido
-                    if ($transectId !== null) {
+                    if ($transectId !== null && !$this->departureExists($departureId, $date)) {
                         Departure::create([
-                            'date' => $record['Any'] . '-' . $record['Mes'] . '-' . $record['Dia'],
-                            'time' => $time,
+                            'id' => $departureId,
+                            'date' => $date,
                             'boat_id' => Boat::inRandomOrder()->first()->id,
                             'transect_id' => $transectId,
                         ]);
                     } else {
-                        // Registrar un mensaje de error para el transecto no encontrado
-                        error_log("Transecto no encontrado para el registro con ID Sortida: {$departureId}");
+                        if ($transectId === null) {
+                            error_log("Transecto no encontrado para el registro con ID Sortida: {$departureId}");
+                        }
                     }
                 }
             }
@@ -60,18 +53,8 @@ class DepartureSeeder extends Seeder
         }
     }
 
-    private function isValidTime($time)
+    private function departureExists($departureId, $date)
     {
-        // Verificar si el tiempo tiene el formato HH:MM:SS
-        return preg_match('/^([01]?[0-9]|2[0-3]):[0-5][0-9](:[0-5][0-9])?$/', $time);
-    }
-
-    private function getRandomTime()
-    {
-        // Generar un tiempo aleatorio en formato HH:MM:SS
-        $hours = str_pad(rand(0, 23), 2, '0', STR_PAD_LEFT);
-        $minutes = str_pad(rand(0, 59), 2, '0', STR_PAD_LEFT);
-        $seconds = str_pad(rand(0, 59), 2, '0', STR_PAD_LEFT);
-        return "$hours:$minutes:$seconds";
+        return Departure::where('id', $departureId)->where('date', $date)->exists();
     }
 }
