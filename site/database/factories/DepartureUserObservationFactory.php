@@ -19,10 +19,18 @@ class DepartureUserObservationFactory extends Factory
      */
     public function definition()
     {
+        $departureIds = Departure::pluck('id')->toArray();
+        $userIds = User::pluck('id')->toArray();
+        $observationIds = Observation::pluck('id')->toArray();
+
+        if (empty($departureIds) || empty($userIds) || empty($observationIds)) {
+            throw new \Exception('One or more required tables (departures, users, observations) are empty.');
+        }
+
         return [
-            'departure_id' => Departure::factory(),
-            'user_id' => User::factory(),
-            'observation_id' => Observation::factory(),
+            'departure_id' => $this->faker->randomElement($departureIds),
+            'user_id' => $this->faker->randomElement($userIds),
+            'observation_id' => $this->faker->randomElement($observationIds),
             'is_observer' => $this->faker->boolean,
         ];
     }
