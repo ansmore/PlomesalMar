@@ -30,13 +30,13 @@ class DepartureController extends Controller
             'boat_id' => 'required|exists:boats,id',
             'transect_id' => 'required|exists:transects,id',
             'date' => 'required|date',
-            'time' => 'required',
             'users' => 'required|array',
             'users.*' => 'exists:users,id',
             'observers' => 'required|array',
             'observers.*' => 'exists:users,id',
             'observations' => 'required|array',
             'observations.*.species_id' => 'required|exists:species,id',
+            'observations.*.time' => 'required|date_format:H:i:s',
             'observations.*.waypoint' => 'required|string|max:255',
             'observations.*.number_of_individuals' => 'required|integer',
             'observations.*.in_flight' => 'boolean',
@@ -50,15 +50,33 @@ class DepartureController extends Controller
         DB::beginTransaction();
 
         try {
-            $departure = Departure::create($request->only(['boat_id', 'transect_id', 'date', 'time']));
+            $departure = Departure::create($request->only(['boat_id', 'transect_id', 'date']));
 
+            // Assign users to the departure
+            foreach ($request->users as $userId) {
+                DepartureUserObservation::create([
+                    'departure_id' => $departure->id,
+                    'user_id' => $userId,
+                    'is_observer' => in_array($userId, $request->observers)
+                ]);
+            }
+
+            // Create observations
             foreach ($request->observations as $observationData) {
                 $imagesData = $observationData['images'] ?? [];
                 unset($observationData['images']);
 
-                $observation = Observation::create($observationData + ['departure_id' => $departure->id]);
-                $observation->save();
+                $observation = Observation::create([
+                    'species_id' => $observationData['species_id'],
+                    'time' => $observationData['time'],
+                    'waypoint' => $observationData['waypoint'],
+                    'number_of_individuals' => $observationData['number_of_individuals'],
+                    'in_flight' => $observationData['in_flight'] ?? false,
+                    'distance_under_300m' => $observationData['distance_under_300m'] ?? false,
+                    'notes' => $observationData['notes'] ?? null,
+                ]);
 
+                // Link images to the observation
                 foreach ($imagesData as $imageData) {
                     ImageObservation::create([
                         'observation_id' => $observation->id,
@@ -86,19 +104,4 @@ class DepartureController extends Controller
         return response()->json($departure);
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
-    }
 }

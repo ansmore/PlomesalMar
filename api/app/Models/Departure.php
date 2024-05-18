@@ -11,7 +11,7 @@ class Departure extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['boat_id', 'transect_id', 'date', 'time'];
+    protected $fillable = ['boat_id', 'transect_id', 'date'];
 
     public function boat()
     {
