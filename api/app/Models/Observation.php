@@ -14,6 +14,7 @@ class Observation extends Model
     protected $fillable = [
         'waypoint',
         'specie_id',
+        'time',
         'number_of_individuals',
         'in_flight',
         'distance_under_300m',
