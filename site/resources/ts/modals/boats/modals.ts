@@ -2,6 +2,7 @@ export const setupModalEventListenersBoats = () => {
 	const buttons = document.querySelectorAll<HTMLButtonElement>(
 		'[data-bs-toggle="modal"]',
 	);
+
 	buttons.forEach((button) => {
 		button.removeEventListener("click", handleModalButtonClick);
 		button.addEventListener("click", handleModalButtonClick);

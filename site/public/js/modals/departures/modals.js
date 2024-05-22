@@ -1,4 +1,4 @@
-export const setupModalEventListenersTransects = () => {
+export const setupModalEventListenersDepartures = () => {
     const buttons = document.querySelectorAll('[data-bs-toggle="modal"]');
     buttons.forEach((button) => {
         button.removeEventListener("click", handleModalButtonClick);
@@ -11,7 +11,7 @@ export const setupModalEventListenersTransects = () => {
         button.addEventListener("click", closeModalButtonClick);
     });
 };
-export const cleanupTransects = () => {
+export const cleanupDepartures = () => {
     const buttons = document.querySelectorAll('[data-bs-toggle="modal"]');
     buttons.forEach((button) => {
         button.removeEventListener("click", handleModalButtonClick);
@@ -34,25 +34,25 @@ const handleModalButtonClick = (event) => {
         console.error("No se encontró el elemento modal para el objetivo:", modalId);
         return;
     }
-    const transectId = button.getAttribute("data-id");
-    const transectName = button.getAttribute("data-name");
+    const departureId = button.getAttribute("data-id");
+    const departureName = button.getAttribute("data-name");
     switch (modalId) {
-        case "createTransect":
+        case "createDeparture":
             openModal(modal);
             break;
-        case "editTransectModal":
-            if (!transectId || !transectName) {
+        case "editDepartureModal":
+            if (!departureId) {
                 console.error("Faltan atributos de datos");
                 return;
             }
-            handleEditTransectModal(modal, transectId, transectName);
+            handleEditDepartureModal(modal, departureId);
             break;
-        case "detailsTransectModal":
-            if (!transectId || !transectName) {
+        case "detailsDepartureModal":
+            if (!departureId) {
                 console.error("Faltan atributos de datos");
                 return;
             }
-            handleDetailsTransectModal(modal, transectId, transectName);
+            handleDetailsDepartureModal(modal, departureId);
             break;
         default:
             console.error("Objetivo del modal desconocido:", modalId);
@@ -69,30 +69,30 @@ const closeModalButtonClick = (event) => {
 const openModal = (modal) => {
     modal.style.display = "block";
 };
-const handleEditTransectModal = (modal, transectId, transectName) => {
+const handleEditDepartureModal = (modal, departureId) => {
     const editForm = modal.querySelector("form");
-    const inputTransectName = modal.querySelector("#transectName");
-    if (!editForm || !inputTransectName) {
+    const inputDepartureId = modal.querySelector("#departureId");
+    if (!editForm || !inputDepartureId) {
         console.error("Faltan el formulario o campos de entrada en el modal de edición");
         return;
     }
     const editUrlTemplate = editForm.dataset.editUrlTemplate;
     if (editUrlTemplate) {
-        editForm.action = editUrlTemplate.replace(":id", transectId.toString());
+        editForm.action = editUrlTemplate.replace(":id", departureId.toString());
     }
     else {
         console.error("Falta la plantilla de URL de edición en el formulario");
         return;
     }
-    inputTransectName.value = transectName;
+    inputDepartureId.value = departureId;
     openModal(modal);
 };
-const handleDetailsTransectModal = (modal, transectId, transectName) => {
-    const textTransectName = modal.querySelector("#transectNameDetails");
-    if (!textTransectName) {
+const handleDetailsDepartureModal = (modal, departureId) => {
+    const textDepartureId = modal.querySelector("#departureIdDetails");
+    if (!textDepartureId) {
         console.error("Falta el camp de text en el modal de detalles");
         return;
     }
-    textTransectName.textContent = transectName;
+    textDepartureId.textContent = departureId;
     openModal(modal);
 };

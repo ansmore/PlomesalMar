@@ -1,4 +1,4 @@
-<section class="modal fade modal-common modal__management" id="createSpecies" tabindex="-1"
+<section class="modal fade modal-common modal__management" id="createSpecie" tabindex="-1"
     aria-labelledby="modalLabelNuevo" aria-hidden="true">
 
     <div class="modal-dialog modal-lg modal__management__box">

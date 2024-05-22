@@ -1,4 +1,4 @@
-<section class="modal fade modal-common modal__management" id="editSpeciesModal" tabindex="-1"
+<section class="modal fade modal-common modal__management" id="editSpecieModal" tabindex="-1"
     aria-labelledby="editModalLabel" aria-hidden="true">
 
     <div class="modal-dialog modal-lg modal__management__box">

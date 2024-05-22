@@ -32,7 +32,7 @@
                     <td>{{ $specie->scientific_name }}</td>
                     <td class="icons">
                         <button type="button" class="buttonTable__success" data-bs-toggle="modal"
-                            data-bs-target="editSpeciesModal" title="Editar" data-id="{{ $specie->id }}"
+                            data-bs-target="editSpecieModal" title="Editar" data-id="{{ $specie->id }}"
                             data-common-name="{{ $specie->common_name }}"
                             data-scientific-name="{{ $specie->scientific_name }}">
                             <i class="fas fa-pencil"></i>

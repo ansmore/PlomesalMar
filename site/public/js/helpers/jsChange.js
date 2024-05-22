@@ -23,6 +23,11 @@ document.addEventListener("DOMContentLoaded", async () => {
                 transectsModule.setupModalEventListenersTransects();
                 currentCleanupFunction = transectsModule.cleanupTransects;
                 break;
+            case "departures":
+                const departuresModule = await import("../modals/departures/modals.js");
+                departuresModule.setupModalEventListenersDepartures();
+                currentCleanupFunction = departuresModule.cleanupDepartures;
+                break;
             default:
                 console.warn("No hay un tipo que soporte este vista:", viewType);
                 break;
