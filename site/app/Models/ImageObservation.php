@@ -16,7 +16,8 @@ class ImageObservation extends Model
     protected $fillable = [
         'photography_number',
         'observation_id',
-        'user_id'
+        'user_id',
+        'image_id'
     ];
 
     public function observation()
