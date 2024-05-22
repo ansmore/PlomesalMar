@@ -36,6 +36,10 @@
                     <td>{{ $departure->date }}</td>
                     <td class="icons">
                         <button type="button" class="buttonTable__success" data-bs-toggle="modal"
+                            data-bs-target="detailsDepartureModal" title="Detalles" data-id="{{ $departure->id }}">
+                            <i class="fas fa-info-circle"></i>
+                        </button>
+                        <button type="button" class="buttonTable__success" data-bs-toggle="modal"
                             data-bs-target="editDepartureModal" title="Editar" data-id="{{ $departure->id }}">
                             <i class="fas fa-pencil-alt"></i>
                         </button>
@@ -48,9 +52,9 @@
             @endforeach
         </tbody>
     </table>
-    {{-- Update or create modals for departure actions --}}
-    {{-- @include('modals/departures.edit')
-    @include('modals/departures.delete') --}}
+    @include('modals/departures.show')
+    @include('modals/departures.edit')
+    @include('modals/departures.delete')
 </div>
 
 <nav aria-label="Page navigation example" class="pagination__box">
