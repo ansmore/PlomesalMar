@@ -9,6 +9,6 @@ class OptimizedImagesSeeder extends Seeder
 {
     public function run(): void
     {
-        OptimizedImage::factory(60)->create(); // Crea 60 imágenes optimizadas
+        OptimizedImage::factory(60)->create();
     }
 }
