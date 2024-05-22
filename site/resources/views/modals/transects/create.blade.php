@@ -7,6 +7,7 @@
         </button>
         <div class="modal-header body">
             <h2 class="modal-title body__title" id="modalLabelNuevo" data-text="newTransect"></h2>
+
             <article class="form">
                 <form method="POST" action="{{ route('transects.store', ['language' => app()->getLocale()]) }}">
                     @csrf

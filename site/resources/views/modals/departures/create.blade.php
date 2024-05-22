@@ -1,11 +1,13 @@
 <section class="modal fade modal-common modal__management" id="createDeparture" tabindex="-1"
     aria-labelledby="modalLabelNuevo" aria-hidden="true">
+
     <div class="modal-dialog modal-lg modal__management__box">
         <button type="button" class="btn-close close" data-bs-dismiss="modal" aria-label="Cerrar">
             <i class="fa-solid fa-xmark"></i>
         </button>
         <div class="modal-header body">
             <h2 class="modal-title body__title" id="modalLabelNuevo" data-text="newDeparture"></h2>
+
             <article class="form">
                 <form method="POST" action="{{ route('departures.store', ['language' => app()->getLocale()]) }}">
                     @csrf

@@ -20,15 +20,6 @@
                     </a>
                 </div>
             </article>
-            {{-- <article class="box__table">
-                <div class="box__search">
-                    @include('components.search')
-                    <button type="button" class="button" data-bs-toggle="modal" data-bs-target="createSpecies">
-                        <i class="fas fa-plus-circle"></i>
-                        <span data-text="addButton"></span>
-                    </button>
-                </div>
-            </article> --}}
             <article class="box">
                 @include('partials.admin.usersTable', ['users' => $users])
             </article>

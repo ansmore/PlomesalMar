@@ -20,12 +20,12 @@
                     <td>{{ $transect->name }}</td>
                     <td class="icons">
                         <button type="button" class="buttonTable__success" data-bs-toggle="modal"
-                            data-bs-target="#editTransectModal" title="Editar" data-id="{{ $transect->id }}"
+                            data-bs-target="editTransectModal" title="Editar" data-id="{{ $transect->id }}"
                             data-name="{{ $transect->name }}">
                             <i class="fas fa-pencil-alt"></i>
                         </button>
-                        <button type="button" class="buttonTable__info" data-bs-toggle="modal"
-                            data-bs-target="#detailsTransectModal" title="Detalles" data-id="{{ $transect->id }}"
+                        <button type="button" class="buttonTable__success" data-bs-toggle="modal"
+                            data-bs-target="detailsTransectModal" title="Detalles" data-id="{{ $transect->id }}"
                             data-name="{{ $transect->name }}">
                             <i class="fas fa-info-circle"></i>
                         </button>

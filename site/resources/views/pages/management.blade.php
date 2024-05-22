@@ -37,14 +37,14 @@
                         <span data-text="asideSpecie"></span>
                     </figure>
                 </a>
-                <a href="{{ route('species', ['language' => $language]) }}">
+                <a href="{{ route('boats', ['language' => $language]) }}">
                     <figure class="box__logo__image">
                         <i class="fas fa-ship">
                         </i>
                         <span data-text="asideBoat"></span>
                     </figure>
                 </a>
-                <a href="{{ route('home', ['language' => $language]) }}">
+                <a href="{{ route('transects', ['language' => $language]) }}">
                     <figure class="box__logo__image">
                         <i class="fas fa-location">
                         </i>

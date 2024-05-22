@@ -24,7 +24,7 @@
                         </h4>
                     </figure>
                 </a>
-                <a href="{{ route('dashboard.index', ['language' => $language]) }}">
+                <a href="{{ route('dashboard.management', ['language' => $language]) }}">
                     <figure class="circle modal-button">
                         <span class="circle__icon">
                             <i class="fa-solid fa-chart-line"></i>
@@ -35,7 +35,6 @@
                 </a>
             </article>
         </section>
-        @include('modals.modalLogin')
     </main>
 @endsection
 
