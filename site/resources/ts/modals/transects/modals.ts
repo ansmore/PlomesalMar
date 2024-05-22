@@ -126,24 +126,12 @@ const handleDetailsTransectModal = (
 	transectId: string,
 	transectName: string,
 ) => {
-	const deleteForm = modal.querySelector<HTMLFormElement>("form");
-	const textTransectId = modal.querySelector<HTMLElement>("#deleteTransectId");
 	const textTransectName = modal.querySelector<HTMLElement>(
-		"#deleteTransectName",
+		"#transectNameDetails",
 	);
 
-	if (!deleteForm || !textTransectId || !textTransectName) {
-		console.error(
-			"Faltan el formulario o campos de texto en el modal de eliminación",
-		);
-		return;
-	}
-
-	const deleteUrlTemplate = deleteForm.dataset.deleteUrlTemplate;
-	if (deleteUrlTemplate) {
-		deleteForm.action = deleteUrlTemplate.replace(":id", transectId.toString());
-	} else {
-		console.error("Falta la plantilla de URL de eliminación en el formulario");
+	if (!textTransectName) {
+		console.error("Falta el camp de text en el modal de detalles");
 		return;
 	}
 

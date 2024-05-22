@@ -88,19 +88,9 @@ const handleEditTransectModal = (modal, transectId, transectName) => {
     openModal(modal);
 };
 const handleDetailsTransectModal = (modal, transectId, transectName) => {
-    const deleteForm = modal.querySelector("form");
-    const textTransectId = modal.querySelector("#deleteTransectId");
-    const textTransectName = modal.querySelector("#deleteTransectName");
-    if (!deleteForm || !textTransectId || !textTransectName) {
-        console.error("Faltan el formulario o campos de texto en el modal de eliminación");
-        return;
-    }
-    const deleteUrlTemplate = deleteForm.dataset.deleteUrlTemplate;
-    if (deleteUrlTemplate) {
-        deleteForm.action = deleteUrlTemplate.replace(":id", transectId.toString());
-    }
-    else {
-        console.error("Falta la plantilla de URL de eliminación en el formulario");
+    const textTransectName = modal.querySelector("#transectNameDetails");
+    if (!textTransectName) {
+        console.error("Falta el camp de text en el modal de detalles");
         return;
     }
     textTransectName.textContent = transectName;
