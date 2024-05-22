@@ -20,8 +20,7 @@ class ImageFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->word,
-            'original_path' => $this->faker->url,
+            'name' => $this->faker->word
         ];
     }
 }
