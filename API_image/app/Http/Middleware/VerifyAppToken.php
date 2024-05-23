@@ -17,7 +17,7 @@ class VerifyAppToken
     {
         $token = $request->header('APP-TOKEN');
 
-        if ($token !== config('app.tiquets_app_token')) {
+        if ($token !== config('app.api_app_token')) {
             return response()->json(['message' => 'Acceso no autorizado.'], 403);
         }
 

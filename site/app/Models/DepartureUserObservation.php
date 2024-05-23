@@ -25,4 +25,16 @@ class DepartureUserObservation extends Model
     {
         return $this->belongsTo(Observation::class);
     }
+    
+    public static function createRelations($departureId, $observationId, $userIds, $allUsers)
+    {
+        foreach ($allUsers as $user) {
+            self::create([
+                'departure_id' => $departureId,
+                'user_id' => $user->id,
+                'observation_id' => $observationId,
+                'is_observer' => in_array($user->id, $userIds),
+            ]);
+        }
+    }
 }

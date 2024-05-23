@@ -23,7 +23,7 @@
                         <span data-text="asideDeparture"></span>
                     </figure>
                 </a>
-                <a href="{{ route('home', ['language' => $language]) }}">
+                <a href="{{ route('observations', ['language' => $language]) }}">
                     <figure class="box__logo__image">
                         <i class="fas fa-binoculars">
                         </i>

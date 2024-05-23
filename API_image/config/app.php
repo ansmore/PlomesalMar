@@ -29,7 +29,7 @@ return [
     */
 
     'env' => env('APP_ENV', 'production'),
-    'tiquets_app_token' => env('TIQUETS_APP_TOKEN'),
+    'api_app_token' => env('API_APP_TOKEN'),
 
     /*
     |--------------------------------------------------------------------------

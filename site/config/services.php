@@ -33,7 +33,7 @@ return [
     'api' => [
         'path' => env('API_PATH'),
         'url' => env('URL_API'),
-        'token' => env('TIQUETS_APP_TOKEN')
+        'token' => env('API_APP_TOKEN')
     ]
 
 ];
