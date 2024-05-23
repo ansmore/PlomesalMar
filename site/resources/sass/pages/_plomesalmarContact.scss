@@ -7,7 +7,7 @@
     @include paddingMargin(5rem $padding 2rem $padding, $margin);
 
     .box {
-      @extend .article;
+      // @extend .article;
 
       &__logo {
         @extend .article;
@@ -27,7 +27,7 @@
     }
 
     .form {
-      @extend .form;
+      // @extend .form;
 
       @include mainBox(column, space-around, center);
 

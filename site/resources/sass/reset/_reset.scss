@@ -86,7 +86,13 @@ label {
   background-color: transparent;
   display: block;
   color: inherit;
-  // opcional
+}
+
+form,
+input,
+textarea,
+button,
+label {
   appearance: none;
 }
 

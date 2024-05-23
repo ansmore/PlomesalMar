@@ -1,13 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap");
 * {
-	box-sizing: border-box;
-	vertical-align: baseline;
-	border: none;
-	margin: 0;
-	padding: 0;
-	list-style: none;
-	text-decoration: none;
-	outline: none;
+  box-sizing: border-box;
+  vertical-align: baseline;
+  border: none;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  outline: none;
 }
 
 picture,
@@ -15,25 +15,25 @@ img,
 video,
 iframe,
 figure {
-	max-width: 100%;
-	width: 100%;
-	display: block;
+  max-width: 100%;
+  width: 100%;
+  display: block;
 }
 
 a {
-	display: block;
+  display: block;
 }
 
 p a {
-	display: inline;
+  display: inline;
 }
 
 li {
-	list-style-type: none;
+  list-style-type: none;
 }
 
 html {
-	scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 h1,
@@ -51,20 +51,20 @@ i,
 b,
 u,
 em {
-	font-size: 1em;
-	font-weight: 400;
-	font-style: inherit;
-	text-decoration: none;
-	color: inherit;
-	hyphens: none;
+  font-size: 1em;
+  font-weight: 400;
+  font-style: inherit;
+  text-decoration: none;
+  color: inherit;
+  hyphens: none;
 }
 
 blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-	content: "";
-	content: none;
+  content: "";
+  content: none;
 }
 
 form,
@@ -73,39 +73,46 @@ textarea,
 select,
 button,
 label {
-	font-family: inherit;
-	font-size: inherit;
-	hyphens: auto;
-	background-color: transparent;
-	display: block;
-	color: inherit;
-	appearance: none;
+  font-family: inherit;
+  font-size: inherit;
+  hyphens: auto;
+  background-color: transparent;
+  display: block;
+  color: inherit;
+}
+
+form,
+input,
+textarea,
+button,
+label {
+  appearance: none;
 }
 
 table,
 tr,
 td,
 th {
-	border-collapse: collapse;
+  border-collapse: collapse;
 }
 
 svg {
-	width: 100%;
-	display: block;
-	fill: currentColor;
+  width: 100%;
+  display: block;
+  fill: currentColor;
 }
 
 body {
-	height: auto;
-	font-size: 100%;
-	line-height: 1.4em;
-	appearance: none;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+  height: auto;
+  font-size: 100%;
+  line-height: 1.4em;
+  appearance: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 i.fas + span {
-	padding-left: 0.5rem;
+  padding-left: 0.5rem;
 }
 
 body,
@@ -113,36 +120,36 @@ html,
 form,
 input,
 select {
-	font-family: "Roboto Slab", sans-serif;
+  font-family: "Roboto Slab", sans-serif;
 }
 
 html {
-	font-size: 100%;
-	max-width: 100vw;
-	background-color: #ececec;
+  font-size: 100%;
+  max-width: 100vw;
+  background-color: #ececec;
 }
 
 body {
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 a,
 button {
-	cursor: pointer;
+  cursor: pointer;
 }
 
 ::selection {
-	background-color: #9d9d9c;
-	color: #0065ae;
+  background-color: #9d9d9c;
+  color: #0065AE;
 }
 
 .navbar-nav-main {
-	margin-top: 3.5rem;
+  margin-top: 3.5rem;
 }
 
-/**
+/** 
 * Must be the last line in all call to this mixin!
 */
 /**
@@ -163,3143 +170,2220 @@ button {
  * @param {string} $size - Main size (optional).
  * @param {string} $max - Maximum size (optional).
  */
-.main,
-.termsAndPolicy,
-.plomesalmarContact,
-.home {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-around;
-	align-content: center;
-	align-items: flex-start;
-	align-self: center;
-	color: #0065ae;
-	background-color: #ececec;
-	font-size: 1em;
-	margin-top: 3.5rem;
-	gap: 0.5rem;
+.main, .plomesalmarContact, .home {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-content: center;
+  align-items: flex-start;
+  align-self: center;
+  color: #0065AE;
+  background-color: #ececec;
+  font-size: 1em;
+  margin-top: 3.5rem;
+  gap: 0.5rem;
 }
 
-.section,
-.termsAndPolicy .row,
-.plomesalmarContact .row,
-.home .row--reverse,
-.home .row {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-around;
-	align-content: center;
-	align-items: center;
-	align-self: center;
-	min-width: 95vw;
-	max-width: 95vw;
-	padding: 0.25rem;
-	margin: 0.25rem;
+.section, .plomesalmarContact .row, .home .row--reverse, .home .row {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  min-width: 95vw;
+  max-width: 95vw;
+  padding: 0.25rem;
+  margin: 0.25rem;
 }
 
-.article,
-.termsAndPolicy .row .box__logo,
-.termsAndPolicy .row .box,
-.plomesalmarContact .row .box__logo,
-.plomesalmarContact .row .box,
-.home .row--reverse .box,
-.home .row .box__circle,
-.home .row .box__row,
-.home .row .box,
-.modal__box .body,
-.modal__management__box .body,
-.form,
-.plomesalmarContact .row .form,
-.modal__box .body .plomesalmarContact .row .form,
-.plomesalmarContact .row .modal__box .body .form,
-.modal__management__box .body .plomesalmarContact .row .form,
-.plomesalmarContact .row .modal__management__box .body .form,
-.modal__box .modal__management__box .body .plomesalmarContact .row .form,
-.plomesalmarContact .row .modal__box .modal__management__box .body .form,
-.modal__management__box .modal__box .body .plomesalmarContact .row .form,
-.plomesalmarContact .row .modal__management__box .modal__box .body .form,
-.auth .plomesalmarContact .row .form,
-.plomesalmarContact .auth .row .form,
-.modal__box .body .auth .plomesalmarContact .row .form,
-.plomesalmarContact .modal__box .body .auth .row .form,
-.auth .plomesalmarContact .row .modal__box .body .form,
-.plomesalmarContact .auth .row .modal__box .body .form,
-.modal__management__box .body .auth .plomesalmarContact .row .form,
-.plomesalmarContact .modal__management__box .body .auth .row .form,
-.auth .plomesalmarContact .row .modal__management__box .body .form,
-.plomesalmarContact .auth .row .modal__management__box .body .form,
-.modal__box .modal__management__box .body .auth .plomesalmarContact .row .form,
-.plomesalmarContact .modal__box .modal__management__box .body .auth .row .form,
-.auth .plomesalmarContact .row .modal__box .modal__management__box .body .form,
-.plomesalmarContact .auth .row .modal__box .modal__management__box .body .form,
-.modal__management__box .modal__box .body .auth .plomesalmarContact .row .form,
-.plomesalmarContact .modal__management__box .modal__box .body .auth .row .form,
-.auth .plomesalmarContact .row .modal__management__box .modal__box .body .form,
-.plomesalmarContact .auth .row .modal__management__box .modal__box .body .form,
-.auth .row .form,
-.auth .plomesalmarContact .row .form,
-.plomesalmarContact .auth .row .form,
-.auth .modal__box .body .plomesalmarContact .row .form,
-.modal__box .body .plomesalmarContact .auth .row .form,
-.auth .plomesalmarContact .row .modal__box .body .form,
-.plomesalmarContact .auth .row .modal__box .body .form,
-.auth .modal__management__box .body .plomesalmarContact .row .form,
-.modal__management__box .body .plomesalmarContact .auth .row .form,
-.auth .plomesalmarContact .row .modal__management__box .body .form,
-.plomesalmarContact .auth .row .modal__management__box .body .form,
-.auth .modal__box .modal__management__box .body .plomesalmarContact .row .form,
-.modal__box .modal__management__box .body .plomesalmarContact .auth .row .form,
-.auth .plomesalmarContact .row .modal__box .modal__management__box .body .form,
-.plomesalmarContact .auth .row .modal__box .modal__management__box .body .form,
-.auth .modal__management__box .modal__box .body .plomesalmarContact .row .form,
-.modal__management__box .modal__box .body .plomesalmarContact .auth .row .form,
-.auth .plomesalmarContact .row .modal__management__box .modal__box .body .form,
-.plomesalmarContact .auth .row .modal__management__box .modal__box .body .form,
-.auth .plomesalmarContact .row .form,
-.plomesalmarContact .auth .row .form,
-.modal__box .body .auth .plomesalmarContact .row .form,
-.plomesalmarContact .modal__box .body .auth .row .form,
-.auth .plomesalmarContact .row .modal__box .body .form,
-.plomesalmarContact .auth .row .modal__box .body .form,
-.modal__management__box .body .auth .plomesalmarContact .row .form,
-.plomesalmarContact .modal__management__box .body .auth .row .form,
-.auth .plomesalmarContact .row .modal__management__box .body .form,
-.plomesalmarContact .auth .row .modal__management__box .body .form,
-.modal__box .modal__management__box .body .auth .plomesalmarContact .row .form,
-.plomesalmarContact .modal__box .modal__management__box .body .auth .row .form,
-.auth .plomesalmarContact .row .modal__box .modal__management__box .body .form,
-.plomesalmarContact .auth .row .modal__box .modal__management__box .body .form,
-.modal__management__box .modal__box .body .auth .plomesalmarContact .row .form,
-.plomesalmarContact .modal__management__box .modal__box .body .auth .row .form,
-.auth .plomesalmarContact .row .modal__management__box .modal__box .body .form,
-.plomesalmarContact .auth .row .modal__management__box .modal__box .body .form,
-.modal__box .body .form,
-.modal__box .body .plomesalmarContact .row .form,
-.plomesalmarContact .row .modal__box .body .form,
-.modal__box .body .plomesalmarContact .row .form,
-.plomesalmarContact .row .modal__box .body .form,
-.modal__box .modal__management__box .body .plomesalmarContact .row .form,
-.modal__management__box .modal__box .body .plomesalmarContact .row .form,
-.modal__box .plomesalmarContact .row .modal__management__box .body .form,
-.plomesalmarContact .row .modal__management__box .modal__box .body .form,
-.modal__box .modal__management__box .body .plomesalmarContact .row .form,
-.plomesalmarContact .row .modal__box .modal__management__box .body .form,
-.modal__management__box .modal__box .body .plomesalmarContact .row .form,
-.plomesalmarContact .row .modal__management__box .modal__box .body .form,
-.modal__box .body .auth .plomesalmarContact .row .form,
-.auth .plomesalmarContact .row .modal__box .body .form,
-.modal__box .body .plomesalmarContact .auth .row .form,
-.plomesalmarContact .auth .row .modal__box .body .form,
-.modal__box .body .auth .plomesalmarContact .row .form,
-.plomesalmarContact .modal__box .body .auth .row .form,
-.auth .plomesalmarContact .row .modal__box .body .form,
-.plomesalmarContact .auth .row .modal__box .body .form,
-.modal__box .modal__management__box .body .auth .plomesalmarContact .row .form,
-.modal__management__box .modal__box .body .auth .plomesalmarContact .row .form,
-.modal__box .plomesalmarContact .modal__management__box .body .auth .row .form,
-.plomesalmarContact .modal__management__box .modal__box .body .auth .row .form,
-.modal__box .auth .plomesalmarContact .row .modal__management__box .body .form,
-.auth .plomesalmarContact .row .modal__management__box .modal__box .body .form,
-.modal__box .plomesalmarContact .auth .row .modal__management__box .body .form,
-.plomesalmarContact .auth .row .modal__management__box .modal__box .body .form,
-.modal__box .modal__management__box .body .auth .plomesalmarContact .row .form,
-.plomesalmarContact .modal__box .modal__management__box .body .auth .row .form,
-.auth .plomesalmarContact .row .modal__box .modal__management__box .body .form,
-.plomesalmarContact .auth .row .modal__box .modal__management__box .body .form,
-.modal__management__box .modal__box .body .auth .plomesalmarContact .row .form,
-.plomesalmarContact .modal__management__box .modal__box .body .auth .row .form,
-.auth .plomesalmarContact .row .modal__management__box .modal__box .body .form,
-.plomesalmarContact .auth .row .modal__management__box .modal__box .body .form,
-.modal__management__box .body .form,
-.modal__management__box .body .plomesalmarContact .row .form,
-.plomesalmarContact .row .modal__management__box .body .form,
-.modal__management__box .modal__box .body .plomesalmarContact .row .form,
-.modal__box .modal__management__box .body .plomesalmarContact .row .form,
-.modal__management__box .plomesalmarContact .row .modal__box .body .form,
-.plomesalmarContact .row .modal__box .modal__management__box .body .form,
-.modal__management__box .body .plomesalmarContact .row .form,
-.plomesalmarContact .row .modal__management__box .body .form,
-.modal__box .modal__management__box .body .plomesalmarContact .row .form,
-.plomesalmarContact .row .modal__box .modal__management__box .body .form,
-.modal__management__box .modal__box .body .plomesalmarContact .row .form,
-.plomesalmarContact .row .modal__management__box .modal__box .body .form,
-.modal__management__box .body .auth .plomesalmarContact .row .form,
-.auth .plomesalmarContact .row .modal__management__box .body .form,
-.modal__management__box .body .plomesalmarContact .auth .row .form,
-.plomesalmarContact .auth .row .modal__management__box .body .form,
-.modal__management__box .modal__box .body .auth .plomesalmarContact .row .form,
-.modal__box .modal__management__box .body .auth .plomesalmarContact .row .form,
-.modal__management__box .plomesalmarContact .modal__box .body .auth .row .form,
-.plomesalmarContact .modal__box .modal__management__box .body .auth .row .form,
-.modal__management__box .auth .plomesalmarContact .row .modal__box .body .form,
-.auth .plomesalmarContact .row .modal__box .modal__management__box .body .form,
-.modal__management__box .plomesalmarContact .auth .row .modal__box .body .form,
-.plomesalmarContact .auth .row .modal__box .modal__management__box .body .form,
-.modal__management__box .body .auth .plomesalmarContact .row .form,
-.plomesalmarContact .modal__management__box .body .auth .row .form,
-.auth .plomesalmarContact .row .modal__management__box .body .form,
-.plomesalmarContact .auth .row .modal__management__box .body .form,
-.modal__box .modal__management__box .body .auth .plomesalmarContact .row .form,
-.plomesalmarContact .modal__box .modal__management__box .body .auth .row .form,
-.auth .plomesalmarContact .row .modal__box .modal__management__box .body .form,
-.plomesalmarContact .auth .row .modal__box .modal__management__box .body .form,
-.modal__management__box .modal__box .body .auth .plomesalmarContact .row .form,
-.plomesalmarContact .modal__management__box .modal__box .body .auth .row .form,
-.auth .plomesalmarContact .row .modal__management__box .modal__box .body .form,
-.plomesalmarContact .auth .row .modal__management__box .modal__box .body .form {
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-start;
-	align-content: center;
-	align-items: flex-start;
-	align-self: center;
-	padding: 0.25rem;
-	margin: 0.25rem;
-	min-width: 85vw;
-	max-width: 85vw;
-	gap: 0.5rem;
-	hyphens: auto;
-	font-size: 0.9em;
-	line-height: 1.5;
-	text-align: center;
-	overflow: hidden;
+.article, .plomesalmarContact .row .box__logo, .home .row--reverse .box, .home .row .box__circle, .home .row .box__row, .home .row .box, .modal__box .body,
+.modal__management__box .body, .form, .auth .row .form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-content: center;
+  align-items: flex-start;
+  align-self: center;
+  padding: 0.25rem;
+  margin: 0.25rem;
+  min-width: 85vw;
+  max-width: 85vw;
+  gap: 0.5rem;
+  hyphens: auto;
+  font-size: 0.9em;
+  line-height: 1.5;
+  text-align: center;
+  overflow: hidden;
 }
-.article p,
-.termsAndPolicy .row .box__logo p,
-.termsAndPolicy .row .box p,
-.plomesalmarContact .row .box__logo p,
-.plomesalmarContact .row .box p,
-.home .row--reverse .box p,
-.home .row .box__circle p,
-.home .row .box__row p,
-.home .row .box p,
-.modal__box .body p,
-.modal__management__box .body p,
-.form p,
-.plomesalmarContact .row .form p,
-.modal__box .body .plomesalmarContact .row .form p,
-.plomesalmarContact .row .modal__box .body .form p,
-.modal__management__box .body .plomesalmarContact .row .form p,
-.plomesalmarContact .row .modal__management__box .body .form p,
-.modal__box .modal__management__box .body .plomesalmarContact .row .form p,
-.plomesalmarContact .row .modal__box .modal__management__box .body .form p,
-.modal__management__box .modal__box .body .plomesalmarContact .row .form p,
-.plomesalmarContact .row .modal__management__box .modal__box .body .form p,
-.auth .plomesalmarContact .row .form p,
-.plomesalmarContact .auth .row .form p,
-.modal__box .body .auth .plomesalmarContact .row .form p,
-.plomesalmarContact .modal__box .body .auth .row .form p,
-.auth .plomesalmarContact .row .modal__box .body .form p,
-.plomesalmarContact .auth .row .modal__box .body .form p,
-.modal__management__box .body .auth .plomesalmarContact .row .form p,
-.plomesalmarContact .modal__management__box .body .auth .row .form p,
-.auth .plomesalmarContact .row .modal__management__box .body .form p,
-.plomesalmarContact .auth .row .modal__management__box .body .form p,
-.modal__box
-	.modal__management__box
-	.body
-	.auth
-	.plomesalmarContact
-	.row
-	.form
-	p,
-.plomesalmarContact
-	.modal__box
-	.modal__management__box
-	.body
-	.auth
-	.row
-	.form
-	p,
-.auth
-	.plomesalmarContact
-	.row
-	.modal__box
-	.modal__management__box
-	.body
-	.form
-	p,
-.plomesalmarContact
-	.auth
-	.row
-	.modal__box
-	.modal__management__box
-	.body
-	.form
-	p,
-.modal__management__box
-	.modal__box
-	.body
-	.auth
-	.plomesalmarContact
-	.row
-	.form
-	p,
-.plomesalmarContact
-	.modal__management__box
-	.modal__box
-	.body
-	.auth
-	.row
-	.form
-	p,
-.auth
-	.plomesalmarContact
-	.row
-	.modal__management__box
-	.modal__box
-	.body
-	.form
-	p,
-.plomesalmarContact
-	.auth
-	.row
-	.modal__management__box
-	.modal__box
-	.body
-	.form
-	p,
-.auth .row .form p,
-.auth .plomesalmarContact .row .form p,
-.plomesalmarContact .auth .row .form p,
-.auth .modal__box .body .plomesalmarContact .row .form p,
-.modal__box .body .plomesalmarContact .auth .row .form p,
-.auth .plomesalmarContact .row .modal__box .body .form p,
-.plomesalmarContact .auth .row .modal__box .body .form p,
-.auth .modal__management__box .body .plomesalmarContact .row .form p,
-.modal__management__box .body .plomesalmarContact .auth .row .form p,
-.auth .plomesalmarContact .row .modal__management__box .body .form p,
-.plomesalmarContact .auth .row .modal__management__box .body .form p,
-.auth
-	.modal__box
-	.modal__management__box
-	.body
-	.plomesalmarContact
-	.row
-	.form
-	p,
-.modal__box
-	.modal__management__box
-	.body
-	.plomesalmarContact
-	.auth
-	.row
-	.form
-	p,
-.auth
-	.plomesalmarContact
-	.row
-	.modal__box
-	.modal__management__box
-	.body
-	.form
-	p,
-.plomesalmarContact
-	.auth
-	.row
-	.modal__box
-	.modal__management__box
-	.body
-	.form
-	p,
-.auth
-	.modal__management__box
-	.modal__box
-	.body
-	.plomesalmarContact
-	.row
-	.form
-	p,
-.modal__management__box
-	.modal__box
-	.body
-	.plomesalmarContact
-	.auth
-	.row
-	.form
-	p,
-.auth
-	.plomesalmarContact
-	.row
-	.modal__management__box
-	.modal__box
-	.body
-	.form
-	p,
-.plomesalmarContact
-	.auth
-	.row
-	.modal__management__box
-	.modal__box
-	.body
-	.form
-	p,
-.auth .plomesalmarContact .row .form p,
-.plomesalmarContact .auth .row .form p,
-.modal__box .body .auth .plomesalmarContact .row .form p,
-.plomesalmarContact .modal__box .body .auth .row .form p,
-.auth .plomesalmarContact .row .modal__box .body .form p,
-.plomesalmarContact .auth .row .modal__box .body .form p,
-.modal__management__box .body .auth .plomesalmarContact .row .form p,
-.plomesalmarContact .modal__management__box .body .auth .row .form p,
-.auth .plomesalmarContact .row .modal__management__box .body .form p,
-.plomesalmarContact .auth .row .modal__management__box .body .form p,
-.modal__box
-	.modal__management__box
-	.body
-	.auth
-	.plomesalmarContact
-	.row
-	.form
-	p,
-.plomesalmarContact
-	.modal__box
-	.modal__management__box
-	.body
-	.auth
-	.row
-	.form
-	p,
-.auth
-	.plomesalmarContact
-	.row
-	.modal__box
-	.modal__management__box
-	.body
-	.form
-	p,
-.plomesalmarContact
-	.auth
-	.row
-	.modal__box
-	.modal__management__box
-	.body
-	.form
-	p,
-.modal__management__box
-	.modal__box
-	.body
-	.auth
-	.plomesalmarContact
-	.row
-	.form
-	p,
-.plomesalmarContact
-	.modal__management__box
-	.modal__box
-	.body
-	.auth
-	.row
-	.form
-	p,
-.auth
-	.plomesalmarContact
-	.row
-	.modal__management__box
-	.modal__box
-	.body
-	.form
-	p,
-.plomesalmarContact
-	.auth
-	.row
-	.modal__management__box
-	.modal__box
-	.body
-	.form
-	p,
-.modal__box .body .form p,
-.modal__box .body .plomesalmarContact .row .form p,
-.plomesalmarContact .row .modal__box .body .form p,
-.modal__box .body .plomesalmarContact .row .form p,
-.plomesalmarContact .row .modal__box .body .form p,
-.modal__box .modal__management__box .body .plomesalmarContact .row .form p,
-.modal__management__box .modal__box .body .plomesalmarContact .row .form p,
-.modal__box .plomesalmarContact .row .modal__management__box .body .form p,
-.plomesalmarContact .row .modal__management__box .modal__box .body .form p,
-.modal__box .modal__management__box .body .plomesalmarContact .row .form p,
-.plomesalmarContact .row .modal__box .modal__management__box .body .form p,
-.modal__management__box .modal__box .body .plomesalmarContact .row .form p,
-.plomesalmarContact .row .modal__management__box .modal__box .body .form p,
-.modal__box .body .auth .plomesalmarContact .row .form p,
-.auth .plomesalmarContact .row .modal__box .body .form p,
-.modal__box .body .plomesalmarContact .auth .row .form p,
-.plomesalmarContact .auth .row .modal__box .body .form p,
-.modal__box .body .auth .plomesalmarContact .row .form p,
-.plomesalmarContact .modal__box .body .auth .row .form p,
-.auth .plomesalmarContact .row .modal__box .body .form p,
-.plomesalmarContact .auth .row .modal__box .body .form p,
-.modal__box
-	.modal__management__box
-	.body
-	.auth
-	.plomesalmarContact
-	.row
-	.form
-	p,
-.modal__management__box
-	.modal__box
-	.body
-	.auth
-	.plomesalmarContact
-	.row
-	.form
-	p,
-.modal__box
-	.plomesalmarContact
-	.modal__management__box
-	.body
-	.auth
-	.row
-	.form
-	p,
-.plomesalmarContact
-	.modal__management__box
-	.modal__box
-	.body
-	.auth
-	.row
-	.form
-	p,
-.modal__box
-	.auth
-	.plomesalmarContact
-	.row
-	.modal__management__box
-	.body
-	.form
-	p,
-.auth
-	.plomesalmarContact
-	.row
-	.modal__management__box
-	.modal__box
-	.body
-	.form
-	p,
-.modal__box
-	.plomesalmarContact
-	.auth
-	.row
-	.modal__management__box
-	.body
-	.form
-	p,
-.plomesalmarContact
-	.auth
-	.row
-	.modal__management__box
-	.modal__box
-	.body
-	.form
-	p,
-.modal__box
-	.modal__management__box
-	.body
-	.auth
-	.plomesalmarContact
-	.row
-	.form
-	p,
-.plomesalmarContact
-	.modal__box
-	.modal__management__box
-	.body
-	.auth
-	.row
-	.form
-	p,
-.auth
-	.plomesalmarContact
-	.row
-	.modal__box
-	.modal__management__box
-	.body
-	.form
-	p,
-.plomesalmarContact
-	.auth
-	.row
-	.modal__box
-	.modal__management__box
-	.body
-	.form
-	p,
-.modal__management__box
-	.modal__box
-	.body
-	.auth
-	.plomesalmarContact
-	.row
-	.form
-	p,
-.plomesalmarContact
-	.modal__management__box
-	.modal__box
-	.body
-	.auth
-	.row
-	.form
-	p,
-.auth
-	.plomesalmarContact
-	.row
-	.modal__management__box
-	.modal__box
-	.body
-	.form
-	p,
-.plomesalmarContact
-	.auth
-	.row
-	.modal__management__box
-	.modal__box
-	.body
-	.form
-	p,
-.modal__management__box .body .form p,
-.modal__management__box .body .plomesalmarContact .row .form p,
-.plomesalmarContact .row .modal__management__box .body .form p,
-.modal__management__box .modal__box .body .plomesalmarContact .row .form p,
-.modal__box .modal__management__box .body .plomesalmarContact .row .form p,
-.modal__management__box .plomesalmarContact .row .modal__box .body .form p,
-.plomesalmarContact .row .modal__box .modal__management__box .body .form p,
-.modal__management__box .body .plomesalmarContact .row .form p,
-.plomesalmarContact .row .modal__management__box .body .form p,
-.modal__box .modal__management__box .body .plomesalmarContact .row .form p,
-.plomesalmarContact .row .modal__box .modal__management__box .body .form p,
-.modal__management__box .modal__box .body .plomesalmarContact .row .form p,
-.plomesalmarContact .row .modal__management__box .modal__box .body .form p,
-.modal__management__box .body .auth .plomesalmarContact .row .form p,
-.auth .plomesalmarContact .row .modal__management__box .body .form p,
-.modal__management__box .body .plomesalmarContact .auth .row .form p,
-.plomesalmarContact .auth .row .modal__management__box .body .form p,
-.modal__management__box
-	.modal__box
-	.body
-	.auth
-	.plomesalmarContact
-	.row
-	.form
-	p,
-.modal__box
-	.modal__management__box
-	.body
-	.auth
-	.plomesalmarContact
-	.row
-	.form
-	p,
-.modal__management__box
-	.plomesalmarContact
-	.modal__box
-	.body
-	.auth
-	.row
-	.form
-	p,
-.plomesalmarContact
-	.modal__box
-	.modal__management__box
-	.body
-	.auth
-	.row
-	.form
-	p,
-.modal__management__box
-	.auth
-	.plomesalmarContact
-	.row
-	.modal__box
-	.body
-	.form
-	p,
-.auth
-	.plomesalmarContact
-	.row
-	.modal__box
-	.modal__management__box
-	.body
-	.form
-	p,
-.modal__management__box
-	.plomesalmarContact
-	.auth
-	.row
-	.modal__box
-	.body
-	.form
-	p,
-.plomesalmarContact
-	.auth
-	.row
-	.modal__box
-	.modal__management__box
-	.body
-	.form
-	p,
-.modal__management__box .body .auth .plomesalmarContact .row .form p,
-.plomesalmarContact .modal__management__box .body .auth .row .form p,
-.auth .plomesalmarContact .row .modal__management__box .body .form p,
-.plomesalmarContact .auth .row .modal__management__box .body .form p,
-.modal__box
-	.modal__management__box
-	.body
-	.auth
-	.plomesalmarContact
-	.row
-	.form
-	p,
-.plomesalmarContact
-	.modal__box
-	.modal__management__box
-	.body
-	.auth
-	.row
-	.form
-	p,
-.auth
-	.plomesalmarContact
-	.row
-	.modal__box
-	.modal__management__box
-	.body
-	.form
-	p,
-.plomesalmarContact
-	.auth
-	.row
-	.modal__box
-	.modal__management__box
-	.body
-	.form
-	p,
-.modal__management__box
-	.modal__box
-	.body
-	.auth
-	.plomesalmarContact
-	.row
-	.form
-	p,
-.plomesalmarContact
-	.modal__management__box
-	.modal__box
-	.body
-	.auth
-	.row
-	.form
-	p,
-.auth
-	.plomesalmarContact
-	.row
-	.modal__management__box
-	.modal__box
-	.body
-	.form
-	p,
-.plomesalmarContact
-	.auth
-	.row
-	.modal__management__box
-	.modal__box
-	.body
-	.form
-	p {
-	text-align: left;
+.article p, .plomesalmarContact .row .box__logo p, .home .row--reverse .box p, .home .row .box__circle p, .home .row .box__row p, .home .row .box p, .modal__box .body p,
+.modal__management__box .body p, .form p, .auth .row .form p {
+  text-align: left;
 }
-.article p span,
-.termsAndPolicy .row .box__logo p span,
-.termsAndPolicy .row .box p span,
-.plomesalmarContact .row .box__logo p span,
-.plomesalmarContact .row .box p span,
-.home .row--reverse .box p span,
-.home .row .box__circle p span,
-.home .row .box__row p span,
-.home .row .box p span,
-.modal__box .body p span,
-.modal__management__box .body p span,
-.form p span,
-.plomesalmarContact .row .form p span,
-.modal__box .body .plomesalmarContact .row .form p span,
-.plomesalmarContact .row .modal__box .body .form p span,
-.modal__management__box .body .plomesalmarContact .row .form p span,
-.plomesalmarContact .row .modal__management__box .body .form p span,
-.modal__box .modal__management__box .body .plomesalmarContact .row .form p span,
-.plomesalmarContact .row .modal__box .modal__management__box .body .form p span,
-.modal__management__box .modal__box .body .plomesalmarContact .row .form p span,
-.plomesalmarContact .row .modal__management__box .modal__box .body .form p span,
-.auth .plomesalmarContact .row .form p span,
-.plomesalmarContact .auth .row .form p span,
-.modal__box .body .auth .plomesalmarContact .row .form p span,
-.plomesalmarContact .modal__box .body .auth .row .form p span,
-.auth .plomesalmarContact .row .modal__box .body .form p span,
-.plomesalmarContact .auth .row .modal__box .body .form p span,
-.modal__management__box .body .auth .plomesalmarContact .row .form p span,
-.plomesalmarContact .modal__management__box .body .auth .row .form p span,
-.auth .plomesalmarContact .row .modal__management__box .body .form p span,
-.plomesalmarContact .auth .row .modal__management__box .body .form p span,
-.modal__box
-	.modal__management__box
-	.body
-	.auth
-	.plomesalmarContact
-	.row
-	.form
-	p
-	span,
-.plomesalmarContact
-	.modal__box
-	.modal__management__box
-	.body
-	.auth
-	.row
-	.form
-	p
-	span,
-.auth
-	.plomesalmarContact
-	.row
-	.modal__box
-	.modal__management__box
-	.body
-	.form
-	p
-	span,
-.plomesalmarContact
-	.auth
-	.row
-	.modal__box
-	.modal__management__box
-	.body
-	.form
-	p
-	span,
-.modal__management__box
-	.modal__box
-	.body
-	.auth
-	.plomesalmarContact
-	.row
-	.form
-	p
-	span,
-.plomesalmarContact
-	.modal__management__box
-	.modal__box
-	.body
-	.auth
-	.row
-	.form
-	p
-	span,
-.auth
-	.plomesalmarContact
-	.row
-	.modal__management__box
-	.modal__box
-	.body
-	.form
-	p
-	span,
-.plomesalmarContact
-	.auth
-	.row
-	.modal__management__box
-	.modal__box
-	.body
-	.form
-	p
-	span,
-.auth .row .form p span,
-.auth .plomesalmarContact .row .form p span,
-.plomesalmarContact .auth .row .form p span,
-.auth .modal__box .body .plomesalmarContact .row .form p span,
-.modal__box .body .plomesalmarContact .auth .row .form p span,
-.auth .plomesalmarContact .row .modal__box .body .form p span,
-.plomesalmarContact .auth .row .modal__box .body .form p span,
-.auth .modal__management__box .body .plomesalmarContact .row .form p span,
-.modal__management__box .body .plomesalmarContact .auth .row .form p span,
-.auth .plomesalmarContact .row .modal__management__box .body .form p span,
-.plomesalmarContact .auth .row .modal__management__box .body .form p span,
-.auth
-	.modal__box
-	.modal__management__box
-	.body
-	.plomesalmarContact
-	.row
-	.form
-	p
-	span,
-.modal__box
-	.modal__management__box
-	.body
-	.plomesalmarContact
-	.auth
-	.row
-	.form
-	p
-	span,
-.auth
-	.plomesalmarContact
-	.row
-	.modal__box
-	.modal__management__box
-	.body
-	.form
-	p
-	span,
-.plomesalmarContact
-	.auth
-	.row
-	.modal__box
-	.modal__management__box
-	.body
-	.form
-	p
-	span,
-.auth
-	.modal__management__box
-	.modal__box
-	.body
-	.plomesalmarContact
-	.row
-	.form
-	p
-	span,
-.modal__management__box
-	.modal__box
-	.body
-	.plomesalmarContact
-	.auth
-	.row
-	.form
-	p
-	span,
-.auth
-	.plomesalmarContact
-	.row
-	.modal__management__box
-	.modal__box
-	.body
-	.form
-	p
-	span,
-.plomesalmarContact
-	.auth
-	.row
-	.modal__management__box
-	.modal__box
-	.body
-	.form
-	p
-	span,
-.auth .plomesalmarContact .row .form p span,
-.plomesalmarContact .auth .row .form p span,
-.modal__box .body .auth .plomesalmarContact .row .form p span,
-.plomesalmarContact .modal__box .body .auth .row .form p span,
-.auth .plomesalmarContact .row .modal__box .body .form p span,
-.plomesalmarContact .auth .row .modal__box .body .form p span,
-.modal__management__box .body .auth .plomesalmarContact .row .form p span,
-.plomesalmarContact .modal__management__box .body .auth .row .form p span,
-.auth .plomesalmarContact .row .modal__management__box .body .form p span,
-.plomesalmarContact .auth .row .modal__management__box .body .form p span,
-.modal__box
-	.modal__management__box
-	.body
-	.auth
-	.plomesalmarContact
-	.row
-	.form
-	p
-	span,
-.plomesalmarContact
-	.modal__box
-	.modal__management__box
-	.body
-	.auth
-	.row
-	.form
-	p
-	span,
-.auth
-	.plomesalmarContact
-	.row
-	.modal__box
-	.modal__management__box
-	.body
-	.form
-	p
-	span,
-.plomesalmarContact
-	.auth
-	.row
-	.modal__box
-	.modal__management__box
-	.body
-	.form
-	p
-	span,
-.modal__management__box
-	.modal__box
-	.body
-	.auth
-	.plomesalmarContact
-	.row
-	.form
-	p
-	span,
-.plomesalmarContact
-	.modal__management__box
-	.modal__box
-	.body
-	.auth
-	.row
-	.form
-	p
-	span,
-.auth
-	.plomesalmarContact
-	.row
-	.modal__management__box
-	.modal__box
-	.body
-	.form
-	p
-	span,
-.plomesalmarContact
-	.auth
-	.row
-	.modal__management__box
-	.modal__box
-	.body
-	.form
-	p
-	span,
-.modal__box .body .form p span,
-.modal__box .body .plomesalmarContact .row .form p span,
-.plomesalmarContact .row .modal__box .body .form p span,
-.modal__box .body .plomesalmarContact .row .form p span,
-.plomesalmarContact .row .modal__box .body .form p span,
-.modal__box .modal__management__box .body .plomesalmarContact .row .form p span,
-.modal__management__box .modal__box .body .plomesalmarContact .row .form p span,
-.modal__box .plomesalmarContact .row .modal__management__box .body .form p span,
-.plomesalmarContact .row .modal__management__box .modal__box .body .form p span,
-.modal__box .modal__management__box .body .plomesalmarContact .row .form p span,
-.plomesalmarContact .row .modal__box .modal__management__box .body .form p span,
-.modal__management__box .modal__box .body .plomesalmarContact .row .form p span,
-.plomesalmarContact .row .modal__management__box .modal__box .body .form p span,
-.modal__box .body .auth .plomesalmarContact .row .form p span,
-.auth .plomesalmarContact .row .modal__box .body .form p span,
-.modal__box .body .plomesalmarContact .auth .row .form p span,
-.plomesalmarContact .auth .row .modal__box .body .form p span,
-.modal__box .body .auth .plomesalmarContact .row .form p span,
-.plomesalmarContact .modal__box .body .auth .row .form p span,
-.auth .plomesalmarContact .row .modal__box .body .form p span,
-.plomesalmarContact .auth .row .modal__box .body .form p span,
-.modal__box
-	.modal__management__box
-	.body
-	.auth
-	.plomesalmarContact
-	.row
-	.form
-	p
-	span,
-.modal__management__box
-	.modal__box
-	.body
-	.auth
-	.plomesalmarContact
-	.row
-	.form
-	p
-	span,
-.modal__box
-	.plomesalmarContact
-	.modal__management__box
-	.body
-	.auth
-	.row
-	.form
-	p
-	span,
-.plomesalmarContact
-	.modal__management__box
-	.modal__box
-	.body
-	.auth
-	.row
-	.form
-	p
-	span,
-.modal__box
-	.auth
-	.plomesalmarContact
-	.row
-	.modal__management__box
-	.body
-	.form
-	p
-	span,
-.auth
-	.plomesalmarContact
-	.row
-	.modal__management__box
-	.modal__box
-	.body
-	.form
-	p
-	span,
-.modal__box
-	.plomesalmarContact
-	.auth
-	.row
-	.modal__management__box
-	.body
-	.form
-	p
-	span,
-.plomesalmarContact
-	.auth
-	.row
-	.modal__management__box
-	.modal__box
-	.body
-	.form
-	p
-	span,
-.modal__box
-	.modal__management__box
-	.body
-	.auth
-	.plomesalmarContact
-	.row
-	.form
-	p
-	span,
-.plomesalmarContact
-	.modal__box
-	.modal__management__box
-	.body
-	.auth
-	.row
-	.form
-	p
-	span,
-.auth
-	.plomesalmarContact
-	.row
-	.modal__box
-	.modal__management__box
-	.body
-	.form
-	p
-	span,
-.plomesalmarContact
-	.auth
-	.row
-	.modal__box
-	.modal__management__box
-	.body
-	.form
-	p
-	span,
-.modal__management__box
-	.modal__box
-	.body
-	.auth
-	.plomesalmarContact
-	.row
-	.form
-	p
-	span,
-.plomesalmarContact
-	.modal__management__box
-	.modal__box
-	.body
-	.auth
-	.row
-	.form
-	p
-	span,
-.auth
-	.plomesalmarContact
-	.row
-	.modal__management__box
-	.modal__box
-	.body
-	.form
-	p
-	span,
-.plomesalmarContact
-	.auth
-	.row
-	.modal__management__box
-	.modal__box
-	.body
-	.form
-	p
-	span,
-.modal__management__box .body .form p span,
-.modal__management__box .body .plomesalmarContact .row .form p span,
-.plomesalmarContact .row .modal__management__box .body .form p span,
-.modal__management__box .modal__box .body .plomesalmarContact .row .form p span,
-.modal__box .modal__management__box .body .plomesalmarContact .row .form p span,
-.modal__management__box .plomesalmarContact .row .modal__box .body .form p span,
-.plomesalmarContact .row .modal__box .modal__management__box .body .form p span,
-.modal__management__box .body .plomesalmarContact .row .form p span,
-.plomesalmarContact .row .modal__management__box .body .form p span,
-.modal__box .modal__management__box .body .plomesalmarContact .row .form p span,
-.plomesalmarContact .row .modal__box .modal__management__box .body .form p span,
-.modal__management__box .modal__box .body .plomesalmarContact .row .form p span,
-.plomesalmarContact .row .modal__management__box .modal__box .body .form p span,
-.modal__management__box .body .auth .plomesalmarContact .row .form p span,
-.auth .plomesalmarContact .row .modal__management__box .body .form p span,
-.modal__management__box .body .plomesalmarContact .auth .row .form p span,
-.plomesalmarContact .auth .row .modal__management__box .body .form p span,
-.modal__management__box
-	.modal__box
-	.body
-	.auth
-	.plomesalmarContact
-	.row
-	.form
-	p
-	span,
-.modal__box
-	.modal__management__box
-	.body
-	.auth
-	.plomesalmarContact
-	.row
-	.form
-	p
-	span,
-.modal__management__box
-	.plomesalmarContact
-	.modal__box
-	.body
-	.auth
-	.row
-	.form
-	p
-	span,
-.plomesalmarContact
-	.modal__box
-	.modal__management__box
-	.body
-	.auth
-	.row
-	.form
-	p
-	span,
-.modal__management__box
-	.auth
-	.plomesalmarContact
-	.row
-	.modal__box
-	.body
-	.form
-	p
-	span,
-.auth
-	.plomesalmarContact
-	.row
-	.modal__box
-	.modal__management__box
-	.body
-	.form
-	p
-	span,
-.modal__management__box
-	.plomesalmarContact
-	.auth
-	.row
-	.modal__box
-	.body
-	.form
-	p
-	span,
-.plomesalmarContact
-	.auth
-	.row
-	.modal__box
-	.modal__management__box
-	.body
-	.form
-	p
-	span,
-.modal__management__box .body .auth .plomesalmarContact .row .form p span,
-.plomesalmarContact .modal__management__box .body .auth .row .form p span,
-.auth .plomesalmarContact .row .modal__management__box .body .form p span,
-.plomesalmarContact .auth .row .modal__management__box .body .form p span,
-.modal__box
-	.modal__management__box
-	.body
-	.auth
-	.plomesalmarContact
-	.row
-	.form
-	p
-	span,
-.plomesalmarContact
-	.modal__box
-	.modal__management__box
-	.body
-	.auth
-	.row
-	.form
-	p
-	span,
-.auth
-	.plomesalmarContact
-	.row
-	.modal__box
-	.modal__management__box
-	.body
-	.form
-	p
-	span,
-.plomesalmarContact
-	.auth
-	.row
-	.modal__box
-	.modal__management__box
-	.body
-	.form
-	p
-	span,
-.modal__management__box
-	.modal__box
-	.body
-	.auth
-	.plomesalmarContact
-	.row
-	.form
-	p
-	span,
-.plomesalmarContact
-	.modal__management__box
-	.modal__box
-	.body
-	.auth
-	.row
-	.form
-	p
-	span,
-.auth
-	.plomesalmarContact
-	.row
-	.modal__management__box
-	.modal__box
-	.body
-	.form
-	p
-	span,
-.plomesalmarContact
-	.auth
-	.row
-	.modal__management__box
-	.modal__box
-	.body
-	.form
-	p
-	span {
-	text-align: left;
+.article p span, .plomesalmarContact .row .box__logo p span, .home .row--reverse .box p span, .home .row .box__circle p span, .home .row .box__row p span, .home .row .box p span, .modal__box .body p span,
+.modal__management__box .body p span, .form p span, .auth .row .form p span {
+  text-align: left;
 }
 
-.image,
-.termsAndPolicy .row .box__image,
-.home .row--reverse .box__image,
-.home .row .box__image {
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-start;
-	align-content: center;
-	align-items: center;
-	align-self: center;
-	min-width: 50vw;
-	max-width: 50vw;
-	overflow: hidden;
+.image, .home .row--reverse .box__image, .home .row .box__image {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  min-width: 50vw;
+  max-width: 50vw;
+  overflow: hidden;
 }
 
-.unorderedList,
-.termsAndPolicy .row .box ul {
-	padding-left: 1rem;
-	line-height: 1.5;
+.unorderedList {
+  padding-left: 1rem;
+  line-height: 1.5;
 }
-.unorderedList li,
-.termsAndPolicy .row .box ul li {
-	list-style-type: disc;
-	line-height: 1.5;
-	text-align: left;
+.unorderedList li {
+  list-style-type: disc;
+  line-height: 1.5;
+  text-align: left;
 }
 
-.circle,
-.home .row .box__circle .circle {
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-start;
-	align-content: center;
-	align-items: center;
-	align-self: center;
-	padding: 0.25rem;
-	margin: 0.25rem;
-	background-color: #c2c2c2;
-	border-radius: 50%;
-	border: 1px solid transparent;
-	border: 1px solid #8f8f8f;
+.circle, .home .row .box__circle .circle {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  padding: 0.25rem;
+  margin: 0.25rem;
+  background-color: #c2c2c2;
+  border-radius: 50%;
+  border: 1px solid transparent;
+  border: 1px solid #8f8f8f;
 }
-.circle:hover,
-.home .row .box__circle .circle:hover {
-	color: inherit;
-	background-color: #9d9d9c;
-	border: 1px solid #1f1f1f;
+.circle:hover, .home .row .box__circle .circle:hover {
+  color: inherit;
+  background-color: #9d9d9c;
+  border: 1px solid #1f1f1f;
 }
 .circle__content {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-around;
-	align-content: center;
-	align-items: center;
-	align-self: center;
-	padding: 0.25rem;
-	margin: 0.25rem;
-	max-width: 15rem;
-	background-color: transparent;
-	border-radius: 25%;
-	border: 1px solid transparent;
-	font-size: 0.9em;
-	font-style: italic;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  padding: 0.25rem;
+  margin: 0.25rem;
+  max-width: 15rem;
+  background-color: transparent;
+  border-radius: 25%;
+  border: 1px solid transparent;
+  font-size: 0.9em;
+  font-style: italic;
 }
 .circle__title {
-	font-size: 1.5em;
+  font-size: 1.5em;
 }
 
-.formInput,
-.plomesalmarContact .row .form__group__input,
-.auth .row .form__group__input,
-.modal__box .body .form__group__input,
-.modal__management__box .body .form__group__input {
-	padding: 1rem;
-	margin: 0.25rem auto;
-	color: #9d9d9c;
-	background-color: #fafafa;
-	min-width: 75vw;
-	max-width: 75vw;
-	border: 1px solid #8f8f8f;
-	border-radius: 0.25rem;
-}
-.formInput:hover,
-.plomesalmarContact .row .form__group__input:hover,
-.auth .row .form__group__input:hover,
-.modal__box .body .form__group__input:hover,
-.modal__management__box .body .form__group__input:hover {
-	color: inherit;
-	background-color: #ffffff;
-	border: 1px solid #0065ae;
-}
-
-.consent,
-.plomesalmarContact .row .form__group__consent,
-.auth .row .form__group__consent {
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-content: center;
-	align-items: center;
-	align-self: center;
-	padding: 0;
-	margin: 0.25rem auto;
-}
-
-.title,
-.termsAndPolicy .row .box__title,
-.management .row .box__title,
-.plomesalmarContact .row .box__title,
-.home .row--reverse .box__title,
-.home .row .box__title,
-.auth .row .box__title,
-.modal__box .body__title,
+.title, .management .row .box__title, .plomesalmarContact .row .box__title, .home .row--reverse .box__title, .home .row .box__title, .auth .row .box__title, .modal__management__big__box .body__title, .modal__box .body__title,
 .modal__management__box .body__title {
-	color: #0065ae;
-	background-color: transparent;
-	line-height: 1.8;
-	font-size: 2em;
-	font-weight: bold;
-	align-self: center;
-	text-align: center;
+  color: #0065AE;
+  background-color: transparent;
+  line-height: 1.8;
+  font-size: 2em;
+  font-weight: bold;
+  align-self: center;
+  text-align: center;
 }
 
-.subtitle,
-.termsAndPolicy .row .box__subtitle,
-.modal__box .body .form__group__content,
+.subtitle, .modal__management__big__box .body .form__group__content, .modal__box .body .form__group__content,
 .modal__management__box .body .form__group__content {
-	color: #0065ae;
-	background-color: transparent;
-	line-height: 1.5;
-	font-size: 1.5em;
-	font-weight: bold;
-	align-self: center;
+  color: #0065AE;
+  background-color: transparent;
+  line-height: 1.5;
+  font-size: 1.5em;
+  font-weight: bold;
+  align-self: center;
 }
 
-.secondary,
-.termsAndPolicy .row .box__subtitle__secondary,
-.card .table__title {
-	color: #9d9d9c;
-	background-color: transparent;
-	margin-top: 0.5rem;
-	line-height: 1.2;
-	font-size: 1.2em;
-	font-weight: lighter;
-	align-self: flex-start;
+.secondary, .card .table__title {
+  color: #9d9d9c;
+  background-color: transparent;
+  margin-top: 0.5rem;
+  line-height: 1.2;
+  font-size: 1.2em;
+  font-weight: lighter;
+  align-self: flex-start;
 }
 
 .tertiary {
-	margin-top: 0.25rem;
-	line-height: 1.2;
-	font-size: 0.9em;
-	font-weight: light;
-	align-self: flex-start;
+  margin-top: 0.25rem;
+  line-height: 1.2;
+  font-size: 0.9em;
+  font-weight: light;
+  align-self: flex-start;
 }
 
-.name,
-.termsAndPolicy .row .box__name,
-.home .row .box__name {
-	color: #9d9d9c;
-	background-color: transparent;
+.name, .home .row .box__name {
+  color: #9d9d9c;
+  background-color: transparent;
 }
 
-.content,
-.termsAndPolicy .row .box__content,
-.plomesalmarContact .row .form__group__consent__content,
-.plomesalmarContact .row .form__group__content,
-.home .row--reverse .box__content,
-.home .row .box__content,
-.auth .row .form__group__consent__content,
-.auth .row .form__group__content {
-	color: #0065ae;
-	background-color: transparent;
-	text-align: center;
-	align-self: center;
-	hyphens: auto;
+.content, .plomesalmarContact .row .form__group__consent__content, .plomesalmarContact .row .form__group__content, .home .row--reverse .box__content, .home .row .box__content, .auth .row .form__group__consent__content, .auth .row .form__group__content {
+  color: #0065AE;
+  background-color: transparent;
+  text-align: center;
+  align-self: center;
+  hyphens: auto;
 }
 
 .company {
-	color: #9d9d9c;
-	background-color: transparent;
+  color: #9d9d9c;
+  background-color: transparent;
 }
 
-.modalShadow,
-.auth,
-.modal,
+.modalShadow, .auth, .modal__management__big, .modal,
 .modal__management {
-	display: none;
-	position: fixed;
-	z-index: 3;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background: rgba(194, 194, 194, 0.5);
-	justify-content: center;
-	align-items: center;
+  display: none;
+  position: fixed;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(194, 194, 194, 0.5);
+  justify-content: center;
+  align-items: center;
 }
 
-.modalBox,
-.auth .row,
-.modal__box,
+.modalBox, .auth .row, .modal__box,
 .modal__management__box {
-	position: relative;
-	background: #fafafa;
-	top: 10vh;
-	left: 10vw;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-content: center;
-	align-items: center;
-	align-self: center;
-	min-width: 80vw;
-	max-width: 80vw;
-	min-height: 80vh;
-	max-height: 80vh;
-	border-radius: 0.25rem;
-	border: 1px solid transparent;
+  position: relative;
+  background: #fafafa;
+  top: 10vh;
+  left: 10vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  min-width: 80vw;
+  max-width: 80vw;
+  min-height: 80vh;
+  max-height: 80vh;
+  border-radius: 0.25rem;
+  border: 1px solid transparent;
 }
-.modalBox:hover,
-.auth .row:hover,
-.modal__box:hover,
+.modalBox:hover, .auth .row:hover, .modal__box:hover,
 .modal__management__box:hover {
-	color: inherit;
-	background-color: #fafafa;
-	border: 1px solid #9d9d9c;
+  color: inherit;
+  background-color: #fafafa;
+  border: 1px solid #9d9d9c;
 }
 
-.button,
-.termsAndPolicy .row .box__button,
-.plomesalmarContact .row .form__group__button,
-.home .row--reverse .box__button,
-.home .row .box__button,
-.auth .row .form__group__button,
-.form__button__back,
-.form__button__close,
-.form__button__success {
-	color: #fafafa;
-	background-color: #0065ae;
-	padding: 0.25rem;
-	margin: 0;
-	border: 1px solid transparent;
-	padding: 0.5rem;
-	margin: 0.5rem auto;
-	border-radius: 0.25rem;
-	border: 1px solid transparent;
+.button, .plomesalmarContact .row .form__group__button, .home .row--reverse .box__button, .home .row .box__button, .auth .row .form__group__button, .form__button__back, .form__button__close, .form__button__success {
+  color: #fafafa;
+  background-color: #0065AE;
+  padding: 0.25rem;
+  margin: 0;
+  border: 1px solid transparent;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  border-radius: 0.25rem;
+  border: 1px solid transparent;
 }
-.button:hover,
-.termsAndPolicy .row .box__button:hover,
-.plomesalmarContact .row .form__group__button:hover,
-.home .row--reverse .box__button:hover,
-.home .row .box__button:hover,
-.auth .row .form__group__button:hover,
-.form__button__back:hover,
-.form__button__close:hover,
-.form__button__success:hover {
-	color: #fafafa;
-	background-color: #0079d0;
-	border: 1px solid #00518c;
+.button:hover, .plomesalmarContact .row .form__group__button:hover, .home .row--reverse .box__button:hover, .home .row .box__button:hover, .auth .row .form__group__button:hover, .form__button__back:hover, .form__button__close:hover, .form__button__success:hover {
+  color: #fafafa;
+  background-color: #0079D0;
+  border: 1px solid #00518C;
 }
 
 .form__button__close {
-	color: #fafafa;
-	background-color: #ee0000;
-	border: 1px solid transparent;
+  color: #fafafa;
+  background-color: #ee0000;
+  border: 1px solid transparent;
 }
 .form__button__close:hover {
-	color: #fafafa;
-	background-color: #ff6666;
-	border: 1px solid #990000;
+  color: #fafafa;
+  background-color: #ff6666;
+  border: 1px solid #990000;
 }
 
 .form__button__back {
-	color: #fafafa;
-	background-color: #8f8f8f;
-	border: 1px solid transparent;
+  color: #fafafa;
+  background-color: #8f8f8f;
+  border: 1px solid transparent;
 }
 .form__button__back:hover {
-	color: #1f1f1f;
-	background-color: #c2c2c2;
-	border: 1px solid #8f8f8f;
+  color: #1f1f1f;
+  background-color: #c2c2c2;
+  border: 1px solid #8f8f8f;
 }
 
-.buttonTable,
-.buttonTable__success,
-.button__success,
-.buttonTable__close,
-.button__danger,
-.modal__box .close,
+.buttonTable, .buttonTable__success, .button__success, .buttonTable__close, .button__danger, .modal__management__big__box .close, .modal__box .close,
 .modal__management__box .close {
-	border: 1px solid transparent;
-	padding: 0.25rem 0.5rem;
-	font-size: 1em;
-	line-height: 1.5;
-	border-radius: 0.25rem;
-	transition:
-		color 0.15s ease-in-out,
-		background-color 0.15s ease-in-out,
-		border-color 0.15s ease-in-out,
-		box-shadow 0.15s ease-in-out;
-	cursor: pointer;
-	background-color: transparent;
+  border: 1px solid transparent;
+  padding: 0.25rem 0.5rem;
+  font-size: 1em;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  cursor: pointer;
+  background-color: transparent;
 }
 
-.buttonTable__close,
-.button__danger,
-.modal__box .close,
+.buttonTable__close, .button__danger, .modal__management__big__box .close, .modal__box .close,
 .modal__management__box .close {
-	color: #ee0000;
-	border-color: #ee0000;
+  color: #ee0000;
+  border-color: #ee0000;
 }
-.buttonTable__close:hover,
-.button__danger:hover,
-.modal__box .close:hover,
+.buttonTable__close:hover, .button__danger:hover, .modal__management__big__box .close:hover, .modal__box .close:hover,
 .modal__management__box .close:hover {
-	color: #ffffff;
-	background-color: #ee0000;
-	border-color: #ee0000;
+  color: #ffffff;
+  background-color: #ee0000;
+  border-color: #ee0000;
 }
 
-.buttonTable__success,
-.button__success {
-	color: #0065ae;
-	border-color: #0065ae;
+.buttonTable__success, .button__success {
+  color: #0065AE;
+  border-color: #0065AE;
 }
-.buttonTable__success:hover,
-.button__success:hover {
-	color: #ffffff;
-	background-color: #0065ae;
-	border-color: #0065ae;
+.buttonTable__success:hover, .button__success:hover {
+  color: #ffffff;
+  background-color: #0065AE;
+  border-color: #0065AE;
 }
 
-.asideListTitle,
-.aside .leftBar .list__title {
-	color: #0065ae;
-	background-color: transparent;
-	width: 11.5rem;
-	margin: 0.25rem;
-	margin-top: 0.5rem;
-	align-self: flex-start;
-	line-height: 1.2;
-	font-size: 1.2em;
-	font-weight: normal;
-	border-bottom: 1px solid #1f1f1f;
-	text-transform: uppercase;
-	cursor: default;
+.asideListTitle, .aside .leftBar .list__title {
+  color: #0065AE;
+  background-color: transparent;
+  width: 11.5rem;
+  margin: 0.25rem;
+  margin-top: 0.5rem;
+  align-self: flex-start;
+  line-height: 1.2;
+  font-size: 1.2em;
+  font-weight: normal;
+  border-bottom: 1px solid #1f1f1f;
+  text-transform: uppercase;
+  cursor: default;
 }
 
-.asideListItem,
-.aside .leftBar .list__item__link {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-content: center;
-	align-items: flex-start;
-	align-self: center;
-	min-height: 2rem;
-	min-width: 10rem;
-	max-width: 12rem;
-	padding: 0 0 0 0.5rem;
-	margin: 0;
-	align-self: flex-start;
-	line-height: 1.2;
-	font-size: 0.9em;
-	font-weight: light;
-	text-decoration: none;
-	cursor: pointer;
+.asideListItem, .aside .leftBar .list__item__link {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: flex-start;
+  align-self: center;
+  min-height: 2rem;
+  min-width: 10rem;
+  max-width: 12rem;
+  padding: 0 0 0 0.5rem;
+  margin: 0;
+  align-self: flex-start;
+  line-height: 1.2;
+  font-size: 0.9em;
+  font-weight: light;
+  text-decoration: none;
+  cursor: pointer;
 }
 
-.logo,
-.termsAndPolicy .row .box__logo__image,
-.management .row .box__logo__image,
-.plomesalmarContact .row .box__logo__image {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-content: center;
-	align-items: center;
-	align-self: center;
-	min-width: 225px;
-	max-width: 225px;
-	min-height: 125px;
-	max-height: 150px;
-	background-color: #fafafa;
-	padding: 0.25rem;
-	margin: 1rem 0.25rem;
-	border-radius: 0.25rem;
-	border: 1px solid #0065ae;
-	box-shadow:
-		2px 2px 4px #9d9d9c,
-		-2px -2px 4px #aeaead;
-	overflow: hidden;
+.logo, .management .row .box__logo__image, .plomesalmarContact .row .box__logo__image {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  min-width: 225px;
+  max-width: 225px;
+  min-height: 125px;
+  max-height: 150px;
+  background-color: #fafafa;
+  padding: 0.25rem;
+  margin: 1rem 0.25rem;
+  border-radius: 0.25rem;
+  border: 1px solid #0065AE;
+  box-shadow: 2px 2px 4px #9d9d9c, -2px -2px 4px #aeaead;
+  overflow: hidden;
 }
-.logo img,
-.termsAndPolicy .row .box__logo__image img,
-.management .row .box__logo__image img,
-.plomesalmarContact .row .box__logo__image img {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-content: center;
-	align-items: center;
-	align-self: center;
-	margin-top: 1rem;
+.logo img, .management .row .box__logo__image img, .plomesalmarContact .row .box__logo__image img {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  margin-top: 1rem;
 }
 
-.selectList,
-.card .table td .row .select {
-	background-color: inherit;
-	color: inherit;
-	border-radius: 0.25rem;
-	padding: 8px;
-	border: 1px solid #0065ae;
+.formSelect, .card .table td .row .select, .modal__management__big__box .body .form__group__select {
+  padding: 0.75rem;
+  margin: 0.25rem auto;
+  background-color: inherit;
+  color: inherit;
+  border: 1px solid #8f8f8f;
+  border-radius: 0.25rem;
+  font-size: 1.2em;
+  position: relative;
+  padding-right: 40px;
 }
-.selectList:focus,
-.card .table td .row .select:focus {
-	outline: none;
-	color: #0065ae;
-	background-color: #fafafa;
-	box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+.formSelect:hover, .card .table td .row .select:hover, .modal__management__big__box .body .form__group__select:hover {
+  color: inherit;
+  background-color: #ffffff;
+  border: 1px solid #0065AE;
 }
-.selectList option,
-.card .table td .row .select option {
-	color: #0065ae;
-	background-color: #fafafa;
+.formSelect:focus, .card .table td .row .select:focus, .modal__management__big__box .body .form__group__select:focus {
+  outline: none;
+  color: #0065AE;
+  background-color: #fafafa;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+}
+.formSelect option, .card .table td .row .select option, .modal__management__big__box .body .form__group__select option {
+  color: #0065AE;
+  background-color: #fafafa;
+}
+
+.formInput, .plomesalmarContact .row .form__group__input, .auth .row .form__group__input, .modal__management__big__box .body .form__group__input, .modal__box .body .form__group__input,
+.modal__management__box .body .form__group__input {
+  padding: 0.75rem;
+  margin: 0.25rem auto;
+  color: #9d9d9c;
+  background-color: #fafafa;
+  min-width: 75vw;
+  max-width: 75vw;
+  border: 1px solid #8f8f8f;
+  border-radius: 0.25rem;
+  font-size: 1.2em;
+}
+.formInput:hover, .plomesalmarContact .row .form__group__input:hover, .auth .row .form__group__input:hover, .modal__management__big__box .body .form__group__input:hover, .modal__box .body .form__group__input:hover,
+.modal__management__box .body .form__group__input:hover {
+  color: inherit;
+  background-color: #ffffff;
+  border: 1px solid #0065AE;
+}
+
+.consent, .plomesalmarContact .row .form__group__consent, .auth .row .form__group__consent {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  padding: 0;
+  margin: 0.25rem auto;
 }
 
 .modal__box,
 .modal__management__box {
-	top: 20vh;
-	left: 20vw;
-	min-width: 60vw;
-	max-width: 60vw;
-	min-height: 60vh;
-	max-height: 60vh;
-	border: 1px solid #0065ae;
+  top: 20vh;
+  left: 20vw;
+  min-width: 60vw;
+  max-width: 60vw;
+  min-height: 60vh;
+  max-height: 60vh;
+  border: 1px solid #0065AE;
 }
 .modal__box:hover,
 .modal__management__box:hover {
-	color: inherit;
-	background-color: #fafafa;
-	border: 1px solid #0065ae;
+  color: inherit;
+  background-color: #fafafa;
+  border: 1px solid #0065AE;
 }
 .modal__box .body,
 .modal__management__box .body {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-around;
-	align-content: center;
-	align-items: flex-start;
-	align-self: center;
-	min-width: 50vw;
-	max-width: 50vw;
-	min-height: 50vh;
-	max-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-content: center;
+  align-items: flex-start;
+  align-self: center;
+  min-width: 50vw;
+  max-width: 50vw;
+  min-height: 50vh;
+  max-height: 50vh;
 }
 .modal__box .body .form,
 .modal__management__box .body .form {
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-start;
-	align-content: center;
-	align-items: center;
-	align-self: center;
-	min-width: 65vw;
-	max-width: 65vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  min-width: 65vw;
+  max-width: 65vw;
+}
+.modal__box .body .form__group,
+.modal__management__box .body .form__group {
+  min-width: 65vw;
 }
 .modal__box .body .form__group__input,
 .modal__management__box .body .form__group__input {
-	min-width: 35vw;
-	max-width: 35vw;
-	border: 1px solid #8f8f8f;
+  min-width: 14rem;
+  max-width: 50%;
+  border: 1px solid #8f8f8f;
 }
 .modal__box .body .form__group__input:hover,
 .modal__management__box .body .form__group__input:hover {
-	color: #0079d0;
-	background-color: #fafafa;
-	border: 1px solid #0065ae;
+  color: #0079D0;
+  background-color: #fafafa;
+  border: 1px solid #0065AE;
 }
 .modal__box .body .form__group__buttons,
 .modal__management__box .body .form__group__buttons {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	align-content: center;
-	align-items: center;
-	align-self: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  align-self: center;
 }
 .modal__box .close,
 .modal__management__box .close {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-content: center;
-	align-items: center;
-	align-self: center;
-	color: #ee0000;
-	background-color: #ffeded;
-	border: 1px solid #ee0000;
-	position: absolute;
-	top: 0;
-	right: 0;
-	width: 50px;
-	height: 50px;
-	text-align: center;
-	font-size: 50px;
-	cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  color: #ee0000;
+  background-color: #ffeded;
+  border: 1px solid #ee0000;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  font-size: 40px;
+  cursor: pointer;
 }
 .modal__box .close:hover,
 .modal__management__box .close:hover {
-	color: #ffeded;
-	background-color: #ee0000;
-	border: 1px solid #990000;
+  color: #ffeded;
+  background-color: #ee0000;
+  border: 1px solid #990000;
 }
 
 .danger .modal__management__box {
-	border: 1px solid #ee0000;
+  border: 1px solid #ee0000;
 }
 .danger .modal__management__box:hover {
-	color: inherit;
-	background-color: #fafafa;
-	border: 1px solid #ee0000;
+  color: inherit;
+  background-color: #fafafa;
+  border: 1px solid #ee0000;
 }
 .danger .modal__management__box .body__title {
-	color: #ee0000;
+  color: #ee0000;
 }
 
+.modal__management__big {
+  display: block;
+}
+.modal__management__big__box {
+  position: relative;
+  top: 5vh;
+  left: 5vw;
+  background: #fafafa;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  min-width: 90vw;
+  max-width: 90vw;
+  min-height: 90vh;
+  border-radius: 0.25rem;
+  border: 1px solid #0065AE;
+}
+.modal__management__big__box .body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-content: center;
+  align-items: flex-start;
+  align-self: center;
+  padding: 0.25rem;
+  margin: 0.25rem;
+  min-width: 85vw;
+  max-width: 85vw;
+  min-height: 85vh;
+  gap: 0.5rem;
+  hyphens: auto;
+  font-size: 0.9em;
+  line-height: 1.5;
+  text-align: center;
+}
+.modal__management__big__box .body p {
+  text-align: left;
+}
+.modal__management__big__box .body p span {
+  text-align: left;
+}
+.modal__management__big__box .body__title {
+  padding-top: 2rem;
+}
+.modal__management__big__box .body .form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  padding: 0.25rem;
+  margin: 0.25rem;
+  min-width: 80vw;
+  max-width: 80vw;
+  min-height: 75vh;
+  gap: 0.5rem;
+  hyphens: auto;
+  font-size: 0.9em;
+  line-height: 1.5;
+  text-align: center;
+}
+.modal__management__big__box .body .form p {
+  text-align: left;
+}
+.modal__management__big__box .body .form p span {
+  text-align: left;
+}
+.modal__management__big__box .body .form__group {
+  min-width: 80vw;
+}
+.modal__management__big__box .body .form__group__input {
+  min-width: 14rem;
+  max-width: 50%;
+  border: 1px solid #8f8f8f;
+}
+.modal__management__big__box .body .form__group__input:hover {
+  color: #0079D0;
+  background-color: #fafafa;
+  border: 1px solid #0065AE;
+}
+.modal__management__big__box .body .form__group__select {
+  min-width: 14rem;
+  max-width: 50%;
+}
+.modal__management__big__box .body .form__group__buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  gap: 0.5rem;
+}
+.modal__management__big__box .close {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  color: #ee0000;
+  background-color: #ffeded;
+  border: 1px solid #ee0000;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  font-size: 40px;
+  cursor: pointer;
+}
+.modal__management__big__box .close:hover {
+  color: #ffeded;
+  background-color: #ee0000;
+  border: 1px solid #990000;
+}
+
+.danger .modal__management__box {
+  border: 1px solid #ee0000;
+}
+.danger .modal__management__box:hover {
+  color: inherit;
+  background-color: #fafafa;
+  border: 1px solid #ee0000;
+}
+.danger .modal__management__box .body__title {
+  color: #ee0000;
+}
+
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+  .modal__management__big__box .body .form__group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  .modal__management__big__box .body .form__group__content {
+    text-align: right;
+  }
+  .modal__management__big__box .body .form__group__input, .modal__management__big__box .body .form__group__select {
+    margin-left: 0.25rem;
+    display: flex;
+    justify-items: start;
+    text-align: left;
+    align-self: start;
+  }
+}
 .card {
-	min-width: 100%;
-	max-width: 100%;
-	color: inherit;
-	background-color: #fafafa;
-	border-radius: 0.25rem;
-	border: 1px solid #0065ae;
-	box-shadow:
-		2px 2px 4px #9d9d9c,
-		-2px -2px 4px #aeaead;
-	transition: 0.3s;
-	margin: auto 0;
-	padding: 1rem;
+  min-width: 100%;
+  max-width: 100%;
+  color: inherit;
+  background-color: #fafafa;
+  border-radius: 0.25rem;
+  border: 1px solid #0065AE;
+  box-shadow: 2px 2px 4px #9d9d9c, -2px -2px 4px #aeaead;
+  transition: 0.3s;
+  margin: auto 0;
+  padding: 1rem;
 }
 .card .table {
-	width: 100%;
-	border-collapse: collapse;
+  width: 100%;
+  border-collapse: collapse;
 }
 .card .table th,
 .card .table td {
-	border-bottom: 1px solid #c2c2c2;
-	text-align: left;
+  border-bottom: 1px solid #c2c2c2;
+  text-align: left;
 }
 .card .table th {
-	padding: 0.75rem 0.5rem;
+  padding: 0.75rem 0.5rem;
 }
 .card .table td {
-	padding: 0.5rem;
+  padding: 0.5rem;
 }
 .card .table td .row {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	align-items: center;
-	justify-items: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-items: space-between;
 }
 @media (max-width: 768px) {
-	.card .table td .row {
-		grid-template-columns: 1fr;
-		gap: 10px;
-	}
+  .card .table td .row {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+}
+.card .table td .row .select {
+  min-width: 35vw;
+  max-width: 35vw;
 }
 .card .table .decoration {
-	text-decoration: none;
-	display: inline-block;
-	color: #0065ae;
+  text-decoration: none;
+  display: inline-block;
+  color: #0065AE;
 }
 .card .table__title {
-	color: #0065ae;
-	background-color: transparent;
-	font-weight: bold;
+  color: #0065AE;
+  background-color: transparent;
+  font-weight: bold;
 }
 
 .icons {
-	display: flex;
-	gap: 5px;
+  display: flex;
+  gap: 5px;
 }
 
 .pagination__box {
-	margin: 10px auto;
+  margin: 10px auto;
 }
 .pagination__box .pagination {
-	display: flex;
-	padding-left: 0;
-	list-style: none;
-	border-radius: 0.25rem;
-	justify-content: center;
+  display: flex;
+  padding-left: 0;
+  list-style: none;
+  border-radius: 0.25rem;
+  justify-content: center;
 }
 .pagination__box .pagination .page-item {
-	margin: 0 4px;
+  margin: 0 4px;
 }
 .pagination__box .pagination .page-item .page-link {
-	border: 1px solid #0065ae;
-	color: #0065ae;
-	background-color: #fafafa;
-	position: relative;
-	display: block;
-	padding: 0.5rem 0.75rem;
-	margin-left: -1px;
-	line-height: 1.25;
-	border-radius: 0.25rem;
-	text-decoration: none;
+  border: 1px solid #0065AE;
+  color: #0065AE;
+  background-color: #fafafa;
+  position: relative;
+  display: block;
+  padding: 0.5rem 0.75rem;
+  margin-left: -1px;
+  line-height: 1.25;
+  border-radius: 0.25rem;
+  text-decoration: none;
 }
 .pagination__box .pagination .page-item .page-link:hover {
-	color: #fafafa;
-	background-color: #0065ae;
-	border: 1px solid #fafafa;
+  color: #fafafa;
+  background-color: #0065AE;
+  border: 1px solid #fafafa;
 }
 .pagination__box .pagination .page-item.disabled .page-link {
-	color: #1f1f1f;
-	background-color: #fafafa;
-	border: 1px solid #8f8f8f;
-	pointer-events: none;
-	cursor: auto;
-	opacity: 0.65;
+  color: #1f1f1f;
+  background-color: #fafafa;
+  border: 1px solid #8f8f8f;
+  pointer-events: none;
+  cursor: auto;
+  opacity: 0.65;
 }
 .pagination__box .pagination .page-item.active .page-link {
-	color: #fafafa;
-	background-color: #0065ae;
-	border: 1px solid #0065ae;
+  color: #fafafa;
+  background-color: #0065AE;
+  border: 1px solid #0065AE;
 }
 
 .nav {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	align-content: center;
-	align-items: center;
-	align-self: center;
-	color: #fafafa;
-	background-color: #0065ae;
-	height: 3.5rem;
-	max-height: 3.5rem;
-	font-size: 1em;
-	max-width: 100vw;
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  color: #fafafa;
+  background-color: #0065AE;
+  height: 3.5rem;
+  max-height: 3.5rem;
+  font-size: 1em;
+  max-width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
 }
 .nav .navbar {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-around;
-	align-content: center;
-	align-items: center;
-	align-self: center;
-	padding: 0;
-	margin: 0;
-	min-width: 99vw;
-	max-width: 100vw;
-	min-height: 3.5rem;
-	max-height: 3.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  padding: 0;
+  margin: 0;
+  min-width: 99vw;
+  max-width: 100vw;
+  min-height: 3.5rem;
+  max-height: 3.5rem;
 }
 .nav .navbar__logo {
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-content: center;
-	align-items: center;
-	align-self: center;
-	background-color: #ffffff;
-	min-width: 35vw;
-	max-width: 35vw;
-	min-height: 3.5rem;
-	max-height: 3.5rem;
-	flex: 3;
-	overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  background-color: #ffffff;
+  min-width: 35vw;
+  max-width: 35vw;
+  min-height: 3.5rem;
+  max-height: 3.5rem;
+  flex: 3;
+  overflow: hidden;
 }
 .nav .navbar__logo img {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-content: center;
-	align-items: center;
-	align-self: center;
-	background-color: #fafafa;
-	min-width: 35vw;
-	max-width: 35vw;
-	min-height: 3.5rem;
-	max-height: 3.5rem;
-	overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  background-color: #fafafa;
+  min-width: 35vw;
+  max-width: 35vw;
+  min-height: 3.5rem;
+  max-height: 3.5rem;
+  overflow: hidden;
 }
 .nav .navbar__menu__home {
-	padding: 0;
-	margin: 178px 0 0 0;
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-content: center;
-	align-items: center;
-	align-self: center;
-	position: absolute;
-	flex: 6;
-	transition: transform 1.5s;
-	transform: translateY(-250%);
+  padding: 0;
+  margin: 178px 0 0 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  position: absolute;
+  flex: 6;
+  transition: transform 1.5s;
+  transform: translateY(-250%);
 }
 .nav .navbar__menu__home .list {
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-start;
-	align-content: center;
-	align-items: center;
-	align-self: center;
-	padding: 0;
-	margin: 0;
-	color: #fafafa;
-	background-color: #0065ae;
-	min-width: 40vw;
-	cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  padding: 0;
+  margin: 0;
+  color: #fafafa;
+  background-color: #0065AE;
+  min-width: 40vw;
+  cursor: pointer;
 }
 .nav .navbar__menu__home .list__item {
-	padding: 0.25rem;
-	margin: 0;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-content: center;
-	align-items: center;
-	align-self: center;
-	min-width: 40vw;
-	list-style: none;
-	display: inline-flex;
+  padding: 0.25rem;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  min-width: 40vw;
+  list-style: none;
+  display: inline-flex;
 }
 .nav .navbar__menu__home .list__item__link {
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-content: center;
-	align-items: center;
-	align-self: center;
-	padding: 0;
-	margin: 0 0.25rem;
-	min-width: 40vw;
-	color: #fafafa;
-	background-color: transparent;
-	text-decoration: none;
-	text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  padding: 0;
+  margin: 0 0.25rem;
+  min-width: 40vw;
+  color: #fafafa;
+  background-color: transparent;
+  text-decoration: none;
+  text-align: center;
 }
 .nav .navbar__menu__home .list__item:hover {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-content: center;
-	align-items: center;
-	align-self: center;
-	min-width: 40vw;
-	color: #fafafa;
-	background-color: #9d9d9c;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  min-width: 40vw;
+  color: #fafafa;
+  background-color: #9d9d9c;
 }
 .nav .navbar__menu__home .list__item .dropdown {
-	position: relative;
+  position: relative;
 }
 .nav .navbar__menu__home .list__item .dropdown__menu {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-content: center;
-	align-items: center;
-	align-self: center;
-	position: absolute;
-	left: -0.25rem;
-	display: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  position: absolute;
+  left: -0.25rem;
+  display: none;
 }
 .nav .navbar__menu__home .list__item .dropdown__menu__item {
-	padding: 0.25rem 0.75rem;
-	margin: 0;
-	color: #fafafa;
-	background-color: #0065ae;
-	text-decoration: none;
-	min-width: 19rem;
-	max-width: 19rem;
+  padding: 0.25rem 0.75rem;
+  margin: 0;
+  color: #fafafa;
+  background-color: #0065AE;
+  text-decoration: none;
+  min-width: 19rem;
+  max-width: 19rem;
 }
 .nav .navbar__menu__home .list__item .dropdown__menu__item:hover {
-	color: #fafafa;
-	background-color: #9d9d9c;
+  color: #fafafa;
+  background-color: #9d9d9c;
 }
 .nav .navbar__menu__home .list__item .dropdown:hover .dropdown__menu {
-	display: flex;
+  display: flex;
 }
 .nav .navbar__auth {
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-content: center;
-	align-items: center;
-	align-self: center;
-	padding: 0;
-	margin: 0;
-	margin-right: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  padding: 0;
+  margin: 0;
+  margin-right: 1rem;
 }
 .nav .navbar__auth .list {
-	cursor: pointer;
+  cursor: pointer;
 }
 .nav .navbar__auth .list__item__link {
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-content: center;
-	align-items: center;
-	align-self: center;
-	color: #fafafa;
-	background-color: #0065ae;
-	min-width: 3rem;
-	height: 3.5rem;
-	letter-spacing: 0.25em;
-	border: 1px solid transparent;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  color: #fafafa;
+  background-color: #0065AE;
+  min-width: 3rem;
+  height: 3.5rem;
+  letter-spacing: 0.25em;
+  border: 1px solid transparent;
 }
 .nav .navbar__auth .list__item__link:hover {
-	color: #fafafa;
-	background-color: #9d9d9c;
-	border: 1px solid transparent;
+  color: #fafafa;
+  background-color: #9d9d9c;
+  border: 1px solid transparent;
 }
 .nav .navbar__auth .list__item:hover {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-content: center;
-	align-items: center;
-	align-self: center;
-	color: #fafafa;
-	background-color: #9d9d9c;
-	min-width: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  color: #fafafa;
+  background-color: #9d9d9c;
+  min-width: 3rem;
 }
 .nav .navbar__auth .list__item .dropdown {
-	position: relative;
+  position: relative;
 }
 .nav .navbar__auth .list__item .dropdown__menu {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-content: center;
-	align-items: center;
-	align-self: center;
-	position: absolute;
-	right: -4rem;
-	display: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  position: absolute;
+  right: -4rem;
+  display: none;
 }
 .nav .navbar__auth .list__item .dropdown__menu__item {
-	padding: 0.25rem 0.75rem;
-	margin: 0;
-	color: #fafafa;
-	background-color: #0065ae;
-	min-width: 12rem;
-	max-width: 14rem;
-	text-decoration: none;
+  padding: 0.25rem 0.75rem;
+  margin: 0;
+  color: #fafafa;
+  background-color: #0065AE;
+  min-width: 12rem;
+  max-width: 14rem;
+  text-decoration: none;
 }
 .nav .navbar__auth .list__item .dropdown__menu__item:hover {
-	color: #fafafa;
-	background-color: #9d9d9c;
+  color: #fafafa;
+  background-color: #9d9d9c;
 }
 .nav .navbar__auth .list__item .dropdown:hover .dropdown__menu {
-	display: flex;
+  display: flex;
 }
 .nav .navbar__auth .list:hover {
-	color: #fafafa;
-	background-color: #9d9d9c;
+  color: #fafafa;
+  background-color: #9d9d9c;
 }
 .nav .navbar__language {
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-content: center;
-	align-items: center;
-	align-self: center;
-	padding: 0;
-	margin: 0;
-	margin-right: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  padding: 0;
+  margin: 0;
+  margin-right: 1rem;
 }
 .nav .navbar__language .list {
-	cursor: pointer;
+  cursor: pointer;
 }
 .nav .navbar__language .list__item__link {
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-content: center;
-	align-items: center;
-	align-self: center;
-	color: #0065ae;
-	background-color: #fafafa;
-	min-width: 4.5rem;
-	height: 3.5rem;
-	letter-spacing: 0.25em;
-	border: 1px solid transparent;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  color: #0065AE;
+  background-color: #fafafa;
+  min-width: 4.5rem;
+  height: 3.5rem;
+  letter-spacing: 0.25em;
+  border: 1px solid transparent;
 }
 .nav .navbar__language .list__item__link:hover {
-	color: #fafafa;
-	background-color: #9d9d9c;
-	border: 1px solid transparent;
+  color: #fafafa;
+  background-color: #9d9d9c;
+  border: 1px solid transparent;
 }
 .nav .navbar__language .list__item:hover {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-content: center;
-	align-items: center;
-	align-self: center;
-	color: #fafafa;
-	background-color: #9d9d9c;
-	min-width: 4.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  color: #fafafa;
+  background-color: #9d9d9c;
+  min-width: 4.5rem;
 }
 .nav .navbar__language .list__item .dropdown {
-	position: relative;
+  position: relative;
 }
 .nav .navbar__language .list__item .dropdown__menu {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-content: center;
-	align-items: center;
-	align-self: center;
-	position: absolute;
-	right: -4rem;
-	display: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  position: absolute;
+  right: -4rem;
+  display: none;
 }
 .nav .navbar__language .list__item .dropdown__menu__item {
-	padding: 0.25rem 0.75rem;
-	margin: 0;
-	color: #fafafa;
-	background-color: #0065ae;
-	min-width: 12rem;
-	max-width: 14rem;
-	text-decoration: none;
+  padding: 0.25rem 0.75rem;
+  margin: 0;
+  color: #fafafa;
+  background-color: #0065AE;
+  min-width: 12rem;
+  max-width: 14rem;
+  text-decoration: none;
 }
 .nav .navbar__language .list__item .dropdown__menu__item:hover {
-	color: #fafafa;
-	background-color: #9d9d9c;
+  color: #fafafa;
+  background-color: #9d9d9c;
 }
 .nav .navbar__language .list__item .dropdown:hover .dropdown__menu {
-	display: flex;
+  display: flex;
 }
 .nav .navbar__language .list:hover {
-	color: #fafafa;
-	background-color: #9d9d9c;
+  color: #fafafa;
+  background-color: #9d9d9c;
 }
 .nav .toggle label i {
-	width: 30px;
-	position: absolute;
-	right: 1rem;
-	top: 0.8rem;
-	font-size: xx-large;
-	cursor: pointer;
+  width: 30px;
+  position: absolute;
+  right: 1rem;
+  top: 0.8rem;
+  font-size: xx-large;
+  cursor: pointer;
 }
 .nav .toggle__checkbox {
-	display: none;
+  display: none;
 }
 .nav .toggle__checkbox:checked + .navbar .navbar__menu__home {
-	transition: transform 0.5s;
-	transform: translateY(0);
+  transition: transform 0.5s;
+  transform: translateY(0);
 }
 
 @media screen and (min-width: 601px) and (max-width: 1024px) {
-	.nav .navbar__logo {
-		min-width: 35vw;
-	}
-	.nav .navbar__logo img {
-		min-width: 15rem;
-		max-width: 15rem;
-	}
+  .nav .navbar__logo {
+    min-width: 35vw;
+  }
+  .nav .navbar__logo img {
+    min-width: 15rem;
+    max-width: 15rem;
+  }
 }
 @media screen and (min-width: 1025px) {
-	.nav {
-		min-height: 3.5rem;
-		max-height: 3.5rem;
-	}
-	.nav .toggle {
-		display: none;
-	}
-	.nav .navbar {
-		max-height: 3.5rem;
-	}
-	.nav .navbar__logo {
-		min-width: 20vw;
-		max-width: 20vw;
-	}
-	.nav .navbar__logo img {
-		min-width: 15rem;
-		max-width: 15rem;
-	}
-	.nav .navbar__menu__home {
-		display: flex;
-		flex-direction: row;
-		justify-content: flex-end;
-		align-content: center;
-		align-items: center;
-		align-self: center;
-		margin-top: 0;
-		position: sticky;
-		transform: translateY(0);
-	}
-	.nav .navbar__menu__home .list {
-		display: flex;
-		flex-direction: row;
-		justify-content: flex-start;
-		align-content: center;
-		align-items: center;
-		align-self: center;
-	}
-	.nav .navbar__menu__home .list__item {
-		padding: 0;
-		margin: 0;
-		min-width: 7rem;
-		max-width: 9rem;
-	}
-	.nav .navbar__menu__home .list__item__link {
-		min-width: 120px;
-		height: 3.5rem;
-	}
-	.nav .navbar__menu__home .list__item:hover {
-		min-width: 120px;
-		max-height: 3.5rem;
-	}
-	.nav .navbar__menu__home .list__item .dropdown__menu {
-		margin-top: 0;
-	}
-	.nav .navbar__auth {
-		display: flex;
-		flex-direction: row;
-		justify-content: center;
-		align-content: center;
-		align-items: center;
-		align-self: center;
-		margin-right: 1rem;
-	}
-	.nav .navbar__auth .list__item__link {
-		display: flex;
-		flex-direction: row;
-		justify-content: center;
-		align-content: center;
-		align-items: center;
-		align-self: center;
-		color: #fafafa;
-		background-color: #0065ae;
-		min-width: 3rem;
-		height: 3.5rem;
-		letter-spacing: 0.25em;
-		border: 1px solid transparent;
-	}
-	.nav .navbar__auth .list__item__link:hover {
-		color: #fafafa;
-		background-color: #9d9d9c;
-		border: 1px solid transparent;
-	}
-	.nav .navbar__auth .list__item:hover {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-content: center;
-		align-items: center;
-		align-self: center;
-		color: #fafafa;
-		background-color: #9d9d9c;
-		min-width: 3rem;
-	}
-	.nav .navbar__auth .list__item .dropdown {
-		position: relative;
-	}
-	.nav .navbar__auth .list__item .dropdown__menu {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-content: center;
-		align-items: center;
-		align-self: center;
-		position: absolute;
-		right: -4rem;
-		display: none;
-	}
-	.nav .navbar__auth .list__item .dropdown__menu__item {
-		padding: 0.25rem 0.75rem;
-		margin: 0;
-		color: #fafafa;
-		background-color: #0065ae;
-		min-width: 12rem;
-		max-width: 14rem;
-		text-decoration: none;
-	}
-	.nav .navbar__auth .list__item .dropdown__menu__item:hover {
-		color: #fafafa;
-		background-color: #9d9d9c;
-	}
-	.nav .navbar__auth .list__item .dropdown:hover .dropdown__menu {
-		display: flex;
-	}
-	.nav .navbar__auth .list:hover {
-		color: #fafafa;
-		background-color: #9d9d9c;
-	}
-	.nav .navbar__language {
-		margin-right: 0;
-	}
-	.nav .navbar__language .list__item .dropdown__menu {
-		right: 0rem;
-	}
-	.nav .navbar__language .list__item .dropdown__menu__item {
-		min-width: 12rem;
-		max-width: 14rem;
-	}
+  .nav {
+    min-height: 3.5rem;
+    max-height: 3.5rem;
+  }
+  .nav .toggle {
+    display: none;
+  }
+  .nav .navbar {
+    max-height: 3.5rem;
+  }
+  .nav .navbar__logo {
+    min-width: 20vw;
+    max-width: 20vw;
+  }
+  .nav .navbar__logo img {
+    min-width: 15rem;
+    max-width: 15rem;
+  }
+  .nav .navbar__menu__home {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-content: center;
+    align-items: center;
+    align-self: center;
+    margin-top: 0;
+    position: sticky;
+    transform: translateY(0);
+  }
+  .nav .navbar__menu__home .list {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-content: center;
+    align-items: center;
+    align-self: center;
+  }
+  .nav .navbar__menu__home .list__item {
+    padding: 0;
+    margin: 0;
+    min-width: 7rem;
+    max-width: 9rem;
+  }
+  .nav .navbar__menu__home .list__item__link {
+    min-width: 120px;
+    height: 3.5rem;
+  }
+  .nav .navbar__menu__home .list__item:hover {
+    min-width: 120px;
+    max-height: 3.5rem;
+  }
+  .nav .navbar__menu__home .list__item .dropdown__menu {
+    margin-top: 0;
+  }
+  .nav .navbar__auth {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    align-self: center;
+    margin-right: 1rem;
+  }
+  .nav .navbar__auth .list__item__link {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    align-self: center;
+    color: #fafafa;
+    background-color: #0065AE;
+    min-width: 3rem;
+    height: 3.5rem;
+    letter-spacing: 0.25em;
+    border: 1px solid transparent;
+  }
+  .nav .navbar__auth .list__item__link:hover {
+    color: #fafafa;
+    background-color: #9d9d9c;
+    border: 1px solid transparent;
+  }
+  .nav .navbar__auth .list__item:hover {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    align-self: center;
+    color: #fafafa;
+    background-color: #9d9d9c;
+    min-width: 3rem;
+  }
+  .nav .navbar__auth .list__item .dropdown {
+    position: relative;
+  }
+  .nav .navbar__auth .list__item .dropdown__menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    align-self: center;
+    position: absolute;
+    right: -4rem;
+    display: none;
+  }
+  .nav .navbar__auth .list__item .dropdown__menu__item {
+    padding: 0.25rem 0.75rem;
+    margin: 0;
+    color: #fafafa;
+    background-color: #0065AE;
+    min-width: 12rem;
+    max-width: 14rem;
+    text-decoration: none;
+  }
+  .nav .navbar__auth .list__item .dropdown__menu__item:hover {
+    color: #fafafa;
+    background-color: #9d9d9c;
+  }
+  .nav .navbar__auth .list__item .dropdown:hover .dropdown__menu {
+    display: flex;
+  }
+  .nav .navbar__auth .list:hover {
+    color: #fafafa;
+    background-color: #9d9d9c;
+  }
+  .nav .navbar__language {
+    margin-right: 0;
+  }
+  .nav .navbar__language .list__item .dropdown__menu {
+    right: 0rem;
+  }
+  .nav .navbar__language .list__item .dropdown__menu__item {
+    min-width: 12rem;
+    max-width: 14rem;
+  }
 }
 .aside {
-	grid-column: 1;
-	padding: 0;
-	margin: 0;
-	border-right: 1px solid #0065ae;
-	box-shadow: 3px 0px 6px 0px #8f8f8f;
-	height: calc(100vh - 3.5rem);
-	color: #0065ae;
-	background-color: #ececec;
+  grid-column: 1;
+  padding: 0;
+  margin: 0;
+  border-right: 1px solid #0065AE;
+  box-shadow: 3px 0px 6px 0px #8f8f8f;
+  height: calc(100vh - 3.5rem);
+  color: #0065AE;
+  background-color: #ececec;
 }
 .aside .leftBar {
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-start;
-	align-content: center;
-	align-items: flex-start;
-	align-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-content: center;
+  align-items: flex-start;
+  align-self: center;
 }
 .aside .leftBar .list {
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-start;
-	align-content: center;
-	align-items: flex-start;
-	align-self: center;
-	padding: 0;
-	margin: 0;
-	align-self: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-content: center;
+  align-items: flex-start;
+  align-self: center;
+  padding: 0;
+  margin: 0;
+  align-self: flex-start;
 }
 .aside .leftBar .list__item {
-	display: flex;
-	flex-direction: row;
-	justify-content: flex-start;
-	align-content: center;
-	align-items: center;
-	align-self: center;
-	padding: 0 0 0 1rem;
-	margin: 0;
-	align-self: flex-start;
-	border: 1px solid transparent;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  padding: 0 0 0 1rem;
+  margin: 0;
+  align-self: flex-start;
+  border: 1px solid transparent;
 }
 .aside .leftBar .list__item:hover {
-	color: #ececec;
-	background-color: #0065ae;
-	border: 1px solid transparent;
+  color: #ececec;
+  background-color: #0065AE;
+  border: 1px solid transparent;
 }
 .aside .leftBar .list__item__icon {
-	min-width: 1rem;
-	max-width: 1rem;
+  min-width: 1rem;
+  max-width: 1rem;
 }
 .input-group {
-	display: flex;
-	min-width: 70%;
-	max-width: 70%;
-	color: #fafafa;
-	background-color: #0065ae;
-	border-radius: 0.25rem;
-	border: 1px solid #0065ae;
-	box-shadow:
-		1px 1px 2px #9d9d9c,
-		-1px -1px 2px #aeaead;
-	align-items: center;
-	padding: 0.25rem 0.75rem;
-	border-radius: 0.25rem;
+  display: flex;
+  min-width: 70%;
+  max-width: 70%;
+  color: #fafafa;
+  background-color: #0065AE;
+  border-radius: 0.25rem;
+  border: 1px solid #0065AE;
+  box-shadow: 1px 1px 2px #9d9d9c, -1px -1px 2px #aeaead;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  border-radius: 0.25rem;
 }
 .input-group-text {
-	padding: 0.375rem 0.75rem;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+  padding: 0.375rem 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .input-group .form-control {
-	flex: 1;
-	padding: 0.2rem 0.75rem;
-	border: 1px solid #0065ae;
-	color: #0065ae;
-	border-radius: 0.25rem;
-	background-color: #fafafa;
+  flex: 1;
+  padding: 0.2rem 0.75rem;
+  border: 1px solid #0065AE;
+  color: #0065AE;
+  border-radius: 0.25rem;
+  background-color: #fafafa;
 }
 
 .custom-alert {
-	position: fixed;
-	top: 10%;
-	right: 10%;
-	min-width: 300px;
-	padding: 10px 20px;
-	border-radius: 8px;
-	border: 1px solid black;
-	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-	display: none;
-	align-items: center;
-	justify-content: space-between;
-	text-align: center;
-	font-size: 16px;
-	opacity: 0;
-	transition:
-		opacity 300ms ease-in-out,
-		top 0.4s ease-in-out;
-	z-index: 1050;
-	background-color: #fff;
+  position: fixed;
+  top: 10%;
+  right: 10%;
+  min-width: 300px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: 1px solid black;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  font-size: 16px;
+  opacity: 0;
+  transition: opacity 300ms ease-in-out, top 0.4s ease-in-out;
+  z-index: 1050;
+  background-color: #fff;
 }
 .custom-alert::before {
-	font-family: "Font Awesome 5 Free";
-	display: inline-block;
-	font-size: 20px;
-	margin-right: 15px;
+  font-family: "Font Awesome 5 Free";
+  display: inline-block;
+  font-size: 20px;
+  margin-right: 15px;
 }
 .custom-alert.success {
-	color: #4caf50;
+  color: #4CAF50;
 }
 .custom-alert.success::before {
-	content: "\f058";
-	font-weight: 900;
-	color: #4caf50;
+  content: "\f058";
+  font-weight: 900;
+  color: #4CAF50;
 }
 .custom-alert.success .timer-bar {
-	background-color: #4caf50;
+  background-color: #4CAF50;
 }
 .custom-alert.error {
-	color: #d32f2f;
+  color: #D32F2F;
 }
 .custom-alert.error::before {
-	content: "\f06a";
-	font-weight: 900;
-	color: #d32f2f;
+  content: "\f06a";
+  font-weight: 900;
+  color: #D32F2F;
 }
 .custom-alert.error .timer-bar {
-	background-color: #d32f2f;
+  background-color: #D32F2F;
 }
 .custom-alert p {
-	margin: 0;
-	flex: 1;
-	padding: 10px;
+  margin: 0;
+  flex: 1;
+  padding: 10px;
 }
 .custom-alert .timer-bar {
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	width: 100%;
-	height: 5px;
-	animation: reduceWidth 15s linear forwards;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  animation: reduceWidth 15s linear forwards;
 }
 @keyframes reduceWidth {
-	from {
-		width: 100%;
-	}
-	to {
-		width: 0%;
-	}
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
 }
 
 .auth {
-	display: block;
+  display: block;
 }
 .auth .row {
-	top: 15vh;
-	left: 15vw;
-	min-width: 70vw;
-	max-width: 70vw;
-	min-height: 70vh;
-	max-height: 70vh;
-	border: 1px solid transparent;
+  top: 15vh;
+  left: 15vw;
+  min-width: 70vw;
+  max-width: 70vw;
+  min-height: 70vh;
+  max-height: 70vh;
+  border: 1px solid transparent;
 }
 .auth .row:hover {
-	color: inherit;
-	background-color: #fafafa;
-	border: 1px solid #0065ae;
+  color: inherit;
+  background-color: #fafafa;
+  border: 1px solid #0065AE;
 }
 .auth .row .box__title {
-	margin-bottom: 2rem;
+  margin-bottom: 2rem;
 }
 .auth .row .form {
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-start;
-	align-content: center;
-	align-items: center;
-	align-self: center;
-	min-width: 65vw;
-	max-width: 65vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  min-width: 65vw;
+  max-width: 65vw;
 }
 .auth .row .form__group__input {
-	min-width: 35vw;
-	max-width: 35vw;
-	border: 1px solid #8f8f8f;
+  min-width: 35vw;
+  max-width: 35vw;
+  border: 1px solid #8f8f8f;
 }
 .auth .row .form__group__input:hover {
-	color: #0079d0;
-	background-color: #fafafa;
-	border: 1px solid #0065ae;
+  color: #0079D0;
+  background-color: #fafafa;
+  border: 1px solid #0065AE;
 }
 .auth .row .form__group__consent {
-	gap: 0.5rem;
+  gap: 0.5rem;
 }
 .auth .row .form__group__consent__check {
-	appearance: checkbox;
-	width: 1rem;
-	height: 1rem;
+  appearance: checkbox;
+  width: 1rem;
+  height: 1rem;
 }
 .auth .row .form__group__consent__content {
-	hyphens: none;
+  hyphens: none;
 }
 
 .home .row {
-	padding: 5rem 0.25rem 2rem 0.25rem;
-	margin: 0.25rem;
+  padding: 5rem 0.25rem 2rem 0.25rem;
+  margin: 0.25rem;
 }
 .home .row .box__content--reverse {
-	color: #9d9d9c;
-	background-color: transparent;
+  color: #9d9d9c;
+  background-color: transparent;
 }
 .home .row .box__name--reverse {
-	color: #0065ae;
-	background-color: transparent;
+  color: #0065AE;
+  background-color: transparent;
 }
 .home .row .box__image {
-	overflow: hidden;
+  overflow: hidden;
 }
 .home .row .box__map {
-	width: 85vw;
-	height: 420px;
+  width: 85vw;
+  height: 420px;
 }
 .home .row .box__row {
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-start;
-	align-content: center;
-	align-items: center;
-	align-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-content: center;
+  align-items: center;
+  align-self: center;
 }
 .home .row .box__circle .circle {
-	padding-top: 2rem;
+  padding-top: 2rem;
 }
 .home .row .box__circle .circle__icon {
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-content: center;
-	align-items: center;
-	align-self: center;
-	margin: 0 auto;
-	background-color: #fafafa;
-	border-radius: 50%;
-	border: 1px solid transparent;
-	min-width: 5rem;
-	max-width: 5rem;
-	min-height: 5rem;
-	max-height: 5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  margin: 0 auto;
+  background-color: #fafafa;
+  border-radius: 50%;
+  border: 1px solid transparent;
+  min-width: 5rem;
+  max-width: 5rem;
+  min-height: 5rem;
+  max-height: 5rem;
 }
 .home .row .box__circle .circle__icon img {
-	max-width: 50px;
-	max-height: 50px;
+  max-width: 50px;
+  max-height: 50px;
 }
 .home .row--reverse {
-	min-width: 100vw;
-	color: #fafafa;
-	background-color: #9d9d9c;
+  min-width: 100vw;
+  color: #fafafa;
+  background-color: #9d9d9c;
 }
 .home .row--reverse .box {
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-start;
-	align-content: center;
-	align-items: center;
-	align-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-content: center;
+  align-items: center;
+  align-self: center;
 }
 .home .row--reverse .box__title {
-	color: #fafafa;
-	background-color: transparent;
+  color: #fafafa;
+  background-color: transparent;
 }
 .home .row--reverse .box__content {
-	color: #fafafa;
-	background-color: transparent;
-	font-style: italic;
+  color: #fafafa;
+  background-color: transparent;
+  font-style: italic;
 }
 .home .row--reverse .box__image {
-	min-width: 70vw;
-	max-width: 70vw;
-	overflow: hidden;
+  min-width: 70vw;
+  max-width: 70vw;
+  overflow: hidden;
 }
 
 @media screen and (min-width: 376px) and (max-width: 600px) {
-	.home .row .box__circle .circle {
-		min-width: 20rem;
-		max-width: 20rem;
-		min-height: 20rem;
-	}
-	.home .row .box__circle .circle__content {
-		padding-top: 2rem;
-		font-size: 1em;
-	}
+  .home .row .box__circle .circle {
+    min-width: 20rem;
+    max-width: 20rem;
+    min-height: 20rem;
+  }
+  .home .row .box__circle .circle__content {
+    padding-top: 2rem;
+    font-size: 1em;
+  }
 }
 @media screen and (min-width: 601px) and (max-width: 1024px) {
-	.home .row .box__row {
-		display: flex;
-		flex-direction: row;
-		justify-content: center;
-		align-content: center;
-		align-items: center;
-		align-self: center;
-	}
-	.home .row .box__button {
-		padding: 0.75rem;
-		margin: 0.5rem;
-	}
-	.home .row .box__circle .circle {
-		min-width: 20rem;
-		max-width: 20rem;
-		min-height: 20rem;
-	}
-	.home .row .box__circle .circle__content {
-		padding-top: 2rem;
-		font-size: 1.2em;
-	}
+  .home .row .box__row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    align-self: center;
+  }
+  .home .row .box__button {
+    padding: 0.75rem;
+    margin: 0.5rem;
+  }
+  .home .row .box__circle .circle {
+    min-width: 20rem;
+    max-width: 20rem;
+    min-height: 20rem;
+  }
+  .home .row .box__circle .circle__content {
+    padding-top: 2rem;
+    font-size: 1.2em;
+  }
 }
 @media screen and (min-width: 1025px) {
-	.home .row .box__title {
-		font-size: 2.2em;
-	}
-	.home .row .box__button {
-		padding: 0.75rem;
-		margin: 0.5rem;
-	}
-	.home .row .box__row {
-		display: flex;
-		flex-direction: row;
-		justify-content: center;
-		align-content: center;
-		align-items: center;
-		align-self: center;
-	}
-	.home .row .box__circle {
-		display: flex;
-		flex-direction: row;
-		justify-content: center;
-		align-content: center;
-		align-items: center;
-		align-self: center;
-		gap: 5rem;
-	}
-	.home .row .box__circle .circle {
-		min-width: 20rem;
-		max-width: 20rem;
-		min-height: 20rem;
-	}
-	.home .row .box__circle .circle__content {
-		padding-top: 2rem;
-		font-size: 1.2em;
-	}
+  .home .row .box__title {
+    font-size: 2.2em;
+  }
+  .home .row .box__button {
+    padding: 0.75rem;
+    margin: 0.5rem;
+  }
+  .home .row .box__row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    align-self: center;
+  }
+  .home .row .box__circle {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    align-self: center;
+    gap: 5rem;
+  }
+  .home .row .box__circle .circle {
+    min-width: 20rem;
+    max-width: 20rem;
+    min-height: 20rem;
+  }
+  .home .row .box__circle .circle__content {
+    padding-top: 2rem;
+    font-size: 1.2em;
+  }
 }
 .plomesalmarContact .row {
-	padding: 5rem 0.25rem 2rem 0.25rem;
-	margin: 0.25rem;
+  padding: 5rem 0.25rem 2rem 0.25rem;
+  margin: 0.25rem;
 }
 .plomesalmarContact .row .box__logo__image a img {
-	min-height: 3.5rem;
+  min-height: 3.5rem;
 }
 .plomesalmarContact .row .form {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-around;
-	align-content: center;
-	align-items: center;
-	align-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-content: center;
+  align-items: center;
+  align-self: center;
 }
 .plomesalmarContact .row .form__group__consent {
-	gap: 0.5rem;
+  gap: 0.5rem;
 }
 .plomesalmarContact .row .form__group__consent__check {
-	appearance: checkbox;
-	width: 1rem;
-	height: 1rem;
+  appearance: checkbox;
+  width: 1rem;
+  height: 1rem;
 }
 .plomesalmarContact .row .form__group__consent__content {
-	hyphens: none;
+  hyphens: none;
 }
 
 @media screen and (min-width: 601px) and (max-width: 1024px) {
-	.plomesalmarContact .row .form__group {
-		display: flex;
-		flex-direction: row;
-		justify-content: center;
-		align-content: center;
-		align-items: center;
-		align-self: center;
-		gap: 0.5rem;
-	}
-	.plomesalmarContact .row .form__group__content {
-		min-width: 20vw;
-		max-width: 20vw;
-		text-align: right;
-	}
-	.plomesalmarContact .row .form__group__input {
-		padding: 1rem;
-		margin: 0.25rem;
-		min-width: 30vw;
-		max-width: 30vw;
-	}
-	.plomesalmarContact .row .form__group__button {
-		margin: 0.25rem auto;
-	}
+  .plomesalmarContact .row .form__group {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    align-self: center;
+    gap: 0.5rem;
+  }
+  .plomesalmarContact .row .form__group__content {
+    min-width: 20vw;
+    max-width: 20vw;
+    text-align: right;
+  }
+  .plomesalmarContact .row .form__group__input {
+    padding: 1rem;
+    margin: 0.25rem;
+    min-width: 30vw;
+    max-width: 30vw;
+  }
+  .plomesalmarContact .row .form__group__button {
+    margin: 0.25rem auto;
+  }
 }
 @media screen and (min-width: 1025px) {
-	.plomesalmarContact .row .box__logo {
-		display: flex;
-		flex-direction: row;
-		justify-content: center;
-		align-content: center;
-		align-items: center;
-		align-self: center;
-		gap: 1rem;
-	}
-	.plomesalmarContact .row .form__group {
-		display: flex;
-		flex-direction: row;
-		justify-content: flex-end;
-		align-content: center;
-		align-items: center;
-		align-self: center;
-		display: flex;
-		flex-direction: row;
-		justify-content: center;
-		align-content: center;
-		align-items: center;
-		align-self: center;
-		gap: 1rem;
-	}
-	.plomesalmarContact .row .form__group__content {
-		min-width: 20vw;
-		max-width: 20vw;
-		text-align: right;
-	}
-	.plomesalmarContact .row .form__group__input {
-		padding: 1rem;
-		margin: 0.25rem;
-		min-width: 25rem;
-		max-width: 25rem;
-	}
-	.plomesalmarContact .row .form__group__button {
-		margin: 0.25rem auto;
-	}
+  .plomesalmarContact .row .box__logo {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    align-self: center;
+    gap: 1rem;
+  }
+  .plomesalmarContact .row .form__group {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-content: center;
+    align-items: center;
+    align-self: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    align-self: center;
+    gap: 1rem;
+  }
+  .plomesalmarContact .row .form__group__content {
+    min-width: 20vw;
+    max-width: 20vw;
+    text-align: right;
+  }
+  .plomesalmarContact .row .form__group__input {
+    padding: 1rem;
+    margin: 0.25rem;
+    min-width: 25rem;
+    max-width: 25rem;
+  }
+  .plomesalmarContact .row .form__group__button {
+    margin: 0.25rem auto;
+  }
 }
 .management {
-	display: grid;
-	grid-template-columns: 12rem 1fr;
-	justify-content: start;
-	justify-items: start;
-	align-content: center;
-	align-items: stretch;
-	color: #0065ae;
-	background-color: #ececec;
-	padding: 3.5rem 0 0 0;
-	margin: 0;
-	gap: 0;
+  display: grid;
+  grid-template-columns: 12rem 1fr;
+  justify-content: start;
+  justify-items: start;
+  align-content: center;
+  align-items: stretch;
+  color: #0065AE;
+  background-color: #ececec;
+  padding: 3.5rem 0 0 0;
+  margin: 0;
+  gap: 0;
 }
 .management .row {
-	grid-column: 2;
-	display: grid;
-	grid-template-rows: auto 1fr;
-	gap: 0;
-	width: 95%;
-	margin: 0 auto;
+  grid-column: 2;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 0;
+  width: 95%;
+  margin: 0 auto;
 }
 .management .row .box__title {
-	margin-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 .management .row .box__search {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	align-content: center;
-	align-items: center;
-	align-self: center;
-	margin-bottom: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  margin-bottom: 0.5rem;
 }
 .management .row .box__search .form__button__success {
-	margin: 0;
+  margin: 0;
 }
 .management .row .box__back {
-	display: flex;
-	flex-direction: row;
-	justify-content: flex-start;
-	align-content: center;
-	align-items: center;
-	align-self: center;
-	margin-bottom: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  margin-bottom: 0.5rem;
 }
 .management .row .box__back .form__button__back {
-	margin: 0;
+  margin: 0;
 }
 .management .row .box__next {
-	display: flex;
-	flex-direction: row;
-	justify-content: flex-end;
-	align-content: center;
-	align-items: center;
-	align-self: center;
-	margin-bottom: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  margin-bottom: 0.5rem;
 }
 .management .row .box__next .form__button__success {
-	margin: 0;
+  margin: 0;
 }
 .management .row .box__table {
-	display: grid;
-	row-gap: 0;
-	width: 95%;
-	margin: 0 auto;
+  display: grid;
+  row-gap: 0;
+  width: 95%;
+  margin: 0 auto;
 }
 .management .row .box__logo {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-	row-gap: 10px;
-	max-height: 50%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  row-gap: 10px;
+  max-height: 50%;
 }
 .management .row .box__logo__image {
-	margin: 0.5rem auto;
+  margin: 0.5rem auto;
 }
 .management .row .box__logo__image a {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-around;
-	align-content: center;
-	align-items: center;
-	align-self: center;
-	gap: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  gap: 0.5rem;
 }
 .management .row .box__logo__image a img {
-	min-height: 3.5rem;
+  min-height: 3.5rem;
 }
 .management .row .box__logo__image i {
-	font-size: xx-large;
+  font-size: xx-large;
 }
 .management .row .box__logo__image:hover {
-	border: 1px solid transparent;
+  border: 1px solid transparent;
 }
 .management .row .box__logo__image:hover:hover {
-	color: #c2c2c2;
-	background-color: #0065ae;
-	border: 1px solid #c2c2c2;
+  color: #c2c2c2;
+  background-color: #0065AE;
+  border: 1px solid #c2c2c2;
 }
 
-.button-add {
-	padding: 0.375rem 0.75rem;
-	font-size: 1rem;
-	line-height: 1.5;
-	border-radius: 0.25rem;
-	color: #ffffff;
-	background-color: #0079d0;
-	border: none;
-	display: inline-block;
-	text-align: center;
-	vertical-align: middle;
-	cursor: pointer;
-	user-select: none;
-	transition:
-		color 0.15s ease-in-out,
-		background-color 0.15s ease-in-out,
-		border-color 0.15s ease-in-out,
-		box-shadow 0.15s ease-in-out;
+.observation-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-.button-add:hover {
-	background-color: #00518c;
-	text-decoration: none;
+.observation-form .label-form {
+  font-size: 20px;
+  margin-top: 20px;
 }
-.button-add:focus,
-.button-add.focus {
-	outline: 0;
-	box-shadow: 0 0 0 0.2rem rgba(0, 52, 89, 0.5);
+.observation-form .input-form {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid black;
+  font-size: 16px;
+  margin-top: 6px;
+  box-sizing: border-box;
+  background-color: #fff;
+  margin-bottom: 20px;
 }
-.button-add:disabled,
-.button-add[disabled] {
-	cursor: not-allowed;
-	opacity: 0.65;
+.observation-form .textarea-form {
+  width: 100%;
+  margin-top: 6px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid black;
+  font-size: 16px;
 }
-.button-add i {
-	margin-right: 0.5rem;
+.observation-form .form-section {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.observation-form .form-heading {
+  font-size: 24px;
+  margin-left: 15%;
+  margin-right: auto;
+  margin-top: 50px;
+}
+.observation-form .close-modal {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+.observation-form .overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1001;
+}
+.observation-form .modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1002;
+  width: 80%;
+  max-width: 400px;
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+}
+.observation-form .close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 28px;
+  cursor: pointer;
+}
+.observation-form .new-address-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  margin: auto;
+}
+.observation-form #save-address {
+  border-radius: 20px;
+  font-size: 18px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  width: 150px;
+  color: #fff;
+}
+.observation-form .btn-save {
+  margin-top: 50px !important;
+  margin-bottom: 60px !important;
+}
+.observation-form #close-modal-address {
+  background-color: #fff;
+  color: black;
+  border: 1px solid black;
+  border-radius: 20px;
+  font-size: 18px;
+  margin: 0px 0px;
+  width: 150px;
+}
+.observation-form .btn-form {
+  border-radius: 20px;
+  font-size: 18px;
+  margin-top: 36px;
+  width: 220px;
+  padding: 10px 30px;
+  white-space: nowrap;
+}
+.observation-form .form-title {
+  font-size: 28px;
+}
+.observation-form .form-group {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.observation-form .form-main-info {
+  width: 100%;
+}
+.observation-form .form-data-image {
+  display: flex;
+  flex-direction: column;
+}
+.observation-form .form-textarea {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+.observation-form * {
+  box-sizing: border-box;
+}
+.observation-form .label-address {
+  position: relative;
+  display: inline-block;
+  font-size: 20px;
+  color: var(--text-detail);
+  width: 100%;
+}
+.observation-form .label-address select {
+  width: 100%;
+  display: block;
+  min-height: 35px;
+  border-radius: 3px;
+  border: 2px solid #2196F3;
+  outline: none;
+  padding: 0 20px 0 10px;
+  height: 42px;
+  margin-top: 5px;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+}
+.observation-form .label-address::after {
+  content: "";
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent;
+  border-top-color: #222;
+  display: inline-block;
+  border-radius: 2px;
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+}
+.observation-form .label-address .selector-options {
+  list-style: none;
+  padding: 5px 0;
+  margin: 0;
+  background: #11436b;
+  color: #fff;
+  border-radius: 4px;
+  z-index: 1;
+  width: 96%;
+  position: absolute;
+  left: 2%;
+  top: 35%;
+  max-height: 360px;
+  overflow: scroll;
+}
+.observation-form .label-address .selector-options li {
+  height: 35px;
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+  cursor: pointer;
+}
+.observation-form .label-address .selector-options li:hover {
+  background: #03A9F4;
+}
+.observation-form .entry-separator {
+  border: 1px solid gray;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  display: none;
+  width: 100%;
+}
+.observation-form .ticket-type {
+  width: 100%;
+}
+.observation-form .ticket-input {
+  position: relative;
+  display: grid;
+  margin-top: 20px;
+  grid-template-columns: 1fr;
+}
+.observation-form .delete-entry {
+  position: absolute;
+  color: white;
+  right: 0px;
+  top: 287px;
+  font-size: 16px;
+  background-color: var(--main);
+  border-radius: 6px;
+}
+.observation-form #add-entry {
+  background-color: inherit;
+  font-size: 16px;
+  color: rgb(49, 49, 49);
+  margin-right: auto;
+  padding-left: 0;
+}
+.observation-form .icon-plus {
+  font-size: 28px;
+  vertical-align: -4px;
+  margin-right: 5px;
+}
+.observation-form .form-closing {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.observation-form .form-closing select {
+  font-size: 16px;
+}
+.observation-form .label-category {
+  width: 100%;
+  padding: 0;
+}
+.observation-form .label-category select {
+  width: 100%;
+}
+.observation-form .select-desktop {
+  width: 100% !important;
+  left: 0% !important;
+  font-size: 16px;
+}
+.observation-form .form-additional-images {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+.observation-form .form-additional-images input,
+.observation-form .form-additional-images .form-data input,
+.observation-form .form-additional-images .form-data-image input {
+  margin-top: 4px;
+}
+.observation-form .form-additional-images label,
+.observation-form .form-additional-images .form-data label,
+.observation-form .form-additional-images .form-data-image label {
+  font-size: 20px;
+}
+.observation-form .extra-info-container {
+  align-items: flex-start;
+  margin-top: 30px;
+}
+.observation-form .primary-detail {
+  display: flex;
+  flex-direction: row;
+  width: 22%;
+  white-space: nowrap;
+  justify-content: space-between;
+  margin-top: 35px;
+}
+.observation-form .primary-detail input {
+  min-width: 16px;
+  max-width: 16px;
+  margin: 0px 0px 0px 15px;
+}
+.observation-form .secondary-detail input {
+  margin: 0px 0px 0px 22px;
+}
+.observation-form .switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  font-size: 20px;
+  height: 30px;
+}
+.observation-form .switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.observation-form .switch .slider {
+  position: absolute;
+  cursor: pointer;
+  top: -1px;
+  left: 217px;
+  right: -213px;
+  bottom: 1px;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+.observation-form .switch .slider:before {
+  position: absolute;
+  content: "";
+  height: 22px;
+  width: 22px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+.observation-form .switch input:checked + .slider {
+  background-color: var(--main);
+}
+.observation-form .switch input:focus + .slider {
+  box-shadow: 0 0 1px var(--main);
+}
+.observation-form .switch input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+.observation-form .switch .round {
+  border-radius: 34px;
+}
+.observation-form .switch .round:before {
+  border-radius: 50%;
+}
+.observation-form .max-capacity-video {
+  width: 100%;
+  padding-top: 10px;
+}
+.observation-form .label-direction {
+  padding: 5px;
+  margin-right: auto;
+  margin-top: 0px;
+  font-size: 18px;
 }
 
-.termsAndPolicy .row {
-	padding: 5rem 0.25rem 2rem 0.25rem;
-	margin: 0.25rem;
-}
-.termsAndPolicy .row .box__company {
-	color: #9d9d9c;
-	background-color: transparent;
-}
-.termsAndPolicy .row .box__logo__image a img {
-	min-height: 3.5rem;
-}
-.termsAndPolicy .row .info {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-content: center;
-	align-items: center;
-	align-self: center;
-	min-width: 80vw;
-	max-width: 80vw;
-	gap: 0.5rem;
-}
-.termsAndPolicy .row .info__column__left {
-	min-width: 50vw;
-	max-width: 50vw;
-}
-.termsAndPolicy .row .info__column__left .box__name {
-	color: #0065ae;
-	background-color: transparent;
-}
-.termsAndPolicy .row .info__column__right {
-	min-width: 50vw;
-	max-width: 50vw;
-}
-
-@media screen and (min-width: 601px) and (max-width: 1024px) {
-	.termsAndPolicy .row .info {
-		display: flex;
-		flex-direction: row;
-		justify-content: center;
-		align-content: center;
-		align-items: center;
-		align-self: center;
-	}
-	.termsAndPolicy .row .info__column__left {
-		display: flex;
-		flex-direction: column;
-		justify-content: flex-end;
-		align-content: center;
-		align-items: flex-end;
-		align-self: center;
-		min-width: 35vw;
-		max-width: 35vw;
-		text-align: right;
-	}
-	.termsAndPolicy .row .info__column__right {
-		display: flex;
-		flex-direction: column;
-		justify-content: flex-start;
-		align-content: center;
-		align-items: flex-start;
-		align-self: center;
-		min-width: 35vw;
-		max-width: 35vw;
-		text-align: left;
-	}
-}
-@media screen and (min-width: 1025px) {
-	.termsAndPolicy .row .box__logo {
-		display: flex;
-		flex-direction: row;
-		justify-content: center;
-		align-content: center;
-		align-items: center;
-		align-self: center;
-		gap: 2rem;
-	}
-	.termsAndPolicy .row .info {
-		display: flex;
-		flex-direction: row;
-		justify-content: center;
-		align-content: center;
-		align-items: center;
-		align-self: center;
-	}
-	.termsAndPolicy .row .info__column__left {
-		display: flex;
-		flex-direction: column;
-		justify-content: flex-end;
-		align-content: center;
-		align-items: flex-end;
-		align-self: center;
-		min-width: 35vw;
-		max-width: 35vw;
-		text-align: right;
-	}
-	.termsAndPolicy .row .info__column__right {
-		display: flex;
-		flex-direction: column;
-		justify-content: flex-start;
-		align-content: center;
-		align-items: flex-start;
-		align-self: center;
-		min-width: 35vw;
-		max-width: 35vw;
-		text-align: left;
-	}
+@media (min-width: 768px) {
+  .form-main-info {
+    width: 100%;
+    display: flex;
+    gap: 16px;
+    align-items: flex-end;
+  }
+  .max-capacity-video {
+    width: 50%;
+  }
+  .form-data-image {
+    width: 100%;
+  }
+  .date-input {
+    text-align: center;
+    width: min-content;
+    height: 46.5px;
+  }
+  .form-data {
+    width: min-content;
+  }
+  .label-form {
+    margin-top: 30px;
+    padding: 0;
+    font-size: 18px;
+  }
+  .btn-save {
+    margin-left: auto;
+    margin-right: 15%;
+    margin-top: 30px;
+    margin-bottom: 100px;
+  }
+  .address-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-end;
+    gap: 30px;
+  }
+  .entry-separator {
+    display: none;
+    border: none;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+  .delete-entry {
+    right: -103px;
+    top: auto;
+    margin-bottom: 2px;
+  }
+  .form-closing2 {
+    width: calc(50% - 8px);
+  }
+  .slider {
+    top: 7px;
+    left: 217px;
+    right: -213px;
+    bottom: -7px;
+  }
+  .ticket-input {
+    position: relative;
+    display: grid !important;
+    grid-template-columns: 5fr 1fr 1fr;
+  }
+  .input-form {
+    margin-bottom: 0%;
+  }
+  .label-address {
+    font-size: 18px;
+  }
+  .form-additional-images label,
+  .form-data label,
+  .form-data-image label {
+    font-size: 18px;
+  }
+  #add-entry {
+    font-size: 16px;
+  }
+  .label-direction {
+    margin-top: 16px;
+  }
 }
 
 /*# sourceMappingURL=app.css.map */
