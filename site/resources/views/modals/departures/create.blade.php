@@ -12,32 +12,34 @@
                 <form method="POST" action="{{ route('departures.store', ['language' => app()->getLocale()]) }}">
                     @csrf
                     <div class="form__group">
-                        <label for="boatId" class="form__group__content" data-text="boatId"></label>
-                        {{-- <input type="text" class="form__group__input" id="boatId" name="boat_id"
-                            placeholder="ID del barco"> --}}
-                        <select class="form__group__select" name="boat_name">
-                            @foreach ($departures as $departure)
-                                <option value="{{ $departure->id }}">{{ $departure->id }}</option>
+                        <label for="boat_name" class="form__group__content" data-text="boatNameModal"></label>
+                        <select class="form__group__select" name="boat_name" id="boat_name">
+                            @foreach ($boats as $boat)
+                                <option value="{{ $boat->id }}">{{ $boat->name }}</option>
                             @endforeach
                         </select>
                     </div>
                     <div class="form__group">
-                        <label for="transectId" class="form__group__content" data-text="transectId"></label>
-                        <input type="text" class="form__group__input" id="transectId" name="transect_id"
-                            placeholder="ID del transecto">
+                        <label for="transect_name" class="form__group__content" data-text="transectNameModal"></label>
+                        <select class="form__group__select" name="transect_name" id="transect_name">
+                            @foreach ($transects as $transect)
+                                <option value="{{ $transect->id }}">{{ $transect->name }}</option>
+                            @endforeach
+                        </select>
                     </div>
                     <div class="form__group">
-                        <label for="date" class="form__group__content" data-text="date"></label>
+                        <label for="date" class="form__group__content" data-text="dateModal"></label>
                         <input type="date" class="form__group__input" id="date" name="date">
                     </div>
-                    <div class="form__group">
+                    {{-- <div class="form__group">
                         <label for="time" class="form__group__content" data-text="time"></label>
                         <input type="time" class="form__group__input" id="time" name="time">
-                    </div>
+                    </div> --}}
                     <div class="form__group__buttons">
                         <button type="button" class="btn-close form__button__back" data-bs-dismiss="modal"
                             data-text="cancelButton"></button>
-                        <button type="submit" class="btn btn-primary form__button" data-text="saveButton"></button>
+                        <button type="submit" class="btn btn-primary form__button__success"
+                            data-text="saveButton"></button>
                     </div>
                 </form>
             </article>

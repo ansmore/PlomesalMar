@@ -1,48 +1,78 @@
 .modal__management__big {
   @extend .modalShadow;
   // To delete deleloperMode
-  // display: block;
+  display: block;
 
   &__box {
-    @extend .modalBox;
-
+    position: relative;
     top: 5vh;
     left: 5vw;
+    background: $neutral_lighter;
+    @include mainBox(column, center, center);
     @include boxSize(width, 90vw, null, 90vw);
-    @include boxSize(height, 90vh, null, 90vh);
+    @include boxSize(height, 90vh, null);
+    border-radius: $radius;
+    border: 1px solid $primary_main;
 
-    // border: 1px solid $primary_main;
-    @include hover($neutral_lighter,
-      inherit,
-      $primary_main,
-      $primary_main);
 
     .body {
-      @extend .article;
-
       @include mainBox(column, space-around, flex-start);
+      @include paddingMargin($padding, $margin);
       @include boxSize(width, 85vw, null, 85vw);
-      @include boxSize(height, 85vh, null, 85vh);
+      @include boxSize(height, 85vh, null);
+      gap: $gap;
+      hyphens: auto;
+      font-size: $size_smaller;
+      line-height: 1.5;
+      text-align: center;
+      // overflow: hidden;
+
+      p {
+        text-align: left;
+
+        span {
+
+          text-align: left;
+        }
+      }
 
       &__title {
         @extend .title;
+
+        padding-top: 2rem;
       }
 
       .form {
-        @extend .form;
-
         @include mainBox(column, flex-start, center);
+        @include paddingMargin($padding, $margin);
         @include boxSize(width, 80vw, null, 80vw);
-        // @include boxSize(height, 75vh, null, 75vh);
+        @include boxSize(height, 75vh, null);
+        gap: $gap;
+        hyphens: auto;
+        font-size: $size_smaller;
+        line-height: 1.5;
+        text-align: center;
+        // overflow: hidden;
+
+        p {
+          text-align: left;
+
+          span {
+
+            text-align: left;
+          }
+        }
 
         &__group {
+          min-width: 80vw;
+
           &__content {
             @extend .subtitle;
           }
 
           &__input {
             @extend .formInput;
-            @include boxSize(width, 35vw, null, 35vw);
+            @include boxSize(width, 14rem, null, 50%);
 
             @include hover($neutral_lighter,
               $primary_light, $primary_main,
@@ -51,11 +81,12 @@
 
           &__select {
             @extend .formSelect;
-            @include boxSize(width, 35vw, null, 35vw);
+            @include boxSize(width, 14rem, null, 50%);
           }
 
           &__buttons {
-            @include mainBox(row, space-between, center);
+            @include mainBox(row, center, center);
+            gap: $gap;
           }
         }
       }
@@ -70,10 +101,10 @@
       position: absolute;
       top: 0;
       right: 0;
-      width: 50px;
-      height: 50px;
+      width: 40px;
+      height: 40px;
       text-align: center;
-      font-size: 50px;
+      font-size: 40px;
       cursor: pointer;
     }
   }
@@ -98,6 +129,34 @@
 
 @media screen and (min-width: 376px) and (max-width: 600px) {}
 
-@media screen and (min-width: 601px) and (max-width: 1024px) {}
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+
+  .modal__management__big {
+    &__box {
+      .body {
+        .form {
+          &__group {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+
+            &__content {
+              text-align: right;
+            }
+
+            &__input,
+            &__select {
+              margin-left: 0.25rem;
+              display: flex;
+              justify-items: start;
+              text-align: left;
+              align-self: start;
+            }
+          }
+        }
+      }
+    }
+  }
+}
 
 @media screen and (min-width: 1025px) {}

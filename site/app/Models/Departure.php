@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Models\Boat;
 use App\Models\Transect;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -27,7 +28,7 @@ class Departure extends Model
 
     /**
      * Busca salidas basadas en el término de búsqueda proporcionado.
-     * 
+     *
      * @param Builder $query
      * @param string|null $search Término de búsqueda
      * @return Builder
@@ -47,7 +48,7 @@ class Departure extends Model
 
     /**
      * Recupera departures filtrados según los criterios de búsqueda y ordenación almacenados en la sesión.
-     * 
+     *
      * @param Request $request
      * @return \Illuminate\Contracts\Pagination\LengthAwarePaginator
      */
@@ -63,4 +64,44 @@ class Departure extends Model
                     ->paginate($perPage);
     }
 
+	/**
+	 * Creem una sortida a partir de les dades proporcionades en la solicitut.
+	 *
+	 * @param Request $request
+	 * @return Deperture
+	 */
+	public static function createFromRequest(Request $request): Departure
+	{
+		$newDeparture = self::create([
+			'boat_id'=> $request->input('boat_id'),
+			'transect_id'=> $request->input('transect_id'),
+			'date'=> $request->input('date'),
+		]);
+
+		Log::info('Departure created from request:', [
+			'boat_id' => $newDeparture->boat_id,
+			'transect_id' => $newDeparture->transect_id,
+			'date' => $newDeparture->date
+		]);
+
+		return $newDeparture;
+	}
+
+	/**
+	 * Actualitzem una sortida a partir de les dades proporcionades en la solicitut.
+	 *
+	 * @param Request $request
+	 * @param int $id Identificador de la sortida a actualizar.
+	 * @return bool
+	 */
+	public static function updateFromRequest(Request $request, $id): bool
+	{
+		$departure = self::find($id);
+		if($departure) {
+			$departure->update($request->all());
+			return true;
+		}
+
+		return false;
+	}
 }

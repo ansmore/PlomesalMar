@@ -1,9 +1,12 @@
 import { setupModalEventListenersSpecies } from "../modals/species/modals.js";
 import { setupModalEventListenersBoats } from "../modals/boats/modals.js";
 import { setupModalEventListenersTransects } from "../modals/transects/modals.js";
+import { setupModalEventListenersDepartures } from "../modals/departures/modals.js";
 document.addEventListener("DOMContentLoaded", () => {
     const body = document.querySelector("main");
-    const view = body ? body.getAttribute("data-view") ?? undefined : undefined;
+    const view = body
+        ? body.getAttribute("data-view") ?? undefined
+        : undefined;
     const filtro = document.getElementById("filtro");
     let debounceTimeout;
     const setupModals = (view) => {
@@ -15,6 +18,9 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         else if (view === "transects") {
             setupModalEventListenersTransects();
+        }
+        else if (view === "departures") {
+            setupModalEventListenersDepartures();
         }
     };
     const bindPaginationLinks = () => {

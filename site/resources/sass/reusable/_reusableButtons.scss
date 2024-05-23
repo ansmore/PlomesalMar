@@ -1,6 +1,6 @@
 .button {
   @include button($primary_main, $neutral_lighter);
-  @include paddingMargin(calc($padding * 2), calc($margin * 2) auto);
+  @include paddingMargin(calc($padding * 2), calc($margin * 2));
   border-radius: $radius;
 
   @include hover($primary_light, $neutral_lighter, $primary_dark);
