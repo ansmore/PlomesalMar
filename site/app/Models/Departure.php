@@ -26,6 +26,11 @@ class Departure extends Model
         return $this->belongsTo(Transect::class);
     }
 
+    public function users()
+    {
+        return $this->belongsToMany(User::class, 'departure_user_observations', 'departure_id', 'user_id');
+    }
+
     /**
      * Busca salidas basadas en el término de búsqueda proporcionado.
      *

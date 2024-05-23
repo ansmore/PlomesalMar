@@ -47,6 +47,11 @@ class User extends Authenticatable
         return $this->belongsToMany(Role::class);
     }
 
+    public function departures()
+    {
+        return $this->belongsToMany(Departure::class, 'departure_user_observations', 'user_id', 'departure_id');
+    }
+    
     // public function observationImages(){
     //     return $this->hasMany(ObservationImage::class);
     // }

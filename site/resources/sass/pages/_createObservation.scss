@@ -1,0 +1,507 @@
+.observation-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .label-form {
+        font-size: 20px;
+        margin-top: 20px;
+    }
+
+    .input-form {
+        width: 100%;
+        padding: 10px;
+        border-radius: 8px;
+        border: 1px solid black;
+        font-size: 16px;
+        margin-top: 6px;
+        box-sizing: border-box;
+        background-color: #fff;
+        margin-bottom: 20px;
+    }
+
+    .textarea-form {
+        width: 100%;
+        margin-top: 6px;
+        padding: 10px;
+        border-radius: 8px;
+        border: 1px solid black;
+        font-size: 16px;
+    }
+
+    .form-section {
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .form-heading {
+        font-size: 24px;
+        margin-left: 15%;
+        margin-right: auto;
+        margin-top: 50px;
+    }
+
+    .close-modal {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+    }
+
+    .overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1001;
+    }
+
+    .modal {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1002;
+        width: 80%;
+        max-width: 400px;
+        background-color: #fff;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 16px;
+    }
+
+    .close {
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        font-size: 28px;
+        cursor: pointer;
+    }
+
+    .new-address-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 80%;
+        margin: auto;
+    }
+
+    #save-address {
+        border-radius: 20px;
+        font-size: 18px;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        width: 150px;
+        color: #fff;
+    }
+
+    .btn-save {
+        margin-top: 50px !important;
+        margin-bottom: 60px !important;
+    }
+
+    #close-modal-address {
+        background-color: #fff;
+        color: black;
+        border: 1px solid black;
+        border-radius: 20px;
+        font-size: 18px;
+        margin: 0px 0px;
+        width: 150px;
+    }
+
+    .btn-form {
+        border-radius: 20px;
+        font-size: 18px;
+        margin-top: 36px;
+        width: 220px;
+        padding: 10px 30px;
+        white-space: nowrap;
+    }
+
+    .form-title {
+        font-size: 28px;
+    }
+
+    .form-group {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .form-main-info {
+        width: 100%;
+    }
+
+    .form-data-image {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .form-textarea {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    .label-address {
+        position: relative;
+        display: inline-block;
+        font-size: 20px;
+        color: var(--text-detail);
+        width: 100%;
+
+        select {
+            width: 100%;
+            display: block;
+            min-height: 35px;
+            border-radius: 3px;
+            border: 2px solid #2196F3;
+            outline: none;
+            padding: 0 20px 0 10px;
+            height: 42px;
+            margin-top: 5px;
+            cursor: pointer;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            -ms-appearance: none;
+        }
+
+        &::after {
+            content: '';
+            border-width: 5px;
+            border-style: solid;
+            border-color: transparent;
+            border-top-color: #222;
+            display: inline-block;
+            border-radius: 2px;
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+        }
+
+        .selector-options {
+            list-style: none;
+            padding: 5px 0;
+            margin: 0;
+            background: #11436b;
+            color: #fff;
+            border-radius: 4px;
+            z-index: 1;
+            width: 96%;
+            position: absolute;
+            left: 2%;
+            top: 35%;
+            max-height: 360px;
+            overflow: scroll;
+
+            li {
+                height: 35px;
+                display: flex;
+                align-items: center;
+                padding: 0 15px;
+                cursor: pointer;
+
+                &:hover {
+                    background: #03A9F4;
+                }
+            }
+        }
+    }
+
+    .entry-separator {
+        border: 1px solid gray;
+        margin-top: 30px;
+        margin-bottom: 10px;
+        display: none;
+        width: 100%;
+    }
+
+    .ticket-type {
+        width: 100%;
+    }
+
+    .ticket-input {
+        position: relative;
+        display: grid;
+        margin-top: 20px;
+        grid-template-columns: 1fr;
+    }
+
+    .delete-entry {
+        position: absolute;
+        color: white;
+        right: 0px;
+        top: 287px;
+        font-size: 16px;
+        background-color: var(--main);
+        border-radius: 6px;
+    }
+
+    #add-entry {
+        background-color: inherit;
+        font-size: 16px;
+        color: rgb(49, 49, 49);
+        margin-right: auto;
+        padding-left: 0;
+    }
+
+    .icon-plus {
+        font-size: 28px;
+        vertical-align: -4px;
+        margin-right: 5px;
+    }
+
+    .form-closing {
+        margin-top: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        select {
+            font-size: 16px;
+        }
+    }
+
+    .label-category {
+        width: 100%;
+        padding: 0;
+
+        select {
+            width: 100%;
+        }
+    }
+
+    .select-desktop {
+        width: 100% !important;
+        left: 0% !important;
+        font-size: 16px;
+    }
+
+    .form-additional-images {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+
+        input,
+        .form-data input,
+        .form-data-image input {
+            margin-top: 4px;
+        }
+
+        label,
+        .form-data label,
+        .form-data-image label {
+            font-size: 20px;
+        }
+    }
+
+    .extra-info-container {
+        align-items: flex-start;
+        margin-top: 30px;
+    }
+
+    .primary-detail {
+        display: flex;
+        flex-direction: row;
+        width: 22%;
+        white-space: nowrap;
+        justify-content: space-between;
+        margin-top: 35px;
+
+        input {
+            min-width: 16px;
+            max-width: 16px;
+            margin: 0px 0px 0px 15px;
+        }
+    }
+
+    .secondary-detail input {
+        margin: 0px 0px 0px 22px;
+    }
+
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: 60px;
+        font-size: 20px;
+        height: 30px;
+
+        input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: -1px;
+            left: 217px;
+            right: -213px;
+            bottom: 1px;
+            background-color: #ccc;
+            -webkit-transition: .4s;
+            transition: .4s;
+
+            &:before {
+                position: absolute;
+                content: "";
+                height: 22px;
+                width: 22px;
+                left: 4px;
+                bottom: 4px;
+                background-color: white;
+                -webkit-transition: .4s;
+                transition: .4s;
+            }
+        }
+
+        input:checked + .slider {
+            background-color: var(--main);
+        }
+
+        input:focus + .slider {
+            box-shadow: 0 0 1px var(--main);
+        }
+
+        input:checked + .slider:before {
+            -webkit-transform: translateX(26px);
+            -ms-transform: translateX(26px);
+            transform: translateX(26px);
+        }
+
+        .round {
+            border-radius: 34px;
+
+            &:before {
+                border-radius: 50%;
+            }
+        }
+    }
+
+    .max-capacity-video {
+        width: 100%;
+        padding-top: 10px;
+    }
+
+    .label-direction {
+        padding: 5px;
+        margin-right: auto;
+        margin-top: 0px;
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 768px) {
+    .form-main-info {
+        width: 100%;
+        display: flex;
+        gap: 16px;
+        align-items: flex-end;
+    }
+
+    .max-capacity-video {
+        width: 50%;
+    }
+
+    .form-data-image {
+        width: 100%;
+    }
+
+    .date-input {
+        text-align: center;
+        width: min-content;
+        height: 46.5px;
+    }
+
+    .form-data {
+        width: min-content;
+    }
+
+    .label-form {
+        margin-top: 30px;
+        padding: 0;
+        font-size: 18px;
+    }
+
+    .btn-save {
+        margin-left: auto;
+        margin-right: 15%;
+        margin-top: 30px;
+        margin-bottom: 100px;
+    }
+
+    .address-section {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-end;
+        gap: 30px;
+    }
+
+    .entry-separator {
+        display: none;
+        border: none;
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+
+    .delete-entry {
+        right: -103px;
+        top: auto;
+        margin-bottom: 2px;
+    }
+
+    .form-closing2 {
+        width: calc(50% - 8px);
+    }
+
+    .slider {
+        top: 7px;
+        left: 217px;
+        right: -213px;
+        bottom: -7px;
+    }
+
+    .ticket-input {
+        position: relative;
+        display: grid !important;
+        grid-template-columns: 5fr 1fr 1fr;
+    }
+
+    .input-form {
+        margin-bottom: 0%;
+    }
+
+    .label-address {
+        font-size: 18px;
+    }
+
+    .form-additional-images label,
+    .form-data label,
+    .form-data-image label {
+        font-size: 18px;
+    }
+
+    #add-entry {
+        font-size: 16px;
+    }
+
+    .label-direction {
+        margin-top: 16px;
+    }
+}
