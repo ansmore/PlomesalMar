@@ -15,7 +15,6 @@ class ImageObservationSeeder extends Seeder
      */
     public function run(): void
     {
-        // Crear registros específicos si necesitas datos iniciales específicos
         $observation1 = Observation::find(5) ?? Observation::factory()->create();
         $user1 = User::find(1) ?? User::factory()->create();
         ImageObservation::factory()->create([
@@ -32,7 +31,6 @@ class ImageObservationSeeder extends Seeder
             'photography_number' => 1020
         ]);
 
-        // Crear registros adicionales de forma aleatoria
         ImageObservation::factory()->count(5)->create();
     }
 }
