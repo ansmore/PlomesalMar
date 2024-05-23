@@ -39,8 +39,7 @@ class Departure extends Model
             return $query->where(function($query) use ($search) {
                 $query->where('boat_id', '=', $search)
                     ->orWhere('transect_id', '=', $search)
-                    ->orWhere('date', 'like', '%' . $search . '%')
-                    ->orWhere('time', 'like', $search . '%');
+                    ->orWhere('date', 'like', '%' . $search . '%');
             });
         }
         return $query;
