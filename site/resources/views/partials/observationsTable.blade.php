@@ -23,6 +23,7 @@
                         <i class="fas fa-arrow-down"></i>
                     </a>
                 </th>
+                <th scope="col" data-text="image"></th>
                 <th scope="col" data-text="flight"></th>
                 <th scope="col" data-text="distance"></th>
                 <th scope="col" data-text="actions" class="table__title"></th>
@@ -34,6 +35,20 @@
                     <td>{{ $observation->time }}</td>
                     <td>{{ $observation->waypoint }}</td>
                     <td>{{ $observation->number_of_individuals }}</td>
+                    <td>
+                        @if ($observation->firstImage)
+                            <picture class="contenedorImagen">
+                                <source media="(max-width: 799px)"
+                                    srcset="{{ $observation->firstImage->getUrl('small') }}" loading="lazy">
+                                <source media="(min-width: 800px) and (max-width: 1023px)"
+                                    srcset="{{ $observation->firstImage->getUrl('medium') }}" loading="lazy">
+                                <img src="{{ $observation->firstImage->getUrl('large') }}" loading="lazy"
+                                    class="img-fluid">
+                            </picture>
+                        @else
+                            No images
+                        @endif
+                    </td>
                     <td>
                         @if ($observation->in_flight)
                             <i class="fas fa-check" style="font-size: 1.5rem;"></i>
@@ -48,11 +63,9 @@
                             <i class="fas fa-close" style="font-size: 1.5rem;"></i>
                         @endif
                     </td>
-                    <td class="icons">
+                    <td class="iconsImage">
                         <button type="button" class="buttonTable__success" data-bs-toggle="modal"
-                            data-bs-target="editobservationsModal" title="Editar" data-id="{{ $observation->id }}"
-                            data-common-name="{{ $observation->common_name }}"
-                            data-scientific-name="{{ $observation->scientific_name }}">
+                            data-bs-target="editobservationsModal" title="Editar" data-id="{{ $observation->id }}">
                             <i class="fas fa-pencil"></i>
                         </button>
                     </td>
@@ -99,3 +112,11 @@
         </li>
     </ul>
 </nav>
+
+<style>
+    .contenedorImagen img {
+        width: 100%;
+        height: auto;
+        max-width: 5rem;
+    }
+</style>

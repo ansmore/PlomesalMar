@@ -125,17 +125,37 @@
             const div = document.createElement('div');
             div.classList.add('form-group');
 
+            const index = container.children.length;
+
             div.innerHTML = `
-            <label for="image_user">Usuario</label>
-            <select name="image_user_id[]" class="select-desktop" required>
+            <label for="image_user_${index}">Usuario</label>
+            <select name="image_user_id[]" id="image_user_${index}" class="select-desktop" required>
                 ${document.getElementById('users').innerHTML}
             </select>
-            <label for="image_number">Número de Imagen</label>
-            <input type="number" name="image_number[]" class="input-form" required>
-            <label for="image_file">Imagen</label>
-            <input type="file" name="image_file[]" class="input-form" accept="image/*" required>
+            <label for="image_number_${index}">Número de Imagen</label>
+            <input type="number" name="image_number[]" id="image_number_${index}" class="input-form" required>
+            <label for="image_file_${index}">Imagen</label>
+            <input type="file" name="image_file[]" id="image_file_${index}" class="input-form" accept="image/*" required onchange="previewImage(event, ${index})">
+            <img id="image_preview_${index}" src="" alt="Vista previa de la imagen" style="display:none; max-width: 200px; margin-top: 10px;">
         `;
             container.appendChild(div);
+        }
+
+        function previewImage(event, index) {
+            const input = event.target;
+            const preview = document.getElementById(`image_preview_${index}`);
+
+            if (input.files && input.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    preview.src = e.target.result;
+                    preview.style.display = 'block';
+                }
+                reader.readAsDataURL(input.files[0]);
+            } else {
+                preview.src = '';
+                preview.style.display = 'none';
+            }
         }
     </script>
 @endpush
