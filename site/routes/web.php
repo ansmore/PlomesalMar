@@ -14,6 +14,7 @@ use App\Http\Controllers\SpecieController;
 use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\TransectController;
 use App\Http\Controllers\DepartureController;
+use App\Http\Controllers\ObservationController;
 use App\Http\Controllers\PlomesalmarController;
 
 
@@ -123,6 +124,10 @@ Route::prefix('/{language?}')->group(function () {
     // Departures routes
     Route::resource('departures', DepartureController::class)->except(['index']);
 	Route::get('/departures', [DepartureController::class, 'index'])->name('departures');
+
+	// Observations routes
+	Route::resource('observations', ObservationController::class)->except(['index']);
+	Route::get('/observations', [ObservationController::class, 'index'])->name('observations');
 });
 
 // Route::fallback([HomeController::class, 'index']);
