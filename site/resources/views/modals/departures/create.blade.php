@@ -1,7 +1,7 @@
-<section class="modal fade modal-common modal__management" id="createDeparture" tabindex="-1"
+<section class="modal fade modal-common modal__management__big" id="createDeparture" tabindex="-1"
     aria-labelledby="modalLabelNuevo" aria-hidden="true">
 
-    <div class="modal-dialog modal-lg modal__management__box">
+    <div class="modal-dialog modal-lg modal__management__big__box">
         <button type="button" class="btn-close close" data-bs-dismiss="modal" aria-label="Cerrar">
             <i class="fa-solid fa-xmark"></i>
         </button>
@@ -13,8 +13,13 @@
                     @csrf
                     <div class="form__group">
                         <label for="boatId" class="form__group__content" data-text="boatId"></label>
-                        <input type="text" class="form__group__input" id="boatId" name="boat_id"
-                            placeholder="ID del barco">
+                        {{-- <input type="text" class="form__group__input" id="boatId" name="boat_id"
+                            placeholder="ID del barco"> --}}
+                        <select class="form__group__select" name="boat_name">
+                            @foreach ($departures as $departure)
+                                <option value="{{ $departure->id }}">{{ $departure->id }}</option>
+                            @endforeach
+                        </select>
                     </div>
                     <div class="form__group">
                         <label for="transectId" class="form__group__content" data-text="transectId"></label>

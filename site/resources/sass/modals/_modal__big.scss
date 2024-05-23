@@ -1,0 +1,103 @@
+.modal__management__big {
+  @extend .modalShadow;
+  // To delete deleloperMode
+  // display: block;
+
+  &__box {
+    @extend .modalBox;
+
+    top: 5vh;
+    left: 5vw;
+    @include boxSize(width, 90vw, null, 90vw);
+    @include boxSize(height, 90vh, null, 90vh);
+
+    // border: 1px solid $primary_main;
+    @include hover($neutral_lighter,
+      inherit,
+      $primary_main,
+      $primary_main);
+
+    .body {
+      @extend .article;
+
+      @include mainBox(column, space-around, flex-start);
+      @include boxSize(width, 85vw, null, 85vw);
+      @include boxSize(height, 85vh, null, 85vh);
+
+      &__title {
+        @extend .title;
+      }
+
+      .form {
+        @extend .form;
+
+        @include mainBox(column, flex-start, center);
+        @include boxSize(width, 80vw, null, 80vw);
+        // @include boxSize(height, 75vh, null, 75vh);
+
+        &__group {
+          &__content {
+            @extend .subtitle;
+          }
+
+          &__input {
+            @extend .formInput;
+            @include boxSize(width, 35vw, null, 35vw);
+
+            @include hover($neutral_lighter,
+              $primary_light, $primary_main,
+              $neutral_dark);
+          }
+
+          &__select {
+            @extend .formSelect;
+            @include boxSize(width, 35vw, null, 35vw);
+          }
+
+          &__buttons {
+            @include mainBox(row, space-between, center);
+          }
+        }
+      }
+    }
+
+    .close {
+      @extend .buttonTable__close;
+
+      @include mainBox(column, center);
+      @include style($danger_main, $danger_lighter);
+      @include hover($danger_main, $danger_lighter, $danger_dark, $danger_main);
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 50px;
+      height: 50px;
+      text-align: center;
+      font-size: 50px;
+      cursor: pointer;
+    }
+  }
+}
+
+.danger {
+  .modal__management__box {
+    // border: 1px solid $danger_main;
+    @include hover($neutral_lighter,
+      inherit,
+      $danger_main,
+      $danger_main);
+
+
+    .body {
+      &__title {
+        color: $danger_main;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 376px) and (max-width: 600px) {}
+
+@media screen and (min-width: 601px) and (max-width: 1024px) {}
+
+@media screen and (min-width: 1025px) {}

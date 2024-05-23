@@ -1,7 +1,7 @@
-<section class="modal fade modal-common modal__management" id="detailsDepartureModal" tabindex="-1"
+<section class="modal fade modal-common modal__management__big" id="detailsDepartureModal" tabindex="-1"
     aria-labelledby="detailsDepartureLabel" aria-hidden="true">
 
-    <div class="modal-dialog modal-lg modal__management__box">
+    <div class="modal-dialog modal-lg modal__management__big__box">
         <button type="button" class="btn-close close" data-bs-dismiss="modal" aria-label="Cerrar">
             <i class="fa-solid fa-xmark"></i>
         </button>

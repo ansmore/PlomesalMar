@@ -1,10 +1,10 @@
-.selectList {
+.formSelect {
+  @include paddingMargin(1rem, $margin auto);
+
   background-color: inherit;
   color: inherit;
   border-radius: $radius;
-  padding: 8px;
   border: 1px solid $primary_main;
-
 
   &:focus {
     outline: none;
@@ -15,4 +15,8 @@
   option {
     @include style($primary_main, $neutral_lighter);
   }
+
+  font-size: 1rem;
+  position: relative;
+  padding-right: 40px;
 }

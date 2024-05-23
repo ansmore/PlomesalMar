@@ -37,7 +37,8 @@
         }
 
         .select {
-          @extend .selectList;
+          @extend .formSelect;
+          @include boxSize(width, 35vw, null, 35vw);
         }
       }
     }
