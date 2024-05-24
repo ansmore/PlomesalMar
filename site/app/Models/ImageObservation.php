@@ -29,4 +29,24 @@ class ImageObservation extends Model
     {
         return $this->belongsTo(User::class, 'user_id');
     }
+
+    public function getUrl($size = 'medium')
+    {
+        return config('services.api.url') . "/api/V1/optimized-images/{$this->image_id}/{$size}";
+    }
+
+    public function getUrlSmall()
+    {
+        return $this->getUrl('small');
+    }
+
+    public function getUrlMedium()
+    {
+        return $this->getUrl('medium');
+    }
+
+    public function getUrlLarge()
+    {
+        return $this->getUrl('large');
+    }
 }
