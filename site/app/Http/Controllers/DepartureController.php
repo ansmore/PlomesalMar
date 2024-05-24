@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Boat;
 use App\Models\Transect;
 use App\Models\Departure;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 
@@ -21,13 +22,15 @@ class DepartureController extends Controller
     public function index(Request $request, $language = null)
     {
         $departures = Departure::getFilteredDepartures($request);
-		$boats = Boat::getFilteredBoats($request);
-		$transects = Transect::getFilteredTransects($request);
+		$boats = Boat::all();
+		$transects = Transect::all();
+		$users = User::all();
         return view('pages.departures', [
 			'language' => $language,
 			'departures' => $departures,
 			'boats' => $boats,
 			'transects' => $transects,
+			'users' => $users,
 		]);
     }
 
@@ -36,14 +39,21 @@ class DepartureController extends Controller
      */
     public function store(Request $request, $language = null)
     {
-        $validated = $request->validate([
-			'boat_id' => 'required|string|max:255',
-			'transect_id' => 'required|string|max:255',
-			'date' => 'required|string|max:255'
+		// dd($request);
+
+		$validated = $request->validate([
+			'boat_id' => 'required|exists:boats,id',
+			'transect_id' => 'required|exists:transects,id',
+			'date' => 'required|date',
+			// 'usersIds' => 'required|array',
+			// 'userdIds.*' => 'required|exists:users,id'
 		]);
 
+		// dd($validated);
+
+
 		try{
-			$transect = Departure::createFromRequest($request);
+			$departure = Departure::createFromRequest($request);
 			return redirect()->back()->with('status', "La sortida s'ha creat amb exit. ");
 		} catch(\Exception $e){
 			Log::error('Error al intentar crear un nuevo barco en la base de datos: ' . $e->getMessage());

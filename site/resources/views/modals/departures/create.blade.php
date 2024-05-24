@@ -13,7 +13,7 @@
                     @csrf
                     <div class="form__group">
                         <label for="boat_name" class="form__group__content" data-text="boatNameModal"></label>
-                        <select class="form__group__select" name="boat_name" id="boat_name">
+                        <select class="form__group__select" name="boat_id" id="boat_id">
                             @foreach ($boats as $boat)
                                 <option value="{{ $boat->id }}">{{ $boat->name }}</option>
                             @endforeach
@@ -21,20 +21,25 @@
                     </div>
                     <div class="form__group">
                         <label for="transect_name" class="form__group__content" data-text="transectNameModal"></label>
-                        <select class="form__group__select" name="transect_name" id="transect_name">
+                        <select class="form__group__select" name="transect_id" id="transect_id">
                             @foreach ($transects as $transect)
                                 <option value="{{ $transect->id }}">{{ $transect->name }}</option>
                             @endforeach
                         </select>
                     </div>
+                    {{-- <div class="form__group">
+                        <label for="boat_name" class="form__group__content" data-text="boatNameModal"></label>
+                        <select class="form__group__select" name="boat_id" id="boat_id">
+                            @foreach ($users as $user)
+                                <option value="{{ $user->id }}">{{ $user->name }}</option>
+                            @endforeach
+                        </select>
+                    </div> --}}
                     <div class="form__group">
                         <label for="date" class="form__group__content" data-text="dateModal"></label>
                         <input type="date" class="form__group__input" id="date" name="date">
                     </div>
-                    {{-- <div class="form__group">
-                        <label for="time" class="form__group__content" data-text="time"></label>
-                        <input type="time" class="form__group__input" id="time" name="time">
-                    </div> --}}
+
                     <div class="form__group__buttons">
                         <button type="button" class="btn-close form__button__back" data-bs-dismiss="modal"
                             data-text="cancelButton"></button>
