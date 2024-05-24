@@ -88,7 +88,7 @@ class Observation extends Model
         $orderByField = $request->input('orderByField', 'id');
         $orderByDirection = $request->input('orderByDirection', 'asc');
 
-        $perPage = config('app.per_page');
+        $perPage = 6;
 
         return self::query()
                     ->search($request->search)
