@@ -61,18 +61,34 @@ class DepartureController extends Controller
 		}
     }
 
+	public function edit($id, $language = null)
+	{
+		$departure = Departure::findOrFail($id);
+		$boats = Boat::all();
+		$transects = Transect::all();
+
+		return view('departures.edit', [
+			'departure' => $departure,
+			'boats' => $boats,
+			'transects' => $transects,
+			'language' => $language,
+		]);
+	}
+
     /**
      * Update the specified resource in storage.
      */
     public function update(Request $request, $language, $id)
     {
-       $validated = $request->validate([
-			'boat_id' => 'required|string|max:255',
-			'transect_id' => 'required|string|max:255',
-			'date' => 'required|string|max:255'
+       	$validated = $request->validate([
+			'boat_id' => 'required|exists:boats,id',
+			'transect_id' => 'required|exists:transects,id',
+			'date' => 'required|date',
 		]);
 
 		try {
+			// $departure = Departure::findOrFail($id);
+        	// $departure->update($validated);
             $success = Departure::updateFromRequest($request, $id);
             if ($success) {
                 return redirect()->back()->with('status', "La sortida s'ha actualitzat amb exit.");

@@ -98,10 +98,8 @@ const handleEditDepartureModal = (
 	departureId: string,
 ) => {
 	const editForm = modal.querySelector<HTMLFormElement>("form");
-	const inputDepartureId =
-		modal.querySelector<HTMLInputElement>("#departureId");
 
-	if (!editForm || !inputDepartureId) {
+	if (!editForm) {
 		console.error(
 			"Faltan el formulario o campos de entrada en el modal de edición",
 		);
@@ -116,7 +114,7 @@ const handleEditDepartureModal = (
 		return;
 	}
 
-	inputDepartureId.value = departureId;
+	// inputDepartureId.value = departureId;
 	openModal(modal);
 };
 
