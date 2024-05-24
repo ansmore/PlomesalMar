@@ -872,8 +872,13 @@ button {
   }
 }
 .card .table td .row .select {
-  min-width: 35vw;
-  max-width: 35vw;
+  min-width: 10rem;
+  max-width: 35%;
+  margin-left: 0.25rem;
+}
+.card .table td .row .form__button__success {
+  margin: 0.25rem auto;
+  margin-left: 0.25rem;
 }
 .card .table .decoration {
   text-decoration: none;
