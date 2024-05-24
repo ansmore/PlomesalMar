@@ -2,5 +2,10 @@
 	"departuresList": "Lista de salidas",
 
 	"newDeparture": "Agregar nueva salida",
-	"editDeparture": "Editar salida"
+	"editDeparture": "Editar salida",
+	"detailsDeparture": "Detalles de la salida",
+
+	"boatNameModal": "Nombre del barco: ",
+	"transectNameModal": "Nombre del transecto: ",
+	"dateModal": "Fecha: "
 }

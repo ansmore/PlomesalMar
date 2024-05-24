@@ -1,10 +1,14 @@
-.selectList {
+.formSelect {
+  @include paddingMargin(0.75rem, $margin auto);
+
   background-color: inherit;
   color: inherit;
+  @include hover($neutral_lightest,
+    inherit,
+    $primary_main,
+    $neutral_dark );
   border-radius: $radius;
-  padding: 8px;
-  border: 1px solid $primary_main;
-
+  // border: 1px solid $primary_main;
 
   &:focus {
     outline: none;
@@ -15,4 +19,31 @@
   option {
     @include style($primary_main, $neutral_lighter);
   }
+
+  font-size: $size_medium;
+  position: relative;
+  padding-right: 40px;
+}
+
+.formInput {
+  @include paddingMargin(0.75rem, $margin auto);
+  @include style($secondary_main, $neutral_lighter);
+  @include boxSize(width, 75vw, null, 75vw);
+
+  @include hover($neutral_lightest,
+    inherit,
+    $primary_main,
+    $neutral_dark );
+  border-radius: $radius;
+
+  font-size: $size_medium;
+}
+
+.consent {
+  @include mainBox(row, center, center);
+  @include paddingMargin(0, $margin auto);
+}
+
+.form {
+  @extend .article;
 }

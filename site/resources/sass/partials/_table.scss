@@ -37,7 +37,14 @@
         }
 
         .select {
-          @extend .selectList;
+          @extend .formSelect;
+          @include boxSize(width, 10rem, null, 35%);
+          margin-left: 0.25rem;
+        }
+
+        .form__button__success {
+          margin: 0.25rem auto;
+          margin-left: 0.25rem;
         }
       }
     }
@@ -65,7 +72,6 @@
 .iconsImage {
   gap: 5px;
 }
-
 
 
 .button__danger {

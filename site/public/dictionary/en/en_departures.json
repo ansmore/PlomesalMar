@@ -2,5 +2,10 @@
 	"departuresList": "List of deparures",
 
 	"newDeparture": "Add new departure",
-	"editDeparture": "Edit departure"
+	"editDeparture": "Edit departure",
+	"detailsDeparture": "Details of departure",
+
+	"boatNameModal": "Boat name: ",
+	"transectNameModal": "Transect name: ",
+	"dateModal": "Date: "
 }

@@ -77,24 +77,3 @@
     font-size: $size_big
   }
 }
-
-.formInput {
-  @include paddingMargin(1rem, $margin auto);
-  @include style($secondary_main, $neutral_lighter);
-  @include boxSize(width, 75vw, null, 75vw);
-
-  @include hover($neutral_lightest,
-    inherit,
-    $primary_main,
-    $neutral_dark );
-  border-radius: $radius;
-}
-
-.consent {
-  @include mainBox(row, center, center);
-  @include paddingMargin(0, $margin auto);
-}
-
-.form {
-  @extend .article;
-}
