@@ -2,11 +2,13 @@
 
 namespace App\Models;
 
+use Illuminate\Http\Request;
+use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
-use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
 {
@@ -34,6 +36,27 @@ class User extends Authenticatable
         'remember_token',
     ];
 
+	/**
+     * Crea una nueva especie a partir de los datos proporcionados en la solicitud.
+     *
+     * @param Request $request
+     * @return Specie
+     */
+    public static function createFromRequest(Request $request): Specie
+    {
+        $newUser = self::create([
+            'name' => $request->input('name'),
+            'email' => $request->input('email'),
+        ]);
+
+        Log::info('Specie created from request:', [
+            'name' => $newUser->name,
+            'email' => $newUser->email
+        ]);
+
+        return $newUser;
+    }
+
     /**
      * The attributes that should be cast.
      *
@@ -51,7 +74,7 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Departure::class, 'departure_user_observations', 'user_id', 'departure_id');
     }
-    
+
     // public function observationImages(){
     //     return $this->hasMany(ObservationImage::class);
     // }

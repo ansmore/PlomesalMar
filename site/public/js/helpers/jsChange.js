@@ -28,6 +28,11 @@ document.addEventListener("DOMContentLoaded", async () => {
                 departuresModule.setupModalEventListenersDepartures();
                 currentCleanupFunction = departuresModule.cleanupDepartures;
                 break;
+            case "users":
+                const usersModule = await import("../modals/users/modals.js");
+                usersModule.setupModalEventListenersUsers();
+                currentCleanupFunction = usersModule.cleanupUsers;
+                break;
             default:
                 console.warn("No hay un tipo que soporte este vista:", viewType);
                 break;

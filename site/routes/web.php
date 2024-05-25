@@ -88,6 +88,7 @@ Route::prefix('/{language?}')->group(function () {
 	Route::prefix('admin')->group(function () {
 		Route::get('management', [AdminController::class, 'index'])->name('admin.management');
 		Route::get('users', [AdminController::class, 'userList'])->name('admin.users');
+		Route::post('user/store', [AdminController::class, 'store'])->name('admin.user.store');
 		Route::get('user/{user}/details', [AdminController::class, 'userShow'])->name('admin.user.details');
 		Route::post('role', [AdminController::class, 'setRole'])->name('admin.user.setRole');
 		Route::delete('role', [AdminController::class, 'removeRole'])->name('admin.user.removeRole');
