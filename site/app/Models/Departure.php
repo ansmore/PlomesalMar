@@ -63,44 +63,52 @@ class Departure extends Model
                     ->paginate($perPage);
     }
 
-	/**
-	 * Creem una sortida a partir de les dades proporcionades en la solicitut.
-	 *
-	 * @param Request $request
-	 * @return Deperture
-	 */
-	public static function createFromRequest(Request $request): Departure
-	{
-		$newDeparture = self::create([
-			'boat_id'=> $request->input('boat_id'),
-			'transect_id'=> $request->input('transect_id'),
-			'date'=> $request->input('date'),
-		]);
+    /**
+     * Crea una salida si no existe.
+     *
+     * @param array $data
+     * @return Departure|null
+     */
+    public static function createIfNotExists(array $data)
+    {
+        // Verificar si ya existe una salida con los mismos detalles
+        $existingDeparture = self::where('boat_id', $data['boat_id'])
+            ->where('transect_id', $data['transect_id'])
+            ->where('date', $data['date'])
+            ->first();
 
-		Log::info('Departure created from request:', [
-			'boat_id' => $newDeparture->boat_id,
-			'transect_id' => $newDeparture->transect_id,
-			'date' => $newDeparture->date
-		]);
+        if ($existingDeparture) {
+            return null; // Retorna null si la salida ya existe
+        }
 
-		return $newDeparture;
-	}
+        // Obtener los nombres de los usuarios seleccionados
+        $userNames = User::whereIn('id', $data['users'])->pluck('name')->toArray();
+        $observers = implode(', ', $userNames);
 
-	/**
-	 * Actualitzem una sortida a partir de les dades proporcionades en la solicitut.
-	 *
-	 * @param Request $request
-	 * @param int $id Identificador de la sortida a actualizar.
-	 * @return bool
-	 */
-	public static function updateFromRequest(Request $request, $id): bool
-	{
-		$departure = self::find($id);
-		if($departure) {
-			$departure->update($request->all());
-			return true;
-		}
+        // Crear y retornar la nueva salida
+        return self::create([
+            'boat_id' => $data['boat_id'],
+            'transect_id' => $data['transect_id'],
+            'date' => $data['date'],
+            'observers' => $observers
+        ]);
+    }
 
-		return false;
-	}
+    /**
+     * Actualiza una salida a partir de los datos proporcionados en la solicitud.
+     *
+     * @param Request $request
+     * @param int $id Identificador de la salida a actualizar.
+     * @return bool
+     */
+    public static function updateFromRequest(Request $request, $id): bool
+    {
+        $departure = self::find($id);
+        if ($departure) {
+            $departure->update($request->all());
+            return true;
+        }
+
+        return false;
+    }
 }
