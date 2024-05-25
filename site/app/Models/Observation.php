@@ -2,10 +2,12 @@
 
 namespace App\Models;
 
-use Illuminate\Support\Facades\DB;
+use App\Models\Specie;
 use Illuminate\Http\Request;
-use Illuminate\Database\Eloquent\Builder;
+use App\Models\ImageObservation;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Observation extends Model
@@ -24,11 +26,12 @@ class Observation extends Model
 
     public function species()
     {
-        return $this->belongsTo(Species::class);
+        return $this->belongsTo(Specie::class);
     }
     
-    public function observationImages(){
-        return $this->hasMany(ObservationImage::class);
+    public function images()
+    {
+        return $this->hasMany(ImageObservation::class, 'observation_id');
     }
 
     public static function getSpeciesDataByYear($speciesId, $year)
@@ -69,13 +72,13 @@ class Observation extends Model
                 ->orWhere('number_of_individuals')
                 ->orWhere('in_flight')
                 ->orWhere('distance_under_300m')
-                -orWhere('notes');
+                ->orWhere('notes', 'like', '%' . $search . '%');
         }
         return $query;
     }
 
     /**
-     * Recupera especies filtradas según los criterios de búsqueda y ordenación almacenados en la sesión.
+     * Recupera observaciones filtradas según los criterios de búsqueda y ordenación proporcionados en la solicitud.
      *
      * @param Request $request
      * @return \Illuminate\Contracts\Pagination\LengthAwarePaginator
@@ -85,9 +88,10 @@ class Observation extends Model
         $orderByField = $request->input('orderByField', 'id');
         $orderByDirection = $request->input('orderByDirection', 'asc');
 
-        $perPage = config('app.per_page');
+        $perPage = 6;
 
-        return static::search($request->search)
+        return self::query()
+                    ->search($request->search)
                     ->orderBy($orderByField, $orderByDirection)
                     ->paginate($perPage);
     }
@@ -105,5 +109,10 @@ class Observation extends Model
             'created_at' => now(),
             'updated_at' => now(),
         ]);
+    }
+
+    public function firstImage()
+    {
+        return $this->hasOne(ImageObservation::class, 'observation_id')->oldest();
     }
 }
