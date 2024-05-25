@@ -11,7 +11,8 @@
 	"rolesUserHave": "Rols",
 	"moreInfo": "Més info",
 	"showDetails": "Veure detalls",
-	"addRole": " Afegeix rol",
+	"addRole": "Afegeix rol",
+	"removeUser": "Eliminar usuari",
 
 	"nameModal": "Nom: ",
 	"emailModal": "Email: "

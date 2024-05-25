@@ -92,6 +92,7 @@ Route::prefix('/{language?}')->group(function () {
 		Route::get('user/{user}/details', [AdminController::class, 'userShow'])->name('admin.user.details');
 		Route::post('role', [AdminController::class, 'setRole'])->name('admin.user.setRole');
 		Route::delete('role', [AdminController::class, 'removeRole'])->name('admin.user.removeRole');
+		Route::delete('user/{user}', [AdminController::class, 'destroy'])->name('admin.user.destroy');
 	});
 
 	Route::get('/', [HomeController::class, 'index'])->name('index');

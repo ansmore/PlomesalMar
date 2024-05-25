@@ -35,26 +35,19 @@ const handleModalButtonClick = (event) => {
         return;
     }
     const userId = button.getAttribute("data-id");
-    const name = button.getAttribute("data-common-name");
-    const email = button.getAttribute("data-scientific-name");
+    const name = button.getAttribute("data-name");
+    const email = button.getAttribute("data-email");
     switch (modalId) {
         case "createUser":
             openModal(modal);
             break;
-        // case "editUserModal":
-        // 	if (!userId || !name || !email) {
-        // 		console.error("Faltan atributos de datos");
-        // 		return;
-        // 	}
-        // 	handleeditUserModal(modal, userId, name, email);
-        // 	break;
-        // case "deleteUserModal":
-        // 	if (!userId || !name || !email) {
-        // 		console.error("Faltan atributos de datos");
-        // 		return;
-        // 	}
-        // 	handleDeleteUserModal(modal, userId, name, email);
-        // 	break;
+        case "deleteUsersModal":
+            if (!userId || !name || !email) {
+                console.error("Faltan atributos de datos");
+                return;
+            }
+            handleDeleteUsersModal(modal, userId, name, email);
+            break;
         default:
             console.error("Objetivo del modal desconocido:", modalId);
             break;
@@ -70,59 +63,23 @@ const closeModalButtonClick = (event) => {
 const openModal = (modal) => {
     modal.style.display = "block";
 };
-// const handleeditUserModal = (
-// 	modal: HTMLDivElement,
-// 	userId: string,
-// 	name: string,
-// 	email: string,
-// ) => {
-// 	const editForm = modal.querySelector<HTMLFormElement>("form");
-// 	const inputCommonName = modal.querySelector<HTMLInputElement>("#nombreComun");
-// 	const inputScientificName =
-// 		modal.querySelector<HTMLInputElement>("#nombreCientifico");
-// 	if (!editForm || !inputCommonName || !inputScientificName) {
-// 		console.error(
-// 			"Faltan el formulario o campos de entrada en el modal de edición",
-// 		);
-// 		return;
-// 	}
-// 	const editUrlTemplate = editForm.dataset.editUrlTemplate;
-// 	if (editUrlTemplate) {
-// 		editForm.action = editUrlTemplate.replace(":id", userId.toString());
-// 	} else {
-// 		console.error("Falta la plantilla de URL de eliminación en el formulario");
-// 		return;
-// 	}
-// 	// console.log("URL de eliminación configurada:", editForm.action);
-// 	inputCommonName.value = name;
-// 	inputScientificName.value = email;
-// 	openModal(modal);
-// };
-// const handleDeleteUserModal = (
-// 	modal: HTMLDivElement,
-// 	userId: string,
-// 	name: string,
-// 	email: string,
-// ) => {
-// 	const deleteForm = modal.querySelector<HTMLFormElement>("form");
-// 	const textCommonName = modal.querySelector<HTMLElement>("#deleteCommonName");
-// 	const textScientificName = modal.querySelector<HTMLElement>(
-// 		"#deleteScientificName",
-// 	);
-// 	if (!deleteForm || !textCommonName || !textScientificName) {
-// 		console.error(
-// 			"Faltan el formulario o campos de texto en el modal de eliminación",
-// 		);
-// 		return;
-// 	}
-// 	const deleteUrlTemplate = deleteForm.dataset.deleteUrlTemplate;
-// 	if (deleteUrlTemplate) {
-// 		deleteForm.action = deleteUrlTemplate.replace(":id", userId.toString());
-// 	} else {
-// 		console.error("Falta la plantilla de URL de eliminación en el formulario");
-// 		return;
-// 	}
-// 	textCommonName.textContent = name;
-// 	textScientificName.textContent = email;
-// 	openModal(modal);
-// };
+const handleDeleteUsersModal = (modal, userId, name, email) => {
+    const deleteForm = modal.querySelector("form");
+    const textName = modal.querySelector("#deleteName");
+    const textEmail = modal.querySelector("#deleteEmail");
+    if (!deleteForm || !textName || !textEmail) {
+        console.error("Faltan el formulario o campos de texto en el modal de eliminación");
+        return;
+    }
+    const deleteUrlTemplate = deleteForm.dataset.deleteUrlTemplate;
+    if (deleteUrlTemplate) {
+        deleteForm.action = deleteUrlTemplate.replace(":id", userId.toString());
+    }
+    else {
+        console.error("Falta la plantilla de URL de eliminación en el formulario");
+        return;
+    }
+    textEmail.textContent = email;
+    textName.textContent = name;
+    openModal(modal);
+};

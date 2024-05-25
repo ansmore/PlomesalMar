@@ -137,9 +137,27 @@ class AdminController extends Controller
         }
     }
 
+	/**
+     * Remove the specified resource from storage.
+     */
+    public function destroy($language = null, $id)
+    {
+        try {
+            $success = User::deleteById($id);
+            if ($success) {
+                return redirect()->route('admin.users', ['language' => $language])->with('status', 'Usuari eliminat correctament.');
+            } else {
+                return redirect()->back()->with('error', "No s'ha pogut eliminar l'usuari de la base de dades.");
+            }
+        } catch (\Exception $e) {
+            Log::error("Error al eliminar l'usuari de la base de dades: " . $e->getMessage());
+            return redirect()->back()->with('error', "Ha ocorregut un error al intentar eliminar l'usuari. ");
+        }
+    }
+
     public function testAbort()
     {
-    abort(418, "Això es una prova de l'error 418");
+		abort(418, "Això es una prova de l'error 418");
     }
 
 	public function blocked()
