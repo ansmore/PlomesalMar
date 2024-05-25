@@ -11,5 +11,8 @@
 	"rolesUserHave": "Rols",
 	"moreInfo": "Més info",
 	"showDetails": "Veure detalls",
-	"addRole": " Afegeix rol"
+	"addRole": " Afegeix rol",
+
+	"nameModal": "Nom: ",
+	"emailModal": "Email: "
 }

@@ -1,5 +1,5 @@
-import { main } from "../../../resources/ts/pages/home";
-import * as dictionary from "../../../resources/ts/helpers/dictionary";
+// import { main } from "../../../resources/ts/pages/home";
+// import * as dictionary from "../../../resources/ts/helpers/dictionary";
 
 // jest.mock("../../../resources/ts/helpers/dictionary", () => ({
 // 	loadText: jest.fn().mockResolvedValue(undefined),
