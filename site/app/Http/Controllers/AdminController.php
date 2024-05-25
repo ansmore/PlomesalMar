@@ -15,39 +15,48 @@ class AdminController extends Controller
         $this->middleware('auth');
     }
 
-	public function index($language = null){
-        return view('admin.managementUsers', [
+	public function index(Request $request, $language = null){
+        $users = User::all();
+		$roles = Role::all();
+		return view('admin.managementUsers', [
+			'users' => $users,
+			'roles' => $roles,
 			'language' => $language,
 		]);
     }
 
 	/**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request, $language = null)
-    {
-        $validated = $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|max:255'
-        ]);
+	 * Store a newly created resource in storage.
+	 */
+	public function store(Request $request, $language = null)
+	{
+		$validated = $request->validate([
+			'name' => 'required|string|max:255',
+			'surname' => 'required|string|max:255',
+			'surnameSecond' => 'string|max:255|nullable',
+			'email' => 'required|string|email|max:255|unique:users',
+			'password' => 'required|string|min:8',
+		]);
 
-        try {
-            $user = User::createFromRequest($request);
-            return redirect()->back()->with('status', 'La especie ha sido creada exitosamente en la base de datos.');
-        } catch (\Exception $e) {
-            Log::error('Error al intentar crear una nueva especie en la base de datos: ' . $e->getMessage());
-            return redirect()->back()->with('error', 'No se pudo registrar la especie en la base de datos. Por favor, revise los detalles e intente de nuevo.');
-        }
-    }
+		try {
+			$user = User::createFromRequest($request);
+			return redirect()->back()->with('status', 'El usuario ha sido creado exitosamente en la base de datos.');
+		} catch (\Exception $e) {
+			Log::error('Error al intentar crear un nuevo usuario en la base de datos: ' . $e->getMessage());
+			return redirect()->back()->with('error', 'No se pudo registrar el usuario en la base de datos. Por favor, revise los detalles e intente de nuevo.');
+		}
+	}
 
     public function userList($language = null){
         $users = User::orderBy('name', 'ASC')
             ->paginate(config('pagination.users', 8));
 
         $total_users = User::count();
+		$roles = Role::all();
 
         return view('admin.users.list', [
 			'language' => $language,
+			'roles' => $roles,
             'users' =>$users,
             'total_users' => $total_users,
         ]);
