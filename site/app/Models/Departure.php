@@ -105,10 +105,19 @@ class Departure extends Model
     {
         $departure = self::find($id);
         if ($departure) {
-            $departure->update($request->all());
+            $userNames = User::whereIn('id', $request->input('users'))->pluck('name')->toArray();
+            $observers = implode(', ', $userNames);
+
+            $departure->boat_id = $request->input('boat_id');
+            $departure->transect_id = $request->input('transect_id');
+            $departure->date = $request->input('date');
+            $departure->observers = $observers;
+
+            $departure->save();
             return true;
         }
 
         return false;
     }
+
 }

@@ -40,9 +40,12 @@
                             <i class="fas fa-info-circle"></i>
                         </button>
                         <button type="button" class="buttonTable__success" data-bs-toggle="modal"
-                            data-bs-target="editDepartureModal" title="Editar" data-id="{{ $departure->id }}">
+                            data-bs-target="editDepartureModal" title="Editar" data-id="{{ $departure->id }}"
+                            data-boat-id="{{ $departure->boat_id }}" data-transect-id="{{ $departure->transect_id }}"
+                            data-date="{{ $departure->date }}" data-observers="{{ $departure->observers }}">
                             <i class="fas fa-pencil-alt"></i>
                         </button>
+
                         <button type="button" class="buttonTable__close" data-bs-toggle="modal"
                             data-bs-target="deleteDepartureModal" title="Eliminar" data-id="{{ $departure->id }}">
                             <i class="fas fa-trash"></i>
