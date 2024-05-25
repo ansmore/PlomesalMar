@@ -1,9 +1,9 @@
 @extends('layouts.main')
 
-@section('title', 'Species')
+@section('title', 'Users')
 @section('content')
 
-    <main class="management">
+    <main class="management" data-view="users">
         @include('components.asideMenu')
         <section id="head" class="row">
             <article class="box">
