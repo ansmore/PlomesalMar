@@ -12,6 +12,7 @@ class DepartureSeeder extends Seeder
 {
     public function run(): void
     {
+        // Cargar el mapa de transectos desde el archivo CSV
         $transectMap = [];
         $transectCsv = Reader::createFromPath(database_path('data/map_transects.csv'), 'r');
         $transectCsv->setHeaderOffset(0);
@@ -19,6 +20,7 @@ class DepartureSeeder extends Seeder
             $transectMap[$record['name']] = $record['id'];
         }
 
+        // Cargar los datos de observaciones desde el archivo CSV
         $csv = Reader::createFromPath(database_path('data/Observacions.csv'), 'r');
         $csv->setHeaderOffset(0);
         $records = $csv->getRecords();
@@ -38,6 +40,7 @@ class DepartureSeeder extends Seeder
                             'date' => $date,
                             'boat_id' => Boat::inRandomOrder()->first()->id,
                             'transect_id' => $transectId,
+                            'observers' => $record['Observadors'] ?? null, // Añadir observadores si están presentes
                         ]);
                     } else {
                         if ($transectId === null) {

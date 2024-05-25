@@ -14,7 +14,7 @@ class Departure extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['boat_id', 'transect_id', 'date'];
+    protected $fillable = ['boat_id', 'transect_id', 'date', 'observers'];
 
     public function boat()
     {
@@ -24,11 +24,6 @@ class Departure extends Model
     public function transect()
     {
         return $this->belongsTo(Transect::class);
-    }
-
-    public function users()
-    {
-        return $this->belongsToMany(User::class, 'departure_user_observations', 'departure_id', 'user_id');
     }
 
     /**

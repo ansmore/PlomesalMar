@@ -16,6 +16,7 @@ return new class extends Migration
             $table->unsignedBigInteger('boat_id');
             $table->unsignedBigInteger('transect_id');
             $table->date('date');
+            $table->text('observers')->nullable();
             $table->timestamps();
 
             $table->foreign('boat_id')->references('id')->on('boats');
