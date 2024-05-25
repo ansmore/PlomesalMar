@@ -11,20 +11,17 @@
             </article>
             <article class="box">
                 <div class="box__next">
-                    <a href="{{ route('admin.users', [
-                        'language' => $language,
-                    ]) }}"
-                        class="form__button__success">
+                    <button type="button" class="form__button__success" data-bs-toggle="modal" data-bs-target="createUser">
                         <i class="fas fa-plus-circle"></i>
                         <span data-text="addButton"></span>
-                    </a>
+                    </button>
                 </div>
             </article>
             <article class="box">
                 @include('partials.admin.usersTable', ['users' => $users])
             </article>
         </section>
-        {{-- @include('modals.species.create') --}}
+        @include('modals.users.create')
         @include('components.message')
     </main>
 @endsection

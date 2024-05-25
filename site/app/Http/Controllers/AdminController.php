@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Role;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Database\QueryException;
 
 class AdminController extends Controller
@@ -18,6 +19,25 @@ class AdminController extends Controller
         return view('admin.managementUsers', [
 			'language' => $language,
 		]);
+    }
+
+	/**
+     * Store a newly created resource in storage.
+     */
+    public function store(Request $request, $language = null)
+    {
+        $validated = $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|max:255'
+        ]);
+
+        try {
+            $user = User::createFromRequest($request);
+            return redirect()->back()->with('status', 'La especie ha sido creada exitosamente en la base de datos.');
+        } catch (\Exception $e) {
+            Log::error('Error al intentar crear una nueva especie en la base de datos: ' . $e->getMessage());
+            return redirect()->back()->with('error', 'No se pudo registrar la especie en la base de datos. Por favor, revise los detalles e intente de nuevo.');
+        }
     }
 
     public function userList($language = null){

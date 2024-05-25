@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
 const changeLanguage = async (language: string) => {
 	try {
 		const currentUrl = window.location.href;
-		const firstSegment = await getFirstSegment(currentUrl)!;
+		const firstSegment = getFirstSegment(currentUrl)!;
 		const secondSegment = await getSecondSegment(currentUrl)!;
 		const idSegment = await getIdSegment(currentUrl)!;
 		const othersSegments = await getOthersSegments(currentUrl);
