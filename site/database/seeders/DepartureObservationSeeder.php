@@ -9,16 +9,13 @@ use App\Models\Observation;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
 
-class DepartureUserObservationSeeder extends Seeder
+class DepartureObservationSeeder extends Seeder
 {
     public function run(): void
     {
         $csv = Reader::createFromPath(database_path('data/Observacions.csv'), 'r');
         $csv->setHeaderOffset(0);
         $records = $csv->getRecords();
-
-        // Obtener todos los IDs de usuarios existentes
-        $userIds = User::pluck('id')->toArray();
 
         DB::beginTransaction();
         try {
@@ -32,14 +29,10 @@ class DepartureUserObservationSeeder extends Seeder
                     $observationExists = Observation::where('id', $observationId)->exists();
 
                     if ($departureExists && $observationExists) {
-                        $userId = $this->getRandomUserId($userIds);
-
-                        if (!$this->observationExists($observationId)) {
-                            DB::table('departure_user_observations')->insert([
+                        if (!$this->observationExists($departureId, $observationId)) {
+                            DB::table('departure_observations')->insert([
                                 'departure_id' => $departureId,
-                                'user_id' => $userId,
                                 'observation_id' => $observationId,
-                                'is_observer' => $this->getRandomIsObserver(),
                                 'created_at' => now(),
                                 'updated_at' => now(),
                             ]);
@@ -54,19 +47,10 @@ class DepartureUserObservationSeeder extends Seeder
         }
     }
 
-    private function getRandomUserId($userIds)
+    private function observationExists($departureId, $observationId)
     {
-        return $userIds[array_rand($userIds)];
-    }
-
-    private function getRandomIsObserver()
-    {
-        return (bool)random_int(0, 1);
-    }
-
-    private function observationExists($observationId)
-    {
-        return DB::table('departure_user_observations')
+        return DB::table('departure_observations')
+            ->where('departure_id', $departureId)
             ->where('observation_id', $observationId)
             ->exists();
     }

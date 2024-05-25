@@ -22,16 +22,16 @@ class DepartureController extends Controller
     public function index(Request $request, $language = null)
     {
         $departures = Departure::getFilteredDepartures($request);
-		$boats = Boat::all();
-		$transects = Transect::all();
-		$users = User::all();
+        $boats = Boat::all();
+        $transects = Transect::all();
+        $users = User::all();
         return view('pages.departures', [
-			'language' => $language,
-			'departures' => $departures,
-			'boats' => $boats,
-			'transects' => $transects,
-			'users' => $users,
-		]);
+            'language' => $language,
+            'departures' => $departures,
+            'boats' => $boats,
+            'transects' => $transects,
+            'users' => $users,
+        ]);
     }
 
     /**
@@ -39,67 +39,66 @@ class DepartureController extends Controller
      */
     public function store(Request $request, $language = null)
     {
-		// dd($request);
+        // Validar los datos del formulario
+        $validated = $request->validate([
+            'boat_id' => 'required|exists:boats,id',
+            'transect_id' => 'required|exists:transects,id',
+            'date' => 'required|date',
+            'users' => 'required|array',
+            'users.*' => 'exists:users,id'
+        ]);
 
-		$validated = $request->validate([
-			'boat_id' => 'required|exists:boats,id',
-			'transect_id' => 'required|exists:transects,id',
-			'date' => 'required|date',
-			// 'usersIds' => 'required|array',
-			// 'userdIds.*' => 'required|exists:users,id'
-		]);
+        try {
+            // Llama al método del modelo para crear la salida
+            $departure = Departure::createIfNotExists($validated);
 
-		// dd($validated);
-
-
-		try{
-			$departure = Departure::createFromRequest($request);
-			return redirect()->back()->with('status', "La sortida s'ha creat amb exit. ");
-		} catch(\Exception $e){
-			Log::error('Error al intentar crear un nuevo barco en la base de datos: ' . $e->getMessage());
-            return redirect()->back()->with('error', 'No se pudo registrar el barco en la base de datos. Por favor, revise los detalles e intente de nuevo.');
-		}
+            if ($departure) {
+                return redirect()->back()->with('status', "La salida se ha creado con éxito.");
+            } else {
+                return redirect()->back()->with('status', "La salida ya existe.");
+            }
+        } catch (\Exception $e) {
+            Log::error('Error al intentar crear una nueva salida en la base de datos: ' . $e->getMessage());
+            return redirect()->back()->with('error', 'No se pudo registrar la salida en la base de datos. Por favor, revise los detalles e intente de nuevo.');
+        }
     }
 
-	public function edit($id, $language = null)
-	{
-		$departure = Departure::findOrFail($id);
-		$boats = Boat::all();
-		$transects = Transect::all();
+    public function edit($id, $language = null)
+    {
+        $departure = Departure::findOrFail($id);
+        $boats = Boat::all();
+        $transects = Transect::all();
 
-		return view('departures.edit', [
-			'departure' => $departure,
-			'boats' => $boats,
-			'transects' => $transects,
-			'language' => $language,
-		]);
-	}
+        return view('departures.edit', [
+            'departure' => $departure,
+            'boats' => $boats,
+            'transects' => $transects,
+            'language' => $language,
+        ]);
+    }
 
     /**
      * Update the specified resource in storage.
      */
     public function update(Request $request, $language, $id)
     {
-       	$validated = $request->validate([
-			'boat_id' => 'required|exists:boats,id',
-			'transect_id' => 'required|exists:transects,id',
-			'date' => 'required|date',
-		]);
+        $validated = $request->validate([
+            'boat_id' => 'required|exists:boats,id',
+            'transect_id' => 'required|exists:transects,id',
+            'date' => 'required|date',
+        ]);
 
-		try {
-			// $departure = Departure::findOrFail($id);
-        	// $departure->update($validated);
+        try {
             $success = Departure::updateFromRequest($request, $id);
             if ($success) {
-                return redirect()->back()->with('status', "La sortida s'ha actualitzat amb exit.");
+                return redirect()->back()->with('status', "La salida se ha actualizado con éxito.");
             } else {
-                return redirect()->back()->with('error', 'La actualización del barco falló. No se encontraron cambios o el barco no existe.');
+                return redirect()->back()->with('error', 'La actualización de la salida falló. No se encontraron cambios o la salida no existe.');
             }
         } catch (\Exception $e) {
-            Log::error('Error al actualizar el barco en la base de datos: ' . $e->getMessage());
-            return redirect()->back()->with('error', 'Ocurrió un error al intentar actualizar el barco. Por favor, intente de nuevo.');
+            Log::error('Error al actualizar la salida en la base de datos: ' . $e->getMessage());
+            return redirect()->back()->with('error', 'Ocurrió un error al intentar actualizar la salida. Por favor, intente de nuevo.');
         }
-
     }
 
     /**

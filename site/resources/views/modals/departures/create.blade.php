@@ -27,17 +27,23 @@
                             @endforeach
                         </select>
                     </div>
-                    {{-- <div class="form__group">
-                        <label for="boat_name" class="form__group__content" data-text="boatNameModal"></label>
-                        <select class="form__group__select" name="boat_id" id="boat_id">
-                            @foreach ($users as $user)
-                                <option value="{{ $user->id }}">{{ $user->name }}</option>
-                            @endforeach
-                        </select>
-                    </div> --}}
                     <div class="form__group">
                         <label for="date" class="form__group__content" data-text="dateModal"></label>
                         <input type="date" class="form__group__input" id="date" name="date">
+                    </div>
+
+                    <!-- New div with user checkboxes -->
+                    <div class="form__group">
+                        <label for="users" class="form__group__content">Select Users:</label>
+                        <div class="form__group__grid form__group__grid--scroll">
+                            @foreach ($users as $user)
+                                <div class="form__group__checkbox">
+                                    <input type="checkbox" id="user_{{ $user->id }}" name="users[]"
+                                        value="{{ $user->id }}">
+                                    <label for="user_{{ $user->id }}">{{ $user->name }}</label>
+                                </div>
+                            @endforeach
+                        </div>
                     </div>
 
                     <div class="form__group__buttons">
@@ -51,3 +57,26 @@
         </div>
     </div>
 </section>
+
+<!-- Add some custom styles for grid layout -->
+<style>
+    .form__group__grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        max-height: calc(3* 30px);
+        overflow-y: auto;
+        margin-bottom: 2rem;
+    }
+
+    .form__group__checkbox {
+        display: flex;
+        align-items: center;
+        appearance: auto;
+    }
+
+    .form__group__checkbox input {
+        margin-right: 10px;
+        appearance: auto;
+    }
+</style>
