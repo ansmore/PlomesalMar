@@ -21,9 +21,11 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'surname',
+        'surnameSecond',
         'email',
         'password',
-		'email_verified_at',
+        'email_verified_at',
     ];
 
     /**
@@ -37,25 +39,37 @@ class User extends Authenticatable
     ];
 
 	/**
-     * Crea una nueva especie a partir de los datos proporcionados en la solicitud.
-     *
-     * @param Request $request
-     * @return Specie
-     */
-    public static function createFromRequest(Request $request): Specie
-    {
-        $newUser = self::create([
-            'name' => $request->input('name'),
-            'email' => $request->input('email'),
-        ]);
+	 * Crea un nuevo usuario a partir de los datos proporcionados en la solicitud.
+	 *
+	 * @param Request $request
+	 * @return User
+	 */
+	public static function createFromRequest(Request $request): User
+	{
+		$hashedPassword = bcrypt($request->input('password'));
 
-        Log::info('Specie created from request:', [
-            'name' => $newUser->name,
-            'email' => $newUser->email
-        ]);
+    	Log::info('Creating user with hashed password', [
+        	'password' => $hashedPassword
+    	]);
 
-        return $newUser;
-    }
+		$newUser = self::create([
+			'name' => $request->input('name'),
+			'surname' => $request->input('surname'),
+			'surnameSecond' => $request->input('surnameSecond'),
+			'email' => $request->input('email'),
+			'password' => bcrypt($request->input('password')),
+		]);
+
+		Log::info('User created from request:', [
+			'name' => $newUser->name,
+			'surname' => $newUser->surname,
+			'surnameSecond' => $newUser->surnameSecond,
+			'email' => $newUser->email,
+			'password' => $newUser->password
+		]);
+
+		return $newUser;
+	}
 
     /**
      * The attributes that should be cast.
