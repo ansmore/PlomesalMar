@@ -12,7 +12,7 @@
                 <form method="POST" action="{{ route('departures.store', ['language' => app()->getLocale()]) }}">
                     @csrf
                     <div class="form__group">
-                        <label for="boat_name" class="form__group__content" data-text="boatNameModal"></label>
+                        <label for="boat_id" class="form__group__content" data-text="boatNameModal"></label>
                         <select class="form__group__select" name="boat_id" id="boat_id">
                             @foreach ($boats as $boat)
                                 <option value="{{ $boat->id }}">{{ $boat->name }}</option>
@@ -20,7 +20,7 @@
                         </select>
                     </div>
                     <div class="form__group">
-                        <label for="transect_name" class="form__group__content" data-text="transectNameModal"></label>
+                        <label for="transect_id" class="form__group__content" data-text="transectNameModal"></label>
                         <select class="form__group__select" name="transect_id" id="transect_id">
                             @foreach ($transects as $transect)
                                 <option value="{{ $transect->id }}">{{ $transect->name }}</option>

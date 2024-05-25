@@ -15,19 +15,31 @@
                     @csrf
                     @method('PUT')
                     <div class="modal-body form__group">
-                        <label for="boat_name" class="form__group__content" data-text="boatNameModal"></label>
-                        <input type="text" class="form-control form__group__input" id="transectName" name="name"
-                            value="" />
+                        <label for="boat_id" class="form__group__content" data-text="boatNameModal"></label>
+                        <select class="form__group__select" name="boat_id" id="boat_id">
+                            @foreach ($boats as $boat)
+                                <option value="{{ $boat->id }}"
+                                    {{ $boat->id == $departure->boat_id ? 'selected' : '' }}>
+                                    {{ $boat->name }}
+                                </option>
+                            @endforeach
+                        </select>
                     </div>
                     <div class="modal-body form__group">
-                        <label for="transect_name" class="form__group__content" data-text="transectNameModal"></label>
-                        <input type="text" class="form-control form__group__input" id="transectName" name="name"
-                            value="" />
+                        <label for="transect_id" class="form__group__content" data-text="transectNameModal"></label>
+                        <select class="form__group__select" name="transect_id" id="transect_id">
+                            @foreach ($transects as $transect)
+                                <option value="{{ $transect->id }}"
+                                    {{ $transect->id == $departure->transect_id ? 'selected' : '' }}>
+                                    {{ $transect->name }}
+                                </option>
+                            @endforeach
+                        </select>
                     </div>
                     <div class="modal-body form__group">
                         <label for="date" class="form__group__content" data-text="dateModal"></label>
-                        <input type="text" class="form-control form__group__input" id="transectName" name="name"
-                            value="" />
+                        <input type="date" class="form-control form__group__input" id="date" name="date"
+                            value="{{ $departure->date }}" />
                     </div>
                     <div class="form__group__buttons">
                         <button type="button" class="btn btn-secondary form__button__back" data-bs-dismiss="modal"

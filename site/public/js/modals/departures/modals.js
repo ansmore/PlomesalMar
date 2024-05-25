@@ -71,8 +71,7 @@ const openModal = (modal) => {
 };
 const handleEditDepartureModal = (modal, departureId) => {
     const editForm = modal.querySelector("form");
-    const inputDepartureId = modal.querySelector("#departureId");
-    if (!editForm || !inputDepartureId) {
+    if (!editForm) {
         console.error("Faltan el formulario o campos de entrada en el modal de edición");
         return;
     }
@@ -84,7 +83,7 @@ const handleEditDepartureModal = (modal, departureId) => {
         console.error("Falta la plantilla de URL de edición en el formulario");
         return;
     }
-    inputDepartureId.value = departureId;
+    // inputDepartureId.value = departureId;
     openModal(modal);
 };
 const handleDetailsDepartureModal = (modal, departureId) => {
