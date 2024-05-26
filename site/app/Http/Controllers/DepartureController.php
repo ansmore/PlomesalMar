@@ -92,8 +92,18 @@ class DepartureController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Departure $departures)
+    public function destroy($language, $id)
     {
-        //
+        try {
+            $departure = Departure::findOrFail($id);
+
+            // Usar el método del modelo para eliminar si no hay observaciones
+            $departure->deleteIfNoObservations();
+
+            return redirect()->back()->with('status', 'La salida se ha eliminado con éxito.');
+        } catch (\Exception $e) {
+            Log::error('Error al intentar eliminar la salida: ' . $e->getMessage());
+            return redirect()->back()->with('error', $e->getMessage());
+        }
     }
 }

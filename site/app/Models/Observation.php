@@ -34,6 +34,11 @@ class Observation extends Model
         return $this->hasMany(ImageObservation::class, 'observation_id');
     }
 
+    public function departure()
+    {
+        return $this->belongsToMany(Departure::class, 'departure_observations', 'observation_id', 'departure_id');
+    }
+
     public static function getSpeciesDataByYear($speciesId, $year)
     {
         return DB::table('observations')

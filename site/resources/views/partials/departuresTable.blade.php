@@ -45,11 +45,13 @@
                             data-date="{{ $departure->date }}" data-observers="{{ $departure->observers }}">
                             <i class="fas fa-pencil-alt"></i>
                         </button>
-
                         <button type="button" class="buttonTable__close" data-bs-toggle="modal"
-                            data-bs-target="deleteDepartureModal" title="Eliminar" data-id="{{ $departure->id }}">
+                            data-bs-target="deleteDepartureModal" data-id="{{ $departure->id }}"
+                            data-name="{{ $departure->date }}" title="Eliminar">
                             <i class="fas fa-trash"></i>
                         </button>
+
+
                     </td>
                 </tr>
             @endforeach
