@@ -6,6 +6,7 @@ use App\Models\Specie;
 use Illuminate\Http\Request;
 use App\Models\ImageObservation;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -103,7 +104,8 @@ class Observation extends Model
 
     public static function createObservation(array $data)
     {
-        return DB::table('observations')->insertGetId([
+
+        $observationId = DB::table('observations')->insertGetId([
             'species_id' => $data['species_id'],
             'time' => $data['time'],
             'waypoint' => $data['waypoint'],
@@ -114,7 +116,10 @@ class Observation extends Model
             'created_at' => now(),
             'updated_at' => now(),
         ]);
+
+        return $observationId;
     }
+
 
     public function firstImage()
     {

@@ -128,7 +128,7 @@ Route::prefix('/{language?}')->group(function () {
 
 	// Observations routes
 	Route::resource('observations', ObservationController::class)->except(['index']);
-	Route::get('/observations', [ObservationController::class, 'index'])->name('observations');
+	Route::get('/observations', [ObservationController::class, 'index'])->name('observations.index');
 });
 
 // Route::fallback([HomeController::class, 'index']);

@@ -21,19 +21,8 @@
                             <select name="departure_id" id="departure" class="select-desktop" required>
                                 <option value="">Selecciona una Departure</option>
                                 @foreach ($departures as $departure)
-                                    <option value="{{ $departure->id }}">{{ $departure->date }}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                    </div>
-
-                    <!-- Lista de Usuarios -->
-                    <div class="form-section">
-                        <div class="form-group">
-                            <label for="users" class="label-form">Selecciona Usuarios</label>
-                            <select name="user_ids[]" id="users" class="select-desktop" multiple required>
-                                @foreach ($users as $user)
-                                    <option value="{{ $user->id }}">{{ $user->name }}</option>
+                                    <option value="{{ $departure->id }}" data-observers="{{ $departure->observer_users }}">
+                                        {{ $departure->date }}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -102,22 +91,14 @@
 
 @push('scripts')
     <script>
-        const departures = @json($departures);
-
         document.getElementById('departure').addEventListener('change', function() {
-            const departureId = this.value;
-            const usersSelect = document.getElementById('users');
-            usersSelect.innerHTML = ''; // Limpiar opciones actuales
+            const selectedOption = this.options[this.selectedIndex];
+            const observers = JSON.parse(selectedOption.getAttribute('data-observers'));
 
-            if (departureId) {
-                const selectedDeparture = departures.find(departure => departure.id == departureId);
-                selectedDeparture.users.forEach(user => {
-                    const option = document.createElement('option');
-                    option.value = user.id;
-                    option.textContent = user.name;
-                    usersSelect.appendChild(option);
-                });
-            }
+            document.querySelectorAll('.image-user-select').forEach(select => {
+                select.innerHTML = observers.map(observer =>
+                    `<option value="${observer.id}">${observer.name}</option>`).join('');
+            });
         });
 
         function addImageField() {
@@ -128,17 +109,23 @@
             const index = container.children.length;
 
             div.innerHTML = `
-            <label for="image_user_${index}">Usuario</label>
-            <select name="image_user_id[]" id="image_user_${index}" class="select-desktop" required>
-                ${document.getElementById('users').innerHTML}
-            </select>
-            <label for="image_number_${index}">Número de Imagen</label>
-            <input type="number" name="image_number[]" id="image_number_${index}" class="input-form" required>
-            <label for="image_file_${index}">Imagen</label>
-            <input type="file" name="image_file[]" id="image_file_${index}" class="input-form" accept="image/*" required onchange="previewImage(event, ${index})">
-            <img id="image_preview_${index}" src="" alt="Vista previa de la imagen" style="display:none; max-width: 200px; margin-top: 10px;">
-        `;
+        <label for="image_user_${index}">Usuario</label>
+        <select name="image_user[]" id="image_user_${index}" class="select-desktop image-user-select" required></select>
+        <label for="image_number_${index}">Número de Imagen</label>
+        <input type="number" name="image_number[]" id="image_number_${index}" class="input-form" required>
+        <label for="image_file_${index}">Imagen</label>
+        <input type="file" name="image_file[]" id="image_file_${index}" class="input-form" accept="image/*" required onchange="previewImage(event, ${index})">
+        <img id="image_preview_${index}" src="" alt="Vista previa de la imagen" style="display:none; max-width: 200px; margin-top: 10px;">
+    `;
             container.appendChild(div);
+
+            const departureSelect = document.getElementById('departure');
+            const selectedOption = departureSelect.options[departureSelect.selectedIndex];
+            const observers = JSON.parse(selectedOption.getAttribute('data-observers'));
+
+            const newSelect = div.querySelector('.image-user-select');
+            newSelect.innerHTML = observers.map(observer => `<option value="${observer.id}">${observer.name}</option>`)
+                .join('');
         }
 
         function previewImage(event, index) {

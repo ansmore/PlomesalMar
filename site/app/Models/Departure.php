@@ -133,4 +133,9 @@ class Departure extends Model
 
         return $this->delete();
     }
+
+    public function getObserversAttribute($value)
+    {
+        return explode(',', $value);
+    }
 }
