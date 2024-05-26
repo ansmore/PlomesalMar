@@ -36,7 +36,9 @@ const handleModalButtonClick = (event) => {
     const departureId = button.getAttribute("data-id");
     const departureName = button.getAttribute("data-name");
     const boatId = button.getAttribute("data-boat-id");
+    const boatName = button.getAttribute("data-boat-name");
     const transectId = button.getAttribute("data-transect-id");
+    const transectName = button.getAttribute("data-transect-name");
     const date = button.getAttribute("data-date");
     const observers = button.getAttribute("data-observers")?.split(',').map(name => name.trim()) || [];
     switch (modalId) {
@@ -51,11 +53,11 @@ const handleModalButtonClick = (event) => {
             handleEditDepartureModal(modal, departureId, boatId, transectId, date, observers);
             break;
         case "detailsDepartureModal":
-            if (!departureId) {
+            if (!departureId || !boatName || !transectName || !date || !observers) {
                 console.error("Faltan atributos de datos");
                 return;
             }
-            handleDetailsDepartureModal(modal, departureId);
+            handleDetailsDepartureModal(modal, departureId, boatName, transectName, date, observers);
             break;
         case "deleteDepartureModal":
             if (!departureId || !departureName) {
@@ -105,13 +107,24 @@ const handleEditDepartureModal = (modal, departureId, boatId, transectId, date, 
     });
     openModal(modal);
 };
-const handleDetailsDepartureModal = (modal, departureId) => {
-    const textDepartureId = modal.querySelector("#departureIdDetails");
-    if (!textDepartureId) {
-        console.error("Falta el campo de texto en el modal de detalles");
+const handleDetailsDepartureModal = (modal, departureId, boatName, transectName, date, observers) => {
+    const detailsBoatName = modal.querySelector("#details_boat_name");
+    const detailsTransectName = modal.querySelector("#details_transect_name");
+    const detailsDate = modal.querySelector("#details_date");
+    const detailsObservers = modal.querySelector("#details_observers");
+    if (!detailsBoatName || !detailsTransectName || !detailsDate || !detailsObservers) {
+        console.error("Faltan campos de texto en el modal de detalles");
         return;
     }
-    textDepartureId.textContent = departureId;
+    detailsBoatName.textContent = boatName;
+    detailsTransectName.textContent = transectName;
+    detailsDate.textContent = date;
+    detailsObservers.innerHTML = '';
+    observers.forEach(observer => {
+        const li = document.createElement('li');
+        li.textContent = observer;
+        detailsObservers.appendChild(li);
+    });
     openModal(modal);
 };
 const handleDeleteDepartureModal = (modal, departureId, departureName) => {

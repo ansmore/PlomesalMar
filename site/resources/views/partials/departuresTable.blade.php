@@ -36,7 +36,10 @@
                     <td>{{ $departure->date }}</td>
                     <td class="icons">
                         <button type="button" class="buttonTable__success" data-bs-toggle="modal"
-                            data-bs-target="detailsDepartureModal" title="Detalles" data-id="{{ $departure->id }}">
+                            data-bs-target="detailsDepartureModal" title="Detalles" data-id="{{ $departure->id }}"
+                            data-boat-name="{{ $departure->boat->name }}"
+                            data-transect-name="{{ $departure->transect->name }}" data-date="{{ $departure->date }}"
+                            data-observers="{{ $departure->observers }}">
                             <i class="fas fa-info-circle"></i>
                         </button>
                         <button type="button" class="buttonTable__success" data-bs-toggle="modal"
