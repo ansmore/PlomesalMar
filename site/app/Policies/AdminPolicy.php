@@ -43,8 +43,9 @@ class AdminPolicy
 		Log::info("User attempting to add blocked role: {$user->id}");
         Log::info("Role being checked: {$role->role}");
 
-        if ($user->hasRole('admin') && $role->role === 'blocked') {
-            return false;
+        if ($user->hasRole('admin') && $role->name === 'blocked') {
+			return false;
+			// return redirect()->back()->withErrors("error", "No pots bloquejar-te a tu mateix.");
         }
 
         return true;

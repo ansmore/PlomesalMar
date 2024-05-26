@@ -16,7 +16,7 @@ class IsAdmin
     public function handle(Request $request, Closure $next): Response
     {
         if(!$request->user()->hasRole('admin'))
-            return back()
+            return redirect()->back()
                 ->withErrors( 'Acció només per els administradors......');
 
         return $next($request);

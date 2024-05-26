@@ -103,18 +103,22 @@ class AdminController extends Controller
 
         Log::info("Attempting to set role: {$role->role} for user: {$user->id}");
 
-        if ($role->role === 'blocked') {
-			Log::info("No pots afegir el rol: {$role->role} a l'usuari: {$user->name}");
-            $this->authorize('preventSelfBlock', [$user, $role]);
-        }
+		try{
+			if ($role->role === 'blocked') {
+				Log::info("No pots afegir el rol: {$role->role} a l'usuari: {$user->name}");
+				$this->authorize('preventSelfBlock', [$user, $role]);
+			}
 
-        try{
-            $user->roles()->attach($role->id, [
+			$user->roles()->attach($role->id, [
                 'created_at' => now(),
                 'updated_at' => now()
             ]);
-            return back()
-                ->with("success", "Rol $role->role afegit a $user->name correctament.");
+
+			if($user->roles->contains($role->id)){
+				return redirect()->back()->with("status", "Rol '$role->role' afegit a $user->name correctament.");
+			} else {
+				return redirect()->back()->with("status", "S'ha produït un error al afegir el rol '$role->role' a $user->name.");
+			}
         }catch(QueryException $e){
             return back()
                 ->withErrors("No es pot afegir el rol $role->role a $user->name. Es possible que ja tingui aquest rol.");
@@ -127,17 +131,22 @@ class AdminController extends Controller
 
         Log::info("Attempting to remove role: {$role->role} from user: {$user->id}");
 
-        if ($role->role === 'admin') {
-            $this->authorize('lastUserAdmin', [$user, $role]);
-        }
+		try{
+			if ($role->role === 'admin') {
+				$this->authorize('lastUserAdmin', [$user, $role]);
+			}
 
-        try{
-            $user->roles()->detach($role->id);
-            return back()->with('success', "Rol $role->role retirat a $user->name correctament.");
-        }catch(QueryException $e){
-            Log::error("Error removing role: " . $e->getMessage());
-            return back()->withErrors("No s'ha pogut retirar el rol $role->role a $user->name. Es possible que ja tingui aquest rol.");
-        }
+			$user->roles()->detach($role->id);
+
+			if(!$user->roles->contains($role->id)){
+				return  redirect()->back()->with("status", "Rol '$role->role' retirat a $user->name correctament.");
+			} else {
+				return redirect()->back()->with('status', "S'ha produït un error al retirar '$role->role' a $user->name.");
+			}
+        } catch (\Exception $e) {
+        Log::error("Unexpected error: " . $e->getMessage());
+        return redirect()->back()->with('error', "S'ha produït un error inesperat. Si us plau, intenta-ho més tard.");
+		}
     }
 
 	/**
@@ -158,7 +167,7 @@ class AdminController extends Controller
         }
     }
 
-    public function testAbort()
+    public function testAbort($language = null)
     {
 		abort(418, "Això es una prova de l'error 418");
     }
