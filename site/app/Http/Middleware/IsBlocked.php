@@ -5,12 +5,13 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Session;
 use Symfony\Component\HttpFoundation\Response;
 
 class IsBlocked
 {
 
-    protected $allowed = ['contact.form', 'contact.email', 'home.blocked', 'logout'];
+    protected $allowed = ['plomesalmarContact', 'plomesalmarContact.submit', 'indexBlocked', 'blocked', 'logout', 'sendLanguade'];
 
     // Desbloquejar la portada => home.welcome
 
@@ -21,11 +22,15 @@ class IsBlocked
      */
     public function handle(Request $request, Closure $next): Response
     {
+		$language = Session::get('language',  config('app.fallback_locale', 'ca'));
+
         $user = $request->user();
         $route = Route::currentRouteName();
 
-        if($user && $user->hasRole('bloquejat') && !in_array($route, $this->allowed))
-            return redirect()->route('home.blocked');
+        if($user && $user->hasRole('blocked') && !in_array($route, $this->allowed))
+            return redirect()->route('blocked', [
+                        'language' => $language,
+                    ]);
 
         return $next($request);
     }

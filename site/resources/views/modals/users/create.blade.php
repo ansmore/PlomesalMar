@@ -8,15 +8,6 @@
         <div class="modal-header body">
             <h2 class="modal-title body__title" id="modalLabelNuevo" data-text="newUser"></h2>
             <article class="form">
-                @if ($errors->any())
-                    <div class="alert alert-danger">
-                        <ul>
-                            @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
-                @endif
                 <form method="POST" action="{{ route('admin.user.store', ['language' => app()->getLocale()]) }}">
                     @csrf
                     <div class="form__group">

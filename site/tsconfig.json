@@ -15,5 +15,5 @@
 		// "target": "ES2016"
 		"target": "ESNext"
 	},
-	"include": ["./resources/**/*.ts", "./tests/Ts/**/*.ts"]
+	"include": ["./resources/**/*.ts"]
 }

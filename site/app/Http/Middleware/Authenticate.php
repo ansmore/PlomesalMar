@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use Illuminate\Support\Facades\Session;
 use Illuminate\Auth\Middleware\Authenticate as Middleware;
 
 class Authenticate extends Middleware
@@ -14,8 +15,12 @@ class Authenticate extends Middleware
      */
     protected function redirectTo($request)
     {
+		$language = Session::get('language',  config('app.fallback_locale', 'ca'));
+
         if (! $request->expectsJson()) {
-            return route('login');
+            return route('login', [
+                            'language' => $language,
+                        ]);
         }
     }
 }
