@@ -40,7 +40,9 @@ const handleModalButtonClick = (event: Event): void => {
     const departureId = button.getAttribute("data-id");
     const departureName = button.getAttribute("data-name");
     const boatId = button.getAttribute("data-boat-id");
+    const boatName = button.getAttribute("data-boat-name");
     const transectId = button.getAttribute("data-transect-id");
+    const transectName = button.getAttribute("data-transect-name");
     const date = button.getAttribute("data-date");
     const observers = button.getAttribute("data-observers")?.split(',').map(name => name.trim()) || [];
 
@@ -56,11 +58,11 @@ const handleModalButtonClick = (event: Event): void => {
             handleEditDepartureModal(modal, departureId, boatId, transectId, date, observers);
             break;
         case "detailsDepartureModal":
-            if (!departureId) {
+            if (!departureId || !boatName || !transectName || !date || !observers) {
                 console.error("Faltan atributos de datos");
                 return;
             }
-            handleDetailsDepartureModal(modal, departureId);
+            handleDetailsDepartureModal(modal, departureId, boatName, transectName, date, observers);
             break;
         case "deleteDepartureModal":
             if (!departureId || !departureName) {
@@ -125,13 +127,36 @@ const handleEditDepartureModal = (
     openModal(modal);
 };
 
-const handleDetailsDepartureModal = (modal: HTMLElement, departureId: string): void => {
-    const textDepartureId = modal.querySelector<HTMLElement>("#departureIdDetails");
-    if (!textDepartureId) {
-        console.error("Falta el campo de texto en el modal de detalles");
+const handleDetailsDepartureModal = (
+    modal: HTMLElement, 
+    departureId: string, 
+    boatName: string, 
+    transectName: string, 
+    date: string, 
+    observers: string[]
+): void => {
+    const detailsBoatName = modal.querySelector<HTMLElement>("#details_boat_name");
+    const detailsTransectName = modal.querySelector<HTMLElement>("#details_transect_name");
+    const detailsDate = modal.querySelector<HTMLElement>("#details_date");
+    const detailsObservers = modal.querySelector<HTMLUListElement>("#details_observers");
+
+    if (!detailsBoatName || !detailsTransectName || !detailsDate || !detailsObservers) {
+        console.error("Faltan campos de texto en el modal de detalles");
         return;
     }
-    textDepartureId.textContent = departureId;
+
+    detailsBoatName.textContent = boatName;
+    detailsTransectName.textContent = transectName;
+    detailsDate.textContent = date;
+
+    detailsObservers.innerHTML = '';
+
+    observers.forEach(observer => {
+        const li = document.createElement('li');
+        li.textContent = observer;
+        detailsObservers.appendChild(li);
+    });
+
     openModal(modal);
 };
 
