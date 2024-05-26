@@ -100,9 +100,6 @@ class User extends Authenticatable
         return $this->belongsToMany(Role::class);
     }
 
-    // public function observationImages(){
-    //     return $this->hasMany(ObservationImage::class);
-    // }
 
     public function hasRole($roleNames):bool{
 
@@ -124,5 +121,9 @@ class User extends Authenticatable
 
         return $allRoles->diff($actualRoles);
     }
+
+	// public function observationImages(){
+	//     return $this->hasMany(ObservationImage::class);
+	// }
 }
 

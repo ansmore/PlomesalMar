@@ -13,9 +13,10 @@ class AdminController extends Controller
 	public function __construct()
     {
         $this->middleware('auth');
+        $this->middleware('is_admin');
     }
 
-	public function index(Request $request, $language = null){
+	public function index($language = null, Request $request){
         $users = User::all();
 		$roles = Role::all();
 		return view('admin.managementUsers', [
@@ -95,15 +96,17 @@ class AdminController extends Controller
         ]);
     }
 
-    public function setRole(Request $request)
+	public function setRole(Request $request)
     {
         $role = Role::find($request->input('role_id'));
         $user = User::find($request->input('user_id'));
 
-		// if($this->authorize('preventSelfBlock', $user) && $role->name === 'bloquejat')
-        // {
-        //     abort(403, "No pots afegir el rol de 'bloquejat' si ets 'admin' ");
-        // }
+        Log::info("Attempting to set role: {$role->role} for user: {$user->id}");
+
+        if ($role->role === 'blocked') {
+			Log::info("No pots afegir el rol: {$role->role} a l'usuari: {$user->name}");
+            $this->authorize('preventSelfBlock', [$user, $role]);
+        }
 
         try{
             $user->roles()->attach($role->id, [
@@ -111,7 +114,7 @@ class AdminController extends Controller
                 'updated_at' => now()
             ]);
             return back()
-                ->with('success', "Rol $role->role afegit a $user->name correctament.");
+                ->with("success", "Rol $role->role afegit a $user->name correctament.");
         }catch(QueryException $e){
             return back()
                 ->withErrors("No es pot afegir el rol $role->role a $user->name. Es possible que ja tingui aquest rol.");
@@ -122,25 +125,25 @@ class AdminController extends Controller
         $role = Role::find($request->input('role_id'));
         $user = User::find($request->input('user_id'));
 
-		// if ($this->authorize('lastUserAdmin', [$user, $role])){
-        //     return response("No puedes quitarte el rol de 'admin' eres el único 'admin' ", 418);
-        //     abort(403, "No puedes treure el rol de 'admin' ets l'únic 'admin' ");
-        // }
+        Log::info("Attempting to remove role: {$role->role} from user: {$user->id}");
+
+        if ($role->role === 'admin') {
+            $this->authorize('lastUserAdmin', [$user, $role]);
+        }
 
         try{
             $user->roles()->detach($role->id);
-            return back()
-                ->with('success', "Rol $role->role retirat a $user->name correctament.");
+            return back()->with('success', "Rol $role->role retirat a $user->name correctament.");
         }catch(QueryException $e){
-            return back()
-                ->withErrors("No s'ha pogut retirar el rol $role->role a $user->name. Es possible que ja tingui aquest rol.");
+            Log::error("Error removing role: " . $e->getMessage());
+            return back()->withErrors("No s'ha pogut retirar el rol $role->role a $user->name. Es possible que ja tingui aquest rol.");
         }
     }
 
 	/**
      * Remove the specified resource from storage.
      */
-    public function destroy($language = null, $id)
+    public function destroy($id, $language = null)
     {
         try {
             $success = User::deleteById($id);
@@ -160,8 +163,8 @@ class AdminController extends Controller
 		abort(418, "Això es una prova de l'error 418");
     }
 
-	public function blocked()
+	public function blocked($language = null)
     {
-        return view('home.blocked');
+        return view('pages.blocked', ['language' => $language]);
     }
 }

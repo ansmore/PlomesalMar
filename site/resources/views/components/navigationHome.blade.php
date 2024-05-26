@@ -64,12 +64,14 @@
                                             <span> {{ Auth::user()->name }}</span>
                                         </a>
                                     </span>
-                                    <span>
-                                        <a href="{{ route('admin.management', ['language' => $language]) }}"
-                                            class="dropdown__menu__item">
-                                            <span data-text="administration"></span>
-                                        </a>
-                                    </span>
+                                    @if (Auth::user()->hasRole('admin'))
+                                        <span>
+                                            <a href="{{ route('admin.management', ['language' => $language]) }}"
+                                                class="dropdown__menu__item">
+                                                <span data-text="administration"></span>
+                                            </a>
+                                        </span>
+                                    @endif
                                     <span>
                                         <a class="dropdown__menu__item"
                                             href="{{ route('logout', ['language' => $language]) }}"
