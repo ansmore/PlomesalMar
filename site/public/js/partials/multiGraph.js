@@ -45,12 +45,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         return color;
     }
-    function updateChart(chart, labels, speciesData) {
+    function updateChart(chart, labels, speciesData, speciesNames) {
         chart.data.labels = labels;
         const datasets = Object.keys(speciesData).map(speciesId => {
             const data = speciesData[speciesId];
+            const label = speciesNames[speciesId];
             return {
-                label: `Species ${speciesId}`,
+                label,
                 data,
                 fill: false,
                 borderColor: getRandomColor(),
@@ -87,8 +88,8 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             const data = await response.json();
             if (data?.labels && data?.speciesData1 && data?.speciesData2) {
-                updateChart(multiYearSpeciesChart1, data.labels, data.speciesData1);
-                updateChart(multiYearSpeciesChart2, data.labels, data.speciesData2);
+                updateChart(multiYearSpeciesChart1, data.labels, data.speciesData1, data.speciesNames);
+                updateChart(multiYearSpeciesChart2, data.labels, data.speciesData2, data.speciesNames);
             }
             else {
                 console.error('Invalid data format received:', data);
