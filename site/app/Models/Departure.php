@@ -26,6 +26,11 @@ class Departure extends Model
         return $this->belongsTo(Transect::class);
     }
 
+    public function observations()
+    {
+        return $this->belongsToMany(Observation::class, 'departure_observations', 'departure_id', 'observation_id');
+    }
+
     /**
      * Busca salidas basadas en el término de búsqueda proporcionado.
      *
@@ -120,4 +125,12 @@ class Departure extends Model
         return false;
     }
 
+    public function deleteIfNoObservations()
+    {
+        if ($this->observations()->count() > 0) {
+            throw new \Exception('No se puede eliminar la salida porque tiene observaciones relacionadas.');
+        }
+
+        return $this->delete();
+    }
 }
