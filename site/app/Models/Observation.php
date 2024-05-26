@@ -42,8 +42,8 @@ class Observation extends Model
     public static function getSpeciesDataByYear($speciesId, $year)
     {
         return DB::table('observations')
-            ->join('departure_user_observations', 'observations.id', '=', 'departure_user_observations.observation_id')
-            ->join('departures', 'departure_user_observations.departure_id', '=', 'departures.id')
+            ->join('departure_observations', 'observations.id', '=', 'departure_observations.observation_id')
+            ->join('departures', 'departure_observations.departure_id', '=', 'departures.id')
             ->select(DB::raw('MONTH(departures.date) as month'), DB::raw('SUM(observations.number_of_individuals) as total'))
             ->whereYear('departures.date', $year)
             ->where('observations.species_id', $speciesId)
