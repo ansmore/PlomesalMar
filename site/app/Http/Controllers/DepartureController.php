@@ -63,20 +63,6 @@ class DepartureController extends Controller
         }
     }
 
-    public function edit($id, $language = null)
-    {
-        $departure = Departure::findOrFail($id);
-        $boats = Boat::all();
-        $transects = Transect::all();
-
-        return view('departures.edit', [
-            'departure' => $departure,
-            'boats' => $boats,
-            'transects' => $transects,
-            'language' => $language,
-        ]);
-    }
-
     /**
      * Update the specified resource in storage.
      */
@@ -86,6 +72,8 @@ class DepartureController extends Controller
             'boat_id' => 'required|exists:boats,id',
             'transect_id' => 'required|exists:transects,id',
             'date' => 'required|date',
+            'users' => 'required|array',
+            'users.*' => 'exists:users,id'
         ]);
 
         try {
@@ -104,8 +92,18 @@ class DepartureController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Departure $departures)
+    public function destroy($language, $id)
     {
-        //
+        try {
+            $departure = Departure::findOrFail($id);
+
+            // Usar el método del modelo para eliminar si no hay observaciones
+            $departure->deleteIfNoObservations();
+
+            return redirect()->back()->with('status', 'La salida se ha eliminado con éxito.');
+        } catch (\Exception $e) {
+            Log::error('Error al intentar eliminar la salida: ' . $e->getMessage());
+            return redirect()->back()->with('error', $e->getMessage());
+        }
     }
 }

@@ -6,6 +6,7 @@ use App\Models\Specie;
 use Illuminate\Http\Request;
 use App\Models\ImageObservation;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -34,11 +35,16 @@ class Observation extends Model
         return $this->hasMany(ImageObservation::class, 'observation_id');
     }
 
+    public function departure()
+    {
+        return $this->belongsToMany(Departure::class, 'departure_observations', 'observation_id', 'departure_id');
+    }
+
     public static function getSpeciesDataByYear($speciesId, $year)
     {
         return DB::table('observations')
-            ->join('departure_user_observations', 'observations.id', '=', 'departure_user_observations.observation_id')
-            ->join('departures', 'departure_user_observations.departure_id', '=', 'departures.id')
+            ->join('departure_observations', 'observations.id', '=', 'departure_observations.observation_id')
+            ->join('departures', 'departure_observations.departure_id', '=', 'departures.id')
             ->select(DB::raw('MONTH(departures.date) as month'), DB::raw('SUM(observations.number_of_individuals) as total'))
             ->whereYear('departures.date', $year)
             ->where('observations.species_id', $speciesId)
@@ -98,7 +104,8 @@ class Observation extends Model
 
     public static function createObservation(array $data)
     {
-        return DB::table('observations')->insertGetId([
+
+        $observationId = DB::table('observations')->insertGetId([
             'species_id' => $data['species_id'],
             'time' => $data['time'],
             'waypoint' => $data['waypoint'],
@@ -109,7 +116,10 @@ class Observation extends Model
             'created_at' => now(),
             'updated_at' => now(),
         ]);
+
+        return $observationId;
     }
+
 
     public function firstImage()
     {

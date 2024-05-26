@@ -26,6 +26,11 @@ class Departure extends Model
         return $this->belongsTo(Transect::class);
     }
 
+    public function observations()
+    {
+        return $this->belongsToMany(Observation::class, 'departure_observations', 'departure_id', 'observation_id');
+    }
+
     /**
      * Busca salidas basadas en el término de búsqueda proporcionado.
      *
@@ -105,10 +110,32 @@ class Departure extends Model
     {
         $departure = self::find($id);
         if ($departure) {
-            $departure->update($request->all());
+            $userNames = User::whereIn('id', $request->input('users'))->pluck('name')->toArray();
+            $observers = implode(', ', $userNames);
+
+            $departure->boat_id = $request->input('boat_id');
+            $departure->transect_id = $request->input('transect_id');
+            $departure->date = $request->input('date');
+            $departure->observers = $observers;
+
+            $departure->save();
             return true;
         }
 
         return false;
+    }
+
+    public function deleteIfNoObservations()
+    {
+        if ($this->observations()->count() > 0) {
+            throw new \Exception('No se puede eliminar la salida porque tiene observaciones relacionadas.');
+        }
+
+        return $this->delete();
+    }
+
+    public function getObserversAttribute($value)
+    {
+        return explode(',', $value);
     }
 }

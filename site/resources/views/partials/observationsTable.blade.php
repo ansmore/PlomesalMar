@@ -75,6 +75,9 @@
     </table>
     {{-- @include('modals/observations.edit') --}}
 </div>
+<div id="image-popup" class="image-popup">
+    <img src="" alt="Large view">
+</div>
 
 <nav aria-label="Page navigation example" class="pagination__box">
     <ul class="pagination">
@@ -118,5 +121,18 @@
         width: 100%;
         height: auto;
         max-width: 5rem;
+        cursor: pointer;
+    }
+
+    .image-popup {
+        display: none;
+        position: absolute;
+        z-index: 1000;
+        max-width: 20rem;
+    }
+
+    .image-popup img {
+        width: 100%;
+        height: auto;
     }
 </style>

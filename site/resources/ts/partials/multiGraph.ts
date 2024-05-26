@@ -51,7 +51,6 @@ document.addEventListener('DOMContentLoaded', () => {
         for (let i = 0; i < 6; i++) {
             color += letters[Math.floor(Math.random() * 16)];
         }
-        
         return color;
     }
 
@@ -63,16 +62,18 @@ document.addEventListener('DOMContentLoaded', () => {
         labels: string[];
         speciesData1: SpeciesData;
         speciesData2: SpeciesData;
+        speciesNames: { [speciesId: string]: string }; // Ensure speciesNames is included
     }
 
-    function updateChart(chart: Chart, labels: string[], speciesData: SpeciesData) {
+    function updateChart(chart: Chart, labels: string[], speciesData: SpeciesData, speciesNames: { [speciesId: string]: string }) {
         chart.data.labels = labels;
 
         const datasets = Object.keys(speciesData).map(speciesId => {
             const data = speciesData[speciesId];
+            const label = speciesNames[speciesId];
 
             return {
-                label: `Species ${speciesId}`,
+                label,
                 data,
                 fill: false,
                 borderColor: getRandomColor(),
@@ -116,8 +117,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const data: ChartData = await response.json();
             if (data?.labels && data?.speciesData1 && data?.speciesData2) {
-                updateChart(multiYearSpeciesChart1, data.labels, data.speciesData1);
-                updateChart(multiYearSpeciesChart2, data.labels, data.speciesData2);
+                updateChart(multiYearSpeciesChart1, data.labels, data.speciesData1, data.speciesNames);
+                updateChart(multiYearSpeciesChart2, data.labels, data.speciesData2, data.speciesNames);
             } else {
                 console.error('Invalid data format received:', data);
             }

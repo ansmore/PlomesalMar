@@ -62,15 +62,13 @@ class GraphController extends Controller
         $selectedYear1 = $request->input('year1', date('Y'));
         $selectedYear2 = $request->input('year2', date('Y'));
 
-        $selectedSpeciesIds = [
+        $selectedSpeciesIds = array_filter([
             $request->input('species_id1', null),
             $request->input('species_id2', null),
             $request->input('species_id3', null),
             $request->input('species_id4', null),
             $request->input('species_id5', null)
-        ];
-
-        $selectedSpeciesIds = array_filter($selectedSpeciesIds, fn($id) => !is_null($id));
+        ], fn($id) => !is_null($id));
 
         $years = Observation::getYears();
 
@@ -90,7 +88,7 @@ class GraphController extends Controller
                 continue;
             }
 
-            $speciesNames[$speciesId] = $species->name;
+            $speciesNames[$speciesId] = $species->common_name;
 
             $data1 = array_fill_keys(array_keys($months), 0);
             $data2 = array_fill_keys(array_keys($months), 0);
@@ -145,9 +143,9 @@ class GraphController extends Controller
         if ($request->has('departure_id')) {
             $departureId = $request->input('departure_id');
             $observations = DB::table('observations')
-                ->join('departure_user_observations', 'observations.id', '=', 'departure_user_observations.observation_id')
+                ->join('departure_observations', 'observations.id', '=', 'departure_observations.observation_id')
                 ->join('species', 'observations.species_id', '=', 'species.id')
-                ->where('departure_user_observations.departure_id', $departureId)
+                ->where('departure_observations.departure_id', $departureId)
                 ->select('species.common_name as species', DB::raw('SUM(observations.number_of_individuals) as total'))
                 ->groupBy('species.common_name')
                 ->get();

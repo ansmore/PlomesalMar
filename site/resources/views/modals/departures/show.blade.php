@@ -1,31 +1,32 @@
 <section class="modal fade modal-common modal__management__big" id="detailsDepartureModal" tabindex="-1"
-    aria-labelledby="detailsDepartureLabel" aria-hidden="true">
-
+    aria-labelledby="detailsModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg modal__management__big__box">
         <button type="button" class="btn-close close" data-bs-dismiss="modal" aria-label="Cerrar">
             <i class="fa-solid fa-xmark"></i>
         </button>
-        <div class="modal-content body">
-            <h2 class="modal-title body__title" id="detailsDepartureLabel" data-text="detailsDeparture"></h2>
+        <div class="modal-header body">
+            <h2 class="modal-title body__title" id="detailsModalLabel" data-text="detailsDeparture"></h2>
 
             <article class="form">
                 <div class="form__group">
-                    <h6 class="form__group__content" data-text="boatNameModal"></h6>
-                    <p class="form__group__content" id="boatNameDetails"></p>
+                    <label class="form__group__content" data-text="boatNameModal"></label>
+                    <p id="details_boat_name" class="form__group__value"></p>
                 </div>
                 <div class="form__group">
-                    <h6 class="form__group__content" data-text="transectNameModal"></h6>
-                    <p class="form__group__content" id="transectNameDetails"></p>
+                    <label class="form__group__content" data-text="transectNameModal"></label>
+                    <p id="details_transect_name" class="form__group__value"></p>
                 </div>
                 <div class="form__group">
-                    <h6 class="form__group__content" data-text="dateModal"></h6>
-                    <p class="form__group__content" id="dateNameDetails"></p>
+                    <label class="form__group__content" data-text="dateModal"></label>
+                    <p id="details_date" class="form__group__value"></p>
+                </div>
+                <div class="form__group">
+                    <label class="form__group__content">Observers:</label>
+                    <ul id="details_observers" class="form__group__value"></ul>
                 </div>
                 <div class="form__group__buttons">
-                    <button type="button" class="btn btn-secondary form__button__back" data-bs-dismiss="modal"
-                        data-text="cancelButton"></button>
-                    <button type="submit" class="btn btn-primary form__button__success"
-                        data-text="saveButton"></button>
+                    <button type="button" class="btn-close form__button__back" data-bs-dismiss="modal"
+                        data-text="closeButton"></button>
                 </div>
             </article>
         </div>
