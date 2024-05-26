@@ -18,36 +18,42 @@ class AdminPolicy
 
 	public function lastUserAdmin(User $user, Role $role)
     {
-
-
-        $adminRole = Role::where('name', 'admin')->first();
-
+        $adminRole = Role::where('role', 'admin')->first();
         $adminCount = $adminRole->users()->count();
 
 		Log::info("Role being checked: {$role->role}");
         Log::info("Admin count: {$adminCount}");
-        Log::info("User being checked: {$user->id}");
+        Log::info("User being checked: {$user->name}");
 
-		$value = ($adminRole->name === 'admin'
-			&& $adminCount === 1
-			&& $adminRole->users->contains($user));
+		return !($adminRole->role === 'admin' && $adminCount === 1 && $adminRole->users->contains($user));
 
-		Log::info("Role value: {$value}");
-
-		return !($adminRole->name === 'admin' && $adminCount === 1 && $adminRole->users->contains($user));
     }
 
     public function preventSelfBlock(User $user, Role $role)
     {
-
 		Log::info("User attempting to add blocked role: {$user->id}");
         Log::info("Role being checked: {$role->role}");
 
-        if ($user->hasRole('admin') && $role->name === 'blocked') {
+        if ($user->id === auth()->id() && $role->role === 'blocked') {
 			return false;
-			// return redirect()->back()->withErrors("error", "No pots bloquejar-te a tu mateix.");
         }
 
         return true;
+    }
+
+	public function ensureAtLeastOneAdmin(User $user, Role $role)
+    {
+        $adminRole = Role::where('role', 'admin')->first();
+        $adminCount = $adminRole->users()->count();
+
+        Log::info("Checking to ensure at least one admin remains.");
+        Log::info("Current admin count: {$adminCount}");
+
+        return $adminCount > 1;
+    }
+
+	public function preventSelfAdminRemoval(User $user)
+    {
+        return !$user->hasRole('admin') || $user->id !== auth()->id();
     }
 }

@@ -101,27 +101,26 @@ class AdminController extends Controller
         $role = Role::find($request->input('role_id'));
         $user = User::find($request->input('user_id'));
 
-        Log::info("Attempting to set role: {$role->role} for user: {$user->id}");
+        Log::info("Attempting to set role: {$role->role} for user: {$user->name}");
 
 		try{
 			if ($role->role === 'blocked') {
-				Log::info("No pots afegir el rol: {$role->role} a l'usuari: {$user->name}");
-				$this->authorize('preventSelfBlock', [$user, $role]);
-			}
+                if (!policy(User::class)->preventSelfBlock($user, $role)) {
+                    return redirect()->back()->withErrors("No pots bloquejar-te a tu mateix.");
+                }
+            }
+
+			Log::info("No pots afegir el rol: $role->role a l'usuari: {$user->name}");
 
 			$user->roles()->attach($role->id, [
                 'created_at' => now(),
                 'updated_at' => now()
             ]);
 
-			if($user->roles->contains($role->id)){
-				return redirect()->back()->with("status", "Rol '$role->role' afegit a $user->name correctament.");
-			} else {
-				return redirect()->back()->with("status", "S'ha produït un error al afegir el rol '$role->role' a $user->name.");
-			}
+			return redirect()->back()->with("status", "Rol '$role->role' afegit a $user->name correctament.");
         }catch(QueryException $e){
-            return back()
-                ->withErrors("No es pot afegir el rol $role->role a $user->name. Es possible que ja tingui aquest rol.");
+			Log::error("Error attaching role: " . $e->getMessage());
+            return back()->withErrors("No es pot afegir el rol $role->role a $user->name. Es possible que ja tingui aquest rol.");
         }
     }
 
@@ -129,23 +128,27 @@ class AdminController extends Controller
         $role = Role::find($request->input('role_id'));
         $user = User::find($request->input('user_id'));
 
-        Log::info("Attempting to remove role: {$role->role} from user: {$user->id}");
+        Log::info("Attempting to remove role: {$role->role} from user: {$user->name}");
 
 		try{
 			if ($role->role === 'admin') {
-				$this->authorize('lastUserAdmin', [$user, $role]);
-			}
+                if (!policy(User::class)->lastUserAdmin($user, $role)) {
+                    return redirect()->back()->withErrors("No pots retirar el $role->role, ets l'únic $role->role.");
+                }
+                if (!policy(User::class)->ensureAtLeastOneAdmin($user, $role)) {
+                    return redirect()->back()->withErrors("No puedes quitar el rol de 'admin' porque debe haber al menos un administrador.");
+                }
+				if (!policy(User::class)->preventSelfAdminRemoval($user)) {
+                    return redirect()->back()->withErrors("No pots retirar el teu propi rol d'administrador.");
+                }
+            }
 
 			$user->roles()->detach($role->id);
 
-			if(!$user->roles->contains($role->id)){
-				return  redirect()->back()->with("status", "Rol '$role->role' retirat a $user->name correctament.");
-			} else {
-				return redirect()->back()->with('status', "S'ha produït un error al retirar '$role->role' a $user->name.");
-			}
+			return redirect()->back()->with("status", "Rol '$role->role' retirat a $user->name correctament.");
         } catch (\Exception $e) {
         Log::error("Unexpected error: " . $e->getMessage());
-        return redirect()->back()->with('error', "S'ha produït un error inesperat. Si us plau, intenta-ho més tard.");
+        return redirect()->back()->withErrors("S'ha produït un error inesperat. Si us plau, intenta-ho més tard.");
 		}
     }
 
