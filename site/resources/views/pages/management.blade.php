@@ -23,7 +23,7 @@
                         <span data-text="asideDeparture"></span>
                     </figure>
                 </a>
-                <a href="{{ route('observations.index', ['language' => $language]) }}">
+                <a href="{{ route('observations', ['language' => $language]) }}">
                     <figure class="box__logo__image">
                         <i class="fas fa-binoculars">
                         </i>
@@ -62,7 +62,3 @@
         </section>
     </main>
 @endsection
-
-@push('scripts')
-    <script type="module" src="{{ asset('js/pages/management.js') }}" defer></script>
-@endpush

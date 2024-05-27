@@ -30,8 +30,6 @@
       }
 
       .form {
-        // @extend .form;
-
         @include mainBox(column, flex-start, center);
         @include boxSize(width, 65vw, null, 65vw);
         // @include boxSize(height, 75vh, null, 75vh);

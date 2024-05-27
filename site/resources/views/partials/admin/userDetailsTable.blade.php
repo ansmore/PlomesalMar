@@ -22,6 +22,14 @@
                 <td>{{ $user->name }}</td>
             </tr>
             <tr>
+                <th data-text="surnameModal"></th>
+                <td>{{ $user->surname }}</td>
+            </tr>
+            <tr>
+                <th data-text="surnameSecondModal"></th>
+                <td>{{ $user->surnameSecond }}</td>
+            </tr>
+            <tr>
                 <th data-text="email"></th>
                 <td>{{ $user->email }}</td>
             </tr>

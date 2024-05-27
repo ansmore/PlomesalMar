@@ -15,5 +15,7 @@
 	"removeUser": "Eliminar usuari",
 
 	"nameModal": "Nom: ",
+	"surnameModal": "Cognom: ",
+	"surnameSecondModal": "Cognom 2: ",
 	"emailModal": "Email: "
 }

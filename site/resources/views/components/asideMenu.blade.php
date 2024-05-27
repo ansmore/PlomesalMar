@@ -19,7 +19,7 @@
                     <i class="fas fa-binoculars">
                     </i>
                 </span>
-                <a href="{{ route('species', ['language' => $language]) }}" class="list__item__link"
+                <a href="{{ route('observations', ['language' => $language]) }}" class="list__item__link"
                     data-text="asideObservation"></a>
             </li>
             <li class="list__item">

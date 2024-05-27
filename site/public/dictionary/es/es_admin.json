@@ -11,5 +11,11 @@
 	"rolesUserHave": "Roles",
 	"moreInfo": "Más información",
 	"showDetails": "Ver detalles",
-	"addRole": " Añadir rol"
+	"addRole": " Añadir rol",
+	"removeUser": "Remove usuer",
+
+	"nameModal": "Name: ",
+	"surnameModal": "Lastname: ",
+	"surnameSecondModal": "Lastname 2: ",
+	"emailModal": "Email: "
 }
