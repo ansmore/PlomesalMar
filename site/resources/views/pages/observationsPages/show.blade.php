@@ -58,7 +58,7 @@
                                 <source media="(min-width: 601px) and (max-width: 1200px)"
                                     srcset="{{ $imageData['images']['medium'] }}">
                                 <source media="(min-width: 1201px)" srcset="{{ $imageData['images']['large'] }}">
-                                <img src="{{ $imageData['images']['large'] }}" alt="Imagen" style="max-width: 100%;">
+                                <img src="{{ $imageData['images']['large'] }}" alt="Imagen" style="max-width: 10%;">
                             </picture>
                         </div>
                     @endforeach

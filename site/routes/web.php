@@ -135,11 +135,14 @@ Route::prefix('/{language}')->group(function () {
 	Route::get('/departures', [DepartureController::class, 'index'])->name('departures');
 
 	// Observations routes
-	Route::resource('observations', ObservationController::class)->except(['index']);
 	Route::get('/observations', [ObservationController::class, 'index'])->name('observations.index');
-	Route::get('/observations/{observation}', [ObservationController::class, 'edit'])->name('observations.edit');
-    Route::put('/observations/{observation}', [ObservationController::class, 'update'])->name('observations.update');
-	Route::get('/observations/show/{observation}', [ObservationController::class, 'show'])->name('observations.show');
+	Route::get('/observations/create', [ObservationController::class, 'create'])->name('observations.create');
+	Route::post('/observations', [ObservationController::class, 'store'])->name('observations.store');
+	Route::get('/observations/{observation}', [ObservationController::class, 'show'])->name('observations.show');
+	Route::get('/observations/{observation}/edit', [ObservationController::class, 'edit'])->name('observations.edit');
+	Route::put('/observations/{observation}', [ObservationController::class, 'update'])->name('observations.update');
+	Route::delete('/observations/{observation}', [ObservationController::class, 'destroy'])->name('observations.destroy');
+
 
 	Route::get('/test-abort', [AdminController::class, 'testAbort']);
 

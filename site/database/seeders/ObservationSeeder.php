@@ -29,17 +29,13 @@ class ObservationSeeder extends Seeder
                 if (isset($record['ID Observació'])) {
                     $speciesId = isset($speciesMap[$record['Espècie']]) ? $speciesMap[$record['Espècie']] : $this->getRandomSpeciesId();
 
-                    // Procesar los valores de 'in_flight' y 'distance_under_300m'
                     $inFlight = $this->convertToBooleanOrSi($record['Vol']);
                     $distanceUnder300m = $this->convertToBooleanOrSi($record['Dist']);
 
-                    // Verificar y reemplazar valores de 'waypoint'
                     $waypoint = empty($record['Waypoint']) || $record['Waypoint'] === 'NA' ? $this->getRandomWaypoint() : $record['Waypoint'];
 
-                    // Verificar y reemplazar valores de 'number_of_individuals'
                     $numberOfIndividuals = $this->convertToNumberOrSi($record['Número']);
 
-                    // Verificar formato de tiempo
                     $time = $record['Hora'];
                     if ($time == '-' || !$this->isValidTime($time)) {
                         $time = $this->getRandomTime();
@@ -54,6 +50,7 @@ class ObservationSeeder extends Seeder
                         'in_flight' => $inFlight,
                         'distance_under_300m' => $distanceUnder300m,
                         'notes' => $record['Comentaris'],
+                        'is_validated' => true,
                     ]);
                 }
             }
