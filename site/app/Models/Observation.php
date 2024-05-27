@@ -23,6 +23,7 @@ class Observation extends Model
         'in_flight',
         'distance_under_300m',
         'notes',
+        'is_validated'
     ];
 
     public function species()
@@ -93,14 +94,23 @@ class Observation extends Model
     {
         $orderByField = $request->input('orderByField', 'id');
         $orderByDirection = $request->input('orderByDirection', 'asc');
-
+        $validated = $request->input('validated');
         $perPage = 6;
+    
+        $query = self::query();
+    
+        if ($request->filled('search')) {
+            $query->search($request->search);
+        }
+    
+        if ($validated === 'true') {
+            $query->where('is_validated', true);
+        } elseif ($validated === 'false') {
+            $query->where('is_validated', false);
+        }
 
-        return self::query()
-                    ->search($request->search)
-                    ->orderBy($orderByField, $orderByDirection)
-                    ->paginate($perPage);
-    }
+        return $query->orderBy($orderByField, $orderByDirection)->paginate($perPage);
+    }    
 
     public static function createObservation(array $data)
     {

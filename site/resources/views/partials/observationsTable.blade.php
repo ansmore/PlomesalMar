@@ -131,6 +131,7 @@
     </ul>
 </nav>
 
+{{-- No Borrar --}}
 <style>
     .contenedorImagen img {
         width: 100%;

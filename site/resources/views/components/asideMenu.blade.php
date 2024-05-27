@@ -19,8 +19,8 @@
                     <i class="fas fa-binoculars">
                     </i>
                 </span>
-                <a href="{{ route('observations', ['language' => $language]) }}" class="list__item__link"
-                    data-text="asideObservation"></a>
+                <a href="{{ route('observations.index', ['language' => $language, 'validated' => 'true']) }}"
+                    class="list__item__link" data-text="asideValidatedObservation"></a>
             </li>
             <li class="list__item">
                 <span class="list__item__icon">
@@ -88,6 +88,18 @@
                 <a href="{{ route('dashboard.donutGraph', ['language' => $language]) }}" class="list__item__link"
                     data-text="graph3">
                 </a>
+            </li>
+            <li class="list__title">
+                <span data-text="asideDashboard">
+                </span>
+            </li>
+            <li class="list__item">
+                <span class="list__item__icon">
+                    <i class="fas fa-globe">
+                    </i>
+                </span>
+                <a href="{{ route('observations.index', ['language' => $language, 'validated' => 'false']) }}"
+                    class="list__item__link" data-text="asideNotValidatedObservation"></a>
             </li>
         </ul>
     </nav>

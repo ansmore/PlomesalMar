@@ -20,6 +20,7 @@ return new class extends Migration
             $table->boolean('in_flight')->default(false);
             $table->boolean('distance_under_300m')->default(false);
             $table->text('notes')->nullable();
+            $table->boolean('is_validated')->nullable()->default(null);
             $table->foreign('species_id')->references('id')->on('species');
             $table->timestamps();
         });
