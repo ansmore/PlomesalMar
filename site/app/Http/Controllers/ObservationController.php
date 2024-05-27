@@ -102,7 +102,7 @@ class ObservationController extends Controller
 
             DB::commit();
 
-            return redirect()->route('observations', ['language' => $language])->with('status', 'Observación creada correctamente.');
+            return redirect()->route('observations.index', ['language' => $language])->with('status', 'Observación creada correctamente.');
         } catch (\Exception $e) {
             DB::rollBack();
             return redirect()->back()->with('error', 'Error al crear la observación: ' . $e->getMessage());
