@@ -132,6 +132,11 @@ Route::prefix('/{language?}')->group(function () {
 	Route::get('/observations/{observation}', [ObservationController::class, 'edit'])->name('observations.edit');
     Route::put('/observations/{observation}', [ObservationController::class, 'update'])->name('observations.update');
 	Route::get('/observations/show/{observation}', [ObservationController::class, 'show'])->name('observations.show');
+
+	Route::get('/test-abort', [AdminController::class, 'testAbort']);
+
+	Route::fallback([HomeController::class, 'index']);
+
 });
 
 // Route::fallback([HomeController::class, 'index']);
