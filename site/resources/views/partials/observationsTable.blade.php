@@ -64,16 +64,31 @@
                         @endif
                     </td>
                     <td class="iconsImage">
-                        <button type="button" class="buttonTable__success" data-bs-toggle="modal"
-                            data-bs-target="editobservationsModal" title="Editar" data-id="{{ $observation->id }}">
-                            <i class="fas fa-pencil"></i>
+                        <form
+                            action="{{ route('observations.show', ['language' => app()->getLocale(), 'observation' => $observation->id]) }}"
+                            method="GET" style="display: inline;">
+                            <button type="submit" class="buttonTable__success">
+                                <i class="fas fa-info-circle"></i>
+                            </button>
+                        </form>
+                        <form
+                            action="{{ route('observations.edit', ['language' => app()->getLocale(), 'observation' => $observation->id]) }}"
+                            method="GET" style="display: inline;">
+                            <button type="submit" class="buttonTable__success">
+                                <i class="fas fa-pencil"></i>
+                            </button>
+                        </form>
+                        <button type="button" class="buttonTable__close" data-bs-toggle="modal"
+                            data-bs-target="deleteObservationModal" data-id="{{ $observation->id }}"
+                            data-name="{{ $observation->time }}" title="Eliminar">
+                            <i class="fas fa-trash"></i>
                         </button>
                     </td>
                 </tr>
             @endforeach
         </tbody>
     </table>
-    {{-- @include('modals/observations.edit') --}}
+    @include('modals/observations.delete')
 </div>
 <div id="image-popup" class="image-popup">
     <img src="" alt="Large view">

@@ -2,12 +2,11 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
-
 use App\Models\User;
+use League\Csv\Reader;
 
 class UserSeeder extends Seeder
 {
@@ -16,37 +15,26 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
-		DB::table('users')->delete();
-		User::factory()->create([
-			'email'=> 'avalls89@gmail.com',
-			'name'=>'Albert',
-			'surname' => 'Valls',
-			'surnameSecond' => 'Berengueras',
-			'password'=> Hash::make('qwerty12'),
-		]);
-			User::factory()->create([
-			'email'=> 'alfred@mail.com',
-			'name'=>'Alfred',
-			'surname' => 'Perez',
-			'surnameSecond' => 'Herranz',
-			'password'=> Hash::make('qwerty12'),
-		]);
-        User::factory()->create([
-            'email'=> 'admin@mail.com',
-            'name'=>'Admin',
-			'surname' => 'admin',
-			'surnameSecond' => 'admin',
-            'password'=> Hash::make('qwerty12'),
-        ]);
-		User::factory()->create([
-            'email'=> 'blocked@mail.com',
-            'name'=>'Bloquejat',
-			'surname' => 'bloquejat',
-			'surnameSecond' => 'bloquejat',
-            'password'=> Hash::make('qwerty12'),
-        ]);
-        User::factory()
-            ->count(10)
-            ->create();
+        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
+        DB::table('users')->truncate();
+        DB::statement('SET FOREIGN_KEY_CHECKS=1;');
+
+        $csv = Reader::createFromPath(base_path('database/data/Rols.csv'), 'r');
+        $csv->setHeaderOffset(0);
+
+        foreach ($csv as $record) {
+            $names = explode(' ', $record['Nom']);
+            $name = $names[0];
+            $surname = count($names) > 1 ? $names[1] : null;
+            $surnameSecond = count($names) > 2 ? $names[2] : null;
+
+            User::create([
+                'name' => $name,
+                'surname' => $surname,
+                'surnameSecond' => $surnameSecond,
+                'email' => strtolower(str_replace(' ', '', $record['Nom'])) . '@plomesalmar.com',
+                'password' => Hash::make('qwerty12'),
+            ]);
+        }
     }
 }

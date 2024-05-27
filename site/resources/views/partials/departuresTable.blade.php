@@ -30,6 +30,7 @@
         </thead>
         <tbody>
             @foreach ($departures as $departure)
+                {{-- @dd($departure) --}}
                 <tr>
                     <td>{{ $departure->boat?->name }}</td>
                     <td>{{ $departure->transect?->name }}</td>
@@ -39,13 +40,14 @@
                             data-bs-target="detailsDepartureModal" title="Detalles" data-id="{{ $departure->id }}"
                             data-boat-name="{{ $departure->boat->name }}"
                             data-transect-name="{{ $departure->transect->name }}" data-date="{{ $departure->date }}"
-                            data-observers="{{ $departure->observers }}">
+                            data-observers="{{ implode(', ', $departure->observers) }}">
                             <i class="fas fa-info-circle"></i>
                         </button>
                         <button type="button" class="buttonTable__success" data-bs-toggle="modal"
                             data-bs-target="editDepartureModal" title="Editar" data-id="{{ $departure->id }}"
                             data-boat-id="{{ $departure->boat_id }}" data-transect-id="{{ $departure->transect_id }}"
-                            data-date="{{ $departure->date }}" data-observers="{{ $departure->observers }}">
+                            data-date="{{ $departure->date }}"
+                            data-observers="{{ implode(', ', $departure->observers) }}">
                             <i class="fas fa-pencil-alt"></i>
                         </button>
                         <button type="button" class="buttonTable__close" data-bs-toggle="modal"
