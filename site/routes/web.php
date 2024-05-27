@@ -68,6 +68,10 @@ Route::post('/password/confirm', function () {
 	return Redirect::to("/" . app()->getLocale() . "/password/confirm");
 })->name('indexPasswordConfim');
 
+Route::get('/blocked', function () {
+	return Redirect::to("/" . app()->getLocale() . "/blocked");
+})->name('indexBlocked');
+
 Route::get('/test', function () {
     return 'GraphController is working';
 })->name('testGraph');
@@ -81,17 +85,21 @@ Route::post('/sendLanguage', [LanguageController::class, 'sendLanguage']);
 Route::post('/plomesalmarContact', [PlomesalmarController::class, 'plomesalmarContactSubmit'])->name('plomesalmarContact.submit');
 
 
-Route::prefix('/{language?}')->group(function () {
+Route::prefix('/{language}')->group(function () {
 	Auth::routes();
 
-	// A la ruta admin? ->middleware('auth')
-	Route::prefix('admin')->group(function () {
+	Route::get('/blocked', [AdminController::class, 'blocked'])
+    ->name('blocked');
+
+	// A la ruta admin? ->middleware(['auth', 'is_admin'])
+	Route::prefix('admin')->middleware(['auth', 'is_admin'])->group(function () {
 		Route::get('management', [AdminController::class, 'index'])->name('admin.management');
 		Route::get('users', [AdminController::class, 'userList'])->name('admin.users');
 		Route::post('user/store', [AdminController::class, 'store'])->name('admin.user.store');
 		Route::get('user/{user}/details', [AdminController::class, 'userShow'])->name('admin.user.details');
 		Route::post('role', [AdminController::class, 'setRole'])->name('admin.user.setRole');
 		Route::delete('role', [AdminController::class, 'removeRole'])->name('admin.user.removeRole');
+		Route::delete('user/{user}', [AdminController::class, 'destroy'])->name('admin.user.destroy');
 	});
 
 	Route::get('/', [HomeController::class, 'index'])->name('index');
@@ -136,7 +144,6 @@ Route::prefix('/{language?}')->group(function () {
 	Route::get('/test-abort', [AdminController::class, 'testAbort']);
 
 	Route::fallback([HomeController::class, 'index']);
-
 });
 
 // Route::fallback([HomeController::class, 'index']);

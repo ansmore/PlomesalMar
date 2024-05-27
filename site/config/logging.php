@@ -119,6 +119,7 @@ return [
         'emergency' => [
             'path' => storage_path('logs/laravel.log'),
         ],
+
         'language_middleware' => [
             'driver' => 'single',
             'path' => storage_path('logs/language_middleware.log'),

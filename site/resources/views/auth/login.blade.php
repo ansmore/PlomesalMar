@@ -53,10 +53,11 @@
                                 {{ __('Forgot Your Password?') }}
                             </a>
                         @endif
-                        @if (Route::has('register'))
+                        {{-- Ruta per permetre el registre d'usuaris --}}
+                        {{-- @if (Route::has('register'))
                             <a class="form__group__content"
                                 href="{{ route('register', ['language' => $language]) }}">{{ __('Register') }}</a>
-                        @endif
+                        @endif --}}
                     </div>
                 </form>
             </article>

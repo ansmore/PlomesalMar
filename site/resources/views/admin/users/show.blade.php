@@ -3,7 +3,7 @@
 @section('title', "Detalls user $user->name")
 @section('content')
 
-    <main class="management">
+    <main class="management" data-view="users">
         @include('components.asideMenu')
         <section id="head" class="row">
             <article class="box">
@@ -22,8 +22,6 @@
                 @include('partials.admin.userDetailsTable', ['user' => $user])
             </article>
         </section>
-        {{-- @include('modals.species.create') --}}
-        {{-- @include('components.message') --}}
     </main>
 @endsection
 

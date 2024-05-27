@@ -48,9 +48,9 @@ class User extends Authenticatable
 	{
 		$hashedPassword = bcrypt($request->input('password'));
 
-    	Log::info('Creating user with hashed password', [
-        	'password' => $hashedPassword
-    	]);
+		Log::info('Creating user with hashed password', [
+			'password' => $hashedPassword
+		]);
 
 		$newUser = self::create([
 			'name' => $request->input('name'),
@@ -80,13 +80,26 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    /**
+     * Elimina una especie basada en el ID proporcionado.
+     *
+     * @param int $id El ID del usario a eliminar.
+     * @return bool
+     */
+    public static function deleteById($id): bool
+    {
+        $users = self::find($id);
+        if ($users) {
+            $users->delete();
+            return true;
+        }
+        return false;
+    }
+
 	public function roles(){
         return $this->belongsToMany(Role::class);
     }
 
-    // public function observationImages(){
-    //     return $this->hasMany(ObservationImage::class);
-    // }
 
     public function hasRole($roleNames):bool{
 
@@ -108,5 +121,9 @@ class User extends Authenticatable
 
         return $allRoles->diff($actualRoles);
     }
+
+	// public function observationImages(){
+	//     return $this->hasMany(ObservationImage::class);
+	// }
 }
 
