@@ -78,11 +78,17 @@
                                 <i class="fas fa-pencil"></i>
                             </button>
                         </form>
+                        <button type="button" class="buttonTable__close" data-bs-toggle="modal"
+                            data-bs-target="deleteObservationModal" data-id="{{ $observation->id }}"
+                            data-name="{{ $observation->time }}" title="Eliminar">
+                            <i class="fas fa-trash"></i>
+                        </button>
                     </td>
                 </tr>
             @endforeach
         </tbody>
     </table>
+    @include('modals/observations.delete')
 </div>
 <div id="image-popup" class="image-popup">
     <img src="" alt="Large view">

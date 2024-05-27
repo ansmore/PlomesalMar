@@ -255,5 +255,34 @@ class ObservationController extends Controller
     
         return view('pages.observationsPages.show', compact('observation', 'departures', 'species', 'imageUrls', 'departureId'));
     }    
+
+   /**
+     * Remove the specified resource from storage.
+     */
+    public function destroy(Request $request, $language, $id)
+    {
+        $id = $request->input('id');
+        Log::info('Intentando eliminar la observación con ID: ' . $id);
+    
+        try {
+            $observation = Observation::find($id);
+    
+            if (!$observation) {
+                Log::warning('No se encontró la observación con ID: ' . $id);
+                return redirect()->back()->with('error', 'No se encontró la observación.');
+            }
+    
+            Log::info('Observación encontrada: ' . $observation->id);
+    
+            $observation->deleteWithRelations();
+    
+            Log::info('Observación con ID: ' . $id . ' y sus relaciones eliminadas correctamente.');
+    
+            return redirect()->back()->with('status', 'La observación se ha eliminado con éxito.');
+        } catch (\Exception $e) {
+            Log::error('Error al intentar eliminar la observación: ' . $e->getMessage());
+            return redirect()->back()->with('error', $e->getMessage());
+        }
+    }    
     
 }

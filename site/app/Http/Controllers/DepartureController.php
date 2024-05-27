@@ -97,7 +97,6 @@ class DepartureController extends Controller
         try {
             $departure = Departure::findOrFail($id);
 
-            // Usar el método del modelo para eliminar si no hay observaciones
             $departure->deleteIfNoObservations();
 
             return redirect()->back()->with('status', 'La salida se ha eliminado con éxito.');

@@ -120,6 +120,50 @@ class Observation extends Model
         return $observationId;
     }
 
+    public function deleteWithRelations()
+    {
+        Log::info('Eliminando relaciones de la observación con ID: ' . $this->id);
+
+        // Eliminar relaciones de imágenes
+        $images = $this->images()->get();
+        if ($images->isEmpty()) {
+            Log::info('No se encontraron relaciones de imagen para la observación con ID: ' . $this->id);
+        } else {
+            foreach ($images as $imageObservation) {
+                Log::info('Eliminando imagen con ID: ' . $imageObservation->image_id);
+                try {
+                    $this->deleteImageFromApi($imageObservation->image_id);
+                } catch (\Exception $e) {
+                    Log::error('Error al eliminar la imagen con ID: ' . $imageObservation->image_id . ': ' . $e->getMessage());
+                }
+                $imageObservation->delete();
+            }
+        }
+
+        // Eliminar relaciones de departure_observations
+        DB::table('departure_observations')->where('observation_id', $this->id)->delete();
+
+        Log::info('Eliminando la observación en sí con ID: ' . $this->id);
+        $this->delete();
+    }
+
+    protected function deleteImageFromApi($imageId)
+    {
+        try {
+            $response = Http::withHeaders([
+                'Accept' => 'application/json',
+                'APP-TOKEN' => config('services.api.token'),
+            ])->delete(config('services.api.url') . "/api/V1/images/{$imageId}");
+
+            if (!$response->successful()) {
+                throw new \Exception('Error al eliminar la imagen a través de la API');
+            }
+        } catch (\Exception $e) {
+            Log::error('Error al eliminar la imagen: ' . $e->getMessage());
+            throw $e;
+        }
+    }
+
     public function firstImage()
     {
         return $this->hasOne(ImageObservation::class, 'observation_id')->oldest();

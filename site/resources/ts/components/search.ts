@@ -2,6 +2,7 @@ import { setupModalEventListenersSpecies } from "../modals/species/modals.js";
 import { setupModalEventListenersBoats } from "../modals/boats/modals.js";
 import { setupModalEventListenersTransects } from "../modals/transects/modals.js";
 import { setupModalEventListenersDepartures } from "../modals/departures/modals.js";
+import { setupModalEventListenersObservations } from "../modals/observations/modals.js";
 
 document.addEventListener("DOMContentLoaded", () => {
 	const body = document.querySelector("main");
@@ -23,6 +24,8 @@ document.addEventListener("DOMContentLoaded", () => {
 			setupModalEventListenersTransects();
 		} else if (view === "departures") {
 			setupModalEventListenersDepartures();
+		} else if (view === "observations") {
+			setupModalEventListenersObservations();
 		}
 	};
 

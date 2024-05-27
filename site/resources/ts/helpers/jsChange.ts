@@ -41,6 +41,9 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 			case "observations":
 				// const observationsImageModule = await import("../partials/imagePopUp.js");
+				const observationsModule = await import("../modals/observations/modals.js");
+				observationsModule.setupModalEventListenersObservations();
+				currentCleanupFunction = observationsModule.cleanupObservations;
 				// observationsImageModule.setupImagePopup();
 				// currentCleanupFunction = observationsImageModule.cleanupImagePopup;
 				break;
