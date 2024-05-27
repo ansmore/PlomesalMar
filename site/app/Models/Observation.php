@@ -120,7 +120,6 @@ class Observation extends Model
         return $observationId;
     }
 
-
     public function firstImage()
     {
         return $this->hasOne(ImageObservation::class, 'observation_id')->oldest();

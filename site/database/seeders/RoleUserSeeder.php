@@ -2,12 +2,12 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use Illuminate\Database\Seeder;
-
 use App\Models\Role;
 use App\Models\User;
+use League\Csv\Reader;
 use App\Models\RoleUser;
+use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class RoleUserSeeder extends Seeder
 {
@@ -16,28 +16,28 @@ class RoleUserSeeder extends Seeder
      */
     public function run(): void
     {
-        // Crear roles de usuarios específicos
-        $this->createRoleUser(1, 4); // Admin
-        $this->createRoleUser(2, 4); // Albert
-        $this->createRoleUser(3, 4); // Alferd
-        $this->createRoleUser(4, 1); // Bloquejat
+        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
+        DB::table('role_user')->truncate();
+        DB::statement('SET FOREIGN_KEY_CHECKS=1;');
 
-        // Crear 5 roles aleatorios de usuario
-        RoleUser::factory()->count(5)->create();
-    }
+        $csv = Reader::createFromPath(base_path('database/data/Rols.csv'), 'r');
+        $csv->setHeaderOffset(0);
 
-    /**
-     * Crear un rol de usuario solo si no existe.
-     */
-    private function createRoleUser($userId, $roleId)
-    {
-        $exists = RoleUser::where('role_id', $roleId)->where('user_id', $userId)->exists();
-
-        if (!$exists) {
-            RoleUser::factory()->create([
-                'role_id' => $roleId,
-                'user_id' => $userId,
-            ]);
+        foreach ($csv as $record) {
+            $user = User::where('email', strtolower(str_replace(' ', '', $record['Nom'])) . '@plomesalmar.com')->first();
+            if ($user) {
+                $roles = explode(', ', $record['Rol']);
+                foreach ($roles as $role) {
+                    $roleName = strtolower($role);
+                    $roleModel = Role::where('role', $roleName)->first();
+                    if ($roleModel) {
+                        RoleUser::create([
+                            'user_id' => $user->id,
+                            'role_id' => $roleModel->id,
+                        ]);
+                    }
+                }
+            }
         }
     }
 }
