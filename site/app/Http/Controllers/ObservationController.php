@@ -37,7 +37,6 @@ class ObservationController extends Controller
             } else {
                 $observerNames = $departure->observers;
             }
-            
             $observerNames = array_map('trim', $observerNames);
             $users = User::whereIn('name', $observerNames)->get(['id', 'name']);
             $departure->observer_users = $users;
@@ -96,7 +95,7 @@ class ObservationController extends Controller
 
             DB::commit();
 
-            return redirect()->route('observations.index', ['language' => $language])->with('status', 'Observación creada correctamente.');
+            return redirect()->route('observations', ['language' => $language])->with('status', 'Observación creada correctamente.');
         } catch (\Exception $e) {
             DB::rollBack();
             return redirect()->back()->with('error', 'Error al crear la observación: ' . $e->getMessage());
