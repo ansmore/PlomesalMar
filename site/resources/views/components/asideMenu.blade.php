@@ -98,7 +98,7 @@
                     <i class="fas fa-globe">
                     </i>
                 </span>
-                <a href="{{ route('observations.index', ['language' => $language, 'validated' => 'false']) }}"
+                <a href="{{ route('observations.index', ['language' => $language, 'validated' => 'null']) }}"
                     class="list__item__link" data-text="asideNotValidatedObservation"></a>
             </li>
         </ul>

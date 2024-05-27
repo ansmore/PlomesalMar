@@ -104,11 +104,11 @@ class Observation extends Model
         }
     
         if ($validated === 'true') {
-            $query->where('is_validated', true);
-        } elseif ($validated === 'false') {
-            $query->where('is_validated', false);
+            $query->where('is_validated', 1);
+        } elseif ($validated === 'null') {
+            $query->whereNull('is_validated');
         }
-
+    
         return $query->orderBy($orderByField, $orderByDirection)->paginate($perPage);
     }    
 
@@ -132,15 +132,10 @@ class Observation extends Model
 
     public function deleteWithRelations()
     {
-        Log::info('Eliminando relaciones de la observación con ID: ' . $this->id);
-
-        // Eliminar relaciones de imágenes
         $images = $this->images()->get();
         if ($images->isEmpty()) {
-            Log::info('No se encontraron relaciones de imagen para la observación con ID: ' . $this->id);
         } else {
             foreach ($images as $imageObservation) {
-                Log::info('Eliminando imagen con ID: ' . $imageObservation->image_id);
                 try {
                     $this->deleteImageFromApi($imageObservation->image_id);
                 } catch (\Exception $e) {
@@ -150,10 +145,8 @@ class Observation extends Model
             }
         }
 
-        // Eliminar relaciones de departure_observations
         DB::table('departure_observations')->where('observation_id', $this->id)->delete();
 
-        Log::info('Eliminando la observación en sí con ID: ' . $this->id);
         $this->delete();
     }
 
