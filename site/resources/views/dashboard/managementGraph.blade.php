@@ -19,19 +19,19 @@
             <article class="box__logo">
                 <a href="{{ route('dashboard.graph1', ['language' => $language]) }}">
                     <figure class="box__logo__image">
-                        <i class="fas fa-users"></i>
+                        <i class="fas fa-chart-column"></i>
                         <span data-text="graph1"></span>
                     </figure>
                 </a>
                 <a href="{{ route('dashboard.graph1', ['language' => $language]) }}">
                     <figure class="box__logo__image">
-                        <i class="fas fa-users"></i>
+                        <i class="fas fa-chart-line"></i>
                         <span data-text="graph2"></span>
                     </figure>
                 </a>
                 <a href="{{ route('dashboard.graph1', ['language' => $language]) }}">
                     <figure class="box__logo__image">
-                        <i class="fas fa-users"></i>
+                        <i class="fas fa-chart-pie"></i>
                         <span data-text="graph3"></span>
                     </figure>
                 </a>

@@ -3,7 +3,7 @@
         <thead class="text-white">
             <tr>
                 <th scope="col">
-                    <span data-text="boatsName" class="table__title"></span>
+                    <span data-text="boatName" class="table__title"></span>
                     <a href="?orderByField=name&orderByDirection=asc" class="decoration">
                         <i class="fas fa-arrow-up"></i>
                     </a>

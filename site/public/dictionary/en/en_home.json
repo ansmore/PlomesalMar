@@ -1,31 +1,4 @@
 {
-	"assCetacea": "Associció Cetàcea",
-	"plomesalamar": "plomes al mar",
-	"homeTitle": "Plomes al mar",
-	"homeIntro": "Welcome to our association",
-	"homeIntro2": "passionately dedicated to the preservation of the marine environment and the protection of the majestic cetaceans that inhabit the waters of the Mediterranean off the Catalan coast. As a non-profit organization, we work tirelessly to promote environmental awareness and the conservation of our oceans. With the help of our volunteers, we strive for a more sustainable future for future generations.",
-	"homeIntro3": "Our project",
-	"homeIntro4": "is a passionate initiative driven by volunteers, dedicated to recording observations of marine plomesalmar during our outings for cetacean sightings. Through the collaboration and commitment of our members, we gather essential data on the diversity and abundance of marine plomesalmar, contributing to the understanding and conservation of marine ecosystems. With each record, we are building a bridge towards a more mindful and respectful future for marine life.",
-
-	"aboutHeading": "If possible, count on us.",
-	"aboutText": "Value to your business",
-	"aboutButton": "Get Started",
-	"sitemapHeading": "Where are we?",
-	"sitemapAddress": "Carrer del Doctor Fleming, 25, 43700 El Vendrell, Tarragona",
-	"contactHeading": "Contact:",
-	"contactPhone": "Contact phone: ",
-	"contactPhoneNumber": "977 57 28 91",
-	"contactAction": "Send us a message:",
-	"contactActionMessage": "Message",
-	"contactName": "Name: ",
-	"contactEmail": "Email: ",
-	"contactTelephone": "Telephone: ",
-	"contactMessage": "Message: ",
-	"contactoClausulaContacto": "The communication sent will be used exclusively to process your data and address your request, always in accordance with Regulation (EU) 2016/679 (GDPR), Organic Law 15/1999 (LOPD), and Royal Decree 1720/2007, which develops the (LOPD), on data protection. Your data will not be disclosed to third parties, except by legal obligation; under no circumstances will they be used for marketing purposes, and they will be kept until you request their cancellation.",
-	"contactoClausulaContacto2": "At any time, you can exercise your rights of access, rectification, portability, and opposition, or, if applicable, limitation and/or cancellation of processing, by communicating it in writing, indicating your personal data to Avda. Can Deu, 4-6, local 08207, Sabadell, or by email to info@plomesalamar.cat.",
-	"contactAccept": "I accept the ",
-	"contactPolitica": "Privacy Policy",
-	"contactAccept2": "and the ",
-	"contactUse": "terms of use",
-	"contactButton": "Send"
+	"homeManagement": "Management",
+	"homeDashboard": "Dashboard"
 }

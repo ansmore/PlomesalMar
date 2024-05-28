@@ -20,7 +20,7 @@
                         <span class="circle__icon">
                             <i class="fa-solid fa-table"></i>
                         </span>
-                        <h4 class="circle__content" data-text="assCetacea">
+                        <h4 class="circle__content" data-text="homeManagement">
                         </h4>
                     </figure>
                 </a>
@@ -29,7 +29,7 @@
                         <span class="circle__icon">
                             <i class="fa-solid fa-chart-line"></i>
                         </span>
-                        <h4 class="circle__content" data-text="homeTitle">
+                        <h4 class="circle__content" data-text="homeDashboard">
                         </h4>
                     </figure>
                 </a>

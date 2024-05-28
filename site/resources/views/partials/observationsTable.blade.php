@@ -5,7 +5,7 @@
         <thead class="text-white">
             <tr>
                 <th scope="col">
-                    <span data-text="time" class="table__title"></span>
+                    <span data-text="timeObservation" class="table__title"></span>
                     <a href="?orderByField=time&orderByDirection=asc" class="decoration">
                         <i class="fas fa-arrow-up"></i>
                     </a>
