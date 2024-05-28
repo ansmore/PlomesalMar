@@ -26,6 +26,7 @@
                 <th scope="col" data-text="image"></th>
                 <th scope="col" data-text="flight"></th>
                 <th scope="col" data-text="distance"></th>
+                <th scome="col" data-text="pending"></th>
                 <th scope="col" data-text="actions" class="table__title"></th>
             </tr>
         </thead>
@@ -39,11 +40,13 @@
                         @if ($observation->firstImage)
                             <picture class="contenedorImagen">
                                 <source media="(max-width: 799px)"
-                                    srcset="{{ $observation->firstImage->getUrl('small') }}" loading="lazy">
+                                    srcset="{{ $observation->firstImage->getUrl('small') }}?{{ \Illuminate\Support\Str::random(8) }}"
+                                    loading="lazy">
                                 <source media="(min-width: 800px) and (max-width: 1023px)"
-                                    srcset="{{ $observation->firstImage->getUrl('medium') }}" loading="lazy">
-                                <img src="{{ $observation->firstImage->getUrl('large') }}" loading="lazy"
-                                    class="img-fluid">
+                                    srcset="{{ $observation->firstImage->getUrl('medium') }}?{{ \Illuminate\Support\Str::random(8) }}"
+                                    loading="lazy">
+                                <img src="{{ $observation->firstImage->getUrl('large') }}?{{ \Illuminate\Support\Str::random(8) }}"
+                                    loading="lazy" class="img-fluid">
                             </picture>
                         @else
                             No images
@@ -58,6 +61,13 @@
                     </td>
                     <td>
                         @if ($observation->distance_under_300m)
+                            <i class="fas fa-check" style="font-size: 1.5rem;"></i>
+                        @else
+                            <i class="fas fa-close" style="font-size: 1.5rem;"></i>
+                        @endif
+                    </td>
+                    <td>
+                        @if ($observation->is_validated)
                             <i class="fas fa-check" style="font-size: 1.5rem;"></i>
                         @else
                             <i class="fas fa-close" style="font-size: 1.5rem;"></i>
