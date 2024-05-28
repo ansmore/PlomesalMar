@@ -96,7 +96,7 @@ Route::prefix('/{language}')->group(function () {
 		Route::get('management', [AdminController::class, 'index'])->name('admin.management');
 		Route::get('users', [AdminController::class, 'userList'])->name('admin.users');
 		Route::post('user/store', [AdminController::class, 'store'])->name('admin.user.store');
-		Route::get('user/{user}/details', [AdminController::class, 'userShow'])->name('admin.user.details');
+		Route::get('user/{user}/show', [AdminController::class, 'userShow'])->name('admin.user.show');
 		Route::post('role', [AdminController::class, 'setRole'])->name('admin.user.setRole');
 		Route::delete('role', [AdminController::class, 'removeRole'])->name('admin.user.removeRole');
 		Route::delete('user/{user}', [AdminController::class, 'destroy'])->name('admin.user.destroy');
@@ -135,14 +135,15 @@ Route::prefix('/{language}')->group(function () {
 	Route::get('/departures', [DepartureController::class, 'index'])->name('departures');
 
 	// Observations routes
-	Route::get('/observations', [ObservationController::class, 'index'])->name('observations.index');
-	Route::get('/observations/create', [ObservationController::class, 'create'])->name('observations.create');
-	Route::post('/observations', [ObservationController::class, 'store'])->name('observations.store');
-	Route::get('/observations/{observation}', [ObservationController::class, 'show'])->name('observations.show');
-	Route::get('/observations/{observation}/edit', [ObservationController::class, 'edit'])->name('observations.edit');
-	Route::put('/observations/{observation}', [ObservationController::class, 'update'])->name('observations.update');
-	Route::delete('/observations/{observation}', [ObservationController::class, 'destroy'])->name('observations.destroy');
-
+	Route::prefix('observations')->group(function () {
+		Route::get('/index', [ObservationController::class, 'index'])->name('observations.index');
+		Route::get('/create', [ObservationController::class, 'create'])->name('observations.create');
+		Route::post('/observation/store', [ObservationController::class, 'store'])->name('observations.observation.store');
+		Route::get('/observation/{observation}/show', [ObservationController::class, 'show'])->name('observations.observation.show');
+		Route::get('/observation/{observation}/edit', [ObservationController::class, 'edit'])->name('observations.observation.edit');
+		Route::put('/observation/{observation}', [ObservationController::class, 'update'])->name('observations.observation.update');
+		Route::delete('/observation/{observation}', [ObservationController::class, 'destroy'])->name('observations.observation.destroy');
+	});
 
 	Route::get('/test-abort', [AdminController::class, 'testAbort']);
 

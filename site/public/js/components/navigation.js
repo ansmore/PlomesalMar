@@ -1,4 +1,4 @@
-import { getFinalLanguage, loadTextComponent, setLanguage, getFirstSegment, getSecondSegment, getIdSegment, getOthersSegments, } from "../helpers/dictionary.js";
+import { getFinalLanguage, loadTextComponent, setLanguage, getFirstSegment, getSecondSegment, getIdSegment, getThirdSegment, getOthersSegments, } from "../helpers/dictionary.js";
 export const navbar = "navigation";
 let selectedOption = null;
 const main = async () => {
@@ -40,12 +40,14 @@ const changeLanguage = async (language) => {
         const firstSegment = getFirstSegment(currentUrl);
         const secondSegment = await getSecondSegment(currentUrl);
         const idSegment = await getIdSegment(currentUrl);
+        const thirdSegment = await getThirdSegment(currentUrl);
         const othersSegments = await getOthersSegments(currentUrl);
         // DeveloperMode
         console.log("current", currentUrl);
         console.log("first", firstSegment);
         console.log("second", secondSegment);
         console.log("id", idSegment);
+        console.log("third", thirdSegment);
         console.log("others", othersSegments);
         const csrfToken = document
             .querySelector("meta[name=csrf-token]")
@@ -61,6 +63,7 @@ const changeLanguage = async (language) => {
                 firstSegment,
                 secondSegment,
                 idSegment,
+                thirdSegment,
                 othersSegments,
             }),
         });

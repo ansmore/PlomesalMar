@@ -13,7 +13,7 @@
                 <div class="card">
                     <div class="tableObservation">
                         <form class="observation-form" method="post"
-                            action="{{ route('observations.store', ['language' => app()->getLocale()]) }}"
+                            action="{{ route('observations.observation.store', ['language' => app()->getLocale()]) }}"
                             enctype="multipart/form-data">
                             @csrf
                             <!-- Seleccionar Departure -->

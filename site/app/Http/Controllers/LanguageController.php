@@ -15,20 +15,21 @@ class LanguageController extends Controller
     public function sendLanguage(Request $request)
     {
         try{
-			// Set language fron Request of file JSON
-			$setLanguage = $request->input('language', config('app.fallback_locale', 'ca'));
-			$setFirstSegment = $request->input('firstSegment', 'home');
-			$setSecondSegment = $request->input('secondSegment', '');
-			$setIdSegment = $request->input('idSegment', '');
-			$setOthersSegments = $request->input('othersSegments', '');
+            // Set language fron Request of file JSON
+            $setLanguage = $request->input('language', config('app.fallback_locale', 'ca'));
+            $setFirstSegment = $request->input('firstSegment', 'home');
+            $setSecondSegment = $request->input('secondSegment', '');
+            $setIdSegment = $request->input('idSegment', '');
+            $setThirdSegment = $request->input('thirdSegment', '');
+            $setOthersSegments = $request->input('othersSegments', '');
 
-			if ($setFirstSegment == "" || $setFirstSegment == "/") {
+            if ($setFirstSegment == "" || $setFirstSegment == "/") {
 				$setFirstSegment = "home";
-			}
+            }
 
-			// Initialize ordenationString as empty
-            $ordenationString = '';
-			$ordenationAdmin= '';
+            // Initialize ordenationString as empty
+                $ordenationString = '';
+            $ordenationAdmin= '';
 
             // Check if first segment contains '?'
             if (strpos($setFirstSegment, '?') !== false) {
@@ -40,10 +41,13 @@ class LanguageController extends Controller
                 list($setSecondSegment, $ordenationAdmin) = explode('?', $setSecondSegment, 2);
             }
 
+			// Check if third segment contains '?'
+            if (strpos($setThirdSegment, '?') !== false) {
+                list($setThirdSegment, $ordenationAdmin) = explode('?', $setThirdSegment, 2);
+            }
+
 			Session::put('language', $setLanguage);
 			$getLanguage = session('language');
-
-
 
 			if ($setSecondSegment === "") {
 
@@ -64,25 +68,30 @@ class LanguageController extends Controller
 					'secondSegment' =>  $setSecondSegment,
 					'ordenationAdmin' => $ordenationAdmin,
 					'newUrl' => $newUrl,
-					'user' => $setIdSegment
+					'user' => $setIdSegment,
+					'observation' => $setIdSegment
 				]);
 
 			} else if ($setSecondSegment !== $setOthersSegments) {
 
-				$segments = $setFirstSegment.".".$setSecondSegment.".details";
+				$segments = $setFirstSegment.".".$setSecondSegment.".".$setThirdSegment;
 
 				// Utilitza $newUrl per a construir la ruta final amb el llenguatge
 				$newUrl = route($segments, [
 					'language' => $getLanguage,
-					'user' => $setIdSegment
+					'id' => $setIdSegment,
+					'user' => $setIdSegment,
+					'observation' => $setIdSegment
 				]);
 
 				Log::channel('language_middleware')->info('concat_diferent', [
 					'secondSegment' =>  $setSecondSegment,
+					'thirdSegment' =>  $setThirdSegment,
 					'ordenationAdmin' => $ordenationAdmin,
 					'newUrl' => $newUrl,
 					'segments' => $segments,
-					'user' => $setIdSegment
+					'user' => $setIdSegment,
+					'observation' => $setIdSegment
 				]);
 
 			}else {
@@ -92,7 +101,11 @@ class LanguageController extends Controller
 					'url' => $segments
 				]);
 
-				$newUrl = route($segments, [ 'language' => $getLanguage ]);
+				$newUrl = route($segments, [
+					'language' => $getLanguage,
+					// 'user' => $setIdSegment,
+					// 'observation' => $setIdSegment
+				]);
 			}
 
 			Log::channel('language_middleware')->info('Setting language', [
@@ -100,6 +113,7 @@ class LanguageController extends Controller
 				'firstSegment' => $setFirstSegment,
 				'secondSegment' => $setSecondSegment,
 				'idSegment' => $setIdSegment,
+				'thirdSegment' => $setThirdSegment,
 				'othersSegments' => $setOthersSegments,
 				'ordenationString' => $ordenationString,
 				'ordenationAdmin' => $ordenationAdmin,
@@ -111,6 +125,8 @@ class LanguageController extends Controller
 				'language' => $getLanguage,
 				'firstSegment' => $setFirstSegment,
 				'secondSegment' => $setSecondSegment,
+				'idSegment' => $setIdSegment,
+				'thirdSegment' => $setThirdSegment,
 				'othersSegments' => $setOthersSegments,
 				'newUrl' => $newUrl,
 				'ordenationString' => $ordenationString,

@@ -65,14 +65,14 @@
                     </td>
                     <td class="iconsImage">
                         <form
-                            action="{{ route('observations.show', ['language' => app()->getLocale(), 'observation' => $observation->id]) }}"
+                            action="{{ route('observations.observation.show', ['language' => app()->getLocale(), 'observation' => $observation->id]) }}"
                             method="GET" style="display: inline;">
                             <button type="submit" class="buttonTable__success">
                                 <i class="fas fa-info-circle"></i>
                             </button>
                         </form>
                         <form
-                            action="{{ route('observations.edit', ['language' => app()->getLocale(), 'observation' => $observation->id]) }}"
+                            action="{{ route('observations.observation.edit', ['language' => app()->getLocale(), 'observation' => $observation->id]) }}"
                             method="GET" style="display: inline;">
                             <button type="submit" class="buttonTable__success">
                                 <i class="fas fa-pencil"></i>

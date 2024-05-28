@@ -5,6 +5,7 @@ import {
 	getFirstSegment,
 	getSecondSegment,
 	getIdSegment,
+	getThirdSegment,
 	getOthersSegments,
 } from "../helpers/dictionary.js";
 export const navbar = "navigation";
@@ -65,6 +66,7 @@ const changeLanguage = async (language: string) => {
 		const firstSegment = getFirstSegment(currentUrl)!;
 		const secondSegment = await getSecondSegment(currentUrl)!;
 		const idSegment = await getIdSegment(currentUrl)!;
+		const thirdSegment = await getThirdSegment(currentUrl)!;
 		const othersSegments = await getOthersSegments(currentUrl);
 
 		// DeveloperMode
@@ -72,6 +74,7 @@ const changeLanguage = async (language: string) => {
 		console.log("first", firstSegment);
 		console.log("second", secondSegment);
 		console.log("id", idSegment);
+		console.log("third", thirdSegment);
 		console.log("others", othersSegments);
 
 		const csrfToken = document
@@ -89,6 +92,7 @@ const changeLanguage = async (language: string) => {
 				firstSegment,
 				secondSegment,
 				idSegment,
+				thirdSegment,
 				othersSegments,
 			}),
 		});
