@@ -41,9 +41,6 @@ const handleModalButtonClick = (event: Event): void => {
 
     const observationId = button.getAttribute("data-id");
     const observationName = button.getAttribute("data-name");
-
-    console.log("observationId:", observationId); // Log para observationId
-    console.log("observationName:", observationName); // Log para observationName
     
     if (!observationId || !observationName) {
         console.error("Faltan atributos de datos");

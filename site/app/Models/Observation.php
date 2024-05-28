@@ -103,9 +103,7 @@ class Observation extends Model
             $query->search($request->search);
         }
     
-        if ($validated === 'true') {
-            $query->where('is_validated', 1);
-        } elseif ($validated === 'null') {
+        if ($validated === 'null') {
             $query->whereNull('is_validated');
         }
     

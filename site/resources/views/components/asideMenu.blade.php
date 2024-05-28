@@ -1,4 +1,4 @@
-<aside class="aside">
+a<aside class="aside">
     <nav class="leftBar">
         <ul class="list">
             <li class="list__title">
@@ -19,8 +19,8 @@
                     <i class="fas fa-binoculars">
                     </i>
                 </span>
-                <a href="{{ route('observations.index', ['language' => $language, 'validated' => 'true']) }}"
-                    class="list__item__link" data-text="asideValidatedObservation"></a>
+                <a href="{{ route('observations.index', ['language' => $language]) }}" class="list__item__link"
+                    data-text="asideValidatedObservation"></a>
             </li>
             <li class="list__item">
                 <span class="list__item__icon">

@@ -11,7 +11,8 @@
             </article>
             <article class="box__form">
                 <form class="observation-form" method="post"
-                    action="{{ route('observations.update', ['language' => app()->getLocale(), 'observation' => $observation->id]) }}">
+                    action="{{ route('observations.update', ['language' => app()->getLocale(), 'observation' => $observation->id]) }}"
+                    enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
 
@@ -77,25 +78,38 @@
                             value="{{ $observation->number_of_individuals }}" required>
                     </div>
 
-                    <!-- Mostrar Imágenes -->
-                    <div class="form-section">
-                        <label for="images" class="label-form">Imágenes</label>
-                        <div id="image-container">
-                            @foreach ($imageUrls as $index => $imageData)
-                                <div class="form-group">
-                                    <label>Usuario: {{ $imageData['user'] }}</label>
-                                    <picture>
-                                        <source media="(max-width: 600px)" srcset="{{ $imageData['images']['small'] }}">
-                                        <source media="(min-width: 601px) and (max-width: 1200px)"
-                                            srcset="{{ $imageData['images']['medium'] }}">
-                                        <source media="(min-width: 1201px)" srcset="{{ $imageData['images']['large'] }}">
-                                        <img src="{{ $imageData['images']['large'] }}" alt="Imagen existente"
-                                            style="max-width: 10%;">
-                                    </picture>
-                                </div>
-                            @endforeach
+                    <h3>Imágenes actuales</h3>
+                    <input type="hidden" name="existing_images" id="existing-images"
+                        value="{{ json_encode($imageUrls) }}">
+                    @foreach ($imageUrls as $image)
+                        <div class="image-container">
+                            <p>{{ $image['user'] }}</p>
+                            <picture>
+                                <source srcset="{{ $image['images']['large'] }}" media="(min-width: 1200px)">
+                                <source srcset="{{ $image['images']['medium'] }}" media="(min-width: 600px)">
+                                <img src="{{ $image['images']['small'] }}" style="width:10%" alt="Image"
+                                    class="editable-image" data-image-id="{{ $image['image_id'] }}">
+                            </picture>
+                            <button type="button" class="btn btn-danger delete-image"
+                                data-image-id="{{ $image['image_id'] }}">Eliminar</button>
+                            <input type="file" name="image_file[{{ $image['image_id'] }}]" accept="image/*"
+                                class="edit-image-file" data-image-id="{{ $image['image_id'] }}" style="display: none;">
+                        </div>
+                    @endforeach
+
+                    <h3>Añadir nuevas imágenes</h3>
+                    <div id="new-images-container">
+                        <div class="new-image">
+                            <input type="file" name="image_file_new[]" accept="image/*">
+                            <select name="image_user_new[]">
+                                @foreach ($users as $user)
+                                    <option value="{{ $user->id }}">{{ $user->name }}</option>
+                                @endforeach
+                            </select>
+                            <input type="number" name="image_number_new[]" placeholder="Photography Number">
                         </div>
                     </div>
+                    <button type="button" id="add-new-image" class="btn btn-primary">Añadir Imagen</button>
 
                     <!-- Notas -->
                     <div class="form-section">
@@ -103,9 +117,53 @@
                         <textarea name="notes" id="notes" class="textarea-form" rows="4">{{ $observation->notes }}</textarea>
                     </div>
 
-                    <button type="submit" class="btn-form btn-save">Actualizar Observación</button>
+                    <button type="submit" class="btn btn-success">Guardar Cambios</button>
+                </form>
+
+                <form id="delete-image-form"
+                    action="{{ route('observations.deleteImage', ['language' => app()->getLocale(), 'observation' => $observation->id]) }}"
+                    method="POST" style="display: none;">
+                    @csrf
+                    @method('DELETE')
+                    <input type="hidden" name="image_id" id="delete-image-id">
                 </form>
             </article>
         </section>
     </main>
+
+    <script>
+        document.getElementById('add-new-image').addEventListener('click', function() {
+            var container = document.getElementById('new-images-container');
+            var newImageDiv = document.createElement('div');
+            newImageDiv.classList.add('new-image');
+            newImageDiv.innerHTML = `
+        <input type="file" name="image_file_new[]" accept="image/*">
+        <select name="image_user_new[]">
+            @foreach ($users as $user)
+                <option value="{{ $user->id }}">{{ $user->name }}</option>
+            @endforeach
+        </select>
+        <input type="number" name="image_number_new[]" placeholder="Photography Number">
+    `;
+            container.appendChild(newImageDiv);
+        });
+
+        document.querySelectorAll('.editable-image').forEach(image => {
+            image.addEventListener('click', function() {
+                var imageId = this.dataset.imageId;
+                var editInput = document.querySelector(`.edit-image-file[data-image-id='${imageId}']`);
+                editInput.click();
+            });
+        });
+
+        document.querySelectorAll('.delete-image').forEach(button => {
+            button.addEventListener('click', function() {
+                var imageId = this.dataset.imageId;
+                if (confirm('¿Estás seguro de que deseas eliminar esta imagen?')) {
+                    document.getElementById('delete-image-id').value = imageId;
+                    document.getElementById('delete-image-form').submit();
+                }
+            });
+        });
+    </script>
 @endsection

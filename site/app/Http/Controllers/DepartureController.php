@@ -3,11 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Boat;
+use App\Models\User;
 use App\Models\Transect;
 use App\Models\Departure;
-use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Validation\ValidationException;
 
 class DepartureController extends Controller
 {
@@ -39,17 +40,24 @@ class DepartureController extends Controller
      */
     public function store(Request $request, $language = null)
     {
-        // Validar los datos del formulario
-        $validated = $request->validate([
-            'boat_id' => 'required|exists:boats,id',
-            'transect_id' => 'required|exists:transects,id',
-            'date' => 'required|date',
-            'users' => 'required|array',
-            'users.*' => 'exists:users,id'
-        ]);
+        try {
+            $validated = $request->validate([
+                'boat_id' => 'required|exists:boats,id',
+                'transect_id' => 'required|exists:transects,id',
+                'date' => 'required|date',
+                'users' => 'array',
+                'users.*' => 'exists:users,id'
+            ], [
+                'date.required' => 'La fecha es obligatoria para crear una salida.'
+            ]);
+
+        } catch (ValidationException $e) {
+            Log::error('Error de validación.', ['errors' => $e->errors()]);
+            $errorMessage = $e->validator->errors()->first('date') ?? 'Datos de entrada inválidos.';
+            return redirect()->back()->with('error', $errorMessage)->withInput();
+        }
 
         try {
-            // Llama al método del modelo para crear la salida
             $departure = Departure::createIfNotExists($validated);
 
             if ($departure) {

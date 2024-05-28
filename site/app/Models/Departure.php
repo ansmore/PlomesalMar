@@ -76,21 +76,18 @@ class Departure extends Model
      */
     public static function createIfNotExists(array $data)
     {
-        // Verificar si ya existe una salida con los mismos detalles
         $existingDeparture = self::where('boat_id', $data['boat_id'])
             ->where('transect_id', $data['transect_id'])
             ->where('date', $data['date'])
             ->first();
 
         if ($existingDeparture) {
-            return null; // Retorna null si la salida ya existe
+            return null;
         }
 
-        // Obtener los nombres de los usuarios seleccionados
-        $userNames = User::whereIn('id', $data['users'])->pluck('name')->toArray();
+        $userNames = User::whereIn('id', $data['users'] ?? [])->pluck('name')->toArray();
         $observers = implode(', ', $userNames);
 
-        // Crear y retornar la nueva salida
         return self::create([
             'boat_id' => $data['boat_id'],
             'transect_id' => $data['transect_id'],
