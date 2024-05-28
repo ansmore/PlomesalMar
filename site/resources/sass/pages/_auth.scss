@@ -43,6 +43,7 @@
 
         &__button {
           @extend .button;
+          margin: calc($margin * 2) auto;
         }
 
         &__consent {

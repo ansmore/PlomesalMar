@@ -62,11 +62,15 @@
 <style>
     .form__group__grid {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         gap: 10px;
-        max-height: calc(3* 30px);
+        max-height: calc(3* 50px);
         overflow-y: auto;
         margin-bottom: 2rem;
+        border: 1px solid #0065AE;
+        border-radius: 0.25rem;
+        padding: 0.5rem;
+        margin-left: 0.25rem;
     }
 
     .form__group__checkbox {
