@@ -26,8 +26,10 @@
                 <th scope="col" data-text="image"></th>
                 <th scope="col" data-text="flight"></th>
                 <th scope="col" data-text="distance"></th>
-                <th scome="col" data-text="pending"></th>
-                <th scope="col" data-text="actions" class="table__title"></th>
+                @if (Auth::user()->hasRole('validator', 'admin'))
+                    <th scome="col" data-text="pending"></th>
+                    <th scope="col" data-text="actions" class="table__title"></th>
+                @endif
             </tr>
         </thead>
         <tbody>
@@ -66,34 +68,38 @@
                             <i class="fas fa-close" style="font-size: 1.5rem;"></i>
                         @endif
                     </td>
-                    <td>
-                        @if ($observation->is_validated)
-                            <i class="fas fa-check" style="font-size: 1.5rem;"></i>
-                        @else
-                            <i class="fas fa-close" style="font-size: 1.5rem;"></i>
-                        @endif
-                    </td>
-                    <td class="iconsImage">
-                        <form
-                            action="{{ route('observations.observation.show', ['language' => app()->getLocale(), 'observation' => $observation->id]) }}"
-                            method="GET" style="display: inline;">
-                            <button type="submit" class="buttonTable__success">
-                                <i class="fas fa-info-circle"></i>
-                            </button>
-                        </form>
-                        <form
-                            action="{{ route('observations.observation.edit', ['language' => app()->getLocale(), 'observation' => $observation->id]) }}"
-                            method="GET" style="display: inline;">
-                            <button type="submit" class="buttonTable__success">
-                                <i class="fas fa-pencil"></i>
-                            </button>
-                        </form>
-                        <button type="button" class="buttonTable__close" data-bs-toggle="modal"
-                            data-bs-target="deleteObservationModal" data-id="{{ $observation->id }}"
-                            data-name="{{ $observation->time }}" title="Eliminar">
-                            <i class="fas fa-trash"></i>
-                        </button>
-                    </td>
+                    @if (Auth::user()->hasRole('validator', 'admin'))
+                        <td>
+                            @if ($observation->is_validated)
+                                <i class="fas fa-check" style="font-size: 1.5rem;"></i>
+                            @else
+                                <i class="fas fa-close" style="font-size: 1.5rem;"></i>
+                            @endif
+                        </td>
+                        <td class="iconsImage">
+                            <form
+                                action="{{ route('observations.observation.show', ['language' => app()->getLocale(), 'observation' => $observation->id]) }}"
+                                method="GET" style="display: inline;">
+                                <button type="submit" class="buttonTable__success">
+                                    <i class="fas fa-info-circle"></i>
+                                </button>
+                            </form>
+                            <form
+                                action="{{ route('observations.observation.edit', ['language' => app()->getLocale(), 'observation' => $observation->id]) }}"
+                                method="GET" style="display: inline;">
+                                <button type="submit" class="buttonTable__success">
+                                    <i class="fas fa-pencil"></i>
+                                </button>
+                            </form>
+                            @if (Auth::user()->hasRole('admin'))
+                                <button type="button" class="buttonTable__close" data-bs-toggle="modal"
+                                    data-bs-target="deleteObservationModal" data-id="{{ $observation->id }}"
+                                    data-name="{{ $observation->time }}" title="Eliminar">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            @endif
+                        </td>
+                    @endif
                 </tr>
             @endforeach
         </tbody>

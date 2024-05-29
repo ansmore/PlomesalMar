@@ -1,6 +1,6 @@
 "Nom","Rol"
 "Bloquejat","blocked"
-"Observer","observer"
+"Observador","observer"
 "Validador","validator"
 "Admin","observer, validator, admin"
 "Albert","observer, validator, admin"

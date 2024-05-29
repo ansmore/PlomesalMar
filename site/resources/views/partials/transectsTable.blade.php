@@ -13,25 +13,29 @@
                         <i class="fas fa-arrow-down"></i>
                     </a>
                 </th>
-                <th scope="col" data-text="actions" class="table__title"></th>
+                @if (Auth::user()->hasRole('validator', 'admin'))
+                    <th scope="col" data-text="actions" class="table__title"></th>
+                @endif
             </tr>
         </thead>
         <tbody>
             @foreach ($transects as $transect)
                 <tr>
                     <td>{{ $transect->name }}</td>
-                    <td class="icons">
-                        <button type="button" class="buttonTable__success" data-bs-toggle="modal"
-                            data-bs-target="editTransectModal" title="Editar" data-id="{{ $transect->id }}"
-                            data-name="{{ $transect->name }}">
-                            <i class="fas fa-pencil-alt"></i>
-                        </button>
-                        <button type="button" class="buttonTable__success" data-bs-toggle="modal"
-                            data-bs-target="detailsTransectModal" title="Detalles" data-id="{{ $transect->id }}"
-                            data-name="{{ $transect->name }}">
-                            <i class="fas fa-info-circle"></i>
-                        </button>
-                    </td>
+                    @if (Auth::user()->hasRole('validator', 'admin'))
+                        <td class="icons">
+                            <button type="button" class="buttonTable__success" data-bs-toggle="modal"
+                                data-bs-target="editTransectModal" title="Editar" data-id="{{ $transect->id }}"
+                                data-name="{{ $transect->name }}">
+                                <i class="fas fa-pencil-alt"></i>
+                            </button>
+                            <button type="button" class="buttonTable__success" data-bs-toggle="modal"
+                                data-bs-target="detailsTransectModal" title="Detalles" data-id="{{ $transect->id }}"
+                                data-name="{{ $transect->name }}">
+                                <i class="fas fa-info-circle"></i>
+                            </button>
+                        </td>
+                    @endif
                 </tr>
             @endforeach
         </tbody>
