@@ -80,18 +80,20 @@
                     data-text="graph3">
                 </a>
             </li>
-            <li class="list__title">
-                <span data-text="asideValidations">
-                </span>
-            </li>
-            <li class="list__item">
-                <span class="list__item__icon">
-                    <i class="fas fa-registered">
-                    </i>
-                </span>
-                <a href="{{ route('observations.index', ['language' => $language, 'validated' => 'null']) }}"
-                    class="list__item__link" data-text="asideNotValidatedObservation"></a>
-            </li>
+            @if (Auth::user()->hasRole('validator', 'admin'))
+                <li class="list__title">
+                    <span data-text="asideValidations">
+                    </span>
+                </li>
+                <li class="list__item">
+                    <span class="list__item__icon">
+                        <i class="fas fa-registered">
+                        </i>
+                    </span>
+                    <a href="{{ route('observations.index', ['language' => $language, 'validated' => 'null']) }}"
+                        class="list__item__link" data-text="asideNotValidatedObservation"></a>
+                </li>
+            @endif
         </ul>
     </nav>
 </aside>

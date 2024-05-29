@@ -20,7 +20,9 @@
                         <i class="fas fa-arrow-down"></i>
                     </a>
                 </th>
-                <th scope="col" data-text="actions" class="table__title"></th>
+                @if (Auth::user()->hasRole('validator', 'admin'))
+                    <th scope="col" data-text="actions" class="table__title"></th>
+                @endif
             </tr>
         </thead>
         <tbody>
@@ -28,13 +30,16 @@
                 <tr>
                     <td>{{ $boat->name }}</td>
                     <td>{{ $boat->registration_number }}</td>
-                    <td class="icons">
-                        <button type="button" class="buttonTable__success" data-bs-toggle="modal"
-                            data-bs-target="editBoatModal" title="Editar" data-id="{{ $boat->id }}"
-                            data-name="{{ $boat->name }}" data-registration-number="{{ $boat->registration_number }}">
-                            <i class="fas fa-pencil-alt"></i>
-                        </button>
-                    </td>
+                    @if (Auth::user()->hasRole('validator', 'admin'))
+                        <td class="icons">
+                            <button type="button" class="buttonTable__success" data-bs-toggle="modal"
+                                data-bs-target="editBoatModal" title="Editar" data-id="{{ $boat->id }}"
+                                data-name="{{ $boat->name }}"
+                                data-registration-number="{{ $boat->registration_number }}">
+                                <i class="fas fa-pencil-alt"></i>
+                            </button>
+                        </td>
+                    @endif
                 </tr>
             @endforeach
         </tbody>

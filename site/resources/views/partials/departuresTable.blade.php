@@ -25,7 +25,9 @@
                 <th scope="col">
                     <span data-text="date" class="table__title"></span>
                 </th>
-                <th scope="col" data-text="actions" class="table__title"></th>
+                @if (Auth::user()->hasRole('validator', 'admin'))
+                    <th scope="col" data-text="actions" class="table__title"></th>
+                @endif
             </tr>
         </thead>
         <tbody>
@@ -35,29 +37,33 @@
                     <td>{{ $departure->boat?->name }}</td>
                     <td>{{ $departure->transect?->name }}</td>
                     <td>{{ $departure->date }}</td>
-                    <td class="icons">
-                        <button type="button" class="buttonTable__success" data-bs-toggle="modal"
-                            data-bs-target="detailsDepartureModal" title="Detalles" data-id="{{ $departure->id }}"
-                            data-boat-name="{{ $departure->boat->name }}"
-                            data-transect-name="{{ $departure->transect->name }}" data-date="{{ $departure->date }}"
-                            data-observers="{{ implode(', ', $departure->observers) }}">
-                            <i class="fas fa-info-circle"></i>
-                        </button>
-                        <button type="button" class="buttonTable__success" data-bs-toggle="modal"
-                            data-bs-target="editDepartureModal" title="Editar" data-id="{{ $departure->id }}"
-                            data-boat-id="{{ $departure->boat_id }}" data-transect-id="{{ $departure->transect_id }}"
-                            data-date="{{ $departure->date }}"
-                            data-observers="{{ implode(', ', $departure->observers) }}">
-                            <i class="fas fa-pencil-alt"></i>
-                        </button>
-                        <button type="button" class="buttonTable__close" data-bs-toggle="modal"
-                            data-bs-target="deleteDepartureModal" data-id="{{ $departure->id }}"
-                            data-name="{{ $departure->date }}" title="Eliminar">
-                            <i class="fas fa-trash"></i>
-                        </button>
+                    @if (Auth::user()->hasRole('validator', 'admin'))
+                        <td class="icons">
+                            <button type="button" class="buttonTable__success" data-bs-toggle="modal"
+                                data-bs-target="detailsDepartureModal" title="Detalles" data-id="{{ $departure->id }}"
+                                data-boat-name="{{ $departure->boat->name }}"
+                                data-transect-name="{{ $departure->transect->name }}" data-date="{{ $departure->date }}"
+                                data-observers="{{ implode(', ', $departure->observers) }}">
+                                <i class="fas fa-info-circle"></i>
+                            </button>
+                            <button type="button" class="buttonTable__success" data-bs-toggle="modal"
+                                data-bs-target="editDepartureModal" title="Editar" data-id="{{ $departure->id }}"
+                                data-boat-id="{{ $departure->boat_id }}"
+                                data-transect-id="{{ $departure->transect_id }}" data-date="{{ $departure->date }}"
+                                data-observers="{{ implode(', ', $departure->observers) }}">
+                                <i class="fas fa-pencil-alt"></i>
+                            </button>
+                            @if (Auth::user()->hasRole('admin'))
+                                <button type="button" class="buttonTable__close" data-bs-toggle="modal"
+                                    data-bs-target="deleteDepartureModal" data-id="{{ $departure->id }}"
+                                    data-name="{{ $departure->date }}" title="Eliminar">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            @endif
 
 
-                    </td>
+                        </td>
+                    @endif
                 </tr>
             @endforeach
         </tbody>

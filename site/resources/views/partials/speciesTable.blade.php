@@ -22,7 +22,9 @@
                         <i class="fas fa-arrow-down"></i>
                     </a>
                 </th>
-                <th scope="col" data-text="actions" class="table__title"></th>
+                @if (Auth::user()->hasRole('validator', 'admin'))
+                    <th scope="col" data-text="actions" class="table__title"></th>
+                @endif
             </tr>
         </thead>
         <tbody>
@@ -30,14 +32,16 @@
                 <tr>
                     <td>{{ $specie->common_name }}</td>
                     <td>{{ $specie->scientific_name }}</td>
-                    <td class="icons">
-                        <button type="button" class="buttonTable__success" data-bs-toggle="modal"
-                            data-bs-target="editSpecieModal" title="Editar" data-id="{{ $specie->id }}"
-                            data-common-name="{{ $specie->common_name }}"
-                            data-scientific-name="{{ $specie->scientific_name }}">
-                            <i class="fas fa-pencil"></i>
-                        </button>
-                    </td>
+                    @if (Auth::user()->hasRole('validator', 'admin'))
+                        <td class="icons">
+                            <button type="button" class="buttonTable__success" data-bs-toggle="modal"
+                                data-bs-target="editSpecieModal" title="Editar" data-id="{{ $specie->id }}"
+                                data-common-name="{{ $specie->common_name }}"
+                                data-scientific-name="{{ $specie->scientific_name }}">
+                                <i class="fas fa-pencil"></i>
+                            </button>
+                        </td>
+                    @endif
                 </tr>
             @endforeach
         </tbody>
