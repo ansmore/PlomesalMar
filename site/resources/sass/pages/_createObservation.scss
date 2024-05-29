@@ -64,17 +64,43 @@
         $neutral_dark);
     }
 
+    &__box {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+
+      width: 100%;
+      max-height: calc(3* 50px);
+      overflow-y: auto;
+
+      border: 1px solid $primary_main;
+      border-radius: $radius;
+      padding: 0.5rem;
+      margin: $margin auto;
+
+      .form__group__checkbox {
+        display: flex;
+        align-items: center;
+        appearance: auto;
+      }
+
+      .form__group__checkbox input {
+        margin-right: 10px;
+        appearance: auto;
+      }
+
+      li {
+        font-size: $size_small;
+        font-weight: normal;
+        width: 80%;
+        text-align: left;
+      }
+    }
+
     &__buttons {
       @include mainBox(row, center, center);
     }
   }
-
-  // Pending ti update style
-  // .image__box {
-  //   border: 1px solid $primary_main;
-  //   border-radius: $radius;
-  //   padding: calc($padding * 2);
-  // }
 }
 
 @media screen and (min-width: 850px) {

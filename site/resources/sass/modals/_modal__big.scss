@@ -48,9 +48,7 @@
 
       .form {
         @include mainBox(column, flex-start, center);
-        // @include paddingMargin($padding, $margin);
-        // @include boxSize(width, 80vw, null, 80vw);
-        // @include boxSize(height, 75vh, null);
+
         width: 100%;
         height: 100%;
         gap: $gap;
@@ -119,7 +117,8 @@
             }
 
             li {
-              @extend .subtitle;
+              // @extend .subtitle;
+              font-size: $size_small;
               font-weight: normal;
               width: 80%;
               text-align: left
