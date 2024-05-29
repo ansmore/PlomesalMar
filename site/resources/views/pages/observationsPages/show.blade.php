@@ -26,33 +26,34 @@
                             <p class="table__group__value">{{ $observation->waypoint }}</p>
                         </div>
                         <div class="table__group">
-                            <label class="table__group__content"">Especie</label>
+                            <label class="table__group__content">Especie</label>
                             <p class="table__group__value">{{ $observation->species->common_name }}</p>
                         </div>
                         <div class="table__group">
-                            <label class="table__group__content"">En Vuelo</label>
+                            <label class="table__group__content">En Vuelo</label>
                             <p class="table__group__value">{{ $observation->in_flight ? 'Sí' : 'No' }}</p>
                         </div>
                         <div class="table__group">
-                            <label class="table__group__content"">Distancia Menor a 300m</label>
+                            <label class="table__group__content">Distancia Menor a 300m</label>
                             <p class="table__group__value">{{ $observation->distance_under_300m ? 'Sí' : 'No' }}</p>
                         </div>
                         <div class="table__group">
-                            <label class="table__group__content"">Número de Individuos</label>
+                            <label class="table__group__content">Número de Individuos</label>
                             <p class="table__group__value">{{ $observation->number_of_individuals }}</p>
                         </div>
                         <div class="table__group">
-                            <label class="table__group__content"">Notas</label>
+                            <label class="table__group__content">Notas</label>
                             <p class="table__group__value">{{ $observation->notes }}</p>
                         </div>
                         <div class="table__group">
-                            <label class="table__group__content"">Observadores</label>
-                            @foreach ($departures->firstWhere('id', $departureId)->observer_users as $user)
-                                <p class="table__group__value">{{ $user->name }}</p>
-                            @endforeach
+                            <label class="table__group__content">Observadores</label>
+                            <ul id="details_observers" class="table__group__box">
+                                @foreach ($departures->firstWhere('id', $departureId)->observer_users as $user)
+                                    <li>{{ $user->name }}</li>
+                                @endforeach
+                            </ul>
                         </div>
                         <div class="form-section">
-                            <label class="table__group__content"">Imágenes</label>
                             @foreach ($imageUrls as $index => $imageData)
                                 <div class="form-group">
                                     <label>Usuario: {{ $imageData['user'] }}</label>

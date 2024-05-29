@@ -69,7 +69,6 @@
                                     <input class="table__group__check" type="checkbox" name="distance_under_300m"
                                         id="distance_under_300m" value="1">
                                 </div>
-
                             </div>
 
                             <!-- Introducir Número de Individuos -->
@@ -82,7 +81,6 @@
 
                             <!-- Añadir Imágenes -->
                             <div class="form-section">
-                                <label for="images" class="table__group__content" data-text="addImage"></label>
                                 <div id="image-container">
                                     <!-- Contenedor para añadir múltiples imágenes -->
                                 </div>

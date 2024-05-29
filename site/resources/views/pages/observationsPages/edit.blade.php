@@ -11,7 +11,7 @@
             </article>
             <article class="box__form">
                 <form class="observation-form" method="post"
-                    action="{{ route('observations.update', ['language' => app()->getLocale(), 'observation' => $observation->id]) }}"
+                    action="{{ route('observations.observation.update', ['language' => app()->getLocale(), 'observation' => $observation->id]) }}"
                     enctype="multipart/form-data">
                     @csrf
                     @method('PUT')

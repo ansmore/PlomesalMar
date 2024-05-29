@@ -34,12 +34,9 @@ document.addEventListener("DOMContentLoaded", async () => {
                 currentCleanupFunction = usersModule.cleanupUsers;
                 break;
             case "observations":
-                // const observationsImageModule = await import("../partials/imagePopUp.js");
                 const observationsModule = await import("../modals/observations/modals.js");
                 observationsModule.setupModalEventListenersObservations();
                 currentCleanupFunction = observationsModule.cleanupObservations;
-                // observationsImageModule.setupImagePopup();
-                // currentCleanupFunction = observationsImageModule.cleanupImagePopup;
                 break;
             default:
                 console.warn("No hay un tipo que soporte este vista:", viewType);
