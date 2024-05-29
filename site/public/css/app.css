@@ -196,8 +196,7 @@ button {
   margin: 0.25rem;
 }
 
-.article, .plomesalmarContact .row .box__logo, .home .row--reverse .box, .home .row .box__circle, .home .row .box__row, .home .row .box, .modal__box .body,
-.modal__management__box .body, .form, .auth .row .form {
+.article, .plomesalmarContact .row .box__logo, .home .row--reverse .box, .home .row .box__circle, .home .row .box__row, .home .row .box, .form, .auth .row .form {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -215,12 +214,10 @@ button {
   text-align: center;
   overflow: hidden;
 }
-.article p, .plomesalmarContact .row .box__logo p, .home .row--reverse .box p, .home .row .box__circle p, .home .row .box__row p, .home .row .box p, .modal__box .body p,
-.modal__management__box .body p, .form p, .auth .row .form p {
+.article p, .plomesalmarContact .row .box__logo p, .home .row--reverse .box p, .home .row .box__circle p, .home .row .box__row p, .home .row .box p, .form p, .auth .row .form p {
   text-align: left;
 }
-.article p span, .plomesalmarContact .row .box__logo p span, .home .row--reverse .box p span, .home .row .box__circle p span, .home .row .box__row p span, .home .row .box p span, .modal__box .body p span,
-.modal__management__box .body p span, .form p span, .auth .row .form p span {
+.article p span, .plomesalmarContact .row .box__logo p span, .home .row--reverse .box p span, .home .row .box__circle p span, .home .row .box__row p span, .home .row .box p span, .form p span, .auth .row .form p span {
   text-align: left;
 }
 
@@ -296,7 +293,7 @@ button {
   text-align: center;
 }
 
-.subtitle, .modal__management__big__box .body .form__group__content, .modal__box .body .form__group__content,
+.subtitle, .modal__management__big__box .body .form__group__box li, .modal__management__big__box .body .form__group__value, .modal__management__big__box .body .form__group__content, .modal__box .body .form__group__content,
 .modal__management__box .body .form__group__content {
   color: #0065AE;
   background-color: transparent;
@@ -356,8 +353,7 @@ button {
   align-items: center;
 }
 
-.modalBox, .auth .row, .modal__box,
-.modal__management__box {
+.modalBox, .auth .row {
   position: relative;
   background: #fafafa;
   top: 10vh;
@@ -375,25 +371,32 @@ button {
   border-radius: 0.25rem;
   border: 1px solid transparent;
 }
-.modalBox:hover, .auth .row:hover, .modal__box:hover,
-.modal__management__box:hover {
+.modalBox:hover, .auth .row:hover {
   color: inherit;
   background-color: #fafafa;
   border: 1px solid #9d9d9c;
 }
 
 .button, .plomesalmarContact .row .form__group__button, .home .row--reverse .box__button, .home .row .box__button, .auth .row .form__group__button, .form__button__back, .form__button__close, .form__button__success {
-  color: #fafafa;
-  background-color: #0065AE;
-  padding: 0.25rem;
-  margin: 0;
-  border: 1px solid transparent;
   padding: 0.5rem;
   margin: 0.5rem;
-  border-radius: 0.25rem;
+  color: #fafafa;
+  background-color: #ee0000;
   border: 1px solid transparent;
+  border-radius: 0.25rem;
 }
 .button:hover, .plomesalmarContact .row .form__group__button:hover, .home .row--reverse .box__button:hover, .home .row .box__button:hover, .auth .row .form__group__button:hover, .form__button__back:hover, .form__button__close:hover, .form__button__success:hover {
+  color: #fafafa;
+  background-color: #0079D0;
+  border: 1px solid #00518C;
+}
+
+.form__button__success {
+  background-color: #0065AE;
+  color: #fafafa;
+  border: 1px solid transparent;
+}
+.form__button__success:hover {
   color: #fafafa;
   background-color: #0079D0;
   border: 1px solid #00518C;
@@ -539,7 +542,7 @@ button {
   outline: none;
   color: #0065AE;
   background-color: #fafafa;
-  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 0 2px rgba(31, 31, 31, 0.1);
 }
 .formSelect option, .tableObservation .table__group__select option, .card .table td .row .select option, .modal__management__big__box .body .form__group__select option {
   color: #0065AE;
@@ -550,10 +553,8 @@ button {
 .modal__management__box .body .form__group__input {
   padding: 0.75rem;
   margin: 0.25rem auto;
-  color: #9d9d9c;
-  background-color: #fafafa;
-  min-width: 75vw;
-  max-width: 75vw;
+  background-color: inherit;
+  color: inherit;
   border: 1px solid #8f8f8f;
   border-radius: 0.25rem;
   font-size: 1.2em;
@@ -578,12 +579,15 @@ button {
 
 .modal__box,
 .modal__management__box {
+  position: relative;
   top: 20vh;
-  left: 20vw;
-  min-width: 60vw;
-  max-width: 60vw;
+  left: 2vw;
+  min-width: 96vw;
+  max-width: 96vw;
   min-height: 60vh;
   max-height: 60vh;
+  background-color: #fafafa;
+  border-radius: 0.25rem;
   border: 1px solid #0065AE;
 }
 .modal__box:hover,
@@ -600,10 +604,12 @@ button {
   align-content: center;
   align-items: flex-start;
   align-self: center;
-  min-width: 50vw;
-  max-width: 50vw;
-  min-height: 50vh;
-  max-height: 50vh;
+  width: 100%;
+  height: 100%;
+}
+.modal__box .body__title,
+.modal__management__box .body__title {
+  padding-top: 2rem;
 }
 .modal__box .body .form,
 .modal__management__box .body .form {
@@ -613,24 +619,13 @@ button {
   align-content: center;
   align-items: center;
   align-self: center;
-  min-width: 65vw;
-  max-width: 65vw;
-}
-.modal__box .body .form__group,
-.modal__management__box .body .form__group {
-  min-width: 65vw;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
 }
 .modal__box .body .form__group__input,
 .modal__management__box .body .form__group__input {
-  min-width: 14rem;
-  max-width: 50%;
-  border: 1px solid #8f8f8f;
-}
-.modal__box .body .form__group__input:hover,
-.modal__management__box .body .form__group__input:hover {
-  color: #0079D0;
-  background-color: #fafafa;
-  border: 1px solid #0065AE;
+  width: 80%;
 }
 .modal__box .body .form__group__buttons,
 .modal__management__box .body .form__group__buttons {
@@ -640,6 +635,7 @@ button {
   align-content: center;
   align-items: center;
   align-self: center;
+  gap: 0.5rem;
 }
 .modal__box .close,
 .modal__management__box .close {
@@ -680,22 +676,47 @@ button {
   color: #ee0000;
 }
 
+@media screen and (min-width: 376px) and (max-width: 600px) {
+  .modal__management__box {
+    top: 20vh;
+    left: 10vw;
+    min-width: 80vw;
+    max-width: 80vw;
+    min-height: 60vh;
+    max-height: 60vh;
+  }
+}
+@media screen and (min-width: 601px) {
+  .modal__management__box {
+    top: 20vh;
+    left: 20vw;
+    min-width: 60vw;
+    max-width: 60vw;
+    min-height: 60vh;
+    max-height: 60vh;
+  }
+}
 .modal__management__big__box {
   position: relative;
   top: 5vh;
-  left: 5vw;
-  background: #fafafa;
+  left: 2vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-content: center;
   align-items: center;
   align-self: center;
-  min-width: 90vw;
-  max-width: 90vw;
+  min-width: 96vw;
+  max-width: 96vw;
   min-height: 90vh;
+  background-color: #fafafa;
   border-radius: 0.25rem;
-  border: 1px solid #0065AE;
+  border: 1px solid transparent;
+}
+.modal__management__big__box:hover {
+  color: inherit;
+  background-color: #fafafa;
+  border: 1px solid #9d9d9c;
 }
 .modal__management__big__box .body {
   display: flex;
@@ -704,11 +725,8 @@ button {
   align-content: center;
   align-items: flex-start;
   align-self: center;
-  padding: 0.25rem;
-  margin: 0.25rem;
-  min-width: 85vw;
-  max-width: 85vw;
-  min-height: 85vh;
+  width: 100%;
+  height: 100%;
   gap: 0.5rem;
   hyphens: auto;
   font-size: 0.9em;
@@ -731,11 +749,8 @@ button {
   align-content: center;
   align-items: center;
   align-self: center;
-  padding: 0.25rem;
-  margin: 0.25rem;
-  min-width: 80vw;
-  max-width: 80vw;
-  min-height: 75vh;
+  width: 100%;
+  height: 100%;
   gap: 0.5rem;
   hyphens: auto;
   font-size: 0.9em;
@@ -748,22 +763,41 @@ button {
 .modal__management__big__box .body .form p span {
   text-align: left;
 }
-.modal__management__big__box .body .form__group {
-  min-width: 80vw;
-}
 .modal__management__big__box .body .form__group__input {
-  min-width: 14rem;
-  max-width: 50%;
-  border: 1px solid #8f8f8f;
-}
-.modal__management__big__box .body .form__group__input:hover {
-  color: #0079D0;
-  background-color: #fafafa;
-  border: 1px solid #0065AE;
+  width: 100%;
 }
 .modal__management__big__box .body .form__group__select {
-  min-width: 14rem;
-  max-width: 50%;
+  width: 100%;
+}
+.modal__management__big__box .body .form__group__value {
+  font-weight: normal;
+  width: 100%;
+}
+.modal__management__big__box .body .form__group__box {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  width: 100%;
+  max-height: 150px;
+  overflow-y: auto;
+  border: 1px solid #0065AE;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+  margin: 0.25rem auto;
+}
+.modal__management__big__box .body .form__group__box .form__group__checkbox {
+  display: flex;
+  align-items: center;
+  appearance: auto;
+}
+.modal__management__big__box .body .form__group__box .form__group__checkbox input {
+  margin-right: 10px;
+  appearance: auto;
+}
+.modal__management__big__box .body .form__group__box li {
+  font-weight: normal;
+  width: 80%;
+  text-align: left;
 }
 .modal__management__big__box .body .form__group__buttons {
   display: flex;
@@ -799,19 +833,35 @@ button {
   border: 1px solid #990000;
 }
 
-.danger .modal__management__box {
+.danger .modal__management__big__box {
   border: 1px solid #ee0000;
 }
-.danger .modal__management__box:hover {
+.danger .modal__management__big__box:hover {
   color: inherit;
   background-color: #fafafa;
   border: 1px solid #ee0000;
 }
-.danger .modal__management__box .body__title {
+.danger .modal__management__big__box .body__title {
   color: #ee0000;
 }
 
-@media screen and (min-width: 601px) and (max-width: 1024px) {
+@media screen and (min-width: 376px) and (max-width: 600px) {
+  .modal__management__big__box {
+    top: 5vh;
+    left: 5vw;
+    min-width: 90vw;
+    max-width: 90vw;
+    min-height: 90vh;
+  }
+}
+@media screen and (min-width: 601px) {
+  .modal__management__big__box {
+    top: 10vh;
+    left: 10vw;
+    min-width: 80vw;
+    max-width: 80vw;
+    min-height: 80vh;
+  }
   .modal__management__big__box .body .form__group {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -826,6 +876,9 @@ button {
     justify-items: start;
     text-align: left;
     align-self: start;
+  }
+  .modal__management__big__box .body .form__group__box {
+    margin-left: 0.25rem;
   }
 }
 .card {
@@ -870,12 +923,6 @@ button {
 .card .table td .row .select {
   min-width: 10rem;
   max-width: 35%;
-  margin-left: 0.25rem;
-}
-.card .table td .row .form__button__success {
-  background-color: antiquewhite;
-  color: red;
-  margin: 0.25rem auto;
   margin-left: 0.25rem;
 }
 .card .table .decoration {

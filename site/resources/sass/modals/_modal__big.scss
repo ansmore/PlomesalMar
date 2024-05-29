@@ -6,32 +6,36 @@
   &__box {
     position: relative;
     top: 5vh;
-    left: 5vw;
-    background: $neutral_lighter;
+    left: 2vw;
     @include mainBox(column, center, center);
-    @include boxSize(width, 90vw, null, 90vw);
-    @include boxSize(height, 90vh, null);
+    @include boxSize(width, 96vw, null, 96vw);
+    @include boxSize(height, 90vh);
+
+    background-color: $neutral_lighter;
     border-radius: $radius;
-    border: 1px solid $primary_main;
+    @include hover($neutral_lighter,
+      inherit,
+      $secondary_main,
+      transparent);
 
 
     .body {
       @include mainBox(column, space-around, flex-start);
-      @include paddingMargin($padding, $margin);
-      @include boxSize(width, 85vw, null, 85vw);
-      @include boxSize(height, 85vh, null);
+      // @include paddingMargin($padding, $margin);
+      // @include boxSize(width, 85vw, null, 85vw);
+      // @include boxSize(height, 85vh);
+      width: 100%;
+      height: 100%;
       gap: $gap;
       hyphens: auto;
       font-size: $size_smaller;
       line-height: 1.5;
       text-align: center;
-      // overflow: hidden;
 
       p {
         text-align: left;
 
         span {
-
           text-align: left;
         }
       }
@@ -44,15 +48,16 @@
 
       .form {
         @include mainBox(column, flex-start, center);
-        @include paddingMargin($padding, $margin);
-        @include boxSize(width, 80vw, null, 80vw);
-        @include boxSize(height, 75vh, null);
+        // @include paddingMargin($padding, $margin);
+        // @include boxSize(width, 80vw, null, 80vw);
+        // @include boxSize(height, 75vh, null);
+        width: 100%;
+        height: 100%;
         gap: $gap;
         hyphens: auto;
         font-size: $size_smaller;
         line-height: 1.5;
         text-align: center;
-        // overflow: hidden;
 
         p {
           text-align: left;
@@ -64,7 +69,7 @@
         }
 
         &__group {
-          min-width: 80vw;
+          // min-width: 80%;
 
           &__content {
             @extend .subtitle;
@@ -72,20 +77,58 @@
 
           &__input {
             @extend .formInput;
-            @include boxSize(width, 14rem, null, 50%);
 
-            @include hover($neutral_lighter,
-              $primary_light, $primary_main,
-              $neutral_dark);
+            width: 100%;
           }
 
           &__select {
             @extend .formSelect;
-            @include boxSize(width, 14rem, null, 50%);
+
+            width: 100%;
+          }
+
+          &__value {
+            @extend .subtitle;
+            font-weight: normal;
+            width: 100%;
+          }
+
+          &__box {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+
+            width: 100%;
+            max-height: calc(3* 50px);
+            overflow-y: auto;
+
+            border: 1px solid $primary_main;
+            border-radius: $radius;
+            padding: 0.5rem;
+            margin: $margin auto;
+
+            .form__group__checkbox {
+              display: flex;
+              align-items: center;
+              appearance: auto;
+            }
+
+            .form__group__checkbox input {
+              margin-right: 10px;
+              appearance: auto;
+            }
+
+            li {
+              @extend .subtitle;
+              font-weight: normal;
+              width: 80%;
+              text-align: left
+            }
           }
 
           &__buttons {
             @include mainBox(row, center, center);
+
             gap: $gap;
           }
         }
@@ -111,8 +154,7 @@
 }
 
 .danger {
-  .modal__management__box {
-    // border: 1px solid $danger_main;
+  .modal__management__big__box {
     @include hover($neutral_lighter,
       inherit,
       $danger_main,
@@ -127,11 +169,25 @@
   }
 }
 
-@media screen and (min-width: 376px) and (max-width: 600px) {}
-
-@media screen and (min-width: 601px) and (max-width: 1024px) {
+@media screen and (min-width: 376px) and (max-width: 600px) {
   .modal__management__big {
     &__box {
+      top: 5vh;
+      left: 5vw;
+      @include boxSize(width, 90vw, null, 90vw);
+      @include boxSize(height, 90vh);
+    }
+  }
+}
+
+@media screen and (min-width: 601px) {
+  .modal__management__big {
+    &__box {
+      top: 10vh;
+      left: 10vw;
+      @include boxSize(width, 80vw, null, 80vw);
+      @include boxSize(height, 80vh);
+
       .body {
         .form {
           &__group {
@@ -151,11 +207,13 @@
               text-align: left;
               align-self: start;
             }
+
+            &__box {
+              margin-left: 0.25rem;
+            }
           }
         }
       }
     }
   }
 }
-
-@media screen and (min-width: 1025px) {}

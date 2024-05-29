@@ -13,6 +13,7 @@
                     data-edit-url-template="{{ route('departures.update', [':id', 'language' => app()->getLocale()]) }}">
                     @csrf
                     @method('PUT')
+
                     <div class="form__group">
                         <label for="edit_boat_id" class="form__group__content" data-text="boatNameModal"></label>
                         <select class="form__group__select" name="boat_id" id="edit_boat_id">
@@ -38,7 +39,7 @@
                     <!-- New div with user checkboxes -->
                     <div class="form__group">
                         <label for="edit_users" class="form__group__content">Select Users:</label>
-                        <div class="form__group__grid form__group__grid--scroll" id="edit_users">
+                        <div class="form__group__box" id="edit_users">
                             @foreach ($users as $user)
                                 <div class="form__group__checkbox">
                                     <input type="checkbox" id="edit_user_{{ $user->id }}" name="users[]"

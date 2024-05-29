@@ -6,6 +6,7 @@
                 class="fa-solid fa-xmark"></i></button>
         <div class="modal-header body">
             <h2 class="modal-title body__title" id="deleteModalLabel" data-text="confirmDelete"></h2>
+
             <article class="form">
                 <form id="deleteUsersForm" action="" method="POST"
                     data-delete-url-template="{{ route('admin.user.destroy', [':id', 'language' => app()->getLocale()]) }}">
