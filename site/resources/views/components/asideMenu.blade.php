@@ -1,4 +1,4 @@
-a<aside class="aside">
+<aside class="aside">
     <nav class="leftBar">
         <ul class="list">
             <li class="list__title">

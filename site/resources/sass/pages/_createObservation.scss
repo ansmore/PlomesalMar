@@ -39,17 +39,18 @@
     }
 
     &__consent {
-      @include mainBox(row, flex-start, center);
       align-self: flex-start;
-      padding: 0.5rem 0;
       gap: $gap ;
+      padding: 0.5rem 0;
 
-      &__check {
-        appearance: checkbox;
-        width: 1rem;
-        height: 1rem;
-        margin-top: 0.5rem;
-      }
+    }
+
+    &__check {
+      @include mainBox(row, flex-start, center);
+      appearance: checkbox;
+      width: 1rem;
+      height: 1rem;
+      margin-top: 0.5rem;
     }
 
     &__buttons {
@@ -68,26 +69,34 @@
 @media screen and (min-width: 850px) {
   .tableObservation {
     .table__group {
-      @include mainBox(row, flex-start, flex-start);
+      // @include mainBox(row, flex-start, flex-start);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
       gap: calc($gap*2);
 
       &__content {
         @include boxSize(width, 40%, null);
         text-align: right;
         margin: auto 0;
+        padding: 12px 0;
       }
 
       &__input {
         align-self: flex-start;
       }
 
-      &__consent {
-        // @include mainBox(row, center, center);
-        margin: 0 auto;
+      // &__consent {
+      //   // @include mainBox(row, center, center);
+      //   margin: 0 auto;
 
-        &__check {
-          margin-top: 0;
-        }
+      // }
+
+      &__check {
+        margin-top: 0;
+      }
+
+      &__value {
+        padding: 12px 0;
       }
     }
   }

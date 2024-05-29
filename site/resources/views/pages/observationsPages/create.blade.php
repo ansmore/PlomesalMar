@@ -12,10 +12,12 @@
             <article class="box__form">
                 <div class="card">
                     <div class="tableObservation">
+
                         <form class="observation-form" method="post"
                             action="{{ route('observations.observation.store', ['language' => app()->getLocale()]) }}"
                             enctype="multipart/form-data">
                             @csrf
+
                             <!-- Seleccionar Departure -->
                             <div class="form-section">
                                 <div class="table__group">
@@ -54,21 +56,21 @@
                                         @endforeach
                                     </select>
                                 </div>
+
                                 <div class="table__group">
-                                    <div class="table__group__consent">
-                                        <input class="table__group__consent__check" type="checkbox" name="in_flight"
-                                            id="in_flight" value="1">
-                                        <label for="in_flight" class="table__group__content">En Vuelo</label>
-                                    </div>
+                                    <label for="in_flight" class="table__group__content">En Vuelo</label>
+                                    <input class="table__group__check" type="checkbox" name="in_flight" id="in_flight"
+                                        value="1">
                                 </div>
+
+
                                 <div class="table__group">
-                                    <div class="table__group__consent">
-                                        <input class="table__group__consent__check" type="checkbox"
-                                            name="distance_under_300m" id="distance_under_300m" value="1">
-                                        <label for="distance_under_300m" class="table__group__content">Distancia Menor a
-                                            300m</label>
-                                    </div>
+                                    <label for="distance_under_300m" class="table__group__content">Distancia Menor a
+                                        300m</label>
+                                    <input class="table__group__check" type="checkbox" name="distance_under_300m"
+                                        id="distance_under_300m" value="1">
                                 </div>
+
                             </div>
 
                             <!-- Introducir Número de Individuos -->
