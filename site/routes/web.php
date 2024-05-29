@@ -143,6 +143,8 @@ Route::prefix('/{language}')->group(function () {
 		Route::get('/observation/{observation}/edit', [ObservationController::class, 'edit'])->name('observations.observation.edit');
 		Route::put('/observation/{observation}', [ObservationController::class, 'update'])->name('observations.observation.update');
 		Route::delete('/observation/{observation}', [ObservationController::class, 'destroy'])->name('observations.observation.destroy');
+
+		Route::delete('/observations/{observation}/delete-image', [ObservationController::class, 'deleteImage'])->name('observations.deleteImage');
 	});
 
 	Route::get('/test-abort', [AdminController::class, 'testAbort']);
