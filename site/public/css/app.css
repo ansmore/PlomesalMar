@@ -925,6 +925,11 @@ button {
   max-width: 35%;
   margin-left: 0.25rem;
 }
+.card .table .iconsImage {
+  display: flex;
+  gap: 5px;
+  padding-bottom: 2rem;
+}
 .card .table .decoration {
   text-decoration: none;
   display: inline-block;
@@ -938,10 +943,6 @@ button {
 
 .icons {
   display: flex;
-  gap: 5px;
-}
-
-.iconsImage {
   gap: 5px;
 }
 
@@ -1971,7 +1972,7 @@ button {
 .management .row .box__table {
   display: grid;
   row-gap: 0;
-  width: 95%;
+  width: 100%;
   margin: 0 auto;
 }
 .management .row .box__logo {
@@ -2063,6 +2064,19 @@ button {
   height: 1rem;
   margin-top: 0.5rem;
 }
+.tableObservation .table__group__textarea {
+  border: 1px solid #0065AE;
+  border-radius: 0.25rem;
+  min-width: 19rem;
+  max-width: 35%;
+  margin-left: 0;
+  border: 1px solid #8f8f8f;
+}
+.tableObservation .table__group__textarea:hover {
+  color: #0079D0;
+  background-color: #fafafa;
+  border: 1px solid #0065AE;
+}
 .tableObservation .table__group__buttons {
   display: flex;
   flex-direction: row;
@@ -2070,11 +2084,6 @@ button {
   align-content: center;
   align-items: center;
   align-self: center;
-}
-.tableObservation #image-container {
-  border: 1px solid #0065AE;
-  border-radius: 0.25rem;
-  padding: 0.5rem;
 }
 
 @media screen and (min-width: 850px) {

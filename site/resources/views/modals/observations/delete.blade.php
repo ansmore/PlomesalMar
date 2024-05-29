@@ -1,4 +1,4 @@
-<section class="modal fade modal-common modal__management__big" id="deleteObservationModal" tabindex="-1"
+<section class="modal fade modal-common modal__management__big danger" id="deleteObservationModal" tabindex="-1"
     aria-labelledby="deleteObservationModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg modal__management__big__box">
         <button type="button" class="btn-close close" data-bs-dismiss="modal" aria-label="Cerrar">

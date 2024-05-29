@@ -1,5 +1,19 @@
 {
-	"observationDetails": "Agregar nova observació",
+	"observationDetails": "Detalls observació",
+	"observationNew": "Agregar nova observació",
+	"observationsList": "Llista d'observacions",
 
-	"selectDeperture": "Seleccionar sortida: "
+	"selectDeperture": "Seleccionar sortida: ",
+	"selectDepertureOption": "Seleccionar una sortida",
+	"timeObservationCreate": "Hora de l'observació",
+	"waypoint": "Waypoint",
+	"selectSpecie": "Selecciona Espècie",
+	"numberElements": "Nombre d'elements",
+	"addImage": "Afegir imatge",
+	"notes": "Notes",
+	"createObservation": "Crear Observació",
+	"user": "Usuari",
+	"imageNumber": "Numero de la imatge",
+	"image": "Imatge",
+	"departure": "Sortida"
 }

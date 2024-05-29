@@ -7,14 +7,14 @@
         @include('components.asideMenu')
         <section id="details" class="row">
             <article class="box">
-                <h1 class="box__title">Detalles de la Observación</h1>
+                <h1 class="box__title" data-text="observationDetails">Detalls observació</h1>
             </article>
             <article class="box__form">
                 <div class="card">
                     <div class="tableObservation">
 
                         <div class="table__group">
-                            <label class="table__group__content">Departure</label>
+                            <label class="table__group__content" data-text="departure">Departure</label>
                             <p class="table__group__value">{{ $departures->firstWhere('id', $departureId)->date }}</p>
                         </div>
                         <div class="table__group">

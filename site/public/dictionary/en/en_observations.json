@@ -1,5 +1,19 @@
 {
-	"observationDetails": "Agregar nova observació",
+	"observationDetails": "Observation Details",
+	"observationNew": "Add New Observation",
+	"observationsList": "Observations List",
 
-	"selectDeperture": "Select departure: "
+	"selectDeperture": "Select Departure: ",
+	"selectDepertureOption": "Select a Departure",
+	"timeObservationCreate": "Time of Observation",
+	"waypoint": "Waypoint",
+	"selectSpecie": "Select Species",
+	"numberElements": "Number of Elements",
+	"addImage": "Add Image",
+	"notes": "Notes",
+	"createObservation": "Create Observation",
+	"user": "User",
+	"imageNumber": "Image Number",
+	"image": "Image",
+	"departure": "Departure"
 }

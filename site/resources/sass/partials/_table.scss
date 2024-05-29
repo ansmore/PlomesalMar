@@ -49,6 +49,12 @@
       }
     }
 
+    .iconsImage {
+      display: flex;
+      gap: 5px;
+      padding-bottom: 2rem;
+    }
+
     .decoration {
       text-decoration: none;
       display: inline-block;
@@ -69,9 +75,7 @@
   gap: 5px;
 }
 
-.iconsImage {
-  gap: 5px;
-}
+
 
 
 .button__danger {
