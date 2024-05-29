@@ -121,10 +121,11 @@ const changeLanguage = async (language: string) => {
 			}
 		}
 
-		if (!response.ok) {
-			console.error("! response.ok->", language);
-			throw new Error(`-> Error en la solicitud: ${response.status}`);
-		}
+		// DeveloperMode
+		// if (!response.ok) {
+		// 	console.error("! response.ok->", language);
+		// 	throw new Error(`-> Error en la solicitud: ${response.status}`);
+		// }
 	} catch (error) {
 		console.error("Error al cambiar el idioma:", error);
 	}
