@@ -149,6 +149,32 @@ export const getIdSegment = (url: string): string | undefined => {
 	}
 };
 
+export const getThirdSegment = (url: string): string | undefined => {
+	try {
+		const segments = url.split("/");
+		const languageIndex = segments.findIndex((segment) =>
+			/^[a-z]{2}$/i.test(segment),
+		);
+
+		if (languageIndex !== -1 && segments.length > languageIndex + 1) {
+			const nextPageSegment = segments[languageIndex + 4];
+			if (nextPageSegment) {
+				// Comprovació addicional per seguretat
+				return nextPageSegment.split("#")[0];
+			} else {
+				return undefined;
+			}
+		}
+
+		throw new Error(
+			"No es pot determinar el sub-fitxer des de la URL proporcionada.",
+		);
+	} catch (error) {
+		console.error("Error en processar la URL:", error);
+		return undefined;
+	}
+};
+
 export const getOthersSegments = async (url: string): Promise<string> => {
 	const segments = url.split("/");
 

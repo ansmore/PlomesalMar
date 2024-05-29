@@ -39,7 +39,7 @@
                         @endforeach
                     </td>
                     <td>
-                        <a href="{{ route('admin.user.details', [
+                        <a href="{{ route('admin.user.show', [
                             'user' => $user->id,
                             'language' => $language,
                         ]) }}"

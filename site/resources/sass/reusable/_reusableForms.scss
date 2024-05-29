@@ -8,28 +8,27 @@
     $primary_main,
     $neutral_dark );
   border-radius: $radius;
-  // border: 1px solid $primary_main;
+
+  font-size: $size_medium;
+  position: relative;
+  padding-right: 40px;
 
   &:focus {
     outline: none;
     @include style($primary_main, $neutral_lighter);
-    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 0 2px rgba($neutral_darker, 0.1);
   }
 
   option {
     @include style($primary_main, $neutral_lighter);
   }
-
-  font-size: $size_medium;
-  position: relative;
-  padding-right: 40px;
 }
 
 .formInput {
   @include paddingMargin(0.75rem, $margin auto);
-  @include style($secondary_main, $neutral_lighter);
-  @include boxSize(width, 75vw, null, 75vw);
 
+  background-color: inherit;
+  color: inherit;
   @include hover($neutral_lightest,
     inherit,
     $primary_main,

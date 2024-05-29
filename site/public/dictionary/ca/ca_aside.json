@@ -8,6 +8,8 @@
 	"asideBoat": "Vaixell",
 	"asideTransect": "Transecte",
 	"asideImage": "Imatge",
+	"asideValidations": "Validacions",
+	"asideNotValidatedObservation": "Validacions pendents",
 
 	"departureList": "Llista de sortides",
 	"observationList": "Llista d'observacions",
@@ -17,7 +19,7 @@
 	"back": "Anterior",
 	"next": "Següent",
 
-	"graph1": "Gràfic 1",
-	"graph2": "Gràfic 2",
-	"graph3": "Gràfic 3"
+	"graph1": "Total",
+	"graph2": "Comparatiu",
+	"graph3": "Varietat"
 }

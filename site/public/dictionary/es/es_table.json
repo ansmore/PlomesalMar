@@ -9,6 +9,13 @@
 	"transectName": "Nombre del transecto",
 	"date": "Fecha",
 
+	"timeObservation": "Hora",
+	"waypoint": "Waypoint",
+	"individuals": "Unidades",
+	"image": "Imagen",
+	"flight": "En vuelo",
+	"distance": "Menos de 300m",
+
 	"actions": "Acciones",
 
 	"back": "Anterior",

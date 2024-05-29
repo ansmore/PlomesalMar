@@ -199,7 +199,7 @@ class ObservationController extends Controller
             ]);
 
             $existingImages = json_decode($request->input('existing_images'), true);
-           
+
             DB::beginTransaction();
 
             $observation = Observation::findOrFail($id);

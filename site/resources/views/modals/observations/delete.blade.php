@@ -8,7 +8,7 @@
             <h2 class="modal-title body__title" id="deleteObservationModalLabel">Confirmación de Eliminación</h2>
             <article class="form">
                 <form method="POST" id="deleteObservationForm"
-                    data-action-template="{{ route('observations.destroy', ['language' => app()->getLocale(), 'observation' => ':id']) }}">
+                    data-action-template="{{ route('observations.observation.destroy', ['language' => app()->getLocale(), 'observation' => ':id']) }}">
                     @csrf
                     @method('DELETE')
                     <input type="hidden" name="id" id="deleteObservationId">

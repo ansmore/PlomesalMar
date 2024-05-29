@@ -9,6 +9,13 @@
 	"transectName": "Transect name",
 	"date": "Date",
 
+	"timeObservation": "Time",
+	"waypoint": "Waypoint",
+	"individuals": "Units",
+	"image": "Image",
+	"flight": "Fliyng",
+	"distance": "Less than 300m",
+
 	"actions": "Actions",
 
 	"back": "Back",

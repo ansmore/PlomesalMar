@@ -20,7 +20,7 @@ a<aside class="aside">
                     </i>
                 </span>
                 <a href="{{ route('observations.index', ['language' => $language]) }}" class="list__item__link"
-                    data-text="asideValidatedObservation"></a>
+                    data-text="asideObservation"></a>
             </li>
             <li class="list__item">
                 <span class="list__item__icon">
@@ -49,22 +49,13 @@ a<aside class="aside">
                     data-text="asideTransect">
                 </a>
             </li>
-            {{-- <li class="list__item">
-                <span class="list__item__icon">
-                    <i class="fas fa-camera">
-                    </i>
-                </span>
-                <a href="{{ route('species', ['language' => $language]) }}" class="list__item__link"
-                    data-text="asideImage">
-                </a>
-            </li> --}}
             <li class="list__title">
                 <span data-text="asideDashboard">
                 </span>
             </li>
             <li class="list__item">
                 <span class="list__item__icon">
-                    <i class="fas fa-globe">
+                    <i class="fas fa-chart-column">
                     </i>
                 </span>
                 <a href="{{ route('dashboard.graph1', ['language' => $language]) }}" class="list__item__link"
@@ -73,7 +64,7 @@ a<aside class="aside">
             </li>
             <li class="list__item">
                 <span class="list__item__icon">
-                    <i class="fas fa-globe">
+                    <i class="fas fa-chart-line">
                     </i>
                 </span>
                 <a href="{{ route('dashboard.multiGraph', ['language' => $language]) }}" class="list__item__link"
@@ -82,7 +73,7 @@ a<aside class="aside">
             </li>
             <li class="list__item">
                 <span class="list__item__icon">
-                    <i class="fas fa-globe">
+                    <i class="fas fa-chart-pie">
                     </i>
                 </span>
                 <a href="{{ route('dashboard.donutGraph', ['language' => $language]) }}" class="list__item__link"
@@ -90,12 +81,12 @@ a<aside class="aside">
                 </a>
             </li>
             <li class="list__title">
-                <span data-text="asideDashboard">
+                <span data-text="asideValidations">
                 </span>
             </li>
             <li class="list__item">
                 <span class="list__item__icon">
-                    <i class="fas fa-globe">
+                    <i class="fas fa-registered">
                     </i>
                 </span>
                 <a href="{{ route('observations.index', ['language' => $language, 'validated' => 'null']) }}"

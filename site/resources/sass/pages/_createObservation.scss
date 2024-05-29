@@ -54,8 +54,14 @@
 
     &__buttons {
       @include mainBox(row, center, center);
-
     }
+  }
+
+  #image-container {
+    border: 1px solid $primary_main;
+    border-radius: $radius;
+    padding: calc($padding * 2);
+
   }
 }
 

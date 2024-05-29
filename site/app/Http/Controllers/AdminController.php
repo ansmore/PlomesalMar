@@ -106,7 +106,7 @@ class AdminController extends Controller
 		try{
 			if ($role->role === 'blocked') {
                 if (!policy(User::class)->preventSelfBlock($user, $role)) {
-                    return redirect()->back()->withErrors("No pots bloquejar-te a tu mateix.");
+                    return redirect()->back()->with("error", "No pots bloquejar-te a tu mateix.");
                 }
             }
 
@@ -133,13 +133,13 @@ class AdminController extends Controller
 		try{
 			if ($role->role === 'admin') {
                 if (!policy(User::class)->lastUserAdmin($user, $role)) {
-                    return redirect()->back()->withErrors("No pots retirar el $role->role, ets l'únic $role->role.");
+                    return redirect()->back()->with("error", "No pots retirar el $role->role, ets l'únic $role->role.");
                 }
                 if (!policy(User::class)->ensureAtLeastOneAdmin($user, $role)) {
-                    return redirect()->back()->withErrors("No puedes quitar el rol de 'admin' porque debe haber al menos un administrador.");
+                    return redirect()->back()->with("error", "No puedes quitar el rol de 'admin' porque debe haber al menos un administrador.");
                 }
 				if (!policy(User::class)->preventSelfAdminRemoval($user)) {
-                    return redirect()->back()->withErrors("No pots retirar el teu propi rol d'administrador.");
+                    return redirect()->back()->with("error", "No pots retirar el teu propi rol d'administrador.");
                 }
             }
 

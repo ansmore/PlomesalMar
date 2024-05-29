@@ -1,13 +1,19 @@
 .button {
-  @include button($primary_main, $neutral_lighter);
   @include paddingMargin(calc($padding * 2), calc($margin * 2));
-  border-radius: $radius;
 
+  @include style($neutral_lighter, $danger_main);
   @include hover($primary_light, $neutral_lighter, $primary_dark);
+
+  border-radius: $radius;
 }
 
 .form__button__success {
   @extend .button;
+
+  background-color: $primary_main;
+  color: $neutral_lighter;
+  @include hover($primary_light, $neutral_lighter, $primary_dark);
+
 }
 
 .form__button__close {
@@ -22,8 +28,9 @@
 
   @include style($neutral_lighter, $neutral_dark);
   @include hover($neutral_main, $neutral_darker, $neutral_dark);
+  // @include paddingMargin(calc($padding * 2), calc($margin * 2));
+  // border-radius: $radius;
 }
-
 
 .buttonTable {
   border: 1px solid transparent;

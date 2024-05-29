@@ -13,7 +13,7 @@
                 <div class="card">
                     <div class="tableObservation">
                         <form class="observation-form" method="post"
-                            action="{{ route('observations.store', ['language' => app()->getLocale()]) }}"
+                            action="{{ route('observations.observation.store', ['language' => app()->getLocale()]) }}"
                             enctype="multipart/form-data">
                             @csrf
                             <!-- Seleccionar Departure -->
@@ -85,8 +85,10 @@
                                 <div id="image-container">
                                     <!-- Contenedor para añadir múltiples imágenes -->
                                 </div>
-                                <button type="button" onclick="addImageField()" class="form__button__success">Agregar
-                                    Imagen</button>
+                                <div class="table__group__buttons">
+                                    <button type="button" onclick="addImageField()" class="form__button__success">Agregar
+                                        Imagen</button>
+                                </div>
                             </div>
 
                             <!-- Notas -->
@@ -95,8 +97,10 @@
                                 <textarea name="notes" id="notes" class="textarea-form" rows="4"></textarea>
                             </div>
 
-                            <button type="submit" class="btn-form btn-save form__button__success">Crear
-                                Observación</button>
+                            <div class="table__group__buttons">
+                                <button type="submit" class="btn-form btn-save form__button__success">Crear
+                                    Observación</button>
+                            </div>
                         </form>
                     </div>
                 </div>

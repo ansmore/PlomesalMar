@@ -1,30 +1,4 @@
 {
-	"assCetacea": "Associció Cetàcea",
-	"plomesalamar": "plomes al mar",
-	"homeTitle": "Plomes al mar",
-	"homeIntro": "Benvinguts a la nostra associació ",
-	"homeIntro2": "dedicada amb passió a la preservació del medi marí i la protecció dels majestuosos cetacis que habiten les aigües del Mediterrani a la costa catalana. Com a entitat sense ànim de lucre, treballem incansablement per promoure la consciència ambiental i la conservació dels nostres oceans. Amb l'ajuda dels nostres voluntaris, lluitem per un futur més sostenible per a les generacions futures.",
-	"homeIntro3": "El nostre projecte ",
-	"homeIntro4": "és una iniciativa apassionant impulsada per voluntaris, dedicada a registrar les observacions d'ocells marins durant les nostres sortides per a la visualització de cetacis. Mitjançant la col·laboració i el compromís dels nostres membres, recopilem dades essencials sobre la diversitat i l'abundància d'aus marines, contribuint a la comprensió i conservació dels ecosistemes marins. Amb cada registre, estem construint un pont cap a un futur més conscient i respectuós amb la vida marina.",
-
-	"aboutText": "Valor al teu negoci",
-	"aboutButton": "Començar",
-	"sitemapHeading": "On som?",
-	"sitemapAddress": "Carrer del Doctor Fleming, 25, 43700 El Vendrell, Tarragona",
-	"contactHeading": "Contacte:",
-	"contactPhone": "Telèfon de contacte: ",
-	"contactPhoneNumber": "977 57 28 91",
-	"contactAction": "Envia'ns un missatge:",
-	"contactActionMessage": "Missatge",
-	"contactName": "Nom: ",
-	"contactEmail": "Email: ",
-	"contactTelephone": "Telèfon: ",
-	"contactMessage": "Missatge: ",
-	"contactoClausulaContacto": "La comunicació enviada s'utilitzarà exclusivament per tractar les seves dades i atendre la seva sol·licitud, sempre d'acord amb el Reglament (UE) 2016/679 (RGPD), la Llei Orgànica 15/1999 (LOPD) i el Reial Decret 1720/2007 de desenvolupament de la (LOPD), sobre protecció de dades. Les seves dades no es comunicaran a tercers, excepte per obligació legal, en cap cas s'utilitzaran per a accions de màrqueting i es mantindran mentre no sol·liciti la seva cancel·lació.",
-	"contactoClausulaContacto2": "En qualsevol moment vostè pot exercir els drets d'accés, rectificació, portabilitat i oposició, o si procedeix, a la limitació i/o cancel·lació del tractament, comunicant-ho per escrit, indicant les seves dades personals a Avda. Can Deu, 4-6, local 08207, Sabadell o mitjançant un correu electrònic a info@plomesalamar.cat.",
-	"contactAccept": "Accepto la ",
-	"contactPolitica": "Política de privadesa",
-	"contactAccept2": "i els ",
-	"contactUse": "termes d'ús",
-	"contactButton": "Enviar"
+	"homeManagement": "Gestió",
+	"homeDashboard": "Quadre de comandament"
 }

@@ -1,5 +1,4 @@
 {
-	"boatsName": "Nom",
 	"boatsRegistrationPlate": "Matrícula",
 
 	"commonName": "Nom comú",
@@ -8,6 +7,13 @@
 	"boatName": "Nom del vaixell",
 	"transectName": "Nom del transecte",
 	"date": "Data",
+
+	"timeObservation": "Hora",
+	"waypoint": "Waypoint",
+	"individuals": "Unitats",
+	"image": "Imatge",
+	"flight": "En vol",
+	"distance": "Menys de 300m",
 
 	"actions": "Accions",
 

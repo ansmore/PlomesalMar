@@ -8,6 +8,8 @@
 	"asideBoat": "Barco",
 	"asideTransect": "Transecto",
 	"asideImage": "Imagen",
+	"asideValidations": "Validaciones",
+	"asideNotValidatedObservation": "Validaciones pendientes",
 
 	"departureList": "Lista de salidas",
 	"observationList": "Lista de observaciones",
@@ -17,7 +19,7 @@
 	"back": "Anterior",
 	"next": "Siguiente",
 
-	"graph1": "Grafico 1",
-	"graph2": "Grafico 2",
-	"graph3": "Grafico 3"
+	"graph1": "Total",
+	"graph2": "Comparativo",
+	"graph3": "Variedad"
 }

@@ -5,7 +5,7 @@
         <thead class="text-white">
             <tr>
                 <th scope="col">
-                    <span data-text="time" class="table__title"></span>
+                    <span data-text="timeObservation" class="table__title"></span>
                     <a href="?orderByField=time&orderByDirection=asc" class="decoration">
                         <i class="fas fa-arrow-up"></i>
                     </a>
@@ -75,14 +75,14 @@
                     </td>
                     <td class="iconsImage">
                         <form
-                            action="{{ route('observations.show', ['language' => app()->getLocale(), 'observation' => $observation->id]) }}"
+                            action="{{ route('observations.observation.show', ['language' => app()->getLocale(), 'observation' => $observation->id]) }}"
                             method="GET" style="display: inline;">
                             <button type="submit" class="buttonTable__success">
                                 <i class="fas fa-info-circle"></i>
                             </button>
                         </form>
                         <form
-                            action="{{ route('observations.edit', ['language' => app()->getLocale(), 'observation' => $observation->id]) }}"
+                            action="{{ route('observations.observation.edit', ['language' => app()->getLocale(), 'observation' => $observation->id]) }}"
                             method="GET" style="display: inline;">
                             <button type="submit" class="buttonTable__success">
                                 <i class="fas fa-pencil"></i>
