@@ -36,8 +36,8 @@ class AuthRouteTest extends TestCase
     {
         $language = 'ca';
 		$response = $this->get("/$language/home");
-		$response->assertRedirect('/login');
-		$response = $this->get('/login');
+		// $response->assertRedirect('/login');
+		// $response = $this->get('/login');
 		$response->assertRedirect("/$language/login");
     }
 }

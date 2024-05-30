@@ -32,6 +32,7 @@ class TransectController extends Controller
         ]);
 
         try {
+			Log::info('Peticio rebuda: ', $request->all());
             $transect = Transect::createFromRequest($request);
             return redirect()->back()->with('status', 'El transecto ha sido creado exitosamente en la base de datos.');
         } catch (\Exception $e) {
