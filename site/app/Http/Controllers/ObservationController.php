@@ -112,69 +112,26 @@ class ObservationController extends Controller
 
     public function edit($language, $id)
     {
-
         $observation = Observation::findOrFail($id);
         $departures = Departure::all();
         $species = Specie::all();
+        $users = User::all();
 
-        $departureObservation = DB::table('departure_observations')
-            ->where('observation_id', $observation->id)
-            ->first();
-
+        $departureObservation = $observation->getDepartureObservation();
         $departureId = $departureObservation ? $departureObservation->departure_id : null;
 
         foreach ($departures as $departure) {
-            if (is_string($departure->observers)) {
-                $observerNames = explode(',', $departure->observers);
-            } else {
-                $observerNames = $departure->observers;
-            }
-
-            $observerNames = array_map('trim', $observerNames);
-            $users = User::whereIn('name', $observerNames)->get(['id', 'name']);
-            $departure->observer_users = $users;
+            $departure->observer_users = $departure->getObserverUsers();
         }
 
-        $imageUrls = [];
-        foreach ($observation->images as $image) {
-
-            $response = Http::withHeaders([
-                'Accept' => 'application/json',
-                'APP-TOKEN' => config('services.api.token'),
-            ])->get(config('services.api.url') . "/api/V1/images/{$image->image_id}");
-
-            if ($response->successful()) {
-                $data = $response->json();
-
-                if (isset($data['optimized_images']) && is_array($data['optimized_images'])) {
-                    $imageSet = [];
-                    foreach ($data['optimized_images'] as $optimizedImage) {
-                        if (isset($optimizedImage['version']) && isset($optimizedImage['url'])) {
-                            $absoluteUrl = config('services.api.url') . $optimizedImage['url'];
-                            $imageSet[$optimizedImage['version']] = $absoluteUrl;
-                        }
-                    }
-                    if (!empty($imageSet)) {
-                        $imageUrls[] = [
-                            'user' => $image->user->name,
-                            'image_id' => $image->image_id,
-                            'images' => $imageSet
-                        ];
-                    }
-                }
-            } else {
-                Log::error('Error fetching image from API: ' . $response->body());
-            }
-        }
+        $imageUrls = $observation->getImageUrls();
 
         return view('pages.observationsPages.edit', compact('observation', 'departures', 'species', 'imageUrls', 'departureId', 'users'));
     }
 
     public function update(Request $request, $language, $id)
     {
-
         try {
-
             $validatedData = $request->validate([
                 'departure_id' => 'required|exists:departures,id',
                 'time' => 'required|date_format:H:i:s',
@@ -182,6 +139,7 @@ class ObservationController extends Controller
                 'waypoint' => 'required|string',
                 'in_flight' => 'boolean',
                 'distance_under_300m' => 'boolean',
+                'is_validated' => 'boolean',
                 'number_of_individuals' => 'required|integer|min:1',
                 'notes' => 'nullable|string',
                 'image_user' => 'nullable|array',
@@ -203,63 +161,18 @@ class ObservationController extends Controller
             DB::beginTransaction();
 
             $observation = Observation::findOrFail($id);
-
-            $observation->time = $validatedData['time'];
-            $observation->species_id = $validatedData['species_id'];
-            $observation->waypoint = $validatedData['waypoint'];
-            $observation->in_flight = $validatedData['in_flight'] ?? false;
-            $observation->distance_under_300m = $validatedData['distance_under_300m'] ?? false;
-            $observation->number_of_individuals = $validatedData['number_of_individuals'];
-            $observation->notes = $validatedData['notes'];
-            $observation->save();
-
-            DB::table('departure_observations')
-                ->where('observation_id', $id)
-                ->update(['departure_id' => $validatedData['departure_id']]);
-
-            $existingImageIds = array_column($existingImages, 'image_id');
+            $observation->updateObservation($validatedData);
 
             if (isset($validatedData['image_file'])) {
-                foreach ($validatedData['image_file'] as $imageId => $file) {
-
-                    $response = Http::withHeaders([
-                        'Accept' => 'application/json',
-                        'APP-TOKEN' => config('services.api.token'),
-                    ])->attach(
-                        'image', file_get_contents($file), $file->getClientOriginalName()
-                    )->post(config('services.api.url') . "/api/V1/images/{$imageId}");
-
-                    if (!$response->successful()) {
-                        Log::error('Error updating image: ' . $response->body());
-                        throw new \Exception('Error updating image.');
-                    }
-                }
+                $observation->updateImages($validatedData['image_file']);
             }
 
             if (isset($validatedData['image_file_new'])) {
-                foreach ($validatedData['image_file_new'] as $index => $file) {
-
-                    $response = Http::withHeaders([
-                        'Accept' => 'application/json',
-                        'APP-TOKEN' => config('services.api.token'),
-                    ])->attach(
-                        'image', file_get_contents($file), $file->getClientOriginalName()
-                    )->post(config('services.api.url') . '/api/V1/images');
-
-                    if ($response->successful()) {
-                        $imageId = $response->json()['imageId'];
-
-                        ImageObservation::create([
-                            'image_id' => $imageId,
-                            'observation_id' => $observation->id,
-                            'user_id' => $validatedData['image_user_new'][$index],
-                            'photography_number' => $validatedData['image_number_new'][$index],
-                        ]);
-                    } else {
-                        Log::error('Error uploading new image: ' . $response->body());
-                        throw new \Exception('Error uploading new image.');
-                    }
-                }
+                $observation->addNewImages(
+                    $validatedData['image_file_new'],
+                    $validatedData['image_user_new'],
+                    $validatedData['image_number_new']
+                );
             }
 
             DB::commit();
@@ -274,27 +187,17 @@ class ObservationController extends Controller
 
     public function deleteImage(Request $request, $language, $observationId)
     {
-
         $imageId = $request->input('image_id');
 
         DB::beginTransaction();
 
         try {
+            $observation = Observation::findOrFail($observationId);
+            $observation->deleteImage($imageId);
 
-            $response = Http::withHeaders([
-                'Accept' => 'application/json',
-                'APP-TOKEN' => config('services.api.token'),
-            ])->delete(config('services.api.url') . "/api/V1/images/{$imageId}");
+            DB::commit();
 
-            if ($response->successful()) {
-                ImageObservation::where('image_id', $imageId)->where('observation_id', $observationId)->delete();
-                DB::commit();
-
-                return redirect()->route('observations.edit', ['language' => $language, 'observation' => $observationId])->with('status', 'Imagen eliminada correctamente.');
-            } else {
-                Log::error('Error deleting image: ' . $response->body());
-                throw new \Exception('Error al eliminar la imagen.');
-            }
+            return redirect()->route('observations.edit', ['language' => $language, 'observation' => $observationId])->with('status', 'Imagen eliminada correctamente.');
         } catch (\Exception $e) {
             DB::rollBack();
             Log::error('Error deleting image: ' . $e->getMessage());
@@ -304,59 +207,18 @@ class ObservationController extends Controller
 
     public function show($language = null, $id)
     {
-
         $observation = Observation::findOrFail($id);
         $departures = Departure::all();
         $species = Specie::all();
 
-        $departureObservation = DB::table('departure_observations')
-            ->where('observation_id', $observation->id)
-            ->first();
-
+        $departureObservation = $observation->getDepartureObservation();
         $departureId = $departureObservation ? $departureObservation->departure_id : null;
 
         foreach ($departures as $departure) {
-            if (is_string($departure->observers)) {
-                $observerNames = explode(',', $departure->observers);
-            } else {
-                $observerNames = $departure->observers;
-            }
-
-            $observerNames = array_map('trim', $observerNames);
-            $users = User::whereIn('name', $observerNames)->get(['id', 'name']);
-            $departure->observer_users = $users;
+            $departure->observer_users = $observation->getObserverUsers($departure);
         }
 
-        $imageUrls = [];
-        foreach ($observation->images as $image) {
-
-            $response = Http::withHeaders([
-                'Accept' => 'application/json',
-                'APP-TOKEN' => config('services.api.token'),
-            ])->get(config('services.api.url') . "/api/V1/images/{$image->image_id}");
-
-            if ($response->successful()) {
-                $data = $response->json();
-
-                if (isset($data['optimized_images']) && is_array($data['optimized_images'])) {
-                    $imageSet = [];
-                    foreach ($data['optimized_images'] as $optimizedImage) {
-                        if (isset($optimizedImage['version']) && isset($optimizedImage['url'])) {
-                            $absoluteUrl = config('services.api.url') . $optimizedImage['url'];
-                            $imageSet[$optimizedImage['version']] = $absoluteUrl;
-                        }
-                    }
-                    if (!empty($imageSet)) {
-                        $imageUrls[] = [
-                            'user' => $image->user->name,
-                            'images' => $imageSet
-                        ];
-                    }
-                }
-            } else {
-                Log::error('Error fetching image from API: ' . $response->body());
-            }
-        }
+        $imageUrls = $observation->getImageUrls();
 
         return view('pages.observationsPages.show', compact('observation', 'departures', 'species', 'imageUrls', 'departureId'));
     }

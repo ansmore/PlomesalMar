@@ -107,20 +107,20 @@ class Departure extends Model
     {
         $departure = self::find($id);
         if ($departure) {
-            $userNames = User::whereIn('id', $request->input('users'))->pluck('name')->toArray();
+            $userNames = $request->has('users') ? User::whereIn('id', $request->input('users'))->pluck('name')->toArray() : [];
             $observers = implode(', ', $userNames);
-
+    
             $departure->boat_id = $request->input('boat_id');
             $departure->transect_id = $request->input('transect_id');
             $departure->date = $request->input('date');
             $departure->observers = $observers;
-
+    
             $departure->save();
             return true;
         }
-
+    
         return false;
-    }
+    }    
 
     public function deleteIfNoObservations()
     {
@@ -129,6 +129,18 @@ class Departure extends Model
         }
 
         return $this->delete();
+    }
+
+    public function getObserverUsers()
+    {
+        if (is_string($this->observers)) {
+            $observerNames = explode(',', $this->observers);
+        } else {
+            $observerNames = $this->observers;
+        }
+
+        $observerNames = array_map('trim', $observerNames);
+        return User::whereIn('name', $observerNames)->get(['id', 'name']);
     }
 
     public function getObserversAttribute($value)

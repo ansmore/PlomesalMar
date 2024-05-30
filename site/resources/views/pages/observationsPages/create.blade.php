@@ -82,7 +82,6 @@
                             <!-- Añadir Imágenes -->
                             <div class="form-section">
                                 <div id="image-container">
-                                    <!-- Contenedor para añadir múltiples imágenes -->
                                 </div>
                                 <div class="table__group__buttons">
                                     <button type="button" onclick="addImageField()" class="form__button__success"
@@ -109,62 +108,8 @@
 @endsection
 
 @push('scripts')
+    <script type="module" src="{{ asset('js/pages/observationsPage/create.js') }}" defer></script>
     <script type="module" src="{{ asset('js/pages/management.js') }}" defer></script>
     <script type="module" src="{{ asset('js/partials/table.js') }}" defer></script>
     <script type="module" src="{{ asset('js/components/message.js') }}" defer></script>
-    <script>
-        document.getElementById('departure').addEventListener('change', function() {
-            const selectedOption = this.options[this.selectedIndex];
-            const observers = JSON.parse(selectedOption.getAttribute('data-observers'));
-
-            document.querySelectorAll('.image-user-select').forEach(select => {
-                select.innerHTML = observers.map(observer =>
-                    `<option value="${observer.id}">${observer.name}</option>`).join('');
-            });
-        });
-
-        function addImageField() {
-            const container = document.getElementById('image-container');
-            const div = document.createElement('div');
-            div.classList.add('table__group');
-
-            const index = container.children.length;
-
-            div.innerHTML = `
-        <label for="image_user_${index}" class="table__group__content" data-text="user">Usuari</label>
-        <select name="image_user[]" id="image_user_${index}" class="table__group__select image-user-select" required></select>
-        <label for="image_number_${index}" class="table__group__content" data-text="imageNumber">Numero de la imatge</label>
-        <input type="number" name="image_number[]" id="image_number_${index}" class="table__group__input" required>
-        <label for="image_file_${index}" class="table__group__content" data-text="image">Imatge</label>
-        <input type="file" name="image_file[]" id="image_file_${index}" class="table__group__input" accept="image/*" required onchange="previewImage(event, ${index})">
-        <img id="image_preview_${index}" src="" alt="Vista previa de la imagen" style="display:none; max-width: 200px; margin-top: 10px;">
-    `;
-            container.appendChild(div);
-
-            const departureSelect = document.getElementById('departure');
-            const selectedOption = departureSelect.options[departureSelect.selectedIndex];
-            const observers = JSON.parse(selectedOption.getAttribute('data-observers'));
-
-            const newSelect = div.querySelector('.image-user-select');
-            newSelect.innerHTML = observers.map(observer => `<option value="${observer.id}">${observer.name}</option>`)
-                .join('');
-        }
-
-        function previewImage(event, index) {
-            const input = event.target;
-            const preview = document.getElementById(`image_preview_${index}`);
-
-            if (input.files && input.files[0]) {
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    preview.src = e.target.result;
-                    preview.style.display = 'block';
-                }
-                reader.readAsDataURL(input.files[0]);
-            } else {
-                preview.src = '';
-                preview.style.display = 'none';
-            }
-        }
-    </script>
 @endpush
