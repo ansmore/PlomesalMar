@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\ImageObservation;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -163,6 +164,135 @@ class Observation extends Model
             Log::error('Error al eliminar la imagen: ' . $e->getMessage());
             throw $e;
         }
+    }
+
+    public function getImageUrls()
+    {
+        $imageUrls = [];
+        foreach ($this->images as $image) {
+            $response = Http::withHeaders([
+                'Accept' => 'application/json',
+                'APP-TOKEN' => config('services.api.token'),
+            ])->get(config('services.api.url') . "/api/V1/images/{$image->image_id}");
+
+            if ($response->successful()) {
+                $data = $response->json();
+
+                if (isset($data['optimized_images']) && is_array($data['optimized_images'])) {
+                    $imageSet = [];
+                    foreach ($data['optimized_images'] as $optimizedImage) {
+                        if (isset($optimizedImage['version']) && isset($optimizedImage['url'])) {
+                            $absoluteUrl = config('services.api.url') . $optimizedImage['url'];
+                            $imageSet[$optimizedImage['version']] = $absoluteUrl;
+                        }
+                    }
+                    if (!empty($imageSet)) {
+                        $imageUrls[] = [
+                            'user' => $image->user->name,
+                            'image_id' => $image->image_id,
+                            'images' => $imageSet
+                        ];
+                    }
+                }
+            } else {
+                Log::error('Error fetching image from API: ' . $response->body());
+            }
+        }
+        return $imageUrls;
+    }
+
+    public function updateObservation(array $data)
+    {
+        $this->time = $data['time'];
+        $this->species_id = $data['species_id'];
+        $this->waypoint = $data['waypoint'];
+        $this->in_flight = $data['in_flight'] ?? false;
+        $this->distance_under_300m = $data['distance_under_300m'] ?? false;
+        $this->is_validated = $data['is_validated'] ?? false;
+        $this->number_of_individuals = $data['number_of_individuals'];
+        $this->notes = $data['notes'];
+        $this->save();
+
+        DB::table('departure_observations')
+            ->where('observation_id', $this->id)
+            ->update(['departure_id' => $data['departure_id']]);
+    }
+
+    public function updateImages(array $imageFiles)
+    {
+        foreach ($imageFiles as $imageId => $file) {
+            $response = Http::withHeaders([
+                'Accept' => 'application/json',
+                'APP-TOKEN' => config('services.api.token'),
+            ])->attach(
+                'image', file_get_contents($file), $file->getClientOriginalName()
+            )->post(config('services.api.url') . "/api/V1/images/{$imageId}");
+
+            if (!$response->successful()) {
+                Log::error('Error updating image: ' . $response->body());
+                throw new \Exception('Error updating image.');
+            }
+        }
+    }
+
+    public function addNewImages(array $newImageFiles, array $newImageUsers, array $newImageNumbers)
+    {
+        foreach ($newImageFiles as $index => $file) {
+            $response = Http::withHeaders([
+                'Accept' => 'application/json',
+                'APP-TOKEN' => config('services.api.token'),
+            ])->attach(
+                'image', file_get_contents($file), $file->getClientOriginalName()
+            )->post(config('services.api.url') . '/api/V1/images');
+
+            if ($response->successful()) {
+                $imageId = $response->json()['imageId'];
+
+                ImageObservation::create([
+                    'image_id' => $imageId,
+                    'observation_id' => $this->id,
+                    'user_id' => $newImageUsers[$index],
+                    'photography_number' => $newImageNumbers[$index],
+                ]);
+            } else {
+                Log::error('Error uploading new image: ' . $response->body());
+                throw new \Exception('Error uploading new image.');
+            }
+        }
+    }
+
+    public function deleteImage($imageId)
+    {
+        $response = Http::withHeaders([
+            'Accept' => 'application/json',
+            'APP-TOKEN' => config('services.api.token'),
+        ])->delete(config('services.api.url') . "/api/V1/images/{$imageId}");
+
+        if ($response->successful()) {
+            ImageObservation::where('image_id', $imageId)->where('observation_id', $this->id)->delete();
+        } else {
+            Log::error('Error deleting image: ' . $response->body());
+            throw new \Exception('Error al eliminar la imagen.');
+        }
+    }
+
+    public function getDepartureObservation()
+    {
+        return DB::table('departure_observations')
+            ->where('observation_id', $this->id)
+            ->first();
+    }
+
+    public function getObserverUsers($departure)
+    {
+        if (is_string($departure->observers)) {
+            $observerNames = explode(',', $departure->observers);
+        } else {
+            $observerNames = $departure->observers;
+        }
+
+        $observerNames = array_map('trim', $observerNames);
+        return User::whereIn('name', $observerNames)->get(['id', 'name']);
     }
 
     public function firstImage()
