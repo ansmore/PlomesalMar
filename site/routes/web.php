@@ -33,17 +33,17 @@ use App\Http\Controllers\PlomesalmarController;
 
 Route::get('/register', function () {
     return Redirect::to("/" . app()->getLocale() . "/register");
-});
+})->name('indexRegister');
 Route::post('/register', function () {
     return Redirect::to("/" . app()->getLocale() . "/register");
-})->name('indexRegister');
+})->name('indexRegisterPost');
 
 Route::get('/login', function () {
     return Redirect::to("/" . app()->getLocale() . "/login");
-});
+})->name('indexLogin');
 Route::post('/login', function () {
     return Redirect::to("/" . app()->getLocale() . "/login");
-})->name('indexLogin');
+})->name('indexLoginPost');
 
 Route::post('/logout', function () {
     return Redirect::to("/" . app()->getLocale() . "/logout");

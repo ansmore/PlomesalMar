@@ -10,6 +10,8 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class HomeTest extends TestCase
 {
+	use RefreshDatabase, WithFaker;
+
 	/**
      * Test the root route returns the home page with the session-specified language.
      *
