@@ -915,7 +915,7 @@ button {
   align-items: center;
   justify-items: space-between;
 }
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
   .card .table td .row {
     grid-template-columns: 1fr;
     gap: 10px;
