@@ -80,7 +80,7 @@ class DepartureController extends Controller
             'boat_id' => 'required|exists:boats,id',
             'transect_id' => 'required|exists:transects,id',
             'date' => 'required|date',
-            'users' => 'required|array',
+            'users' => 'nullable|array',
             'users.*' => 'exists:users,id'
         ]);
 

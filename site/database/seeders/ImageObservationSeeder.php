@@ -65,7 +65,13 @@ class ImageObservationSeeder extends Seeder
     private function uploadImageAndGetId($imageFile)
     {
         $client = new \GuzzleHttp\Client();
-
+        $filePath = public_path('img/species/' . $imageFile);
+    
+        if (!file_exists($filePath)) {
+            \Log::error('File does not exist: ' . $filePath);
+            return null;
+        }
+    
         try {
             $response = $client->request('POST', config('services.api.url') . '/api/V1/images', [
                 'headers' => [
@@ -75,11 +81,11 @@ class ImageObservationSeeder extends Seeder
                 'multipart' => [
                     [
                         'name' => 'image',
-                        'contents' => fopen(public_path('img/species/' . $imageFile), 'r'),
+                        'contents' => fopen($filePath, 'r'),
                     ],
                 ],
             ]);
-
+    
             if ($response->getStatusCode() == 201) {
                 $data = json_decode($response->getBody()->getContents(), true);
                 return $data['imageId'];
@@ -91,7 +97,7 @@ class ImageObservationSeeder extends Seeder
             \Log::error('Exception uploading image: ' . $e->getMessage());
             return null;
         }
-    }
+    }    
 
     /**
      * Get the species to image map from the CSV file.

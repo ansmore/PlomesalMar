@@ -94,13 +94,17 @@
                                 data-image-id="{{ $image['image_id'] }}">Eliminar</button>
                             <input type="file" name="image_file[{{ $image['image_id'] }}]" accept="image/*"
                                 class="edit-image-file" data-image-id="{{ $image['image_id'] }}" style="display: none;">
+                            <div class="image-preview-container" style="display: none;">
+                                <img src="" class="new-image-preview" style="width:10%;">
+                            </div>
                         </div>
                     @endforeach
 
                     <h3>Añadir nuevas imágenes</h3>
                     <div id="new-images-container">
                         <div class="new-image">
-                            <input type="file" name="image_file_new[]" accept="image/*">
+                            <input type="file" name="image_file_new[]" accept="image/*" class="new-image-input">
+                            <img src="" class="new-image-preview" style="display:none; width:10%;">
                             <select name="image_user_new[]">
                                 @foreach ($users as $user)
                                     <option value="{{ $user->id }}">{{ $user->name }}</option>
@@ -117,6 +121,12 @@
                         <textarea name="notes" id="notes" class="textarea-form" rows="4">{{ $observation->notes }}</textarea>
                     </div>
 
+                    <div class="form-group">
+                        <label for="is_validated" class="label-form">Validado</label>
+                        <input type="checkbox" name="is_validated" id="is_validated" value="1"
+                            {{ $observation->is_validated ? 'checked' : '' }}>
+                    </div>
+
                     <button type="submit" class="btn btn-success">Guardar Cambios</button>
                 </form>
 
@@ -131,39 +141,14 @@
         </section>
     </main>
 
-    <script>
-        document.getElementById('add-new-image').addEventListener('click', function() {
-            var container = document.getElementById('new-images-container');
-            var newImageDiv = document.createElement('div');
-            newImageDiv.classList.add('new-image');
-            newImageDiv.innerHTML = `
-        <input type="file" name="image_file_new[]" accept="image/*">
-        <select name="image_user_new[]">
-            @foreach ($users as $user)
-                <option value="{{ $user->id }}">{{ $user->name }}</option>
-            @endforeach
-        </select>
-        <input type="number" name="image_number_new[]" placeholder="Photography Number">
-    `;
-            container.appendChild(newImageDiv);
-        });
+    @push('scripts')
+        <script>
+            const users = @json($users);
+        </script>
+        <script type="module" src="{{ asset('js/pages/observationsPage/edit.js') }}" defer></script>
+        <script type="module" src="{{ asset('js/pages/management.js') }}" defer></script>
+        <script type="module" src="{{ asset('js/partials/table.js') }}" defer></script>
+        <script type="module" src="{{ asset('js/components/message.js') }}" defer></script>
+    @endpush
 
-        document.querySelectorAll('.editable-image').forEach(image => {
-            image.addEventListener('click', function() {
-                var imageId = this.dataset.imageId;
-                var editInput = document.querySelector(`.edit-image-file[data-image-id='${imageId}']`);
-                editInput.click();
-            });
-        });
-
-        document.querySelectorAll('.delete-image').forEach(button => {
-            button.addEventListener('click', function() {
-                var imageId = this.dataset.imageId;
-                if (confirm('¿Estás seguro de que deseas eliminar esta imagen?')) {
-                    document.getElementById('delete-image-id').value = imageId;
-                    document.getElementById('delete-image-form').submit();
-                }
-            });
-        });
-    </script>
 @endsection
