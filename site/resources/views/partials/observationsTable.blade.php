@@ -13,7 +13,7 @@
                         <i class="fas fa-arrow-down"></i>
                     </a>
                 </th>
-                <th scope="col" data-text="waypoint"></th>
+                <th scope="col" data-text="waypoint" class="mq__remove1"></th>
                 <th scope="col">
                     <span data-text="individuals" class="table__title"></span>
                     <a href="?orderByField=number_of_individuals&orderByDirection=asc" class="decoration">
@@ -24,10 +24,9 @@
                     </a>
                 </th>
                 <th scope="col" data-text="image"></th>
-                <th scope="col" data-text="flight"></th>
-                <th scope="col" data-text="distance"></th>
+                <th scope="col" data-text="flight" class="mq__remove2"></th>
+                <th scope="col" data-text="distance" class="mq__remove2"></th>
                 @if (Auth::user()->hasRole('validator', 'admin'))
-                    <th scome="col" data-text="pending"></th>
                     <th scope="col" data-text="actions" class="table__title"></th>
                 @endif
             </tr>
@@ -36,7 +35,7 @@
             @foreach ($observations as $observation)
                 <tr>
                     <td>{{ $observation->time }}</td>
-                    <td>{{ $observation->waypoint }}</td>
+                    <td class="mq__remove1">{{ $observation->waypoint }}</td>
                     <td>{{ $observation->number_of_individuals }}</td>
                     <td>
                         @if ($observation->firstImage)
@@ -54,14 +53,14 @@
                             No images
                         @endif
                     </td>
-                    <td>
+                    <td class="mq__remove2">
                         @if ($observation->in_flight)
                             <i class="fas fa-check" style="font-size: 1.5rem;"></i>
                         @else
                             <i class="fas fa-close" style="font-size: 1.5rem;"></i>
                         @endif
                     </td>
-                    <td>
+                    <td class="mq__remove2">
                         @if ($observation->distance_under_300m)
                             <i class="fas fa-check" style="font-size: 1.5rem;"></i>
                         @else
@@ -69,13 +68,6 @@
                         @endif
                     </td>
                     @if (Auth::user()->hasRole('validator', 'admin'))
-                        <td>
-                            @if ($observation->is_validated)
-                                <i class="fas fa-check" style="font-size: 1.5rem;"></i>
-                            @else
-                                <i class="fas fa-close" style="font-size: 1.5rem;"></i>
-                            @endif
-                        </td>
                         <td class="iconsImage">
                             <form
                                 action="{{ route('observations.observation.show', ['language' => app()->getLocale(), 'observation' => $observation->id]) }}"

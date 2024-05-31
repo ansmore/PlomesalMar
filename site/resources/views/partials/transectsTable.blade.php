@@ -29,11 +29,6 @@
                                 data-name="{{ $transect->name }}">
                                 <i class="fas fa-pencil-alt"></i>
                             </button>
-                            <button type="button" class="buttonTable__success" data-bs-toggle="modal"
-                                data-bs-target="detailsTransectModal" title="Detalles" data-id="{{ $transect->id }}"
-                                data-name="{{ $transect->name }}">
-                                <i class="fas fa-info-circle"></i>
-                            </button>
                         </td>
                     @endif
                 </tr>
@@ -41,7 +36,6 @@
         </tbody>
     </table>
     @include('modals/transects.edit')
-    @include('modals/transects.show')
 </div>
 
 <nav aria-label="Page navigation example" class="pagination__box">

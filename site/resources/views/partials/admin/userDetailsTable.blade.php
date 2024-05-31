@@ -91,7 +91,8 @@
                 <td>
                     <button type="button" class="buttonTable__close" data-bs-toggle="modal"
                         data-bs-target="deleteUsersModal" title="Eliminar" data-id="{{ $user->id }}"
-                        data-name="{{ $user->name }}"data-email="{{ $user->email }}">
+                        data-name="{{ $user->name }}" data-surname="{{ $user->surname }}"
+                        data-surnameSecond="{{ $user->surnameSecond }}">
                         <i class="fas fa-trash"></i>
                     </button>
                 </td>

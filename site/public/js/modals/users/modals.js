@@ -36,17 +36,18 @@ const handleModalButtonClick = (event) => {
     }
     const userId = button.getAttribute("data-id");
     const name = button.getAttribute("data-name");
-    const email = button.getAttribute("data-email");
+    const surname = button.getAttribute("data-surname");
+    const surnameSecond = button.getAttribute("data-surnameSecond");
     switch (modalId) {
         case "createUser":
             openModal(modal);
             break;
         case "deleteUsersModal":
-            if (!userId || !name || !email) {
+            if (!userId || !name || surname || surnameSecond) {
                 console.error("Faltan atributos de datos");
                 return;
             }
-            handleDeleteUsersModal(modal, userId, name, email);
+            handleDeleteUsersModal(modal, userId, name, surname, surnameSecond);
             break;
         default:
             console.error("Objetivo del modal desconocido:", modalId);
@@ -63,11 +64,12 @@ const closeModalButtonClick = (event) => {
 const openModal = (modal) => {
     modal.style.display = "block";
 };
-const handleDeleteUsersModal = (modal, userId, name, email) => {
+const handleDeleteUsersModal = (modal, userId, name, surname, surnameSecond) => {
     const deleteForm = modal.querySelector("form");
     const textName = modal.querySelector("#deleteName");
-    const textEmail = modal.querySelector("#deleteEmail");
-    if (!deleteForm || !textName || !textEmail) {
+    const textSurname = modal.querySelector("#deleteSurname");
+    const textSurnameSecond = modal.querySelector("#deleteSurnameSecond");
+    if (!deleteForm || !textName || !textSurname || !textSurnameSecond) {
         console.error("Faltan el formulario o campos de texto en el modal de eliminación");
         return;
     }
@@ -79,7 +81,8 @@ const handleDeleteUsersModal = (modal, userId, name, email) => {
         console.error("Falta la plantilla de URL de eliminación en el formulario");
         return;
     }
-    textEmail.textContent = email;
     textName.textContent = name;
+    textSurname.textContent = surname;
+    textSurnameSecond.textContent = surnameSecond;
     openModal(modal);
 };

@@ -41,38 +41,50 @@
           @include boxSize(width, 10rem, null, 35%);
           margin-left: 0.25rem;
         }
-
-        // .form__button__success {
-        //   margin: 0.25rem auto;
-        //   margin-left: 0.25rem;
-        // }
       }
     }
 
-    .iconsImage {
+    .iconsImage,
+    .icons {
       display: flex;
       gap: 5px;
       padding-bottom: 2rem;
     }
 
-    .decoration {
-      text-decoration: none;
-      display: inline-block;
-      color: $primary_main;
+    .icons {
+      @media screen and (min-width: 780px) {
+        padding-bottom: 0.5rem;
+      }
     }
 
-    &__title {
-      @extend .secondary;
-
-      @include style($primary_main);
-      font-weight: bold;
+    // Aqui¿?
+    .iconsImage {
+      @media screen and (min-width: 1000px) {
+        padding-bottom: 0.5rem;
+      }
     }
+
+  }
+
+  .decoration {
+    text-decoration: none;
+    display: inline-block;
+    color: $primary_main;
+  }
+
+  &__title {
+    @extend .secondary;
+
+    @include style($primary_main);
+    font-weight: bold;
   }
 }
+
 
 .icons {
   display: flex;
   gap: 5px;
+  padding-bottom: 2rem;
 }
 
 .button__danger {
@@ -121,5 +133,17 @@
         border: 1px solid $primary_main;
       }
     }
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .mq__remove1 {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .mq__remove2 {
+    display: none;
   }
 }

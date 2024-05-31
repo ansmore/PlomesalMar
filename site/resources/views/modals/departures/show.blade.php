@@ -11,11 +11,11 @@
             <article class="form">
                 <div class="form__group">
                     <label class="form__group__content" data-text="boatNameModal"></label>
-                    <p id="details_boat_name" class="form__group__value"></p>
+                    <span id="details_boat_name" class="form__group__value"></span>
                 </div>
                 <div class="form__group">
                     <label class="form__group__content" data-text="transectNameModal"></label>
-                    <p id="details_transect_name" class="form__group__value"></p>
+                    <span id="details_transect_name" class="form__group__value"></span>
                 </div>
                 <div class="form__group">
                     <label class="form__group__content" data-text="dateModal"></label>
