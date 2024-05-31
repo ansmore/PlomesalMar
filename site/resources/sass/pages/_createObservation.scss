@@ -13,7 +13,8 @@
     @include mainBox(column, flex-start, flex-start);
     margin-left: 0;
 
-    &__content {
+    &__content,
+    &__title {
       @extend .secondary;
 
       @include style($primary_main);
@@ -128,6 +129,10 @@
 
       &__value {
         padding: 12px 0;
+      }
+
+      &__title {
+        text-align: center;
       }
     }
   }

@@ -303,7 +303,7 @@ button {
   align-self: center;
 }
 
-.secondary, .tableObservation .table__group__content, .tableObservation__title, .card .table__title {
+.secondary, .tableObservation .table__group__content, .tableObservation .table__group__title, .tableObservation__title, .card .table__title {
   color: #9d9d9c;
   background-color: transparent;
   margin-top: 0.5rem;
@@ -1008,6 +1008,7 @@ button {
   top: 0;
   left: 0;
   right: 0;
+  z-index: 1;
 }
 .nav .navbar {
   display: flex;
@@ -2027,7 +2028,7 @@ button {
   align-self: center;
   margin-left: 0;
 }
-.tableObservation .table__group__content {
+.tableObservation .table__group__content, .tableObservation .table__group__title {
   color: #0065AE;
   background-color: transparent;
   font-weight: bold;
@@ -2134,6 +2135,9 @@ button {
   }
   .tableObservation .table__group__value {
     padding: 12px 0;
+  }
+  .tableObservation .table__group__title {
+    text-align: center;
   }
 }
 
