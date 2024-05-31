@@ -1,4 +1,4 @@
-export const setupModalEventListenersUsers = () => {
+export const setupModalEventListenersBoats = () => {
     const buttons = document.querySelectorAll('[data-bs-toggle="modal"]');
     buttons.forEach((button) => {
         button.removeEventListener("click", handleModalButtonClick);
@@ -11,7 +11,7 @@ export const setupModalEventListenersUsers = () => {
         button.addEventListener("click", closeModalButtonClick);
     });
 };
-export const cleanupUsers = () => {
+export const cleanupBoats = () => {
     const buttons = document.querySelectorAll('[data-bs-toggle="modal"]');
     buttons.forEach((button) => {
         button.removeEventListener("click", handleModalButtonClick);
@@ -34,20 +34,26 @@ const handleModalButtonClick = (event) => {
         console.error("No se encontró el elemento modal para el objetivo:", modalId);
         return;
     }
-    const userId = button.getAttribute("data-id");
-    const name = button.getAttribute("data-name");
-    const surname = button.getAttribute("data-surname" || "");
-    const surnameSecond = button.getAttribute("data-surnameSecond" || "");
+    const boatId = button.getAttribute("data-id");
+    const boatName = button.getAttribute("data-name");
+    const registrationNumber = button.getAttribute("data-registration-number");
     switch (modalId) {
-        case "createUser":
+        case "createBoat":
             openModal(modal);
             break;
-        case "deleteUsersModal":
-            if (!userId || !name) {
+        case "editBoatModal":
+            if (!boatId || !boatName || !registrationNumber) {
                 console.error("Faltan atributos de datos");
                 return;
             }
-            handleDeleteUsersModal(modal, userId, name);
+            handleEditBoatModal(modal, boatId, boatName, registrationNumber);
+            break;
+        case "deleteBoatModal":
+            if (!boatId || !boatName || !registrationNumber) {
+                console.error("Faltan atributos de datos");
+                return;
+            }
+            handleDeleteBoatModal(modal, boatId, boatName, registrationNumber);
             break;
         default:
             console.error("Objetivo del modal desconocido:", modalId);
@@ -64,29 +70,43 @@ const closeModalButtonClick = (event) => {
 const openModal = (modal) => {
     modal.style.display = "block";
 };
-const handleDeleteUsersModal = (modal, userId, name, surname, surnameSecond) => {
+const handleEditBoatModal = (modal, boatId, boatName, registrationNumber) => {
+    const editForm = modal.querySelector("form");
+    const inputBoatName = modal.querySelector("#boatName");
+    const inputRegistrationNumber = modal.querySelector("#registrationNumber");
+    if (!editForm || !inputBoatName || !inputRegistrationNumber) {
+        console.error("Faltan el formulario o campos de entrada en el modal de edición");
+        return;
+    }
+    const editUrlTemplate = editForm.dataset.editUrlTemplate;
+    if (editUrlTemplate) {
+        editForm.action = editUrlTemplate.replace(":id", boatId.toString());
+    }
+    else {
+        console.error("Falta la plantilla de URL de edición en el formulario");
+        return;
+    }
+    inputBoatName.value = boatName;
+    inputRegistrationNumber.value = registrationNumber;
+    openModal(modal);
+};
+const handleDeleteBoatModal = (modal, boatId, boatName, registrationNumber) => {
     const deleteForm = modal.querySelector("form");
-    const textName = modal.querySelector("#deleteName");
-    const textSurname = modal.querySelector("#deleteSurname");
-    const textSurnameSecond = modal.querySelector("#deleteSurnameSecond");
-    if (!deleteForm || !textName) {
+    const textBoatName = modal.querySelector("#deleteBoatName");
+    const textRegistrationNumber = modal.querySelector("#deleteRegistrationNumber");
+    if (!deleteForm || !textBoatName || !textRegistrationNumber) {
         console.error("Faltan el formulario o campos de texto en el modal de eliminación");
         return;
     }
     const deleteUrlTemplate = deleteForm.dataset.deleteUrlTemplate;
     if (deleteUrlTemplate) {
-        deleteForm.action = deleteUrlTemplate.replace(":id", userId.toString());
+        deleteForm.action = deleteUrlTemplate.replace(":id", boatId.toString());
     }
     else {
         console.error("Falta la plantilla de URL de eliminación en el formulario");
         return;
     }
-    textName.textContent = name;
-    if (textSurname) {
-        textSurname.textContent = surname || "";
-    }
-    if (textSurnameSecond) {
-        textSurnameSecond.textContent = surnameSecond || "";
-    }
+    textBoatName.textContent = boatName;
+    textRegistrationNumber.textContent = registrationNumber;
     openModal(modal);
 };

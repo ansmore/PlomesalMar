@@ -1,4 +1,4 @@
-export const setupModalEventListenersUsers = () => {
+export const setupModalEventListenersTransects = () => {
     const buttons = document.querySelectorAll('[data-bs-toggle="modal"]');
     buttons.forEach((button) => {
         button.removeEventListener("click", handleModalButtonClick);
@@ -11,7 +11,7 @@ export const setupModalEventListenersUsers = () => {
         button.addEventListener("click", closeModalButtonClick);
     });
 };
-export const cleanupUsers = () => {
+export const cleanupTransects = () => {
     const buttons = document.querySelectorAll('[data-bs-toggle="modal"]');
     buttons.forEach((button) => {
         button.removeEventListener("click", handleModalButtonClick);
@@ -34,20 +34,25 @@ const handleModalButtonClick = (event) => {
         console.error("No se encontró el elemento modal para el objetivo:", modalId);
         return;
     }
-    const userId = button.getAttribute("data-id");
-    const name = button.getAttribute("data-name");
-    const surname = button.getAttribute("data-surname" || "");
-    const surnameSecond = button.getAttribute("data-surnameSecond" || "");
+    const transectId = button.getAttribute("data-id");
+    const transectName = button.getAttribute("data-name");
     switch (modalId) {
-        case "createUser":
+        case "createTransect":
             openModal(modal);
             break;
-        case "deleteUsersModal":
-            if (!userId || !name) {
+        case "editTransectModal":
+            if (!transectId || !transectName) {
                 console.error("Faltan atributos de datos");
                 return;
             }
-            handleDeleteUsersModal(modal, userId, name);
+            handleEditTransectModal(modal, transectId, transectName);
+            break;
+        case "detailsTransectModal":
+            if (!transectId || !transectName) {
+                console.error("Faltan atributos de datos");
+                return;
+            }
+            handleDetailsTransectModal(modal, transectId, transectName);
             break;
         default:
             console.error("Objetivo del modal desconocido:", modalId);
@@ -64,29 +69,30 @@ const closeModalButtonClick = (event) => {
 const openModal = (modal) => {
     modal.style.display = "block";
 };
-const handleDeleteUsersModal = (modal, userId, name, surname, surnameSecond) => {
-    const deleteForm = modal.querySelector("form");
-    const textName = modal.querySelector("#deleteName");
-    const textSurname = modal.querySelector("#deleteSurname");
-    const textSurnameSecond = modal.querySelector("#deleteSurnameSecond");
-    if (!deleteForm || !textName) {
-        console.error("Faltan el formulario o campos de texto en el modal de eliminación");
+const handleEditTransectModal = (modal, transectId, transectName) => {
+    const editForm = modal.querySelector("form");
+    const inputTransectName = modal.querySelector("#transectName");
+    if (!editForm || !inputTransectName) {
+        console.error("Faltan el formulario o campos de entrada en el modal de edición");
         return;
     }
-    const deleteUrlTemplate = deleteForm.dataset.deleteUrlTemplate;
-    if (deleteUrlTemplate) {
-        deleteForm.action = deleteUrlTemplate.replace(":id", userId.toString());
+    const editUrlTemplate = editForm.dataset.editUrlTemplate;
+    if (editUrlTemplate) {
+        editForm.action = editUrlTemplate.replace(":id", transectId.toString());
     }
     else {
-        console.error("Falta la plantilla de URL de eliminación en el formulario");
+        console.error("Falta la plantilla de URL de edición en el formulario");
         return;
     }
-    textName.textContent = name;
-    if (textSurname) {
-        textSurname.textContent = surname || "";
+    inputTransectName.value = transectName;
+    openModal(modal);
+};
+const handleDetailsTransectModal = (modal, transectId, transectName) => {
+    const textTransectName = modal.querySelector("#transectNameDetails");
+    if (!textTransectName) {
+        console.error("Falta el camp de text en el modal de detalles");
+        return;
     }
-    if (textSurnameSecond) {
-        textSurnameSecond.textContent = surnameSecond || "";
-    }
+    textTransectName.textContent = transectName;
     openModal(modal);
 };

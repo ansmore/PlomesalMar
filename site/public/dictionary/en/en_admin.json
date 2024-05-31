@@ -15,9 +15,9 @@
 	"addRole": " Add role",
 	"removeUser": "Eliminar usuario",
 
-	"nameModal": "Nombre: ",
-	"surnameModal": "Apellido: ",
-	"surnameSecondModal": "Apellido 2: ",
+	"nameModal": "Name: ",
+	"surnameModal": "Lastname: ",
+	"surnameSecondModal": "Lastname 2: ",
 	"emailModal": "Email: ",
 	"passwordModal": "Password: "
 }

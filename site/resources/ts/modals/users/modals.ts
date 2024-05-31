@@ -51,8 +51,8 @@ const handleModalButtonClick = (event: Event) => {
 
 	const userId = button.getAttribute("data-id");
 	const name = button.getAttribute("data-name");
-	const surname = button.getAttribute("data-surname");
-	const surnameSecond = button.getAttribute("data-surnameSecond");
+	const surname = button.getAttribute("data-surname" || "");
+	const surnameSecond = button.getAttribute("data-surnameSecond" || "");
 
 	switch (modalId) {
 		case "createUser":
@@ -60,12 +60,12 @@ const handleModalButtonClick = (event: Event) => {
 			break;
 
 		case "deleteUsersModal":
-			if (!userId || !name || surname || surnameSecond) {
+			if (!userId || !name) {
 				console.error("Faltan atributos de datos");
 				return;
 			}
 
-			handleDeleteUsersModal(modal, userId, name, surname, surnameSecond);
+			handleDeleteUsersModal(modal, userId, name);
 			break;
 
 		default:
@@ -90,8 +90,8 @@ const handleDeleteUsersModal = (
 	modal: HTMLDivElement,
 	userId: string,
 	name: string,
-	surname: string,
-	surnameSecond: string,
+	surname?: string,
+	surnameSecond?: string,
 ) => {
 	const deleteForm = modal.querySelector<HTMLFormElement>("form");
 	const textName = modal.querySelector<HTMLElement>("#deleteName");
@@ -100,7 +100,7 @@ const handleDeleteUsersModal = (
 		"#deleteSurnameSecond",
 	);
 
-	if (!deleteForm || !textName || !textSurname || !textSurnameSecond) {
+	if (!deleteForm || !textName) {
 		console.error(
 			"Faltan el formulario o campos de texto en el modal de eliminación",
 		);
@@ -116,7 +116,11 @@ const handleDeleteUsersModal = (
 	}
 
 	textName.textContent = name;
-	textSurname.textContent = surname;
-	textSurnameSecond.textContent = surnameSecond;
+	if (textSurname) {
+		textSurname.textContent = surname || "";
+	}
+	if (textSurnameSecond) {
+		textSurnameSecond.textContent = surnameSecond || "";
+	}
 	openModal(modal);
 };

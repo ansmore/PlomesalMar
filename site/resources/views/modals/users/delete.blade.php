@@ -21,7 +21,7 @@
                         <span class="form__group__value" id="deleteSurname"></span>
                     </div>
                     <div class="form__group">
-                        <label class="form__group__content" data-text="surnameModal"></label>
+                        <label class="form__group__content" data-text="surnameSecondModal"></label>
                         <span class="form__group__value" id="deleteSurnameSecond"></span>
                     </div>
                     <p class="form__group__content" data-text="messageDelete"></p>

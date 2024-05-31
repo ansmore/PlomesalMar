@@ -1,4 +1,4 @@
-export const setupModalEventListenersUsers = () => {
+export const setupModalEventListenersSpecies = () => {
     const buttons = document.querySelectorAll('[data-bs-toggle="modal"]');
     buttons.forEach((button) => {
         button.removeEventListener("click", handleModalButtonClick);
@@ -11,7 +11,7 @@ export const setupModalEventListenersUsers = () => {
         button.addEventListener("click", closeModalButtonClick);
     });
 };
-export const cleanupUsers = () => {
+export const cleanupSpecies = () => {
     const buttons = document.querySelectorAll('[data-bs-toggle="modal"]');
     buttons.forEach((button) => {
         button.removeEventListener("click", handleModalButtonClick);
@@ -34,20 +34,26 @@ const handleModalButtonClick = (event) => {
         console.error("No se encontró el elemento modal para el objetivo:", modalId);
         return;
     }
-    const userId = button.getAttribute("data-id");
-    const name = button.getAttribute("data-name");
-    const surname = button.getAttribute("data-surname" || "");
-    const surnameSecond = button.getAttribute("data-surnameSecond" || "");
+    const specieId = button.getAttribute("data-id");
+    const commonName = button.getAttribute("data-common-name");
+    const scientificName = button.getAttribute("data-scientific-name");
     switch (modalId) {
-        case "createUser":
+        case "createSpecie":
             openModal(modal);
             break;
-        case "deleteUsersModal":
-            if (!userId || !name) {
+        case "editSpecieModal":
+            if (!specieId || !commonName || !scientificName) {
                 console.error("Faltan atributos de datos");
                 return;
             }
-            handleDeleteUsersModal(modal, userId, name);
+            handleeditSpecieModal(modal, specieId, commonName, scientificName);
+            break;
+        case "deleteSpecieModal":
+            if (!specieId || !commonName || !scientificName) {
+                console.error("Faltan atributos de datos");
+                return;
+            }
+            handleDeleteSpecieModal(modal, specieId, commonName, scientificName);
             break;
         default:
             console.error("Objetivo del modal desconocido:", modalId);
@@ -64,29 +70,44 @@ const closeModalButtonClick = (event) => {
 const openModal = (modal) => {
     modal.style.display = "block";
 };
-const handleDeleteUsersModal = (modal, userId, name, surname, surnameSecond) => {
-    const deleteForm = modal.querySelector("form");
-    const textName = modal.querySelector("#deleteName");
-    const textSurname = modal.querySelector("#deleteSurname");
-    const textSurnameSecond = modal.querySelector("#deleteSurnameSecond");
-    if (!deleteForm || !textName) {
-        console.error("Faltan el formulario o campos de texto en el modal de eliminación");
+const handleeditSpecieModal = (modal, specieId, commonName, scientificName) => {
+    const editForm = modal.querySelector("form");
+    const inputCommonName = modal.querySelector("#nombreComun");
+    const inputScientificName = modal.querySelector("#nombreCientifico");
+    if (!editForm || !inputCommonName || !inputScientificName) {
+        console.error("Faltan el formulario o campos de entrada en el modal de edición");
         return;
     }
-    const deleteUrlTemplate = deleteForm.dataset.deleteUrlTemplate;
-    if (deleteUrlTemplate) {
-        deleteForm.action = deleteUrlTemplate.replace(":id", userId.toString());
+    const editUrlTemplate = editForm.dataset.editUrlTemplate;
+    if (editUrlTemplate) {
+        editForm.action = editUrlTemplate.replace(":id", specieId.toString());
     }
     else {
         console.error("Falta la plantilla de URL de eliminación en el formulario");
         return;
     }
-    textName.textContent = name;
-    if (textSurname) {
-        textSurname.textContent = surname || "";
+    // Console.log("URL de eliminació configurada:", editForm.action);
+    inputCommonName.value = commonName;
+    inputScientificName.value = scientificName;
+    openModal(modal);
+};
+const handleDeleteSpecieModal = (modal, specieId, commonName, scientificName) => {
+    const deleteForm = modal.querySelector("form");
+    const textCommonName = modal.querySelector("#deleteCommonName");
+    const textScientificName = modal.querySelector("#deleteScientificName");
+    if (!deleteForm || !textCommonName || !textScientificName) {
+        console.error("Faltan el formulario o campos de texto en el modal de eliminación");
+        return;
     }
-    if (textSurnameSecond) {
-        textSurnameSecond.textContent = surnameSecond || "";
+    const deleteUrlTemplate = deleteForm.dataset.deleteUrlTemplate;
+    if (deleteUrlTemplate) {
+        deleteForm.action = deleteUrlTemplate.replace(":id", specieId.toString());
     }
+    else {
+        console.error("Falta la plantilla de URL de eliminación en el formulario");
+        return;
+    }
+    textCommonName.textContent = commonName;
+    textScientificName.textContent = scientificName;
     openModal(modal);
 };
