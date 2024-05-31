@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Response;
 class IsBlocked
 {
 
-    protected $allowed = ['plomesalmarContact', 'plomesalmarContact.submit', 'indexBlocked', 'blocked', 'logout', 'sendLanguade'];
+    protected $allowed = ['plomesalmarContact', 'plomesalmarContact.submit', 'blocked', 'logout', 'sendLanguade', 'login', 'indexLogin', 'indexBlocked'];
 
     // Desbloquejar la portada => home.welcome
 

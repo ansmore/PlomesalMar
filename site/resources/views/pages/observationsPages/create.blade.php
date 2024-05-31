@@ -10,6 +10,15 @@
                 <h1 class="box__title" data-text="observationNew"></h1>
             </article>
             <article class="box__form">
+                <div class="box__back">
+                    <a href="{{ route('observations.index', [
+                        'language' => $language,
+                    ]) }}"
+                        class="form__button__back">
+                        <i class="fas fa-arrow-left"></i>
+                        <span data-text="back"></span>
+                    </a>
+                </div>
                 <div class="card">
                     <div class="tableObservation">
 
