@@ -3,10 +3,9 @@
 	"home",
 	"plomesalmarContact",
 
-	"admin",
 	"table",
-	"users",
 
+	"users",
 	"departures",
 	"observations",
 
@@ -14,6 +13,7 @@
 	"boats",
 	"transects",
 
+	"admin",
 	"management",
 	"dashboard"
 ]

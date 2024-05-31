@@ -1,7 +1,7 @@
-<section class="modal fade modal-common modal__management danger" id="deleteUsersModal" tabindex="-1"
+<section class="modal fade modal-common modal__management__big danger" id="deleteUsersModal" tabindex="-1"
     aria-labelledby="deleteModalLabel" aria-hidden="true">
 
-    <div class="modal-dialog modal-lg modal__management__box">
+    <div class="modal-dialog modal-lg modal__management__big__box">
         <button type="button" class="btn-close close" data-bs-dismiss="modal" aria-label="Cerrar"><i
                 class="fa-solid fa-xmark"></i></button>
         <div class="modal-header body">
@@ -13,26 +13,19 @@
                     @csrf
                     @method('DELETE')
                     <div class="form__group">
-                        <ul class="form__group">
-                            <li class="form__group__content">
-                                <span data-text="nameModal"></span>
-                                <span id="deleteName"></span>
-                            </li>
-                        </ul>
-                        <ul class="form__group">
-                            <li class="form__group__content">
-                                <span data-text="surnameModal"></span>
-                                <span id="deleteSurname"></span>
-                            </li>
-                        </ul>
-                        <ul class="form__group">
-                            <li class="form__group__content">
-                                <span data-text="emailModal"></span>
-                                <span id="deleteEmail"></span>
-                            </li>
-                        </ul>
-                        <p class="form__group__content" data-text="messageDelete"></p>
+                        <label class="form__group__content" data-text="nameModal"></label>
+                        <span class="form__group__value" id="deleteName"></span>
                     </div>
+                    <div class="form__group">
+                        <label class="form__group__content" data-text="surnameModal"></label>
+                        <span class="form__group__value" id="deleteSurname"></span>
+                    </div>
+                    <div class="form__group">
+                        <label class="form__group__content" data-text="surnameSecondModal"></label>
+                        <span class="form__group__value" id="deleteSurnameSecond"></span>
+                    </div>
+                    <p class="form__group__content" data-text="messageDelete"></p>
+
                     <div class="form__group__buttons">
                         <button type="button" class="btn btn-secondary form__button__back"
                             data-bs-dismiss="modal">Cancelar</button>

@@ -1,6 +1,7 @@
 {
 	"usersList": "Llista d'usuaris",
 	"userDetails": "Detalls de l'usuari",
+	"newUser": "Agregar nou usuari",
 	"users": "Usuaris",
 	"roles": "Rols",
 
@@ -16,6 +17,7 @@
 
 	"nameModal": "Nom: ",
 	"surnameModal": "Cognom: ",
-	"surnameSecondModal": "Cognom 2: ",
-	"emailModal": "Email: "
+	"surnameSecondModal": "Segon Cognom: ",
+	"emailModal": "Email: ",
+	"passwordModal": "Contrasenya: "
 }
