@@ -14,7 +14,6 @@ class AdminController extends Controller
     {
         $this->middleware('auth');
         $this->middleware('is_admin');
-		$this->middleware('isBlocked');
     }
 
 	public function index($language = null, Request $request){
