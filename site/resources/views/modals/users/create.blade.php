@@ -1,12 +1,13 @@
-<section class="modal fade modal-common modal__management" id="createUser" tabindex="-1" aria-labelledby="modalLabelNuevo"
-    aria-hidden="true">
+<section class="modal fade modal-common modal__management__big" id="createUser" tabindex="-1"
+    aria-labelledby="modalLabelNuevo" aria-hidden="true">
 
-    <div class="modal-dialog modal-lg modal__management__box">
+    <div class="modal-dialog modal-lg modal__management__big__box">
         <button type="button" class="btn-close close" data-bs-dismiss="modal" aria-label="Cerrar">
             <i class="fa-solid fa-xmark"></i>
         </button>
         <div class="modal-header body">
             <h2 class="modal-title body__title" id="modalLabelNuevo" data-text="newUser"></h2>
+
             <article class="form">
                 <form method="POST" action="{{ route('admin.user.store', ['language' => app()->getLocale()]) }}">
                     @csrf
@@ -21,7 +22,7 @@
                             placeholder="Promer cognom">
                     </div>
                     <div class="form__group">
-                        <label for="surnameSecond" class="form__group__content" data-text="secondSurnameModal"></label>
+                        <label for="surnameSecond" class="form__group__content" data-text="surnameSecondModal"></label>
                         <input type="text" class="form__group__input" id="surnameSecond" name="surnameSecond"
                             placeholder="Segon cognom">
                     </div>

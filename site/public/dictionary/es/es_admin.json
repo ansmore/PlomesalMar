@@ -1,6 +1,7 @@
 {
 	"usersList": "Lista de usuarios",
 	"userDetails": "Detalles del usuario",
+	"newUser": "Añadir nuevo usuario",
 	"users": "Usuarios",
 	"roles": "Roles",
 
@@ -17,5 +18,6 @@
 	"nameModal": "Name: ",
 	"surnameModal": "Lastname: ",
 	"surnameSecondModal": "Lastname 2: ",
-	"emailModal": "Email: "
+	"emailModal": "Email: ",
+	"passwordModal": "Contraseña: "
 }
