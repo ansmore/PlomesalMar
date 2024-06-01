@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
         labels: string[];
         speciesData1: SpeciesData;
         speciesData2: SpeciesData;
-        speciesNames: { [speciesId: string]: string }; // Ensure speciesNames is included
+        speciesNames: { [speciesId: string]: string };
     }
 
     function updateChart(chart: Chart, labels: string[], speciesData: SpeciesData, speciesNames: { [speciesId: string]: string }) {

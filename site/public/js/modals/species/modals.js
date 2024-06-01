@@ -86,7 +86,6 @@ const handleeditSpecieModal = (modal, specieId, commonName, scientificName) => {
         console.error("Falta la plantilla de URL de eliminación en el formulario");
         return;
     }
-    // console.log("URL de eliminación configurada:", editForm.action);
     inputCommonName.value = commonName;
     inputScientificName.value = scientificName;
     openModal(modal);

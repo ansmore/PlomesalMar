@@ -30,7 +30,7 @@
                     @endforeach
                 </select>
 
-                <button type="submit" class="btn btn-primary">Actualizar</button>
+                <button type="submit" class="btn btn-primary form__button__success">Actualizar</button>
             </form>
 
             <article class="box__logo">

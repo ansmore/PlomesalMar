@@ -6,7 +6,7 @@
     <main class="auth">
         <section id="contact" class="row">
             <article class="form">
-                <span class="box__title">{{ __('Login') }}</span>
+                <span class="box__title">{{ __('PLOMES AL MAR') }}</span>
                 <form action="{{ route('login', ['language' => $language]) }}" method="POST" id="loginForm">
                     @csrf
 

@@ -120,7 +120,6 @@ const handleeditSpecieModal = (
 		return;
 	}
 
-	// Console.log("URL de eliminació configurada:", editForm.action);
 	inputCommonName.value = commonName;
 	inputScientificName.value = scientificName;
 	openModal(modal);

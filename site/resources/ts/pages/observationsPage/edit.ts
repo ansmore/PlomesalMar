@@ -11,19 +11,15 @@ interface Departure {
 declare const users: User[];
 
 document.addEventListener("DOMContentLoaded", function () {
-	const departureSelect = document.getElementById(
-		"departure",
-	) as HTMLSelectElement;
-	const newUserSelects = document.querySelectorAll(
-		'select[name="image_user_new[]"]',
-	);
+	const departureSelect = document.getElementById("departure") as HTMLSelectElement;
+	const newUserSelects = document.querySelectorAll('select[name="image_user_new[]"]');
 
 	function filterUsers(departureId: string) {
 		const selectedDeparture = Array.from(departureSelect.options).find(
 			(option) => option.value === departureId,
 		);
 		const observerUsers: User[] = selectedDeparture
-			? JSON.parse(selectedDeparture.dataset.observers || "[]")
+			? JSON.parse(selectedDeparture.dataset.observers ?? "[]")
 			: [];
 
 		newUserSelects.forEach((select) => {
@@ -49,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		.querySelectorAll<HTMLImageElement>(".editable-image")
 		.forEach((image) => {
 			image.addEventListener("click", function () {
-				const imageId = (this as HTMLImageElement).dataset.imageId;
+				const imageId = this.dataset.imageId;
 				const editInput = document.querySelector<HTMLInputElement>(
 					`.edit-image-file[data-image-id='${imageId}']`,
 				);
@@ -63,13 +59,13 @@ document.addEventListener("DOMContentLoaded", function () {
 		.querySelectorAll<HTMLButtonElement>(".delete-image")
 		.forEach((button) => {
 			button.addEventListener("click", function () {
-				const imageId = (this as HTMLButtonElement).dataset.imageId;
+				const imageId = this.dataset.imageId;
 				if (confirm("¿Estás seguro de que deseas eliminar esta imagen?")) {
 					const deleteImageIdInput = document.getElementById(
 						"delete-image-id",
 					) as HTMLInputElement;
 					if (deleteImageIdInput) {
-						deleteImageIdInput.value = imageId || "";
+						deleteImageIdInput.value = imageId ?? "";
 						const deleteImageForm = document.getElementById(
 							"delete-image-form",
 						) as HTMLFormElement;
@@ -96,14 +92,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 `;
 				container.appendChild(newImageDiv);
 
-				const newImageInput = newImageDiv.querySelector(
-					".new-image-input",
-				) as HTMLInputElement;
+				const newImageInput = newImageDiv.querySelector(".new-image-input") as HTMLInputElement;
 				handleImagePreview(newImageInput, true);
 
-				const newUserSelect = newImageDiv.querySelector(
-					'select[name="image_user_new[]"]',
-				) as HTMLSelectElement;
+				const newUserSelect = newImageDiv.querySelector('select[name="image_user_new[]"]') as HTMLSelectElement;
 				newUserSelects[newUserSelects.length] = newUserSelect;
 				filterUsers(departureSelect.value);
 			}
@@ -112,14 +104,11 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function handleImagePreview(input: HTMLInputElement, isNew = false): void {
-	const container =
-		input.closest(".new-image") || input.closest(".image-container");
+	const container = input.closest(".new-image") ?? input.closest(".image-container");
 	if (!container) return;
 
 	let preview = container.querySelector<HTMLImageElement>(".new-image-preview");
-	let previewContainer = container.querySelector<HTMLDivElement>(
-		".image-preview-container",
-	);
+	let previewContainer = container.querySelector<HTMLDivElement>(".image-preview-container");
 
 	if (!preview || !previewContainer) {
 		previewContainer = document.createElement("div");
@@ -131,9 +120,7 @@ function handleImagePreview(input: HTMLInputElement, isNew = false): void {
         `;
 
 		container.appendChild(previewContainer);
-		preview = previewContainer.querySelector(
-			".new-image-preview",
-		) as HTMLImageElement;
+		preview = previewContainer.querySelector(".new-image-preview") as HTMLImageElement;
 	}
 
 	input.addEventListener("change", function (event: Event) {

@@ -41,16 +41,20 @@ const handleModalButtonClick = (event: Event) => {
 		return;
 	}
 
-	const modal = document.getElementById(modalId) as HTMLDivElement;
+	const modal = document.getElementById(modalId)! as HTMLDivElement;
 	if (!modal) {
-		console.error("No s'ha trobat l'element modal per a l'objectiu:", modalId);
+		console.error(
+			"No s'ha trobat l'element modal per a l'objectiu:",
+			modalId,
+		);
 		return;
 	}
 
 	const userId = button.getAttribute("data-id");
 	const name = button.getAttribute("data-name");
 	const surname = button.getAttribute("data-surname") ?? undefined;
-	const surnameSecond = button.getAttribute("data-surnameSecond") ?? undefined;
+	const surnameSecond =
+		button.getAttribute("data-surnameSecond") ?? undefined;
 	const email = button.getAttribute("data-email");
 
 	const userModalData: UserModalData = {
@@ -134,7 +138,9 @@ const handleEditUsersModal = ({
 		modal.querySelector<HTMLInputElement>("#edit_user_email");
 
 	if (!editForm || !inputUserName || !inputUserEmail) {
-		console.error("Falten el formulari o camps d'entrada en el modal d'edició");
+		console.error(
+			"Falten el formulari o camps d'entrada en el modal d'edició",
+		);
 		return;
 	}
 

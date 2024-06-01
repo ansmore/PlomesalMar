@@ -1,5 +1,4 @@
 export const openModal = (idModalToOpen: string): void => {
-	// const infoModalBox = document.querySelector(idModalToOpen) as HTMLElement;
 	const infoModalBox = document.querySelector(
 		`[data-type="${idModalToOpen}"]`,
 	) as HTMLElement;
@@ -18,7 +17,6 @@ export const closeModal = (modalId: string): void => {
 	if (modal) {
 		modal.style.display = "none";
 		resetImage();
-		// ResetContend();
 	}
 };
 
