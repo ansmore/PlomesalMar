@@ -90,8 +90,8 @@ class ObservationController extends Controller
                         ImageObservation::create([
                             'image_id' => $imageId,
                             'observation_id' => $observationId,
-                            'user_id' => $validatedData['image_user'][$index],
-                            'photography_number' => $validatedData['image_number'][$index],
+                            'user_id' => $validatedData['image_user'][$index] ?? null,
+                            'photography_number' => $validatedData['image_number'][$index] ?? null,
                         ]);
                     } else {
                         Log::error('Error uploading image: ' . $response->body());
@@ -156,8 +156,6 @@ class ObservationController extends Controller
                 'image_number_new.*' => 'nullable|integer',
             ]);
 
-            $existingImages = json_decode($request->input('existing_images'), true);
-
             DB::beginTransaction();
 
             $observation = Observation::findOrFail($id);
@@ -167,7 +165,7 @@ class ObservationController extends Controller
                 $observation->updateImages($validatedData['image_file']);
             }
 
-            if (isset($validatedData['image_file_new'])) {
+            if (isset($validatedData['image_file_new']) && isset($validatedData['image_user_new']) && isset($validatedData['image_number_new'])) {
                 $observation->addNewImages(
                     $validatedData['image_file_new'],
                     $validatedData['image_user_new'],
@@ -225,7 +223,6 @@ class ObservationController extends Controller
 
     public function destroy(Request $request, $language, $id)
     {
-
         try {
             $observation = Observation::find($id);
 

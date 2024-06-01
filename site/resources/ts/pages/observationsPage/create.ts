@@ -60,7 +60,7 @@ function previewImage(event: Event, index: number): void {
     const input = event.target as HTMLInputElement;
     const preview = document.getElementById(`image_preview_${index}`) as HTMLImageElement;
 
-    if (input.files && input.files[0]) {
+    if (input.files?.[0]) {
         const reader = new FileReader();
         reader.onload = function(e) {
             preview.src = (e.target as FileReader).result as string;
