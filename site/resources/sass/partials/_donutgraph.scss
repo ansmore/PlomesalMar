@@ -1,84 +1,84 @@
-// Variables
-$primary-color: #0065AE;
-$secondary-color: #9d9d9c;
-$background-color: #ececec;
-$form-background: #ffffff;
-$input-background: #ffffff;
-$border-color: #8f8f8f;
-$hover-background: #fafafa;
-$focus-background: #fafafa;
-$focus-border-color: #0065AE;
-$button-background: #0065AE;
-$button-hover-background: #0079D0;
-$button-hover-border-color: #00518C;
-$button-color: #fafafa;
-$font-family: 'Roboto Slab', sans-serif;
+// // Variables
+// $primary-color: #0065AE;
+// $secondary-color: #9d9d9c;
+// $background-color: #ececec;
+// $form-background: #ffffff;
+// $input-background: #ffffff;
+// $border-color: #8f8f8f;
+// $hover-background: #fafafa;
+// $focus-background: #fafafa;
+// $focus-border-color: #0065AE;
+// $button-background: #0065AE;
+// $button-hover-background: #0079D0;
+// $button-hover-border-color: #00518C;
+// $button-color: #fafafa;
+// $font-family: 'Roboto Slab', sans-serif;
 
 // Estilos del formulario
-form {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  background-color: $form-background;
-  padding: 1rem;
-  border: 1px solid $primary-color;
-  border-radius: 0.5rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  font-family: $font-family;
-  width: 100%;
-  max-width: 500px;
-  margin-bottom: 2rem;
+// form {
+// 	display: flex;
+// 	flex-direction: column;
+// 	align-items: flex-start;
+// 	background-color: $form-background;
+// 	padding: 1rem;
+// 	border: 1px solid $primary-color;
+// 	border-radius: 0.5rem;
+// 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+// 	font-family: $font-family;
+// 	width: 100%;
+// 	max-width: 500px;
+// 	margin-bottom: 2rem;
 
-  label {
-    margin-bottom: 0.5rem;
-    font-weight: bold;
-    color: $primary-color;
-  }
+// 	label {
+// 		margin-bottom: 0.5rem;
+// 		font-weight: bold;
+// 		color: $primary-color;
+// 	}
 
-  select {
-    padding: 0.5rem;
-    background-color: $input-background;
-    border: 1px solid $border-color;
-    border-radius: 0.25rem;
-    font-size: 1rem;
-    color: $primary-color;
-    width: 100%;
-    max-width: 100%;
+// 	select {
+// 		padding: 0.5rem;
+// 		background-color: $input-background;
+// 		border: 1px solid $border-color;
+// 		border-radius: 0.25rem;
+// 		font-size: 1rem;
+// 		color: $primary-color;
+// 		width: 100%;
+// 		max-width: 100%;
 
-    &:hover {
-      background-color: $hover-background;
-      border-color: $primary-color;
-    }
+// 		&:hover {
+// 			background-color: $hover-background;
+// 			border-color: $primary-color;
+// 		}
 
-    &:focus {
-      outline: none;
-      background-color: $focus-background;
-      border-color: $focus-border-color;
-      box-shadow: 0 0 0 2px rgba($focus-border-color, 0.2);
-    }
-  }
-}
+// 		&:focus {
+// 			outline: none;
+// 			background-color: $focus-background;
+// 			border-color: $focus-border-color;
+// 			box-shadow: 0 0 0 2px rgba($focus-border-color, 0.2);
+// 		}
+// 	}
+// }
 
 #donutGraphContainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: $chart-background;
-  border: 1px solid $chart-border;
-  border-radius: 0.5rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  max-width: 800px;
-  margin: 0 auto;
-  margin-bottom: 3rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: $chart-background;
+	border: 1px solid $chart-border;
+	border-radius: 0.5rem;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	max-width: 800px;
+	margin: 0 auto;
+	margin-bottom: 3rem;
 }
 
 #donutGraphContainer canvas {
-  width: 100% !important;
-  height: 500px !important;
+	width: 100% !important;
+	height: 500px !important;
 }
 
 .chartjs-render-monitor {
-  font-family: $font-family-base;
-  color: $chart-color;
+	font-family: $font-family-base;
+	color: $chart-color;
 }

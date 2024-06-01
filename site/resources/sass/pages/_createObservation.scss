@@ -1,139 +1,139 @@
 .tableObservation {
-  width: 100%;
-  border-collapse: collapse;
+	width: 100%;
+	border-collapse: collapse;
 
-  &__title {
-    @extend .secondary;
+	&__title {
+		@extend .secondary;
 
-    @include style($primary_main);
-    font-weight: bold;
-  }
+		@include style($primary_main);
+		font-weight: bold;
+	}
 
-  .table__group {
-    @include mainBox(column, flex-start, flex-start);
-    margin-left: 0;
+	.table__group {
+		@include mainBox(column, flex-start, flex-start);
+		margin-left: 0;
 
-    &__content,
-    &__title {
-      @extend .secondary;
+		&__content,
+		&__title {
+			@extend .secondary;
 
-      @include style($primary_main);
-      font-weight: bold;
-    }
+			@include style($primary_main);
+			font-weight: bold;
+		}
 
-    &__input {
-      @extend .formInput;
-      @include boxSize(width, 19rem, null, 35%);
-      margin-left: 0;
+		&__input {
+			@extend .formInput;
+			@include boxSize(width, 19rem, null, 35%);
+			margin-left: 0;
 
-      @include hover($neutral_lighter,
-        $primary_light, $primary_main,
-        $neutral_dark);
-    }
+			@include hover($neutral_lighter,
+				$primary_light, $primary_main,
+				$neutral_dark);
+		}
 
-    &__select {
-      @extend .formSelect;
+		&__select {
+			@extend .formSelect;
 
-      @include boxSize(width, 19rem, null, 35%);
-      margin-left: 0;
-    }
+			@include boxSize(width, 19rem, null, 35%);
+			margin-left: 0;
+		}
 
-    &__consent {
-      align-self: flex-start;
-      gap: $gap ;
-      padding: 0.5rem 0;
+		&__consent {
+			align-self: flex-start;
+			gap: $gap ;
+			padding: 0.5rem 0;
 
-    }
+		}
 
-    &__check {
-      @include mainBox(row, flex-start, center);
-      appearance: checkbox;
-      width: 1rem;
-      height: 1rem;
-      margin-top: 0.5rem;
-    }
+		&__check {
+			@include mainBox(row, flex-start, center);
+			appearance: checkbox;
+			width: 1rem;
+			height: 1rem;
+			margin-top: 0.5rem;
+		}
 
-    &__textarea {
-      border: 1px solid $primary_main;
-      border-radius: $radius;
+		&__textarea {
+			border: 1px solid $primary_main;
+			border-radius: $radius;
 
-      @include boxSize(width, 19rem, null, 35%);
-      margin-left: 0;
+			@include boxSize(width, 19rem, null, 35%);
+			margin-left: 0;
 
-      @include hover($neutral_lighter,
-        $primary_light, $primary_main,
-        $neutral_dark);
-    }
+			@include hover($neutral_lighter,
+				$primary_light, $primary_main,
+				$neutral_dark);
+		}
 
-    &__box {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 10px;
+		&__box {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			gap: 10px;
 
-      width: 100%;
-      max-height: calc(3* 50px);
-      overflow-y: auto;
+			width: 100%;
+			max-height: calc(3* 50px);
+			overflow-y: auto;
 
-      border: 1px solid $primary_main;
-      border-radius: $radius;
-      padding: 0.5rem;
-      margin: $margin auto;
+			border: 1px solid $primary_main;
+			border-radius: $radius;
+			padding: 0.5rem;
+			margin: $margin auto;
 
-      .form__group__checkbox {
-        display: flex;
-        align-items: center;
-        appearance: auto;
-      }
+			.form__group__checkbox {
+				display: flex;
+				align-items: center;
+				appearance: auto;
+			}
 
-      .form__group__checkbox input {
-        margin-right: 10px;
-        appearance: auto;
-      }
+			.form__group__checkbox input {
+				margin-right: 10px;
+				appearance: auto;
+			}
 
-      li {
-        font-size: $size_small;
-        font-weight: normal;
-        width: 80%;
-        text-align: left;
-      }
-    }
+			li {
+				font-size: $size_small;
+				font-weight: normal;
+				width: 80%;
+				text-align: left;
+			}
+		}
 
-    &__buttons {
-      @include mainBox(row, center, center);
-    }
-  }
+		&__buttons {
+			@include mainBox(row, center, center);
+		}
+	}
 }
 
 @media screen and (min-width: 850px) {
-  .tableObservation {
-    .table__group {
-      // @include mainBox(row, flex-start, flex-start);
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: calc($gap*2);
+	.tableObservation {
+		.table__group {
+			// @include mainBox(row, flex-start, flex-start);
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: calc($gap*2);
 
-      &__content {
-        @include boxSize(width, 40%, null);
-        text-align: right;
-        margin: auto 0;
-        padding: 12px 0;
-      }
+			&__content {
+				@include boxSize(width, 40%, null);
+				text-align: right;
+				margin: auto 0;
+				padding: 12px 0;
+			}
 
-      &__input {
-        align-self: flex-start;
-      }
+			&__input {
+				align-self: flex-start;
+			}
 
-      &__check {
-        margin-top: 0;
-      }
+			&__check {
+				margin-top: 0;
+			}
 
-      &__value {
-        padding: 12px 0;
-      }
+			&__value {
+				padding: 12px 0;
+			}
 
-      &__title {
-        text-align: center;
-      }
-    }
-  }
+			&__title {
+				text-align: center;
+			}
+		}
+	}
 }

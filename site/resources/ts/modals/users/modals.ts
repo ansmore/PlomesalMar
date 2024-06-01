@@ -41,7 +41,7 @@ const handleModalButtonClick = (event: Event) => {
 		return;
 	}
 
-	const modal = document.getElementById(modalId)! as HTMLDivElement;
+	const modal = document.getElementById(modalId) as HTMLDivElement;
 	if (!modal) {
 		console.error(
 			"No s'ha trobat l'element modal per a l'objectiu:",

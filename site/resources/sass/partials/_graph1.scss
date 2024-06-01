@@ -1,93 +1,92 @@
-$primary-color: #0065AE;
-$secondary-color: #9d9d9c;
-$background-color: #ececec;
-$input-background: #ffffff;
-$border-color: #8f8f8f;
-$hover-background: #fafafa;
-$focus-background: #fafafa;
-$focus-border-color: #0065AE;
-$button-background: #0065AE;
-$button-hover-background: #0079D0;
-$button-hover-border-color: #00518C;
-$button-color: #fafafa;
-$font-family: 'Roboto Slab', sans-serif;
+// $primary-color: #0065AE;
+// $secondary-color: #9d9d9c;
+// $background-color: #ececec;
+// $input-background: #ffffff;
+// $border-color: #8f8f8f;
+// $hover-background: #fafafa;
+// $focus-background: #fafafa;
+// $focus-border-color: #0065AE;
+// $button-background: #0065AE;
+// $button-hover-background: #0079D0;
+// $button-hover-border-color: #00518C;
+// $button-color: #fafafa;
+// $font-family: 'Roboto Slab', sans-serif;
 
-#filterForm {
-  display: flex;
-  margin-top: 1rem;
-  gap: 1rem;
-  background-color: #ececec;
-  padding: 1rem;
-  border: 1px solid #0065AE;
-  border-radius: 0.5rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  font-family: "Roboto Slab", sans-serif;
-  justify-content: flex-start;
-  flex-direction: row;
-  align-items: center;
-}
+// #filterForm {
+// 	display: flex;
+// 	margin-top: 1rem;
+// 	gap: 1rem;
+// 	background-color: #ececec;
+// 	padding: 1rem;
+// 	border: 1px solid #0065AE;
+// 	border-radius: 0.5rem;
+// 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+// 	font-family: "Roboto Slab", sans-serif;
+// 	justify-content: flex-start;
+// 	flex-direction: row;
+// 	align-items: center;
+// }
 
-.form-control {
-  padding: 0.75rem;
-  background-color: $input-background;
-  border: 1px solid $border-color;
-  border-radius: 0.25rem;
-  font-size: 1rem;
-  color: $primary-color;
+// .form-control {
+// 	padding: 0.75rem;
+// 	background-color: $input-background;
+// 	border: 1px solid $border-color;
+// 	border-radius: 0.25rem;
+// 	font-size: 1rem;
+// 	color: $primary-color;
 
-  &:hover {
-    background-color: $hover-background;
-    border-color: $primary-color;
-  }
+// 	&:hover {
+// 		background-color: $hover-background;
+// 		border-color: $primary-color;
+// 	}
 
-  &:focus {
-    outline: none;
-    background-color: $focus-background;
-    border-color: $focus-border-color;
-    box-shadow: 0 0 0 2px rgba($focus-border-color, 0.2);
-  }
-}
+// 	&:focus {
+// 		outline: none;
+// 		background-color: $focus-background;
+// 		border-color: $focus-border-color;
+// 		box-shadow: 0 0 0 2px rgba($focus-border-color, 0.2);
+// 	}
+// }
 
-.form__button__success {
-  padding: 0.75rem 1.5rem;
-  background-color: $button-background;
-  color: $button-color;
-  border: 1px solid transparent;
-  border-radius: 0.25rem;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease, border-color 0.3s ease;
+// .form__button__success {
+// 	padding: 0.75rem 1.5rem;
+// 	background-color: $button-background;
+// 	color: $button-color;
+// 	border: 1px solid transparent;
+// 	border-radius: 0.25rem;
+// 	font-size: 1rem;
+// 	cursor: pointer;
+// 	transition: background-color 0.3s ease, border-color 0.3s ease;
 
-  &:hover {
-    background-color: $button-hover-background;
-    border-color: $button-hover-border-color;
-  }
+// 	&:hover {
+// 		background-color: $button-hover-background;
+// 		border-color: $button-hover-border-color;
+// 	}
 
-  &:focus {
-    outline: none;
-    box-shadow: 0 0 0 2px rgba($focus-border-color, 0.2);
-  }
-}
+// 	&:focus {
+// 		outline: none;
+// 		box-shadow: 0 0 0 2px rgba($focus-border-color, 0.2);
+// 	}
+// }
 
 #chartData {
-    padding: 2rem;
-    background-color: $chart-background;
-    border: 1px solid $chart-border;
-    border-radius: 0.5rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 3rem;
-  }
-  
-  #chartData canvas {
-    width: 100% !important;
-    height: 400px !important;
-  }
-  
-  .chartjs-render-monitor {
-    font-family: $font-family-base;
-    color: $chart-color;
-  }
-  
+	padding: 2rem;
+	background-color: $chart-background;
+	border: 1px solid $chart-border;
+	border-radius: 0.5rem;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 3rem;
+}
+
+#chartData canvas {
+	width: 100% !important;
+	height: 400px !important;
+}
+
+.chartjs-render-monitor {
+	font-family: $font-family-base;
+	color: $chart-color;
+}
