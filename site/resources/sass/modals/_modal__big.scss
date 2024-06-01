@@ -1,219 +1,219 @@
 .modal__management__big {
-  @extend .modalShadow;
-  // To delete deleloperMode
-  // display: block;
+	@extend .modalShadow;
+	// To delete deleloperMode
+	// display: block;
 
-  &__box {
-    position: relative;
-    top: 5vh;
-    left: 2vw;
-    @include mainBox(column, center, center);
-    @include boxSize(width, 96vw, null, 96vw);
-    @include boxSize(height, 90vh);
+	&__box {
+		position: relative;
+		top: 5vh;
+		left: 2vw;
+		@include mainBox(column, center, center);
+		@include boxSize(width, 96vw, null, 96vw);
+		@include boxSize(height, 90vh);
 
-    background-color: $neutral_lighter;
-    border-radius: $radius;
-    @include hover($neutral_lighter,
-      inherit,
-      $primary_main,
-      $primary_main);
+		background-color: $neutral_lighter;
+		border-radius: $radius;
+		@include hover($neutral_lighter,
+			inherit,
+			$primary_main,
+			$primary_main);
 
 
-    .body {
-      @include mainBox(column, space-around, flex-start);
-      width: 100%;
-      height: 100%;
-      gap: $gap;
-      hyphens: auto;
-      font-size: $size_smaller;
-      line-height: 1.5;
-      text-align: center;
+		.body {
+			@include mainBox(column, space-around, flex-start);
+			width: 100%;
+			height: 100%;
+			gap: $gap;
+			hyphens: auto;
+			font-size: $size_smaller;
+			line-height: 1.5;
+			text-align: center;
 
-      p {
-        text-align: left;
+			p {
+				text-align: left;
 
-        span {
-          text-align: left;
-        }
-      }
+				span {
+					text-align: left;
+				}
+			}
 
-      &__title {
-        @extend .title;
+			&__title {
+				@extend .title;
 
-        padding-top: 2rem;
-      }
+				padding-top: 2rem;
+			}
 
-      .form {
-        @include mainBox(column, flex-start, center);
+			.form {
+				@include mainBox(column, flex-start, center);
 
-        width: 100%;
-        height: 100%;
-        gap: $gap;
-        hyphens: auto;
-        font-size: $size_smaller;
-        line-height: 1.5;
-        text-align: center;
+				width: 100%;
+				height: 100%;
+				gap: $gap;
+				hyphens: auto;
+				font-size: $size_smaller;
+				line-height: 1.5;
+				text-align: center;
 
-        p {
-          text-align: left;
+				p {
+					text-align: left;
 
-          span {
+					span {
 
-            text-align: left;
-          }
-        }
+						text-align: left;
+					}
+				}
 
-        &__group {
-          // min-width: 80%;
+				&__group {
+					// min-width: 80%;
 
-          &__content {
-            @extend .subtitle;
-          }
+					&__content {
+						@extend .subtitle;
+					}
 
-          &__input {
-            @extend .formInput;
+					&__input {
+						@extend .formInput;
 
-            width: 100%;
-          }
+						width: 100%;
+					}
 
-          &__select {
-            @extend .formSelect;
+					&__select {
+						@extend .formSelect;
 
-            width: 100%;
-          }
+						width: 100%;
+					}
 
-          &__value {
-            @extend .subtitle;
-            font-weight: normal;
-            width: 100%;
-          }
+					&__value {
+						@extend .subtitle;
+						font-weight: normal;
+						width: 100%;
+					}
 
-          &__box {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
+					&__box {
+						display: grid;
+						grid-template-columns: repeat(2, 1fr);
+						gap: 10px;
 
-            width: 100%;
-            max-height: calc(3* 50px);
-            overflow-y: auto;
+						width: 100%;
+						max-height: calc(3* 50px);
+						overflow-y: auto;
 
-            border: 1px solid $primary_main;
-            border-radius: $radius;
-            padding: 0.5rem;
-            margin: $margin auto;
+						border: 1px solid $primary_main;
+						border-radius: $radius;
+						padding: 0.5rem;
+						margin: $margin auto;
 
-            .form__group__checkbox {
-              display: flex;
-              align-items: center;
-              appearance: auto;
-            }
+						.form__group__checkbox {
+							display: flex;
+							align-items: center;
+							appearance: auto;
+						}
 
-            .form__group__checkbox input {
-              margin-right: 10px;
-              appearance: auto;
-            }
+						.form__group__checkbox input {
+							margin-right: 10px;
+							appearance: auto;
+						}
 
-            li {
-              // @extend .subtitle;
-              font-size: $size_small;
-              font-weight: normal;
-              width: 80%;
-              text-align: left
-            }
-          }
+						li {
+							// @extend .subtitle;
+							font-size: $size_small;
+							font-weight: normal;
+							width: 80%;
+							text-align: left
+						}
+					}
 
-          &__buttons {
-            @include mainBox(row, center, center);
+					&__buttons {
+						@include mainBox(row, center, center);
 
-            gap: $gap;
-          }
-        }
-      }
-    }
+						gap: $gap;
+					}
+				}
+			}
+		}
 
-    .close {
-      @extend .buttonTable__close;
+		.close {
+			@extend .buttonTable__close;
 
-      @include mainBox(column, center);
-      @include style($danger_main, $danger_lighter);
-      @include hover($danger_main, $danger_lighter, $danger_dark, $danger_main);
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 40px;
-      height: 40px;
-      text-align: center;
-      font-size: 40px;
-      cursor: pointer;
-    }
-  }
+			@include mainBox(column, center);
+			@include style($danger_main, $danger_lighter);
+			@include hover($danger_main, $danger_lighter, $danger_dark, $danger_main);
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: 40px;
+			height: 40px;
+			text-align: center;
+			font-size: 40px;
+			cursor: pointer;
+		}
+	}
 }
 
 .danger {
-  .modal__management__big__box {
-    @include hover($neutral_lighter,
-      inherit,
-      $danger_main,
-      $danger_main);
+	.modal__management__big__box {
+		@include hover($neutral_lighter,
+			inherit,
+			$danger_main,
+			$danger_main);
 
 
-    .body {
-      &__title {
-        color: $danger_main;
-      }
-    }
-  }
+		.body {
+			&__title {
+				color: $danger_main;
+			}
+		}
+	}
 }
 
 @media screen and (min-width: 376px) and (max-width: 600px) {
-  .modal__management__big {
-    &__box {
-      top: 5vh;
-      left: 5vw;
-      @include boxSize(width, 90vw, null, 90vw);
-      @include boxSize(height, 90vh);
-    }
-  }
+	.modal__management__big {
+		&__box {
+			top: 5vh;
+			left: 5vw;
+			@include boxSize(width, 90vw, null, 90vw);
+			@include boxSize(height, 90vh);
+		}
+	}
 }
 
 @media screen and (min-width: 650px) {
-  .modal__management__big {
-    &__box {
-      top: 10vh;
-      left: 10vw;
-      @include boxSize(width, 80vw, null, 80vw);
-      @include boxSize(height, 80vh);
+	.modal__management__big {
+		&__box {
+			top: 10vh;
+			left: 10vw;
+			@include boxSize(width, 80vw, null, 80vw);
+			@include boxSize(height, 80vh);
 
-      .body {
-        .form {
-          &__group {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
+			.body {
+				.form {
+					&__group {
+						display: grid;
+						grid-template-columns: 1fr 1fr;
+						gap: 1rem;
 
-            &__content {
-              text-align: right;
-            }
+						&__content {
+							text-align: right;
+						}
 
-            &__input,
-            &__select {
-              margin-left: 0.25rem;
-              display: flex;
-              justify-items: start;
-              text-align: left;
-              align-self: start;
-            }
+						&__input,
+						&__select {
+							margin-left: 0.25rem;
+							display: flex;
+							justify-items: start;
+							text-align: left;
+							align-self: start;
+						}
 
-            &__box {
-              margin-left: 0.25rem;
-            }
+						&__box {
+							margin-left: 0.25rem;
+						}
 
-            &__value {
-              text-align: left;
-            }
-          }
-        }
-      }
-    }
-  }
+						&__value {
+							text-align: left;
+						}
+					}
+				}
+			}
+		}
+	}
 }

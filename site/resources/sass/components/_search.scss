@@ -1,26 +1,26 @@
 .input-group {
-  display: flex;
-  @include boxSize(width, 70%, null, 70%);
-  @include style($neutral_lighter, $primary_main);
-  @include boxShadow($primary_main, $radius, 1px, $secondary_main, $secondary_light);
+	display: flex;
+	@include boxSize(width, 70%, null, 70%);
+	@include style($neutral_lighter, $primary_main);
+	@include boxShadow($primary_main, $radius, 1px, $secondary_main, $secondary_light);
 
-  align-items: center;
-  padding: 0.25rem 0.75rem;
-  border-radius: $radius;
+	align-items: center;
+	padding: 0.25rem 0.75rem;
+	border-radius: $radius;
 
-  &-text {
-    padding: 0.375rem 0.75rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+	&-text {
+		padding: 0.375rem 0.75rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
 
-  .form-control {
-    flex: 1;
-    padding: 0.2rem 0.75rem;
-    border: 1px solid $primary_main;
-    color: $primary_main;
-    border-radius: $radius;
-    background-color: $neutral_lighter;
-  }
+	.form-control {
+		flex: 1;
+		padding: 0.2rem 0.75rem;
+		border: 1px solid $primary_main;
+		color: $primary_main;
+		border-radius: $radius;
+		background-color: $neutral_lighter;
+	}
 }

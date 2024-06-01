@@ -1,54 +1,42 @@
 @mixin mainBox($direction: row,
-  $justify: flex-start,
-  $align: center) {
-  display: flex;
-  flex-direction: $direction;
+	$justify: flex-start,
+	$align: center) {
+	display: flex;
+	flex-direction: $direction;
 
-  justify-content: $justify;
+	justify-content: $justify;
 
-  align-content: center;
-  align-items: $align;
-  align-self: center;
+	align-content: center;
+	align-items: $align;
+	align-self: center;
 }
 
 @mixin paddingMargin($padding: 0, $margin: 0) {
-  padding: $padding;
-  margin: $margin;
+	padding: $padding;
+	margin: $margin;
 }
 
 @mixin style($color: $neutral_lighter, $background-color: transparent) {
-  color: $color;
-  background-color: $background-color;
+	color: $color;
+	background-color: $background-color;
 
 }
 
-/** 
-* Must be the last line in all call to this mixin!
-*/
+
 @mixin hover($background: transparent,
-  $color: inherit,
-  $borderColor: transparent,
-  $preBorderColor: transparent) {
-  border: 1px solid $preBorderColor;
+	$color: inherit,
+	$borderColor: transparent,
+	$preBorderColor: transparent) {
+	border: 1px solid $preBorderColor;
 
-  &:hover {
-    @include style($color, $background);
-    border: 1px solid $borderColor;
-  }
+	&:hover {
+		color: $color;
+		background-color: $background;
+		border: 1px solid $borderColor;
+	}
 }
 
-// @mixin buttonMixin($background: transparent,
-//   $color: inherit,
-//   $borderColor: transparent,
-//   $paddingSize: $padding,
-//   $marginSize: 0) {
 
-//   @include style($color, $background);
-//   @include paddingMargin($paddingSize, $marginSize);
-//   @include paddingMargin(calc($padding * 2), calc($margin * 2));
-//   border: 1px solid $borderColor;
-//   border-radius: $radius;
-// }
 
 /**
  * checkUnit Function
@@ -59,16 +47,16 @@
  * @return {boolean} - Returns true if it has a valid unit, otherwise, false.
  */
 @function checkUnit($value) {
-  @if $value ==null {
-    @return true;
-  }
+	@if $value ==null {
+		@return true;
+	}
 
-  @if type-of($value)=="number" {
-    $value: $value + "";
-  }
+	@if type-of($value)=="number" {
+		$value: $value + "";
+	}
 
-  @return type-of($value)=="string" and (str-slice($value, -1)=="%" or str-slice($value, -2)=="px" or str-slice($value, -2)=="em" or str-slice($value, -2)=="vw" or str-slice($value, -2)=="vh" or str-slice($value, -3)=="rem"
-  );
+	@return type-of($value)=="string" and (str-slice($value, -1)=="%" or str-slice($value, -2)=="px" or str-slice($value, -2)=="em" or str-slice($value, -2)=="vw" or str-slice($value, -2)=="vh" or str-slice($value, -3)=="rem"
+	);
 }
 
 /**
@@ -82,68 +70,68 @@
  * @param {string} $max - Maximum size (optional).
  */
 @mixin boxSize($type: width, $min: null, $size: null, $max: null) {
-  @if $type =="width" {
-    min-width: if(checkUnit($min), $min, $min + vw);
-    width: if(checkUnit($size), $size, $size + vw);
-    max-width: if(checkUnit($max), $max, $max + vw);
-  }
+	@if $type =="width" {
+		min-width: if(checkUnit($min), $min, $min + vw);
+		width: if(checkUnit($size), $size, $size + vw);
+		max-width: if(checkUnit($max), $max, $max + vw);
+	}
 
-  @else if $type =="height" {
-    min-height: if(checkUnit($min), $min, $min + vh);
-    height: if(checkUnit($size), $size, $size + vh);
-    max-height: if(checkUnit($max), $max, $max + vh);
-  }
+	@else if $type =="height" {
+		min-height: if(checkUnit($min), $min, $min + vh);
+		height: if(checkUnit($size), $size, $size + vh);
+		max-height: if(checkUnit($max), $max, $max + vh);
+	}
 
-  @else {
-    @warn "The first value must be only [width,height,null], please check the parameters!";
-  }
+	@else {
+		@warn "The first value must be only [width,height,null], please check the parameters!";
+	}
 }
 
 @mixin boxShadow($borderColor: transparent,
-  $radius: 0,
-  $axis: 3px,
-  $shadowColor: $neutral_main,
-  $shadowColorSecondary: $neutral_light) {
+	$radius: 0,
+	$axis: 3px,
+	$shadowColor: $neutral_main,
+	$shadowColorSecondary: $neutral_light) {
 
-  border-radius: $radius;
-  border: 1px solid $borderColor;
-  box-shadow:
-    $axis $axis (
-    $axis * 2) $shadowColor,
-    (-$axis) (-$axis) ($axis * 2) $shadowColorSecondary;
+	border-radius: $radius;
+	border: 1px solid $borderColor;
+	box-shadow:
+		$axis $axis (
+		$axis * 2) $shadowColor,
+		(-$axis) (-$axis) ($axis * 2) $shadowColorSecondary;
 }
 
 @mixin boxLateralShadow($side: bottom,
-  $borderColor: transparent,
-  $axis: 3px,
-  $shadowColor: $neutral_main) {
+	$borderColor: transparent,
+	$axis: 3px,
+	$shadowColor: $neutral_main) {
 
-  @if $side =='top' {
-    border-top: 1px solid $borderColor;
-    box-shadow: 0px ($axis * -1) ($axis * 2) 0px $shadowColor;
-  }
+	@if $side =='top' {
+		border-top: 1px solid $borderColor;
+		box-shadow: 0px ($axis * -1) ($axis * 2) 0px $shadowColor;
+	}
 
-  @else if $side =='bottom' {
-    border-bottom: 1px solid $borderColor;
-    box-shadow: 0px $axis (
-      $axis * 2) 0px $shadowColor;
-  }
+	@else if $side =='bottom' {
+		border-bottom: 1px solid $borderColor;
+		box-shadow: 0px $axis (
+			$axis * 2) 0px $shadowColor;
+	}
 
-  @else if $side =='left' {
-    border-left: 1px solid $borderColor;
-    box-shadow: -$axis 0px ($axis * 2) 0px $shadowColor;
-  }
+	@else if $side =='left' {
+		border-left: 1px solid $borderColor;
+		box-shadow: -$axis 0px ($axis * 2) 0px $shadowColor;
+	}
 
-  @else if $side =='right' {
-    border-right: 1px solid $borderColor;
-    box-shadow: $axis 0px ($axis * 2) 0px $shadowColor;
-  }
+	@else if $side =='right' {
+		border-right: 1px solid $borderColor;
+		box-shadow: $axis 0px ($axis * 2) 0px $shadowColor;
+	}
 }
 
 @mixin circleStyle($backgroundColor: transparent, $radius: 0, $borderColor: transparent) {
 
-  background-color: $backgroundColor;
-  border-radius: $radius;
-  border: 1px solid $borderColor;
+	background-color: $backgroundColor;
+	border-radius: $radius;
+	border: 1px solid $borderColor;
 
 }

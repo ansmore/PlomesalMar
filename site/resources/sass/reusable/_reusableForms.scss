@@ -1,48 +1,49 @@
 .formSelect {
-  @include paddingMargin(0.75rem, $margin auto);
+	@include paddingMargin(0.75rem, $margin auto);
 
-  background-color: inherit;
-  color: inherit;
-  @include hover($neutral_lightest,
-    inherit,
-    $primary_main,
-    $neutral_dark );
-  border-radius: $radius;
+	background-color: inherit;
+	color: inherit;
+	@include hover($neutral_lightest,
+		inherit,
+		$primary_main,
+		$neutral_dark );
+	border-radius: $radius;
 
-  font-size: $size_medium;
-  position: relative;
-  padding-right: 40px;
+	font-size: $size_medium;
+	position: relative;
+	padding-right: 40px;
 
-  &:focus {
-    outline: none;
-    @include style($primary_main, $neutral_lighter);
-    box-shadow: 0 0 0 2px rgba($neutral_darker, 0.1);
-  }
+	&:focus {
+		outline: none;
+		@include style($primary_main, $neutral_lighter);
+		box-shadow: 0 0 0 2px rgba($neutral_darker, 0.1);
+	}
 
-  option {
-    @include style($primary_main, $neutral_lighter);
-  }
+	option {
+		@include style($primary_main, $neutral_lighter);
+	}
 }
 
 .formInput {
-  @include paddingMargin(0.75rem, $margin auto);
+	@include paddingMargin(0.75rem, $margin auto);
 
-  background-color: inherit;
-  color: inherit;
-  @include hover($neutral_lightest,
-    inherit,
-    $primary_main,
-    $neutral_dark );
-  border-radius: $radius;
+	background-color: inherit;
+	color: inherit;
+	@include hover($neutral_lightest,
+		inherit,
+		$primary_main,
+		$neutral_dark );
+	border-radius: $radius;
 
-  font-size: $size_medium;
+	font-size: $size_medium;
 }
 
 .consent {
-  @include mainBox(row, center, center);
-  @include paddingMargin(0, $margin auto);
+	@include mainBox(row, center, center);
+	@include paddingMargin(0, $margin auto);
 }
 
+// Pending to review!
 .form {
-  @extend .article;
+	@extend .article;
 }
