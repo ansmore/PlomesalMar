@@ -4,43 +4,49 @@ document.addEventListener("DOMContentLoaded", async () => {
     const viewType = main ? main.getAttribute("data-view") : null;
     let currentCleanupFunction = null;
     try {
-        if (currentCleanupFunction) {
-            currentCleanupFunction();
-        }
         switch (viewType) {
-            case "boats":
+            case "boats": {
                 const boatsModule = await import("../modals/boats/modals.js");
                 boatsModule.setupModalEventListenersBoats();
                 currentCleanupFunction = boatsModule.cleanupBoats;
                 break;
-            case "species":
+            }
+            case "species": {
                 const speciesModule = await import("../modals/species/modals.js");
                 speciesModule.setupModalEventListenersSpecies();
                 currentCleanupFunction = speciesModule.cleanupSpecies;
                 break;
-            case "transects":
+            }
+            case "transects": {
                 const transectsModule = await import("../modals/transects/modals.js");
                 transectsModule.setupModalEventListenersTransects();
                 currentCleanupFunction = transectsModule.cleanupTransects;
                 break;
-            case "departures":
+            }
+            case "departures": {
                 const departuresModule = await import("../modals/departures/modals.js");
                 departuresModule.setupModalEventListenersDepartures();
                 currentCleanupFunction = departuresModule.cleanupDepartures;
                 break;
-            case "users":
+            }
+            case "users": {
                 const usersModule = await import("../modals/users/modals.js");
                 usersModule.setupModalEventListenersUsers();
                 currentCleanupFunction = usersModule.cleanupUsers;
                 break;
-            case "observations":
+            }
+            case "observations": {
                 const observationsModule = await import("../modals/observations/modals.js");
                 observationsModule.setupModalEventListenersObservations();
                 currentCleanupFunction = observationsModule.cleanupObservations;
                 break;
+            }
             default:
                 console.warn("No hay un tipo que soporte este vista:", viewType);
                 break;
+        }
+        if (currentCleanupFunction) {
+            currentCleanupFunction();
         }
     }
     catch (error) {

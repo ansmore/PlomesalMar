@@ -25,6 +25,12 @@
 
 // Partials
 @import "partials/table";
+@import "partials/graph1";
+@import "partials/multigraph";
+@import "partials/donutgraph";
+
+// Dashboard
+@import "dashboard/graphcont";
 
 // Components
 @import "components/navigation";

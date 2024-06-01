@@ -109,9 +109,13 @@
                 <button type="button" id="updateGraphButton2" class="btn btn-primary">Actualizar Gráfico 2</button>
             </form>
 
-            <article class="box__logo">
-                @include('partials.multiGraph1')
-                @include('partials.multiGraph2')
+            <article id="multiGraphContainer">
+                <div class="chart-container">
+                    @include('partials.multiGraph1')
+                </div>
+                <div class="chart-container">
+                    @include('partials.multiGraph2')
+                </div>
             </article>
         </section>
     </main>

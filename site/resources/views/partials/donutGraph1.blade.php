@@ -11,8 +11,7 @@
 </form>
 
 @if (request('departure_id') && count($observations) > 0)
-    <h2>Observations for Departure on {{ $departures->find(request('departure_id'))->date }}</h2>
-    <div style="width: 800px; height: 600px;">
+    <div id="donutGraphContainer">
         <canvas id="donutChart"></canvas>
     </div>
     <div id="observation-data" data-observations="{{ json_encode($observations) }}"></div>

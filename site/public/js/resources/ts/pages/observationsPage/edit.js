@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function filterUsers(departureId) {
         const selectedDeparture = Array.from(departureSelect.options).find((option) => option.value === departureId);
         const observerUsers = selectedDeparture
-            ? JSON.parse(selectedDeparture.dataset.observers || "[]")
+            ? JSON.parse(selectedDeparture.dataset.observers ?? "[]")
             : [];
         newUserSelects.forEach((select) => {
             select.innerHTML = observerUsers
@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (confirm("¿Estás seguro de que deseas eliminar esta imagen?")) {
                 const deleteImageIdInput = document.getElementById("delete-image-id");
                 if (deleteImageIdInput) {
-                    deleteImageIdInput.value = imageId || "";
+                    deleteImageIdInput.value = imageId ?? "";
                     const deleteImageForm = document.getElementById("delete-image-form");
                     if (deleteImageForm) {
                         deleteImageForm.submit();
@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 function handleImagePreview(input, isNew = false) {
-    const container = input.closest(".new-image") || input.closest(".image-container");
+    const container = input.closest(".new-image") ?? input.closest(".image-container");
     if (!container)
         return;
     let preview = container.querySelector(".new-image-preview");
