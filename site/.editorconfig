@@ -4,7 +4,7 @@ root = true
 # JavaScript
 [*.js]
 indent_style = tab
-indent_size = 2
+indent_size = 4
 end_of_line = lf
 charset = utf-8
 trim_trailing_whitespace = true
@@ -31,7 +31,7 @@ insert_final_newline = true
 # Markdown
 [*.md]
 indent_style = tab
-indent_size = 2
+indent_size = 4
 end_of_line = lf
 charset = utf-8
 trim_trailing_whitespace = true
@@ -40,7 +40,7 @@ insert_final_newline = true
 # HTML
 [*.html]
 indent_style = tab
-indent_size = 2
+indent_size = 4
 end_of_line = lf
 charset = utf-8
 trim_trailing_whitespace = true
@@ -49,7 +49,7 @@ insert_final_newline = true
 # TypeScript
 [*.ts]
 indent_style = tab
-indent_size = 2
+indent_size = 4
 end_of_line = lf
 charset = utf-8
 trim_trailing_whitespace = true
@@ -58,7 +58,7 @@ insert_final_newline = true
 # SQL
 [*.sql]
 indent_style = tab
-indent_size = 2
+indent_size = 4
 end_of_line = lf
 charset = utf-8
 trim_trailing_whitespace = true
@@ -67,7 +67,7 @@ insert_final_newline = true
 # JSON
 [*.json]
 indent_style = tab
-indent_size = 2
+indent_size = 4
 end_of_line = lf
 charset = utf-8
 trim_trailing_whitespace = true
@@ -76,7 +76,7 @@ insert_final_newline = true
 # AsciiDoc
 [*.adoc]
 indent_style = tab
-indent_size = 2
+indent_size = 4
 end_of_line = lf
 charset = utf-8
 trim_trailing_whitespace = true
@@ -94,7 +94,7 @@ insert_final_newline = true
 # CSS
 [*.css]
 indent_style = tab
-indent_size = 2
+indent_size = 4
 end_of_line = lf
 charset = utf-8
 trim_trailing_whitespace = true
@@ -103,7 +103,7 @@ insert_final_newline = true
 # Archivos .gitignore
 [**/.gitignore]
 indent_style = tab
-indent_size = 2
+indent_size = 4
 end_of_line = lf
 charset = utf-8
 trim_trailing_whitespace = true

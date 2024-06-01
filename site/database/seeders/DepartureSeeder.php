@@ -42,10 +42,6 @@ class DepartureSeeder extends Seeder
                             'transect_id' => $transectId,
                             'observers' => $record['Observadors'] ?? null, // Añadir observadores si están presentes
                         ]);
-                    } else {
-                        if ($transectId === null) {
-                            error_log("Transecto no encontrado para el registro con ID Sortida: {$departureId}");
-                        }
                     }
                 }
             }
