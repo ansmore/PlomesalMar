@@ -303,7 +303,7 @@ button {
   align-self: center;
 }
 
-.secondary, .tableObservation .table__group__content, .tableObservation .table__group__title, .tableObservation__title, .card .table__title {
+.secondary, .tableObservation .table__group__content, .tableObservation .table__group__title, .tableObservation__title, .card__title {
   color: #9d9d9c;
   background-color: transparent;
   margin-top: 0.5rem;
@@ -711,12 +711,12 @@ button {
   min-height: 90vh;
   background-color: #fafafa;
   border-radius: 0.25rem;
-  border: 1px solid transparent;
+  border: 1px solid #0065AE;
 }
 .modal__management__big__box:hover {
   color: inherit;
   background-color: #fafafa;
-  border: 1px solid #9d9d9c;
+  border: 1px solid #0065AE;
 }
 .modal__management__big__box .body {
   display: flex;
@@ -881,6 +881,9 @@ button {
   .modal__management__big__box .body .form__group__box {
     margin-left: 0.25rem;
   }
+  .modal__management__big__box .body .form__group__value {
+    text-align: left;
+  }
 }
 .card {
   min-width: 100%;
@@ -926,17 +929,28 @@ button {
   max-width: 35%;
   margin-left: 0.25rem;
 }
-.card .table .iconsImage {
+.card .table .iconsImage,
+.card .table .icons {
   display: flex;
   gap: 5px;
   padding-bottom: 2rem;
 }
-.card .table .decoration {
+@media screen and (min-width: 780px) {
+  .card .table .icons {
+    padding-bottom: 0.5rem;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .card .table .iconsImage {
+    padding-bottom: 0.5rem;
+  }
+}
+.card .decoration {
   text-decoration: none;
   display: inline-block;
   color: #0065AE;
 }
-.card .table__title {
+.card__title {
   color: #0065AE;
   background-color: transparent;
   font-weight: bold;
@@ -945,6 +959,7 @@ button {
 .icons {
   display: flex;
   gap: 5px;
+  padding-bottom: 2rem;
 }
 
 .pagination__box {
@@ -991,6 +1006,16 @@ button {
   border: 1px solid #0065AE;
 }
 
+@media screen and (max-width: 850px) {
+  .mq__remove1 {
+    display: none;
+  }
+}
+@media screen and (max-width: 700px) {
+  .mq__remove2 {
+    display: none;
+  }
+}
 .nav {
   display: flex;
   flex-direction: row;

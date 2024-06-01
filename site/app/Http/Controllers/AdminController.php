@@ -33,7 +33,7 @@ class AdminController extends Controller
 	{
 		$validated = $request->validate([
 			'name' => 'required|string|max:255',
-			'surname' => 'required|string|max:255',
+			'surname' => 'string|max:255|nullable',
 			'surnameSecond' => 'string|max:255|nullable',
 			'email' => 'required|string|email|max:255|unique:users',
 			'password' => 'required|string|min:8',
@@ -45,6 +45,35 @@ class AdminController extends Controller
 		} catch (\Exception $e) {
 			Log::error('Error al intentar crear un nuevo usuario en la base de datos: ' . $e->getMessage());
 			return redirect()->back()->with('error', 'No se pudo registrar el usuario en la base de datos. Por favor, revise los detalles e intente de nuevo.');
+		}
+	}
+
+		/**
+	 * Update the specified resource in storage.
+	 */
+	public function update(Request $request, $language, $id)
+	{
+		$validated = $request->validate([
+			'name' => 'required|string|max:255',
+			'surname' => 'nullable|string|max:255',
+			'surnameSecond' => 'nullable|string|max:255',
+			'email' => 'required|string|email|max:255|unique:users,email,' . $id,
+		]);
+
+		try {
+			$success = User::updateFromRequest($request, $id);
+			if ($success) {
+				Log::info('success al actialitzar:');
+                return redirect()->route('admin.user.show', ['user' => $id, 'language' => $language])->with('status', 'El user ha sido actualizado exitosamente en la base de datos.');
+            } else {
+
+				Log::info('error al actialitzar:');
+                return redirect()->back()->with('error', 'La actualización del user falló. No se encontraron cambios o el user no existe.');
+            }
+
+		} catch (\Exception $e) {
+			Log::error('Error al intentar actualitzar un usuari en la base de datos: ' . $e->getMessage());
+			return redirect()->back()->with('error', 'No se pudo actualitzar el usuario en la base de datos. Por favor, revise los detalles e intente de nuevo.');
 		}
 	}
 

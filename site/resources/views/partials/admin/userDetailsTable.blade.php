@@ -2,16 +2,6 @@
 
 <div class="card" id="table-container">
     <table class="table">
-        <thead>
-            <tr>
-                <th scope="col">
-                    <span data-text="commonName" class="table__title"></span>
-                </th>
-                <th scope="col">
-                    <span data-text="scientificName" class="table__title"></span>
-                </th>
-            </tr>
-        </thead>
         <tbody>
             <tr>
                 <th data-text="id"></th>
@@ -88,7 +78,13 @@
             </tr>
             <tr>
                 <th data-text="actions"></th>
-                <td>
+                <td class="icons">
+                    <button type="button" class="buttonTable__success" data-bs-toggle="modal"
+                        data-bs-target="editUsersModal" title="Editar" data-id="{{ $user->id }}"
+                        data-name="{{ $user->name }}" data-surname="{{ $user->surname }}"
+                        data-surnameSecond="{{ $user->surnameSecond }}" data-email="{{ $user->email }}">
+                        <i class="fas fa-pencil"></i>
+                    </button>
                     <button type="button" class="buttonTable__close" data-bs-toggle="modal"
                         data-bs-target="deleteUsersModal" title="Eliminar" data-id="{{ $user->id }}"
                         data-name="{{ $user->name }}" data-surname="{{ $user->surname }}"
@@ -100,5 +96,6 @@
         </tbody>
     </table>
     @include('modals/users.delete')
+    @include('modals/users.edit')
     @include('components.message')
 </div>

@@ -15,8 +15,8 @@
     border-radius: $radius;
     @include hover($neutral_lighter,
       inherit,
-      $secondary_main,
-      transparent);
+      $primary_main,
+      $primary_main);
 
 
     .body {

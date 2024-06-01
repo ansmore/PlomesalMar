@@ -40,6 +40,8 @@ const handleModalButtonClick = (event: Event) => {
 		return;
 	}
 
+	console.log("Modal ID encontrado:", modalId);
+
 	const modal = document.getElementById(modalId) as HTMLDivElement;
 	if (!modal) {
 		console.error(
@@ -49,14 +51,40 @@ const handleModalButtonClick = (event: Event) => {
 		return;
 	}
 
+	console.log("Modal encontrado:", modal);
+
 	const userId = button.getAttribute("data-id");
 	const name = button.getAttribute("data-name");
-	const surname = button.getAttribute("data-surname" || "");
-	const surnameSecond = button.getAttribute("data-surnameSecond" || "");
+	const surname =
+		button.getAttribute("data-surname") !== null
+			? button.getAttribute("data-surname")!
+			: undefined;
+	const surnameSecond =
+		button.getAttribute("data-surnameSecond") !== null
+			? button.getAttribute("data-surnameSecond")!
+			: undefined;
+	const email = button.getAttribute("data-email");
+
+	console.log("Datos del usuario obtenidos:", {
+		userId,
+		name,
+		surname,
+		surnameSecond,
+		email,
+	});
 
 	switch (modalId) {
 		case "createUser":
 			openModal(modal);
+			break;
+
+		case "editUsersModal":
+			if (!userId || !name || !email) {
+				console.error("Faltan atributos de datos");
+				return;
+			}
+
+			handleEditUsersModal(modal, userId, name, email, surname, surnameSecond);
 			break;
 
 		case "deleteUsersModal":
@@ -83,7 +111,74 @@ const closeModalButtonClick = (event: Event) => {
 };
 
 const openModal = (modal: HTMLDivElement) => {
+	console.log("Abriendo modal:", modal);
 	modal.style.display = "block";
+};
+
+const handleEditUsersModal = (
+	modal: HTMLDivElement,
+	userId: string,
+	name: string,
+	email: string,
+	surname?: string,
+	surnameSecond?: string,
+): void => {
+	const editForm = modal.querySelector<HTMLFormElement>("form");
+	const inputUserId = modal.querySelector<HTMLInputElement>("#edit_user_id");
+	const inputUserName =
+		modal.querySelector<HTMLInputElement>("#edit_user_name");
+	const inputUserSurname =
+		modal.querySelector<HTMLInputElement>("#edit_user_surname");
+	const inputUserSurnameSecond = modal.querySelector<HTMLInputElement>(
+		"#edit_user_surnameSecond",
+	);
+	const inputUserEmail =
+		modal.querySelector<HTMLInputElement>("#edit_user_email");
+
+	console.log("Elementos del formulario encontrados:", {
+		editForm,
+		inputUserId,
+		inputUserName,
+		inputUserSurname,
+		inputUserSurnameSecond,
+		inputUserEmail,
+	});
+
+	if (!editForm || !inputUserName || !inputUserEmail) {
+		console.error(
+			"Faltan el formulario o campos de entrada en el modal de edición",
+		);
+		return;
+	}
+
+	const editUrlTemplate = editForm.dataset.editUrlTemplate;
+	if (editUrlTemplate) {
+		editForm.action = editUrlTemplate.replace(":id", userId.toString());
+	} else {
+		console.error("Falta la plantilla de URL de edición en el formulario");
+		return;
+	}
+
+	if (inputUserId) {
+		inputUserId.value = userId;
+	}
+	inputUserName.value = name;
+	inputUserEmail.value = email;
+	if (inputUserSurname) {
+		inputUserSurname.value = surname || "";
+	}
+	if (inputUserSurnameSecond) {
+		inputUserSurnameSecond.value = surnameSecond || "";
+	}
+
+	console.log("Datos asignados al formulario:", {
+		userId,
+		name,
+		email,
+		surname,
+		surnameSecond,
+	});
+	openModal(modal);
 };
 
 const handleDeleteUsersModal = (
