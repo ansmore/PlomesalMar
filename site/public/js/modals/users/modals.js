@@ -26,31 +26,47 @@ const handleModalButtonClick = (event) => {
     const button = event.currentTarget;
     const modalId = button.getAttribute("data-bs-target");
     if (!modalId) {
-        console.error("No se encontró el ID del modal en el botón:", button);
+        console.error("No s'ha trobat l'ID del modal al botó:", button);
         return;
     }
     const modal = document.getElementById(modalId);
     if (!modal) {
-        console.error("No se encontró el elemento modal para el objetivo:", modalId);
+        console.error("No s'ha trobat l'element modal per a l'objectiu:", modalId);
         return;
     }
     const userId = button.getAttribute("data-id");
     const name = button.getAttribute("data-name");
-    const surname = button.getAttribute("data-surname" || "");
-    const surnameSecond = button.getAttribute("data-surnameSecond" || "");
+    const surname = button.getAttribute("data-surname") ?? undefined;
+    const surnameSecond = button.getAttribute("data-surnameSecond") ?? undefined;
+    const email = button.getAttribute("data-email");
+    const userModalData = {
+        modal,
+        userId: userId,
+        name: name,
+        email: email,
+        surname,
+        surnameSecond,
+    };
     switch (modalId) {
         case "createUser":
             openModal(modal);
             break;
-        case "deleteUsersModal":
-            if (!userId || !name) {
-                console.error("Faltan atributos de datos");
+        case "editUsersModal":
+            if (!userId || !name || !email) {
+                console.error("Falten atributs de dades");
                 return;
             }
-            handleDeleteUsersModal(modal, userId, name);
+            handleEditUsersModal(userModalData);
+            break;
+        case "deleteUsersModal":
+            if (!userId || !name) {
+                console.error("Falten atributs de dades");
+                return;
+            }
+            handleDeleteUsersModal(userModalData);
             break;
         default:
-            console.error("Objetivo del modal desconocido:", modalId);
+            console.error("Objectiu del modal desconegut:", modalId);
             break;
     }
 };
@@ -64,13 +80,45 @@ const closeModalButtonClick = (event) => {
 const openModal = (modal) => {
     modal.style.display = "block";
 };
-const handleDeleteUsersModal = (modal, userId, name, surname, surnameSecond) => {
+const handleEditUsersModal = ({ modal, userId, name, email, surname, surnameSecond, }) => {
+    const editForm = modal.querySelector("form");
+    const inputUserId = modal.querySelector("#edit_user_id");
+    const inputUserName = modal.querySelector("#edit_user_name");
+    const inputUserSurname = modal.querySelector("#edit_user_surname");
+    const inputUserSurnameSecond = modal.querySelector("#edit_user_surnameSecond");
+    const inputUserEmail = modal.querySelector("#edit_user_email");
+    if (!editForm || !inputUserName || !inputUserEmail) {
+        console.error("Falten el formulari o camps d'entrada en el modal d'edició");
+        return;
+    }
+    const editUrlTemplate = editForm.dataset.editUrlTemplate;
+    if (editUrlTemplate) {
+        editForm.action = editUrlTemplate.replace(":id", userId.toString());
+    }
+    else {
+        console.error("Falta la plantilla de URL d'edició en el formulari");
+        return;
+    }
+    if (inputUserId) {
+        inputUserId.value = userId;
+    }
+    inputUserName.value = name;
+    inputUserEmail.value = email;
+    if (inputUserSurname) {
+        inputUserSurname.value = surname ?? "";
+    }
+    if (inputUserSurnameSecond) {
+        inputUserSurnameSecond.value = surnameSecond ?? "";
+    }
+    openModal(modal);
+};
+const handleDeleteUsersModal = ({ modal, userId, name, surname, surnameSecond, }) => {
     const deleteForm = modal.querySelector("form");
     const textName = modal.querySelector("#deleteName");
     const textSurname = modal.querySelector("#deleteSurname");
     const textSurnameSecond = modal.querySelector("#deleteSurnameSecond");
     if (!deleteForm || !textName) {
-        console.error("Faltan el formulario o campos de texto en el modal de eliminación");
+        console.error("Falten el formulari o camps de text en el modal d'eliminació");
         return;
     }
     const deleteUrlTemplate = deleteForm.dataset.deleteUrlTemplate;
@@ -78,15 +126,15 @@ const handleDeleteUsersModal = (modal, userId, name, surname, surnameSecond) => 
         deleteForm.action = deleteUrlTemplate.replace(":id", userId.toString());
     }
     else {
-        console.error("Falta la plantilla de URL de eliminación en el formulario");
+        console.error("Falta la plantilla de URL d'eliminació en el formulari");
         return;
     }
     textName.textContent = name;
     if (textSurname) {
-        textSurname.textContent = surname || "";
+        textSurname.textContent = surname ?? "";
     }
     if (textSurnameSecond) {
-        textSurnameSecond.textContent = surnameSecond || "";
+        textSurnameSecond.textContent = surnameSecond ?? "";
     }
     openModal(modal);
 };

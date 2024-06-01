@@ -711,12 +711,12 @@ button {
   min-height: 90vh;
   background-color: #fafafa;
   border-radius: 0.25rem;
-  border: 1px solid transparent;
+  border: 1px solid #0065AE;
 }
 .modal__management__big__box:hover {
   color: inherit;
   background-color: #fafafa;
-  border: 1px solid #9d9d9c;
+  border: 1px solid #0065AE;
 }
 .modal__management__big__box .body {
   display: flex;
@@ -855,7 +855,7 @@ button {
     min-height: 90vh;
   }
 }
-@media screen and (min-width: 601px) {
+@media screen and (min-width: 650px) {
   .modal__management__big__box {
     top: 10vh;
     left: 10vw;
@@ -1016,177 +1016,6 @@ button {
     display: none;
   }
 }
-#filterForm {
-  display: flex;
-  margin-top: 1rem;
-  gap: 1rem;
-  background-color: #ececec;
-  padding: 1rem;
-  border: 1px solid #0065AE;
-  border-radius: 0.5rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  font-family: "Roboto Slab", sans-serif;
-  justify-content: flex-start;
-  flex-direction: row;
-  align-items: center;
-}
-
-.form-control {
-  padding: 0.75rem;
-  background-color: #ffffff;
-  border: 1px solid #8f8f8f;
-  border-radius: 0.25rem;
-  font-size: 1rem;
-  color: #0065AE;
-}
-.form-control:hover {
-  background-color: #fafafa;
-  border-color: #0065AE;
-}
-.form-control:focus {
-  outline: none;
-  background-color: #fafafa;
-  border-color: #0065AE;
-  box-shadow: 0 0 0 2px rgba(0, 101, 174, 0.2);
-}
-
-.form__button__success {
-  padding: 0.75rem 1.5rem;
-  background-color: #0065AE;
-  color: #fafafa;
-  border: 1px solid transparent;
-  border-radius: 0.25rem;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease, border-color 0.3s ease;
-}
-.form__button__success:hover {
-  background-color: #0079D0;
-  border-color: #00518C;
-}
-.form__button__success:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px rgba(0, 101, 174, 0.2);
-}
-
-#chartData {
-  padding: 2rem;
-  background-color: #ffffff;
-  border: 1px solid #0065AE;
-  border-radius: 0.5rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 3rem;
-}
-
-#chartData canvas {
-  width: 100% !important;
-  height: 400px !important;
-}
-
-.chartjs-render-monitor {
-  font-family: "Roboto Slab", sans-serif;
-  color: #0065AE;
-}
-
-.chart-container {
-  flex: 1 1 45%;
-  max-width: 45%;
-  background-color: #ffffff;
-  border: 1px solid #0065AE;
-  border-radius: 0.5rem;
-  padding: 1rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-.chart-container canvas {
-  width: 100% !important;
-  height: 400px !important;
-}
-
-.chartjs-render-monitor {
-  font-family: "Roboto Slab", sans-serif;
-  color: #0065AE;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  background-color: #ffffff;
-  padding: 1rem;
-  border: 1px solid #0065AE;
-  border-radius: 0.5rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  font-family: "Roboto Slab", sans-serif;
-  width: 100%;
-  max-width: 500px;
-  margin-bottom: 2rem;
-}
-form label {
-  margin-bottom: 0.5rem;
-  font-weight: bold;
-  color: #0065AE;
-}
-form select {
-  padding: 0.5rem;
-  background-color: #ffffff;
-  border: 1px solid #8f8f8f;
-  border-radius: 0.25rem;
-  font-size: 1rem;
-  color: #0065AE;
-  width: 100%;
-  max-width: 100%;
-}
-form select:hover {
-  background-color: #fafafa;
-  border-color: #0065AE;
-}
-form select:focus {
-  outline: none;
-  background-color: #fafafa;
-  border-color: #0065AE;
-  box-shadow: 0 0 0 2px rgba(0, 101, 174, 0.2);
-}
-
-#donutGraphContainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: #ffffff;
-  border: 1px solid #0065AE;
-  border-radius: 0.5rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  max-width: 800px;
-  margin: 0 auto;
-  margin-bottom: 3rem;
-}
-
-#donutGraphContainer canvas {
-  width: 100% !important;
-  height: 500px !important;
-}
-
-.chartjs-render-monitor {
-  font-family: "Roboto Slab", sans-serif;
-  color: #0065AE;
-}
-
-#multiGraphContainer {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  padding: 2rem;
-  background-color: #ffffff;
-  border: 1px solid #0065AE;
-  border-radius: 0.5rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  justify-content: center;
-  align-items: center;
-}
-
 .nav {
   display: flex;
   flex-direction: row;
@@ -2335,6 +2164,83 @@ form select:focus {
   .tableObservation .table__group__title {
     text-align: center;
   }
+}
+#multiGraphContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 2rem;
+  background-color: #ffffff;
+  border: 1px solid #0065AE;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  justify-content: center;
+  align-items: center;
+}
+
+#chartData {
+  padding: 2rem;
+  background-color: #ffffff;
+  border: 1px solid #0065AE;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+}
+
+#chartData canvas {
+  width: 100% !important;
+  height: 400px !important;
+}
+
+.chartjs-render-monitor {
+  font-family: "Roboto Slab", sans-serif;
+  color: #0065AE;
+}
+
+.chart-container {
+  flex: 1 1 45%;
+  max-width: 45%;
+  background-color: #ffffff;
+  border: 1px solid #0065AE;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.chart-container canvas {
+  width: 100% !important;
+  height: 400px !important;
+}
+
+.chartjs-render-monitor {
+  font-family: "Roboto Slab", sans-serif;
+  color: #0065AE;
+}
+
+#donutGraphContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  border: 1px solid #0065AE;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 0 auto;
+  margin-bottom: 3rem;
+}
+
+#donutGraphContainer canvas {
+  width: 100% !important;
+  height: 500px !important;
+}
+
+.chartjs-render-monitor {
+  font-family: "Roboto Slab", sans-serif;
+  color: #0065AE;
 }
 
 /*# sourceMappingURL=app.css.map */

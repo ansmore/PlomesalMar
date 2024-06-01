@@ -1,26 +1,26 @@
 html {
-  // font-size: 62.5%; /* 1rem -> 10px*/
-  font-size: 100%;
-  max-width: 100vw;
-  background-color: $neutral_light;
+	// font-size: 62.5%; /* 1rem -> 10px*/
+	font-size: 100%;
+	max-width: 100vw;
+	background-color: $neutral_light;
 }
 
 body {
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
 a,
 button {
-  cursor: pointer;
+	cursor: pointer;
 }
 
 ::selection {
-  background-color: $secondary_main;
-  color: $primary_main;
+	background-color: $secondary_main;
+	color: $primary_main;
 }
 
 .navbar-nav-main {
-  margin-top: $nav_height;
+	margin-top: $nav_height;
 }

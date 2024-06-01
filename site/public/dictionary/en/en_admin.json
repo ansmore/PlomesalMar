@@ -2,6 +2,7 @@
 	"usersList": "List of users",
 	"userDetails": "Details of user",
 	"newUser": "Add new user",
+	"editUser": "Edit user",
 	"users": "Users",
 	"roles": "Roles",
 
@@ -13,7 +14,7 @@
 	"moreInfo": "More Info",
 	"showDetails": "Show details",
 	"addRole": " Add role",
-	"removeUser": "Eliminar usuario",
+	"removeUser": "Remove user",
 
 	"nameModal": "Name: ",
 	"surnameModal": "Lastname: ",

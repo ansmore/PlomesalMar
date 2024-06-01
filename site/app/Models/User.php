@@ -71,6 +71,29 @@ class User extends Authenticatable
 		return $newUser;
 	}
 
+	public static function updateFromRequest(Request $request, $id): bool
+	{
+		$user = self::find($id);
+
+		Log::info('User updated from request:', [
+			'name' => $request->name,
+			'surname' => $request->surname,
+			'surnameSecond' => $request->surnameSecond,
+			'email' => $request->email,
+		]);
+
+		if ($user) {
+			$user->update([
+				'name' => $request->name,
+				'surname' => $request->surname ?? '',
+				'surnameSecond' => $request->surnameSecond ?? '',
+				'email' => $request->email,
+			]);
+			return true;
+		}
+		return false;
+	}
+
     /**
      * The attributes that should be cast.
      *

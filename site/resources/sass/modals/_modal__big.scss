@@ -15,8 +15,8 @@
     border-radius: $radius;
     @include hover($neutral_lighter,
       inherit,
-      $secondary_main,
-      transparent);
+      $primary_main,
+      $primary_main);
 
 
     .body {
@@ -176,7 +176,7 @@
   }
 }
 
-@media screen and (min-width: 601px) {
+@media screen and (min-width: 650px) {
   .modal__management__big {
     &__box {
       top: 10vh;

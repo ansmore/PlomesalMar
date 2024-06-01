@@ -10,173 +10,260 @@ use Illuminate\Database\QueryException;
 
 class AdminController extends Controller
 {
-	public function __construct()
+    /**
+     * AdminController constructor.
+     */
+    public function __construct()
     {
         $this->middleware('auth');
         $this->middleware('is_admin');
     }
 
-	public function index($language = null, Request $request){
+    /**
+     * Display the user management page.
+     *
+     * @param string|null $language
+     * @param Request $request
+     * @return \Illuminate\View\View
+     */
+    public function index($language = null, Request $request)
+    {
         $users = User::all();
-		$roles = Role::all();
-		return view('admin.managementUsers', [
-			'users' => $users,
-			'roles' => $roles,
-			'language' => $language,
-		]);
-    }
-
-	/**
-	 * Store a newly created resource in storage.
-	 */
-	public function store(Request $request, $language = null)
-	{
-		$validated = $request->validate([
-			'name' => 'required|string|max:255',
-			'surname' => 'required|string|max:255',
-			'surnameSecond' => 'string|max:255|nullable',
-			'email' => 'required|string|email|max:255|unique:users',
-			'password' => 'required|string|min:8',
-		]);
-
-		try {
-			$user = User::createFromRequest($request);
-			return redirect()->back()->with('status', 'El usuario ha sido creado exitosamente en la base de datos.');
-		} catch (\Exception $e) {
-			Log::error('Error al intentar crear un nuevo usuario en la base de datos: ' . $e->getMessage());
-			return redirect()->back()->with('error', 'No se pudo registrar el usuario en la base de datos. Por favor, revise los detalles e intente de nuevo.');
-		}
-	}
-
-    public function userList($language = null){
-        $users = User::orderBy('name', 'ASC')
-            ->paginate(config('pagination.users', 8));
-
-        $total_users = User::count();
-		$roles = Role::all();
-
-        return view('admin.users.list', [
-			'language' => $language,
-			'roles' => $roles,
-            'users' =>$users,
-            'total_users' => $total_users,
+        $roles = Role::all();
+        return view('admin.managementUsers', [
+            "users" => $users,
+            "roles" => $roles,
+            "language" => $language,
         ]);
     }
 
-    public function userShow($language = null, User $user){
-        return view('admin.users.show', [
-			'language' => $language,
-			'user' => $user]);
+    /**
+     * Store a newly created user in storage.
+     *
+     * @param Request $request
+     * @param string|null $language
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function store(Request $request, $language = null)
+    {
+        $validated = $request->validate([
+            "name" => "required|string|max:255",
+            "surname" => "nullable|string|max:255",
+            "surnameSecond" => "nullable|string|max:255",
+            "email" => "required|string|email|max:255|unique:users",
+            "password" => "required|string|min:8",
+        ]);
+
+        try {
+            $user = User::createFromRequest($request);
+            return redirect()->back()->with("status", "L'usuari ha estat creat correctament a la base de dades.");
+        } catch (\Exception $e) {
+            Log::error("Error en intentar crear un nou usuari a la base de dades: " . $e->getMessage());
+            return redirect()->back()->with("error", "No s'ha pogut registrar l'usuari a la base de dades. Si us plau, revisi els detalls i intenti-ho de nou.");
+        }
     }
 
-    public function userSearch(Request $request){
+    /**
+     * Update the specified user in storage.
+     *
+     * @param Request $request
+     * @param string $language
+     * @param int $id
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function update(Request $request, $language, $id)
+    {
+        $validated = $request->validate([
+            "name" => "required|string|max:255",
+            "surname" => "nullable|string|max:255",
+            "surnameSecond" => "nullable|string|max:255",
+            "email" => "required|string|email|max:255|unique:users,email," . $id,
+        ]);
+
+        try {
+            $success = User::updateFromRequest($request, $id);
+            if ($success) {
+                Log::info("Usuari actualitzat correctament.");
+                return redirect()->route("admin.user.show", ["user" => $id, "language" => $language])->with("status", "L'usuari ha estat actualitzat correctament a la base de dades.");
+            } else {
+                Log::info("Error en actualitzar l'usuari.");
+                return redirect()->back()->with("error", "La actualització de l'usuari ha fallat. No s'han trobat canvis o l'usuari no existeix.");
+            }
+        } catch (\Exception $e) {
+            Log::error("Error en intentar actualitzar un usuari a la base de dades: " . $e->getMessage());
+            return redirect()->back()->with("error", "No s'ha pogut actualitzar l'usuari a la base de dades. Si us plau, revisi els detalls i intenti-ho de nou.");
+        }
+    }
+
+    /**
+     * Display the list of users.
+     *
+     * @param string|null $language
+     * @return \Illuminate\View\View
+     */
+    public function userList($language = null)
+    {
+        $users = User::orderBy("name", "ASC")
+            ->paginate(config("pagination.users", 8));
+
+        $total_users = User::count();
+        $roles = Role::all();
+
+        return view("admin.users.list", [
+            "language" => $language,
+            "roles" => $roles,
+            "users" => $users,
+            "total_users" => $total_users,
+        ]);
+    }
+
+    /**
+     * Display the specified user.
+     *
+     * @param string|null $language
+     * @param User $user
+     * @return \Illuminate\View\View
+     */
+    public function userShow($language = null, User $user)
+    {
+        return view("admin.users.show", [
+            "language" => $language,
+            "user" => $user
+        ]);
+    }
+
+    /**
+     * Search for users based on input criteria.
+     *
+     * @param Request $request
+     * @return \Illuminate\View\View
+     */
+    public function userSearch(Request $request)
+    {
         $request->validate([
-            'name' => 'max:32',
-            'email' => 'max:32']);
+            "name" => "max:32",
+            "email" => "max:32"
+        ]);
 
-        $name = $request->input('name', '');
-        $email = $request->input('email', '');
+        $name = $request->input("name", "");
+        $email = $request->input("email", "");
 
-        $users = User::orderBy('name', 'ASC')
-            ->where('name', 'like', "%$name%")
-            ->where('email', 'like', "%$email%")
-            ->paginate(config('pagination.users', 8))
+        $users = User::orderBy("name", "ASC")
+            ->where("name", "like", "%$name%")
+            ->where("email", "like", "%$email%")
+            ->paginate(config("pagination.users", 8))
             ->appends([
-                'name' => $name,
-                'email' => $email
+                "name" => $name,
+                "email" => $email
             ]);
 
         $total_users = User::count();
 
-        return view('admin.users.list', [
-            'users'=>$users,
-            'name' => $name,
-            'email' => $email,
-            'total_users' => $total_users,
+        return view("admin.users.list", [
+            "users" => $users,
+            "name" => $name,
+            "email" => $email,
+            "total_users" => $total_users,
         ]);
     }
 
-	public function setRole(Request $request)
+    /**
+     * Assign a role to a user.
+     *
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function setRole(Request $request)
     {
-        $role = Role::find($request->input('role_id'));
-        $user = User::find($request->input('user_id'));
+        $role = Role::find($request->input("role_id"));
+        $user = User::find($request->input("user_id"));
 
-        Log::info("Attempting to set role: {$role->role} for user: {$user->name}");
+        Log::info("Intentant assignar el rol: {$role->role} a l'usuari: {$user->name}");
 
-		try{
-			if ($role->role === 'blocked') {
+        try {
+            if ($role->role === "blocked") {
                 if (!policy(User::class)->preventSelfBlock($user, $role)) {
                     return redirect()->back()->with("error", "No pots bloquejar-te a tu mateix.");
                 }
             }
 
-			Log::info("No pots afegir el rol: $role->role a l'usuari: {$user->name}");
-
-			$user->roles()->attach($role->id, [
-                'created_at' => now(),
-                'updated_at' => now()
+            $user->roles()->attach($role->id, [
+                "created_at" => now(),
+                "updated_at" => now()
             ]);
 
-			return redirect()->back()->with("status", "Rol '$role->role' afegit a $user->name correctament.");
-        }catch(QueryException $e){
-			Log::error("Error attaching role: " . $e->getMessage());
-            return back()->withErrors("No es pot afegir el rol $role->role a $user->name. Es possible que ja tingui aquest rol.");
+            return redirect()->back()->with("status", "Rol '$role->role' assignat a $user->name correctament.");
+        } catch (QueryException $e) {
+            Log::error("Error assignant el rol: " . $e->getMessage());
+            return back()->withErrors("No es pot assignar el rol $role->role a $user->name. És possible que ja tingui aquest rol.");
         }
     }
 
-    public function removeRole(Request $request){
-        $role = Role::find($request->input('role_id'));
-        $user = User::find($request->input('user_id'));
+    /**
+     * Remove a role from a user.
+     *
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function removeRole(Request $request)
+    {
+        $role = Role::find($request->input("role_id"));
+        $user = User::find($request->input("user_id"));
 
-        Log::info("Attempting to remove role: {$role->role} from user: {$user->name}");
+        Log::info("Intentant eliminar el rol: {$role->role} de l'usuari: {$user->name}");
 
-		try{
-			if ($role->role === 'admin') {
+        try {
+            if ($role->role === "admin") {
                 if (!policy(User::class)->lastUserAdmin($user, $role)) {
-                    return redirect()->back()->with("error", "No pots retirar el $role->role, ets l'únic $role->role.");
+                    return redirect()->back()->with("error", "No pots retirar el rol $role->role, ets l'únic $role->role.");
                 }
                 if (!policy(User::class)->ensureAtLeastOneAdmin($user, $role)) {
-                    return redirect()->back()->with("error", "No puedes quitar el rol de 'admin' porque debe haber al menos un administrador.");
+                    return redirect()->back()->with("error", "No pots retirar el rol d'administrador perquè ha d'haver-hi almenys un administrador.");
                 }
-				if (!policy(User::class)->preventSelfAdminRemoval($user)) {
+                if (!policy(User::class)->preventSelfAdminRemoval($user)) {
                     return redirect()->back()->with("error", "No pots retirar el teu propi rol d'administrador.");
                 }
             }
 
-			$user->roles()->detach($role->id);
+            $user->roles()->detach($role->id);
 
-			return redirect()->back()->with("status", "Rol '$role->role' retirat a $user->name correctament.");
+            return redirect()->back()->with("status", "Rol '$role->role' eliminat de $user->name correctament.");
         } catch (\Exception $e) {
-        Log::error("Unexpected error: " . $e->getMessage());
-        return redirect()->back()->withErrors("S'ha produït un error inesperat. Si us plau, intenta-ho més tard.");
-		}
+            Log::error("Error inesperat: " . $e->getMessage());
+            return redirect()->back()->withErrors("S'ha produït un error inesperat. Si us plau, intenta-ho més tard.");
+        }
     }
 
-	/**
-     * Remove the specified resource from storage.
+    /**
+     * Remove the specified user from storage.
+     *
+     * @param int $id
+     * @param string|null $language
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy($id, $language = null)
     {
         try {
             $success = User::deleteById($id);
             if ($success) {
-                return redirect()->route('admin.users', ['language' => $language])->with('status', 'Usuari eliminat correctament.');
+                return redirect()->route("admin.users", ["language" => $language])->with("status", "Usuari eliminat correctament.");
             } else {
-                return redirect()->back()->with('error', "No s'ha pogut eliminar l'usuari de la base de dades.");
+                return redirect()->back()->with("error", "No s'ha pogut eliminar l'usuari de la base de dades.");
             }
         } catch (\Exception $e) {
-            Log::error("Error al eliminar l'usuari de la base de dades: " . $e->getMessage());
-            return redirect()->back()->with('error', "Ha ocorregut un error al intentar eliminar l'usuari. ");
+            Log::error("Error eliminant l'usuari de la base de dades: " . $e->getMessage());
+            return redirect()->back()->with("error", "Ha ocorregut un error en intentar eliminar l'usuari.");
         }
     }
 
-    public function testAbort($language = null)
+    /**
+     * Display the blocked page.
+     *
+     * @param string|null $language
+     * @return \Illuminate\View\View
+     */
+    public function blocked($language = null)
     {
-		abort(418, "Això es una prova de l'error 418");
-    }
-
-	public function blocked($language = null)
-    {
-        return view('pages.blocked', ['language' => $language]);
+        return view("pages.blocked", ["language" => $language]);
     }
 }

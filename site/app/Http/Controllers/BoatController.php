@@ -44,7 +44,7 @@ class BoatController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, $language, $id)
+    public function update(Request $request, $language , $id)
     {
         $validated = $request->validate([
             'name' => 'required|string|max:255',

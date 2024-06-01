@@ -97,9 +97,11 @@ Route::prefix('/{language}')->group(function () {
 		Route::get('users', [AdminController::class, 'userList'])->name('admin.users');
 		Route::post('user/store', [AdminController::class, 'store'])->name('admin.user.store');
 		Route::get('user/{user}/show', [AdminController::class, 'userShow'])->name('admin.user.show');
+		Route::put('/user/{user}', [AdminController::class, 'update'])->name('admin.user.update');
+		Route::delete('user/{user}', [AdminController::class, 'destroy'])->name('admin.user.destroy');
+
 		Route::post('role', [AdminController::class, 'setRole'])->name('admin.user.setRole');
 		Route::delete('role', [AdminController::class, 'removeRole'])->name('admin.user.removeRole');
-		Route::delete('user/{user}', [AdminController::class, 'destroy'])->name('admin.user.destroy');
 	});
 
 	Route::get('/', [HomeController::class, 'index'])->name('index');
