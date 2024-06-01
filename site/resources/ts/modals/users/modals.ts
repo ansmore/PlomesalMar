@@ -20,6 +20,7 @@ export const cleanupUsers = () => {
 	const buttons = document.querySelectorAll<HTMLButtonElement>(
 		'[data-bs-toggle="modal"]',
 	);
+
 	buttons.forEach((button) => {
 		button.removeEventListener("click", handleModalButtonClick);
 	});
@@ -36,42 +37,30 @@ const handleModalButtonClick = (event: Event) => {
 	const modalId = button.getAttribute("data-bs-target");
 
 	if (!modalId) {
-		console.error("No se encontró el ID del modal en el botón:", button);
+		console.error("No s'ha trobat l'ID del modal al botó:", button);
 		return;
 	}
-
-	console.log("Modal ID encontrado:", modalId);
 
 	const modal = document.getElementById(modalId) as HTMLDivElement;
 	if (!modal) {
-		console.error(
-			"No se encontró el elemento modal para el objetivo:",
-			modalId,
-		);
+		console.error("No s'ha trobat l'element modal per a l'objectiu:", modalId);
 		return;
 	}
 
-	console.log("Modal encontrado:", modal);
-
 	const userId = button.getAttribute("data-id");
 	const name = button.getAttribute("data-name");
-	const surname =
-		button.getAttribute("data-surname") !== null
-			? button.getAttribute("data-surname")!
-			: undefined;
-	const surnameSecond =
-		button.getAttribute("data-surnameSecond") !== null
-			? button.getAttribute("data-surnameSecond")!
-			: undefined;
+	const surname = button.getAttribute("data-surname") ?? undefined;
+	const surnameSecond = button.getAttribute("data-surnameSecond") ?? undefined;
 	const email = button.getAttribute("data-email");
 
-	console.log("Datos del usuario obtenidos:", {
-		userId,
-		name,
+	const userModalData: UserModalData = {
+		modal,
+		userId: userId!,
+		name: name!,
+		email: email!,
 		surname,
 		surnameSecond,
-		email,
-	});
+	};
 
 	switch (modalId) {
 		case "createUser":
@@ -80,24 +69,24 @@ const handleModalButtonClick = (event: Event) => {
 
 		case "editUsersModal":
 			if (!userId || !name || !email) {
-				console.error("Faltan atributos de datos");
+				console.error("Falten atributs de dades");
 				return;
 			}
 
-			handleEditUsersModal(modal, userId, name, email, surname, surnameSecond);
+			handleEditUsersModal(userModalData);
 			break;
 
 		case "deleteUsersModal":
 			if (!userId || !name) {
-				console.error("Faltan atributos de datos");
+				console.error("Falten atributs de dades");
 				return;
 			}
 
-			handleDeleteUsersModal(modal, userId, name);
+			handleDeleteUsersModal(userModalData);
 			break;
 
 		default:
-			console.error("Objetivo del modal desconocido:", modalId);
+			console.error("Objectiu del modal desconegut:", modalId);
 			break;
 	}
 };
@@ -105,24 +94,33 @@ const handleModalButtonClick = (event: Event) => {
 const closeModalButtonClick = (event: Event) => {
 	const button = event.currentTarget as HTMLElement;
 	const modal = button.closest(".modal") as HTMLDivElement;
+
 	if (modal) {
 		modal.style.display = "none";
 	}
 };
 
 const openModal = (modal: HTMLDivElement) => {
-	console.log("Abriendo modal:", modal);
 	modal.style.display = "block";
 };
 
-const handleEditUsersModal = (
-	modal: HTMLDivElement,
-	userId: string,
-	name: string,
-	email: string,
-	surname?: string,
-	surnameSecond?: string,
-): void => {
+type UserModalData = {
+	modal: HTMLDivElement;
+	userId: string;
+	name: string;
+	email: string;
+	surname?: string;
+	surnameSecond?: string;
+};
+
+const handleEditUsersModal = ({
+	modal,
+	userId,
+	name,
+	email,
+	surname,
+	surnameSecond,
+}: UserModalData): void => {
 	const editForm = modal.querySelector<HTMLFormElement>("form");
 	const inputUserId = modal.querySelector<HTMLInputElement>("#edit_user_id");
 	const inputUserName =
@@ -135,19 +133,8 @@ const handleEditUsersModal = (
 	const inputUserEmail =
 		modal.querySelector<HTMLInputElement>("#edit_user_email");
 
-	console.log("Elementos del formulario encontrados:", {
-		editForm,
-		inputUserId,
-		inputUserName,
-		inputUserSurname,
-		inputUserSurnameSecond,
-		inputUserEmail,
-	});
-
 	if (!editForm || !inputUserName || !inputUserEmail) {
-		console.error(
-			"Faltan el formulario o campos de entrada en el modal de edición",
-		);
+		console.error("Falten el formulari o camps d'entrada en el modal d'edició");
 		return;
 	}
 
@@ -155,39 +142,35 @@ const handleEditUsersModal = (
 	if (editUrlTemplate) {
 		editForm.action = editUrlTemplate.replace(":id", userId.toString());
 	} else {
-		console.error("Falta la plantilla de URL de edición en el formulario");
+		console.error("Falta la plantilla de URL d'edició en el formulari");
 		return;
 	}
 
 	if (inputUserId) {
 		inputUserId.value = userId;
 	}
+
 	inputUserName.value = name;
 	inputUserEmail.value = email;
+
 	if (inputUserSurname) {
-		inputUserSurname.value = surname || "";
-	}
-	if (inputUserSurnameSecond) {
-		inputUserSurnameSecond.value = surnameSecond || "";
+		inputUserSurname.value = surname ?? "";
 	}
 
-	console.log("Datos asignados al formulario:", {
-		userId,
-		name,
-		email,
-		surname,
-		surnameSecond,
-	});
+	if (inputUserSurnameSecond) {
+		inputUserSurnameSecond.value = surnameSecond ?? "";
+	}
+
 	openModal(modal);
 };
 
-const handleDeleteUsersModal = (
-	modal: HTMLDivElement,
-	userId: string,
-	name: string,
-	surname?: string,
-	surnameSecond?: string,
-) => {
+const handleDeleteUsersModal = ({
+	modal,
+	userId,
+	name,
+	surname,
+	surnameSecond,
+}: UserModalData): void => {
 	const deleteForm = modal.querySelector<HTMLFormElement>("form");
 	const textName = modal.querySelector<HTMLElement>("#deleteName");
 	const textSurname = modal.querySelector<HTMLElement>("#deleteSurname");
@@ -197,7 +180,7 @@ const handleDeleteUsersModal = (
 
 	if (!deleteForm || !textName) {
 		console.error(
-			"Faltan el formulario o campos de texto en el modal de eliminación",
+			"Falten el formulari o camps de text en el modal d'eliminació",
 		);
 		return;
 	}
@@ -206,16 +189,18 @@ const handleDeleteUsersModal = (
 	if (deleteUrlTemplate) {
 		deleteForm.action = deleteUrlTemplate.replace(":id", userId.toString());
 	} else {
-		console.error("Falta la plantilla de URL de eliminación en el formulario");
+		console.error("Falta la plantilla de URL d'eliminació en el formulari");
 		return;
 	}
 
 	textName.textContent = name;
 	if (textSurname) {
-		textSurname.textContent = surname || "";
+		textSurname.textContent = surname ?? "";
 	}
+
 	if (textSurnameSecond) {
-		textSurnameSecond.textContent = surnameSecond || "";
+		textSurnameSecond.textContent = surnameSecond ?? "";
 	}
+
 	openModal(modal);
 };
