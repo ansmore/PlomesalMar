@@ -69,14 +69,6 @@ const changeLanguage = async (language: string) => {
 		const thirdSegment = await getThirdSegment(currentUrl)!;
 		const othersSegments = await getOthersSegments(currentUrl);
 
-		// DeveloperMode
-		console.log("current", currentUrl);
-		console.log("first", firstSegment);
-		console.log("second", secondSegment);
-		console.log("id", idSegment);
-		console.log("third", thirdSegment);
-		console.log("others", othersSegments);
-
 		const csrfToken = document
 			.querySelector("meta[name=csrf-token]")
 			?.getAttribute("content");
@@ -108,44 +100,17 @@ const changeLanguage = async (language: string) => {
 			} = responseData;
 
 			if (firstItemQueriString !== "") {
-				console.log("newUrl String ->", newUrl);
-				console.log(
-					"ordenation firstItemQueriString->",
-					firstItemQueriString,
-				);
 				newUrl += `?${firstItemQueriString}`;
-
-				console.log("Aqui newURL string->", newUrl);
 			} else if (secondItemQueriString !== "") {
-				console.log("newUrl secondItemQueriString->", newUrl);
-				console.log(
-					"ordenation secondItemQueriString->",
-					secondItemQueriString,
-				);
 				newUrl += `?${secondItemQueriString}`;
-
-				console.log("Aqui newURL secondItemQueriString->", newUrl);
 			} else if (thirdItemQueriString !== "") {
-				console.log("newUrl thirdItemQueriString->", newUrl);
-				console.log(
-					"ordenation thirdItemQueriString->",
-					thirdItemQueriString,
-				);
 				newUrl += `?${thirdItemQueriString}`;
-
-				console.log("Aqui newURL thirdItemQueriString->", newUrl);
 			}
 
 			if (typeof newUrl === "string") {
 				history.replaceState({ url: newUrl }, "", newUrl);
 			}
 		}
-
-		// DeveloperMode
-		// if (!response.ok) {
-		// 	console.error("! response.ok->", language);
-		// 	throw new Error(`-> Error en la solicitud: ${response.status}`);
-		// }
 	} catch (error) {
 		console.error("Error al cambiar el idioma:", error);
 	}

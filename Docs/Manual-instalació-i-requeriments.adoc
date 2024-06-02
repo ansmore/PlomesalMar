@@ -2,12 +2,12 @@
 
 Aquest document descriu els passos necessaris per desplegar l'aplicació `2024_plomes_al_mar` en un servidor AWS, incloent-hi la instal·lació de tots els requisits de programari.
 
-== Chapter 1. Configuració d’instàncies/màquines virtuals a AWS
-En el present document, s’expliquen les accions bàsiques a AWS per configurar instàncies amb IPs públiques per poder accedir-hi des de qualsevol lloc.
+== Chapter 1. Configuració d'instàncies/màquines virtuals a AWS
+En el present document, s'expliquen les accions bàsiques a AWS per configurar instàncies amb IPs públiques per poder accedir-hi des de qualsevol lloc.
 Accés al curs: https://www.awsacademy.com/vforcesite/LMS_Login
 
-== Chapter 2. Creació d’instància
-Creem una instància des del botó Lanzar una instancia. Aquí s’ha de configurar la màquina que es vol crear. En el nostre cas:
+== Chapter 2. Creació d'instància
+Creem una instància des del botó Lanzar una instancia. Aquí s'ha de configurar la màquina que es vol crear. En el nostre cas:
 
     1. Nombre y etiquetas
     
@@ -26,15 +26,15 @@ Finalment, donar al botó de Lanzar instància.
 Un cop creada la instància, escollir el check de la instància. Anar al menú a acciones → connectar.
 Hi ha diferents maneres de connectar a la màquina:
 
-1. Connexió de la instància EC2 s’entra per web com si fos una màquina isard.
-2. Client SSH: haurem de descarregar el fitxer .PEM que apareix a la pàgina des d’on iniciem el lab. Descarreguem el PEM si estem a linux, o el PPK si és des de connexió des de Putty.
+1. Connexió de la instància EC2 s'entra per web com si fos una màquina isard.
+2. Client SSH: haurem de descarregar el fitxer .PEM que apareix a la pàgina des d'on iniciem el lab. Descarreguem el PEM si estem a linux, o el PPK si és des de connexió des de Putty.
 
 === Chapter 4. Creació de IP fixa a les instàncies
 Per crear i assignar una IP fixa a la màquina (IP Elàstica), anar al menú de la dreta Red y seguridad → direcciones de IP elásticas i prémer el botó Crear o Asignar la dirección IP elástica.
 
 == 4.1. Assignar la IP elàstica a una instància
-Al llistat d’adreces IP elàstiques, s’ha d’escollir la IP que interessi.
-Després, anar al menú actions, escollir l’opció d'associar IP i a la pantalla, escollir la instància EC2 que s’ha creat i deixar la resta d’opcions per defecte.
+Al llistat d'adreces IP elàstiques, s'ha d'escollir la IP que interessi.
+Després, anar al menú actions, escollir l'opció d'associar IP i a la pantalla, escollir la instància EC2 que s'ha creat i deixar la resta d'opcions per defecte.
 
 Aquest document descriu els passos necessaris per desplegar l'aplicació `2024_plomes_al_mar` en un servidor AWS, incloent-hi la instal·lació de tots els requisits de programari.
 

@@ -56,7 +56,6 @@ export const getNavigatorLanguage = async () => {
 export const getFirstSegment = (url) => {
     try {
         const segments = url.split("/");
-        console.log("current", segments);
         const languageIndex = segments.findIndex((segment) => /^[a-z]{2}$/i.test(segment));
         if (languageIndex !== -1 && segments.length > languageIndex + 1) {
             const nextPageSegment = segments[languageIndex + 1];
@@ -137,12 +136,8 @@ export const getThirdSegment = (url) => {
 };
 export const getOthersSegments = async (url) => {
     const segments = url.split("/");
-    // Mostrar segments per a depuració
-    console.log("Aqui-> segments-> ", segments);
     // Començar des del sisè element (índex 5)
     const relevantSegments = segments.slice(5).join("/");
-    // Mostrar segments per a depuració
-    console.log("Aqui-> resultat-> ", relevantSegments);
     // Retorna els segments rellevants com a cadena
     return relevantSegments;
 };
@@ -172,7 +167,6 @@ export const setLanguage = async (selectedLanguage) => {
         let navigatorLanguage = await getNavigatorLanguage();
         // If return false, this language is not in white list!
         if (await isLanguageSupported(navigatorLanguage)) {
-            console.log(`Your navigator languages unsuported! ${navigatorLanguage}. Sorry!`);
             navigatorLanguage = "";
         }
         localStorage.setItem("selectedLanguage", selectedLanguage);
@@ -191,12 +185,10 @@ export const loadText = async () => {
         const currentUrl = window.location.href;
         const availablePages = await loadAvailablesFiles();
         let firstSegment = await getFirstSegment(currentUrl);
-        console.log("Aqui first segment", firstSegment);
         const finalSelectedLanguage = await getFinalLanguage();
         if (firstSegment.includes("?")) {
             firstSegment = firstSegment.split("?")[0];
         }
-        console.log("Aqui first segment->2", firstSegment);
         const selectedPage = availablePages.includes(firstSegment)
             ? firstSegment
             : "home";
