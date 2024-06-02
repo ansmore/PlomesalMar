@@ -19,7 +19,6 @@ export const closeModalButton = () => {
         button.addEventListener("click", () => {
             const modal = button.closest(".modal");
             if (modal) {
-                console.log("close", modal.id);
                 closeModal(modal.id);
             }
         });
