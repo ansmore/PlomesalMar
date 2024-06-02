@@ -15,15 +15,15 @@
                 <h1 class="box__title" data-text="homeTitle"></h1>
             </article>
             <article class="box__circle">
-                <figure class="circle modal-button">
-                    <a href="{{ route('management', ['language' => $language]) }}">
+                <a href="{{ route('management', ['language' => $language]) }}">
+                    <figure class="circle modal-button">
                         <span class="circle__icon">
                             <i class="fa-solid fa-table"></i>
                         </span>
                         <h4 class="circle__content" data-text="homeManagement">
                         </h4>
-                    </a>
-                </figure>
+                    </figure>
+                </a>
                 <a href="{{ route('dashboard.management', ['language' => $language]) }}">
                     <figure class="circle modal-button">
                         <span class="circle__icon">
