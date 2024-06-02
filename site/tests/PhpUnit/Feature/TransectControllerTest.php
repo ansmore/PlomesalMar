@@ -7,32 +7,30 @@ use App\Models\Transect;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
-use Illuminate\Support\Facades\Log;
 
 class TransectControllerTest extends TestCase
 {
     use RefreshDatabase, WithFaker;
 
-	protected $user;
+    protected $user;
 
     protected function setUp(): void
     {
         parent::setUp();
-        // Crea un usuari i autèntica'l
-       	$this->user = User::factory()->create();
+        $this->user = User::factory()->create();
         $this->actingAs($this->user);
     }
 
     /**
-     * Comprova que la pàgina d'index de transectes es carrega correctament per a un usuari autenticat.
+     * Comprueba que la página de índice de transectos se carga correctamente para un usuario autenticado.
      *
-     * Donat un usuari autenticat,
-     * Quan accedeix a la ruta /transects,
-     * Llavors hauria de veure la pàgina de transectes amb el codi d'estat 200.
+     * Dado un usuario autenticado,
+     * Cuando accede a la ruta /transects,
+     * Entonces debería ver la página de transectos con el código de estado 200.
      */
     public function test_authenticated_user_can_view_transects_index()
     {
-		$language = 'ca';
+        $language = 'ca';
         $response = $this->get("/$language/transects");
 
         $response->assertStatus(200);
@@ -40,107 +38,107 @@ class TransectControllerTest extends TestCase
     }
 
     /**
-     * Comprova que un usuari no autenticat és redirigit a la pàgina de login quan intenta accedir a la pàgina d'index de transectes.
+     * Comprueba que un usuario no autenticado es redirigido a la página de login cuando intenta acceder a la página de índice de transectos.
      *
-     * Donat un usuari no autenticat,
-     * Quan intenta accedir a la ruta /transects,
-     * Llavors hauria de ser redirigit a la pàgina de login.
+     * Dado un usuario no autenticado,
+     * Cuando intenta acceder a la ruta /transects,
+     * Entonces debería ser redirigido a la página de login.
      */
     public function test_guest_is_redirected_to_login_when_viewing_transects_index()
     {
         auth()->logout();
-		$language = 'ca';
+        $language = 'ca';
 
-		$response = $this->get("/$language/transects");
+        $response = $this->get("/$language/transects");
 
-		$response->assertRedirect("/$language/login");
+        $response->assertRedirect("/$language/login");
     }
 
     /**
-     * Comprova que un transecte es crea correctament per un usuari autenticat.
+     * Comprueba que un transecto se crea correctamente por un usuario autenticado.
      *
-     * Donat un usuari autenticat,
-     * Quan envia una petició POST a /transects amb dades vàlides,
-     * Llavors el transecte hauria de ser creat i redirigit amb un missatge d'èxit.
+     * Dado un usuario autenticado,
+     * Cuando envía una petición POST a /transects con datos válidos,
+     * Entonces el transecto debería ser creado y redirigido con un mensaje de éxito.
      */
     public function test_authenticated_user_can_create_transect()
     {
-		$user = User::factory()->create();
-		$this->actingAs($user);
+        $data = [
+            'name' => $this->faker->word,
+            '_token' => csrf_token()
+        ];
 
-		$data = [
-			'name' => $this->faker->word,
-			'_token' => csrf_token()
-		];
+        $language = 'ca';
 
-		$language = 'ca';
+        $response = $this->post(route('transects.store', ['language' => $language]), $data);
 
-		$response = $this->post(route('transects.store', ['language' => $language]), $data);
+        $response->assertRedirect();
+        $response->assertSessionHas('status', 'El transsecte ha estat creat amb èxit a la base de dades.');
 
-		$response->assertRedirect();
-		$response->assertSessionHas('status', 'El transsecte ha estat creat amb èxit a la base de dades.');
+        $this->assertDatabaseHas('transects', ['name' => $data['name']]);
+    }
 
-		$this->assertDatabaseHas('transects', ['name' => $data['name']]);
+    /**
+     * Comprueba que se produce un error al intentar crear un transecto con datos no válidos.
+     *
+     * Dado un usuario autenticado,
+     * Cuando envía una petición POST a /transects con datos no válidos,
+     * Entonces debería recibir errores de validación.
+     */
+    public function test_authenticated_user_cannot_create_transect_with_invalid_data()
+    {
+        $data = [
+            'name' => '',
+        ];
 
-	}
+        $language = 'ca';
 
-    // /**
-    //  * Comprova que es produeix un error en intentar crear un transecte amb dades no vàlides.
-    //  *
-    //  * Donat un usuari autenticat,
-    //  * Quan envia una petició POST a /transects amb dades no vàlides,
-    //  * Llavors hauria de rebre errors de validació.
-    //  */
-    // public function test_authenticated_user_cannot_create_transect_with_invalid_data()
-    // {
-    //     $data = [
-    //         'name' => '',
-    //     ];
+        $response = $this->post(route('transects.store', ['language' => $language]), $data);
 
-	// 	$language = 'ca';
+        $response->assertSessionHasErrors('name');
+    }
 
-    //     $response = $this->post(route('transects.store', ['language' => $language]), $data);
+    /**
+     * Comprueba que un transecto se puede actualizar correctamente por un usuario autenticado.
+     *
+     * Dado un usuario autenticado,
+     * Cuando envía una petición PUT a /transects/{id} con datos válidos,
+     * Entonces el transecto debería ser actualizado y redirigido con un mensaje de éxito.
+     */
+    public function test_authenticated_user_can_update_transect()
+    {
+        $transect = Transect::factory()->create();
+        $data = [
+            'name' => $this->faker->word,
+        ];
 
-    //     $response->assertSessionHasErrors('name');
-    // }
+        $language = 'ca';
 
-    // /**
-    //  * Comprova que un transecte es pot actualitzar correctament per un usuari autenticat.
-    //  *
-    //  * Donat un usuari autenticat,
-    //  * Quan envia una petició PUT a /transects/{id} amb dades vàlides,
-    //  * Llavors el transecte hauria de ser actualitzat i redirigit amb un missatge d'èxit.
-    //  */
-    // public function test_authenticated_user_can_update_transect()
-    // {
-    //     $transect = Transect::factory()->create();
-    //     $data = [
-    //         'name' => $this->faker->word,
-    //     ];
+        $response = $this->put(route('transects.update', ['language' => $language, 'transect' => $transect->id]), $data);
 
-    //     $response = $this->put("/transects/{$transect->id}", $data);
+        $response->assertRedirect();
+        $response->assertSessionHas('status', 'El transsecte ha estat actualitzat amb èxit a la base de dades.');
+        $this->assertDatabaseHas('transects', ['id' => $transect->id, 'name' => $data['name']]);
+    }
 
-    //     $response->assertRedirect();
-    //     $response->assertSessionHas('status', 'El transecto ha sido actualizado exitosamente en la base de datos.');
-    //     $this->assertDatabaseHas('transects', ['id' => $transect->id, 'name' => $data['name']]);
-    // }
+    /**
+     * Comprueba que se produce un error al intentar actualizar un transecto con datos no válidos.
+     *
+     * Dado un usuario autenticado,
+     * Cuando envía una petición PUT a /transects/{id} con datos no válidos,
+     * Entonces debería recibir errores de validación.
+     */
+    public function test_authenticated_user_cannot_update_transect_with_invalid_data()
+    {
+        $transect = Transect::factory()->create();
+        $data = [
+            'name' => '',
+        ];
 
-    // /**
-    //  * Comprova que es produeix un error en intentar actualitzar un transecte amb dades no vàlides.
-    //  *
-    //  * Donat un usuari autenticat,
-    //  * Quan envia una petició PUT a /transects/{id} amb dades no vàlides,
-    //  * Llavors hauria de rebre errors de validació.
-    //  */
-    // public function test_authenticated_user_cannot_update_transect_with_invalid_data()
-    // {
-    //     $transect = Transect::factory()->create();
-    //     $data = [
-    //         'name' => '', // Nom invàlid
-    //     ];
+        $language = 'ca';
 
-    //     $response = $this->put("/transects/{$transect->id}", $data);
+        $response = $this->put(route('transects.update', ['language' => $language, 'transect' => $transect->id]), $data);
 
-    //     $response->assertSessionHasErrors('name');
-    // }
+        $response->assertSessionHasErrors('name');
+    }
 }
