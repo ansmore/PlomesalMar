@@ -67,10 +67,6 @@ class Transect extends Model
             'name' => $request->input('name'),
         ]);
 
-        Log::info('Transect created from request:', [
-            'name' => $newTransect->name,
-        ]);
-
         return $newTransect;
     }
 

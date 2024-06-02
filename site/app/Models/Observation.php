@@ -66,10 +66,10 @@ class Observation extends Model
     }
 
     /**
-     * Busca observaciones basadas en el término de búsqueda proporcionado.
+     * Busca observacions basades en el terme de cerca proporcionat.
      *
      * @param Builder $query
-     * @param string|null $search Término de búsqueda
+     * @param string|null $search Terme de cerca
      * @return Builder
      */
     public function scopeSearch(Builder $query, $search): Builder
@@ -86,7 +86,7 @@ class Observation extends Model
     }
 
     /**
-     * Recupera observaciones filtradas según los criterios de búsqueda y ordenación proporcionados en la solicitud.
+     * Recupera observacions filtrades segons els criteris de cerca i ordenació proporcionats en la sol·licitud.
      *
      * @param Request $request
      * @return \Illuminate\Contracts\Pagination\LengthAwarePaginator
@@ -138,7 +138,7 @@ class Observation extends Model
                 try {
                     $this->deleteImageFromApi($imageObservation->image_id);
                 } catch (\Exception $e) {
-                    Log::error('Error al eliminar la imagen con ID: ' . $imageObservation->image_id . ': ' . $e->getMessage());
+                    Log::error('Error en eliminar la imatge amb ID: ' . $imageObservation->image_id . ': ' . $e->getMessage());
                 }
                 $imageObservation->delete();
             }
@@ -158,10 +158,10 @@ class Observation extends Model
             ])->delete(config('services.api.url') . "/api/V1/images/{$imageId}");
 
             if (!$response->successful()) {
-                throw new \Exception('Error al eliminar la imagen a través de la API');
+                throw new \Exception('Error en eliminar la imatge a través de l\'API');
             }
         } catch (\Exception $e) {
-            Log::error('Error al eliminar la imagen: ' . $e->getMessage());
+            Log::error('Error en eliminar la imatge: ' . $e->getMessage());
             throw $e;
         }
     }
@@ -195,7 +195,7 @@ class Observation extends Model
                     }
                 }
             } else {
-                Log::error('Error fetching image from API: ' . $response->body());
+                Log::error('Error en obtenir la imatge de l\'API: ' . $response->body());
             }
         }
         return $imageUrls;
@@ -229,8 +229,8 @@ class Observation extends Model
             )->post(config('services.api.url') . "/api/V1/images/{$imageId}");
 
             if (!$response->successful()) {
-                Log::error('Error updating image: ' . $response->body());
-                throw new \Exception('Error updating image.');
+                Log::error('Error en actualitzar la imatge: ' . $response->body());
+                throw new \Exception('Error en actualitzar la imatge.');
             }
         }
     }
@@ -255,8 +255,8 @@ class Observation extends Model
                     'photography_number' => $newImageNumbers[$index],
                 ]);
             } else {
-                Log::error('Error uploading new image: ' . $response->body());
-                throw new \Exception('Error uploading new image.');
+                Log::error('Error en pujar una nova imatge: ' . $response->body());
+                throw new \Exception('Error en pujar una nova imatge.');
             }
         }
     }
@@ -271,8 +271,8 @@ class Observation extends Model
         if ($response->successful()) {
             ImageObservation::where('image_id', $imageId)->where('observation_id', $this->id)->delete();
         } else {
-            Log::error('Error deleting image: ' . $response->body());
-            throw new \Exception('Error al eliminar la imagen.');
+            Log::error('Error en eliminar la imatge: ' . $response->body());
+            throw new \Exception('Error en eliminar la imatge.');
         }
     }
 

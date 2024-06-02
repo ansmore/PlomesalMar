@@ -23,11 +23,9 @@ class DepartureObservation extends Model
     
     public static function createRelations($departureId, $observationId)
     {
-        foreach ($allUsers as $user) {
             self::create([
                 'departure_id' => $departureId,
                 'observation_id' => $observationId
             ]);
-        }
     }
 }
