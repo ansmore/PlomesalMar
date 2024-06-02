@@ -32,12 +32,12 @@ class TransectController extends Controller
         ]);
 
         try {
-			Log::info('Peticio rebuda: ', $request->all());
+            Log::info('Petició rebuda: ', $request->all());
             $transect = Transect::createFromRequest($request);
-            return redirect()->back()->with('status', 'El transecto ha sido creado exitosamente en la base de datos.');
+            return redirect()->back()->with('status', 'El transsecte ha estat creat amb èxit a la base de dades.');
         } catch (\Exception $e) {
-            Log::error('Error al intentar crear un nuevo transecto en la base de datos: ' . $e->getMessage());
-            return redirect()->back()->with('error', 'No se pudo registrar el transecto en la base de datos. Por favor, revise los detalles e intente de nuevo.');
+            Log::error('Error en intentar crear un nou transsecte a la base de dades: ' . $e->getMessage());
+            return redirect()->back()->with('error', 'No s\'ha pogut registrar el transsecte a la base de dades. Si us plau, revisi els detalls i intenti-ho de nou.');
         }
     }
 
@@ -53,13 +53,13 @@ class TransectController extends Controller
         try {
             $success = Transect::updateFromRequest($request, $id);
             if ($success) {
-                return redirect()->back()->with('status', 'El transecto ha sido actualizado exitosamente en la base de datos.');
+                return redirect()->back()->with('status', 'El transsecte ha estat actualitzat amb èxit a la base de dades.');
             } else {
-                return redirect()->back()->with('error', 'La actualización del transecto falló. No se encontraron cambios o el transecto no existe.');
+                return redirect()->back()->with('error', 'L\'actualització del transsecte ha fallat. No s\'han trobat canvis o el transsecte no existeix.');
             }
         } catch (\Exception $e) {
-            Log::error('Error al actualizar el transecto en la base de datos: ' . $e->getMessage());
-            return redirect()->back()->with('error', 'Ocurrió un error al intentar actualizar el transecto. Por favor, intente de nuevo.');
+            Log::error('Error en actualitzar el transsecte a la base de dades: ' . $e->getMessage());
+            return redirect()->back()->with('error', 'S\'ha produït un error en intentar actualitzar el transsecte. Si us plau, intenti-ho de nou.');
         }
     }
 }

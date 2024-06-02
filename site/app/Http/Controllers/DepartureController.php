@@ -48,12 +48,12 @@ class DepartureController extends Controller
                 'users' => 'array',
                 'users.*' => 'exists:users,id'
             ], [
-                'date.required' => 'La fecha es obligatoria para crear una salida.'
+                'date.required' => 'La data és obligatòria per crear una sortida.'
             ]);
 
         } catch (ValidationException $e) {
-            Log::error('Error de validación.', ['errors' => $e->errors()]);
-            $errorMessage = $e->validator->errors()->first('date') ?? 'Datos de entrada inválidos.';
+            Log::error('Error de validació.', ['errors' => $e->errors()]);
+            $errorMessage = $e->validator->errors()->first('date') ?? 'Dades d\'entrada invàlides.';
             return redirect()->back()->with('error', $errorMessage)->withInput();
         }
 
@@ -61,13 +61,13 @@ class DepartureController extends Controller
             $departure = Departure::createIfNotExists($validated);
 
             if ($departure) {
-                return redirect()->back()->with('status', "La salida se ha creado con éxito.");
+                return redirect()->back()->with('status', "La sortida s'ha creat amb èxit.");
             } else {
-                return redirect()->back()->with('status', "La salida ya existe.");
+                return redirect()->back()->with('status', "La sortida ja existeix.");
             }
         } catch (\Exception $e) {
-            Log::error('Error al intentar crear una nueva salida en la base de datos: ' . $e->getMessage());
-            return redirect()->back()->with('error', 'No se pudo registrar la salida en la base de datos. Por favor, revise los detalles e intente de nuevo.');
+            Log::error('Error en intentar crear una nova sortida a la base de dades: ' . $e->getMessage());
+            return redirect()->back()->with('error', 'No s\'ha pogut registrar la sortida a la base de dades. Si us plau, revisi els detalls i intenti-ho de nou.');
         }
     }
 
@@ -87,13 +87,13 @@ class DepartureController extends Controller
         try {
             $success = Departure::updateFromRequest($request, $id);
             if ($success) {
-                return redirect()->back()->with('status', "La salida se ha actualizado con éxito.");
+                return redirect()->back()->with('status', "La sortida s'ha actualitzat amb èxit.");
             } else {
-                return redirect()->back()->with('error', 'La actualización de la salida falló. No se encontraron cambios o la salida no existe.');
+                return redirect()->back()->with('error', 'L\'actualització de la sortida ha fallat. No s\'han trobat canvis o la sortida no existeix.');
             }
         } catch (\Exception $e) {
-            Log::error('Error al actualizar la salida en la base de datos: ' . $e->getMessage());
-            return redirect()->back()->with('error', 'Ocurrió un error al intentar actualizar la salida. Por favor, intente de nuevo.');
+            Log::error('Error en actualitzar la sortida a la base de dades: ' . $e->getMessage());
+            return redirect()->back()->with('error', 'S\'ha produït un error en intentar actualitzar la sortida. Si us plau, intenti-ho de nou.');
         }
     }
 
@@ -107,9 +107,9 @@ class DepartureController extends Controller
 
             $departure->deleteIfNoObservations();
 
-            return redirect()->back()->with('status', 'La salida se ha eliminado con éxito.');
+            return redirect()->back()->with('status', 'La sortida s\'ha eliminat amb èxit.');
         } catch (\Exception $e) {
-            Log::error('Error al intentar eliminar la salida: ' . $e->getMessage());
+            Log::error('Error en intentar eliminar la sortida: ' . $e->getMessage());
             return redirect()->back()->with('error', $e->getMessage());
         }
     }

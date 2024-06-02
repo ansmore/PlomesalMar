@@ -78,7 +78,7 @@ class TransectControllerTest extends TestCase
 		$response = $this->post(route('transects.store', ['language' => $language]), $data);
 
 		$response->assertRedirect();
-		$response->assertSessionHas('status', 'El transecto ha sido creado exitosamente en la base de datos.');
+		$response->assertSessionHas('status', 'El transsecte ha estat creat amb èxit a la base de dades.');
 
 		$this->assertDatabaseHas('transects', ['name' => $data['name']]);
 

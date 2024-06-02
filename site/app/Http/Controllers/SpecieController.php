@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Log;
 
 class SpecieController extends Controller
 {
-	public function __construct()
+    public function __construct()
     {
         $this->middleware('auth');
     }
@@ -34,10 +34,10 @@ class SpecieController extends Controller
 
         try {
             $specie = Specie::createFromRequest($request);
-            return redirect()->back()->with('status', 'La especie ha sido creada exitosamente en la base de datos.');
+            return redirect()->back()->with('status', 'L\'espècie ha estat creada amb èxit a la base de dades.');
         } catch (\Exception $e) {
-            Log::error('Error al intentar crear una nueva especie en la base de datos: ' . $e->getMessage());
-            return redirect()->back()->with('error', 'No se pudo registrar la especie en la base de datos. Por favor, revise los detalles e intente de nuevo.');
+            Log::error('Error en intentar crear una nova espècie a la base de dades: ' . $e->getMessage());
+            return redirect()->back()->with('error', 'No s\'ha pogut registrar l\'espècie a la base de dades. Si us plau, revisi els detalls i intenti-ho de nou.');
         }
     }
 
@@ -54,13 +54,13 @@ class SpecieController extends Controller
         try {
             $success = Specie::updateFromRequest($request, $id);
             if ($success) {
-                return redirect()->back()->with('status', 'La especie ha sido actualizada exitosamente en la base de datos.');
+                return redirect()->back()->with('status', 'L\'espècie ha estat actualitzada amb èxit a la base de dades.');
             } else {
-                return redirect()->back()->with('error', 'La actualización de la especie falló. No se encontraron cambios o la especie no existe.');
+                return redirect()->back()->with('error', 'L\'actualització de l\'espècie ha fallat. No s\'han trobat canvis o l\'espècie no existeix.');
             }
         } catch (\Exception $e) {
-            Log::error('Error al actualizar la especie en la base de datos: ' . $e->getMessage());
-            return redirect()->back()->with('error', 'Ocurrió un error al intentar actualizar la especie. Por favor, intente de nuevo.');
+            Log::error('Error en actualitzar l\'espècie a la base de dades: ' . $e->getMessage());
+            return redirect()->back()->with('error', 'S\'ha produït un error en intentar actualitzar l\'espècie. Si us plau, intenti-ho de nou.');
         }
     }
 }

@@ -34,10 +34,10 @@ class BoatController extends Controller
 
         try {
             $boat = Boat::createFromRequest($request);
-            return redirect()->back()->with('status', 'El barco ha sido creado exitosamente en la base de datos.');
+            return redirect()->back()->with('status', 'El vaixell ha estat creat amb èxit a la base de dades.');
         } catch (\Exception $e) {
-            Log::error('Error al intentar crear un nuevo barco en la base de datos: ' . $e->getMessage());
-            return redirect()->back()->with('error', 'No se pudo registrar el barco en la base de datos. Por favor, revise los detalles e intente de nuevo.');
+            Log::error('Error en intentar crear un nou vaixell a la base de dades: ' . $e->getMessage());
+            return redirect()->back()->with('error', 'No s\'ha pogut registrar el vaixell a la base de dades. Si us plau, revisi els detalls i intenti-ho de nou.');
         }
     }
 
@@ -54,13 +54,13 @@ class BoatController extends Controller
         try {
             $success = Boat::updateFromRequest($request, $id);
             if ($success) {
-                return redirect()->back()->with('status', 'El barco ha sido actualizado exitosamente en la base de datos.');
+                return redirect()->back()->with('status', 'El vaixell ha estat actualitzat amb èxit a la base de dades.');
             } else {
-                return redirect()->back()->with('error', 'La actualización del barco falló. No se encontraron cambios o el barco no existe.');
+                return redirect()->back()->with('error', 'L\'actualització del vaixell ha fallat. No s\'han trobat canvis o el vaixell no existeix.');
             }
         } catch (\Exception $e) {
-            Log::error('Error al actualizar el barco en la base de datos: ' . $e->getMessage());
-            return redirect()->back()->with('error', 'Ocurrió un error al intentar actualizar el barco. Por favor, intente de nuevo.');
+            Log::error('Error en actualitzar el vaixell a la base de dades: ' . $e->getMessage());
+            return redirect()->back()->with('error', 'S\'ha produït un error en intentar actualitzar el vaixell. Si us plau, intenti-ho de nou.');
         }
     }
 }

@@ -32,10 +32,10 @@ class Departure extends Model
     }
 
     /**
-     * Busca salidas basadas en el término de búsqueda proporcionado.
+     * Busca sortides basades en el terme de cerca proporcionat.
      *
      * @param Builder $query
-     * @param string|null $search Término de búsqueda
+     * @param string|null $search Terme de cerca
      * @return Builder
      */
     public function scopeSearch(Builder $query, $search): Builder
@@ -51,7 +51,7 @@ class Departure extends Model
     }
 
     /**
-     * Recupera departures filtrados según los criterios de búsqueda y ordenación almacenados en la sesión.
+     * Recupera sortides filtrades segons els criteris de cerca i ordenació emmagatzemats a la sessió.
      *
      * @param Request $request
      * @return \Illuminate\Contracts\Pagination\LengthAwarePaginator
@@ -69,7 +69,7 @@ class Departure extends Model
     }
 
     /**
-     * Crea una salida si no existe.
+     * Crea una sortida si no existeix.
      *
      * @param array $data
      * @return Departure|null
@@ -97,10 +97,10 @@ class Departure extends Model
     }
 
     /**
-     * Actualiza una salida a partir de los datos proporcionados en la solicitud.
+     * Actualitza una sortida a partir de les dades proporcionades a la sol·licitud.
      *
      * @param Request $request
-     * @param int $id Identificador de la salida a actualizar.
+     * @param int $id Identificador de la sortida a actualitzar.
      * @return bool
      */
     public static function updateFromRequest(Request $request, $id): bool
@@ -125,7 +125,7 @@ class Departure extends Model
     public function deleteIfNoObservations()
     {
         if ($this->observations()->count() > 0) {
-            throw new \Exception('No se puede eliminar la salida porque tiene observaciones relacionadas.');
+            throw new \Exception('No es pot eliminar la sortida perquè té observacions relacionades.');
         }
 
         return $this->delete();

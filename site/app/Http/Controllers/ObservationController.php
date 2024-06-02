@@ -94,19 +94,19 @@ class ObservationController extends Controller
                             'photography_number' => $validatedData['image_number'][$index] ?? null,
                         ]);
                     } else {
-                        Log::error('Error uploading image: ' . $response->body());
-                        throw new \Exception('Error al subir una o más imágenes.');
+                        Log::error('Error pujant la imatge: ' . $response->body());
+                        throw new \Exception('Error en pujar una o més imatges.');
                     }
                 }
             }
 
             DB::commit();
 
-            return redirect()->route('observations.index', ['language' => $language])->with('status', 'Observación creada correctamente.');
+            return redirect()->route('observations.index', ['language' => $language])->with('status', 'Observació creada correctament.');
         } catch (\Exception $e) {
             DB::rollBack();
-            Log::error('Error creating observation: ' . $e->getMessage());
-            return redirect()->back()->with('error', 'Error al crear la observación: ' . $e->getMessage());
+            Log::error('Error creant l\'observació: ' . $e->getMessage());
+            return redirect()->back()->with('error', 'Error en crear l\'observació: ' . $e->getMessage());
         }
     }
 
@@ -175,11 +175,11 @@ class ObservationController extends Controller
 
             DB::commit();
 
-            return redirect()->route('observations.index', ['language' => $language])->with('status', 'Observación actualizada correctamente.');
+            return redirect()->route('observations.index', ['language' => $language])->with('status', 'Observació actualitzada correctament.');
         } catch (\Exception $e) {
             DB::rollBack();
-            Log::error('Error updating observation: ' . $e->getMessage());
-            return redirect()->back()->with('error', 'Error al actualizar la observación: ' . $e->getMessage());
+            Log::error('Error actualitzant l\'observació: ' . $e->getMessage());
+            return redirect()->back()->with('error', 'Error en actualitzar l\'observació: ' . $e->getMessage());
         }
     }
 
@@ -195,11 +195,11 @@ class ObservationController extends Controller
 
             DB::commit();
 
-            return redirect()->route('observations.edit', ['language' => $language, 'observation' => $observationId])->with('status', 'Imagen eliminada correctamente.');
+            return redirect()->route('observations.edit', ['language' => $language, 'observation' => $observationId])->with('status', 'Imatge eliminada correctament.');
         } catch (\Exception $e) {
             DB::rollBack();
-            Log::error('Error deleting image: ' . $e->getMessage());
-            return redirect()->back()->with('error', 'Error al eliminar la imagen: ' . $e->getMessage());
+            Log::error('Error eliminant la imatge: ' . $e->getMessage());
+            return redirect()->back()->with('error', 'Error en eliminar la imatge: ' . $e->getMessage());
         }
     }
 
@@ -227,15 +227,15 @@ class ObservationController extends Controller
             $observation = Observation::find($id);
 
             if (!$observation) {
-                Log::warning('No se encontró la observación con ID: ' . $id);
-                return redirect()->back()->with('error', 'No se encontró la observación.');
+                Log::warning('No s\'ha trobat l\'observació amb ID: ' . $id);
+                return redirect()->back()->with('error', 'No s\'ha trobat l\'observació.');
             }
 
             $observation->deleteWithRelations();
 
-            return redirect()->back()->with('status', 'La observación se ha eliminado con éxito.');
+            return redirect()->back()->with('status', 'L\'observació s\'ha eliminat amb èxit.');
         } catch (\Exception $e) {
-            Log::error('Error al intentar eliminar la observación: ' . $e->getMessage());
+            Log::error('Error en intentar eliminar l\'observació: ' . $e->getMessage());
             return redirect()->back()->with('error', $e->getMessage());
         }
     }

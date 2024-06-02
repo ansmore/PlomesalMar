@@ -98,13 +98,6 @@ class LanguageController extends Controller
 						echo "Problemes en la ruta.";
 						break;
 				}
-				// Utilitza $newUrl per a construir la ruta final amb el llenguatge
-				// $newUrl = route($segments, [
-				// 	'language' => $getLanguage,
-				// 	'id' => $setIdSegment,
-				// 	'user' => $setIdSegment,
-				// 	'observation' => $setIdSegment
-				// ]);
 
 				Log::channel('language_middleware')->info('concat_diferent', [
 					'language' => $setLanguage,
