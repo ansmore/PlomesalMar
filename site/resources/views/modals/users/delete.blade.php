@@ -27,9 +27,10 @@
                     <p class="form__group__content" data-text="messageDelete"></p>
 
                     <div class="form__group__buttons">
-                        <button type="button" class="btn btn-secondary form__button__back"
-                            data-bs-dismiss="modal">Cancelar</button>
-                        <button type="submit" class="btn btn-danger form__button__close">Eliminar</button>
+                        <button type="button" class="btn btn-secondary form__button__back" data-bs-dismiss="modal"
+                            data-text="cancelButton"></button>
+                        <button type="submit" class="btn btn-danger form__button__close"
+                            data-text="deleteButton"></button>
                     </div>
                 </form>
             </article>

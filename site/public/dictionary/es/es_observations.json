@@ -15,5 +15,7 @@
 	"user": "Usuario",
 	"imageNumber": "Número de la imagen",
 	"image": "Imagen",
-	"departure": "Salida"
+	"departure": "Salida",
+
+	"timeObservationModal": "Hora de la observación"
 }

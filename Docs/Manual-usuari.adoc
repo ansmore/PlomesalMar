@@ -1,9 +1,9 @@
-= Projecte CETACEA
+= Projecte Plomes al mar
 
-Benvinguts a la presentació de CETACEA! 
+Benvinguts a la presentació de Plomes al mar! 
 Us presentem un projecte d'aplicació web corresponent al projecte final M12 corresponent al treball final del grau superior de disseny d'aplicacions web (DAW) de l'institut Nicolau Copèrnic de Terrassa.
 
-En aquest projecte us presentem el projecte CETACEA, un projecte de recerca i difusió del coneixement de les espècies d'aus en un entorn marítim a través d'una aplicació web, on els amants de l'ornitologia podran compartir les seves experiències i interès per les aus.
+En aquest projecte us presentem el projecte Plomes al mar, un projecte de recerca i difusió del coneixement de les espècies d'aus en un entorn marítim a través d'una aplicació web, on els amants de l'ornitologia podran compartir les seves experiències i interès per les aus.
 
 L'aplicació està construïda a través de la participació dels usuaris que, mitjançant la creació d'un perfil, podran compartir les seves experiències. Aquesta aplicació té l'objectiu de crear una comunitat digital sobre els amants de l'ornitologia i estendre el coneixement sobre les espècies d'aus que podem trobar en el nostre apreciat entorn natural.
 
@@ -23,7 +23,7 @@ A continuació us mostrarem els principals aspectes i accions de l'aplicació:
 
 == Apartat de gestió
 
-En aquest apartat podem veure l'espai de gestió del projecte CETACEA, un projecte dedicat a la recerca i difusió del coneixement de les espècies d'aus en un entorn marítim.
+En aquest apartat podem veure l'espai de gestió del projecte Plomes al mar, un projecte dedicat a la recerca i difusió del coneixement de les espècies d'aus en un entorn marítim.
 
 En aquest primer apartat trobem els ítems de sortida, observació, espècie, vaixell i transecte, apartats on es podrà introduir i modificar la informació dels apartats nomenats anteriorment i que és la part col·laborativa de l'aplicació web on els usuaris poden documentar les seves experiències.
 

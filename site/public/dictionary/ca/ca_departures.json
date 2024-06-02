@@ -7,5 +7,7 @@
 
 	"boatNameModal": "Nom del vaixell: ",
 	"transectNameModal": "Nom del transecte: ",
-	"dateModal": "Data: "
+	"dateModal": "Data: ",
+
+	"departureNameModal": "Nom de la sortida: "
 }

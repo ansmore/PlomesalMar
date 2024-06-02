@@ -7,5 +7,7 @@
 
 	"boatNameModal": "Nombre del barco: ",
 	"transectNameModal": "Nombre del transecto: ",
-	"dateModal": "Fecha: "
+	"dateModal": "Fecha: ",
+
+	"departureNameModal": "Nombre de la salida: "
 }

@@ -1,0 +1,73 @@
+.card__graph {
+
+	@include boxSize(width, 100%, null, 100%);
+	@include style(inherit, $neutral_lighter);
+	@include boxShadow($primary_main, $radius, 2px, $secondary_main, $secondary_light);
+
+	margin: 1rem auto;
+	transition: 0.3s;
+
+	padding: calc($gap * 2);
+
+	.graph__controls {
+		display: grid;
+		grid-template-columns: 2fr 2fr 1fr;
+
+		.select {
+			width: 80%;
+			@extend .formInput;
+		}
+
+		.content {
+			@extend .subtitle;
+
+			font-size: $size_medium;
+		}
+	}
+
+	.graph__multi {
+
+		display: grid;
+
+		grid-template-columns: 1fr;
+
+		@media screen and (min-width: 600px) {
+			grid-template-columns: 1fr 1fr 1fr;
+
+		}
+
+		.select {
+			width: 80%;
+			@extend .formInput;
+		}
+
+		.content {
+			@extend .subtitle;
+
+			font-size: $size_medium;
+		}
+	}
+
+	.button__success {
+		@extend .form__button__success;
+	}
+}
+
+.multigraph__box {
+
+	@include boxSize(width, 100%, null, 100%);
+	@include style(inherit, $neutral_lighter);
+	@include boxShadow($primary_main, $radius, 2px, $secondary_main, $secondary_light);
+
+	margin: 1rem auto;
+	transition: 0.3s;
+
+	padding: calc($gap * 2);
+	display: grid;
+
+	grid-template-columns: 1fr;
+
+	.graph__box {
+		max-width: 100%;
+	}
+}
