@@ -27,34 +27,35 @@ class LanguageController extends Controller
 				$setFirstSegment = "home";
             }
 
-            // Initialize ordenationString as empty
-                $ordenationString = '';
-            $ordenationAdmin= '';
+            // Initialize QueriString as empty
+            $firstItemQueriString = '';
+            $secondItemQueriString= '';
+			$thirdItemQueriString='';
 
             // Check if first segment contains '?'
             if (strpos($setFirstSegment, '?') !== false) {
-                list($setFirstSegment, $ordenationString) = explode('?', $setFirstSegment, 2);
+                list($setFirstSegment, $firstItemQueriString) = explode('?', $setFirstSegment, 2);
             }
 
 			// Check if second segment contains '?'
             if (strpos($setSecondSegment, '?') !== false) {
-                list($setSecondSegment, $ordenationAdmin) = explode('?', $setSecondSegment, 2);
+                list($setSecondSegment, $secondItemQueriString) = explode('?', $setSecondSegment, 2);
             }
 
 			// Check if third segment contains '?'
             if (strpos($setThirdSegment, '?') !== false) {
-                list($setThirdSegment, $ordenationAdmin) = explode('?', $setThirdSegment, 2);
+                list($setThirdSegment, $thirdItemQueriString) = explode('?', $setThirdSegment, 2);
             }
 
 			Session::put('language', $setLanguage);
 			$getLanguage = session('language');
 
-			if ($setSecondSegment === "") {
 
+			if ($setSecondSegment === "") {
 				// Construye la nueva URL con el idioma actual
 				$newUrl = route($setFirstSegment, ['language' => $getLanguage]);
 
-			} else if($ordenationAdmin !== "") {
+			} else if($secondItemQueriString !== "") {
 
 				$segments2 = $setFirstSegment.".".$setSecondSegment;
 
@@ -64,34 +65,58 @@ class LanguageController extends Controller
 				]);
 
 				Log::channel('language_middleware')->info('concat_admin', [
-					'segments2' => $segments2,
-					'secondSegment' =>  $setSecondSegment,
-					'ordenationAdmin' => $ordenationAdmin,
-					'newUrl' => $newUrl,
-					'user' => $setIdSegment,
-					'observation' => $setIdSegment
+					'language' => $setLanguage,
+					'url' => $newUrl,
+					'firstSegment' => $setFirstSegment,
+					'secondSegment' => $setSecondSegment,
+					'idSegment' => $setIdSegment,
+					'thirdSegment' => $setThirdSegment,
+					'othersSegments' => $setOthersSegments,
+					'firstItemQueriString' => $firstItemQueriString,
+					'secondItemQueriString' => $secondItemQueriString,
+					'thirdItemQueriString' => $thirdItemQueriString,
 				]);
 
 			} else if ($setSecondSegment !== $setOthersSegments) {
 
 				$segments = $setFirstSegment.".".$setSecondSegment.".".$setThirdSegment;
 
+				switch($setSecondSegment){
+					case "user":
+						$newUrl = route($segments, [
+							'language' => $getLanguage,
+							'user' => $setIdSegment,
+						]);
+						break;
+					case "observation":
+						$newUrl = route($segments, [
+							'language' => $getLanguage,
+							'observation' => $setIdSegment,
+						]);
+						break;
+					default:
+						echo "Problemes en la ruta.";
+						break;
+				}
 				// Utilitza $newUrl per a construir la ruta final amb el llenguatge
-				$newUrl = route($segments, [
-					'language' => $getLanguage,
-					'id' => $setIdSegment,
-					'user' => $setIdSegment,
-					'observation' => $setIdSegment
-				]);
+				// $newUrl = route($segments, [
+				// 	'language' => $getLanguage,
+				// 	'id' => $setIdSegment,
+				// 	'user' => $setIdSegment,
+				// 	'observation' => $setIdSegment
+				// ]);
 
 				Log::channel('language_middleware')->info('concat_diferent', [
-					'secondSegment' =>  $setSecondSegment,
-					'thirdSegment' =>  $setThirdSegment,
-					'ordenationAdmin' => $ordenationAdmin,
-					'newUrl' => $newUrl,
-					'segments' => $segments,
-					'user' => $setIdSegment,
-					'observation' => $setIdSegment
+					'language' => $setLanguage,
+					'url' => $newUrl,
+					'firstSegment' => $setFirstSegment,
+					'secondSegment' => $setSecondSegment,
+					'idSegment' => $setIdSegment,
+					'thirdSegment' => $setThirdSegment,
+					'othersSegments' => $setOthersSegments,
+					'firstItemQueriString' => $firstItemQueriString,
+					'secondItemQueriString' => $secondItemQueriString,
+					'thirdItemQueriString' => $thirdItemQueriString,
 				]);
 
 			}else {
@@ -103,34 +128,34 @@ class LanguageController extends Controller
 
 				$newUrl = route($segments, [
 					'language' => $getLanguage,
-					// 'user' => $setIdSegment,
-					// 'observation' => $setIdSegment
 				]);
 			}
 
 			Log::channel('language_middleware')->info('Setting language', [
 				'language' => $setLanguage,
+				'url' => $newUrl,
 				'firstSegment' => $setFirstSegment,
 				'secondSegment' => $setSecondSegment,
 				'idSegment' => $setIdSegment,
 				'thirdSegment' => $setThirdSegment,
 				'othersSegments' => $setOthersSegments,
-				'ordenationString' => $ordenationString,
-				'ordenationAdmin' => $ordenationAdmin,
-				'url' => $newUrl
+				'firstItemQueriString' => $firstItemQueriString,
+				'secondItemQueriString' => $secondItemQueriString,
+				'thirdItemQueriString' => $thirdItemQueriString,
 			]);
 
 			return response()->json([
 				'success' => true,
+				'newUrl' => $newUrl,
 				'language' => $getLanguage,
 				'firstSegment' => $setFirstSegment,
 				'secondSegment' => $setSecondSegment,
 				'idSegment' => $setIdSegment,
 				'thirdSegment' => $setThirdSegment,
 				'othersSegments' => $setOthersSegments,
-				'newUrl' => $newUrl,
-				'ordenationString' => $ordenationString,
-				'ordenationAdmin' => $ordenationAdmin,
+				'firstItemQueriString' => $firstItemQueriString,
+				'secondItemQueriString' => $secondItemQueriString,
+				'thirdItemQueriString' => $thirdItemQueriString,
 			]);
 
         }catch(\Exception $e){

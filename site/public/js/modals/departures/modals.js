@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
     setupModalEventListenersDepartures();
 });
 export const setupModalEventListenersDepartures = () => {
@@ -7,7 +7,9 @@ export const setupModalEventListenersDepartures = () => {
         button.removeEventListener("click", handleModalButtonClick);
         button.addEventListener("click", handleModalButtonClick);
     });
-    document.querySelectorAll('[data-bs-dismiss="modal"]').forEach((button) => {
+    document
+        .querySelectorAll('[data-bs-dismiss="modal"]')
+        .forEach((button) => {
         button.removeEventListener("click", closeModalButtonClick);
         button.addEventListener("click", closeModalButtonClick);
     });
@@ -17,7 +19,9 @@ export const cleanupDepartures = () => {
     buttons.forEach((button) => {
         button.removeEventListener("click", handleModalButtonClick);
     });
-    document.querySelectorAll('[data-bs-dismiss="modal"]').forEach((button) => {
+    document
+        .querySelectorAll('[data-bs-dismiss="modal"]')
+        .forEach((button) => {
         button.removeEventListener("click", closeModalButtonClick);
     });
 };
@@ -40,7 +44,10 @@ const handleModalButtonClick = (event) => {
     const transectId = button.getAttribute("data-transect-id");
     const transectName = button.getAttribute("data-transect-name");
     const date = button.getAttribute("data-date");
-    const observers = button.getAttribute("data-observers")?.split(',').map(name => name.trim()) || [];
+    const observers = button
+        .getAttribute("data-observers")
+        ?.split(",")
+        .map((name) => name.trim()) || [];
     switch (modalId) {
         case "createDeparture":
             openModal(modal);
@@ -53,7 +60,11 @@ const handleModalButtonClick = (event) => {
             handleEditDepartureModal(modal, departureId, boatId, transectId, date, observers);
             break;
         case "detailsDepartureModal":
-            if (!departureId || !boatName || !transectName || !date || !observers) {
+            if (!departureId ||
+                !boatName ||
+                !transectName ||
+                !date ||
+                !observers) {
                 console.error("Faltan atributos de datos");
                 return;
             }
@@ -102,8 +113,8 @@ const handleEditDepartureModal = (modal, departureId, boatId, transectId, date, 
     inputBoatId.value = boatId;
     inputTransectId.value = transectId;
     inputDate.value = date;
-    checkboxes.forEach(checkbox => {
-        checkbox.checked = observers.includes(checkbox.nextElementSibling?.textContent?.trim() || '');
+    checkboxes.forEach((checkbox) => {
+        checkbox.checked = observers.includes(checkbox.nextElementSibling?.textContent?.trim() || "");
     });
     openModal(modal);
 };
@@ -112,16 +123,19 @@ const handleDetailsDepartureModal = (modal, departureId, boatName, transectName,
     const detailsTransectName = modal.querySelector("#details_transect_name");
     const detailsDate = modal.querySelector("#details_date");
     const detailsObservers = modal.querySelector("#details_observers");
-    if (!detailsBoatName || !detailsTransectName || !detailsDate || !detailsObservers) {
+    if (!detailsBoatName ||
+        !detailsTransectName ||
+        !detailsDate ||
+        !detailsObservers) {
         console.error("Faltan campos de texto en el modal de detalles");
         return;
     }
     detailsBoatName.textContent = boatName;
     detailsTransectName.textContent = transectName;
     detailsDate.textContent = date;
-    detailsObservers.innerHTML = '';
-    observers.forEach(observer => {
-        const li = document.createElement('li');
+    detailsObservers.innerHTML = "";
+    observers.forEach((observer) => {
+        const li = document.createElement("li");
         li.textContent = observer;
         detailsObservers.appendChild(li);
     });

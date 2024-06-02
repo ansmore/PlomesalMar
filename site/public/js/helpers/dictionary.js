@@ -190,8 +190,13 @@ export const loadText = async () => {
     try {
         const currentUrl = window.location.href;
         const availablePages = await loadAvailablesFiles();
-        const firstSegment = await getFirstSegment(currentUrl);
+        let firstSegment = await getFirstSegment(currentUrl);
+        console.log("Aqui first segment", firstSegment);
         const finalSelectedLanguage = await getFinalLanguage();
+        if (firstSegment.includes("?")) {
+            firstSegment = firstSegment.split("?")[0];
+        }
+        console.log("Aqui first segment->2", firstSegment);
         const selectedPage = availablePages.includes(firstSegment)
             ? firstSegment
             : "home";

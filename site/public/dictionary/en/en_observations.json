@@ -4,8 +4,8 @@
 	"observationsList": "Observations List",
 
 	"selectDeperture": "Select Departure: ",
-	"selectDepertureOption": "Select a Departure",
-	"timeObservationCreate": "Time of Observation",
+	"selectDepertureOption": "Select a Departure:",
+	"timeObservationCreate": "Time of Observation:",
 	"waypoint": "Waypoint",
 	"selectSpecie": "Select Species",
 	"numberElements": "Number of Elements",

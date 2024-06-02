@@ -23,7 +23,7 @@
                     <div class="tableObservation">
 
                         <div class="table__group">
-                            <label class="table__group__content" data-text="departure">Departure</label>
+                            <label class="table__group__content" data-text="selectDeperture"></label>
                             <p class="table__group__value">{{ $departures->firstWhere('id', $departureId)->date }}</p>
                         </div>
                         <div class="table__group">
@@ -82,4 +82,11 @@
             </article>
         </section>
     </main>
+
+    @push('scripts')
+        <script type="module" src="{{ asset('js/pages/management.js') }}" defer></script>
+        <script type="module" src="{{ asset('js/partials/table.js') }}" defer></script>
+        <script type="module" src="{{ asset('js/components/message.js') }}" defer></script>
+    @endpush
+
 @endsection

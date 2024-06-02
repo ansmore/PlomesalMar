@@ -347,7 +347,7 @@ button {
   border: 1px solid #9d9d9c;
 }
 
-.button, .form__button__back, .form__button__close, .form__button__success, .auth .row .form__group__button {
+.button, .form__button__back, .form__button__close, .form__button__success, .plomesalmarContact .row .form__group__button, .auth .row .form__group__button {
   padding: 0.5rem;
   margin: 0.5rem;
   color: #fafafa;
@@ -355,18 +355,18 @@ button {
   border: 1px solid transparent;
   border-radius: 0.25rem;
 }
-.button:hover, .form__button__back:hover, .form__button__close:hover, .form__button__success:hover, .auth .row .form__group__button:hover {
+.button:hover, .form__button__back:hover, .form__button__close:hover, .form__button__success:hover, .plomesalmarContact .row .form__group__button:hover, .auth .row .form__group__button:hover {
   color: #fafafa;
   background-color: #0079D0;
   border: 1px solid #00518C;
 }
 
-.form__button__success, .auth .row .form__group__button {
+.form__button__success, .plomesalmarContact .row .form__group__button, .auth .row .form__group__button {
   background-color: #0065AE;
   color: #fafafa;
   border: 1px solid transparent;
 }
-.form__button__success:hover, .auth .row .form__group__button:hover {
+.form__button__success:hover, .plomesalmarContact .row .form__group__button:hover, .auth .row .form__group__button:hover {
   color: #fafafa;
   background-color: #0079D0;
   border: 1px solid #00518C;
@@ -1952,7 +1952,7 @@ button {
   align-self: center;
   margin-bottom: 0.5rem;
 }
-.management .row .box__search .form__button__success, .management .auth .row .box__search .form__group__button, .auth .management .row .box__search .form__group__button {
+.management .row .box__search .form__button__success, .management .auth .row .box__search .form__group__button, .auth .management .row .box__search .form__group__button, .management .plomesalmarContact .row .box__search .form__group__button, .plomesalmarContact .management .row .box__search .form__group__button {
   margin: 0;
 }
 .management .row .box__back {
@@ -1976,7 +1976,7 @@ button {
   align-self: center;
   margin-bottom: 0.5rem;
 }
-.management .row .box__next .form__button__success, .management .auth .row .box__next .form__group__button, .auth .management .row .box__next .form__group__button {
+.management .row .box__next .form__button__success, .management .auth .row .box__next .form__group__button, .auth .management .row .box__next .form__group__button, .management .plomesalmarContact .row .box__next .form__group__button, .plomesalmarContact .management .row .box__next .form__group__button {
   margin: 0;
 }
 .management .row .box__table {

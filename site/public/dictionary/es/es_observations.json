@@ -4,8 +4,8 @@
 	"observationsList": "Lista de observaciones",
 
 	"selectDeperture": "Seleccionar salida: ",
-	"selectDepertureOption": "Seleccionar una salida",
-	"timeObservationCreate": "Hora de la observación",
+	"selectDepertureOption": "Seleccionar una salida: ",
+	"timeObservationCreate": "Hora de la observación: ",
 	"waypoint": "Waypoint",
 	"selectSpecie": "Seleccionar Especie",
 	"numberElements": "Número de elementos",

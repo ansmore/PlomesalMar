@@ -6,21 +6,9 @@
             <tr>
                 <th scope="col">
                     <span data-text="name" class="table__title"></span>
-                    <a href="?orderByField=name&orderByDirection=asc" class="decoration">
-                        <i class="fas fa-arrow-up"></i>
-                    </a>
-                    <a href="?orderByField=name&orderByDirection=desc" class="decoration">
-                        <i class="fas fa-arrow-down"></i>
-                    </a>
                 </th>
                 <th scope="col">
                     <span data-text="email" class="table__title"></span>
-                    <a href="?orderByField=email&orderByDirection=asc" class="decoration">
-                        <i class="fas fa-arrow-up"></i>
-                    </a>
-                    <a href="?orderByField=email&orderByDirection=desc" class="decoration">
-                        <i class="fas fa-arrow-down"></i>
-                    </a>
                 </th>
                 {{-- <th scope="col" data-text="registrationDate" class="table__title"></th> --}}
                 <th scope="col" data-text="rolesUserHave" class="table__title"></th>
