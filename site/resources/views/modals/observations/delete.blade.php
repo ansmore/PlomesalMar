@@ -5,7 +5,7 @@
             <i class="fa-solid fa-xmark"></i>
         </button>
         <div class="modal-header body">
-            <h2 class="modal-title body__title" id="deleteObservationModalLabel">Confirmación de Eliminación</h2>
+            <h2 class="modal-title body__title" id="deleteObservationModalLabel" data-text="confirmDelete"></h2>
             <article class="form">
                 <form method="POST" id="deleteObservationForm"
                     data-action-template="{{ route('observations.observation.destroy', ['language' => app()->getLocale(), 'observation' => ':id']) }}">
@@ -13,17 +13,17 @@
                     @method('DELETE')
                     <input type="hidden" name="id" id="deleteObservationId">
                     <div class="form__group">
-                        <p>Estás a punto de eliminar permanentemente la observación:</p>
-                        <ul>
-                            <li>Nombre: <strong id="deleteObservationName"></strong></li>
-                        </ul>
-                        <p>Esta acción eliminará todas las imágenes relacionadas. ¿Deseas proceder?</p>
+                        <label class="form__group__content" data-text="timeObservationModal">
+                        </label>
+                        <span id="deleteObservationName" class="form__group__value"></span>
                     </div>
+                    <p class="form__group__content" data-text="messageDelete"></p>
+
                     <div class="form__group__buttons">
-                        <button type="button" class="btn-close form__button__back" data-bs-dismiss="modal"
-                            data-text="cancelButton">Cancelar</button>
-                        <button type="submit" class="btn btn-primary form__button__success"
-                            data-text="deleteButton">Eliminar</button>
+                        <button type="button" class="btn btn-secondary form__button__back" data-bs-dismiss="modal"
+                            data-text="cancelButton"></button>
+                        <button type="submit" class="btn btn-danger form__button__close"
+                            data-text="deleteButton"></button>
                     </div>
                 </form>
             </article>

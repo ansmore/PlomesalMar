@@ -43,7 +43,22 @@
 	@include paddingMargin(0, $margin auto);
 }
 
-// Pending to review!
 .form {
-	@extend .article;
+	@include mainBox(column, flex-start, flex-start);
+	@include paddingMargin($padding, $margin);
+	gap: $gap;
+	hyphens: auto;
+	font-size: $size_smaller;
+	line-height: 1.5;
+	text-align: center;
+	overflow: hidden;
+
+	p {
+		text-align: left;
+
+		span {
+
+			text-align: left;
+		}
+	}
 }

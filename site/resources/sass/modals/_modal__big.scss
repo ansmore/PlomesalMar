@@ -29,14 +29,6 @@
 			line-height: 1.5;
 			text-align: center;
 
-			p {
-				text-align: left;
-
-				span {
-					text-align: left;
-				}
-			}
-
 			&__title {
 				@extend .title;
 

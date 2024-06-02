@@ -15,5 +15,7 @@
 	"user": "User",
 	"imageNumber": "Image Number",
 	"image": "Image",
-	"departure": "Departure"
+	"departure": "Departure",
+
+	"timeObservationModal": "Time observation: "
 }

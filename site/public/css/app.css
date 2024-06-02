@@ -148,9 +148,6 @@ button {
   margin-top: 3.5rem;
 }
 
-/** 
-* Must be the last line in all call to this mixin!
-*/
 /**
  * checkUnit Function
  *
@@ -169,59 +166,7 @@ button {
  * @param {string} $size - Main size (optional).
  * @param {string} $max - Maximum size (optional).
  */
-.main, .plomesalmarContact, .home {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-content: center;
-  align-items: flex-start;
-  align-self: center;
-  color: #0065AE;
-  background-color: #ececec;
-  font-size: 1em;
-  margin-top: 3.5rem;
-  gap: 0.5rem;
-}
-
-.section, .plomesalmarContact .row, .home .row--reverse, .home .row {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-content: center;
-  align-items: center;
-  align-self: center;
-  min-width: 95vw;
-  max-width: 95vw;
-  padding: 0.25rem;
-  margin: 0.25rem;
-}
-
-.article, .plomesalmarContact .row .box__logo, .home .row--reverse .box, .home .row .box__circle, .home .row .box__row, .home .row .box, .form, .auth .row .form {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-content: center;
-  align-items: flex-start;
-  align-self: center;
-  padding: 0.25rem;
-  margin: 0.25rem;
-  min-width: 85vw;
-  max-width: 85vw;
-  gap: 0.5rem;
-  hyphens: auto;
-  font-size: 0.9em;
-  line-height: 1.5;
-  text-align: center;
-  overflow: hidden;
-}
-.article p, .plomesalmarContact .row .box__logo p, .home .row--reverse .box p, .home .row .box__circle p, .home .row .box__row p, .home .row .box p, .form p, .auth .row .form p {
-  text-align: left;
-}
-.article p span, .plomesalmarContact .row .box__logo p span, .home .row--reverse .box p span, .home .row .box__circle p span, .home .row .box__row p span, .home .row .box p span, .form p span, .auth .row .form p span {
-  text-align: left;
-}
-
-.image, .home .row--reverse .box__image, .home .row .box__image {
+.image, .home .row .box__image {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -282,7 +227,7 @@ button {
   font-size: 1.5em;
 }
 
-.title, .management .row .box__title, .plomesalmarContact .row .box__title, .home .row--reverse .box__title, .home .row .box__title, .auth .row .box__title, .modal__management__big__box .body__title, .modal__box .body__title,
+.title, .management .row .box__title, .plomesalmarContact .row .box__title, .home .row .box__title, .auth .row .box__title, .modal__management__big__box .body__title, .modal__box .body__title,
 .modal__management__box .body__title {
   color: #0065AE;
   background-color: transparent;
@@ -326,7 +271,7 @@ button {
   background-color: transparent;
 }
 
-.content, .plomesalmarContact .row .form__group__consent__content, .plomesalmarContact .row .form__group__content, .home .row--reverse .box__content, .home .row .box__content, .auth .row .form__group__consent__content, .auth .row .form__group__content {
+.content, .plomesalmarContact .row .form__group__consent__content, .plomesalmarContact .row .form__group__content, .home .row .box__content, .auth .row .form__group__consent__content, .auth .row .form__group__content {
   color: #0065AE;
   background-color: transparent;
   text-align: center;
@@ -377,7 +322,7 @@ button {
   border: 1px solid #9d9d9c;
 }
 
-.button, .plomesalmarContact .row .form__group__button, .home .row--reverse .box__button, .home .row .box__button, .auth .row .form__group__button, .form__button__back, .form__button__close, .form__button__success {
+.button, .form__button__back, .form__button__close, .form__button__success, .plomesalmarContact .row .form__group__button, .auth .row .form__group__button {
   padding: 0.5rem;
   margin: 0.5rem;
   color: #fafafa;
@@ -385,18 +330,18 @@ button {
   border: 1px solid transparent;
   border-radius: 0.25rem;
 }
-.button:hover, .plomesalmarContact .row .form__group__button:hover, .home .row--reverse .box__button:hover, .home .row .box__button:hover, .auth .row .form__group__button:hover, .form__button__back:hover, .form__button__close:hover, .form__button__success:hover {
+.button:hover, .form__button__back:hover, .form__button__close:hover, .form__button__success:hover, .plomesalmarContact .row .form__group__button:hover, .auth .row .form__group__button:hover {
   color: #fafafa;
   background-color: #0079D0;
   border: 1px solid #00518C;
 }
 
-.form__button__success {
+.form__button__success, .plomesalmarContact .row .form__group__button, .auth .row .form__group__button {
   background-color: #0065AE;
   color: #fafafa;
   border: 1px solid transparent;
 }
-.form__button__success:hover {
+.form__button__success:hover, .plomesalmarContact .row .form__group__button:hover, .auth .row .form__group__button:hover {
   color: #fafafa;
   background-color: #0079D0;
   border: 1px solid #00518C;
@@ -577,6 +522,29 @@ button {
   margin: 0.25rem auto;
 }
 
+.form, .auth .row .form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-content: center;
+  align-items: flex-start;
+  align-self: center;
+  padding: 0.25rem;
+  margin: 0.25rem;
+  gap: 0.5rem;
+  hyphens: auto;
+  font-size: 0.9em;
+  line-height: 1.5;
+  text-align: center;
+  overflow: hidden;
+}
+.form p, .auth .row .form p {
+  text-align: left;
+}
+.form p span, .auth .row .form p span {
+  text-align: left;
+}
+
 .modal__box,
 .modal__management__box {
   position: relative;
@@ -606,10 +574,13 @@ button {
   align-self: center;
   width: 100%;
   height: 100%;
+  gap: 0.5rem;
+  hyphens: auto;
 }
 .modal__box .body__title,
 .modal__management__box .body__title {
-  padding-top: 2rem;
+  padding-top: 5rem;
+  font-size: 1.5em;
 }
 .modal__box .body .form,
 .modal__management__box .body .form {
@@ -621,7 +592,10 @@ button {
   align-self: center;
   width: 100%;
   height: 100%;
-  max-width: 100%;
+}
+.modal__box .body .form__group__content,
+.modal__management__box .body .form__group__content {
+  font-size: 1.2em;
 }
 .modal__box .body .form__group__input,
 .modal__management__box .body .form__group__input {
@@ -732,12 +706,6 @@ button {
   font-size: 0.9em;
   line-height: 1.5;
   text-align: center;
-}
-.modal__management__big__box .body p {
-  text-align: left;
-}
-.modal__management__big__box .body p span {
-  text-align: left;
 }
 .modal__management__big__box .body__title {
   padding-top: 2rem;
@@ -1697,7 +1665,28 @@ button {
   hyphens: none;
 }
 
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-content: center;
+  align-items: flex-start;
+  align-self: center;
+  color: #0065AE;
+  background-color: #ececec;
+  font-size: 1em;
+  margin-top: 3.5rem;
+  gap: 0.5rem;
+}
 .home .row {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  min-width: 95vw;
+  max-width: 95vw;
   padding: 5rem 0.25rem 2rem 0.25rem;
   margin: 0.25rem;
 }
@@ -1746,33 +1735,6 @@ button {
 .home .row .box__circle .circle__icon img {
   max-width: 50px;
   max-height: 50px;
-}
-.home .row--reverse {
-  min-width: 100vw;
-  color: #fafafa;
-  background-color: #9d9d9c;
-}
-.home .row--reverse .box {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-content: center;
-  align-items: center;
-  align-self: center;
-}
-.home .row--reverse .box__title {
-  color: #fafafa;
-  background-color: transparent;
-}
-.home .row--reverse .box__content {
-  color: #fafafa;
-  background-color: transparent;
-  font-style: italic;
-}
-.home .row--reverse .box__image {
-  min-width: 70vw;
-  max-width: 70vw;
-  overflow: hidden;
 }
 
 @media screen and (min-width: 376px) and (max-width: 600px) {
@@ -1844,9 +1806,50 @@ button {
     font-size: 1.2em;
   }
 }
+.plomesalmarContact {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-content: center;
+  align-items: flex-start;
+  align-self: center;
+  color: #0065AE;
+  background-color: #ececec;
+  font-size: 1em;
+  margin-top: 3.5rem;
+  gap: 0.5rem;
+}
 .plomesalmarContact .row {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-content: center;
+  align-items: center;
+  align-self: center;
   padding: 5rem 0.25rem 2rem 0.25rem;
   margin: 0.25rem;
+}
+.plomesalmarContact .row .box__logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-content: center;
+  align-items: flex-start;
+  align-self: center;
+  padding: 0.25rem;
+  margin: 0.25rem;
+  gap: 0.5rem;
+  hyphens: auto;
+  font-size: 0.9em;
+  line-height: 1.5;
+  text-align: center;
+  overflow: hidden;
+}
+.plomesalmarContact .row .box__logo p {
+  text-align: left;
+}
+.plomesalmarContact .row .box__logo p span {
+  text-align: left;
 }
 .plomesalmarContact .row .box__logo__image a img {
   min-height: 3.5rem;
@@ -1969,7 +1972,7 @@ button {
   align-self: center;
   margin-bottom: 0.5rem;
 }
-.management .row .box__search .form__button__success {
+.management .row .box__search .form__button__success, .management .auth .row .box__search .form__group__button, .auth .management .row .box__search .form__group__button, .management .plomesalmarContact .row .box__search .form__group__button, .plomesalmarContact .management .row .box__search .form__group__button {
   margin: 0;
 }
 .management .row .box__back {
@@ -1993,7 +1996,7 @@ button {
   align-self: center;
   margin-bottom: 0.5rem;
 }
-.management .row .box__next .form__button__success {
+.management .row .box__next .form__button__success, .management .auth .row .box__next .form__group__button, .auth .management .row .box__next .form__group__button, .management .plomesalmarContact .row .box__next .form__group__button, .plomesalmarContact .management .row .box__next .form__group__button {
   margin: 0;
 }
 .management .row .box__table {
