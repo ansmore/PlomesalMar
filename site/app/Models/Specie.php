@@ -14,6 +14,11 @@ class Specie extends Model
 
     protected $fillable = ['scientific_name', 'common_name'];
 
+    public function observations()
+    {
+        return $this->hasMany(Observation::class, 'species_id');
+    }
+
     /**
      * Busca especies basadas en el término de búsqueda proporcionado.
      *

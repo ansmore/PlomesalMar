@@ -3,16 +3,14 @@
 namespace Database\Factories;
 
 use App\Models\Role;
-
 use App\Models\User;
 use App\Models\RoleUser;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-/**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Model>
- */
 class RoleUserFactory extends Factory
 {
+    protected $model = RoleUser::class;
+
     /**
      * Define the model's default state.
      *
@@ -20,23 +18,19 @@ class RoleUserFactory extends Factory
      */
     public function definition(): array
     {
-		$existingRoles = Role::all();
+        $existingRoles = Role::all();
         $existingUsers = User::all();
 
-        if ( $existingRoles->isEmpty()) {
-            $existingRoles = Role::factory()->create();
+        if ($existingRoles->isEmpty()) {
+            $existingRoles = Role::factory()->count(1)->create();
         }
 
         if ($existingUsers->isEmpty()) {
-            $existingUsers = User::factory()->create();
+            $existingUsers = User::factory()->count(1)->create();
         }
 
         $selectedUser = $existingUsers->random();
         $selectedRole = $existingRoles->random();
-
-		if ($selectedUser->id <= 5){
-			$selectedUser = $existingUsers->random();
-		}
 
         return [
             'role_id' => $selectedRole->id,
