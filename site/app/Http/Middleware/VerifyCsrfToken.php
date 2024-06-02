@@ -17,8 +17,5 @@ class VerifyCsrfToken extends Middleware
         '/en/plomesalmarContact',
         '/ca/plomesalmarContact',
         '/{ca,en,es}/plomesalmarContact',
-        'en/dashboard/multiGraph',
-        'en/dashboard/graph1',
-        'en/dashboard/donutGraph',
     ];
 }
