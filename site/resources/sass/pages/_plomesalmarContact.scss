@@ -1,134 +1,134 @@
 .plomesalmarContact {
-  @extend .main;
+	@include mainBox(column, space-around, flex-start);
+	@include style($primary_main, $neutral_light);
+	font-size: $size_small;
+	margin-top: $nav_height;
+	gap: $gap;
 
-  .row {
-    @extend .section;
+	.row {
+		@include mainBox(column, space-around, center);
+		@include paddingMargin(5rem $padding 2rem $padding, $margin);
 
-    @include paddingMargin(5rem $padding 2rem $padding, $margin);
+		.box {
+			&__logo {
+				@extend .article;
 
-    .box {
-      // @extend .article;
+				&__image {
+					@extend .logo;
 
-      &__logo {
-        @extend .article;
+					a img {
+						@include boxSize(height, 3.5rem);
+					}
+				}
+			}
 
-        &__image {
-          @extend .logo;
+			&__title {
+				@extend .title;
+			}
+		}
 
-          a img {
-            @include boxSize(height, 3.5rem);
-          }
-        }
-      }
+		.form {
 
-      &__title {
-        @extend .title;
-      }
-    }
+			@include mainBox(column, space-around, center);
 
-    .form {
-      // @extend .form;
+			&__group {
+				&__content {
+					@extend .content;
+				}
 
-      @include mainBox(column, space-around, center);
+				&__input {
+					@extend .formInput;
+				}
 
-      &__group {
-        &__content {
-          @extend .content;
-        }
+				&__button {
+					@extend .form__button__success;
+				}
 
-        &__input {
-          @extend .formInput;
-        }
-
-        &__button {
-          @extend .button;
-        }
-
-        &__consent {
-          @extend .consent;
-          gap: $gap ;
+				&__consent {
+					@extend .consent;
+					gap: $gap ;
 
 
-          &__check {
-            appearance: checkbox;
-            width: 1rem;
-            height: 1rem;
-          }
+					&__check {
+						appearance: checkbox;
+						width: 1rem;
+						height: 1rem;
+					}
 
-          &__content {
-            @extend .content;
+					&__content {
+						@extend .content;
 
-            hyphens: none;
-          }
-        }
-      }
-    }
-  }
+						hyphens: none;
+					}
+				}
+			}
+		}
+	}
 }
 
 @media screen and (min-width: 376px) and (max-width: 600px) {}
 
 
 @media screen and (min-width: 601px) and (max-width: 1024px) {
-  .plomesalmarContact {
-    .row {
-      .form {
-        &__group {
-          @include mainBox(row, center, center);
+	.plomesalmarContact {
+		.row {
+			.form {
+				&__group {
+					@include mainBox(row, center, center);
 
-          gap: $gap;
+					gap: $gap;
 
-          &__content {
-            @include boxSize(width, 20vw, null, 20vw);
+					&__content {
+						@include boxSize(width, 20vw, null, 20vw);
 
-            text-align: right;
-          }
+						text-align: right;
+					}
 
-          &__input {
-            @include paddingMargin(1rem, $margin);
-            @include boxSize(width, 30vw, null, 30vw);
-          }
+					&__input {
+						@include paddingMargin(1rem, $margin);
+						@include boxSize(width, 30vw, null, 30vw);
+					}
 
-          &__button {
-            margin: $margin auto;
-          }
-        }
-      }
-    }
-  }
+					&__button {
+						margin: $margin auto;
+					}
+				}
+			}
+		}
+	}
 }
 
 
 @media screen and (min-width: 1025px) {
-  .plomesalmarContact {
-    .row {
-      .box__logo {
-        @include mainBox(row, center, center);
-        gap: calc($gap*2);
-      }
+	.plomesalmarContact {
+		.row {
+			.box__logo {
+				@include mainBox(row, center, center);
+				gap: calc($gap*2);
+			}
 
-      .form {
-        &__group {
-          @include mainBox(row, flex-end, center);
-          @include mainBox(row, center, center);
+			.form {
+				&__group {
+					@include mainBox(row, flex-end, center);
+					@include mainBox(row, center, center);
 
-          gap: calc($gap*2);
+					gap: calc($gap*2);
 
-          &__content {
-            @include boxSize(width, 20vw, null, 20vw);
-            text-align: right;
-          }
+					&__content {
+						@include boxSize(width, 20vw, null, 20vw);
+						text-align: right;
+					}
 
-          &__input {
-            @include paddingMargin(1rem, $margin);
-            @include boxSize(width, 25rem, null, 25rem);
-          }
+					&__input {
+						@include paddingMargin(1rem, $margin);
+						@include boxSize(width, 25rem, null, 25rem);
+					}
 
-          &__button {
-            margin: $margin auto;
-          }
-        }
-      }
-    }
-  }
+					&__button {
+						margin: $margin auto;
+					}
+				}
+			}
+		}
+	}
 }

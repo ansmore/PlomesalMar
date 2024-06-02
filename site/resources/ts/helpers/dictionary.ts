@@ -7,7 +7,6 @@ type Dictionary = {
 const defaultLanguage = "es";
 import { navbar } from "../components/navigation.js";
 import { aside } from "../components/aside.js";
-
 import { table } from "../partials/table.js";
 
 export const loadDictionary = async (
@@ -142,7 +141,9 @@ export const getIdSegment = (url: string): string | undefined => {
 			}
 		}
 
-		throw new Error("No es pot determinar la id des de la URL proporcionada.");
+		throw new Error(
+			"No es pot determinar la id des de la URL proporcionada.",
+		);
 	} catch (error) {
 		console.error("Error en processar la URL:", error);
 		return undefined;
@@ -248,9 +249,15 @@ export const loadText = async () => {
 	try {
 		const currentUrl = window.location.href;
 		const availablePages = await loadAvailablesFiles();
-		const firstSegment = await getFirstSegment(currentUrl)!;
+		let firstSegment = await getFirstSegment(currentUrl)!;
+		console.log("Aqui first segment", firstSegment);
 		const finalSelectedLanguage = await getFinalLanguage();
 
+		if (firstSegment.includes("?")) {
+			firstSegment = firstSegment.split("?")[0];
+		}
+
+		console.log("Aqui first segment->2", firstSegment);
 		const selectedPage = availablePages.includes(firstSegment)
 			? firstSegment
 			: "home";

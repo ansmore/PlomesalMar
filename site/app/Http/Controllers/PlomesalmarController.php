@@ -27,7 +27,7 @@ class PlomesalmarController extends Controller
         return view('pages.plomesalmar', ['section' => $section, 'language' => $language]);
     }
 
-    public function plomesalmarContactForm()
+    public function plomesalmarContactForm($language = null)
     {
         $language = Session::get('language',  config('app.fallback_locale', 'ca'));
 
@@ -35,12 +35,12 @@ class PlomesalmarController extends Controller
     }
 
 
-    public function plomesalmarContactSubmit(Request $request)
+    public function plomesalmarContactSubmit(Request $request ,$language = null)
     {
         $language = Session::get('language',  config('app.fallback_locale', 'ca'));
 
         // Validar el formulario si es necesario
-       $request->validate([
+		$request->validate([
             'name' => 'required',
             'email' => 'required|email',
             'mailsubject' => 'required',
@@ -65,7 +65,6 @@ class PlomesalmarController extends Controller
             // Manejar el caso donde el archivo del diccionario no existe
             $dictionary = [];
         }
-
 
         // dd("contenido diccionario", $dictionary);
 

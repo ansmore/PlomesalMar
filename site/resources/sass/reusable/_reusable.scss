@@ -1,79 +1,62 @@
-.main {
-  @include mainBox(column, space-around, flex-start);
-  @include style($primary_main, $neutral_light);
-  font-size: $size_small;
-  margin-top: $nav_height;
-  gap: $gap;
-}
-
-.section {
-  @include mainBox(column, space-around, center);
-  @include boxSize(width, 95vw, null, 95vw);
-  @include paddingMargin($padding, $margin);
-
-  // DeveloperMode
-  // border: 1px solid blueviolet;
-}
-
 .article {
-  @include mainBox(column, flex-start, flex-start);
-  @include paddingMargin($padding, $margin);
-  @include boxSize(width, 85vw, null, 85vw);
-  gap: $gap;
-  hyphens: auto;
-  font-size: $size_smaller;
-  line-height: 1.5;
-  text-align: center;
-  overflow: hidden;
+	@include mainBox(column, flex-start, flex-start);
+	@include paddingMargin($padding, $margin);
+	@include boxSize(width, 85vw, null, 85vw);
+	gap: $gap;
+	hyphens: auto;
+	font-size: $size_smaller;
+	line-height: 1.5;
+	text-align: center;
+	overflow: hidden;
 
-  p {
-    text-align: left;
+	p {
+		text-align: left;
 
-    span {
+		span {
 
-      text-align: left;
-    }
-  }
+			text-align: left;
+		}
+	}
 
-  // DeveloperMode
-  // border: 1px solid darkgreen;
+	// DeveloperMode
+	// border: 1px solid darkgreen;
 }
 
 .image {
-  @include mainBox(column);
-  @include boxSize(width, 50vw, null, 50vw);
+	@include mainBox(column);
+	@include boxSize(width, 50vw, null, 50vw);
 
-  overflow: hidden;
+	overflow: hidden;
 }
 
 .unorderedList {
-  padding-left: 1rem;
-  line-height: 1.5;
+	padding-left: 1rem;
+	line-height: 1.5;
 
-  li {
-    list-style-type: disc;
-    line-height: 1.5;
-    text-align: left;
-  }
+	li {
+		list-style-type: disc;
+		line-height: 1.5;
+		text-align: left;
+	}
 }
 
 .circle {
-  @include mainBox(column, flex-start, center);
-  @include paddingMargin($padding, $margin);
-  @include circleStyle($neutral_main, 50%);
-  @include hover($secondary_main, inherit, $neutral_darker, $neutral_dark);
+	@include mainBox(column, flex-start, center);
+	@include paddingMargin($padding, $margin);
+	@include circleStyle($neutral_main, 50%);
+	@include hover($secondary_main, inherit, $neutral_darker, $neutral_dark);
 
-  &__content {
-    @include mainBox(column, space-around, center);
-    @include paddingMargin($padding, $margin);
-    @include boxSize(width, null, null, 15rem);
-    @include circleStyle(transparent, 25%, transparent);
+	&__content {
+		@include mainBox(column, space-around, center);
+		@include paddingMargin($padding, $margin);
+		@include boxSize(width, null, null, 15rem);
+		@include circleStyle(transparent, 25%, transparent);
 
-    font-size: $size_smaller;
-    font-style: italic;
-  }
+		font-size: $size_smaller;
+		font-style: italic;
+	}
 
-  &__title {
-    font-size: $size_big
-  }
+	&__title {
+		font-size: $size_big
+	}
 }

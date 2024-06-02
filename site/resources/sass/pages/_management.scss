@@ -1,95 +1,95 @@
 .management {
-  display: grid;
-  grid-template-columns: $aside_width 1fr;
-  justify-content: start;
-  justify-items: start;
-  align-content: center;
-  align-items: stretch;
+	display: grid;
+	grid-template-columns: $aside_width 1fr;
+	justify-content: start;
+	justify-items: start;
+	align-content: center;
+	align-items: stretch;
 
-  @include style($primary_main, $neutral_light);
-  @include paddingMargin($nav_height 0 0 0, 0);
-  gap: 0;
+	@include style($primary_main, $neutral_light);
+	@include paddingMargin($nav_height 0 0 0, 0);
+	gap: 0;
 
-  .row {
-    grid-column: 2;
-    display: grid;
-    grid-template-rows: auto 1fr;
-    gap: 0;
-    width: 95%;
-    margin: 0 auto;
+	.row {
+		grid-column: 2;
+		display: grid;
+		grid-template-rows: auto 1fr;
+		gap: 0;
+		width: 95%;
+		margin: 0 auto;
 
-    .box {
-      &__title {
-        @extend .title;
-        margin-bottom: calc($margin * 2);
-      }
+		.box {
+			&__title {
+				@extend .title;
+				margin-bottom: calc($margin * 2);
+			}
 
-      &__search {
-        @include mainBox(row, space-between, center);
+			&__search {
+				@include mainBox(row, space-between, center);
 
-        .form__button__success {
-          margin: 0;
-        }
+				.form__button__success {
+					margin: 0;
+				}
 
-        margin-bottom: calc($margin * 2);
-      }
+				margin-bottom: calc($margin * 2);
+			}
 
-      &__back {
-        @include mainBox(row, flex-start, center);
+			&__back {
+				@include mainBox(row, flex-start, center);
 
-        .form__button__back {
-          margin: 0;
-        }
+				.form__button__back {
+					margin: 0;
+				}
 
-        margin-bottom: calc($margin * 2);
-      }
+				margin-bottom: calc($margin * 2);
+			}
 
-      &__next {
-        @include mainBox(row, flex-end, center);
+			&__next {
+				@include mainBox(row, flex-end, center);
 
-        .form__button__success {
-          margin: 0;
-        }
+				.form__button__success {
+					margin: 0;
+				}
 
-        margin-bottom: calc($margin * 2);
-      }
+				margin-bottom: calc($margin * 2);
+			}
 
-      &__table {
-        display: grid;
-        row-gap: 0;
-        width: 100%;
-        margin: 0 auto;
-      }
+			&__table {
+				display: grid;
+				row-gap: 0;
+				width: 100%;
+				margin: 0 auto;
+			}
 
-      &__logo {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-        row-gap: 10px;
-        max-height: 50%;
-        // margin: 10px auto;
+			&__logo {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+				row-gap: 10px;
+				max-height: 50%;
+				// margin: 10px auto;
 
-        &__image {
-          @extend .logo;
-          margin: $gap auto;
+				&__image {
+					@extend .logo;
+					margin: $gap auto;
 
-          a {
-            @include mainBox(column, space-around, center);
-            gap: $gap;
-          }
+					a {
+						@include mainBox(column, space-around, center);
+						gap: $gap;
+					}
 
-          a img {
-            @include boxSize(height, 3.5rem);
-          }
+					a img {
+						@include boxSize(height, 3.5rem);
+					}
 
-          i {
-            font-size: xx-large;
-          }
+					i {
+						font-size: xx-large;
+					}
 
-          &:hover {
-            @include hover($primary_main, $neutral_main, $neutral_main );
-          }
-        }
-      }
-    }
-  }
+					&:hover {
+						@include hover($primary_main, $neutral_main, $neutral_main );
+					}
+				}
+			}
+		}
+	}
 }

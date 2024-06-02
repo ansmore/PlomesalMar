@@ -100,20 +100,40 @@ const changeLanguage = async (language: string) => {
 		if (response.ok) {
 			const responseData = await response.json();
 
-			let { newUrl, ordenationString, ordenationAdmin } = responseData;
+			let {
+				newUrl,
+				firstItemQueriString,
+				secondItemQueriString,
+				thirdItemQueriString,
+			} = responseData;
 
-			if (ordenationString !== "") {
+			if (firstItemQueriString !== "") {
 				console.log("newUrl String ->", newUrl);
-				console.log("ordenation string->", ordenationString);
-				newUrl += `?${ordenationString}`;
+				console.log(
+					"ordenation firstItemQueriString->",
+					firstItemQueriString,
+				);
+				newUrl += `?${firstItemQueriString}`;
 
 				console.log("Aqui newURL string->", newUrl);
-			} else if (ordenationAdmin !== "") {
-				console.log("newUrl admin->", newUrl);
-				console.log("ordenation admin->", ordenationAdmin);
-				newUrl += `?${ordenationAdmin}`;
+			} else if (secondItemQueriString !== "") {
+				console.log("newUrl secondItemQueriString->", newUrl);
+				console.log(
+					"ordenation secondItemQueriString->",
+					secondItemQueriString,
+				);
+				newUrl += `?${secondItemQueriString}`;
 
-				console.log("Aqui newURL admin->", newUrl);
+				console.log("Aqui newURL secondItemQueriString->", newUrl);
+			} else if (thirdItemQueriString !== "") {
+				console.log("newUrl thirdItemQueriString->", newUrl);
+				console.log(
+					"ordenation thirdItemQueriString->",
+					thirdItemQueriString,
+				);
+				newUrl += `?${thirdItemQueriString}`;
+
+				console.log("Aqui newURL thirdItemQueriString->", newUrl);
 			}
 
 			if (typeof newUrl === "string") {

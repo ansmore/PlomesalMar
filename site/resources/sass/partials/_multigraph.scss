@@ -1,19 +1,19 @@
 .chart-container {
-  flex: 1 1 45%;
-  max-width: 45%;
-  background-color: $chart-background;
-  border: 1px solid $chart-border;
-  border-radius: 0.5rem;
-  padding: 1rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	flex: 1 1 45%;
+	max-width: 45%;
+	background-color: $chart-background;
+	border: 1px solid $chart-border;
+	border-radius: 0.5rem;
+	padding: 1rem;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 
-  canvas {
-    width: 100% !important;
-    height: 400px !important;
-  }
+	canvas {
+		width: 100% !important;
+		height: 400px !important;
+	}
 }
 
 .chartjs-render-monitor {
-  font-family: $font-family-base;
-  color: $chart-color;
+	font-family: $font-family-base;
+	color: $chart-color;
 }

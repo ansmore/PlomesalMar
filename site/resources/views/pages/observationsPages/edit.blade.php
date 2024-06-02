@@ -30,7 +30,7 @@
 
                             <!-- Seleccionar Departure -->
                             <div class="table__group">
-                                <label for="departure" class="table__group__content">Selecciona Departure</label>
+                                <label for="departure" class="table__group__content" data-text="selectDeperture"></label>
                                 <select name="departure_id" id="departure" class="table__group__select" required>
                                     <option value="">Selecciona una Departure</option>
                                     @foreach ($departures as $departure)

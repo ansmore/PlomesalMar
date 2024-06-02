@@ -1,212 +1,169 @@
 .home {
-  @extend .main;
+	@include mainBox(column, space-around, flex-start);
+	@include style($primary_main, $neutral_light);
+	font-size: $size_small;
+	margin-top: $nav_height;
+	gap: $gap;
 
-  .row {
-    @extend .section;
+	.row {
+		@include mainBox(column, space-around, center);
+		@include boxSize(width, 95vw, null, 95vw);
+		@include paddingMargin(5rem $padding 2rem $padding, $margin);
 
-    // Here->
-    @include paddingMargin(5rem $padding 2rem $padding, $margin);
+		.box {
 
-    .box {
-      @extend .article;
+			&__title {
+				@extend .title;
+			}
 
-      &__title {
-        @extend .title;
-      }
+			&__content {
+				@extend .content;
 
-      &__content {
-        @extend .content;
+				&--reverse {
+					// reverse colors
+					@include style($secondary_main);
+				}
+			}
 
-        &--reverse {
-          // reverse colors
-          @include style($secondary_main);
-        }
-      }
+			&__name {
+				@extend .name;
 
-      &__name {
-        @extend .name;
+				&--reverse {
 
-        &--reverse {
+					// reverse colors
+					@include style($primary_main);
+				}
+			}
 
-          // reverse colors
-          @include style($primary_main);
-        }
-      }
+			&__image {
+				@extend .image;
 
-      &__image {
-        @extend .image;
+				overflow: hidden;
+			}
 
-        overflow: hidden;
-      }
+			&__map {
+				@include boxSize(width, null, 85vw);
+				@include boxSize(height, null, 420px);
+			}
 
-      &__map {
-        @include boxSize(width, null, 85vw);
-        @include boxSize(height, null, 420px);
-      }
+			// &__button {
+			// 	@extend .button;
+			// }
 
-      &__button {
-        @extend .button;
-      }
+			&__row {
 
-      &__row {
-        @extend .article;
-        @include mainBox(column);
-      }
+				@include mainBox(column);
+			}
 
-      &__circle {
-        @extend .article;
-
-        .circle {
-          @extend .circle;
-
-          padding-top: 2rem;
-
-          &__icon {
-            @include mainBox(row, center, center);
-            margin: 0 auto;
-            @include circleStyle($neutral_lighter, 50%);
-            @include boxSize(width, 5rem, null, 5rem);
-            @include boxSize(height, 5rem, null, 5rem);
-
-            img {
-              @include boxSize(width, null, null, 50px);
-              @include boxSize(height, null, null, 50px);
-            }
-          }
-        }
-      }
-    }
-  }
-
-  .row--reverse {
-    @extend .section;
-
-    @include boxSize(width, 100vw);
-
-    // Reverse color
-    @include style($neutral_lighter, $secondary_main);
-
-    .box {
-      @extend .article;
-
-      @include mainBox(column, flex-start, center);
-
-      &__title {
-        @extend .title;
-
-        // Reverse color
-        @include style($neutral_lighter);
-      }
-
-      &__content {
-        @extend .content;
-
-        // Reverse color
-        @include style($neutral_lighter);
-        font-style: italic;
-
-      }
-
-      &__button {
-        @extend .button;
-
-      }
-
-      &__image {
-        @extend .image;
-
-        @include boxSize(width, 70vw, null, 70vw);
-        overflow: hidden;
-      }
+			&__circle {
 
 
-    }
-  }
+				.circle {
+					@extend .circle;
+
+					padding-top: 2rem;
+
+					&__icon {
+						@include mainBox(row, center, center);
+						margin: 0 auto;
+						@include circleStyle($neutral_lighter, 50%);
+						@include boxSize(width, 5rem, null, 5rem);
+						@include boxSize(height, 5rem, null, 5rem);
+
+						img {
+							@include boxSize(width, null, null, 50px);
+							@include boxSize(height, null, null, 50px);
+						}
+					}
+				}
+			}
+		}
+	}
 }
 
 @media screen and (min-width: 376px) and (max-width: 600px) {
-  .home {
-    .row {
-      .box {
-        &__circle {
-          .circle {
+	.home {
+		.row {
+			.box {
+				&__circle {
+					.circle {
 
-            @include boxSize(width, 20rem, null, 20rem);
-            @include boxSize(height, 20rem);
+						@include boxSize(width, 20rem, null, 20rem);
+						@include boxSize(height, 20rem);
 
-            &__content {
-              padding-top: 2rem;
-              font-size: $size_small;
-            }
-          }
-        }
-      }
-    }
-  }
+						&__content {
+							padding-top: 2rem;
+							font-size: $size_small;
+						}
+					}
+				}
+			}
+		}
+	}
 }
 
 @media screen and (min-width: 601px) and (max-width: 1024px) {
-  .home {
-    .row {
-      .box {
-        &__row {
-          @include mainBox(row, center, center);
-        }
+	.home {
+		.row {
+			.box {
+				&__row {
+					@include mainBox(row, center, center);
+				}
 
-        &__button {
-          @include paddingMargin(calc($padding * 3), calc($margin * 2));
-        }
+				&__button {
+					@include paddingMargin(calc($padding * 3), calc($margin * 2));
+				}
 
-        &__circle {
-          .circle {
+				&__circle {
+					.circle {
 
-            @include boxSize(width, 20rem, null, 20rem);
-            @include boxSize(height, 20rem);
+						@include boxSize(width, 20rem, null, 20rem);
+						@include boxSize(height, 20rem);
 
-            &__content {
-              padding-top: 2rem;
-              font-size: $size_medium;
-            }
-          }
-        }
-      }
-    }
-  }
+						&__content {
+							padding-top: 2rem;
+							font-size: $size_medium;
+						}
+					}
+				}
+			}
+		}
+	}
 }
 
 @media screen and (min-width: 1025px) {
-  .home {
-    .row {
-      .box {
-        &__title {
-          font-size: $size_biggest;
-        }
+	.home {
+		.row {
+			.box {
+				&__title {
+					font-size: $size_biggest;
+				}
 
-        &__button {
-          @include paddingMargin(calc($padding * 3), calc($margin * 2));
-        }
+				&__button {
+					@include paddingMargin(calc($padding * 3), calc($margin * 2));
+				}
 
-        &__row {
+				&__row {
 
-          @include mainBox(row, center, center);
-        }
+					@include mainBox(row, center, center);
+				}
 
 
-        &__circle {
-          @include mainBox(row, center, center);
-          gap: 5rem;
+				&__circle {
+					@include mainBox(row, center, center);
+					gap: 5rem;
 
-          .circle {
-            @include boxSize(width, 20rem, null, 20rem);
-            @include boxSize(height, 20rem);
+					.circle {
+						@include boxSize(width, 20rem, null, 20rem);
+						@include boxSize(height, 20rem);
 
-            &__content {
-              padding-top: 2rem;
-              font-size: $size_medium;
-            }
-          }
-        }
-      }
-    }
-  }
+						&__content {
+							padding-top: 2rem;
+							font-size: $size_medium;
+						}
+					}
+				}
+			}
+		}
+	}
 }

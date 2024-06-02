@@ -1,69 +1,69 @@
 .auth {
-  @extend .modalShadow;
-  display: block;
+	@extend .modalShadow;
+	display: block;
 
-  .row {
-    @extend .modalBox;
+	.row {
+		@extend .modalBox;
 
-    // To change size of box vh and vw must always add up to 100!
-    top: 15vh;
-    left: 15vw;
-    @include boxSize(width, 70vw, null, 70vw);
-    @include boxSize(height, 70vh, null, 70vh);
-    @include hover($neutral_lighter,
-      inherit,
-      $primary_main,
-      transparent);
+		// To change size of box vh and vw must always add up to 100!
+		top: 15vh;
+		left: 15vw;
+		@include boxSize(width, 70vw, null, 70vw);
+		@include boxSize(height, 70vh, null, 70vh);
+		@include hover($neutral_lighter,
+			inherit,
+			$primary_main,
+			transparent);
 
-    .box__title {
-      @extend .title;
-      margin-bottom: 2rem;
-    }
+		.box__title {
+			@extend .title;
+			margin-bottom: 2rem;
+		}
 
-    .form {
-      @extend .form;
+		.form {
+			@extend .form;
 
-      @include mainBox(column, flex-start, center);
-      @include boxSize(width, 65vw, null, 65vw);
-      // @include boxSize(height, 75vh, null, 75vh);
+			@include mainBox(column, flex-start, center);
+			@include boxSize(width, 65vw, null, 65vw);
+			// @include boxSize(height, 75vh, null, 75vh);
 
-      &__group {
-        &__content {
-          @extend .content;
-        }
+			&__group {
+				&__content {
+					@extend .content;
+				}
 
-        &__input {
-          @extend .formInput;
-          @include boxSize(width, 35vw, null, 35vw);
+				&__input {
+					@extend .formInput;
+					@include boxSize(width, 35vw, null, 35vw);
 
-          @include hover($neutral_lighter,
-            $primary_light, $primary_main,
-            $neutral_dark);
-        }
+					@include hover($neutral_lighter,
+						$primary_light, $primary_main,
+						$neutral_dark);
+				}
 
-        &__button {
-          @extend .button;
-          margin: calc($margin * 2) auto;
-        }
+				&__button {
+					@extend .form__button__success;
+					margin: calc($margin * 2) auto;
+				}
 
-        &__consent {
-          @extend .consent;
-          gap: $gap ;
+				&__consent {
+					@extend .consent;
+					gap: $gap ;
 
 
-          &__check {
-            appearance: checkbox;
-            width: 1rem;
-            height: 1rem;
-          }
+					&__check {
+						appearance: checkbox;
+						width: 1rem;
+						height: 1rem;
+					}
 
-          &__content {
-            @extend .content;
+					&__content {
+						@extend .content;
 
-            hyphens: none;
-          }
-        }
-      }
-    }
-  }
+						hyphens: none;
+					}
+				}
+			}
+		}
+	}
 }

@@ -1,30 +1,30 @@
 .asideListTitle {
-  @include style($primary_main);
-  width: calc($aside_width - 0.5rem);
-  margin: 0.25rem;
-  margin-top: calc($margin * 2);
+	@include style($primary_main);
+	width: calc($aside_width - 0.5rem);
+	margin: 0.25rem;
+	margin-top: calc($margin * 2);
 
-  align-self: flex-start;
-  line-height: 1.2;
-  font-size: $size_medium;
-  font-weight: normal;
+	align-self: flex-start;
+	line-height: 1.2;
+	font-size: $size_medium;
+	font-weight: normal;
 
-  border-bottom: 1px solid $neutral_darker;
-  text-transform: uppercase;
-  cursor: default;
+	border-bottom: 1px solid $neutral_darker;
+	text-transform: uppercase;
+	cursor: default;
 }
 
 .asideListItem {
-  @include mainBox(column, center, flex-start);
-  @include boxSize(height, 2rem);
-  @include boxSize(width, calc($aside_width - 2rem), null, $aside_width);
-  @include paddingMargin(0 0 0 calc($padding * 2), 0);
+	@include mainBox(column, center, flex-start);
+	@include boxSize(height, 2rem);
+	@include boxSize(width, calc($aside_width - 2rem), null, $aside_width);
+	@include paddingMargin(0 0 0 calc($padding * 2), 0);
 
-  align-self: flex-start;
-  line-height: 1.2;
-  font-size: $size_smaller;
-  font-weight: light;
+	align-self: flex-start;
+	line-height: 1.2;
+	font-size: $size_smaller;
+	font-weight: light;
 
-  text-decoration: none;
-  cursor: pointer;
+	text-decoration: none;
+	cursor: pointer;
 }

@@ -1,40 +1,40 @@
 .aside {
-  grid-column: 1;
-  @include paddingMargin(0, 0);
+	grid-column: 1;
+	@include paddingMargin(0, 0);
 
-  @include boxLateralShadow(right, $primary_main, 3px, $neutral_dark);
-  height: calc(100vh - #{$nav_height});
-  @include style($primary_main, $neutral_light);
+	@include boxLateralShadow(right, $primary_main, 3px, $neutral_dark);
+	height: calc(100vh - #{$nav_height});
+	@include style($primary_main, $neutral_light);
 
-  .leftBar {
-    @include mainBox(column, flex-start, flex-start);
+	.leftBar {
+		@include mainBox(column, flex-start, flex-start);
 
-    // overflow: hidden;
+		// overflow: hidden;
 
-    .list {
-      @include mainBox(column, flex-start, flex-start);
-      @include paddingMargin(0, 0);
+		.list {
+			@include mainBox(column, flex-start, flex-start);
+			@include paddingMargin(0, 0);
 
-      align-self: flex-start;
+			align-self: flex-start;
 
-      &__title {
-        @extend .asideListTitle;
-      }
+			&__title {
+				@extend .asideListTitle;
+			}
 
-      &__item {
-        @include mainBox(row, flex-start, center);
-        @include paddingMargin(0 0 0 calc($padding * 4), 0);
-        align-self: flex-start;
-        @include hover($primary_main, $neutral_light);
+			&__item {
+				@include mainBox(row, flex-start, center);
+				@include paddingMargin(0 0 0 calc($padding * 4), 0);
+				align-self: flex-start;
+				@include hover($primary_main, $neutral_light);
 
-        &__icon {
-          @include boxSize(width, 1rem, null, 1rem);
-        }
+				&__icon {
+					@include boxSize(width, 1rem, null, 1rem);
+				}
 
-        &__link {
-          @extend .asideListItem;
-        }
-      }
-    }
-  }
+				&__link {
+					@extend .asideListItem;
+				}
+			}
+		}
+	}
 }

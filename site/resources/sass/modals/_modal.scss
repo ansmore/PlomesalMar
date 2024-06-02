@@ -1,114 +1,114 @@
 .modal,
 .modal__management {
-  @extend .modalShadow;
-  // To delete deleloperMode
-  // display: block;
+	@extend .modalShadow;
+	// To delete deleloperMode
+	// display: block;
 
-  &__box {
-    position: relative;
-    top: 20vh;
-    left: 2vw;
-    @include boxSize(width, 96vw, null, 96vw);
-    @include boxSize(height, 60vh, null, 60vh);
+	&__box {
+		position: relative;
+		top: 20vh;
+		left: 2vw;
+		@include boxSize(width, 96vw, null, 96vw);
+		@include boxSize(height, 60vh, null, 60vh);
 
-    background-color: $neutral_lighter;
-    border-radius: $radius;
-    @include hover($neutral_lighter,
-      inherit,
-      $primary_main,
-      $primary_main);
+		background-color: $neutral_lighter;
+		border-radius: $radius;
+		@include hover($neutral_lighter,
+			inherit,
+			$primary_main,
+			$primary_main);
 
-    .body {
-      @include mainBox(column, space-around, flex-start);
-      width: 100%;
-      height: 100%;
+		.body {
+			@include mainBox(column, space-around, flex-start);
+			width: 100%;
+			height: 100%;
 
-      &__title {
-        @extend .title;
+			&__title {
+				@extend .title;
 
-        padding-top: 2rem;
-      }
+				padding-top: 2rem;
+			}
 
-      .form {
-        @include mainBox(column, flex-start, center);
-        width: 100%;
-        height: 100%;
-        max-width: 100%;
+			.form {
+				@include mainBox(column, flex-start, center);
+				width: 100%;
+				height: 100%;
+				max-width: 100%;
 
-        &__group {
-          // min-width: 80%;
+				&__group {
+					// min-width: 80%;
 
-          &__content {
-            @extend .subtitle;
-          }
+					&__content {
+						@extend .subtitle;
+					}
 
-          &__input {
-            @extend .formInput;
+					&__input {
+						@extend .formInput;
 
-            width: 80%;
-          }
+						width: 80%;
+					}
 
-          &__buttons {
-            @include mainBox(row, center, center);
+					&__buttons {
+						@include mainBox(row, center, center);
 
-            gap: $gap;
-          }
-        }
-      }
-    }
+						gap: $gap;
+					}
+				}
+			}
+		}
 
-    .close {
-      @extend .buttonTable__close;
+		.close {
+			@extend .buttonTable__close;
 
-      @include mainBox(column, center);
-      @include style($danger_main, $danger_lighter);
-      @include hover($danger_main, $danger_lighter, $danger_dark, $danger_main);
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 40px;
-      height: 40px;
-      text-align: center;
-      font-size: 40px;
-      cursor: pointer;
-    }
-  }
+			@include mainBox(column, center);
+			@include style($danger_main, $danger_lighter);
+			@include hover($danger_main, $danger_lighter, $danger_dark, $danger_main);
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: 40px;
+			height: 40px;
+			text-align: center;
+			font-size: 40px;
+			cursor: pointer;
+		}
+	}
 }
 
 .danger {
-  .modal__management__box {
-    @include hover($neutral_lighter,
-      inherit,
-      $danger_main,
-      $danger_main);
+	.modal__management__box {
+		@include hover($neutral_lighter,
+			inherit,
+			$danger_main,
+			$danger_main);
 
 
-    .body {
-      &__title {
-        color: $danger_main;
-      }
-    }
-  }
+		.body {
+			&__title {
+				color: $danger_main;
+			}
+		}
+	}
 }
 
 @media screen and (min-width: 376px) and (max-width: 600px) {
-  .modal__management {
-    &__box {
-      top: 20vh;
-      left: 10vw;
-      @include boxSize(width, 80vw, null, 80vw);
-      @include boxSize(height, 60vh, null, 60vh);
-    }
-  }
+	.modal__management {
+		&__box {
+			top: 20vh;
+			left: 10vw;
+			@include boxSize(width, 80vw, null, 80vw);
+			@include boxSize(height, 60vh, null, 60vh);
+		}
+	}
 }
 
 @media screen and (min-width: 601px) {
-  .modal__management {
-    &__box {
-      top: 20vh;
-      left: 20vw;
-      @include boxSize(width, 60vw, null, 60vw);
-      @include boxSize(height, 60vh, null, 60vh);
-    }
-  }
+	.modal__management {
+		&__box {
+			top: 20vh;
+			left: 20vw;
+			@include boxSize(width, 60vw, null, 60vw);
+			@include boxSize(height, 60vh, null, 60vh);
+		}
+	}
 }

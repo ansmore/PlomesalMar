@@ -82,8 +82,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'homeMain'])->n
 Route::get('/', [App\Http\Controllers\HomeController::class, 'slashMain'])->name('slashMain');
 
 Route::post('/sendLanguage', [LanguageController::class, 'sendLanguage']);
-Route::post('/plomesalmarContact', [PlomesalmarController::class, 'plomesalmarContactSubmit'])->name('plomesalmarContact.submit');
-
 
 Route::prefix('/{language}')->group(function () {
 	Auth::routes();
@@ -106,10 +104,9 @@ Route::prefix('/{language}')->group(function () {
 
 	Route::get('/', [HomeController::class, 'index'])->name('index');
     Route::get('/home', [HomeController::class, 'home'])->name('home');
-    Route::get('/#{section?}', [HomeController::class, 'indexSection'])->name('index.section');
-    Route::get('/home#{section?}', [HomeController::class, 'homeSection'])->name('home.section');
 
 	Route::get('/plomesalmarContact', [PlomesalmarController::class, 'plomesalmarContactForm'])->name('plomesalmarContact');
+	Route::post('/plomesalmarContact', [PlomesalmarController::class, 'plomesalmarContactSubmit'])->name('plomesalmarContact.submit');
 
 	Route::get('/management', [HomeController::class, 'management'])->name('management');
 
@@ -149,9 +146,5 @@ Route::prefix('/{language}')->group(function () {
 		Route::delete('/observations/{observation}/delete-image', [ObservationController::class, 'deleteImage'])->name('observations.deleteImage');
 	});
 
-	Route::get('/test-abort', [AdminController::class, 'testAbort']);
-
 	Route::fallback([HomeController::class, 'index']);
 });
-
-// Route::fallback([HomeController::class, 'index']);
