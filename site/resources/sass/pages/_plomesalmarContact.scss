@@ -7,8 +7,6 @@
 
 	.row {
 		@include mainBox(column, space-around, center);
-
-
 		@include paddingMargin(5rem $padding 2rem $padding, $margin);
 
 		.box {
@@ -42,9 +40,9 @@
 					@extend .formInput;
 				}
 
-				// &__button {
-				// 	@extend .button;
-				// }
+				&__button {
+					@extend .form__button__success;
+				}
 
 				&__consent {
 					@extend .consent;

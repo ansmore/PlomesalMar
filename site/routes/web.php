@@ -82,8 +82,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'homeMain'])->n
 Route::get('/', [App\Http\Controllers\HomeController::class, 'slashMain'])->name('slashMain');
 
 Route::post('/sendLanguage', [LanguageController::class, 'sendLanguage']);
-// Route::post('/plomesalmarContact', [PlomesalmarController::class, 'plomesalmarContactSubmit'])->name('plomesalmarContact.submit');
-
 
 Route::prefix('/{language}')->group(function () {
 	Auth::routes();
