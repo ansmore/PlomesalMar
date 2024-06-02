@@ -10,3 +10,8 @@ Trello: https://trello.com/b/I583KZFx/plomes-a-la-mar
 Figma: https://www.figma.com/design/mHZDFckZ64ZCIoLW4v6fUd/Untitled?node-id=0-1&t=sDj55DRsKpXRLdk1-1
 
 Video Presentació: https://drive.google.com/file/d/1_vYv2Y1tdd-Jo8PtNwIhcjM8Tfsx2Vvq/view?usp=sharing
+
+= AWS
+- Alfred Pérez
+
+- IP: 107.21.137.141
