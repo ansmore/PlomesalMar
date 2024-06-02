@@ -18,7 +18,7 @@ class Observation extends Model
 
     protected $fillable = [
         'waypoint',
-        'specie_id',
+        'species_id',
         'time',
         'number_of_individuals',
         'in_flight',
@@ -96,7 +96,7 @@ class Observation extends Model
         $orderByField = $request->input('orderByField', 'id');
         $orderByDirection = $request->input('orderByDirection', 'asc');
         $validated = $request->input('validated');
-        $perPage = 6;
+        $perPage = 5;
     
         $query = self::query();
     

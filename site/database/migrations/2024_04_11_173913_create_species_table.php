@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('scientific_name');
             $table->string('common_name')->nullable();
             $table->timestamps();
-        });  
+        });
     }
 
     /**

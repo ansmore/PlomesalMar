@@ -4,6 +4,8 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use App\Models\ImageObservation;
+use App\Models\Observation;
+use App\Models\User;
 
 class ImageObservationFactory extends Factory
 {
@@ -17,14 +19,10 @@ class ImageObservationFactory extends Factory
     public function definition()
     {
         return [
-            'observation_id' => function () {
-                return Observation::query()->inRandomOrder()->first()->id;
-            },
-            'user_id' => function () {
-                return User::query()->inRandomOrder()->first()->id;
-            },
+            'observation_id' => Observation::factory(),
+            'user_id' => User::factory(),
             'photography_number' => $this->faker->unique()->numberBetween(1000, 9999),
-            'image_id' => $this->faker->randomElement([]),
+            'image_id' => $this->faker->unique()->numberBetween(1, 100),
         ];
     }
 }

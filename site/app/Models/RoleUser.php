@@ -15,12 +15,12 @@ class RoleUser extends Model
         'role_id', 'user_id'
     ];
 
-	public function users()
+	public function user()
     {
         return $this->belongsTo(User::class);
     }
 
-    public function roles()
+    public function role()
     {
         return $this->belongsTo(Role::class);
     }
