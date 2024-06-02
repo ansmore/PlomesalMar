@@ -238,7 +238,7 @@ button {
   text-align: center;
 }
 
-.subtitle, .modal__management__big__box .body .form__group__value, .modal__management__big__box .body .form__group__content, .modal__box .body .form__group__content,
+.subtitle, .card__graph .graph__multi .content, .card__graph .graph__multi .auth .row .form__group__content, .auth .row .card__graph .graph__multi .form__group__content, .card__graph .graph__multi .auth .row .form__group__consent__content, .auth .row .card__graph .graph__multi .form__group__consent__content, .card__graph .graph__multi .home .row .box__content, .home .row .card__graph .graph__multi .box__content, .card__graph .graph__multi .plomesalmarContact .row .form__group__content, .plomesalmarContact .row .card__graph .graph__multi .form__group__content, .card__graph .graph__multi .plomesalmarContact .row .form__group__consent__content, .plomesalmarContact .row .card__graph .graph__multi .form__group__consent__content, .card__graph .graph__controls .content, .card__graph .graph__controls .auth .row .form__group__content, .auth .row .card__graph .graph__controls .form__group__content, .card__graph .graph__controls .auth .row .form__group__consent__content, .auth .row .card__graph .graph__controls .form__group__consent__content, .card__graph .graph__controls .home .row .box__content, .home .row .card__graph .graph__controls .box__content, .card__graph .graph__controls .plomesalmarContact .row .form__group__content, .plomesalmarContact .row .card__graph .graph__controls .form__group__content, .card__graph .graph__controls .plomesalmarContact .row .form__group__consent__content, .plomesalmarContact .row .card__graph .graph__controls .form__group__consent__content, .modal__management__big__box .body .form__group__value, .modal__management__big__box .body .form__group__content, .modal__box .body .form__group__content,
 .modal__management__box .body .form__group__content {
   color: #0065AE;
   background-color: transparent;
@@ -322,7 +322,7 @@ button {
   border: 1px solid #9d9d9c;
 }
 
-.button, .form__button__back, .form__button__close, .form__button__success, .plomesalmarContact .row .form__group__button, .auth .row .form__group__button {
+.button, .form__button__back, .form__button__close, .form__button__success, .card__graph .button__success, .plomesalmarContact .row .form__group__button, .auth .row .form__group__button {
   padding: 0.5rem;
   margin: 0.5rem;
   color: #fafafa;
@@ -330,18 +330,18 @@ button {
   border: 1px solid transparent;
   border-radius: 0.25rem;
 }
-.button:hover, .form__button__back:hover, .form__button__close:hover, .form__button__success:hover, .plomesalmarContact .row .form__group__button:hover, .auth .row .form__group__button:hover {
+.button:hover, .form__button__back:hover, .form__button__close:hover, .form__button__success:hover, .card__graph .button__success:hover, .plomesalmarContact .row .form__group__button:hover, .auth .row .form__group__button:hover {
   color: #fafafa;
   background-color: #0079D0;
   border: 1px solid #00518C;
 }
 
-.form__button__success, .plomesalmarContact .row .form__group__button, .auth .row .form__group__button {
+.form__button__success, .card__graph .button__success, .plomesalmarContact .row .form__group__button, .auth .row .form__group__button {
   background-color: #0065AE;
   color: #fafafa;
   border: 1px solid transparent;
 }
-.form__button__success:hover, .plomesalmarContact .row .form__group__button:hover, .auth .row .form__group__button:hover {
+.form__button__success:hover, .card__graph .button__success:hover, .plomesalmarContact .row .form__group__button:hover, .auth .row .form__group__button:hover {
   color: #fafafa;
   background-color: #0079D0;
   border: 1px solid #00518C;
@@ -494,7 +494,7 @@ button {
   background-color: #fafafa;
 }
 
-.formInput, .tableObservation .table__group__input, .plomesalmarContact .row .form__group__input, .auth .row .form__group__input, .modal__management__big__box .body .form__group__input, .modal__box .body .form__group__input,
+.formInput, .card__graph .graph__multi .select, .card__graph .graph__controls .select, .tableObservation .table__group__input, .plomesalmarContact .row .form__group__input, .auth .row .form__group__input, .modal__management__big__box .body .form__group__input, .modal__box .body .form__group__input,
 .modal__management__box .body .form__group__input {
   padding: 0.75rem;
   margin: 0.25rem auto;
@@ -504,7 +504,7 @@ button {
   border-radius: 0.25rem;
   font-size: 1.2em;
 }
-.formInput:hover, .tableObservation .table__group__input:hover, .plomesalmarContact .row .form__group__input:hover, .auth .row .form__group__input:hover, .modal__management__big__box .body .form__group__input:hover, .modal__box .body .form__group__input:hover,
+.formInput:hover, .card__graph .graph__multi .select:hover, .card__graph .graph__controls .select:hover, .tableObservation .table__group__input:hover, .plomesalmarContact .row .form__group__input:hover, .auth .row .form__group__input:hover, .modal__management__big__box .body .form__group__input:hover, .modal__box .body .form__group__input:hover,
 .modal__management__box .body .form__group__input:hover {
   color: inherit;
   background-color: #ffffff;
@@ -1972,7 +1972,7 @@ button {
   align-self: center;
   margin-bottom: 0.5rem;
 }
-.management .row .box__search .form__button__success, .management .auth .row .box__search .form__group__button, .auth .management .row .box__search .form__group__button, .management .plomesalmarContact .row .box__search .form__group__button, .plomesalmarContact .management .row .box__search .form__group__button {
+.management .row .box__search .form__button__success, .management .row .box__search .card__graph .button__success, .card__graph .management .row .box__search .button__success, .management .auth .row .box__search .form__group__button, .auth .management .row .box__search .form__group__button, .management .plomesalmarContact .row .box__search .form__group__button, .plomesalmarContact .management .row .box__search .form__group__button {
   margin: 0;
 }
 .management .row .box__back {
@@ -1996,7 +1996,7 @@ button {
   align-self: center;
   margin-bottom: 0.5rem;
 }
-.management .row .box__next .form__button__success, .management .auth .row .box__next .form__group__button, .auth .management .row .box__next .form__group__button, .management .plomesalmarContact .row .box__next .form__group__button, .plomesalmarContact .management .row .box__next .form__group__button {
+.management .row .box__next .form__button__success, .management .row .box__next .card__graph .button__success, .card__graph .management .row .box__next .button__success, .management .auth .row .box__next .form__group__button, .auth .management .row .box__next .form__group__button, .management .plomesalmarContact .row .box__next .form__group__button, .plomesalmarContact .management .row .box__next .form__group__button {
   margin: 0;
 }
 .management .row .box__table {
@@ -2168,19 +2168,6 @@ button {
     text-align: center;
   }
 }
-#multiGraphContainer {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  padding: 2rem;
-  background-color: #ffffff;
-  border: 1px solid #0065AE;
-  border-radius: 0.5rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  justify-content: center;
-  align-items: center;
-}
-
 #chartData {
   padding: 2rem;
   background-color: #ffffff;
@@ -2194,25 +2181,6 @@ button {
 }
 
 #chartData canvas {
-  width: 100% !important;
-  height: 400px !important;
-}
-
-.chartjs-render-monitor {
-  font-family: "Roboto Slab", sans-serif;
-  color: #0065AE;
-}
-
-.chart-container {
-  flex: 1 1 45%;
-  max-width: 45%;
-  background-color: #ffffff;
-  border: 1px solid #0065AE;
-  border-radius: 0.5rem;
-  padding: 1rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-.chart-container canvas {
   width: 100% !important;
   height: 400px !important;
 }
@@ -2244,6 +2212,61 @@ button {
 .chartjs-render-monitor {
   font-family: "Roboto Slab", sans-serif;
   color: #0065AE;
+}
+
+.card__graph {
+  min-width: 100%;
+  max-width: 100%;
+  color: inherit;
+  background-color: #fafafa;
+  border-radius: 0.25rem;
+  border: 1px solid #0065AE;
+  box-shadow: 2px 2px 4px #9d9d9c, -2px -2px 4px #aeaead;
+  margin: 1rem auto;
+  transition: 0.3s;
+  padding: 1rem;
+}
+.card__graph .graph__controls {
+  display: grid;
+  grid-template-columns: 2fr 2fr 1fr;
+}
+.card__graph .graph__controls .select {
+  width: 80%;
+}
+.card__graph .graph__controls .content, .card__graph .graph__controls .auth .row .form__group__content, .auth .row .card__graph .graph__controls .form__group__content, .card__graph .graph__controls .auth .row .form__group__consent__content, .auth .row .card__graph .graph__controls .form__group__consent__content, .card__graph .graph__controls .home .row .box__content, .home .row .card__graph .graph__controls .box__content, .card__graph .graph__controls .plomesalmarContact .row .form__group__content, .plomesalmarContact .row .card__graph .graph__controls .form__group__content, .card__graph .graph__controls .plomesalmarContact .row .form__group__consent__content, .plomesalmarContact .row .card__graph .graph__controls .form__group__consent__content {
+  font-size: 1.2em;
+}
+.card__graph .graph__multi {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+@media screen and (min-width: 600px) {
+  .card__graph .graph__multi {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+.card__graph .graph__multi .select {
+  width: 80%;
+}
+.card__graph .graph__multi .content, .card__graph .graph__multi .auth .row .form__group__content, .auth .row .card__graph .graph__multi .form__group__content, .card__graph .graph__multi .auth .row .form__group__consent__content, .auth .row .card__graph .graph__multi .form__group__consent__content, .card__graph .graph__multi .home .row .box__content, .home .row .card__graph .graph__multi .box__content, .card__graph .graph__multi .plomesalmarContact .row .form__group__content, .plomesalmarContact .row .card__graph .graph__multi .form__group__content, .card__graph .graph__multi .plomesalmarContact .row .form__group__consent__content, .plomesalmarContact .row .card__graph .graph__multi .form__group__consent__content {
+  font-size: 1.2em;
+}
+.multigraph__box {
+  min-width: 100%;
+  max-width: 100%;
+  color: inherit;
+  background-color: #fafafa;
+  border-radius: 0.25rem;
+  border: 1px solid #0065AE;
+  box-shadow: 2px 2px 4px #9d9d9c, -2px -2px 4px #aeaead;
+  margin: 1rem auto;
+  transition: 0.3s;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+.multigraph__box .graph__box {
+  max-width: 100%;
 }
 
 /*# sourceMappingURL=app.css.map */
