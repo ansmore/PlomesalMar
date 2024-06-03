@@ -122,17 +122,15 @@ Creem el fitxer `docker-compose.yml` per configurar el servei MySQL:
 
 Dins del fitxer docker-compose.yml, afegeix el següent contingut per configurar un servei MySQL utilitzant Docker Compose:
 
-    version: '3.7'
-
     services:
       mi_mysql:
         image: mysql:5.7
         container_name: mi_mysql
         environment:
-          MYSQL_ROOT_PASSWORD: plomesalmar2024
-          MYSQL_DATABASE: plomesalmar2024
-          MYSQL_USER: plomesalmar2024
-          MYSQL_PASSWORD: plomesalmar2024
+          MYSQL_ROOT_PASSWORD: 1234
+          MYSQL_DATABASE: plomesalmar
+          MYSQL_USER: mysql
+          MYSQL_PASSWORD: 1234
         ports:
           - "3306:3306"
         volumes:
@@ -142,10 +140,10 @@ Dins del fitxer docker-compose.yml, afegeix el següent contingut per configurar
         image: mysql:5.7
         container_name: mi_api
         environment:
-          MYSQL_ROOT_PASSWORD: plomesalmar2024
-          MYSQL_DATABASE: Image_Management_API
-          MYSQL_USER: plomesalmar2024
-          MYSQL_PASSWORD: plomesalmar2024
+          MYSQL_ROOT_PASSWORD: 1234
+          MYSQL_DATABASE: apiimagenes
+          MYSQL_USER: mysql
+          MYSQL_PASSWORD: 1234
         ports:
           - "3307:3306"
         volumes:
@@ -154,6 +152,7 @@ Dins del fitxer docker-compose.yml, afegeix el següent contingut per configurar
     volumes:
       mysql_data:
       api_data:
+
 
     
 * `sudo docker compose up -d`: Per llençar el docker.
