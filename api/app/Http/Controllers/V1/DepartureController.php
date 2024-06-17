@@ -30,8 +30,6 @@ class DepartureController extends Controller
             'boat_id' => 'required|exists:boats,id',
             'transect_id' => 'required|exists:transects,id',
             'date' => 'required|date',
-            'users' => 'required|array',
-            'users.*' => 'exists:users,id',
             'observers' => 'required|array',
             'observers.*' => 'exists:users,id',
             'observations' => 'required|array',
@@ -41,31 +39,26 @@ class DepartureController extends Controller
             'observations.*.number_of_individuals' => 'required|integer',
             'observations.*.in_flight' => 'boolean',
             'observations.*.distance_under_300m' => 'boolean',
-            'observations.*.notes' => 'nullable|string',
-            'observations.*.images' => 'nullable|array',
-            'observations.*.images.*.photography_number' => 'required|integer',
-            'observations.*.images.*.user_id' => 'required|exists:users,id'
+            'observations.*.notes' => 'nullable|string'
         ]);
 
         DB::beginTransaction();
 
         try {
-            $departure = Departure::create($request->only(['boat_id', 'transect_id', 'date']));
+            // Obtener los nombres de los observadores seleccionados
+            $observersNames = User::whereIn('id', $request->observers)->pluck('name')->toArray();
+            $observers = implode(', ', $observersNames);
 
-            // Assign users to the departure
-            foreach ($request->users as $userId) {
-                DepartureUserObservation::create([
-                    'departure_id' => $departure->id,
-                    'user_id' => $userId,
-                    'is_observer' => in_array($userId, $request->observers)
-                ]);
-            }
+            // Crear Departure con los nombres de los observadores en el campo observers
+            $departure = Departure::create([
+                'boat_id' => $request->boat_id,
+                'transect_id' => $request->transect_id,
+                'date' => $request->date,
+                'observers' => $observers
+            ]);
 
-            // Create observations
+            // Crear observaciones
             foreach ($request->observations as $observationData) {
-                $imagesData = $observationData['images'] ?? [];
-                unset($observationData['images']);
-
                 $observation = Observation::create([
                     'species_id' => $observationData['species_id'],
                     'time' => $observationData['time'],
@@ -76,14 +69,13 @@ class DepartureController extends Controller
                     'notes' => $observationData['notes'] ?? null,
                 ]);
 
-                // Link images to the observation
-                foreach ($imagesData as $imageData) {
-                    ImageObservation::create([
-                        'observation_id' => $observation->id,
-                        'photography_number' => $imageData['photography_number'],
-                        'user_id' => $imageData['user_id']
-                    ]);
-                }
+                // Vincular observación con la departure
+                DB::table('departure_observations')->insert([
+                    'departure_id' => $departure->id,
+                    'observation_id' => $observation->id,
+                    'created_at' => now(),
+                    'updated_at' => now(),
+                ]);
             }
 
             DB::commit();
@@ -91,6 +83,7 @@ class DepartureController extends Controller
 
         } catch (\Exception $e) {
             DB::rollBack();
+            Log::error('Error creating departure: ' . $e->getMessage());
             return response()->json(['error' => $e->getMessage()], 500);
         }
     }
